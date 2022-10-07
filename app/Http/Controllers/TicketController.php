@@ -17,10 +17,10 @@ class TicketController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(): Response
     {
         return Inertia::render('Tickets/Index', [
-            //
+            'tickets' => Ticket::with('user:id,name')->latest()->get(),
         ]);
     }
 
