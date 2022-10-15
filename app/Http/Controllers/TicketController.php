@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ticket;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -54,7 +55,7 @@ class TicketController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Ticket  $ticket
+     * @param Ticket $ticket
      * @return \Illuminate\Http\Response
      */
     public function show(Ticket $ticket)
@@ -65,7 +66,7 @@ class TicketController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Ticket  $ticket
+     * @param Ticket $ticket
      * @return \Illuminate\Http\Response
      */
     public function edit(Ticket $ticket)
@@ -77,22 +78,35 @@ class TicketController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param  \App\Models\Ticket  $ticket
-     * @return \Illuminate\Http\Response
+     * @param Ticket $ticket
+     * @return Application|Redirector|RedirectResponse
      */
     public function update(Request $request, Ticket $ticket)
     {
-        //
+        $this->authorize('update', $ticket);
+
+        $validated = $request->validate([
+            'message' => 'required|string|max:255',
+        ]);
+
+        $ticket->update($validated);
+
+        return redirect(route('tickets.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Ticket  $ticket
-     * @return \Illuminate\Http\Response
+     * @param Ticket $ticket
+     * @return Application|Redirector|RedirectResponse
+     * @throws AuthorizationException
      */
-    public function destroy(Ticket $ticket)
+    public function destroy(Ticket $ticket): Redirector|RedirectResponse|Application
     {
-        //
+        $this->authorize('delete', $ticket);
+
+        $ticket->delete();
+
+        return redirect(route('tickets.index'));
     }
 }
