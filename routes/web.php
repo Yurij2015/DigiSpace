@@ -30,7 +30,7 @@ Route::get('/dashboard', static function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('tickets', TicketController::class)
-    ->only(['index', 'store'])
+    ->only(['index', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';

@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\Ticket;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -19,7 +20,7 @@ class TicketCreated
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(public Ticket $ticket)
     {
         //
     }
