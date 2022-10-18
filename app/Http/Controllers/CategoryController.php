@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Inertia\Inertia;
+use Inertia\Response;
+
 
 class CategoryController extends Controller
 {
@@ -13,10 +15,12 @@ class CategoryController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(): Response
     {
         //
-        return 'Hello, categories!';
+        return Inertia::render('Categories/Index', [
+            'categories' => 'jkjkjkjk787878787'
+        ]);
     }
 
     /**

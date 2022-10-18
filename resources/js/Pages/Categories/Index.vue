@@ -1,19 +1,23 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import TicketAdmin from '@/Components/Admin/TicketAdmin.vue';
-import { Head } from '@inertiajs/inertia-vue3';
+import Ticket from '@/Components/Ticket.vue';
+import InputError from '@/Components/InputError.vue';
+import PrimaryButton from '@/Components/PrimaryButton.vue';
+import {useForm, Head} from '@inertiajs/inertia-vue3';
 
-defineProps(['tickets']);
+defineProps(['categories']);
 
+const form = useForm({
+    message: '',
+});
 </script>
 
 <template>
-    <Head title="Admin Panel. Tickets" ><title>Tickets. Admin</title></Head>
-
+    <Head title="Categories"/>
     <AuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Admin panel. Tickets
+                Categories
             </h2>
         </template>
 
@@ -21,17 +25,16 @@ defineProps(['tickets']);
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
-                        List of Tickets!
+                        List of Categories55!
                     </div>
                     <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
-                        <TicketAdmin
-                            v-for="ticket in tickets"
-                            :key="ticket.id"
-                            :ticket="ticket"
-                        />
+                        <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
+                            <h3>{{ categories }}</h3>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </AuthenticatedLayout>
 </template>
+
