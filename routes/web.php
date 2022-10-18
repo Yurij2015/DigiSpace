@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\TicketController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -33,4 +36,23 @@ Route::resource('tickets', TicketController::class)
     ->only(['index', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
-require __DIR__.'/auth.php';
+Route::resource('categories', CategoryController::class)
+    ->only(['index', 'store', 'update', 'destroy'])
+    ->middleware(['auth', 'verified']);
+
+Route::resource('posts', PostController::class)
+    ->only(['index', 'store', 'update', 'destroy'])
+    ->middleware(['auth', 'verified']);
+
+Route::get('/admin', static function () {
+    return Inertia::render('Admin/Index');
+})->middleware(['auth', 'verified'])->name('admin');
+
+//Route::resource('/admin/tickets/', AdminController::class)
+//    ->only(['index'])
+//    ->middleware(['auth', 'verified']);
+
+//Route::get('/admin/tickets/', [AdminController::class, 'index']);
+Route::get('/admin/tickets/', [AdminController::class, 'index'])->middleware(['auth', 'verified']);
+
+require __DIR__ . '/auth.php';
