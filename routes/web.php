@@ -53,6 +53,27 @@ Route::get('/admin', static function () {
 //    ->middleware(['auth', 'verified']);
 
 //Route::get('/admin/tickets/', [AdminController::class, 'index']);
-Route::get('/admin/tickets/', [AdminController::class, 'index'])->middleware(['auth', 'verified']);
+Route::get('/admin/tickets/', [AdminController::class, 'tickets'])->middleware(['auth', 'verified']);
+
+//Route::resource('/admin/categories/', AdminController::class)
+//    ->only(['categories'])
+//    ->middleware(['auth', 'verified']);
+
+//Route::get('/admin/categories/', [AdminController::class, 'categories'])->middleware(['auth']);
+
+//Route::get('/admin/category-store/', [AdminController::class, 'categoryStore'])->middleware(['auth', 'verified']);
+//Route::post('/admin/category-store/', [AdminController::class, 'categoryStore'])->middleware(['auth', 'verified']);
+
+Route::post('admin/category-store', [AdminController::class, 'categoryStore'])
+    ->name('admin.category-store')
+    ->middleware('auth');
+
+Route::get('/admin/categories/', [AdminController::class, 'categories'])
+    ->name('admin.categories')
+    ->middleware('auth');
+
+//Route::resource('admin/category-store', AdminController::class)
+//    ->only(['store'])
+//    ->middleware(['auth', 'verified']);
 
 require __DIR__ . '/auth.php';
