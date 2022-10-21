@@ -12,7 +12,8 @@ dayjs.extend(relativeTime);
 const props = defineProps(['category']);
 
 const form = useForm({
-    message: props.category.message,
+    name: props.category.name,
+    description: props.category.description,
 });
 
 const editing = ref(false);
@@ -29,13 +30,16 @@ const editing = ref(false);
             <div class="flex justify-between items-center">
                 <div>
                     <span class="text-gray-800">{{ category.name }}</span>
-                    <small class="ml-2 text-sm text-gray-600">{{ new Date(category.created_at).toLocaleString() }}</small>
+                    <small class="ml-2 text-sm text-gray-600">{{
+                            new Date(category.created_at).toLocaleString()
+                        }}</small>
                     <small class="ml-2 text-sm text-gray-600 text-red-400">{{
                             dayjs(category.created_at).fromNow()
                         }}</small>
                     <small v-if="category.created_at !== category.updated_at" class="text-sm text-gray-600"> &middot;
                         edited</small>
-                    <small v-if="category.created_at !== category.updated_at" class="ml-2 text-sm text-gray-600 text-red-400">- {{
+                    <small v-if="category.created_at !== category.updated_at"
+                           class="ml-2 text-sm text-gray-600 text-red-400">- {{
                             dayjs(category.updated_at).fromNow()
                         }}</small>
                 </div>
@@ -55,17 +59,26 @@ const editing = ref(false);
                             @click="editing = true">
                             Edit
                         </button>
-                        <DropdownLink as="button" :href="route('categories.destroy', category.id)" method="delete">
+                        <DropdownLink as="button" :href="route('admin.category-destroy', category.id)" method="delete">
                             Delete
                         </DropdownLink>
                     </template>
                 </Dropdown>
             </div>
             <form v-if="editing"
-                  @submit.prevent="form.put(route('categories.update', category.id), { onSuccess: () => editing = false })">
-            <textarea v-model="form.message"
-                      class="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"></textarea>
-                <InputError :message="form.errors.message" class="mt-2"/>
+                  @submit.prevent="form.put(route('admin.category-update', category.id), { onSuccess: () => editing = false })">
+                <input
+                    v-model="form.name"
+                    placeholder="What is category name?"
+                    class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                >
+                <InputError :message="form.errors.name" class="mt-2"/>
+                <input
+                    v-model="form.description"
+                    placeholder="What is category description?"
+                    class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                >
+                <InputError :message="form.errors.description" class="mt-2"/>
                 <div class="space-x-2">
                     <PrimaryButton class="mt-4">Save</PrimaryButton>
                     <button class="mt-4" @click="editing = false; form.reset(); form.clearErrors()">Cancel</button>

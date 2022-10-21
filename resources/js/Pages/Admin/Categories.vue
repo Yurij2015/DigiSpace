@@ -16,10 +16,10 @@ const form = useForm({
     <Head title="Admin Panel. Categories"><title>Categories. Admin</title></Head>
     <AuthenticatedLayout>
         <div class="py-12">
-            <div class="p-6 bg-white border-b border-gray-200">
-                Add category!
-            </div>
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="p-6 bg-white border-b border-gray-200">
+                    Add category!
+                </div>
                 <form @submit.prevent="form.post(route('admin.category-store'), { onSuccess: () => form.reset() })">
                     <input
                         v-model="form.name"

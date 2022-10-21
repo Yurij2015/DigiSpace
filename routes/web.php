@@ -68,6 +68,14 @@ Route::post('admin/category-store', [AdminController::class, 'categoryStore'])
     ->name('admin.category-store')
     ->middleware('auth');
 
+Route::delete('admin/category-destroy/{category}', [AdminController::class, 'categoryDestroy'])
+    ->name('admin.category-destroy')
+    ->middleware('auth');
+
+Route::put('admin/category-update/{category}', [AdminController::class, 'categoryUpdate'])
+    ->name('admin.category-update')
+    ->middleware('auth');
+
 Route::get('/admin/categories/', [AdminController::class, 'categories'])
     ->name('admin.categories')
     ->middleware('auth');
