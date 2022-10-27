@@ -19,7 +19,7 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', static function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -48,21 +48,7 @@ Route::get('/admin', static function () {
     return Inertia::render('Admin/Index');
 })->middleware(['auth', 'verified'])->name('admin');
 
-//Route::resource('/admin/tickets/', AdminController::class)
-//    ->only(['index'])
-//    ->middleware(['auth', 'verified']);
-
-//Route::get('/admin/tickets/', [AdminController::class, 'index']);
 Route::get('/admin/tickets/', [AdminController::class, 'tickets'])->middleware(['auth', 'verified']);
-
-//Route::resource('/admin/categories/', AdminController::class)
-//    ->only(['categories'])
-//    ->middleware(['auth', 'verified']);
-
-//Route::get('/admin/categories/', [AdminController::class, 'categories'])->middleware(['auth']);
-
-//Route::get('/admin/category-store/', [AdminController::class, 'categoryStore'])->middleware(['auth', 'verified']);
-//Route::post('/admin/category-store/', [AdminController::class, 'categoryStore'])->middleware(['auth', 'verified']);
 
 Route::post('admin/category-store', [AdminController::class, 'categoryStore'])
     ->name('admin.category-store')
@@ -80,8 +66,24 @@ Route::get('/admin/categories/', [AdminController::class, 'categories'])
     ->name('admin.categories')
     ->middleware('auth');
 
-//Route::resource('admin/category-store', AdminController::class)
-//    ->only(['store'])
-//    ->middleware(['auth', 'verified']);
+Route::get('admin/post-store', [AdminController::class, 'postForm'])
+    ->name('admin.post-store')
+    ->middleware('auth');
+
+Route::post('admin/post-store', [AdminController::class, 'postSave'])
+    ->name('admin.post-store')
+    ->middleware('auth');
+
+Route::delete('admin/post-destroy/{post}', [AdminController::class, 'postDestroy'])
+    ->name('admin.post-destroy')
+    ->middleware('auth');
+
+Route::put('admin/post-update/{post}', [AdminController::class, 'postUpdate'])
+    ->name('admin.post-update')
+    ->middleware('auth');
+
+Route::get('/admin/posts/', [AdminController::class, 'posts'])
+    ->name('admin.posts')
+    ->middleware('auth');
 
 require __DIR__ . '/auth.php';

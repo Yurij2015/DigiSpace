@@ -21,6 +21,7 @@ import {Head} from '@inertiajs/inertia-vue3';
                         <ul>
                             <li><a href="admin/tickets">Tickets</a></li>
                             <li><a href="admin/categories">Categories</a></li>
+                            <li><a href="admin/posts">Posts</a></li>
                         </ul>
                     </div>
                 </div>
