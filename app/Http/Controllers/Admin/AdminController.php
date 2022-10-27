@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Post;
 use App\Models\Ticket;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Foundation\Application;
@@ -29,6 +30,13 @@ class AdminController extends Controller
         ]);
     }
 
+    public function posts(): Response
+    {
+        return Inertia::render('Admin/Posts/Index', [
+            'posts' => Post::with('category:id,name')->latest()->get(),
+        ]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -43,6 +51,24 @@ class AdminController extends Controller
         ]);
         $request->user()->categories()->create($validated);
         return redirect(route('admin.categories'));
+    }
+
+    public function postForm(): Response
+    {
+        return Inertia::render('Admin/Posts/Create', [
+            'categories' => Category::all()
+        ]);
+    }
+
+    public function postSave(Request $request): Application|RedirectResponse|Redirector
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'content' => 'required|string|max:255',
+            'category_id' => 'int'
+        ]);
+        $request->user()->posts()->create($validated);
+        return redirect(route('admin.posts'));
     }
 
     /**
