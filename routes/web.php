@@ -82,6 +82,10 @@ Route::put('admin/post-update/{post}', [AdminController::class, 'postUpdate'])
     ->name('admin.post-update')
     ->middleware('auth');
 
+Route::get('admin/post-update/{post}', [AdminController::class, 'postUpdateForm'])
+    ->name('admin.post-update')
+    ->middleware('auth');
+
 Route::get('/admin/posts/', [AdminController::class, 'posts'])
     ->name('admin.posts')
     ->middleware('auth');

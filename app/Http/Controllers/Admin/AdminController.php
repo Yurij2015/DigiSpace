@@ -53,6 +53,11 @@ class AdminController extends Controller
         return redirect(route('admin.categories'));
     }
 
+    /**
+     * Send categories to view, render post create view.
+     *
+     * @return Response
+     */
     public function postForm(): Response
     {
         return Inertia::render('Admin/Posts/Create', [
@@ -60,6 +65,49 @@ class AdminController extends Controller
         ]);
     }
 
+    /**
+     * Send post and categories to view, render post edit view.
+     *
+     * @param $post
+     * @return Response
+     */
+    public function postUpdateForm($post): Response
+    {
+        return Inertia::render('Admin/Posts/Update', [
+            'post' => Post::where('id', $post)->first(),
+            'categories' => Category::all()
+        ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param Request $request
+     * @param Post $post
+     * @return Application|Redirector|RedirectResponse
+     * @throws AuthorizationException
+     */
+    public function postUpdate(Request $request, Post $post): Redirector|RedirectResponse|Application
+    {
+        $this->authorize('postUpdate', $post);
+
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'content' => 'required|string|max:255',
+            'category_id' => 'int'
+        ]);
+
+        $post->update($validated);
+
+        return redirect(route('admin.posts'));
+    }
+
+    /**
+     * Save a newly created post in storage.
+     *
+     * @param Request $request
+     * @return Application|RedirectResponse|Redirector
+     */
     public function postSave(Request $request): Application|RedirectResponse|Redirector
     {
         $validated = $request->validate([
