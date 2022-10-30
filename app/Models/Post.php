@@ -18,4 +18,9 @@ class Post extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }
