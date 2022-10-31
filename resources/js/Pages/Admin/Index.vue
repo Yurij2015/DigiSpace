@@ -15,10 +15,17 @@ import {Head} from '@inertiajs/inertia-vue3';
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <div>
+                        <div style="line-height: 40px" class="font-bold">You're logged in Admin Panel!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
-                        You're logged in Admin Panel!
-                        <ul>
+                        <ul role="list" class="marker:text-sky-400 list-disc pl-5 space-y-3 text-slate-400">
                             <li><a href="admin/tickets">Tickets</a></li>
                             <li><a href="admin/categories">Categories</a></li>
                             <li><a href="admin/posts">Posts</a></li>
