@@ -155,4 +155,18 @@ class AdminController extends Controller
         return redirect(route('admin.categories'));
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param Post $post
+     * @return Application|Redirector|RedirectResponse
+     * @throws AuthorizationException
+     */
+    public function postDestroy(Post $post): Redirector|RedirectResponse|Application
+    {
+        $this->authorize('postDestroy', $post);
+        $post->delete();
+        return redirect(route('admin.posts'));
+    }
+
 }
