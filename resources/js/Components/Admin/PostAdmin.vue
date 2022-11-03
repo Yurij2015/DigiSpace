@@ -11,14 +11,15 @@ import {Link} from '@inertiajs/inertia-vue3';
                     <p class="text-gray-800">{{ post.name }}</p>
                     <p class="text-gray-800">{{ post.category.name }}</p>
                     <p class="text-gray-900">{{ post.content }}</p>
+                    <p v-if="444"><img :src="post.img_path" width="400" /></p>
                 </div>
                 <div>
                     <div style="float:right">
-                        <a :href="route('admin.post-update', post.id)">
+                        <Link :href="route('admin.post-update', post.id)" method="get">
                             <div class="btn btn-blue text-center">
                                 Edit
                             </div>
-                        </a>
+                        </Link>
                         <Link :href="route('admin.post-destroy', post.id)" method="delete">
                             <div class="btn btn-brown text-center mt-1">
                                 Delete

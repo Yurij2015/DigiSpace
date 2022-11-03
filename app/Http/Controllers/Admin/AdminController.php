@@ -11,6 +11,8 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -30,11 +32,27 @@ class AdminController extends Controller
         ]);
     }
 
+    /**
+     * Get and change array with posts
+     *
+     * @return Response
+     */
     public function posts(): Response
     {
+        $posts = Post::with('category:id,name')->latest()->get();
+        $this->changeImgPathIfNull($posts);
         return Inertia::render('Admin/Posts/Index', [
-            'posts' => Post::with('category:id,name')->latest()->get(),
+            'posts' => $posts,
         ]);
+    }
+
+    public function changeImgPathIfNull($posts): void
+    {
+        foreach ($posts as $post) {
+            if ($post->img_path === 'http://localhost/uploads' || $post->img_path === 'https://localhost/uploads') {
+                $post->img_path = 'no_image.png';
+            }
+        }
     }
 
     /**
@@ -94,7 +112,7 @@ class AdminController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'content' => 'required|string|max:255',
-            'category_id' => 'int'
+            'category_id' => 'int',
         ]);
 
         $post->update($validated);
@@ -107,16 +125,28 @@ class AdminController extends Controller
      *
      * @param Request $request
      * @return Application|RedirectResponse|Redirector
+     * @throws ValidationException
      */
     public function postSave(Request $request): Application|RedirectResponse|Redirector
     {
-        $validated = $request->validate([
+        Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'content' => 'required|string|max:255',
-            'category_id' => 'int'
+            'category_id' => 'int',
+            'file' => 'required',
+        ])->validate();
+
+        $fileName = time() . '.' . $request->file->extension();
+        $request->file->move(public_path('uploads'), $fileName);
+
+        Post::create([
+            'name' => $request->name,
+            'content' => $request['content'],
+            'category_id' => $request->category_id,
+            'user_id' => $request->user()->id,
+            'img_path' => $fileName
         ]);
-        $request->user()->posts()->create($validated);
-        return redirect(route('admin.posts'));
+        return redirect(route('admin.posts'))->with('message', 'Post Created Successfully');
     }
 
     /**

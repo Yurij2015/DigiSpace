@@ -2,7 +2,7 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import InputError from '@/Components/InputError.vue';
-
+import Label from '@/Components/InputLabel.vue';
 
 import {Head, useForm} from '@inertiajs/inertia-vue3';
 
@@ -11,7 +11,8 @@ defineProps(['categories']);
 const form = useForm({
     name: '',
     content: '',
-    category_id: ''
+    category_id: '',
+    file: ''
 });
 
 </script>
@@ -45,6 +46,16 @@ const form = useForm({
                             <option v-for='category in categories' :value='category.id'>{{ category.name }}</option>
                         </select>
                         <InputError :message="form.errors.category_id" class="mt-2"/>
+                        <div>
+                            <Label for="file" value="File"/>
+                            <input
+                                id="file"
+                                type="file"
+                                class="mt-1 block w-full"
+                                @input="form.file = $event.target.files[0]"
+                                autofocus/>
+                            <span v-if="form.errors.name">{{ form.errors.file }}</span>
+                        </div>
                         <PrimaryButton class="mt-4">Save post!</PrimaryButton>
                     </form>
                 </div>
