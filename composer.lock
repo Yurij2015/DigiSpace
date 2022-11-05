@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ab5bd54265f372e77fb675a7ece01a1",
+    "content-hash": "093c1ff6b79f9b4e40f29113026d23a5",
     "packages": [
         {
             "name": "brick/math",
@@ -1358,6 +1358,74 @@
                 "source": "https://github.com/http-interop/http-factory-guzzle/tree/1.2.0"
             },
             "time": "2021-07-21T13:50:14+00:00"
+        },
+        {
+            "name": "illuminatech/multipart-middleware",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminatech/multipart-middleware.git",
+                "reference": "ef6402d50ee0bb21d1fc0817f45aa0c2b0de60ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminatech/multipart-middleware/zipball/ef6402d50ee0bb21d1fc0817f45aa0c2b0de60ce",
+                "reference": "ef6402d50ee0bb21d1fc0817f45aa0c2b0de60ce",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^6.0 || ^7.0 || ^8.0 || ^9.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5 || ^8.0 || ^9.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminatech\\MultipartMiddleware\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Klimov",
+                    "email": "klimov.paul@gmail.com"
+                }
+            ],
+            "description": "'multipart/form-data' parser middleware for Laravel",
+            "keywords": [
+                "file",
+                "laravel",
+                "middleware",
+                "multipart",
+                "parser",
+                "request",
+                "upload"
+            ],
+            "support": {
+                "issues": "https://github.com/illuminatech/multipart-middleware/issues",
+                "source": "https://github.com/illuminatech/multipart-middleware",
+                "wiki": "https://github.com/illuminatech/multipart-middleware/wiki"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/klimov-paul",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/klimov_paul",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2022-02-09T14:14:29+00:00"
         },
         {
             "name": "inertiajs/inertia-laravel",
