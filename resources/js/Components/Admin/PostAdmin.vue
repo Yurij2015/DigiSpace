@@ -11,7 +11,7 @@ import {Link} from '@inertiajs/inertia-vue3';
                     <p class="text-gray-800">{{ post.name }}</p>
                     <p class="text-gray-800">{{ post.category.name }}</p>
                     <p class="text-gray-900">{{ post.content }}</p>
-                    <p v-if="444"><img :src="post.img_path" width="400" /></p>
+                    <img :src="post.img_path" width="400" />
                 </div>
                 <div>
                     <div style="float:right">

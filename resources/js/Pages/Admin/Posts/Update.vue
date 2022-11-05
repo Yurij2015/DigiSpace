@@ -2,17 +2,17 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import InputError from '@/Components/InputError.vue';
-
+import Label from '@/Components/InputLabel.vue';
 
 import {Head, useForm} from '@inertiajs/inertia-vue3';
 
 const props = defineProps(['categories', 'post']);
 
-
 const form = useForm({
     name: props.post.name,
     content: props.post.content,
-    category_id: props.post.category_id
+    category_id: props.post.category_id,
+    file: null
 });
 
 </script>
@@ -27,7 +27,8 @@ const form = useForm({
                     <div class="columns-1">
                         <div style="line-height: 40px" class="font-bold">Edit post</div>
                     </div>
-                    <form @submit.prevent="form.put(route('admin.post-update', post.id), { onSuccess: () => form.reset() })">
+                    <form
+                        @submit.prevent="form.put(route('admin.post-update', post.id), { onSuccess: () => form.reset() })">
                         <input
                             v-model="form.name"
                             class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
@@ -45,6 +46,19 @@ const form = useForm({
                             <option v-for='category in categories' :value='category.id'>{{ category.name }}</option>
                         </select>
                         <InputError :message="form.errors.category_id" class="mt-2"/>
+                        <div class="columns-1 mt-3">
+                            <img :src="post.img_path" width="400"/>
+                        </div>
+                        <div>
+                            <Label for="file" value="File"/>
+                            <input
+                                id="file"
+                                type="file"
+                                class="mt-1 block w-full"
+                                @input="form.file = $event.target.files[0]"
+                                autofocus/>
+                            <span v-if="form.errors.name">{{ form.errors.file }}</span>
+                        </div>
                         <PrimaryButton class="mt-4">Save edited post!</PrimaryButton>
                     </form>
                 </div>

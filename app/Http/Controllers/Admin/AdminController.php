@@ -108,15 +108,18 @@ class AdminController extends Controller
     public function postUpdate(Request $request, Post $post): Redirector|RedirectResponse|Application
     {
         $this->authorize('postUpdate', $post);
-
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'content' => 'required|string|max:255',
             'category_id' => 'int',
+            'file' => '',
         ]);
-
+        if($request->file){
+            $fileName = time() . '.' . $request->file->extension();
+            $request->file->move(public_path('uploads'), $fileName);
+            $post->img_path = $fileName;
+        }
         $post->update($validated);
-
         return redirect(route('admin.posts'));
     }
 

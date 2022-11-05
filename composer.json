@@ -8,6 +8,7 @@
         "php": "^8.0.2",
         "doctrine/dbal": "^3.5",
         "guzzlehttp/guzzle": "^7.2",
+        "illuminatech/multipart-middleware": "^1.1",
         "inertiajs/inertia-laravel": "^0.6.3",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^2.8",
