@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -17,31 +18,9 @@ class CategoryController extends Controller
      */
     public function index(): Response
     {
-        //
         return Inertia::render('Categories/Index', [
-            'categories' => 'jkjkjkjk787878787'
+            'categories' => Category::all(),
         ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create(): Response
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param Request $request
-     * @return Response
-     */
-    public function store(Request $request): Response
-    {
-        //
     }
 
     /**
@@ -52,40 +31,11 @@ class CategoryController extends Controller
      */
     public function show(Category $category): Response
     {
-        //
-    }
+        $posts = Post::all()->where('category_id', $category->id);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param Category $category
-     * @return Response
-     */
-    public function edit(Category $category): Response
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param Category $category
-     * @return Response
-     */
-    public function update(Request $request, Category $category): Response
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param Category $category
-     * @return Response
-     */
-    public function destroy(Category $category): Response
-    {
-        //
+        return Inertia::render('Categories/View', [
+            'category' => $category,
+            'posts' => $posts
+        ]);
     }
 }
