@@ -37,11 +37,11 @@ Route::resource('tickets', TicketController::class)
     ->middleware(['auth', 'verified']);
 
 Route::resource('categories', CategoryController::class)
-    ->only(['index', 'store', 'update', 'destroy'])
+    ->only(['index', 'show'])
     ->middleware(['auth', 'verified']);
 
 Route::resource('posts', PostController::class)
-    ->only(['index', 'store', 'update', 'destroy'])
+    ->only(['index', 'show'])
     ->middleware(['auth', 'verified']);
 
 Route::get('/admin', static function () {

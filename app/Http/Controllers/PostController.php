@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class PostController extends Controller
 {
@@ -15,72 +15,39 @@ class PostController extends Controller
      */
     public function index(): Response
     {
-        //
+        $posts = Post::with('category:id,name')->latest()->get();
+        $this->changeImgPathIfNullInPosts($posts);
+        return Inertia::render('Posts/Index', [
+            'posts' => $posts,
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create(): Response
+    public function changeImgPathIfNullInPosts($posts): void
     {
-        //
+        foreach ($posts as $post) {
+            $this->changeImgPathIfNull($post);
+        }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return Response
-     */
-    public function store(Request $request)
+    public function changeImgPathIfNull($post): void
     {
-        //
+        if ($post->img_path === 'http://localhost/uploads' || $post->img_path === 'https://localhost/uploads') {
+            $post->img_path = 'no_image.png';
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param Post $post
      * @return Response
      */
-    public function show(Post $post)
+    public function show(Post $post): Response
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Post  $post
-     * @return Response
-     */
-    public function edit(Post $post)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
-     * @return Response
-     */
-    public function update(Request $request, Post $post)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Post  $post
-     * @return Response
-     */
-    public function destroy(Post $post)
-    {
-        //
+        $post = Post::with('category:id,name')->where('id', $post->id)->get()->first();
+        $this->changeImgPathIfNull($post);
+        return Inertia::render('Posts/View', [
+            'post' => $post,
+        ]);
     }
 }
