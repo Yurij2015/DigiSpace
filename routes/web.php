@@ -48,48 +48,32 @@ Route::get('/admin', static function () {
 
 Route::get('/admin/tickets/', [AdminController::class, 'tickets'])->middleware(['auth', 'verified']);
 
-Route::post('admin/category-store', [AdminController::class, 'categoryStore'])
-    ->name('admin.category-store')
-    ->middleware('auth');
+Route::middleware('auth')->group(function () {
+    Route::post('admin/category-store', [AdminController::class, 'categoryStore'])
+        ->name('admin.category-store');
+    Route::delete('admin/category-destroy/{category}', [AdminController::class, 'categoryDestroy'])
+        ->name('admin.category-destroy');
+    Route::put('admin/category-update/{category}', [AdminController::class, 'categoryUpdate'])
+        ->name('admin.category-update');
+    Route::get('/admin/categories/', [AdminController::class, 'categories'])
+        ->name('admin.categories');
+    Route::get('admin/category-show/{category}', [AdminController::class, 'categoryShow'])
+        ->name('admin.category-show');
+});
 
-Route::delete('admin/category-destroy/{category}', [AdminController::class, 'categoryDestroy'])
-    ->name('admin.category-destroy')
-    ->middleware('auth');
-
-Route::put('admin/category-update/{category}', [AdminController::class, 'categoryUpdate'])
-    ->name('admin.category-update')
-    ->middleware('auth');
-
-Route::get('/admin/categories/', [AdminController::class, 'categories'])
-    ->name('admin.categories')
-    ->middleware('auth');
-
-Route::get('admin/post-store', [AdminController::class, 'postForm'])
-    ->name('admin.post-store')
-    ->middleware('auth');
-
-Route::post('admin/post-store', [AdminController::class, 'postSave'])
-    ->name('admin.post-store')
-    ->middleware('auth');
-
-Route::delete('admin/post-destroy/{post}', [AdminController::class, 'postDestroy'])
-    ->name('admin.post-destroy')
-    ->middleware('auth');
-
-Route::get('admin/category-show/{category}', [AdminController::class, 'categoryShow'])
-    ->name('admin.category-show')
-    ->middleware('auth');
-
-Route::put('admin/post-update/{post}', [AdminController::class, 'postUpdate'])
-    ->name('admin.post-update')
-    ->middleware('auth');
-
-Route::get('admin/post-update/{post}', [AdminController::class, 'postUpdateForm'])
-    ->name('admin.post-update')
-    ->middleware('auth');
-
-Route::get('/admin/posts/', [AdminController::class, 'posts'])
-    ->name('admin.posts')
-    ->middleware('auth');
+Route::middleware('auth')->group(function () {
+    Route::get('admin/post-store', [AdminController::class, 'postForm'])
+        ->name('admin.post-store');
+    Route::post('admin/post-store', [AdminController::class, 'postSave'])
+        ->name('admin.post-store');
+    Route::delete('admin/post-destroy/{post}', [AdminController::class, 'postDestroy'])
+        ->name('admin.post-destroy');
+    Route::put('admin/post-update/{post}', [AdminController::class, 'postUpdate'])
+        ->name('admin.post-update');
+    Route::get('admin/post-update/{post}', [AdminController::class, 'postUpdateForm'])
+        ->name('admin.post-update');
+    Route::get('/admin/posts/', [AdminController::class, 'posts'])
+        ->name('admin.posts');
+});
 
 require __DIR__ . '/auth.php';
