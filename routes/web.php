@@ -30,19 +30,17 @@ Route::get('/', static function () {
 
 Route::get('/dashboard', static function () {
     return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->name('dashboard');
 
 Route::resource('tickets', TicketController::class)
     ->only(['index', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
 Route::resource('categories', CategoryController::class)
-    ->only(['index', 'show'])
-    ->middleware(['auth', 'verified']);
+    ->only(['index', 'show']);
 
 Route::resource('posts', PostController::class)
-    ->only(['index', 'show'])
-    ->middleware(['auth', 'verified']);
+    ->only(['index', 'show']);
 
 Route::get('/admin', static function () {
     return Inertia::render('Admin/Index');
@@ -76,6 +74,10 @@ Route::post('admin/post-store', [AdminController::class, 'postSave'])
 
 Route::delete('admin/post-destroy/{post}', [AdminController::class, 'postDestroy'])
     ->name('admin.post-destroy')
+    ->middleware('auth');
+
+Route::get('admin/category-show/{category}', [AdminController::class, 'categoryShow'])
+    ->name('admin.category-show')
     ->middleware('auth');
 
 Route::put('admin/post-update/{post}', [AdminController::class, 'postUpdate'])

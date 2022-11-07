@@ -40,18 +40,23 @@ class AdminController extends Controller
     public function posts(): Response
     {
         $posts = Post::with('category:id,name')->latest()->get();
-        $this->changeImgPathIfNull($posts);
+        $this->changeImgPathIfNullInPosts($posts);
         return Inertia::render('Admin/Posts/Index', [
             'posts' => $posts,
         ]);
     }
 
-    public function changeImgPathIfNull($posts): void
+    public function changeImgPathIfNullInPosts($posts): void
     {
         foreach ($posts as $post) {
-            if ($post->img_path === 'http://localhost/uploads' || $post->img_path === 'https://localhost/uploads') {
-                $post->img_path = 'no_image.png';
-            }
+            $this->changeImgPathIfNull($post);
+        }
+    }
+
+    public function changeImgPathIfNull($post): void
+    {
+        if ($post->img_path === 'http://localhost/uploads' || $post->img_path === 'https://localhost/uploads') {
+            $post->img_path = 'no_image.png';
         }
     }
 
@@ -91,8 +96,10 @@ class AdminController extends Controller
      */
     public function postUpdateForm($post): Response
     {
+        $post = Post::where('id', $post)->first();
+        $this->changeImgPathIfNull($post);
         return Inertia::render('Admin/Posts/Update', [
-            'post' => Post::where('id', $post)->first(),
+            'post' => $post,
             'categories' => Category::all()
         ]);
     }
@@ -150,6 +157,16 @@ class AdminController extends Controller
             'img_path' => $fileName
         ]);
         return redirect(route('admin.posts'))->with('message', 'Post Created Successfully');
+    }
+
+    public function categoryShow(Category $category): Response
+    {
+        $posts = Post::all()->where('category_id', $category->id);
+        $this->changeImgPathIfNullInPosts($posts);
+        return Inertia::render('Admin/Categories/CategoryView', [
+            'category' => $category,
+            'posts' => $posts
+        ]);
     }
 
     /**

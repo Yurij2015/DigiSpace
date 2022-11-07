@@ -62,7 +62,7 @@ const editing = ref(false);
                         <DropdownLink as="button" :href="route('admin.category-destroy', category.id)" method="delete">
                             Delete
                         </DropdownLink>
-                        <DropdownLink as="button" :href="route('categories.show', category.id)">
+                        <DropdownLink as="button" :href="route('admin.category-show', category.id)">
                             View
                         </DropdownLink>
                     </template>
