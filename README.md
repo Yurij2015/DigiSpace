@@ -1,2 +1,2 @@
-**`GlobalDigiSpace`**
+DigiSpace
 Laravel, Vue, Inertia, Vite
