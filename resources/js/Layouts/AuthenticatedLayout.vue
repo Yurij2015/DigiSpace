@@ -30,10 +30,10 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
-                                <NavLink :href="route('tickets.index')" :active="route().current('tickets.index')">
+                                <NavLink :href="route('tickets.index')" :active="route().current('tickets.index')" v-if="$page.props.auth.user">
                                     Tickets
                                 </NavLink>
-                                <NavLink :href="route('admin')" :active="route().current('admin')">
+                                <NavLink :href="route('admin')" :active="route().current('admin')" v-if="$page.props.auth.user">
                                     Admin
                                 </NavLink>
                                 <NavLink :href="route('categories.index')"
@@ -49,15 +49,19 @@ const showingNavigationDropdown = ref(false);
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <!-- Settings Dropdown -->
                             <div class="ml-3 relative">
-                                <Dropdown align="right" width="48">
+                                <a type="button" :href="route('login')"
+                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                        v-if="!$page.props.auth.user">
+                                    Log in
+                                </a>
+                                <Dropdown align="right" width="48" v-if="$page.props.auth.user">
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
                                             <button type="button"
-                                                    class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                                                <span v-if="$page.props.user">
+                                                    class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                            >
                                                 {{ $page.props.auth.user.name }}
-                                                </span>
-                                                <svg  class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                                <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                                      viewBox="0 0 20 20" fill="currentColor">
                                                     <path fill-rule="evenodd"
                                                           d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -67,7 +71,7 @@ const showingNavigationDropdown = ref(false);
                                         </span>
                                     </template>
                                     <template #content>
-                                        <DropdownLink :href="route('logout')" method="post" as="button" >
+                                        <DropdownLink :href="route('logout')" method="post" as="button">
                                             Log Out
                                         </DropdownLink>
                                     </template>
@@ -112,17 +116,15 @@ const showingNavigationDropdown = ref(false);
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200">
                         <div class="px-4">
-                            <div v-if="$page.props.user" class="font-medium text-base text-gray-800">
+                            <div v-if="$page.props.auth.user" class="font-medium text-base text-gray-800">
                                 {{ $page.props.auth.user.name }}
                             </div>
-                            <div v-if="$page.props.user" class="font-medium text-sm text-gray-500">
+                            <div v-if="$page.props.auth.user" class="font-medium text-sm text-gray-500">
                                 {{ $page.props.auth.user.email }}
                             </div>
-                            <div v-if="!$page.props.user" class="font-medium text-base text-gray-800"></div>
-                            <div v-if="!$page.props.user" class="font-medium text-sm text-gray-500"></div>
-
+                            <div v-if="!$page.props.auth.user" class="font-medium text-base text-gray-800"></div>
+                            <div v-if="!$page.props.auth.user" class="font-medium text-sm text-gray-500"></div>
                         </div>
-
                         <div class="mt-3 space-y-1">
                             <ResponsiveNavLink :href="route('logout')" method="post" as="button">
                                 Log Out
