@@ -76,4 +76,11 @@ Route::middleware('auth')->group(function () {
         ->name('admin.posts');
 });
 
+Route::get('profile', static function () {
+    return 'Profile';
+})->name('profile');
+Route::get('landing', static function () {
+    return 'Landing';
+})->name('landing');
+
 require __DIR__ . '/auth.php';

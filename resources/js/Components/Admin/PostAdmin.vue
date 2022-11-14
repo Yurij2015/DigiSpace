@@ -20,7 +20,7 @@ import {Link} from '@inertiajs/inertia-vue3';
                                 Edit
                             </div>
                         </Link>
-                        <Link :href="route('admin.post-destroy', post.id)" method="delete">
+                        <Link :href="route('admin.post-destroy', post.id)" method="delete" as="button">
                             <div class="btn btn-brown text-center mt-1">
                                 Delete
                             </div>
