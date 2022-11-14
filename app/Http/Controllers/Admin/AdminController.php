@@ -218,5 +218,4 @@ class AdminController extends Controller
         $post->delete();
         return redirect(route('admin.posts'));
     }
-
 }
