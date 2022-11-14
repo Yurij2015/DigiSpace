@@ -24,7 +24,8 @@ const form = useForm({
                         }}</small>
                     <small v-if="ticket.created_at !== ticket.updated_at" class="text-sm text-gray-600"> &middot;
                         edited</small>
-                    <small v-if="ticket.created_at !== ticket.updated_at" class="ml-2 text-sm text-gray-600 text-red-400">- {{
+                    <small v-if="ticket.created_at !== ticket.updated_at"
+                           class="ml-2 text-sm text-gray-600 text-red-400">- {{
                             dayjs(ticket.updated_at).fromNow()
                         }}</small>
                 </div>
