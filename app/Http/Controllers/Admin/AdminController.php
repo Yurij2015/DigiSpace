@@ -121,7 +121,7 @@ class AdminController extends Controller
             'category_id' => 'int',
             'file' => '',
         ]);
-        if($request->file){
+        if ($request->file) {
             $fileName = time() . '.' . $request->file->extension();
             $request->file->move(public_path('uploads'), $fileName);
             $post->img_path = $fileName;
@@ -218,5 +218,4 @@ class AdminController extends Controller
         $post->delete();
         return redirect(route('admin.posts'));
     }
-
 }
