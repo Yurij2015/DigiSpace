@@ -14,28 +14,28 @@ defineProps(['posts']);
     <Head><title>Posts | Admin Panel</title></Head>
     <div>
         <sidebar/>
-        <AuthenticatedLayout>
-            <div class="relative md:ml-64 bg-blueGray-100">
-                <AdminNavbar/>
-                <HeaderStats/>
-                <div class="px-4 md:px-10 mx-auto w-full">
-                    <div class="flex flex-wrap">
-                        <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
-                            <a href="/admin/post-store">
-                                <div class="btn btn-blue text-center">
-                                    Create
-                                </div>
-                            </a>
-                            <PostAdmin
-                                v-for="post in posts"
-                                :key="post.id"
-                                :post="post"
-                            />
-                        </div>
+        <div class="relative md:ml-64 bg-blueGray-100">
+            <AdminNavbar/>
+            <HeaderStats/>
+            <div class="px-4 md:px-10 mx-auto w-full">
+                <div class="flex flex-wrap">
+                    <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
+                        <a href="/admin/post-store">
+                            <button
+                                class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                type="button">
+                                Create
+                            </button>
+                        </a>
+                        <PostAdmin
+                            v-for="post in posts"
+                            :key="post.id"
+                            :post="post"
+                        />
                     </div>
-                    <FooterAdmin/>
                 </div>
+                <FooterAdmin/>
             </div>
-        </AuthenticatedLayout>
+        </div>
     </div>
 </template>
