@@ -10,48 +10,48 @@ import CardStats from "@/components/Cards/CardStats.vue";
         <div class="flex flex-wrap">
           <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
             <card-stats
-              statSubtitle="TRAFFIC"
+              statSubtitle="VISITORS"
               statTitle="350,897"
               statArrow="up"
               statPercent="3.48"
               statPercentColor="text-emerald-500"
-              statDescripiron="Since last month"
+              statDescripiron="Site visitors today"
               statIconName="far fa-chart-bar"
               statIconColor="bg-red-500"
             />
           </div>
           <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
             <card-stats
-              statSubtitle="NEW USERS"
+              statSubtitle="CATEGORIES"
               statTitle="2,356"
               statArrow="down"
               statPercent="3.48"
               statPercentColor="text-red-500"
-              statDescripiron="Since last week"
+              statDescripiron="Count of categories"
               statIconName="fas fa-chart-pie"
               statIconColor="bg-orange-500"
             />
           </div>
           <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
             <card-stats
-              statSubtitle="SALES"
+              statSubtitle="POSTS"
               statTitle="924"
               statArrow="down"
               statPercent="1.10"
               statPercentColor="text-orange-500"
-              statDescripiron="Since yesterday"
+              statDescripiron="Count of posts"
               statIconName="fas fa-users"
               statIconColor="bg-pink-500"
             />
           </div>
           <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
             <card-stats
-              statSubtitle="PERFORMANCE"
+              statSubtitle="ONLINE VISITORS"
               statTitle="49,65%"
               statArrow="up"
               statPercent="12"
               statPercentColor="text-emerald-500"
-              statDescripiron="Since last month"
+              statDescripiron="Users on the site at this time"
               statIconName="fas fa-percent"
               statIconColor="bg-emerald-500"
             />

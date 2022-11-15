@@ -92,7 +92,7 @@ function toggleCollapseShow(classes) {
                     <li class="items-center">
                         <SidebarNavLink :href="route('admin')" :active="route().current('admin')"
                                         icon="fas fa-tv mr-2 text-sm">
-                            Dashboard
+                            Admin
                         </SidebarNavLink>
                     </li>
                     <li class="items-center">
