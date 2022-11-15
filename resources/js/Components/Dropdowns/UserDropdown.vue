@@ -1,34 +1,29 @@
-<script>
+<script setup>
 import {createPopper} from "@popperjs/core";
 import {Link} from '@inertiajs/inertia-vue3';
+import {ref} from "vue";
 
-export default {
-    components: {Link},
-    data() {
-        return {
-            dropdownPopoverShow: false
-        };
-    },
-    methods: {
-        toggleDropdown: function (event) {
-            event.preventDefault();
-            if (this.dropdownPopoverShow) {
-                this.dropdownPopoverShow = false;
-            } else {
-                this.dropdownPopoverShow = true;
-                createPopper(this.$refs.btnDropdownRef, this.$refs.popoverDropdownRef, {
-                    placement: "bottom-start",
-                });
-            }
-        },
-    },
-};
+let dropdownPopoverShow = ref(false);
+let btnDropdownRef;
+let popoverDropdownRef;
+
+let toggleDropdown = function (event) {
+    event.preventDefault();
+    if (dropdownPopoverShow.value) {
+        dropdownPopoverShow.value = false;
+    } else {
+        dropdownPopoverShow.value = true;
+        createPopper(btnDropdownRef, popoverDropdownRef, {
+            placement: "bottom-start",
+        });
+    }
+}
 </script>
 <template>
     <div>
         <a
             class="text-blueGray-500 block"
-            href="#pablo"
+            href="#yurii"
             ref="btnDropdownRef"
             v-on:click="toggleDropdown($event)"
         >
@@ -57,7 +52,7 @@ export default {
                v-if="!$page.props.auth.user">
                 Log in
             </a>
-            <Link :href="route('logout')" method="post" v-if="$page.props.auth.user"
+            <Link :href="route('logout')" method="post" v-if="$page.props.auth.user" as="button"
                class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
             >
                 Log Out
