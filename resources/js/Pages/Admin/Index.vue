@@ -6,8 +6,10 @@ import HeaderStats from "@/components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/components/Footers/FooterAdmin.vue";
 import CardPageVisits from "@/components/Cards/CardPageVisits.vue";
 import CardBarChart from "@/Components/Cards/CardBarChart.vue";
+import CardLineChart from "@/Components/Cards/CardLineChart.vue";
+import CardProfile from "@/Components/Cards/CardProfile.vue";
 
-defineProps(['ordersPerMonth']);
+defineProps(['ordersPerMonth', 'profileImg']);
 
 </script>
 
@@ -23,6 +25,8 @@ defineProps(['ordersPerMonth']);
                     <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
                         <CardPageVisits/>
                         <CardBarChart :ordersPerMonth="ordersPerMonth"/>
+                        <CardLineChart :ordersPerMonth="ordersPerMonth"/>
+                        <CardProfile :profileImg="profileImg"/>
                     </div>
                 </div>
                 <FooterAdmin/>

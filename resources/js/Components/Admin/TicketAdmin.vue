@@ -5,6 +5,7 @@ import {useForm} from '@inertiajs/inertia-vue3';
 
 dayjs.extend(relativeTime);
 const props = defineProps(['ticket']);
+props.ticket = [];
 
 const form = useForm({
     message: props.ticket.message,
