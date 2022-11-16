@@ -3,6 +3,7 @@ import Chart from "chart.js";
 import {nextTick, onMounted} from 'vue';
 
 const orders = defineProps(['ordersPerMonth']);
+orders.ordersPerMonth = [];
 
 onMounted(() => {
     nextTick(function () {
