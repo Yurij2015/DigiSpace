@@ -42,9 +42,7 @@ Route::resource('categories', CategoryController::class)
 Route::resource('posts', PostController::class)
     ->only(['index', 'show']);
 
-Route::get('/admin', static function () {
-    return Inertia::render('Admin/Index');
-})->middleware(['auth', 'verified'])->name('admin');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware(['auth', 'verified']);
 
 Route::get('/admin/tickets/', [AdminController::class, 'tickets'])->middleware(['auth', 'verified']);
 

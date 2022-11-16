@@ -5,6 +5,9 @@ import Sidebar from "@/components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/components/Footers/FooterAdmin.vue";
 import CardPageVisits from "@/components/Cards/CardPageVisits.vue";
+import CardBarChart from "@/Components/Cards/CardBarChart.vue";
+
+defineProps(['ordersPerMonth']);
 
 </script>
 
@@ -19,6 +22,7 @@ import CardPageVisits from "@/components/Cards/CardPageVisits.vue";
                 <div class="flex flex-wrap">
                     <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
                         <CardPageVisits/>
+                        <CardBarChart :ordersPerMonth="ordersPerMonth"/>
                     </div>
                 </div>
                 <FooterAdmin/>
