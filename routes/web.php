@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TicketController;
@@ -74,9 +75,7 @@ Route::middleware('auth')->group(function () {
         ->name('admin.posts');
 });
 
-Route::get('profile', static function () {
-    return 'Profile';
-})->name('profile');
+Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.profile');
 Route::get('landing', static function () {
     return 'Landing';
 })->name('landing');
