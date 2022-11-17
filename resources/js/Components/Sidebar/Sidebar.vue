@@ -154,7 +154,7 @@ function toggleCollapseShow(classes) {
                     </li>
 
                     <li class="items-center">
-                        <SidebarNavLink :href="route('profile')" :active="route().current('profile')"
+                        <SidebarNavLink :href="route('admin.profile')" :active="route().current('admin.profile')"
                                         icon="fas fa-user-circle text-blueGray-300 mr-2 text-sm">
                             Profile
                         </SidebarNavLink>
