@@ -34,10 +34,10 @@ function toggleCollapseShow(classes) {
             <!-- User -->
             <ul class="md:hidden items-center flex flex-wrap list-none">
                 <li class="inline-block relative">
-                    <notification-dropdown/>
+                    <NotificationDropdown/>
                 </li>
                 <li class="inline-block relative">
-                    <user-dropdown/>
+                    <UserDropdown/>
                 </li>
             </ul>
             <!-- Collapse -->
