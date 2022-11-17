@@ -11,6 +11,7 @@ import CardProfile from "@/Components/Cards/CardProfile.vue";
 import CardSettings from "@/Components/Cards/CardSettings.vue";
 import CardSocialTraffic from "@/Components/Cards/CardSocialTraffic.vue";
 import CardStats from "@/Components/Cards/CardStats.vue";
+import CardTable from "@/Components/Cards/CardTable.vue";
 
 defineProps(['ordersPerMonth', 'profileImg']);
 
@@ -30,7 +31,8 @@ defineProps(['ordersPerMonth', 'profileImg']);
                         <CardBarChart :ordersPerMonth="ordersPerMonth"/>
                         <CardLineChart :ordersPerMonth="ordersPerMonth"/>
 <!--                        <CardProfile :profileImg="profileImg"/>-->
-                        <CardStats/>
+<!--                        <CardStats/>-->
+                        <CardTable/>
 
                     </div>
                 </div>
