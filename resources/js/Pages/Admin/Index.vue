@@ -8,6 +8,9 @@ import CardPageVisits from "@/components/Cards/CardPageVisits.vue";
 import CardBarChart from "@/Components/Cards/CardBarChart.vue";
 import CardLineChart from "@/Components/Cards/CardLineChart.vue";
 import CardProfile from "@/Components/Cards/CardProfile.vue";
+import CardSettings from "@/Components/Cards/CardSettings.vue";
+import CardSocialTraffic from "@/Components/Cards/CardSocialTraffic.vue";
+import CardStats from "@/Components/Cards/CardStats.vue";
 
 defineProps(['ordersPerMonth', 'profileImg']);
 
@@ -26,7 +29,9 @@ defineProps(['ordersPerMonth', 'profileImg']);
                         <CardPageVisits/>
                         <CardBarChart :ordersPerMonth="ordersPerMonth"/>
                         <CardLineChart :ordersPerMonth="ordersPerMonth"/>
-                        <CardProfile :profileImg="profileImg"/>
+<!--                        <CardProfile :profileImg="profileImg"/>-->
+                        <CardStats/>
+
                     </div>
                 </div>
                 <FooterAdmin/>
