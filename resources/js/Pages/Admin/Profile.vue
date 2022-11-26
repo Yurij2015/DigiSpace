@@ -1,5 +1,5 @@
 <script setup>
-import Navbar from "@/components/Navbars/AuthNavbar.vue";
+import Navbar from "@/Components/Navbars/AuthNavbar.vue";
 
 const team2 = "/img/team-2-800x800.jpg";
 
