@@ -1,5 +1,5 @@
 <script setup>
-import TableDropdown from "@/components/Dropdowns/TableDropdown.vue";
+import TableDropdown from "@/Components/Dropdowns/TableDropdown.vue";
 
 const bootstrap = "img/bootstrap.jpg";
 const angular = "img/angular.jpg";
