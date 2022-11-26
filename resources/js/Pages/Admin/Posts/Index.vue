@@ -1,9 +1,9 @@
 <script setup>
 import PostAdmin from '@/Components/Admin/PostAdmin.vue';
-import AdminNavbar from "@/components/Navbars/AdminNavbar.vue";
-import Sidebar from "@/components/Sidebar/Sidebar.vue";
-import HeaderStats from "@/components/Headers/HeaderStats.vue";
-import FooterAdmin from "@/components/Footers/FooterAdmin.vue";
+import AdminNavbar from "@/Components/Navbars/AdminNavbar.vue";
+import Sidebar from "@/Components/Sidebar/Sidebar.vue";
+import HeaderStats from "@/Components/Headers/HeaderStats.vue";
+import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, Link} from '@inertiajs/inertia-vue3';
 
 defineProps(['posts']);
