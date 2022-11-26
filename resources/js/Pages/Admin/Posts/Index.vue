@@ -4,8 +4,7 @@ import AdminNavbar from "@/components/Navbars/AdminNavbar.vue";
 import Sidebar from "@/components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/components/Footers/FooterAdmin.vue";
-import {Head} from '@inertiajs/inertia-vue3';
-import {Link} from '@inertiajs/inertia-vue3';
+import {Head, Link} from '@inertiajs/inertia-vue3';
 
 defineProps(['posts']);
 </script>
@@ -33,7 +32,6 @@ defineProps(['posts']);
                     <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
                         <div class="flex flex-wrap">
                             <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
-
                                 <PostAdmin
                                     v-for="post in posts"
                                     :key="post.id"
