@@ -1,6 +1,5 @@
 <script setup>
 import Navbar from "@/components/Navbars/AuthNavbar.vue";
-import FooterComponent from "@/components/Footers/Footer.vue";
 
 const team2 = "/img/team-2-800x800.jpg";
 
