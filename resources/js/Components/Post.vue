@@ -10,7 +10,7 @@ import {Link} from '@inertiajs/inertia-vue3';
                 <div>
                     <p class="text-gray-800">{{ post.name }}</p>
                     <p class="text-gray-800">{{ post.category.name }}</p>
-                    <p class="text-gray-900">{{ post.content }}</p>
+                    <p class="text-gray-900"  v-html='post.content'/>
                     <img :src="post.img_path" width="400" />
                 </div>
                 <div>

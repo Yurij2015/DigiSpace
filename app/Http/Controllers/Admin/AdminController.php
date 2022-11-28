@@ -11,6 +11,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
+use Illuminate\Support\Env;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
@@ -97,7 +98,8 @@ class AdminController extends Controller
     public function postForm(): Response
     {
         return Inertia::render('Admin/Posts/Create', [
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'api_key_tinymce' => env('TINY_MCE_API_KEY')
         ]);
     }
 

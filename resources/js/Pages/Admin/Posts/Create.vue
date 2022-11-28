@@ -7,15 +7,17 @@ import Sidebar from "@/Components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
+import Editor from '@tinymce/tinymce-vue'
 
-defineProps(['categories']);
+let props = defineProps(['categories', 'api_key_tinymce']);
+let categories = props.categories;
+let api_key_tinymce = props.api_key_tinymce;
 const form = useForm({
     name: '',
     content: '',
     category_id: '',
     file: ''
 });
-
 </script>
 <template>
     <Head><title>Create post | Admin Panel</title></Head>
@@ -40,14 +42,15 @@ const form = useForm({
                                     <input
                                         v-model="form.name"
                                         placeholder="What is post name?"
-                                        class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                     >
                                     <InputError :message="form.errors.name" class="mt-2"/>
-                                    <input
+                                    <Editor
+                                        :api-key=api_key_tinymce
                                         v-model="form.content"
                                         placeholder="What is post content?"
                                         class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
-                                    >
+                                    ></Editor>
                                     <InputError :message="form.errors.content" class="mt-2"/>
                                     <select
                                         class='block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3'

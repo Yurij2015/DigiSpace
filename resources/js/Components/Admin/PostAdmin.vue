@@ -14,9 +14,7 @@ import {Link} from '@inertiajs/inertia-vue3';
                     <small class="font-normal leading-normal mt-0 mb-4 text-blueGray-800">
                         Category: {{ post.category.name }}
                     </small>
-                    <p class="text-base font-light leading-relaxed mt-0 mb-4 text-emerald-800">
-                        {{ post.content }}
-                    </p>
+                    <p class="text-base font-light leading-relaxed mt-0 mb-4 text-emerald-800" v-html='post.content'/>
                 </div>
                 <div class="flex flex-wrap justify-center">
                     <div class="w-10/12 sm:w-8/12 px-4">
