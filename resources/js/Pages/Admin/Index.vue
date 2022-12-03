@@ -4,13 +4,6 @@ import AdminNavbar from "@/Components/Navbars/AdminNavbar.vue";
 import Sidebar from "@/Components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
-import CardPageVisits from "@/Components/Cards/CardPageVisits.vue";
-import CardBarChart from "@/Components/Cards/CardBarChart.vue";
-import CardLineChart from "@/Components/Cards/CardLineChart.vue";
-import CardSettings from "@/Components/Cards/CardSettings.vue";
-import CardSocialTraffic from "@/Components/Cards/CardSocialTraffic.vue";
-import CardStats from "@/Components/Cards/CardStats.vue";
-import CardTable from "@/Components/Cards/CardTable.vue";
 
 defineProps(['ordersPerMonth', 'profileImg']);
 
@@ -25,25 +18,21 @@ defineProps(['ordersPerMonth', 'profileImg']);
             <HeaderStats/>
             <div class="px-4 md:px-10 mx-auto w-full -m-24">
                 <div>
-                    <div class="flex flex-wrap">
-                        <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-                            <CardLineChart :ordersPerMonth="ordersPerMonth"/>
+
+                    <div
+                        class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
+                        <div class="rounded-t bg-white mb-0 px-6 py-6">
+                            <div class="text-center flex justify-between">
+                                <h6 class="text-blueGray-700 text-xl font-bold">About</h6>
+                            </div>
                         </div>
-                        <div class="w-full xl:w-4/12 px-4">
-                            <CardBarChart :ordersPerMonth="ordersPerMonth"/>
+                        <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+                            <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                                DigiSpace Company
+                            </h6>
+
                         </div>
                     </div>
-                    <div class="flex flex-wrap mt-4">
-                        <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-                            <CardPageVisits/>
-                        </div>
-                        <div class="w-full xl:w-4/12 px-4">
-                            <CardSocialTraffic/>
-                        </div>
-                    </div>
-                    <CardTable/>
-                    <CardSettings/>
-                    <CardStats/>
                 </div>
                 <FooterAdmin/>
             </div>

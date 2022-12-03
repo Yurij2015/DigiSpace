@@ -134,32 +134,6 @@ function toggleCollapseShow(classes) {
                         </SidebarNavLink>
                     </li>
                 </ul>
-
-                <!-- Divider -->
-                <hr class="my-4 md:min-w-full"/>
-                <!-- Heading -->
-                <h6
-                    class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
-                >
-                    No Layout Pages
-                </h6>
-                <!-- Navigation -->
-
-                <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
-                    <li class="items-center">
-                        <SidebarNavLink :href="route('landing')" :active="route().current('landing')"
-                                        icon="fas fa-newspaper text-blueGray-300 mr-2 text-sm">
-                            Landing
-                        </SidebarNavLink>
-                    </li>
-
-                    <li class="items-center">
-                        <SidebarNavLink :href="route('admin.profile')" :active="route().current('admin.profile')"
-                                        icon="fas fa-user-circle text-blueGray-300 mr-2 text-sm">
-                            Profile
-                        </SidebarNavLink>
-                    </li>
-                </ul>
             </div>
         </div>
     </nav>
