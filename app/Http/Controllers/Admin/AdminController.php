@@ -11,7 +11,6 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
-use Illuminate\Support\Env;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
@@ -39,7 +38,7 @@ class AdminController extends Controller
         ]);
     }
 
-    public function categories(): Response
+    final public function categories(): Response
     {
         return Inertia::render('Admin/Categories', [
             'categories' => Category::all(),
@@ -51,7 +50,7 @@ class AdminController extends Controller
      *
      * @return Response
      */
-    public function posts(): Response
+    final public function posts(): Response
     {
         $posts = Post::with('category:id,name')->latest()->get();
         $this->changeImgPathIfNullInPosts($posts);
@@ -60,14 +59,14 @@ class AdminController extends Controller
         ]);
     }
 
-    public function changeImgPathIfNullInPosts($posts): void
+    final public function changeImgPathIfNullInPosts($posts): void
     {
         foreach ($posts as $post) {
             $this->changeImgPathIfNull($post);
         }
     }
 
-    public function changeImgPathIfNull($post): void
+    final public function changeImgPathIfNull($post): void
     {
         if ($post->img_path === 'http://localhost/uploads' || $post->img_path === 'https://localhost/uploads') {
             $post->img_path = 'no_image.png';
@@ -80,7 +79,7 @@ class AdminController extends Controller
      * @param Request $request
      * @return Application|RedirectResponse|Redirector
      */
-    public function categoryStore(Request $request): Application|RedirectResponse|Redirector
+    final public function categoryStore(Request $request): Application|RedirectResponse|Redirector
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -95,7 +94,7 @@ class AdminController extends Controller
      *
      * @return Response
      */
-    public function postForm(): Response
+    final public function postForm(): Response
     {
         return Inertia::render('Admin/Posts/Create', [
             'categories' => Category::all(),
@@ -109,7 +108,7 @@ class AdminController extends Controller
      * @param $post
      * @return Response
      */
-    public function postUpdateForm($post): Response
+    final public function postUpdateForm($post): Response
     {
         $post = Post::where('id', $post)->first();
         $this->changeImgPathIfNull($post);
@@ -127,7 +126,7 @@ class AdminController extends Controller
      * @return Application|Redirector|RedirectResponse
      * @throws AuthorizationException
      */
-    public function postUpdate(Request $request, Post $post): Redirector|RedirectResponse|Application
+    final public function postUpdate(Request $request, Post $post): Redirector|RedirectResponse|Application
     {
         $this->authorize('postUpdate', $post);
         $validated = $request->validate([
@@ -152,7 +151,7 @@ class AdminController extends Controller
      * @return Application|RedirectResponse|Redirector
      * @throws ValidationException
      */
-    public function postSave(Request $request): Application|RedirectResponse|Redirector
+    final public function postSave(Request $request): Application|RedirectResponse|Redirector
     {
         Validator::make($request->all(), [
             'name' => 'required|string|max:255',
@@ -174,7 +173,7 @@ class AdminController extends Controller
         return redirect(route('admin.posts'))->with('message', 'Post Created Successfully');
     }
 
-    public function categoryShow(Category $category): Response
+    final public function categoryShow(Category $category): Response
     {
         $posts = Post::all()->where('category_id', $category->id);
         $this->changeImgPathIfNullInPosts($posts);
@@ -192,7 +191,7 @@ class AdminController extends Controller
      * @return Application|Redirector|RedirectResponse
      * @throws AuthorizationException
      */
-    public function categoryUpdate(Request $request, Category $category): Redirector|RedirectResponse|Application
+    final public function categoryUpdate(Request $request, Category $category): Redirector|RedirectResponse|Application
     {
         $this->authorize('categoryUpdate', $category);
 
@@ -213,7 +212,7 @@ class AdminController extends Controller
      * @return Application|Redirector|RedirectResponse
      * @throws AuthorizationException
      */
-    public function categoryDestroy(Category $category): Redirector|RedirectResponse|Application
+    final public function categoryDestroy(Category $category): Redirector|RedirectResponse|Application
     {
         $this->authorize('categoryDestroy', $category);
         $category->delete();
@@ -227,7 +226,7 @@ class AdminController extends Controller
      * @return Application|Redirector|RedirectResponse
      * @throws AuthorizationException
      */
-    public function postDestroy(Post $post): Redirector|RedirectResponse|Application
+    final public function postDestroy(Post $post): Redirector|RedirectResponse|Application
     {
         $this->authorize('postDestroy', $post);
         $post->delete();
