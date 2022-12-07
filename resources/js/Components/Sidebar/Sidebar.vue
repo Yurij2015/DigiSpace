@@ -29,7 +29,7 @@ function toggleCollapseShow(classes) {
             <!-- Brand -->
             <Link :href="route('admin')"
                   class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0">
-                DigiSpace Admin
+                CMS Admin
             </Link>
             <!-- User -->
             <ul class="md:hidden items-center flex flex-wrap list-none">
@@ -131,6 +131,25 @@ function toggleCollapseShow(classes) {
                         <SidebarNavLink :href="route('register')" :active="route().current('register')"
                                         icon="fas fa-clipboard-list mr-2 text-sm">
                             Register
+                        </SidebarNavLink>
+                    </li>
+                </ul>
+
+                <!-- Divider -->
+                <hr class="my-4 md:min-w-full"/>
+                <!-- Heading -->
+                <h6
+                    class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+                >
+                    No Layout Pages
+                </h6>
+                <!-- Navigation -->
+
+                <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
+                    <li class="items-center">
+                        <SidebarNavLink :href="route('landing')" :active="route().current('landing')"
+                                        icon="fas fa-newspaper text-blueGray-300 mr-2 text-sm">
+                            Landing (Site)
                         </SidebarNavLink>
                     </li>
                 </ul>
