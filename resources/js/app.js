@@ -1,7 +1,7 @@
 import './bootstrap';
-import '../css/vueNotus.css';
 import '../css/app.css';
 import '../css/style.css';
+import '../css/vueNotus.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import {createApp, h} from 'vue';
