@@ -33,7 +33,6 @@ const submit = () => {
             <section class="relative w-full h-full py-40 min-h-screen">
                 <div
                     class="absolute top-0 w-full h-full bg-blueGray-800 bg-no-repeat bg-full"
-                    :style="`background-image: url('${registerBg2}');`"
                 ></div>
                 <div class="container mx-auto px-4 h-full">
                     <div class="flex content-center items-center justify-center h-full">
@@ -59,7 +58,7 @@ const submit = () => {
                                                         class="block uppercase text-blueGray-600 text-xs font-bold mb-2"/>
                                             <TextInput id="email" type="email"
                                                        class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                                       v-model="form.email" required autofocus
+                                                       v-model="form.email" required
                                                        autocomplete="username" placeholder="Email"/>
                                             <InputError class="mt-2" :message="form.errors.email"/>
                                         </div>
