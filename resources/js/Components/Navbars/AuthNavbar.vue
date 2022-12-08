@@ -40,15 +40,15 @@ const setNavbarOpen = function () {
             >
                 <ul class="flex flex-col lg:flex-row list-none mr-auto">
                     <li class="flex items-center">
-                        <a
+                        <Link
                             class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            href="/"
+                            to="/"
                         >
                             <i
                                 class="lg:text-blueGray-200 text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2"
                             />
                             Docs
-                        </a>
+                        </Link>
                     </li>
                 </ul>
                 <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
@@ -56,42 +56,42 @@ const setNavbarOpen = function () {
                         <PagesDropdown/>
                     </li>
                     <li class="flex items-center">
-                        <a
+                        <Link
                             class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            href="/"
+                            to="/"
                             target="_blank"
                         >
                             <i
                                 class="lg:text-blueGray-200 text-blueGray-400 fab fa-facebook text-lg leading-lg"
                             />
                             <span class="lg:hidden inline-block ml-2">Share</span>
-                        </a>
+                        </Link>
                     </li>
 
                     <li class="flex items-center">
-                        <a
+                        <Link
                             class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            href="/"
+                            to="/"
                             target="_blank"
                         >
                             <i
                                 class="lg:text-blueGray-200 text-blueGray-400 fab fa-twitter text-lg leading-lg"
                             />
                             <span class="lg:hidden inline-block ml-2">Tweet</span>
-                        </a>
+                        </Link>
                     </li>
 
                     <li class="flex items-center">
-                        <a
+                        <Link
                             class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            href="/"
+                            to="/"
                             target="_blank"
                         >
                             <i
                                 class="lg:text-blueGray-200 text-blueGray-400 fab fa-github text-lg leading-lg"
                             />
                             <span class="lg:hidden inline-block ml-2">Star</span>
-                        </a>
+                        </Link>
                     </li>
 
                     <li class="flex items-center">
