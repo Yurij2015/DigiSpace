@@ -28,7 +28,7 @@ const submit = () => {
 
 <template>
     <div>
-        <navbar/>
+        <Navbar/>
         <main>
             <section class="relative w-full h-full py-40 min-h-screen">
                 <div
@@ -110,7 +110,7 @@ const submit = () => {
                         </div>
                     </div>
                 </div>
-                <footer-small absolute/>
+                <FooterSmall absolute/>
             </section>
         </main>
     </div>
