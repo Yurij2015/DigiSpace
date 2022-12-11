@@ -30,10 +30,12 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
-                                <NavLink :href="route('tickets.index')" :active="route().current('tickets.index')" v-if="$page.props.auth.user.name">
+                                <NavLink :href="route('tickets.index')" :active="route().current('tickets.index')"
+                                         v-if="$page.props.auth.user">
                                     Tickets
                                 </NavLink>
-                                <NavLink :href="route('admin')" :active="route().current('admin')" v-if="$page.props.auth.user.name">
+                                <NavLink :href="route('admin')" :active="route().current('admin')"
+                                         v-if="$page.props.auth.user">
                                     Admin
                                 </NavLink>
                                 <NavLink :href="route('categories.index')"
@@ -50,8 +52,8 @@ const showingNavigationDropdown = ref(false);
                             <!-- Settings Dropdown -->
                             <div class="ml-3 relative">
                                 <a type="button" :href="route('login')"
-                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
-                                        v-if="!$page.props.auth.user">
+                                   class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                   v-if="!$page.props.auth.user">
                                     Log in
                                 </a>
                                 <Dropdown align="right" width="48" v-if="$page.props.auth.user">
@@ -71,7 +73,8 @@ const showingNavigationDropdown = ref(false);
                                         </span>
                                     </template>
                                     <template #content>
-                                        <DropdownLink :href="route('logout')" method="post" as="button">
+                                        <DropdownLink :href="route('logout')" method="post" as="button"
+                                                      v-if="$page.props.auth.user">
                                             Log Out
                                         </DropdownLink>
                                     </template>
@@ -105,29 +108,43 @@ const showingNavigationDropdown = ref(false);
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('tickets.index')" :active="route().current('tickets.index')">
+                        <ResponsiveNavLink :href="route('tickets.index')" :active="route().current('tickets.index')"
+                                           v-if="$page.props.auth.user">
                             Tickets
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('admin')" :active="route().current('admin')">
+                        <ResponsiveNavLink :href="route('admin')" :active="route().current('admin')"
+                                           v-if="$page.props.auth.user">
                             Admin
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('categories.index')"
+                                           :active="route().current('categories.index')">
+                            Categories
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('posts.index')" :active="route().current('posts.index')">
+                            Posts
                         </ResponsiveNavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->
-                    <div class="pt-4 pb-1 border-t border-gray-200">
+                    <div class="pt-4 pb-1 border-t border-gray-200" v-if="$page.props.auth.user">
                         <div class="px-4">
-                            <div v-if="$page.props.auth.user" class="font-medium text-base text-gray-800">
+                            <div class="font-medium text-base text-gray-800">
                                 {{ $page.props.auth.user.name }}
                             </div>
-                            <div v-if="$page.props.auth.user" class="font-medium text-sm text-gray-500">
+                            <div class="font-medium text-sm text-gray-500">
                                 {{ $page.props.auth.user.email }}
                             </div>
-                            <div v-if="!$page.props.auth.user" class="font-medium text-base text-gray-800"></div>
-                            <div v-if="!$page.props.auth.user" class="font-medium text-sm text-gray-500"></div>
                         </div>
-                        <div class="mt-3 space-y-1">
+                        <div class="mt-3 space-y-1" v-if="$page.props.auth.user">
                             <ResponsiveNavLink :href="route('logout')" method="post" as="button">
                                 Log Out
+                            </ResponsiveNavLink>
+                        </div>
+                    </div>
+                    <div class="pb-1 border-t border-gray-200" v-if="!$page.props.auth.user">
+                        <div class="mt-1 space-y-1">
+                            <ResponsiveNavLink :href="route('login')">
+                                LogIn
                             </ResponsiveNavLink>
                         </div>
                     </div>
