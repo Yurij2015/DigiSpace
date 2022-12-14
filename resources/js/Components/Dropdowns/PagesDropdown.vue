@@ -2,6 +2,7 @@
 import {createPopper} from "@popperjs/core";
 import {Link} from '@inertiajs/inertia-vue3';
 import {ref} from "vue";
+import DropdownLink from "@/Components/DropdownLink.vue";
 
 let dropdownPopoverShow = ref(false);
 let btnDropdownRef;
@@ -42,9 +43,8 @@ let toggleDropdown = function (event) {
       >
         Admin Layout
       </span>
-            <Link
-                to="/admin/dashboard"
-                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+            <Link :href="route('dashboard')"
+                  class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
             >
                 Dashboard
             </Link>
@@ -72,18 +72,22 @@ let toggleDropdown = function (event) {
             >
         Auth Layout
       </span>
-            <Link
-                to="/auth/login"
-                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+            <Link :href="route('login')" v-if="!$page.props.auth.user"
+                  class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
             >
                 Login
             </Link>
-            <Link
-                to="/auth/register"
-                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+            <Link :href="route('register')" v-if="!$page.props.auth.user"
+                  class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
             >
                 Register
             </Link>
+
+            <DropdownLink :href="route('logout')" method="post"
+                  v-if="$page.props.auth.user" as="button">
+                Log Out
+            </DropdownLink>
+
             <div class="h-0 mx-4 my-2 border border-solid border-blueGray-100"/>
             <span
                 class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"

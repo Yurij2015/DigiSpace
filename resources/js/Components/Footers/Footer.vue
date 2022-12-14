@@ -146,14 +146,13 @@
             >
                 <div class="w-full md:w-4/12 px-4 mx-auto text-center">
                     <div class="text-sm text-blueGray-500 font-semibold py-1">
-                        Copyright © {{ date }} DigiSpace by
+                        Copyright © {{ date }} DigiSpace CMS by
                         <a
                             href="/"
                             class="text-blueGray-500 hover:text-blueGray-800"
                         >
-                            DigiSpace CMS
+                            DigiSpace
                         </a>
-                        .
                     </div>
                 </div>
             </div>
