@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
@@ -29,9 +30,7 @@ Route::get('/', static function () {
     ]);
 });
 
-Route::get('/dashboard', static function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth']);
 
 Route::resource('tickets', TicketController::class)
     ->only(['index', 'store', 'update', 'destroy'])
