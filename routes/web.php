@@ -25,10 +25,17 @@ Route::get('/', static function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+        'laravelVersion' => Application::VERSION
     ]);
 });
+
+Route::get('about', static function () {
+    return "About";
+})->name('about');
+
+Route::get('services', static function () {
+    return "Services";
+})->name('services');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth']);
 

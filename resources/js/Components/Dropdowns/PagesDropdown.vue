@@ -3,6 +3,7 @@ import {createPopper} from "@popperjs/core";
 import {Link} from '@inertiajs/inertia-vue3';
 import {ref} from "vue";
 import DropdownLink from "@/Components/DropdownLink.vue";
+import Categories from "@/Pages/Admin/Categories.vue";
 
 let dropdownPopoverShow = ref(false);
 let btnDropdownRef;
@@ -41,7 +42,7 @@ let toggleDropdown = function (event) {
       <span
           class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
       >
-        Admin Layout
+        Menu
       </span>
             <Link :href="route('dashboard')"
                   class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
@@ -49,28 +50,22 @@ let toggleDropdown = function (event) {
                 Dashboard
             </Link>
             <Link
-                to="/admin/settings"
+                :href="route('categories.index')"
                 class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
             >
-                Settings
+                Categories
             </Link>
             <Link
-                to="/admin/tables"
+                :href="route('posts.index')"
                 class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
             >
-                Tables
-            </Link>
-            <Link
-                to="/admin/maps"
-                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-            >
-                Maps
+                Posts
             </Link>
             <div class="h-0 mx-4 my-2 border border-solid border-blueGray-100"/>
             <span
                 class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
             >
-        Auth Layout
+        Auth
       </span>
             <Link :href="route('login')" v-if="!$page.props.auth.user"
                   class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
@@ -84,7 +79,7 @@ let toggleDropdown = function (event) {
             </Link>
 
             <DropdownLink :href="route('logout')" method="post"
-                  v-if="$page.props.auth.user" as="button">
+                          v-if="$page.props.auth.user" as="button">
                 Log Out
             </DropdownLink>
 
@@ -92,19 +87,19 @@ let toggleDropdown = function (event) {
             <span
                 class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
             >
-        No Layout
+        Pages
       </span>
             <Link
-                to="/landing"
+                :href="route('about')"
                 class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
             >
-                Landing
+                About
             </Link>
             <Link
-                to="/profile"
+                :href="route('services')"
                 class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
             >
-                Profile
+                Services
             </Link>
         </div>
     </div>
