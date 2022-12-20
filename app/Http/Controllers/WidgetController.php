@@ -41,7 +41,7 @@ class WidgetController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Widget $widget
+     * @param  \App\Models\Widget  $widget
      * @return \Illuminate\Http\Response
      */
     public function show(Widget $widget)
@@ -52,7 +52,7 @@ class WidgetController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Widget $widget
+     * @param  \App\Models\Widget  $widget
      * @return \Illuminate\Http\Response
      */
     public function edit(Widget $widget)
@@ -64,7 +64,7 @@ class WidgetController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param Widget $widget
+     * @param  \App\Models\Widget  $widget
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Widget $widget)
@@ -75,7 +75,7 @@ class WidgetController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Widget $widget
+     * @param  \App\Models\Widget  $widget
      * @return \Illuminate\Http\Response
      */
     public function destroy(Widget $widget)

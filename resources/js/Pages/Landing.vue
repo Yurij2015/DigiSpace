@@ -2,12 +2,15 @@
 import {Link} from '@inertiajs/inertia-vue3';
 import Navbar from "@/components/Navbars/AuthNavbar.vue";
 import FooterComponent from "@/components/Footers/Footer.vue";
+import WidgetHeader from "@/components/Landing/WidgetHeader.vue"
+import WidgetMiddleLeft from "@/Components/Landing/WidgetMiddleLeft.vue";
 
 const team1 = "img/team-1-800x800.jpg";
 const team2 = "img/team-2-800x800.jpg";
 const team3 = "img/team-3-800x800.jpg";
 const team4 = "img/team-4-470x470.png";
 const backgroundImage = "background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80');"
+const props = defineProps(['widgets']);
 
 </script>
 
@@ -31,14 +34,7 @@ const backgroundImage = "background-image: url('https://images.unsplash.com/phot
                     <div class="items-center flex flex-wrap">
                         <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                             <div class="pr-12">
-                                <h1 class="text-white font-semibold text-5xl">
-                                    Your story starts with us.
-                                </h1>
-                                <p class="mt-4 text-lg text-blueGray-200">
-                                    This is a simple example of a Landing Page you can build using
-                                    Vue Notus. It features multiple CSS components based on the
-                                    Tailwind CSS design system.
-                                </p>
+                                <WidgetHeader :widgetHeader=props.widgets.widgetHeader></WidgetHeader>
                             </div>
                         </div>
                     </div>
@@ -72,16 +68,8 @@ const backgroundImage = "background-image: url('https://images.unsplash.com/phot
                                 class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
                             >
                                 <div class="px-4 py-5 flex-auto">
-                                    <div
-                                        class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400"
-                                    >
-                                        <i class="fas fa-award"></i>
-                                    </div>
-                                    <h6 class="text-xl font-semibold">Awarded Agency</h6>
-                                    <p class="mt-2 mb-4 text-blueGray-500">
-                                        Divide details about your product or agency work into parts.
-                                        A paragraph describing a feature will be enough.
-                                    </p>
+                                    <WidgetMiddleLeft
+                                        :widgetMiddleLeft=props.widgets.widgetMiddleLeft></WidgetMiddleLeft>
                                 </div>
                             </div>
                         </div>
