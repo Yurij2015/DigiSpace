@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TicketController;
 use Illuminate\Foundation\Application;
@@ -21,13 +22,7 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', static function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION
-    ]);
-});
+Route::get('/', [LandingController::class, 'index']);
 
 Route::get('about', static function () {
     return "About";
