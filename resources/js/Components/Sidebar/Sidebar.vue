@@ -108,6 +108,12 @@ function toggleCollapseShow(classes) {
                             Categories
                         </SidebarNavLink>
                     </li>
+                    <li class="items-center">
+                        <SidebarNavLink :href="route('admin.widgets')" :active="route().current('admin.widgets')"
+                                        icon="fas fa-cog mr-2 text-sm">
+                            Widgets
+                        </SidebarNavLink>
+                    </li>
                 </ul>
 
                 <!-- Divider -->

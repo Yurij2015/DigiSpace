@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbars/AuthNavbar.vue";
 import FooterComponent from "@/components/Footers/Footer.vue";
 import WidgetHeader from "@/components/Landing/WidgetHeader.vue"
 import WidgetMiddleLeft from "@/Components/Landing/WidgetMiddleLeft.vue";
+import WidgetMiddleCenter from "@/Components/Landing/WidgetMiddleCenter.vue";
+import WidgetMiddleRight from "@/Components/Landing/WidgetMiddleRight.vue";
 
 const team1 = "img/team-1-800x800.jpg";
 const team2 = "img/team-2-800x800.jpg";
@@ -79,16 +81,8 @@ const props = defineProps(['widgets']);
                                 class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
                             >
                                 <div class="px-4 py-5 flex-auto">
-                                    <div
-                                        class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400"
-                                    >
-                                        <i class="fas fa-retweet"></i>
-                                    </div>
-                                    <h6 class="text-xl font-semibold">Free Revisions</h6>
-                                    <p class="mt-2 mb-4 text-blueGray-500">
-                                        Keep you user engaged by providing meaningful information.
-                                        Remember that by this time, the user is curious.
-                                    </p>
+                                    <WidgetMiddleCenter
+                                        :widgetMiddleCenter=props.widgets.widgetMiddleCenter></WidgetMiddleCenter>
                                 </div>
                             </div>
                         </div>
@@ -98,16 +92,7 @@ const props = defineProps(['widgets']);
                                 class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
                             >
                                 <div class="px-4 py-5 flex-auto">
-                                    <div
-                                        class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400"
-                                    >
-                                        <i class="fas fa-fingerprint"></i>
-                                    </div>
-                                    <h6 class="text-xl font-semibold">Verified Company</h6>
-                                    <p class="mt-2 mb-4 text-blueGray-500">
-                                        Write a few lines about each one. A paragraph describing a
-                                        feature will be enough. Keep you user engaged!
-                                    </p>
+                                    <WidgetMiddleRight :widgetMiddleRight=props.widgets.widgetMiddleRight></WidgetMiddleRight>
                                 </div>
                             </div>
                         </div>
