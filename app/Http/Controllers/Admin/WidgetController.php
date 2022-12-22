@@ -12,7 +12,8 @@ class WidgetController extends Controller
     final public function index(): Response
     {
         return Inertia::render('Admin/Widgets/Index', [
-            'widgets' => Widget::all(),
+//            'widgets' => Widget::all(),
+            'widgets' => Widget::with('widgetCategory:id,title')->latest()->get(),
         ]);
     }
 }
