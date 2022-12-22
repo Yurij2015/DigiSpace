@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\WidgetController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PostController;
@@ -74,6 +75,13 @@ Route::middleware('auth')->group(function () {
         ->name('admin.post-update');
     Route::get('/admin/posts/', [AdminController::class, 'posts'])
         ->name('admin.posts');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/widgets/', [WidgetController::class, 'index'])
+        ->name('admin.widgets');
+    Route::get('admin/widget-update/{widget}', [WidgetController::class, 'update'])
+        ->name('admin.widget-update');
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.profile');
