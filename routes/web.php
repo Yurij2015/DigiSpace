@@ -82,6 +82,8 @@ Route::middleware('auth')->group(function () {
         ->name('admin.widgets');
     Route::get('admin/widget-update/{widget}', [WidgetController::class, 'update'])
         ->name('admin.widget-update');
+    Route::get('admin/widget-form', [WidgetController::class, 'widgetForm'])
+        ->name('admin.widget-form');
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.profile');
