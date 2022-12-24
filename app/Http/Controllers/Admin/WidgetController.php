@@ -21,25 +21,11 @@ class WidgetController extends Controller
     final public function index(WidgetService $widgetService): Response
     {
         $widgets = Widget::with('widgetCategory:id,title')->latest()->get();
-        $this->changeImgPathIfNullInPosts($widgets);
+        $widgetService->changeImgPathIfNullInPosts($widgets);
         return Inertia::render('Admin/Widgets/Index', [
             'widgets' => $widgets,
 
         ]);
-    }
-
-    final public function changeImgPathIfNullInPosts($widgets): void
-    {
-        foreach ($widgets as $widget) {
-            $this->changeImgPathIfNull($widget);
-        }
-    }
-
-    final public function changeImgPathIfNull($widget): void
-    {
-        if ($widget->widget_image === 'http://localhost/uploads/widgets' || $widget->widget_image === 'https://localhost/uploads/widgets') {
-            $widget->widget_image = 'no_image.png';
-        }
     }
 
     /**
@@ -72,7 +58,7 @@ class WidgetController extends Controller
             'file' => '',
         ])->validate();
 
-        if($request->file){
+        if ($request->file) {
             $fileName = time() . '.' . $request->file->extension();
             $request->file->move(public_path('uploads/widgets'), $fileName);
         } else {
