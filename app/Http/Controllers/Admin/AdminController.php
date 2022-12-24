@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Ticket;
+use App\Services\PostService;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
@@ -50,27 +51,13 @@ class AdminController extends Controller
      *
      * @return Response
      */
-    final public function posts(): Response
+    final public function posts(PostService $postService): Response
     {
         $posts = Post::with('category:id,name')->latest()->get();
-        $this->changeImgPathIfNullInPosts($posts);
+        $postService->changeImgPathIfNullInPosts($posts);
         return Inertia::render('Admin/Posts/Index', [
             'posts' => $posts,
         ]);
-    }
-
-    final public function changeImgPathIfNullInPosts($posts): void
-    {
-        foreach ($posts as $post) {
-            $this->changeImgPathIfNull($post);
-        }
-    }
-
-    final public function changeImgPathIfNull($post): void
-    {
-        if ($post->img_path === 'http://localhost/uploads' || $post->img_path === 'https://localhost/uploads') {
-            $post->img_path = 'no_image.png';
-        }
     }
 
     /**
