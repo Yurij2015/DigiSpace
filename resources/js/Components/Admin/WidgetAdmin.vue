@@ -25,7 +25,7 @@ import {Link} from '@inertiajs/inertia-vue3';
                            v-html='widget.content'/>
                     </div>
                     <div class="w-1/12 sm:w-1/12">
-                        <img :src="widget.widget_image" v-if="widget.widget_image" alt="..."
+                        <img :src="widget.widget_image" alt="..."
                              class="shadow rounded max-w-full h-auto align-middle border-none"/>
                     </div>
                     <div class="w-2/12 sm:w-2/12">

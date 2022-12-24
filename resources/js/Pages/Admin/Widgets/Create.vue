@@ -8,8 +8,8 @@ import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
 
-let props = defineProps(['widgetCcategories', 'api_key_tinymce']);
-let widgetCcategories = props.widgetCcategories;
+let props = defineProps(['widgetCategories', 'api_key_tinymce']);
+let widgetCategories = props.widgetCategories;
 let api_key_tinymce = props.api_key_tinymce;
 const form = useForm({
     title: '',
@@ -39,7 +39,7 @@ const form = useForm({
                         <div class="flex flex-wrap">
                             <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
                                 <form
-                                    @submit.prevent="form.post(route('admin.post-store'), { onSuccess: () => form.reset() })">
+                                    @submit.prevent="form.post(route('admin.widget-save'), { onSuccess: () => form.reset() })">
                                     <input
                                         v-model="form.title"
                                         placeholder="What is widget title?"
@@ -69,10 +69,9 @@ const form = useForm({
                                     <select
                                         class='block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3'
                                         v-model='form.widget_category_id'>
-                                        <option v-for='widgetCcategory in widgetCcategories'
-                                                :value='widgetCcategory.id'>{{
-                                                widgetCcategory.title
-                                            }}
+                                        <option v-for='widgetCategory in widgetCategories'
+                                                :value='widgetCategory.id'>
+                                            {{ widgetCategory.title }}
                                         </option>
                                     </select>
                                     <InputError :message="form.errors.widget_category_id" class="mt-2"/>
