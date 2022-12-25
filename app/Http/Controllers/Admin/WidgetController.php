@@ -28,7 +28,7 @@ class WidgetController extends Controller
     }
 
     /**
-     * Send widtetCategories to view, render post create view.
+     * Send widtetCategories to view, render widget create view.
      * @return Response
      */
     final public function widgetForm(): Response
