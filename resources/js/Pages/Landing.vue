@@ -6,6 +6,7 @@ import WidgetHeader from "@/components/Landing/WidgetHeader.vue"
 import WidgetMiddleLeft from "@/Components/Landing/WidgetMiddleLeft.vue";
 import WidgetMiddleCenter from "@/Components/Landing/WidgetMiddleCenter.vue";
 import WidgetMiddleRight from "@/Components/Landing/WidgetMiddleRight.vue";
+import WidgetBodyTopLeft from "@/Components/Landing/WidgetBodyTopLeft.vue";
 
 const team1 = "img/team-1-800x800.jpg";
 const team2 = "img/team-2-800x800.jpg";
@@ -92,7 +93,8 @@ const props = defineProps(['widgets']);
                                 class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
                             >
                                 <div class="px-4 py-5 flex-auto">
-                                    <WidgetMiddleRight :widgetMiddleRight=props.widgets.widgetMiddleRight></WidgetMiddleRight>
+                                    <WidgetMiddleRight
+                                        :widgetMiddleRight=props.widgets.widgetMiddleRight></WidgetMiddleRight>
                                 </div>
                             </div>
                         </div>
@@ -100,31 +102,7 @@ const props = defineProps(['widgets']);
 
                     <div class="flex flex-wrap items-center mt-32">
                         <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
-                            <div
-                                class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white"
-                            >
-                                <i class="fas fa-user-friends text-xl"></i>
-                            </div>
-                            <h3 class="text-3xl mb-2 font-semibold leading-normal">
-                                Working with us is a pleasure
-                            </h3>
-                            <p
-                                class="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600"
-                            >
-                                Don't let your uses guess by attaching tooltips and popoves to
-                                any element. Just make sure you enable them first via
-                                JavaScript.
-                            </p>
-                            <p
-                                class="text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600"
-                            >
-                                The kit comes with three pre-built pages to help you get started
-                                faster. You can change the text and images and you're good to
-                                go. Just make sure you enable them first via JavaScript.
-                            </p>
-                            <Link to="/" class="font-bold text-blueGray-700 mt-8">
-                                Check free DigiSpace CMS!
-                            </Link>
+                            <WidgetBodyTopLeft :widgetBodyTopLeft=props.widgets.widgetBodyTopLeft></WidgetBodyTopLeft>
                         </div>
 
                         <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">

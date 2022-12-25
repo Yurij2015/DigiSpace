@@ -1,15 +1,18 @@
 <script setup>
-defineProps(['widgetMiddleRight']);
+import {Link} from '@inertiajs/inertia-vue3';
+
+defineProps(['widgetBodyTopLeft']);
 </script>
 <template>
     <div
-        class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400"
+        class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white"
     >
-        <!--        <i class="fas fa-fingerprint"></i>-->
-        <i :class="widgetMiddleRight.icon" v-if="widgetMiddleRight"></i>
+        <i :class="widgetBodyTopLeft.icon" class="text-xl" v-if="widgetBodyTopLeft"></i>
     </div>
-    <h6 class="text-xl font-semibold" v-if="widgetMiddleRight">{{ widgetMiddleRight.title }}</h6>
-    <p class="mt-2 mb-4 text-blueGray-500" v-if="widgetMiddleRight">
-        {{ widgetMiddleRight.content }}
-    </p>
+    <h3 class="text-3xl mb-2 font-semibold leading-normal" v-if="widgetBodyTopLeft">{{ widgetBodyTopLeft.title }}</h3>
+    <div v-if="widgetBodyTopLeft" v-html="widgetBodyTopLeft.content">
+    </div>
+    <Link to="/" class="font-bold text-blueGray-700 mt-8">
+        {{ widgetBodyTopLeft.subtitle }}
+    </Link>
 </template>

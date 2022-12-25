@@ -62,7 +62,7 @@ class WidgetSeeder extends Seeder
                 "widget_category_id" => 3,
                 "icon" => "fas fa-user-friends",
                 "widget_image" => null,
-                "content" => "Don't let your uses guess by attaching tooltips and popoves to any element. Just make sure you enable them first via JavaScript.\n\nThe kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go. Just make sure you enable them first via JavaScript.",
+                "content" => "<p class='text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600'>Don't let your uses guess by attaching tooltips and popoves to any element. Just make sure you enable them first via JavaScript. </p><p class='text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600'>The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go. Just make sure you enable them first via JavaScript.</p>",
                 'created_at' => now(),
                 'updated_at' => now()
             ],
