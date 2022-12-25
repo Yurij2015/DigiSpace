@@ -57,15 +57,12 @@ class WidgetController extends Controller
             'widget_category_id' => 'int',
             'file' => '',
         ])->validate();
-
         if ($request->file) {
             $fileName = time() . '.' . $request->file->extension();
             $request->file->move(public_path('uploads/widgets'), $fileName);
         } else {
             $fileName = NULL;
         }
-
-
         Widget::create([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
@@ -119,6 +116,18 @@ class WidgetController extends Controller
             $widget->widget_image = $fileName;
         }
         $widget->update($validated);
+        return redirect(route('admin.widgets'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param Widget $widget
+     * @return Application|Redirector|RedirectResponse
+     */
+    final public function widgetDestroy(Widget $widget): Redirector|RedirectResponse|Application
+    {
+        $widget->delete();
         return redirect(route('admin.widgets'));
     }
 }

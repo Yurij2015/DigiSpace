@@ -88,6 +88,8 @@ Route::middleware('auth')->group(function () {
         ->name('admin.widget-save');
     Route::put('admin/widget-update/{widget}', [WidgetController::class, 'widgetUpdate'])
         ->name('admin.widget-update');
+    Route::delete('admin/widget-destroy/{widget}', [WidgetController::class, 'widgetDestroy'])
+        ->name('admin.widget-destroy');
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.profile');

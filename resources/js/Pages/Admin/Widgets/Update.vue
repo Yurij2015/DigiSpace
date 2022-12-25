@@ -60,6 +60,8 @@ const form = useForm({
                                     <Editor
                                         api-key="7pxxebfatsrkizfz23o8eh0fz5wpqja4k03eq2z1hzpyqy5h"
                                         v-model="form.content"
+                                        plugins="code"
+                                        toolbar = "code"
                                         placeholder="What is post content?"
                                         class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                     />
