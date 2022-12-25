@@ -1,5 +1,4 @@
 <script setup>
-import {Link} from '@inertiajs/inertia-vue3';
 import Navbar from "@/components/Navbars/AuthNavbar.vue";
 import FooterComponent from "@/components/Footers/Footer.vue";
 import WidgetHeader from "@/components/Landing/WidgetHeader.vue"
@@ -7,6 +6,7 @@ import WidgetMiddleLeft from "@/Components/Landing/WidgetMiddleLeft.vue";
 import WidgetMiddleCenter from "@/Components/Landing/WidgetMiddleCenter.vue";
 import WidgetMiddleRight from "@/Components/Landing/WidgetMiddleRight.vue";
 import WidgetBodyTopLeft from "@/Components/Landing/WidgetBodyTopLeft.vue";
+import WidgetBodyTopRight from "@/Components/Landing/WidgetBodyTopRight.vue";
 
 const team1 = "img/team-1-800x800.jpg";
 const team2 = "img/team-2-800x800.jpg";
@@ -62,7 +62,6 @@ const props = defineProps(['widgets']);
                     </svg>
                 </div>
             </div>
-
             <section class="pb-20 bg-blueGray-200 -mt-24">
                 <div class="container mx-auto px-4">
                     <div class="flex flex-wrap">
@@ -106,36 +105,8 @@ const props = defineProps(['widgets']);
                         </div>
 
                         <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
-                            <div
-                                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-emerald-500"
-                            >
-                                <img
-                                    alt="..."
-                                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
-                                    class="w-full align-middle rounded-t-lg"
-                                />
-                                <blockquote class="relative p-8 mb-4">
-                                    <svg
-                                        preserveAspectRatio="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 583 95"
-                                        class="absolute left-0 w-full block h-95-px -top-94-px"
-                                    >
-                                        <polygon
-                                            points="-30,95 583,95 583,65"
-                                            class="text-emerald-500 fill-current"
-                                        ></polygon>
-                                    </svg>
-                                    <h4 class="text-xl font-bold text-white">
-                                        Top Notch Services
-                                    </h4>
-                                    <p class="text-md font-light mt-2 text-white">
-                                        The Arctic Ocean freezes every winter and much of the
-                                        sea-ice then thaws every summer, and that process will
-                                        continue whatever happens.
-                                    </p>
-                                </blockquote>
-                            </div>
+                            <WidgetBodyTopRight
+                                :widgetBodyTopRight=props.widgets.widgetBodyTopRight></WidgetBodyTopRight>
                         </div>
                     </div>
                 </div>

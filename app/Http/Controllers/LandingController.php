@@ -15,7 +15,7 @@ class LandingController extends Controller
         $widgetMiddleCenter = Widget::where('id', 3)->first();
         $widgetMiddleRight = Widget::where('id', 4)->first();
         $widgetBodyTopLeft = Widget::where('id', 5)->first();
-
+        $widgetBodyTopRight = Widget::where('id', 6)->first();
 
         return Inertia::render('Landing', [
             'widgets' => [
@@ -23,7 +23,8 @@ class LandingController extends Controller
                 'widgetMiddleLeft' => $widgetMiddleLeft,
                 'widgetMiddleCenter' => $widgetMiddleCenter,
                 'widgetMiddleRight' => $widgetMiddleRight,
-                'widgetBodyTopLeft' => $widgetBodyTopLeft
+                'widgetBodyTopLeft' => $widgetBodyTopLeft,
+                'widgetBodyTopRight' => $widgetBodyTopRight
             ],
         ]);
     }
