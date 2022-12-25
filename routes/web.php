@@ -80,12 +80,14 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/admin/widgets/', [WidgetController::class, 'index'])
         ->name('admin.widgets');
-    Route::get('admin/widget-update/{widget}', [WidgetController::class, 'update'])
+    Route::get('admin/widget-update/{widget}', [WidgetController::class, 'widgetUpdateForm'])
         ->name('admin.widget-update');
     Route::get('admin/widget-form', [WidgetController::class, 'widgetForm'])
         ->name('admin.widget-form');
     Route::post('admin/widget-save', [WidgetController::class, 'widgetSave'])
         ->name('admin.widget-save');
+    Route::put('admin/widget-update/{widget}', [WidgetController::class, 'widgetUpdate'])
+        ->name('admin.widget-update');
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.profile');
