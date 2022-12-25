@@ -7,6 +7,7 @@ import WidgetMiddleCenter from "@/Components/Landing/WidgetMiddleCenter.vue";
 import WidgetMiddleRight from "@/Components/Landing/WidgetMiddleRight.vue";
 import WidgetBodyTopLeft from "@/Components/Landing/WidgetBodyTopLeft.vue";
 import WidgetBodyTopRight from "@/Components/Landing/WidgetBodyTopRight.vue";
+import WidgetBodyBottomLeft from "@/Components/Landing/WidgetBodyBottomLeft.vue";
 
 const team1 = "img/team-1-800x800.jpg";
 const team2 = "img/team-2-800x800.jpg";
@@ -135,13 +136,9 @@ const props = defineProps(['widgets']);
 
                 <div class="container mx-auto px-4">
                     <div class="items-center flex flex-wrap">
-                        <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
-                            <img
-                                alt="..."
-                                class="max-w-full rounded-lg shadow-lg"
-                                src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-                            />
-                        </div>
+                        <WidgetBodyBottomLeft
+                            :widgetBodyBottomLeft=props.widgets.widgetBodyBottomLeft></WidgetBodyBottomLeft>
+
                         <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
                             <div class="md:pr-12">
                                 <div
