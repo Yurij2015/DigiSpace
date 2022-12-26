@@ -7,8 +7,9 @@ import WidgetMiddleCenter from "@/Components/Landing/WidgetMiddleCenter.vue";
 import WidgetMiddleRight from "@/Components/Landing/WidgetMiddleRight.vue";
 import WidgetBodyTopLeft from "@/Components/Landing/WidgetBodyTopLeft.vue";
 import WidgetBodyTopRight from "@/Components/Landing/WidgetBodyTopRight.vue";
-import WidgetBodyBottomLeft from "@/Components/Landing/WidgetBodyBottomLeft.vue";
-import WidgetBodyBottomRight from "@/Components/Landing/WidgetBodyBottomRight.vue";
+import WidgetBodyTopSecondLeft from "@/Components/Landing/WidgetBodyTopSecondLeft.vue";
+import WidgetBodyTopSecondRight from "@/Components/Landing/WidgetBodyTopSecondRight.vue";
+import WidgetBodyMiddleTop from "@/Components/Landing/WidgetBodyMiddleTop.vue";
 
 const team1 = "img/team-1-800x800.jpg";
 const team2 = "img/team-2-800x800.jpg";
@@ -137,11 +138,11 @@ const props = defineProps(['widgets']);
 
                 <div class="container mx-auto px-4">
                     <div class="items-center flex flex-wrap">
-                        <WidgetBodyBottomLeft
-                            :widgetBodyBottomLeft=props.widgets.widgetBodyBottomLeft></WidgetBodyBottomLeft>
+                        <WidgetBodyTopSecondLeft
+                            :widgetBodyTopSecondLeft=props.widgets.widgetBodyTopSecondLeft></WidgetBodyTopSecondLeft>
 
-                        <WidgetBodyBottomRight
-                            :widgetBodyBottomRight=props.widgets.widgetBodyBottomRight></WidgetBodyBottomRight>
+                        <WidgetBodyTopSecondRight
+                            :widgetBodyTopSecondRight=props.widgets.widgetBodyTopSecondRight></WidgetBodyTopSecondRight>
 
                     </div>
                 </div>
@@ -150,14 +151,7 @@ const props = defineProps(['widgets']);
             <section class="pt-20 pb-48">
                 <div class="container mx-auto px-4">
                     <div class="flex flex-wrap justify-center text-center mb-24">
-                        <div class="w-full lg:w-6/12 px-4">
-                            <h2 class="text-4xl font-semibold">Here are our heroes</h2>
-                            <p class="text-lg leading-relaxed m-4 text-blueGray-500">
-                                According to the National Oceanic and Atmospheric
-                                Administration, Ted, Scambos, NSIDClead scentist, puts the
-                                potentially record maximum.
-                            </p>
-                        </div>
+                        <WidgetBodyMiddleTop :widgetBodyMiddleTop=props.widgets.widgetBodyMiddleTop></WidgetBodyMiddleTop>
                     </div>
                     <div class="flex flex-wrap">
                         <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
