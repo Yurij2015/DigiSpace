@@ -7,6 +7,8 @@ import WidgetMiddleCenter from "@/Components/Landing/WidgetMiddleCenter.vue";
 import WidgetMiddleRight from "@/Components/Landing/WidgetMiddleRight.vue";
 import WidgetBodyTopLeft from "@/Components/Landing/WidgetBodyTopLeft.vue";
 import WidgetBodyTopRight from "@/Components/Landing/WidgetBodyTopRight.vue";
+import WidgetBodyBottomLeft from "@/Components/Landing/WidgetBodyBottomLeft.vue";
+import WidgetBodyBottomRight from "@/Components/Landing/WidgetBodyBottomRight.vue";
 
 const team1 = "img/team-1-800x800.jpg";
 const team2 = "img/team-2-800x800.jpg";
@@ -135,76 +137,12 @@ const props = defineProps(['widgets']);
 
                 <div class="container mx-auto px-4">
                     <div class="items-center flex flex-wrap">
-                        <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
-                            <img
-                                alt="..."
-                                class="max-w-full rounded-lg shadow-lg"
-                                src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-                            />
-                        </div>
-                        <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
-                            <div class="md:pr-12">
-                                <div
-                                    class="text-emerald-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-emerald-300"
-                                >
-                                    <i class="fas fa-rocket text-xl"></i>
-                                </div>
-                                <h3 class="text-3xl font-semibold">A growing company</h3>
-                                <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
-                                    The extension comes with three pre-built pages to help you get
-                                    started faster. You can change the text and images and you're
-                                    good to go.
-                                </p>
-                                <ul class="list-none mt-6">
-                                    <li class="py-2">
-                                        <div class="flex items-center">
-                                            <div>
-                        <span
-                            class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
-                        >
-                          <i class="fas fa-fingerprint"></i>
-                        </span>
-                                            </div>
-                                            <div>
-                                                <h4 class="text-blueGray-500">
-                                                    Carefully crafted components
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="py-2">
-                                        <div class="flex items-center">
-                                            <div>
-                        <span
-                            class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
-                        >
-                          <i class="fab fa-html5"></i>
-                        </span>
-                                            </div>
-                                            <div>
-                                                <h4 class="text-blueGray-500">
-                                                    Amazing page examples
-                                                </h4>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="py-2">
-                                        <div class="flex items-center">
-                                            <div>
-                        <span
-                            class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-emerald-600 bg-emerald-200 mr-3"
-                        >
-                          <i class="far fa-paper-plane"></i>
-                        </span>
-                                            </div>
-                                            <div>
-                                                <h4 class="text-blueGray-500">Dynamic components</h4>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <WidgetBodyBottomLeft
+                            :widgetBodyBottomLeft=props.widgets.widgetBodyBottomLeft></WidgetBodyBottomLeft>
+
+                        <WidgetBodyBottomRight
+                            :widgetBodyBottomRight=props.widgets.widgetBodyBottomRight></WidgetBodyBottomRight>
+
                     </div>
                 </div>
             </section>
