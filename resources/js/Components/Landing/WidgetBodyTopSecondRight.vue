@@ -1,5 +1,5 @@
 <script setup>
-defineProps(['widgetBodyBottomRight']);
+defineProps(['widgetBodyTopSecondRight']);
 </script>
 <template>
     <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
@@ -7,14 +7,14 @@ defineProps(['widgetBodyBottomRight']);
             <div
                 class="text-emerald-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-emerald-300"
             >
-                <i :class="widgetBodyBottomRight.icon" class="text-xl"></i>
+                <i :class="widgetBodyTopSecondRight.icon" class="text-xl"></i>
             </div>
-            <h3 class="text-3xl font-semibold">{{ widgetBodyBottomRight.title }}</h3>
+            <h3 class="text-3xl font-semibold">{{ widgetBodyTopSecondRight.title }}</h3>
             <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
-                {{ widgetBodyBottomRight.content }}
+                {{ widgetBodyTopSecondRight.content }}
             </p>
             <ul class="list-none mt-6">
-                <li class="py-2" v-for="icon in widgetBodyBottomRight.widget_icon">
+                <li class="py-2" v-for="icon in widgetBodyTopSecondRight.widget_icon">
                     <div class="flex items-center">
                         <div>
                             <span

@@ -1,12 +1,12 @@
 <script setup>
-defineProps(['widgetBodyBottomLeft']);
+defineProps(['widgetBodyTopSecondLeft']);
 </script>
 <template>
     <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
         <img
-            :alt="widgetBodyBottomLeft.title"
+            :alt="widgetBodyTopSecondLeft.title"
             class="max-w-full rounded-lg shadow-lg"
-            :src="widgetBodyBottomLeft.widget_image"
+            :src="widgetBodyTopSecondLeft.widget_image"
         />
     </div>
 </template>
