@@ -176,7 +176,7 @@ class WidgetIconSeeder extends Seeder
                 'icon_class' => 'fab fa-twitter',
                 'description' => '#',
                 'url' => '',
-                'css_class' => '',
+                'css_class' => 'text-lightBlue-400',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -185,7 +185,7 @@ class WidgetIconSeeder extends Seeder
                 'icon_class' => 'fab fa-facebook-square',
                 'description' => '#',
                 'url' => '',
-                'css_class' => '',
+                'css_class' => 'text-lightBlue-600',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -194,7 +194,7 @@ class WidgetIconSeeder extends Seeder
                 'icon_class' => 'fab fa-dribbble',
                 'description' => '#',
                 'url' => '',
-                'css_class' => '',
+                'css_class' => 'text-pink-400',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -203,7 +203,7 @@ class WidgetIconSeeder extends Seeder
                 'icon_class' => 'fab fa-github',
                 'description' => '#',
                 'url' => '',
-                'css_class' => '',
+                'css_class' => 'text-blueGray-800',
                 'created_at' => now(),
                 'updated_at' => now()
             ]
