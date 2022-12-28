@@ -153,8 +153,7 @@ function toggleCollapseShow(classes) {
 
                 <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
                     <li class="items-center">
-                        <SidebarNavLink :href="route('landing')" :active="route().current('landing')"
-                                        icon="fas fa-newspaper text-blueGray-300 mr-2 text-sm">
+                        <SidebarNavLink :href="route('landing')" icon="fas fa-newspaper text-blueGray-300 mr-2 text-sm">
                             Landing (Site)
                         </SidebarNavLink>
                     </li>
