@@ -12,6 +12,7 @@ import WidgetBodyTopSecondRight from "@/Components/Landing/WidgetBodyTopSecondRi
 import WidgetBodyMiddleTop from "@/Components/Landing/WidgetBodyMiddleTop.vue";
 import WidgetBodyMiddleCenter from "@/Components/Landing/WidgetBodyMiddleCenter.vue";
 import WidgetBodyBottomTop from "@/Components/Landing/WidgetBodyBottomTop.vue";
+import WidgetBodyBottomMiddle from "@/Components/Landing/WidgetBodyBottomMiddle.vue";
 
 const backgroundImage = "background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80');"
 const props = defineProps(['widgets']);
@@ -183,50 +184,8 @@ const props = defineProps(['widgets']);
                 <div class="container mx-auto px-4 lg:pt-24 lg:pb-64">
                     <WidgetBodyBottomTop
                         :widgetBodyBottomTop=props.widgets.widgetBodyBottomTop></WidgetBodyBottomTop>
-                    <div class="flex flex-wrap mt-12 justify-center">
-                        <div class="w-full lg:w-3/12 px-4 text-center">
-                            <div
-                                class="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
-                            >
-                                <i class="fas fa-medal text-xl"></i>
-                            </div>
-                            <h6 class="text-xl mt-5 font-semibold text-white">
-                                Excelent Services
-                            </h6>
-                            <p class="mt-2 mb-4 text-blueGray-400">
-                                Some quick example text to build on the card title and make up
-                                the bulk of the card's content.
-                            </p>
-                        </div>
-                        <div class="w-full lg:w-3/12 px-4 text-center">
-                            <div
-                                class="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
-                            >
-                                <i class="fas fa-poll text-xl"></i>
-                            </div>
-                            <h5 class="text-xl mt-5 font-semibold text-white">
-                                Grow your market
-                            </h5>
-                            <p class="mt-2 mb-4 text-blueGray-400">
-                                Some quick example text to build on the card title and make up
-                                the bulk of the card's content.
-                            </p>
-                        </div>
-                        <div class="w-full lg:w-3/12 px-4 text-center">
-                            <div
-                                class="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center"
-                            >
-                                <i class="fas fa-lightbulb text-xl"></i>
-                            </div>
-                            <h5 class="text-xl mt-5 font-semibold text-white">
-                                Launch time
-                            </h5>
-                            <p class="mt-2 mb-4 text-blueGray-400">
-                                Some quick example text to build on the card title and make up
-                                the bulk of the card's content.
-                            </p>
-                        </div>
-                    </div>
+                    <WidgetBodyBottomMiddle
+                        :widgetBodyBottomMiddle=props.widgets.widgetBodyBottomMiddle></WidgetBodyBottomMiddle>
                 </div>
             </section>
             <section class="relative block py-24 lg:pt-0 bg-blueGray-800">
