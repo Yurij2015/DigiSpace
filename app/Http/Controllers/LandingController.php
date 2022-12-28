@@ -21,6 +21,10 @@ class LandingController extends Controller
         $widgetBodyMiddleTop = Widget::where('id', 9)->first();
         $widgetBodyMiddleCenter = Widget::with('widgetIcon')->where('widget_category_id', 4)->where('widget_image', '<>', null)->get();
         $widgetBodyBottomTop = Widget::where('id', 14)->first();
+        $widgetBodyBottomMiddle = Widget::where('widget_category_id', 5)->where('icon', '<>', null)->get();
+        $widgetBodyContactForm = Widget::where('id', 18)->first();
+        $widgetFooter = Widget::with('widgetIcon')->where('id', 19)->first();
+
         return Inertia::render('Landing', [
             'widgets' => [
                 'widgetHeader' => $widgetHeader,
@@ -33,7 +37,10 @@ class LandingController extends Controller
                 'widgetBodyTopSecondRight' => $widgetBodyTopSecondRight,
                 'widgetBodyMiddleTop' => $widgetBodyMiddleTop,
                 'widgetBodyMiddleCenter' => $widgetBodyMiddleCenter,
-                'widgetBodyBottomTop' => $widgetBodyBottomTop
+                'widgetBodyBottomTop' => $widgetBodyBottomTop,
+                'widgetBodyBottomMiddle' => $widgetBodyBottomMiddle,
+                'widgetBodyContactForm' => $widgetBodyContactForm,
+                'widgetFooter' => $widgetFooter
             ],
         ]);
     }
