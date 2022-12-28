@@ -93,8 +93,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.profile');
-Route::get('landing', static function () {
-    return 'Landing';
-})->name('landing');
+Route::get('/', [LandingController::class, 'index'])->name('landing');
+
 
 require __DIR__ . '/auth.php';
