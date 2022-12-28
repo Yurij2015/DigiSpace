@@ -11,6 +11,7 @@ import WidgetBodyTopSecondLeft from "@/Components/Landing/WidgetBodyTopSecondLef
 import WidgetBodyTopSecondRight from "@/Components/Landing/WidgetBodyTopSecondRight.vue";
 import WidgetBodyMiddleTop from "@/Components/Landing/WidgetBodyMiddleTop.vue";
 import WidgetBodyMiddleCenter from "@/Components/Landing/WidgetBodyMiddleCenter.vue";
+import WidgetBodyBottomTop from "@/Components/Landing/WidgetBodyBottomTop.vue";
 
 const backgroundImage = "background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80');"
 const props = defineProps(['widgets']);
@@ -180,18 +181,8 @@ const props = defineProps(['widgets']);
                 </div>
 
                 <div class="container mx-auto px-4 lg:pt-24 lg:pb-64">
-                    <div class="flex flex-wrap text-center justify-center">
-                        <div class="w-full lg:w-6/12 px-4">
-                            <h2 class="text-4xl font-semibold text-white">
-                                Build something
-                            </h2>
-                            <p class="text-lg leading-relaxed mt-4 mb-4 text-blueGray-400">
-                                Put the potentially record low maximum sea ice extent tihs year
-                                down to low ice. According to the National Oceanic and
-                                Atmospheric Administration, Ted, Scambos.
-                            </p>
-                        </div>
-                    </div>
+                    <WidgetBodyBottomTop
+                        :widgetBodyBottomTop=props.widgets.widgetBodyBottomTop></WidgetBodyBottomTop>
                     <div class="flex flex-wrap mt-12 justify-center">
                         <div class="w-full lg:w-3/12 px-4 text-center">
                             <div
