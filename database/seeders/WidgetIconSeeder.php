@@ -32,7 +32,106 @@ class WidgetIconSeeder extends Seeder
             [
                 'widget_id' => '8',
                 'icon_class' => 'far fa-paper-plane',
-                'description' => 'Dynamic components',
+                'description' => '#',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '10',
+                'icon_class' => 'fab fa-dribbble',
+                'description' => '#',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '10',
+                'icon_class' => 'fab fa-google',
+                'description' => '#',
+                'created_at' => now(),
+                'updated_at' => now()
+            ], [
+                'widget_id' => '10',
+                'icon_class' => 'fab fa-twitter',
+                'description' => '#',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '11',
+                'icon_class' => 'fab fa-google',
+                'description' => '#',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '11',
+                'icon_class' => 'fab fa-dribbble',
+                'description' => '#',
+                'created_at' => now(),
+                'updated_at' => now()
+            ], [
+                'widget_id' => '11',
+                'icon_class' => 'fab fa-twitter',
+                'description' => '#',
+                'created_at' => now(),
+                'updated_at' => now()
+            ], [
+                'widget_id' => '11',
+                'icon_class' => 'far fa-paper-plane',
+                'description' => '#',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '12',
+                'icon_class' => 'fab fa-dribbble',
+                'description' => '#',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '12',
+                'icon_class' => 'fab fa-google',
+                'description' => '#',
+                'created_at' => now(),
+                'updated_at' => now()
+            ], [
+                'widget_id' => '12',
+                'icon_class' => 'fab fa-instagram',
+                'description' => '#',
+                'created_at' => now(),
+                'updated_at' => now()
+            ], [
+                'widget_id' => '12',
+                'icon_class' => 'fab fa-facebook-f',
+                'description' => '#',
+                'created_at' => now(),
+                'updated_at' => now()
+            ], [
+                'widget_id' => '12',
+                'icon_class' => 'fab fa-twitter',
+                'description' => '#',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '13',
+                'icon_class' => 'fab fa-dribbble',
+                'description' => '#',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '13',
+                'icon_class' => 'fab fa-twitter',
+                'description' => '#',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '13',
+                'icon_class' => 'fab fa-google',
+                'description' => '#',
                 'created_at' => now(),
                 'updated_at' => now()
             ]
