@@ -204,6 +204,6 @@ const props = defineProps(['widgets']);
                 </div>
             </section>
         </main>
-        <FooterComponent/>
+        <FooterComponent :widgetFooter=props.widgets.widgetFooter></FooterComponent>
     </div>
 </template>
