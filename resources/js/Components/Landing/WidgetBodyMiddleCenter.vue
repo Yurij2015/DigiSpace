@@ -1,7 +1,6 @@
 <script setup>
 defineProps(['widgetBodyMiddleCenter']);
-import {Link} from '@inertiajs/inertia-vue3';
-</script>
+se</script>
 <template>
     <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4" v-for="item in widgetBodyMiddleCenter">
         <div class="px-6">
