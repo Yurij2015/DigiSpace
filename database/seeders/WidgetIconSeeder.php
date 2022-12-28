@@ -19,6 +19,8 @@ class WidgetIconSeeder extends Seeder
                 'widget_id' => '8',
                 'icon_class' => 'fas fa-fingerprint',
                 'description' => 'Carefully crafted components',
+                'url' => '',
+                'css_class' => '',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -26,13 +28,146 @@ class WidgetIconSeeder extends Seeder
                 'widget_id' => '8',
                 'icon_class' => 'fab fa-html5',
                 'description' => 'Amazing page examples',
+                'url' => '',
+                'css_class' => '',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'widget_id' => '8',
                 'icon_class' => 'far fa-paper-plane',
-                'description' => 'Dynamic components',
+                'description' => '#',
+                'url' => '',
+                'css_class' => '',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '10',
+                'icon_class' => 'fab fa-dribbble',
+                'description' => '#',
+                'url' => '',
+                'css_class' => 'bg-pink-500',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '10',
+                'icon_class' => 'fab fa-google',
+                'description' => '#',
+                'url' => '',
+                'css_class' => 'bg-red-600',
+                'created_at' => now(),
+                'updated_at' => now()
+            ], [
+                'widget_id' => '10',
+                'icon_class' => 'fab fa-twitter',
+                'description' => '#',
+                'url' => '',
+                'css_class' => 'bg-lightBlue-400',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '11',
+                'icon_class' => 'fab fa-google',
+                'description' => '#',
+                'url' => '',
+                'css_class' => 'bg-red-600',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '11',
+                'icon_class' => 'fab fa-dribbble',
+                'description' => '#',
+                'url' => '',
+                'css_class' => 'bg-pink-500',
+                'created_at' => now(),
+                'updated_at' => now()
+            ], [
+                'widget_id' => '11',
+                'icon_class' => 'fab fa-twitter',
+                'description' => '#',
+                'url' => '',
+                'css_class' => 'bg-lightBlue-400',
+                'created_at' => now(),
+                'updated_at' => now()
+            ], [
+                'widget_id' => '11',
+                'icon_class' => 'fab fa-instagram',
+                'description' => '#',
+                'url' => '',
+                'css_class' => 'bg-blueGray-700 ',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '12',
+                'icon_class' => 'fab fa-dribbble',
+                'description' => '#',
+                'url' => '',
+                'css_class' => 'bg-pink-500',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '12',
+                'icon_class' => 'fab fa-google',
+                'description' => '#',
+                'url' => '',
+                'css_class' => 'bg-red-600',
+                'created_at' => now(),
+                'updated_at' => now()
+            ], [
+                'widget_id' => '12',
+                'icon_class' => 'fab fa-instagram',
+                'description' => '#',
+                'url' => '',
+                'css_class' => 'bg-blueGray-700',
+                'created_at' => now(),
+                'updated_at' => now()
+            ], [
+                'widget_id' => '12',
+                'icon_class' => 'fab fa-facebook-f',
+                'description' => '#',
+                'url' => '',
+                'css_class' => 'bg-lightBlue-600',
+                'created_at' => now(),
+                'updated_at' => now()
+            ], [
+                'widget_id' => '12',
+                'icon_class' => 'fab fa-twitter',
+                'description' => '#',
+                'url' => '',
+                'css_class' => 'bg-lightBlue-400',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '13',
+                'icon_class' => 'fab fa-dribbble',
+                'description' => '#',
+                'url' => '',
+                'css_class' => 'bg-pink-500',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '13',
+                'icon_class' => 'fab fa-twitter',
+                'description' => '#',
+                'url' => '',
+                'css_class' => 'bg-lightBlue-400',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '13',
+                'icon_class' => 'fab fa-google',
+                'description' => '#',
+                'url' => '',
+                'css_class' => 'bg-red-600',
                 'created_at' => now(),
                 'updated_at' => now()
             ]
