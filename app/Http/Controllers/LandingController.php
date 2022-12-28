@@ -23,7 +23,7 @@ class LandingController extends Controller
         $widgetBodyBottomTop = Widget::where('id', 14)->first();
         $widgetBodyBottomMiddle = Widget::where('widget_category_id', 5)->where('icon', '<>', null)->get();
         $widgetBodyContactForm = Widget::where('id', 18)->first();
-        $widgetFooter = Widget::where('id', 19)->first();
+        $widgetFooter = Widget::with('widgetIcon')->where('id', 19)->first();
 
         return Inertia::render('Landing', [
             'widgets' => [
