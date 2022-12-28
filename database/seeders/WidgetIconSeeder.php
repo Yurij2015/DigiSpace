@@ -36,7 +36,7 @@ class WidgetIconSeeder extends Seeder
             [
                 'widget_id' => '8',
                 'icon_class' => 'far fa-paper-plane',
-                'description' => '#',
+                'description' => 'Dynamic components',
                 'url' => '',
                 'css_class' => '',
                 'created_at' => now(),
