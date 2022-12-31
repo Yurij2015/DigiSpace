@@ -5,12 +5,10 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\WidgetController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\LandingController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TicketController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +21,9 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', [LandingController::class, 'index']);
+//Route::get('/', [LandingController::class, 'index']);
+Route::get('/', [MainController::class, 'index']);
+
 
 Route::get('about', static function () {
     return "About";
@@ -93,7 +93,10 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.profile');
-Route::get('/', [LandingController::class, 'index'])->name('landing');
+//Route::get('/', [LandingController::class, 'index'])->name('landing');
+Route::get('/landing', static function () {
+    return "Landing vue notus";
+})->name('landing');
 
 
 require __DIR__ . '/auth.php';
