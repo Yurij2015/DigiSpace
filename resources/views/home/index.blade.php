@@ -1,5 +1,4 @@
 @extends('layouts.main')
-
 @section('content')
     <!-- Swiper-->
     <section class="section swiper-container swiper-slider swiper_style-1 swiper_height-1 swiper-controls-classic"
@@ -126,7 +125,6 @@
             </div>
         </div>
     </section>
-
     <!-- Pricing Tables-->
     <section class="section section-md bg-gray-2 text-center oh">
         <div class="container wow fadeInUpSmall">
@@ -192,7 +190,6 @@
             </div>
         </div>
     </section>
-
     <!-- Why Choose Us-->
     <section class="section section-sm bg-white text-center">
         <div class="container">
@@ -354,7 +351,6 @@
             </div>
         </div>
     </section>
-
     <!-- Facts-->
     <section class="section parallax-container bg-gray-darker" data-parallax-img="images/bg-2-1920x545.jpg">
         <div class="parallax-content">
@@ -432,8 +428,6 @@
             </div>
         </div>
     </section>
-
-
     <!-- Our Clients-->
     <section class="section section-md bg-gray-light text-center">
         <svg x="0px" y="0px" width="0" height="0">
@@ -533,7 +527,6 @@
             </div>
         </div>
     </section>
-
     <!-- Page Footer-->
     <footer class="section footer-classic context-dark">
         <div class="footer-classic__main bg-gray-3">
@@ -656,5 +649,4 @@
             </div>
         </div>
     </footer>
-
 @endsection

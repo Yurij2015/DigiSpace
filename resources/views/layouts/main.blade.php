@@ -118,16 +118,20 @@
                                 </div>
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
-                                    <li><a href="about.html">About</a>
+                                    <li class="{{ Route::is('about') ? 'active' : '' }}"><a
+                                            href="{{ route('about') }}">About</a>
                                     </li>
-                                    <li><a href="services.html">Services</a>
+                                    <li class="{{ Route::is('services') ? 'active' : '' }}"><a
+                                            href="{{ route('services') }}">Services</a>
                                     </li>
-                                    <li><a href="pricing.html">Pricing</a>
+                                    <li class="{{ Route::is('pricing') ? 'active' : '' }}"><a
+                                            href="{{ route('pricing') }}">Pricing</a>
                                     </li>
-                                    <li><a href="promos.html">Promos</a>
+                                    <li class="{{ Route::is('promos') ? 'active' : '' }}"><a
+                                            href="{{ route('promos') }}">Promos</a>
                                     </li>
-                                    <li><a href="blog.html">Blog</a>
-                                        <!-- RD Navbar Dropdown-->
+                                    <li class="{{ Route::is('blog') ? 'active' : '' }}"><a
+                                            href="{{ route('blog') }}">Blog</a>
                                         <ul class="rd-navbar-dropdown">
                                             <li><a href="blog-post.html">Blog post</a></li>
                                         </ul>
@@ -168,7 +172,8 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact-us.html">Contact Us</a>
+                                    <li class="{{ Route::is('contact-us') ? 'active' : '' }}"><a
+                                            href="{{ route('contact-us') }}">Contact Us</a>
                                     </li>
                                 </ul>
                             </div>
