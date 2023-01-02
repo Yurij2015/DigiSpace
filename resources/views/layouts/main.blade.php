@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700%7CSpace+Mono">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
@@ -17,7 +17,8 @@
 <body>
 <!-- Page Loader-->
 <div id="page-loader">
-    <div class="page-loader-body"><img src="images/logo-default-95x80.png" alt="" width="95" height="80"/>
+    <div class="page-loader-body"><img src="{{ asset('images/logo-default-95x80.png') }}" alt="" width="95"
+                                       height="80"/>
         <div class="cssload-wrapper">
             <div class="cssload-border">
                 <div class="cssload-whitespace">
@@ -47,10 +48,11 @@
                             <!-- RD Navbar Brand-->
                             <div class="rd-navbar-brand"><a class="brand" href="index.html">
                                     <div class="brand__name"><img class="brand__logo-dark"
-                                                                  src="images/logo-default-95x80.png" alt="" width="95"
+                                                                  src="{{ asset('images/logo-default-95x80.png') }}"
+                                                                  alt="" width="95"
                                                                   height="80"/>
                                         <img class="brand__logo-mobile"
-                                             src="images/logo-mobile-170x50.png"
+                                             src="{{ asset('images/logo-mobile-170x50.png') }}"
                                              alt="" width="170" height="50"/>
                                     </div>
                                 </a></div>

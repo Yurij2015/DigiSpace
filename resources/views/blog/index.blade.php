@@ -114,7 +114,7 @@
                     <div class="blog-layout__aside-item blog-layout__aside-item_bordered">
                         <p class="custom-heading-line heading-8">Archive</p>
                         <!-- Select 2-->
-                        <select class="form-input select" data-placeholder="All" data-minimum-results-for-search="Infinity" data-constraints="Required">
+                        <select class="form-input select" data-placeholder="All" data-minimum-results-for-search="Infinity">
                             <option>August 2021</option>
                             <option value="1">July 2021</option>
                             <option value="2">June 2021</option>
@@ -151,7 +151,7 @@
                         <!-- RD Mailform-->
                         <form class="rd-mailform form_inline form_lg" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
                             <div class="form-wrap">
-                                <input class="form-input" id="subscribe-form-footer-form-email" type="email" name="email" data-constraints="Email Required">
+                                <input class="form-input" id="subscribe-form-footer-form-email" type="email" name="email">
                                 <label class="form-label" for="subscribe-form-footer-form-email">Your E-mail</label>
                             </div>
                             <div class="form-button">

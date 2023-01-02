@@ -1,5 +1,4 @@
 @extends('layouts.main')
-@section('title', 'DigiSpace | Promos')
 @section('content')
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">
@@ -145,7 +144,7 @@
                               data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
                             <div class="form-wrap">
                                 <input class="form-input" id="subscribe-form-footer-form-email" type="email"
-                                       name="email" data-constraints="Email Required">
+                                       name="email">
                                 <label class="form-label" for="subscribe-form-footer-form-email">Your E-mail</label>
                             </div>
                             <div class="form-button">

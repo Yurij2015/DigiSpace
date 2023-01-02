@@ -353,7 +353,7 @@
         </div>
     </section>
     <!-- Facts-->
-    <section class="section parallax-container bg-gray-darker" data-parallax-img="images/bg-2-1920x545.jpg">
+    <section class="section parallax-container bg-gray-darker" data-parallax-img="{{ asset('images/bg-2-1920x545.jpg') }}">
         <div class="parallax-content">
             <div class="section-lg text-center text-sm-start">
                 <div class="container">
