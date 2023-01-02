@@ -7,10 +7,10 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 
 
-class MainController extends Controller
+class ServiceController extends Controller
 {
     public function index(): Application|Factory|View
     {
-        return view('welcome');
+        return view('services.index');
     }
 }
