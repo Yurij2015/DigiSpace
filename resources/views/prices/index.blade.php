@@ -518,13 +518,13 @@
         <div class="container">
             <div class="row row-30 align-items-sm-center">
                 <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src="images/brand-1-126x68.png" alt="" width="126" height="68"/></a></div>
+                            src="{{ asset('images/brand-1-126x68.png') }}" alt="" width="126" height="68"/></a></div>
                 <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src="images/brand-2-126x100.png" alt="" width="126" height="100"/></a></div>
+                            src=" {{ asset('images/brand-2-126x100.png') }}" alt="" width="126" height="100"/></a></div>
                 <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src="images/brand-3-134x83.png" alt="" width="134" height="83"/></a></div>
+                            src="{{ asset('images/brand-3-134x83.png') }}" alt="" width="134" height="83"/></a></div>
                 <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src="images/brand-4-138x55.png" alt="" width="138" height="55"/></a></div>
+                            src="{{ asset('images/brand-4-138x55.png') }}" alt="" width="138" height="55"/></a></div>
             </div>
         </div>
     </section>
@@ -588,7 +588,8 @@
                             <!-- Post small-->
                             <article class="post-small">
                                 <div class="post-small__aside"><a class="post-small__media" href="blog-post.html"><img
-                                            class="post-small__image" src="images/post-small-1-80x68.jpg" alt=""
+                                            class="post-small__image" src="{{ asset('images/post-small-1-80x68.jpg') }}"
+                                            alt=""
                                             width="80" height="68"/></a></div>
                                 <div class="post-small__main">
                                     <p class="post-small__title"><a href="blog-post.html">Benefits of Async/Await in
@@ -599,7 +600,8 @@
                             <!-- Post small-->
                             <article class="post-small">
                                 <div class="post-small__aside"><a class="post-small__media" href="blog-post.html"><img
-                                            class="post-small__image" src="images/post-small-2-80x68.jpg" alt=""
+                                            class="post-small__image" src="{{ asset('images/post-small-2-80x68.jpg') }}"
+                                            alt=""
                                             width="80" height="68"/></a></div>
                                 <div class="post-small__main">
                                     <p class="post-small__title"><a href="blog-post.html">Key Considerations and

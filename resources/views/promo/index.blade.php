@@ -3,7 +3,7 @@
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">
         <div class="breadcrumbs-custom__aside bg-image context-dark"
-             style="background-image: url(images/bg-image-14-1920x330.jpg);">
+             style="background-image: url({{ asset('images/bg-image-14-1920x330.jpg') }});">
             <div class="container">
                 <h2 class="breadcrumbs-custom__title">Promos</h2>
             </div>
@@ -178,7 +178,8 @@
                             <!-- Post small-->
                             <article class="post-small">
                                 <div class="post-small__aside"><a class="post-small__media" href="blog-post.html"><img
-                                            class="post-small__image" src="images/post-small-1-80x68.jpg" alt=""
+                                            class="post-small__image" src="{{ asset('images/post-small-1-80x68.jpg') }}"
+                                            alt=""
                                             width="80" height="68"/></a></div>
                                 <div class="post-small__main">
                                     <p class="post-small__title"><a href="blog-post.html">Benefits of Async/Await in
@@ -189,7 +190,8 @@
                             <!-- Post small-->
                             <article class="post-small">
                                 <div class="post-small__aside"><a class="post-small__media" href="blog-post.html"><img
-                                            class="post-small__image" src="images/post-small-2-80x68.jpg" alt=""
+                                            class="post-small__image" src="{{ asset('images/post-small-2-80x68.jpg') }}"
+                                            alt=""
                                             width="80" height="68"/></a></div>
                                 <div class="post-small__main">
                                     <p class="post-small__title"><a href="blog-post.html">Key Considerations and
