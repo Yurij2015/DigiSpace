@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@section('title', 'DigiSpace | Services')
 @section('content')
     <!-- Get a Domain Name-->
     <!-- Breadcrumbs-->

@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('title', 'DigiSpace | Welcom to DigiSpace')
 @section('content')
     <!-- Swiper-->
     <section class="section swiper-container swiper-slider swiper_style-1 swiper_height-1 swiper-controls-classic"
@@ -9,7 +10,7 @@
                     <div class="container text-start">
                         <div class="row justify-content-center">
                             <div class="col-md-10 col-sm-12">
-                                <h1 data-caption-animate="fadeInUpSmall">Welcome to TechSoft</h1>
+                                <h1 data-caption-animate="fadeInUpSmall">Welcome to DigiSpace</h1>
                                 <p class="quote-classic__text call-subtitle_text" data-caption-animate="fadeInUpSmall"
                                    data-caption-delay="200">Since our establishment, we have been delivering
                                     high-quality and <br>sustainable software solutions for corporate business purposes.<span

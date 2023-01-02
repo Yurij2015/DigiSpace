@@ -11,6 +11,6 @@ class HomeController extends Controller
 {
     public function index(): Application|Factory|View
     {
-        return view('home');
+        return view('home.index');
     }
 }

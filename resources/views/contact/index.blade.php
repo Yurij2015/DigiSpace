@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('title', 'DigiSpace | Contact Us')
 @section('content')
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">
