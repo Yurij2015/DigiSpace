@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(WidgetIconSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(PageSeeder::class);
+        $this->call(PageWidgetSeeder::class);
     }
 }
