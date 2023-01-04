@@ -206,6 +206,35 @@ class WidgetSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ],
+            [
+                "title" => "What we do",
+                "subtitle" => "Developing High-quality Apps",
+                "widget_category_id" => 7,
+                "icon" => null,
+                "widget_image" => null,
+                "content" => "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                "title" => "Our Mission",
+                "subtitle" => "Providing Reliable Software<",
+                "widget_category_id" => 7,
+                "icon" => null,
+                "widget_image" => null,
+                "content" => "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+                'created_at' => now(),
+                'updated_at' => now()
+            ],            [
+                "title" => "Our Goal",
+                "subtitle" => "Supporting Our Clients",
+                "widget_category_id" => 7,
+                "icon" => null,
+                "widget_image" => null,
+                "content" => "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ];
         DB::table('widgets')->insert($widgets);
     }

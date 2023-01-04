@@ -52,6 +52,12 @@ class WidgetCategorySeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ],
+            [
+                'title' => 'DigiSpace | About',
+                'description' => 'Widgets of the about page',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ];
         DB::table('widget_categories')->insert($widgetCategories);
     }
