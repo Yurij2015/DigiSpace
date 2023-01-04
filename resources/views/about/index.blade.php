@@ -33,12 +33,15 @@
                         <div class="tabs-custom tabs-horizontal tabs-corporate tabs-corporate_left" id="tabs-about">
                             <!-- Nav tabs-->
                             <ul class="nav nav-tabs">
-                                <li class="nav-item"><a class="nav-link active" href="#tabs-about-1"
-                                                        data-bs-toggle="tab">What we do</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#tabs-about-2" data-bs-toggle="tab">Our
-                                        Mission</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#tabs-about-3" data-bs-toggle="tab">Our
-                                        Goal </a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#tabs-about-1"
+                                       data-bs-toggle="tab">What we do</a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#tabs-about-2"
+                                       data-bs-toggle="tab">Our Mission</a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#tabs-about-3"
+                                       data-bs-toggle="tab">Our Goal </a></li>
                             </ul>
                             <!-- Tab panes-->
                             <div class="tab-content">
