@@ -53,8 +53,14 @@ class WidgetCategorySeeder extends Seeder
                 'updated_at' => now()
             ],
             [
-                'title' => 'DigiSpace | About',
-                'description' => 'Widgets of the about page',
+                'title' => 'DigiSpace | About | General Info',
+                'description' => 'Widgets of the about page | General info',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'title' => 'DigiSpace | About | Team',
+                'description' => 'Meet Our Team',
                 'created_at' => now(),
                 'updated_at' => now()
             ],

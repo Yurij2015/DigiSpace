@@ -31,7 +31,7 @@
                     <div class="box-inset-1">
                         <!-- Bootstrap tabs -->
                         <div class="tabs-custom tabs-horizontal tabs-corporate tabs-corporate_left" id="tabs-about">
-                            @foreach ($aboutPage as $item)
+                            @foreach ($aboutPageGeneralInfo as $item)
                                 <!-- Nav tabs-->
                                 <ul class="nav nav-tabs">
                                     @foreach ($item['widgets'] as $widget)

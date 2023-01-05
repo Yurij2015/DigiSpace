@@ -288,7 +288,8 @@ class WidgetSeeder extends Seeder
                 'css_class' => null,
                 'anchor' => '#tabs-about-2',
                 'element_id' => 'tabs-about-2'
-            ], [
+            ],
+            [
                 "title" => "Our Goal",
                 "subtitle" => "Supporting Our Clients",
                 "widget_category_id" => 7,
