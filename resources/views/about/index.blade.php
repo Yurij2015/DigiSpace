@@ -31,48 +31,26 @@
                     <div class="box-inset-1">
                         <!-- Bootstrap tabs -->
                         <div class="tabs-custom tabs-horizontal tabs-corporate tabs-corporate_left" id="tabs-about">
-                            <!-- Nav tabs-->
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#tabs-about-1"
-                                       data-bs-toggle="tab">What we do</a></li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#tabs-about-2"
-                                       data-bs-toggle="tab">Our Mission</a></li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#tabs-about-3"
-                                       data-bs-toggle="tab">Our Goal </a></li>
-                            </ul>
-                            <!-- Tab panes-->
-                            <div class="tab-content">
-                                <div class="tab-pane fade show active" id="tabs-about-1">
-                                    <h4>Developing High-quality Apps</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat.</p>
+                            @foreach ($aboutPage as $item)
+                                <!-- Nav tabs-->
+                                <ul class="nav nav-tabs">
+                                    @foreach ($item['widgets'] as $widget)
+                                        <li class="nav-item">
+                                            <a class="nav-link {{ $widget->css_class }}" href="{{ $widget->anchor }}"
+                                               data-bs-toggle="tab">{{ $widget->title }}</a></li>
+                                    @endforeach
+                                </ul>
+                                <!-- Tab panes-->
+                                <div class="tab-content">
+                                    @foreach ($item['widgets'] as $widget)
+                                        <div class="tab-pane fade {{ $widget->css_class }}"
+                                             id="{{ $widget->element_id }}">
+                                            <h4>{{ $widget->subtitle }}</h4>
+                                            {!! $widget->content !!}
+                                        </div>
+                                    @endforeach
                                 </div>
-                                <div class="tab-pane fade" id="tabs-about-2">
-                                    <h4>Providing Reliable Software</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat.</p>
-                                </div>
-                                <div class="tab-pane fade" id="tabs-about-3">
-                                    <h4>Supporting Our Clients</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat.</p>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
