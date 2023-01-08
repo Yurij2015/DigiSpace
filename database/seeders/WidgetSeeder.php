@@ -341,6 +341,58 @@ class WidgetSeeder extends Seeder
                 'anchor' => null,
                 'element_id' => null
             ],
+            [
+                "title" => "Apps Installed",
+                "subtitle" => "1.",
+                "widget_category_id" => 9,
+                "icon" => 'k',
+                "widget_image" => null,
+                "content" => "8",
+                'created_at' => now(),
+                'updated_at' => now(),
+                'css_class' => null,
+                'anchor' => null,
+                'element_id' => null
+            ],
+            [
+                "title" => "Awards Won",
+                "subtitle" => null,
+                "widget_category_id" => 9,
+                "icon" => null,
+                "widget_image" => null,
+                "content" => "27",
+                'created_at' => now(),
+                'updated_at' => now(),
+                'css_class' => null,
+                'anchor' => null,
+                'element_id' => null
+            ],
+            [
+                "title" => "Staff Members",
+                "subtitle" => null,
+                "widget_category_id" => 9,
+                "icon" => '+',
+                "widget_image" => null,
+                "content" => "45",
+                'created_at' => now(),
+                'updated_at' => now(),
+                'css_class' => null,
+                'anchor' => null,
+                'element_id' => null
+            ],
+            [
+                "title" => "Satisfied Customers",
+                "subtitle" => null,
+                "widget_category_id" => 9,
+                "icon" => '%',
+                "widget_image" => null,
+                "content" => "99",
+                'created_at' => now(),
+                'updated_at' => now(),
+                'css_class' => null,
+                'anchor' => null,
+                'element_id' => null
+            ],
         ];
         DB::table('widgets')->insert($widgets);
     }

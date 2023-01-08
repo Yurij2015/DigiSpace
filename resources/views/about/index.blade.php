@@ -60,20 +60,20 @@
         <div class="container">
             <h2> {{ $teamInfoCategoryTitle }}</h2>
             <div class="row row-50">
-                @foreach( $teamInfo['widgets'] as $item )
+                @foreach( $teamInfo['widgets'] as $widget )
                     <div class="col-md-6 col-lg-4">
                         <!-- Card Creative-->
                         <article class="card-creative">
                             <div class="card-creative__inner">
-                                <figure class="card-creative__media"><img src="{{ asset($item->widget_image) }}"
+                                <figure class="card-creative__media"><img src="{{ asset($widget->widget_image) }}"
                                                                           alt="" width="230" height="211"/>
                                 </figure>
-                                <p class="card-creative__title">{{ $item->title }}</p>
-                                <p class="card-creative__subtitle">{{ $item->subtitle }}</p>
+                                <p class="card-creative__title">{{ $widget->title }}</p>
+                                <p class="card-creative__subtitle">{{ $widget->subtitle }}</p>
                                 <div class="card-creative__divider"></div>
                                 <div class="card-creative__aside">
                                     <ul class="list-inline list-inline-md">
-                                        @foreach($item->widgetIcon as $icon)
+                                        @foreach($widget->widgetIcon as $icon)
                                             <li>
                                                 <a class="icon icon-xs icon-darker icon-style-brand {{ $icon->icon_class }}"
                                                    href="#"></a></li>
@@ -89,57 +89,27 @@
     </section>
     <!-- Facts-->
     <section class="section parallax-container bg-gray-darker"
-             data-parallax-img="{{ asset('images/bg-3-1920x480.jpg') }}">
+             data-parallax-img="{{ asset($someFactsAboutCategory->image) }}">
         <div class="parallax-content">
             <div class="section-lg text-center">
                 <div class="container">
-                    <h2>Some Facts About Us</h2>
-                    <p class="text-style-1">More than 1000 apps developed</p>
+                    <h2>{{ $someFactsAboutCategory->title }}</h2>
+                    <p class="text-style-1"> {{ $someFactsAboutCategory->description }}</p>
                     <div class="row row-30 offset-top-1">
+                        @foreach( $someFactsAbout['widgets'] as $widget )
                         <div class="col-sm-6 col-md-3">
                             <!--Counter-->
                             <article class="box-counter">
                                 <div class="box-counter__main">
-                                    <div class="counter-prefix">1.</div>
-                                    <div class="counter">6</div>
-                                    <div class="small">k</div>
+                                    <div class="counter-prefix">{{ $widget->subtitle }}</div>
+                                    <div class="counter">{{ $widget->content }}</div>
+                                    <div class="small">{{ $widget->icon }}</div>
                                 </div>
                                 <div class="box-counter__divider"></div>
-                                <p class="box-counter__title">Apps Installed</p>
+                                <p class="box-counter__title">{{ $widget->title }}</p>
                             </article>
                         </div>
-                        <div class="col-sm-6 col-md-3">
-                            <!--Counter-->
-                            <article class="box-counter">
-                                <div class="box-counter__main">
-                                    <div class="counter">27</div>
-                                </div>
-                                <div class="box-counter__divider"></div>
-                                <p class="box-counter__title">Awards Won</p>
-                            </article>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <!--Counter-->
-                            <article class="box-counter">
-                                <div class="box-counter__main">
-                                    <div class="counter">45</div>
-                                    <div class="small">+</div>
-                                </div>
-                                <div class="box-counter__divider"></div>
-                                <p class="box-counter__title">Staff Members</p>
-                            </article>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <!--Counter-->
-                            <article class="box-counter">
-                                <div class="box-counter__main">
-                                    <div class="counter">99</div>
-                                    <div class="small small_top">%</div>
-                                </div>
-                                <div class="box-counter__divider"></div>
-                                <p class="box-counter__title">Satisfied Customers</p>
-                            </article>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
