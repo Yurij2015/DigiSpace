@@ -302,6 +302,45 @@ class WidgetSeeder extends Seeder
                 'anchor' => '#tabs-about-3',
                 'element_id' => 'tabs-about-3'
             ],
+            [
+                "title" => "Ann Peterson",
+                "subtitle" => "UI Designer",
+                "widget_category_id" => 8,
+                "icon" => null,
+                "widget_image" => '1673141363.jpg',
+                "content" => "UI Designer",
+                'created_at' => now(),
+                'updated_at' => now(),
+                'css_class' => null,
+                'anchor' => null,
+                'element_id' => null
+            ],
+            [
+                "title" => "Sam Williams",
+                "subtitle" => "Lead Developer",
+                "widget_category_id" => 8,
+                "icon" => null,
+                "widget_image" => '1673141408.jpg',
+                "content" => "Lead Developer",
+                'created_at' => now(),
+                'updated_at' => now(),
+                'css_class' => null,
+                'anchor' => null,
+                'element_id' => null
+            ],
+            [
+                "title" => "Emily Smith",
+                "subtitle" => "Marketing Manager",
+                "widget_category_id" => 8,
+                "icon" => null,
+                "widget_image" => '1673141448.jpg',
+                "content" => "Marketing Manager",
+                'created_at' => now(),
+                'updated_at' => now(),
+                'css_class' => null,
+                'anchor' => null,
+                'element_id' => null
+            ],
         ];
         DB::table('widgets')->insert($widgets);
     }
