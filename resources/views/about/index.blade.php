@@ -101,7 +101,7 @@
                             <article class="box-counter">
                                 <div class="box-counter__main">
                                     <div class="counter-prefix">1.</div>
-                                    <div class="counter">6</div>
+                                    <div class="counter">8</div>
                                     <div class="small">k</div>
                                 </div>
                                 <div class="box-counter__divider"></div>
