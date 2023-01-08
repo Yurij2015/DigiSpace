@@ -31,26 +31,24 @@
                     <div class="box-inset-1">
                         <!-- Bootstrap tabs -->
                         <div class="tabs-custom tabs-horizontal tabs-corporate tabs-corporate_left" id="tabs-about">
-                            @foreach ($aboutPageGeneralInfo as $item)
-                                <!-- Nav tabs-->
-                                <ul class="nav nav-tabs">
-                                    @foreach ($item['widgets'] as $widget)
-                                        <li class="nav-item">
-                                            <a class="nav-link {{ $widget->css_class }}" href="{{ $widget->anchor }}"
-                                               data-bs-toggle="tab">{{ $widget->title }}</a></li>
-                                    @endforeach
-                                </ul>
-                                <!-- Tab panes-->
-                                <div class="tab-content">
-                                    @foreach ($item['widgets'] as $widget)
-                                        <div class="tab-pane fade {{ $widget->css_class }}"
-                                             id="{{ $widget->element_id }}">
-                                            <h4>{{ $widget->subtitle }}</h4>
-                                            {!! $widget->content !!}
-                                        </div>
-                                    @endforeach
-                                </div>
-                            @endforeach
+                            <!-- Nav tabs-->
+                            <ul class="nav nav-tabs">
+                                @foreach ($aboutPageGeneralInfo['widgets'] as $widget)
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ $widget->css_class }}" href="{{ $widget->anchor }}"
+                                           data-bs-toggle="tab">{{ $widget->title }}</a></li>
+                                @endforeach
+                            </ul>
+                            <!-- Tab panes-->
+                            <div class="tab-content">
+                                @foreach ($aboutPageGeneralInfo['widgets'] as $widget)
+                                    <div class="tab-pane fade {{ $widget->css_class }}"
+                                         id="{{ $widget->element_id }}">
+                                        <h4>{{ $widget->subtitle }}</h4>
+                                        {!! $widget->content !!}
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -60,83 +58,32 @@
     <!-- Team-->
     <section class="section section-lg bg-gray-light text-center">
         <div class="container">
-            <h2>Meet Our Team</h2>
+            <h2> {{ $teamInfoCategoryTitle }}</h2>
             <div class="row row-50">
-                <div class="col-md-6 col-lg-4">
-                    <!-- Card Creative-->
-                    <article class="card-creative">
-                        <div class="card-creative__inner">
-                            <figure class="card-creative__media"><img src="{{ asset('images/team-1-230x211.jpg') }}"
-                                                                      alt="" width="230" height="211"/>
-                            </figure>
-                            <p class="card-creative__title">Ann Peterson</p>
-                            <p class="card-creative__subtitle">UI Designer</p>
-                            <div class="card-creative__divider"></div>
-                            <div class="card-creative__aside">
-                                <ul class="list-inline list-inline-md">
-                                    <li><a class="icon icon-xs icon-darker icon-style-brand fa fa-facebook"
-                                           href="#"></a></li>
-                                    <li><a class="icon icon-xs icon-darker icon-style-brand fa fa-twitter" href="#"></a>
-                                    </li>
-                                    <li><a class="icon icon-xs icon-darker icon-style-brand fa fa-google-plus"
-                                           href="#"></a></li>
-                                    <li><a class="icon icon-xs icon-darker icon-style-brand fa fa-pinterest-p"
-                                           href="#"></a></li>
-                                </ul>
+                @foreach( $teamInfo['widgets'] as $item )
+                    <div class="col-md-6 col-lg-4">
+                        <!-- Card Creative-->
+                        <article class="card-creative">
+                            <div class="card-creative__inner">
+                                <figure class="card-creative__media"><img src="{{ asset($item->widget_image) }}"
+                                                                          alt="" width="230" height="211"/>
+                                </figure>
+                                <p class="card-creative__title">{{ $item->title }}</p>
+                                <p class="card-creative__subtitle">{{ $item->subtitle }}</p>
+                                <div class="card-creative__divider"></div>
+                                <div class="card-creative__aside">
+                                    <ul class="list-inline list-inline-md">
+                                        @foreach($item->widgetIcon as $icon)
+                                            <li>
+                                                <a class="icon icon-xs icon-darker icon-style-brand {{ $icon->icon_class }}"
+                                                   href="#"></a></li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <!-- Card Creative-->
-                    <article class="card-creative">
-                        <div class="card-creative__inner">
-                            <figure class="card-creative__media"><img src="{{ asset('images/team-2-230x211.jpg') }}"
-                                                                      alt="" width="230" height="211"/>
-                            </figure>
-                            <p class="card-creative__title">Sam Williams</p>
-                            <p class="card-creative__subtitle">Lead Developer</p>
-                            <div class="card-creative__divider"></div>
-                            <div class="card-creative__aside">
-                                <ul class="list-inline list-inline-md">
-                                    <li><a class="icon icon-xs icon-darker icon-style-brand fa fa-facebook"
-                                           href="#"></a></li>
-                                    <li><a class="icon icon-xs icon-darker icon-style-brand fa fa-twitter" href="#"></a>
-                                    </li>
-                                    <li><a class="icon icon-xs icon-darker icon-style-brand fa fa-google-plus"
-                                           href="#"></a></li>
-                                    <li><a class="icon icon-xs icon-darker icon-style-brand fa fa-pinterest-p"
-                                           href="#"></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <!-- Card Creative-->
-                    <article class="card-creative">
-                        <div class="card-creative__inner">
-                            <figure class="card-creative__media"><img src="{{ asset('images/team-3-230x211.jpg') }}"
-                                                                      alt="" width="230" height="211"/>
-                            </figure>
-                            <p class="card-creative__title">Emily Smith</p>
-                            <p class="card-creative__subtitle">Marketing Manager</p>
-                            <div class="card-creative__divider"></div>
-                            <div class="card-creative__aside">
-                                <ul class="list-inline list-inline-md">
-                                    <li><a class="icon icon-xs icon-darker icon-style-brand fa fa-facebook"
-                                           href="#"></a></li>
-                                    <li><a class="icon icon-xs icon-darker icon-style-brand fa fa-twitter" href="#"></a>
-                                    </li>
-                                    <li><a class="icon icon-xs icon-darker icon-style-brand fa fa-google-plus"
-                                           href="#"></a></li>
-                                    <li><a class="icon icon-xs icon-darker icon-style-brand fa fa-pinterest-p"
-                                           href="#"></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+                        </article>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>

@@ -19,10 +19,10 @@ class AboutController extends Controller
     {
         $aboutPageGeneralInfo = Page::with(['widgets' => function (BelongsToMany $query) {
             $query->where('widget_category_id', '=', self::GENERAL_INFO_WIDGET_CATEGORY);
-        }])->where('slug', '=', 'about')->get();
+        }])->where('slug', '=', 'about')->first();
         $teamInfoCategoryTitle = (WidgetCategory::where('id', '=', self::TEAM_INFO)->first())->description;
         $teamInfo = Page::with(['widgets' => function (BelongsToMany $query) {
-            $query->where('widget_category_id', '=', self::TEAM_INFO);
+            $query->with('widgetIcon')->where('widget_category_id', '=', self::TEAM_INFO);
         }])->where('slug', '=', 'about')->first();
         return view('about.index',
             [
