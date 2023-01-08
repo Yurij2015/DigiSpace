@@ -93,7 +93,7 @@
         <div class="parallax-content">
             <div class="section-lg text-center">
                 <div class="container">
-                    <h2>{{ $someFactsAboutCategory->title }}</h2>
+                    <h2>{{ $someFactsAboutCategory->name }}</h2>
                     <p class="text-style-1"> {{ $someFactsAboutCategory->description }}</p>
                     <div class="row row-30 offset-top-1">
                         @foreach( $someFactsAbout['widgets'] as $widget )
@@ -141,7 +141,7 @@
                                                                         width="112" height="99"/>
                                 </div>
                                 <div class="quote-creative__info">
-                                    <p class="quote-creative__title">Michael Johnson</p>
+                                    <p class="quote-creative__title">Ivan Ivanov</p>
                                     <p class="quote-creative__subtitle">Regular Client</p>
                                 </div>
                             </div>
