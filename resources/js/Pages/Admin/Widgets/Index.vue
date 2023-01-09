@@ -5,6 +5,7 @@ import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, Link} from '@inertiajs/inertia-vue3';
 import WidgetAdmin from "@/Components/Admin/WidgetAdmin.vue";
+import Pagination from "@/Components/Pagination.vue";
 
 defineProps(['widgets']);
 </script>
@@ -33,7 +34,7 @@ defineProps(['widgets']);
                         <div class="flex flex-wrap">
                             <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
                                 <WidgetAdmin
-                                    v-for="widget in widgets"
+                                    v-for="widget in widgets.data"
                                     :key="widget.id"
                                     :widget="widget"
                                 />
@@ -41,6 +42,7 @@ defineProps(['widgets']);
                         </div>
                     </div>
                 </div>
+                <Pagination class="mt-6" :links="widgets.links"/>
                 <FooterAdmin/>
             </div>
         </div>
