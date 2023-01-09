@@ -141,7 +141,7 @@
                                                                         width="112" height="99"/>
                                 </div>
                                 <div class="quote-creative__info">
-                                    <p class="quote-creative__title">Ivan Ivanov</p>
+                                    <p class="quote-creative__title">Michael Johnson</p>
                                     <p class="quote-creative__subtitle">Regular Client</p>
                                 </div>
                             </div>

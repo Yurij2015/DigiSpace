@@ -76,6 +76,18 @@ class PageWidgetSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ],
+            [
+                'page_id' => 1,
+                'widget_id' => 30,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'page_id' => 1,
+                'widget_id' => 31,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ];
         DB::table('page_widget')->insert($pageWidget);
     }
