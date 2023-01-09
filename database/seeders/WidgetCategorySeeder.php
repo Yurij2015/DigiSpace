@@ -81,10 +81,18 @@ class WidgetCategorySeeder extends Seeder
                 'updated_at' => now()
             ],
             [
-                'name' => 'DigiSpace | Some Facts About Us',
-                'title' => 'Some Facts About Us',
+                'name' => 'Some Facts About Us',
+                'title' => 'DigiSpace | Some Facts About Us',
                 'description' => 'More than 1000 apps developed',
                 'image' => 'images/bg-3-1920x480.jpg',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Our Clients',
+                'title' => 'DigiSpace | Our Clients',
+                'description' => 'Our Clients',
+                'image' => null,
                 'created_at' => now(),
                 'updated_at' => now()
             ],

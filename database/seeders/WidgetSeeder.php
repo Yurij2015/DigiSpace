@@ -393,6 +393,32 @@ class WidgetSeeder extends Seeder
                 'anchor' => null,
                 'element_id' => null
             ],
+            [
+                "title" => "Michael Johnson",
+                "subtitle" => 'Regular Client',
+                "widget_category_id" => 10,
+                "icon" => null,
+                "widget_image" => '1673227358.jpg',
+                "content" => "<p>TechSoft offers a high caliber of resources skilled in Microsoft Azure .NET mobile and Quality Assurance. They became our true business partners over the past three years of our cooperation.</p>",
+                'created_at' => now(),
+                'updated_at' => now(),
+                'css_class' => null,
+                'anchor' => null,
+                'element_id' => null
+            ],
+            [
+                "title" => "Rachel Adams",
+                "subtitle" => 'Regular Client',
+                "widget_category_id" => 10,
+                "icon" => null,
+                "widget_image" => '1673227369.jpg',
+                "content" => "<p>TechSoft is a highly skilled and uniquely capable firm with multitudes of talent on-board. We have collaborated on a number of diverse projects that have been a great success.</p>",
+                'created_at' => now(),
+                'updated_at' => now(),
+                'css_class' => null,
+                'anchor' => null,
+                'element_id' => null
+            ],
         ];
         DB::table('widgets')->insert($widgets);
     }
