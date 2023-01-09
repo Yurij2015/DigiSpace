@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Page;
 use App\Models\WidgetCategory;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class AboutController extends Controller
@@ -16,33 +13,29 @@ class AboutController extends Controller
     public const SOME_FACTS_ABOUT = 9;
     public const CLIENTS = 10;
 
-
-    public function index(): Application|Factory|View
+    public function index()
     {
-        $aboutPageGeneralInfo = Page::with(['widgets' => function (BelongsToMany $query) {
-            $query->where('widget_category_id', '=', self::GENERAL_INFO_WIDGET_CATEGORY);
-        }])->where('slug', '=', 'about')->first();
-        $teamInfoCategoryTitle = (WidgetCategory::where('id', '=', self::TEAM_INFO)->first())->description;
-        $teamInfo = Page::with(['widgets' => function (BelongsToMany $query) {
-            $query->with('widgetIcon')->where('widget_category_id', '=', self::TEAM_INFO);
-        }])->where('slug', '=', 'about')->first();
-        $someFactsAboutCategory = WidgetCategory::where('id', '=', self::SOME_FACTS_ABOUT)->first();
-        $someFactsAbout = Page::with(['widgets' => function (BelongsToMany $query) {
-            $query->with('widgetIcon')->where('widget_category_id', '=', self::SOME_FACTS_ABOUT);
-        }])->where('slug', '=', 'about')->first();
-        $clientsCategory = WidgetCategory::where('id', '=', self::CLIENTS)->first();
-        $clients = Page::with(['widgets' => function (BelongsToMany $query) {
-            $query->with('widgetIcon')->where('widget_category_id', '=', self::CLIENTS);
-        }])->where('slug', '=', 'about')->first();
         return view('about.index',
             [
-                'aboutPageGeneralInfo' => $aboutPageGeneralInfo,
-                'teamInfoCategoryTitle' => $teamInfoCategoryTitle,
-                'teamInfo' => $teamInfo,
-                'someFactsAboutCategory' => $someFactsAboutCategory,
-                'someFactsAbout' => $someFactsAbout,
-                'clientsCategory' => $clientsCategory,
-                'clients' => $clients
+                'aboutPageGeneralInfo' => $this->getAboutPageComponent(self::GENERAL_INFO_WIDGET_CATEGORY),
+                'teamInfoCategoryTitle' => $this->getAboutPageComponentCategory(self::TEAM_INFO)->description,
+                'teamInfo' => $this->getAboutPageComponent(self::TEAM_INFO),
+                'someFactsAboutCategory' => $this->getAboutPageComponentCategory(self::SOME_FACTS_ABOUT),
+                'someFactsAbout' => $this->getAboutPageComponent(self::SOME_FACTS_ABOUT),
+                'clientsCategory' => $this->getAboutPageComponentCategory(self::CLIENTS),
+                'clients' => $this->getAboutPageComponent(self::CLIENTS)
             ]);
+    }
+
+    private function getAboutPageComponent($widgetCategory)
+    {
+        return Page::with(['widgets' => function (BelongsToMany $query) use ($widgetCategory) {
+            $query->where('widget_category_id', '=', $widgetCategory);
+        }])->where('slug', '=', 'about')->first();
+    }
+
+    private function getAboutPageComponentCategory($widgetCategory): WidgetCategory
+    {
+        return WidgetCategory::where('id', '=', $widgetCategory)->first();
     }
 }
