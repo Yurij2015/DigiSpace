@@ -14,6 +14,7 @@ class AboutController extends Controller
     public const GENERAL_INFO_WIDGET_CATEGORY = 7;
     public const TEAM_INFO = 8;
     public const SOME_FACTS_ABOUT = 9;
+    public const CLIENTS = 10;
 
 
     public function index(): Application|Factory|View
@@ -29,13 +30,19 @@ class AboutController extends Controller
         $someFactsAbout = Page::with(['widgets' => function (BelongsToMany $query) {
             $query->with('widgetIcon')->where('widget_category_id', '=', self::SOME_FACTS_ABOUT);
         }])->where('slug', '=', 'about')->first();
+        $clientsCategory = WidgetCategory::where('id', '=', self::CLIENTS)->first();
+        $clients = Page::with(['widgets' => function (BelongsToMany $query) {
+            $query->with('widgetIcon')->where('widget_category_id', '=', self::CLIENTS);
+        }])->where('slug', '=', 'about')->first();
         return view('about.index',
             [
                 'aboutPageGeneralInfo' => $aboutPageGeneralInfo,
                 'teamInfoCategoryTitle' => $teamInfoCategoryTitle,
                 'teamInfo' => $teamInfo,
                 'someFactsAboutCategory' => $someFactsAboutCategory,
-                'someFactsAbout' => $someFactsAbout
+                'someFactsAbout' => $someFactsAbout,
+                'clientsCategory' => $clientsCategory,
+                'clients' => $clients
             ]);
     }
 }
