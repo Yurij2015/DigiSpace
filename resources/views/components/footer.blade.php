@@ -31,7 +31,8 @@
                                 <div class="form-wrap">
                                     <input class="form-input" id="subscribe-form-footer-form-email" type="email"
                                            name="email">
-                                    <label class="form-label" for="subscribe-form-footer-form-email">{{ $widget->content }}</label>
+                                    <label class="form-label"
+                                           for="subscribe-form-footer-form-email">{{ $widget->content }}</label>
                                 </div>
                                 <div class="form-button">
                                     <button class="button button-lg button-primary button-ujarak" type="submit">
@@ -44,75 +45,90 @@
                 </div>
             </div>
             <div class="row row-50 justify-content-md-center justify-content-lg-start justify-content-xl-between">
-                <div class="col-md-5 col-lg-3">
-                    <p class="custom-heading-1 custom-heading-bordered">About us</p>
-                    <div class="divider"></div>
-                    <p class="ls-05">Our company has been developing high-quality and reliable software for
-                        corporate needs since 2008.</p>
-                    <ul class="list-inline list-inline-xs">
-                        <li><a class="icon icon-xxs icon-circle icon-filled icon-filled_brand fa fa-facebook"
-                               href="#"></a></li>
-                        <li><a class="icon icon-xxs icon-circle icon-filled icon-filled_brand fa fa-twitter"
-                               href="#"></a></li>
-                        <li><a class="icon icon-xxs icon-circle icon-filled icon-filled_brand fa fa-google-plus"
-                               href="#"></a></li>
-                        <li><a class="icon icon-xxs icon-circle icon-filled icon-filled_brand fa fa-instagram"
-                               href="#"></a></li>
-                    </ul>
-                </div>
-                <div class="col-md-5 col-lg-4 col-xl-3">
-                    <p class="custom-heading-1 custom-heading-bordered">Latest news</p>
-                    <div class="divider"></div>
-                    <div class="post-small-wrap">
-                        <!-- Post small-->
-                        <article class="post-small">
-                            <div class="post-small__aside"><a class="post-small__media" href="blog-post.html"><img
-                                        class="post-small__image" src="{{ asset('images/post-small-1-80x68.jpg') }}"
-                                        alt=""
-                                        width="80" height="68"/></a></div>
-                            <div class="post-small__main">
-                                <p class="post-small__title"><a href="blog-post.html">Benefits of Async/Await in
-                                        Programming</a></p>
-                                <time class="post-small__time" datetime="2022">January 12, 2022</time>
-                            </div>
-                        </article>
-                        <!-- Post small-->
-                        <article class="post-small">
-                            <div class="post-small__aside"><a class="post-small__media" href="blog-post.html"><img
-                                        class="post-small__image" src="{{ asset('images/post-small-2-80x68.jpg') }}"
-                                        alt=""
-                                        width="80" height="68"/></a></div>
-                            <div class="post-small__main">
-                                <p class="post-small__title"><a href="blog-post.html">Key Considerations and
-                                        Warnings of iPaaS</a></p>
-                                <time class="post-small__time" datetime="2022">January 12, 2022</time>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="col-md-10 col-lg-5 col-xl-4">
-                    <p class="custom-heading-1 custom-heading-bordered">Useful Links</p>
-                    <div class="divider"></div>
-                    <div class="row row-5">
-                        <div class="col-sm-6">
-                            <ul class="list-marked list-marked_primary">
-                                <li><a href="#">DB Management</a></li>
-                                <li><a href="#">iOS/MacOs Apps</a></li>
-                                <li><a href="#">Android Apps</a></li>
-                                <li><a href="#">Windows Apps</a></li>
-                                <li><a href="#">UX Design</a></li>
+                @foreach($footerWidgets as $widget)
+                    @if($widget->title === 'About us')
+                        <div class="col-md-5 col-lg-3">
+                            <p class="custom-heading-1 custom-heading-bordered"> {{ $widget->title }}</p>
+                            <div class="divider"></div>
+                            <p class="ls-05">{{ $widget->subtitle }}</p>
+                            <ul class="list-inline list-inline-xs">
+                                @foreach($widget->widgetIcon as $icon)
+                                    <li>
+                                        <a class="icon icon-xxs icon-circle icon-filled icon-filled_brand {{ $icon->icon_class }}"
+                                           href="{{ $icon->url }}"></a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
-                        <div class="col-sm-6">
-                            <ul class="list-marked list-marked_primary">
-                                <li><a href="#">Tutorials</a></li>
-                                <li><a href="#">Product Support</a></li>
-                                <li><a href="contact-us.html">Contact Us</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                            </ul>
+                    @endif
+                @endforeach
+                @foreach($footerWidgets as $widget)
+                    @if($widget->title === 'Latest news')
+                        <div class="col-md-5 col-lg-4 col-xl-3">
+                            <p class="custom-heading-1 custom-heading-bordered">{{ $widget->title }}</p>
+                            <div class="divider"></div>
+                            <div class="post-small-wrap">
+                                {{-- TODO add ArticleFooterComponent --}}
+                                <!-- Post small-->
+                                <article class="post-small">
+                                    <div class="post-small__aside"><a class="post-small__media"
+                                                                      href="blog-post.html"><img
+                                                class="post-small__image"
+                                                src="{{ asset('images/post-small-1-80x68.jpg') }}"
+                                                alt=""
+                                                width="80" height="68"/></a></div>
+                                    <div class="post-small__main">
+                                        <p class="post-small__title"><a href="blog-post.html">Benefits of Async/Await in
+                                                Programming</a></p>
+                                        <time class="post-small__time" datetime="2022">January 12, 2022</time>
+                                    </div>
+                                </article>
+                                <!-- Post small-->
+                                <article class="post-small">
+                                    <div class="post-small__aside"><a class="post-small__media"
+                                                                      href="blog-post.html"><img
+                                                class="post-small__image"
+                                                src="{{ asset('images/post-small-2-80x68.jpg') }}"
+                                                alt=""
+                                                width="80" height="68"/></a></div>
+                                    <div class="post-small__main">
+                                        <p class="post-small__title"><a href="blog-post.html">Key Considerations and
+                                                Warnings of iPaaS</a></p>
+                                        <time class="post-small__time" datetime="2022">January 12, 2022</time>
+                                    </div>
+                                </article>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
+                @foreach($footerWidgets as $widget)
+                    @if($widget->title === 'Useful Links')
+                        <div class="col-md-10 col-lg-5 col-xl-4">
+                            <p class="custom-heading-1 custom-heading-bordered">{{ $widget->title }}</p>
+                            <div class="divider"></div>
+                            <div class="row row-5">
+                                {{-- TODO add UsefulLinkFooterComponent --}}
+                                <div class="col-sm-6">
+                                    <ul class="list-marked list-marked_primary">
+                                        <li><a href="#">DB Management</a></li>
+                                        <li><a href="#">iOS/MacOs Apps</a></li>
+                                        <li><a href="#">Android Apps</a></li>
+                                        <li><a href="#">Windows Apps</a></li>
+                                        <li><a href="#">UX Design</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6">
+                                    <ul class="list-marked list-marked_primary">
+                                        <li><a href="#">Tutorials</a></li>
+                                        <li><a href="#">Product Support</a></li>
+                                        <li><a href="contact-us.html">Contact Us</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
@@ -124,7 +140,7 @@
                         class="copyright-year"></span><span>&nbsp;</span><span>Techsoft</span><span>.&nbsp;</span><a
                         href="privacy-policy.html">Privacy Policy</a></p>
                 <ul class="list-separated list-inline">
-                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="faq.html">FAQ</a></li>q
                     <li><a href="#">Support</a></li>
                 </ul>
             </div>

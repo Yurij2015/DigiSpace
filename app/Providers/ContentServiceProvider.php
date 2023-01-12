@@ -9,6 +9,7 @@ use Illuminate\Support\ServiceProvider;
 class ContentServiceProvider extends ServiceProvider
 {
     public const FOOTER_CATEGORY = 11;
+
     /**
      * Register services.
      *
@@ -26,7 +27,7 @@ class ContentServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $footerWidgets = Widget::where('widget_category_id', '=', self::FOOTER_CATEGORY)->get();
+        $footerWidgets = Widget::with('widgetIcon')->where('widget_category_id', '=', self::FOOTER_CATEGORY)->get();
         View::share('footerWidgets', $footerWidgets);
     }
 }
