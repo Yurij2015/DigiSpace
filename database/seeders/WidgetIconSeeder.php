@@ -310,6 +310,42 @@ class WidgetIconSeeder extends Seeder
                 'css_class' => 'text-blueGray-800',
                 'created_at' => now(),
                 'updated_at' => now()
+            ],
+            [
+                'widget_id' => '34',
+                'icon_class' => 'fa fa-facebook',
+                'description' => '#',
+                'url' => '',
+                'css_class' => null,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '34',
+                'icon_class' => 'fa fa-twitter',
+                'description' => '#',
+                'url' => '',
+                'css_class' => null,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '34',
+                'icon_class' => 'fa fa-google-plus',
+                'description' => '#',
+                'url' => '',
+                'css_class' => null,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'widget_id' => '34',
+                'icon_class' => 'fa fa-instagram',
+                'description' => '#',
+                'url' => '',
+                'css_class' => null,
+                'created_at' => now(),
+                'updated_at' => now()
             ]
         ];
         DB::table('widget_icons')->insert($widgetIcons);
