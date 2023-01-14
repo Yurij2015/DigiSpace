@@ -140,7 +140,7 @@
                         class="copyright-year"></span><span>&nbsp;</span><span>Techsoft</span><span>.&nbsp;</span><a
                         href="privacy-policy.html">Privacy Policy</a></p>
                 <ul class="list-separated list-inline">
-                    <li><a href="faq.html">FAQ</a></li>q
+                    <li><a href="faq.html">FAQ</a></li>
                     <li><a href="#">Support</a></li>
                 </ul>
             </div>
