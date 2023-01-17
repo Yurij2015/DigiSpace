@@ -115,32 +115,31 @@
                                         <li>
                                             <h5 class="rd-megamenu-header">SubMenu 1</h5>
                                             <ul class="rd-megamenu-list">
-                                                <li><a href="faq.html">FAQ</a></li>
-                                                <li><a href="login.html">Login</a></li>
-                                                <li><a href="cart-page.html">Cart page</a></li>
+                                                @foreach($pageSubmenuFirst as $submenu)
+                                                    @foreach($submenu->menuItem as $item)
+                                                        <li><a href="{{ $item->href }}">{{ $item->name }}</a></li>
+                                                    @endforeach
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li>
                                             <h5 class="rd-megamenu-header">SubMenu 2</h5>
                                             <ul class="rd-megamenu-list">
-                                                <li><a href="404-page.html">404 page</a></li>
-                                                <li><a href="503-page.html">503 page</a></li>
-                                                <li><a href="coming-soon.html">Coming soon</a></li>
-                                                <li><a href="maintenance.html">Maintenance</a></li>
-                                                <li><a href="privacy-policy.html">Privacy policy</a></li>
-                                                <li><a href="search-results.html">Search results</a></li>
+                                                @foreach($pageSubmenuSecond as $submenu)
+                                                    @foreach($submenu->menuItem as $item)
+                                                        <li><a href="{{ $item->href }}">{{ $item->name }}</a></li>
+                                                    @endforeach
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li>
                                             <h5 class="rd-megamenu-header">SubMenu 3</h5>
                                             <ul class="rd-megamenu-list">
-                                                <li><a href="buttons.html">Buttons</a></li>
-                                                <li><a href="forms.html">Forms</a></li>
-                                                <li><a href="grid-system.html">Grid system</a></li>
-                                                <li><a href="progress-bars.html">Progress bars</a></li>
-                                                <li><a href="tables.html">Tables</a></li>
-                                                <li><a href="tabs-and-accordions.html">Tabs and Accordions</a></li>
-                                                <li><a href="typography.html">Typography</a></li>
+                                                @foreach($pageSubmenuThird as $submenu)
+                                                    @foreach($submenu->menuItem as $item)
+                                                        <li><a href="{{ $item->href }}">{{ $item->name }}</a></li>
+                                                    @endforeach
+                                                @endforeach
                                             </ul>
                                         </li>
                                     </ul>

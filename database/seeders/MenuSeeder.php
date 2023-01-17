@@ -23,7 +23,7 @@ class MenuSeeder extends Seeder
                 'description' => null,
                 'location' => 'header',
                 'slug' => 'main',
-                'href' => null,
+                'href' => 'main',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -35,7 +35,7 @@ class MenuSeeder extends Seeder
                 'description' => 'first submenu in pages main menu',
                 'location' => 'pages_submenus',
                 'slug' => 'submenu-first',
-                'href' => null,
+                'href' => 'submenu-first',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -47,7 +47,7 @@ class MenuSeeder extends Seeder
                 'description' => 'second submenu in pages main menu',
                 'location' => 'pages_submenus',
                 'slug' => 'submenu-second',
-                'href' => null,
+                'href' => 'submenu-second',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -59,19 +59,19 @@ class MenuSeeder extends Seeder
                 'description' => 'third submenu in pages main menu',
                 'location' => 'pages_submenus',
                 'slug' => 'submenu-third',
-                'href' => null,
+                'href' => 'submenu-third',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'name' => 'fo0ter submenu',
+                'name' => 'footer submenu',
                 'title' => 'Footer submenu',
                 'level' => 3,
-                'position' => 1,
+                'position' => 4,
                 'description' => 'submenu in footer',
                 'location' => 'footer',
                 'slug' => 'footer-submenu',
-                'href' => null,
+                'href' => 'footer-submenu',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
