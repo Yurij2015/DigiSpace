@@ -104,9 +104,4 @@ Route::get('/landing', static function () {
 
 Route::get('/pages/{slug}', [PageController::class, 'show'])->name('pages.page');
 
-//Route::get('/pages/{page}', static function ($page) {
-//    return "Hello page - $page";
-//})->name('pages.page');
-
-
 require __DIR__ . '/auth.php';
