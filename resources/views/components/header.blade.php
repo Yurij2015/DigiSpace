@@ -117,7 +117,9 @@
                                             <ul class="rd-megamenu-list">
                                                 @foreach($pageSubmenuFirst as $submenu)
                                                     @foreach($submenu->menuItem as $item)
-                                                        <li><a href="{{ $item->href }}">{{ $item->name }}</a></li>
+                                                        <li>
+                                                            <a href="{{ route('pages.page', $item->slug) }}">{{ $item->name }}</a>
+                                                        </li>
                                                     @endforeach
                                                 @endforeach
                                             </ul>
@@ -127,7 +129,9 @@
                                             <ul class="rd-megamenu-list">
                                                 @foreach($pageSubmenuSecond as $submenu)
                                                     @foreach($submenu->menuItem as $item)
-                                                        <li><a href="{{ $item->href }}">{{ $item->name }}</a></li>
+                                                        <li>
+                                                            <a href="{{ route('pages.page', $item->slug) }}">{{ $item->name }}</a>
+                                                        </li>
                                                     @endforeach
                                                 @endforeach
                                             </ul>
@@ -137,7 +141,9 @@
                                             <ul class="rd-megamenu-list">
                                                 @foreach($pageSubmenuThird as $submenu)
                                                     @foreach($submenu->menuItem as $item)
-                                                        <li><a href="{{ $item->href }}">{{ $item->name }}</a></li>
+                                                        <li>
+                                                            <a href="{{ route('pages.page', $item->slug) }}">{{ $item->name }}</a>
+                                                        </li>
                                                     @endforeach
                                                 @endforeach
                                             </ul>

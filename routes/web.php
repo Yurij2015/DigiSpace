@@ -9,6 +9,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\PromoController;
@@ -100,6 +101,12 @@ Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['
 Route::get('/landing', static function () {
     return "Landing vue notus";
 })->name('landing');
+
+Route::get('/pages/{slug}', [PageController::class, 'show'])->name('pages.page');
+
+//Route::get('/pages/{page}', static function ($page) {
+//    return "Hello page - $page";
+//})->name('pages.page');
 
 
 require __DIR__ . '/auth.php';
