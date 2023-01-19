@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         $this->call(WidgetCategorySeeder::class);
         $this->call(WidgetSeeder::class);
@@ -22,5 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->call(PageWidgetSeeder::class);
         $this->call(MenuSeeder::class);
         $this->call(MenuItemSeeder::class);
+        $this->call(ProductSeeder::class);
+        $this->call(ServiceSeeder::class);
+        $this->call(ProductServiceSeeder::class);
     }
 }
