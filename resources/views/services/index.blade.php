@@ -25,68 +25,85 @@
                 <!-- Pricing table item-->
                 <article class="pricing-table__item pricing-table-creative__item">
                     <div class="pricing-table__item-inner">
-                        <p class="pricing-table__item-title">Basic</p>
-                        <div class="pricing-table__item-price">
-                            <p class="pricing-table__item-price-value"><span class="small">$</span><span>399.99</span>
-                            </p>
-                            <p class="pricing-table__item-price-details">starting at</p>
-                        </div>
-                        <div class="pricing-table__item-control">
-                            <div class="button-wrap"><a class="button btn-primary-outline button-ujarak" href="#">Order
-                                    now</a></div>
-                        </div>
-                        <ul class="pricing-table__item-features">
-                            <li><span class="text-marked">Concept development</span></li>
-                            <li><span class="text-marked">UI design</span></li>
-                            <li><span>Configuration management</span></li>
-                            <li><span>Software quality assurance</span></li>
-                        </ul>
+                        @foreach($products as $product)
+                            @if($product->title === 'Basic')
+                                <p class="pricing-table__item-title">{{ $product->title }}</p>
+                                <div class="pricing-table__item-price">
+                                    <p class="pricing-table__item-price-value">
+                                        <span class="small">$</span>
+                                        <span>{{ $product->price_value }}</span>
+                                    </p>
+                                    <p class="pricing-table__item-price-details">{{ $product->details }}</p>
+                                </div>
+                                <div class="pricing-table__item-control">
+                                    <div class="button-wrap">
+                                        <a class="button btn-primary-outline button-ujarak" href="#">Order now</a>
+                                    </div>
+                                </div>
+                                <ul class="pricing-table__item-features">
+                                    @foreach($product->services as $service)
+                                        <li><span class="{{ $service->css_style }}">{{ $service->title }}</span></li>
+                                    @endforeach
+                                </ul>
+                            @endif
+                        @endforeach
                     </div>
                 </article>
                 <!-- Pricing table item-->
                 <article class="pricing-table__item pricing-table-creative__item pricing-table-creative__item_prefered">
                     <div class="pricing-table__item-inner">
-                        <p class="pricing-table__item-title">Optimal</p>
-                        <div class="pricing-table__item-price">
-                            <p class="pricing-table__item-price-value"><span class="small">$</span><span>599.99</span>
-                            </p>
-                            <p class="pricing-table__item-price-details">starting at</p>
-                        </div>
-                        <div class="pricing-table__item-control">
-                            <div class="button-wrap"><a class="button btn-white-outline button-ujarak" href="#">Order
-                                    now</a></div>
-                        </div>
-                        <ul class="pricing-table__item-features">
-                            <li><span class="text-marked">Concept development</span></li>
-                            <li><span class="text-marked">UI design</span></li>
-                            <li><span class="text-marked">Configuration management</span></li>
-                            <li><span class="text-accent">Software quality assurance</span></li>
-                        </ul>
+                        @foreach($products as $product)
+                            @if($product->title === 'Optimal')
+                                <p class="pricing-table__item-title">{{ $product->title }}</p>
+                                <div class="pricing-table__item-price">
+                                    <p class="pricing-table__item-price-value">
+                                        <span class="small">$</span>
+                                        <span>{{ $product->price_value }}</span>
+                                    </p>
+                                    <p class="pricing-table__item-price-details">{{ $product->details }}</p>
+                                </div>
+                                <div class="pricing-table__item-control">
+                                    <div class="button-wrap">
+                                        <a class="button btn-white-outline button-ujarak" href="#">Order now</a>
+                                    </div>
+                                </div>
+                                <ul class="pricing-table__item-features">
+                                    @foreach($product->services as $service)
+                                        <li><span class="{{ $service->css_style }}">{{ $service->title }}</span></li>
+                                    @endforeach
+                                </ul>
+                            @endif
+                        @endforeach
                     </div>
                 </article>
                 <!-- Pricing table item-->
                 <article class="pricing-table__item pricing-table-creative__item">
                     <div class="pricing-table__item-inner">
-                        <p class="pricing-table__item-title">Ultimate</p>
-                        <div class="pricing-table__item-price">
-                            <p class="pricing-table__item-price-value"><span class="small">$</span><span>999.99</span>
-                            </p>
-                            <p class="pricing-table__item-price-details">starting at</p>
-                        </div>
-                        <div class="pricing-table__item-control">
-                            <div class="button-wrap"><a class="button btn-primary-outline button-ujarak" href="#">Order
-                                    now</a></div>
-                        </div>
-                        <ul class="pricing-table__item-features">
-                            <li><span class="text-marked">Concept development</span></li>
-                            <li><span class="text-marked">UI design</span></li>
-                            <li><span class="text-marked">Configuration management</span></li>
-                            <li><span class="text-marked">Software quality assurance</span></li>
-                        </ul>
+                        @foreach($products as $product)
+                            @if($product->title === 'Ultimate')
+                                <p class="pricing-table__item-title">{{ $product->title }}</p>
+                                <div class="pricing-table__item-price">
+                                    <p class="pricing-table__item-price-value">
+                                        <span class="small">$</span>
+                                        <span>{{ $product->price_value }}</span>
+                                    </p>
+                                    <p class="pricing-table__item-price-details">{{ $product->details }}</p>
+                                </div>
+                                <div class="pricing-table__item-control">
+                                    <div class="button-wrap">
+                                        <a class="button btn-primary-outline button-ujarak" href="#">Order now</a>
+                                    </div>
+                                </div>
+                                <ul class="pricing-table__item-features">
+                                    @foreach($product->services as $service)
+                                        <li><span class="{{ $service->css_style }}">{{ $service->title }}</span></li>
+                                    @endforeach
+                                </ul>
+                            @endif
+                        @endforeach
                     </div>
                 </article>
             </div>
-
         </div>
     </section>
     <section class="section section-sm bg-white text-center">
