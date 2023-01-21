@@ -104,6 +104,22 @@ class WidgetCategorySeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ],
+            [
+                'name' => 'Why Choose Us',
+                'title' => 'DigiSpace | Why Choose Us',
+                'description' => 'Why Choose Us',
+                'image' => null,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Frequently Asked Questions',
+                'title' => 'DigiSpace | Question-Answer',
+                'description' => 'Question-Answer block',
+                'image' => null,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ];
         DB::table('widget_categories')->insert($widgetCategories);
     }
