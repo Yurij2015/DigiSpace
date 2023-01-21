@@ -20,6 +20,16 @@ class PageSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ],
+            [
+                'name' => null,
+                'page_category_id' => null,
+                'meta' => null,
+                'description' => null,
+                'content' => null,
+                'slug' => 'services',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ];
         DB::table('pages')->insert($pages);
     }

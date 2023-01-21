@@ -88,6 +88,78 @@ class PageWidgetSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ],
+            [
+                'page_id' => 2,
+                'widget_id' => 37,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'page_id' => 2,
+                'widget_id' => 38,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'page_id' => 2,
+                'widget_id' => 39,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'page_id' => 2,
+                'widget_id' => 40,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'page_id' => 2,
+                'widget_id' => 41,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'page_id' => 2,
+                'widget_id' => 42,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'page_id' => 2,
+                'widget_id' => 43,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'page_id' => 2,
+                'widget_id' => 44,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'page_id' => 2,
+                'widget_id' => 45,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'page_id' => 2,
+                'widget_id' => 46,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'page_id' => 2,
+                'widget_id' => 47,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'page_id' => 2,
+                'widget_id' => 48,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ];
         DB::table('page_widget')->insert($pageWidget);
     }
