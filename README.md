@@ -1,1 +1,1 @@
-Laravel, Vue, Inertia, Vite
+Laravel, Vue, Inertia, Vite, Blade
