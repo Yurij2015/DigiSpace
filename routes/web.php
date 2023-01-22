@@ -103,5 +103,7 @@ Route::get('/landing', static function () {
 })->name('landing');
 
 Route::get('/pages/{slug}', [PageController::class, 'show'])->name('pages.page');
+Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.post');
+
 
 require __DIR__ . '/auth.php';

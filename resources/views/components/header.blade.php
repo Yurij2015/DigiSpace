@@ -106,7 +106,10 @@
                                 <li class="{{ Route::is('blog') ? 'active' : '' }}"><a
                                         href="{{ route('blog') }}">Blog</a>
                                     <ul class="rd-navbar-dropdown">
-                                        <li><a href="blog-post.html">Blog post</a></li>
+                                        @foreach($postsForMenu as $post)
+                                            <li><a href="{{ route('blog.post', $post->slug) }}">Blog post - {{ $post->id }}</a>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li><a href="#">Pages</a>

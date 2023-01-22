@@ -12,4 +12,9 @@ class BlogController extends Controller
     {
         return view('blog.index');
     }
+
+    public function show(string $slug): string
+    {
+        return view('blog.post_show', ['slug' => $slug]);
+    }
 }
