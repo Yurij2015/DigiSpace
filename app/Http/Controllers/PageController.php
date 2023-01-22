@@ -5,7 +5,7 @@ class PageController extends Controller
 {
     /**
      * Display the specified resource.
-     * @param string $page
+     * @param string $slug
      * @return string
      */
     public function show(string $slug): string
