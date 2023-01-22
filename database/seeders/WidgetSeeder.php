@@ -640,6 +640,45 @@ class WidgetSeeder extends Seeder
                 'anchor' => null,
                 'element_id' => null
             ],
+            [
+                "title" => "Windows Applications",
+                "subtitle" => 'Windows Applications',
+                "widget_category_id" => 14,
+                "icon" => 'fl-bigmug-line-file69',
+                "widget_image" => null,
+                "content" => '{"discount":"-25%", "currency":"$", "price_value":"126", "price_aside":"99", "period":"year", "price_old":"Old Price $200.00"}',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'css_class' => null,
+                'anchor' => null,
+                'element_id' => null
+            ],
+            [
+                "title" => "iOS & Android Apps",
+                "subtitle" => 'iOS & Android Apps',
+                "widget_category_id" => 14,
+                "icon" => 'fl-bigmug-line-hot67',
+                "widget_image" => null,
+                "content" => '{"discount":"Free Trial", "currency":"$", "price_value":"0", "price_aside":"99",  "period":"mon", "price_old":"Old Price $100.00"}',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'css_class' => 'promo-classic__label-sm',
+                'anchor' => null,
+                'element_id' => null
+            ],
+            [
+                "title" => "QA & Testing Services",
+                "subtitle" => 'QA & Testing Services',
+                "widget_category_id" => 14,
+                "icon" => 'fl-bigmug-line-email64',
+                "widget_image" => null,
+                "content" => '{"discount":"-50%", "currency":"$", "price_value":"45", "price_aside":"99", "period":"mon", "price_old":"Old Price $150.00"}',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'css_class' => null,
+                'anchor' => null,
+                'element_id' => null
+            ],
         ];
         DB::table('widgets')->insert($widgets);
     }
