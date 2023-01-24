@@ -25,7 +25,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | This option controls the log channel that should be used to log warnings
-    | regarding deprecated PHP and library features. This allows you to get
+    | regarding deprecated PHP and lib features. This allows you to get
     | your application ready for upcoming major versions of dependencies.
     |
     */
@@ -41,7 +41,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Here you may configure the log channels for your application. Out of
-    | the box, Laravel uses the Monolog PHP logging library. This gives
+    | the box, Laravel uses the Monolog PHP logging lib. This gives
     | you a variety of powerful log handlers / formatters to utilize.
     |
     | Available Drivers: "single", "daily", "slack", "syslog",
