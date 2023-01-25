@@ -95,10 +95,10 @@ class AdminController extends Controller
      * @param $post
      * @return Response
      */
-    final public function postUpdateForm($post): Response
+    final public function postUpdateForm($post, PostService $postService): Response
     {
         $post = Post::where('id', $post)->first();
-        $this->changeImgPathIfNull($post);
+        $postService->changeImgPathIfNull($post);
         return Inertia::render('Admin/Posts/Update', [
             'post' => $post,
             'categories' => Category::all()
