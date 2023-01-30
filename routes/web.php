@@ -36,6 +36,7 @@ Route::get('pricing', [PriceController::class, 'index'])->name('pricing');
 Route::get('promos', [PromoController::class, 'index'])->name('promos');
 Route::get('blog', [BlogController::class, 'index'])->name('blog');
 Route::get('contact-us', [ContactController::class, 'index'])->name('contact-us');
+Route::post('contact-us', [ContactController::class, 'save'])->name('contact.save');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth']);
 
