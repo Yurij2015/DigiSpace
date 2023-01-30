@@ -14,6 +14,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +38,7 @@ Route::get('promos', [PromoController::class, 'index'])->name('promos');
 Route::get('blog', [BlogController::class, 'index'])->name('blog');
 Route::get('contact-us', [ContactController::class, 'index'])->name('contact-us');
 Route::post('contact-us', [ContactController::class, 'save'])->name('contact.save');
+Route::post('subscriber-save', [SubscriberController::class, 'save'])->name('subscriber-save');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth']);
 
