@@ -37,6 +37,12 @@ import {Link} from '@inertiajs/inertia-vue3';
                         <p v-else
                            class="text-base font-light leading-relaxed mt-0 mb-4 text-emerald-800 json-content"
                            v-html='widget.content'></p>
+                        <div v-if="widget.widget_icon.length">
+                            <span class="text-red-600 font-bold">Icons: </span>
+                            <span class="text-red-400" v-for="(value, key) of widget.widget_icon"> {{ value.icon_class }}
+                                <span v-if="key+1 < widget.widget_icon.length"> | </span>
+                            </span>
+                        </div>
                     </div>
                     <div class="w-1/12 sm:w-1/12">
                         <img :src="widget.widget_image" alt="..."
@@ -70,4 +76,5 @@ import {Link} from '@inertiajs/inertia-vue3';
     border: dotted 1px;
     background: #f6f6bd;
 }
+
 </style>
