@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\WidgetController;
+use App\Http\Controllers\Admin\WidgetIconController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
@@ -97,6 +98,8 @@ Route::middleware('auth')->group(function () {
         ->name('admin.widget-update');
     Route::delete('admin/widget-destroy/{widget}', [WidgetController::class, 'widgetDestroy'])
         ->name('admin.widget-destroy');
+    Route::get('admin/widget-icons/{widget}', [WidgetIconController::class, 'widgetIcons'])
+        ->name('admin.widget-icons');
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.profile');

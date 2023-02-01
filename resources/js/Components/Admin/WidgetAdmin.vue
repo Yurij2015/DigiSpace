@@ -39,9 +39,15 @@ import {Link} from '@inertiajs/inertia-vue3';
                            v-html='widget.content'></p>
                         <div v-if="widget.widget_icon.length">
                             <span class="text-red-600 font-bold">Icons: </span>
-                            <span class="text-red-400" v-for="(value, key) of widget.widget_icon"> {{ value.icon_class }}
+                            <span class="text-red-400" v-for="(value, key) of widget.widget_icon"> {{value.icon_class }}
                                 <span v-if="key+1 < widget.widget_icon.length"> | </span>
                             </span>
+                            <Link :href="route('admin.widget-icons', widget.id)" method="get">
+                                <button
+                                    class="bg-teal-500 text-white active:bg-teal-600 text-xs px-2 py-1 rounded shadow hover:shadow-md outline-none focus:outline-none ml-1 ease-linear transition-all duration-150">
+                                    Edit icons
+                                </button>
+                            </Link>
                         </div>
                     </div>
                     <div class="w-1/12 sm:w-1/12">
