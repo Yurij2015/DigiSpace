@@ -16,7 +16,7 @@ class WidgetIconController extends Controller
      */
     final public function widgetIcons($widget): Response
     {
-        $icons = WidgetIcon::where('widget_id', $widget)->get();
+        $icons = WidgetIcon::where('widget_id', $widget)->with('widget')->get();
         return Inertia::render('Admin/WidgetIcons/Index', [
             'icons' => $icons,
         ]);
