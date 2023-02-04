@@ -21,4 +21,17 @@ class WidgetIconController extends Controller
             'icons' => $icons,
         ]);
     }
+
+    /**
+     * @param $iconId
+     * @return Response
+     */
+    final public function widgetIconUpdateForm($iconId): Response
+    {
+        $icon = WidgetIcon::where('id', $iconId)->first();
+//        dd($icon);
+        return Inertia::render('Admin/WidgetIcons/Update', [
+            'icon' => $icon,
+        ]);
+    }
 }
