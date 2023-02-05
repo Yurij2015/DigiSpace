@@ -7,7 +7,7 @@ import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
 
-const props = defineProps({icon: Object});
+const props = defineProps(['icon', 'page']);
 const form = useForm({
     icon_class: props.icon.icon_class,
     description: props.icon.description,
@@ -70,7 +70,7 @@ const form = useForm({
                                     <!--                                    <InputError :message="form.errors.widget_category_id" class="mt-2"/>-->
 
                                     <PrimaryButton class="mt-4">Save edited widget icon!</PrimaryButton>
-                                    <Link :href="route('admin.widget-icons', icon.widget_id)">
+                                    <Link :href="route('admin.widget-icons', icon.widget_id)+'?page='+page">
                                         <button
                                             class="bg-orange-500 text-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                             type="button">

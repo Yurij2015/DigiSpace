@@ -33,6 +33,7 @@ defineProps(['icons', 'page']);
                                     v-for="icon in icons"
                                     :key="icon.id"
                                     :icon="icon"
+                                    :page = "page"
                                 />
                                 <Link :href="route('admin.widgets')+'?page='+page">
                                     <button

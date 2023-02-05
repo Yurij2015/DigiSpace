@@ -30,11 +30,12 @@ class WidgetIconController extends Controller
      * @param $iconId
      * @return Response
      */
-    final public function widgetIconUpdateForm($iconId): Response
+    final public function widgetIconUpdateForm($iconId, Request $request): Response
     {
         $icon = WidgetIcon::where('id', $iconId)->with('widget')->first();
         return Inertia::render('Admin/WidgetIcons/Update', [
             'icon' => $icon,
+            'page' => $request->page
         ]);
     }
 }
