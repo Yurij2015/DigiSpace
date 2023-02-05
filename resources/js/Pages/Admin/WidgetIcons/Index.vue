@@ -3,10 +3,10 @@ import AdminNavbar from "@/Components/Navbars/AdminNavbar.vue";
 import Sidebar from "@/Components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
-import {Head} from '@inertiajs/inertia-vue3';
+import {Head, Link} from '@inertiajs/inertia-vue3';
 import WidgetIconAdmin from "@/Components/Admin/WidgetIconAdmin.vue";
 
-defineProps(['icons']);
+defineProps(['icons', 'page']);
 </script>
 
 <template>
@@ -34,9 +34,17 @@ defineProps(['icons']);
                                     :key="icon.id"
                                     :icon="icon"
                                 />
+                                <Link :href="route('admin.widgets')+'?page='+page">
+                                    <button
+                                        class="bg-orange-500 text-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                        type="button">
+                                        Back
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <FooterAdmin/>
             </div>

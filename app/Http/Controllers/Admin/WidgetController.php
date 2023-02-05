@@ -21,7 +21,10 @@ class WidgetController extends Controller
 {
     final public function index(WidgetService $widgetService): Response
     {
-        $widgets = Widget::with('widgetCategory:id,title')->with('widgetIcon')->latest('id')->paginate(5);
+        $widgets = Widget::with('widgetCategory:id,title')
+            ->with('widgetIcon')
+            ->latest('id')
+            ->paginate(config('constants.WIDGET_PER_PAGE'));
         $widgetService->changeImgPathIfNullInWidgets($widgets);
         return Inertia::render('Admin/Widgets/Index', [
             'widgets' => $widgets

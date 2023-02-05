@@ -37,6 +37,7 @@ defineProps(['widgets']);
                                     v-for="widget in widgets.data"
                                     :key="widget.id"
                                     :widget="widget"
+                                    :page = "widgets.current_page"
                                 />
                             </div>
                         </div>
