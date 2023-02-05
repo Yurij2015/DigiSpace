@@ -100,8 +100,10 @@ Route::middleware('auth')->group(function () {
         ->name('admin.widget-destroy');
     Route::get('admin/widget-icons/{widget}', [WidgetIconController::class, 'widgetIcons'])
         ->name('admin.widget-icons');
-    Route::get('admin/widget-icon-update-form/{icon}', [WidgetIconController::class, 'widgetIconUpdateForm'])
+    Route::get('admin/widget-icon-update-form/{widgetIcon}', [WidgetIconController::class, 'widgetIconUpdateForm'])
         ->name('admin.widget-icon-update-form');
+    Route::put('admin/widget-icon-update/{widgetIcon}', [WidgetIconController::class, 'widgetIconUpdate'])
+        ->name('admin.widget-icon-update');
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.profile');

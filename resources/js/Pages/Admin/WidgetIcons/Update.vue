@@ -13,7 +13,6 @@ const form = useForm({
     description: props.icon.description,
     url: props.icon.url,
     css_class: props.icon.css_class,
-    file: null
 });
 
 </script>
@@ -37,7 +36,7 @@ const form = useForm({
                         <div class="flex flex-wrap">
                             <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
                                 <form
-                                    @submit.prevent="form.put(route('admin.widget-update', icon.id), { onSuccess: () => form.reset() })">
+                                    @submit.prevent="form.put(route('admin.widget-icon-update', icon.id)+'?page='+page, { onSuccess: () => form.reset() })">
                                     <input
                                         v-model="icon.icon_class"
                                         class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
@@ -58,17 +57,6 @@ const form = useForm({
                                         class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                     >
                                     <InputError :message="form.errors.css_class" class="mt-2"/>
-
-                                    <!--                                    <select-->
-                                    <!--                                        class='block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3'-->
-                                    <!--                                        v-model='form.widget_category_id'>-->
-                                    <!--                                        <option v-for='widgetCategory in widgetCategories' :value='widgetCategory.id'>{{-->
-                                    <!--                                                widgetCategory.title-->
-                                    <!--                                            }}-->
-                                    <!--                                        </option>-->
-                                    <!--                                    </select>-->
-                                    <!--                                    <InputError :message="form.errors.widget_category_id" class="mt-2"/>-->
-
                                     <PrimaryButton class="mt-4">Save edited widget icon!</PrimaryButton>
                                     <Link :href="route('admin.widget-icons', icon.widget_id)+'?page='+page">
                                         <button
