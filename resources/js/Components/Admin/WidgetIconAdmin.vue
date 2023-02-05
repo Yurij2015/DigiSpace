@@ -1,5 +1,5 @@
 <script setup>
-defineProps(['icon']);
+defineProps(['icon', 'page']);
 
 import {Link} from '@inertiajs/inertia-vue3';
 </script>
@@ -24,7 +24,7 @@ import {Link} from '@inertiajs/inertia-vue3';
                     </div>
                     <div class="w-2/12 sm:w-2/12">
                         <div style="float:right">
-                            <Link :href="route('admin.widget-icon-update-form', icon.id)" method="get">
+                            <Link :href="route('admin.widget-icon-update-form', icon.id)+'?page='+page" method="get">
                                 <button
                                     class="bg-teal-500 text-white active:bg-teal-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                     type="button">

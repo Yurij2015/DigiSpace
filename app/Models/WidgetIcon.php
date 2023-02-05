@@ -10,6 +10,10 @@ class WidgetIcon extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'icon_class', 'description', 'url', 'css_class'
+    ];
+
     public function widget(): BelongsTo
     {
         return $this->belongsTo(Widget::class);
