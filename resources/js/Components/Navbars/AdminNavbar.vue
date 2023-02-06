@@ -36,6 +36,22 @@ import {Link} from '@inertiajs/inertia-vue3';
                   class="ml-3 text-white text-sm uppercase hidden lg:inline-block font-semibold">
                 Posts
             </Link>
+            <Link :href="route('admin.widgets')"
+                  :active="route().current('admin.posts')"
+                  class="ml-3 text-white text-sm uppercase hidden lg:inline-block font-semibold">
+                Widgets
+            </Link>
+            <Link :href="route('admin.dafault-pages')"
+                  :active="route().current('admin.dafault-pages')"
+                  class="ml-3 text-white text-sm uppercase hidden lg:inline-block font-semibold">
+                Default pages
+            </Link>
+            <Link :href="route('admin.pages')"
+                  :active="route().current('admin.pages')"
+                  class="ml-3 text-white text-sm uppercase hidden lg:inline-block font-semibold">
+                Pages
+            </Link>
+
             <!-- Form -->
             <form
                 class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3"
