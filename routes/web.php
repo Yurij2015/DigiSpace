@@ -106,6 +106,15 @@ Route::middleware('auth')->group(function () {
         ->name('admin.widget-icon-update');
 });
 
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/dafault-pages', static function () {
+        return 'default pages';
+    })->name('admin.dafault-pages');
+    Route::get('/admin/pages', static function () {
+        return 'pages';
+    })->name('admin.pages');
+});
+
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.profile');
 //Route::get('/', [LandingController::class, 'index'])->name('landing');
 Route::get('/landing', static function () {
