@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DefaultPagesController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\WidgetController;
 use App\Http\Controllers\Admin\WidgetIconController;
@@ -107,9 +108,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/admin/dafault-pages', static function () {
-        return 'default pages';
-    })->name('admin.dafault-pages');
+    Route::get('/admin/dafault-pages', [DefaultPagesController::class, 'index'])->name('admin.dafault-pages');
     Route::get('/admin/pages', static function () {
         return 'pages';
     })->name('admin.pages');
