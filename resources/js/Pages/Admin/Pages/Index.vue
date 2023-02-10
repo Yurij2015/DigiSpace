@@ -11,14 +11,13 @@ let pageTitle = "Defaul pages";
 </script>
 
 <template>
-    <Head><title>Default pages | Admin Panel</title></Head>
+    <Head><title>Pages | Admin Panel</title></Head>
     <div>
         <sidebar/>
         <div class="relative md:ml-64 bg-blueGray-100">
             <AdminNavbar/>
             <HeaderStats/>
             <div class="px-4 md:px-10 mx-auto w-full -m-24">
-                <CardDefaultPages :page_title=pageTitle :default_pages=defaultPages></CardDefaultPages>
                 <FooterAdmin/>
             </div>
         </div>
