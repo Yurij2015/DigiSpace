@@ -15,12 +15,6 @@ const props = defineProps(['page_title', 'default_pages']);
                 <div
                     class="relative w-full px-4 max-w-full flex-grow flex-1 text-right"
                 >
-                    <button
-                        class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                        type="button"
-                    >
-                        See all
-                    </button>
                 </div>
             </div>
         </div>
@@ -53,27 +47,32 @@ const props = defineProps(['page_title', 'default_pages']);
                 </thead>
                 <tbody>
 
-                <tr v-for="item in default_pages">
+                <tr v-for="(item, key) in default_pages">
                     <th
                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left"
                     >
-                        {{ item }}
+                        {{ key }}
                     </th>
                     <td
                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                     >
-                        {{ item }}
+                        {{ item['count'] }}
+
                     </td>
                     <td
                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                     >
-                        {{ item }}
+                        <a :href="'page/'+key">{{ key }}</a>
                     </td>
                     <td
                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                     >
-                        <i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                        {{ item }}
+                        <button
+                            class="bg-teal-500 text-white active:bg-teal-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                            type="button"
+                        >
+                            Edit
+                        </button>
                     </td>
                 </tr>
                 </tbody>
