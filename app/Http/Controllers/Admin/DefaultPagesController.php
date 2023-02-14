@@ -4,31 +4,31 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Page;
-use App\Models\Ticket;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Http\Request;
+use App\Services\DefaultPageService;
 use Inertia\Inertia;
 use Inertia\Response;
 
 class DefaultPagesController extends Controller
 {
-    public function index(): Response
+    public function index(DefaultPageService $page): Response
     {
-//        dd($this->getPageData("promos")->widgets->count());
         return Inertia::render('Admin/DefaultPages/Index', [
             'defaultPages' => [
-                "about" => ['count' => $this->getPageData("about")->widgets->count()],
-                "services" => ['count' => $this->getPageData("services")->widgets->count()],
-                "pricing" => ['count' => $this->getPageData("pricing")->widgets->count()],
-                "promos" => ['count' => $this->getPageData("promos")->widgets->count()],
+                "about" => ['page' => $page->getPageData("about")],
+                "services" => ['page' => $page->getPageData("services")],
+                "pricing" => ['page' => $page->getPageData("pricing")],
+                "promos" => ['page' => $page->getPageData("promos")],
+                "contact-us" => ['page' => $page->getPageData("contact-us")],
             ],
         ]);
     }
 
 
-    private function getPageData($slug)
+    public function show(Page $page): Response
     {
-        return Page::with(['widgets'])->where('slug', '=', $slug)->first();
+        return Inertia::render('Admin/DefaultPages/Show', [
+            'page' => $page->widgets,
+        ]);
     }
 
 }
