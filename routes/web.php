@@ -111,6 +111,8 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/admin/dafault-pages', [DefaultPagesController::class, 'index'])->name('admin.dafault-pages');
     Route::get('/admin/pages', [PagesController::class, 'index'])->name('admin.pages');
+    Route::get('/admin/default-pages/{page}', [DefaultPagesController::class, 'show'])->name('admin.default-pages.page');
+
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.profile');

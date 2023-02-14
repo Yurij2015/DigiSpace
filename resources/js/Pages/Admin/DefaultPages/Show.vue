@@ -4,10 +4,8 @@ import Sidebar from "@/Components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head} from '@inertiajs/inertia-vue3';
-import CardDefaultPages from "@/Components/Admin/CardDefaultPages.vue";
 
-defineProps(['defaultPages']);
-let pageTitle = "Defaul pages";
+let pageTitle = "Page";
 </script>
 
 <template>
@@ -17,8 +15,8 @@ let pageTitle = "Defaul pages";
         <div class="relative md:ml-64 bg-blueGray-100">
             <AdminNavbar/>
             <HeaderStats/>
-            <div class="px-4 md:px-10 mx-auto w-full m-10">
-                <CardDefaultPages :page_title=pageTitle :default_pages=defaultPages></CardDefaultPages>
+            <div class="px-4 md:px-10 mx-auto w-full">
+
                 <FooterAdmin/>
             </div>
         </div>

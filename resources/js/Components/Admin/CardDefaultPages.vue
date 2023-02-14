@@ -56,13 +56,12 @@ const props = defineProps(['page_title', 'default_pages']);
                     <td
                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                     >
-                        {{ item['count'] }}
-
+                        {{ item.page.widgets.length }}
                     </td>
                     <td
                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
                     >
-                        <a :href="'page/'+key">{{ key }}</a>
+                        <a :href="route('admin.default-pages.page', item.page.id)">{{ key }}</a>
                     </td>
                     <td
                         class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
