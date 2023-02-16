@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Page;
-use App\Models\Widget;
 use App\Services\DefaultPageService;
 use App\Services\WidgetService;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -13,15 +12,15 @@ use Inertia\Response;
 
 class DefaultPagesController extends Controller
 {
-    public function index(DefaultPageService $page): Response
+    public function index(DefaultPageService $defaultPage): Response
     {
         return Inertia::render('Admin/DefaultPages/Index', [
             'defaultPages' => [
-                "about" => ['page' => $page->getPageData("about")],
-                "services" => ['page' => $page->getPageData("services")],
-                "pricing" => ['page' => $page->getPageData("pricing")],
-                "promos" => ['page' => $page->getPageData("promos")],
-                "contact-us" => ['page' => $page->getPageData("contact-us")],
+                "about" => ['page' => $defaultPage->getPageData("about")],
+                "services" => ['page' => $defaultPage->getPageData("services")],
+                "pricing" => ['page' => $defaultPage->getPageData("pricing")],
+                "promos" => ['page' => $defaultPage->getPageData("promos")],
+                "contact-us" => ['page' => $defaultPage->getPageData("contact-us")],
             ],
         ]);
     }
@@ -35,6 +34,7 @@ class DefaultPagesController extends Controller
             $widgetService->changeImgPathIfNullInWidgets($page->widgets);
             return Inertia::render('Admin/DefaultPages/Show', [
                 'widgets' => $page->widgets,
+                'pageSlug' => $page->slug
             ]);
         }
         return Inertia::render('Admin/DefaultPages/Show', [
