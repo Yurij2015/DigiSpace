@@ -7,11 +7,13 @@ import {Head} from '@inertiajs/inertia-vue3';
 import CardDefaultPages from "@/Components/Admin/CardDefaultPages.vue";
 
 defineProps(['defaultPages']);
-let pageTitle = "Defaul pages";
+let pageTitle = "List of defaul pages";
 </script>
 
 <template>
-    <Head><title>Default pages | Admin Panel</title></Head>
+    <Head>
+        <title>{{ pageTitle }} | Admin Panel</title>
+    </Head>
     <div>
         <sidebar/>
         <div class="relative md:ml-64 bg-blueGray-100">

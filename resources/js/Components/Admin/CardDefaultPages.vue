@@ -1,4 +1,6 @@
 <script setup>
+import {Link} from '@inertiajs/inertia-vue3';
+
 const props = defineProps(['page_title', 'default_pages']);
 </script>
 <template>
@@ -12,9 +14,7 @@ const props = defineProps(['page_title', 'default_pages']);
                         {{ page_title }}
                     </h3>
                 </div>
-                <div
-                    class="relative w-full px-4 max-w-full flex-grow flex-1 text-right"
-                >
+                <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                 </div>
             </div>
         </div>
@@ -23,24 +23,13 @@ const props = defineProps(['page_title', 'default_pages']);
             <table class="items-center w-full bg-transparent border-collapse">
                 <thead>
                 <tr>
-                    <th
-                        class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
-                    >
+                    <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-4 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                         Page name
                     </th>
-                    <th
-                        class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
-                    >
+                    <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-4 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                         Count of widgets
                     </th>
-                    <th
-                        class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
-                    >
-                        Link
-                    </th>
-                    <th
-                        class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
-                    >
+                    <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-4 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                         Operation
                     </th>
                 </tr>
@@ -48,30 +37,20 @@ const props = defineProps(['page_title', 'default_pages']);
                 <tbody>
 
                 <tr v-for="(item, key) in default_pages">
-                    <th
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left"
-                    >
+                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                         {{ key }}
                     </th>
-                    <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                    >
+                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                         {{ item.page.widgets.length }}
                     </td>
-                    <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                    >
-                        <a :href="route('admin.default-pages.page', item.page.id)">{{ key }}</a>
-                    </td>
-                    <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                    >
-                        <button
-                            class="bg-teal-500 text-white active:bg-teal-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                            type="button"
-                        >
-                            Edit
-                        </button>
+                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        <Link :href="route('admin.default-pages.page', item.page.id)" :title="key">
+                            <button
+                                class="bg-teal-500 text-white active:bg-teal-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                type="button">
+                                Show widgets
+                            </button>
+                        </Link>
                     </td>
                 </tr>
                 </tbody>
