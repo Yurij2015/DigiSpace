@@ -6,7 +6,7 @@ import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, Link} from '@inertiajs/inertia-vue3';
 import WidgetAdmin from "@/Components/Admin/WidgetAdmin.vue";
 
-defineProps(['widgets', 'pageSlug']);
+defineProps(['widgets', 'pageSlug', 'pageId']);
 </script>
 
 <template>
@@ -38,6 +38,7 @@ defineProps(['widgets', 'pageSlug']);
                                     v-for="widget in widgets"
                                     :key="widget.id"
                                     :widget="widget"
+                                    :page = "pageId"
                                 />
                             </div>
                         </div>

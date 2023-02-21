@@ -34,7 +34,8 @@ class DefaultPagesController extends Controller
             $widgetService->changeImgPathIfNullInWidgets($page->widgets);
             return Inertia::render('Admin/DefaultPages/Show', [
                 'widgets' => $page->widgets,
-                'pageSlug' => $page->slug
+                'pageSlug' => $page->slug,
+                'pageId' => $pageId
             ]);
         }
         return Inertia::render('Admin/DefaultPages/Show', [
