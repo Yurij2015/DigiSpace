@@ -45,6 +45,7 @@ const form = useForm({
                                         class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                     >
                                     <InputError :message="form.errors.name" class="mt-2"/>
+
                                     <input
                                         v-model="form.meta"
                                         placeholder="What is page meta?"
@@ -65,6 +66,13 @@ const form = useForm({
                                         class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                     ></textarea>
                                     <InputError :message="form.errors.content" class="mt-2"/>
+
+                                    <input
+                                        v-model="form.slug"
+                                        placeholder="What is page slug?"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                    >
+                                    <InputError :message="form.errors.slug" class="mt-2"/>
 
                                     <select
                                         class='block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3'
