@@ -19,13 +19,15 @@ use Illuminate\Http\RedirectResponse;
 
 class PagesController extends Controller
 {
-    public function index(): Response
+    public function index(PagesService $pagesService): Response
     {
-        return Inertia::render('Admin/Pages/Index');
+        $pages = $pagesService->filteredMenuItems(Page::with('menuItem')->get());
+        return Inertia::render('Admin/Pages/Index', ['pages' => $pages]);
     }
 
     /**
      * Send pages to view, render page create view.
+     * @param PagesService $pagesService
      * @return Response
      */
     final public function pageForm(PagesService $pagesService): Response

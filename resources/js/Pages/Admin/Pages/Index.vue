@@ -4,7 +4,7 @@ import Sidebar from "@/Components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, Link} from '@inertiajs/inertia-vue3';
-import CardDefaultPages from "@/Components/Admin/CardDefaultPages.vue";
+import Page from "@/Components/Admin/Page.vue";
 
 defineProps(['pages']);
 let pageTitle = "Pages";
@@ -32,12 +32,11 @@ let pageTitle = "Pages";
                 <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
                     <div class="flex flex-wrap">
                         <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
-                            <!--                                <WidgetAdmin-->
-                            <!--                                    v-for="widget in widgets.data"-->
-                            <!--                                    :key="widget.id"-->
-                            <!--                                    :widget="widget"-->
-                            <!--                                    :page = "widgets.current_page"-->
-<!--                            />-->
+                            <Page
+                                v-for="page in pages"
+                                :key="page.id"
+                                :page="page"
+                            />
                         </div>
                     </div>
                 </div>
