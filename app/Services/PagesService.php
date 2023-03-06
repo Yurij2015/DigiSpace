@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\MenuItem;
+use App\Models\Page;
 use Illuminate\Database\Eloquent\Collection;
 
 class PagesService
@@ -10,8 +11,8 @@ class PagesService
     public function filteredMenuItems($menuItems): Collection
     {
         $excluledPages = ['about', 'services', 'pricing', 'promos', 'blog', 'pages', 'contact-us'];
-        return $menuItems->filter(function (MenuItem $value) use ($excluledPages) {
-            return !in_array($value->slug, $excluledPages, true);
+        return $menuItems->reject(function (MenuItem|Page $value) use ($excluledPages) {
+            return in_array($value->slug, $excluledPages, true);
         });
     }
 }
