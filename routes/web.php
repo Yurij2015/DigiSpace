@@ -112,6 +112,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/dafault-pages', [DefaultPagesController::class, 'index'])->name('admin.dafault-pages');
     Route::get('/admin/pages', [PagesController::class, 'index'])->name('admin.pages');
     Route::get('/admin/default-pages/{page}', [DefaultPagesController::class, 'show'])->name('admin.default-pages.page');
+    Route::get('admin/page-form', [PagesController::class, 'pageForm'])->name('admin.page-form');
+    Route::post('admin/page-create', [PagesController::class, 'pageCreate'])->name('admin.page-create');
 
 });
 
