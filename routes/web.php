@@ -114,7 +114,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/default-pages/{page}', [DefaultPagesController::class, 'show'])->name('admin.default-pages.page');
     Route::get('admin/page-form', [PagesController::class, 'pageForm'])->name('admin.page-form');
     Route::post('admin/page-create', [PagesController::class, 'pageCreate'])->name('admin.page-create');
-
+    Route::get('admin/page-update-form/{page}', [PagesController::class, 'pageUpdateForm'])->name('admin.page-update-form');
+    Route::put('admin/page-update/{page}', [PagesController::class, 'pageUpdate'])->name('admin.page-update');
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.profile');

@@ -66,4 +66,48 @@ class PagesController extends Controller
         ]);
         return redirect(route('admin.pages'))->with('message', 'Page created successfully');
     }
+
+    /**
+     * Send pages to view, render page create view.
+     * @param Page $page
+     * @param PagesService $pagesService
+     * @return Response
+     */
+    final public function pageUpdateForm(Page $page, PagesService $pagesService): Response
+    {
+        return Inertia::render('Admin/Pages/Update', [
+            'menuItems' => $pagesService->filteredMenuItems(MenuItem::all()),
+            'pageCategories' => PageCategory::all(),
+            'page' => $page->load('menuItem')->load('pageCategory')
+        ]);
+    }
+
+    /**
+     * Save a newly created post in storage.
+     *
+     * @param Request $request
+     * @return Application|RedirectResponse|Redirector
+     * @throws ValidationException
+     */
+    final public function pageUpdate(Request $request): Application|RedirectResponse|Redirector
+    {
+        Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'meta' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'content' => 'required|string',
+            'slug' => 'required|string',
+        ])->validate();
+
+        Page::create([
+            'name' => $request->name,
+            'meta' => $request->meta,
+            'description' => $request->description,
+            'content' => $request['content'],
+            'slug' => $request->slug,
+            'page_category_id' => $request->page_category_id,
+            'menu_item_id' => $request->menu_item_id,
+        ]);
+        return redirect(route('admin.pages'))->with('message', 'Page created successfully');
+    }
 }

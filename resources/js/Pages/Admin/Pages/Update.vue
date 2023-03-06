@@ -7,7 +7,7 @@ import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
 
-let props = defineProps(['pageCategories', 'menuItems']);
+let props = defineProps(['page', 'pageCategories', 'menuItems']);
 const form = useForm({
     name: '',
     meta: '',
@@ -19,7 +19,7 @@ const form = useForm({
 });
 </script>
 <template>
-    <Head><title>Create page | Admin Panel</title></Head>
+    <Head><title>Update page | Admin Panel</title></Head>
     <div>
         <sidebar/>
         <div class="relative md:ml-64 bg-blueGray-100">
@@ -30,7 +30,7 @@ const form = useForm({
                     class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
                     <div class="rounded-t bg-white mb-0 px-6 py-6">
                         <div class="text-center flex justify-between">
-                            <h6 class="text-blueGray-700 text-xl font-bold">Create page</h6>
+                            <h6 class="text-blueGray-700 text-xl font-bold">Update page</h6>
                         </div>
                     </div>
                     <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
