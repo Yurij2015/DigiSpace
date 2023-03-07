@@ -3,17 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PageSaveRequest;
 use App\Models\MenuItem;
 use App\Models\Page;
 use App\Models\PageCategory;
 use App\Services\PagesService;
-use Illuminate\Console\Application;
-use Illuminate\Routing\Redirector;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use Inertia\Response;
-use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 
 
@@ -41,29 +37,12 @@ class PagesController extends Controller
     /**
      * Save a newly created post in storage.
      *
-     * @param Request $request
-     * @return Application|RedirectResponse|Redirector
-     * @throws ValidationException
+     * @param PageSaveRequest $saveRequest
+     * @return RedirectResponse
      */
-    final public function pageCreate(Request $request): Application|RedirectResponse|Redirector
+    final public function pageCreate(PageSaveRequest $saveRequest): RedirectResponse
     {
-        Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'meta' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'content' => 'required|string',
-            'slug' => 'required|string',
-        ])->validate();
-
-        Page::create([
-            'name' => $request->name,
-            'meta' => $request->meta,
-            'description' => $request->description,
-            'content' => $request['content'],
-            'slug' => $request->slug,
-            'page_category_id' => $request->page_category_id,
-            'menu_item_id' => $request->menu_item_id,
-        ]);
+        Page::create($saveRequest->all());
         return redirect(route('admin.pages'))->with('message', 'Page created successfully');
     }
 
@@ -83,31 +62,15 @@ class PagesController extends Controller
     }
 
     /**
-     * Save a newly created post in storage.
+     * Save updated page in storage.
      *
-     * @param Request $request
-     * @return Application|RedirectResponse|Redirector
-     * @throws ValidationException
+     * @param Page $page
+     * @param PageSaveRequest $saveRequest
+     * @return RedirectResponse
      */
-    final public function pageUpdate(Request $request): Application|RedirectResponse|Redirector
+    final public function pageUpdate(Page $page, PageSaveRequest $saveRequest): RedirectResponse
     {
-        Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'meta' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'content' => 'required|string',
-            'slug' => 'required|string',
-        ])->validate();
-
-        Page::create([
-            'name' => $request->name,
-            'meta' => $request->meta,
-            'description' => $request->description,
-            'content' => $request['content'],
-            'slug' => $request->slug,
-            'page_category_id' => $request->page_category_id,
-            'menu_item_id' => $request->menu_item_id,
-        ]);
-        return redirect(route('admin.pages'))->with('message', 'Page created successfully');
+        $page->update($saveRequest->all());
+        return redirect(route('admin.pages'))->with('message', 'Page updated successfully');
     }
 }

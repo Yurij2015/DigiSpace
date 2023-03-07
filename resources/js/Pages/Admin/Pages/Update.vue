@@ -9,13 +9,13 @@ import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
 
 let props = defineProps(['page', 'pageCategories', 'menuItems']);
 const form = useForm({
-    name: '',
-    meta: '',
-    description: '',
-    content: '',
-    slug: '',
-    page_category_id: '',
-    menu_item_id: ''
+    name: props.page.name,
+    meta: props.page.meta,
+    description: props.page.description,
+    content: props.page.content,
+    slug: props.page.slug,
+    page_category_id: props.page.page_category_id,
+    menu_item_id: props.page.menu_item_id
 });
 </script>
 <template>
@@ -37,7 +37,7 @@ const form = useForm({
                         <div class="flex flex-wrap">
                             <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
                                 <form
-                                    @submit.prevent="form.post(route('admin.page-create'), { onSuccess: () => form.reset() })">
+                                    @submit.prevent="form.put(route('admin.page-update', page.id), { onSuccess: () => form.reset() })">
                                     <input
                                         v-model="form.name"
                                         placeholder="What is page title?"
