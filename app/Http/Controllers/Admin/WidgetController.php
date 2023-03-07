@@ -6,13 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Widget;
 use App\Models\WidgetCategory;
 use App\Services\WidgetService;
-use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
-use Illuminate\Console\Application;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Routing\Redirector;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -47,10 +43,9 @@ class WidgetController extends Controller
      * Save a newly created post in storage.
      *
      * @param Request $request
-     * @return Application|RedirectResponse|Redirector
-     * @throws ValidationException
+     * @return RedirectResponse
      */
-    final public function widgetSave(Request $request): Application|RedirectResponse|Redirector
+    final public function widgetSave(Request $request): RedirectResponse
     {
         Validator::make($request->all(), [
             'title' => 'required|string|max:255',
@@ -100,10 +95,9 @@ class WidgetController extends Controller
      *
      * @param Request $request
      * @param Widget $widget
-     * @return Application|Redirector|RedirectResponse
-     * @throws AuthorizationException
+     * @return RedirectResponse
      */
-    final public function widgetUpdate(Request $request, Widget $widget): Redirector|RedirectResponse|Application
+    final public function widgetUpdate(Request $request, Widget $widget): RedirectResponse
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
@@ -126,9 +120,9 @@ class WidgetController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Widget $widget
-     * @return Application|Redirector|RedirectResponse
+     * @return RedirectResponse
      */
-    final public function widgetDestroy(Widget $widget): Redirector|RedirectResponse|Application
+    final public function widgetDestroy(Widget $widget): RedirectResponse
     {
         $widget->delete();
         return redirect(route('admin.widgets'));
