@@ -27,7 +27,7 @@ import {Link} from '@inertiajs/inertia-vue3';
                 </div>
                 <div>
                     <div style="float:right">
-                        <Link :href="route('admin.post-update', page.id)" method="get">
+                        <Link :href="route('admin.page-update-form', page.id)" method="get">
                             <button
                                 class="bg-teal-500 text-white active:bg-teal-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                 type="button">

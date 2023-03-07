@@ -21,4 +21,9 @@ class Page extends Model
     {
         return $this->belongsTo(MenuItem::class);
     }
+
+    public function pageCategory(): BelongsTo
+    {
+        return $this->belongsTo(PageCategory::class);
+    }
 }
