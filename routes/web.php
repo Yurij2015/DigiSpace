@@ -18,7 +18,6 @@ use App\Http\Controllers\PriceController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SubscriberController;
-use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,13 +41,7 @@ Route::get('blog', [BlogController::class, 'index'])->name('blog');
 Route::get('contact-us', [ContactController::class, 'index'])->name('contact-us');
 Route::post('contact-us', [ContactController::class, 'save'])->name('contact.save');
 Route::post('subscriber-save', [SubscriberController::class, 'save'])->name('subscriber-save');
-
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth']);
-
-Route::resource('tickets', TicketController::class)
-    ->only(['index', 'store', 'update', 'destroy'])
-    ->middleware(['auth', 'verified']);
-
 Route::resource('categories', CategoryController::class)
     ->only(['index', 'show']);
 
@@ -56,8 +49,6 @@ Route::resource('posts', PostController::class)
     ->only(['index', 'show']);
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware(['auth', 'verified']);
-
-Route::get('/admin/tickets/', [AdminController::class, 'tickets'])->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::post('admin/category-store', [AdminController::class, 'categoryStore'])

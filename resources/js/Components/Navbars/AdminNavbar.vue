@@ -21,11 +21,6 @@ import {Link} from '@inertiajs/inertia-vue3';
                   v-if="$page.props.auth.user">
                 Admin
             </Link>
-            <Link :href="route('tickets.index')" :active="route().current('tickets.index')"
-                  class="ml-3 text-white text-sm uppercase hidden lg:inline-block font-semibold"
-                  v-if="$page.props.auth.user">
-                Tickets
-            </Link>
             <Link :href="route('admin.categories')"
                   :active="route().current('admin.categories')"
                   class="ml-3 text-white text-sm uppercase hidden lg:inline-block font-semibold">

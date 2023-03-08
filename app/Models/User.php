@@ -42,11 +42,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function tickets(): HasMany
-    {
-        return $this->hasMany(Ticket::class);
-    }
-
     public function categories(): HasMany
     {
         return $this->hasMany(Category::class);

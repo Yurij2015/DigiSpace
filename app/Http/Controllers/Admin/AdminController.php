@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Post;
-use App\Models\Ticket;
 use App\Services\PostService;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\RedirectResponse;
@@ -26,13 +25,6 @@ class AdminController extends Controller
         return Inertia::render('Admin/Index', [
             'ordersPerMonth' => $ordersPerMonth,
             'profileImg' => "/img/team-2-800x800.jpg"
-        ]);
-    }
-
-    public function tickets(): Response
-    {
-        return Inertia::render('Admin/Tickets', [
-            'tickets' => Ticket::with('user:id,name')->latest()->get(),
         ]);
     }
 
