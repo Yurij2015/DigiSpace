@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tickets', static function (Blueprint $table) {
+        Schema::create('subscribers', static function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->string('message');
+            $table->string('email')->unique();
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }
@@ -26,8 +26,8 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('tickets');
+        Schema::dropIfExists('subscribers');
     }
 };

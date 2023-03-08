@@ -128,6 +128,14 @@ class WidgetCategorySeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ],
+            [
+                'name' => 'Get in Touch',
+                'title' => 'DigiSpace | Get in Touch',
+                'description' => 'Get in Touch widgets',
+                'image' => null,
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ];
         DB::table('widget_categories')->insert($widgetCategories);
     }

@@ -50,6 +50,16 @@ class PageSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ],
+            [
+                'name' => 'Contact Us',
+                'page_category_id' => null,
+                'meta' => null,
+                'description' => 'Contact Us',
+                'content' => null,
+                'slug' => 'contact-us',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ];
         DB::table('pages')->insert($pages);
     }

@@ -679,6 +679,19 @@ class WidgetSeeder extends Seeder
                 'anchor' => null,
                 'element_id' => null
             ],
+            [
+                "title" => "Get in Touch",
+                "subtitle" => 'Get in Touch',
+                "widget_category_id" => 15,
+                "icon" => '',
+                "widget_image" => null,
+                "content" => '{"address":{"name":"Address","value":"212 Moore Ave, Brooklyn, NY, United States"}, "phones": {"name":"Phones","value": {"first":"+1-800-700-6200", "second":"+1-800-955-4567"}}, "emails":{"name":"E-mails","value":{"first":"support@demolink.org","second":"office@demolink.org"}}}',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'css_class' => null,
+                'anchor' => null,
+                'element_id' => null
+            ],
         ];
         DB::table('widgets')->insert($widgets);
     }

@@ -25,9 +25,10 @@
                                 <h3>{{ $widget->title }}</h3>
                                 <p class="large">{{ $widget->subtitle }}</p>
                             </div>
-                            <!-- RD Mailform-->
+                            <!-- TODO - set up with RD Mailform or send with ajax -->
                             <form class="rd-mailform form_inline form_lg" data-form-output="form-output-global"
-                                  data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+                                  data-form-type="subscribe" method="post" action="{{ route('subscriber-save') }}">
+                                @csrf
                                 <div class="form-wrap">
                                     <input class="form-input" id="subscribe-form-footer-form-email" type="email"
                                            name="email">

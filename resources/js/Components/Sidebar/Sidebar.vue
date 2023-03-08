@@ -114,6 +114,19 @@ function toggleCollapseShow(classes) {
                             Widgets
                         </SidebarNavLink>
                     </li>
+                    <li class="items-center">
+                        <SidebarNavLink :href="route('admin.dafault-pages')"
+                                        :active="route().current('admin.dafault-pages')"
+                                        icon="fa fa-th-large mr-2 text-sm">
+                            Default pages
+                        </SidebarNavLink>
+                    </li>
+                    <li class="items-center">
+                        <SidebarNavLink :href="route('admin.pages')" :active="route().current('admin.pages')"
+                                        icon="fa fa-th mr-2 text-sm">
+                            Pages
+                        </SidebarNavLink>
+                    </li>
                 </ul>
 
                 <!-- Divider -->

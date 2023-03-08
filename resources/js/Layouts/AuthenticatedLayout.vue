@@ -30,10 +30,6 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
-                                <NavLink :href="route('tickets.index')" :active="route().current('tickets.index')"
-                                         v-if="$page.props.auth.user">
-                                    Tickets
-                                </NavLink>
                                 <NavLink :href="route('admin')" :active="route().current('admin')"
                                          v-if="$page.props.auth.user">
                                     Admin
@@ -107,10 +103,6 @@ const showingNavigationDropdown = ref(false);
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('tickets.index')" :active="route().current('tickets.index')"
-                                           v-if="$page.props.auth.user">
-                            Tickets
                         </ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('admin')" :active="route().current('admin')"
                                            v-if="$page.props.auth.user">

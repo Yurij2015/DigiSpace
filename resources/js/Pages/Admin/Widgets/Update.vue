@@ -20,8 +20,15 @@ const form = useForm({
     file: null
 });
 
+function isJson(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
 </script>
-
 <template>
     <Head><title>Edit widget | Admin Panel</title></Head>
     <div>
@@ -61,9 +68,17 @@ const form = useForm({
                                         api-key="7pxxebfatsrkizfz23o8eh0fz5wpqja4k03eq2z1hzpyqy5h"
                                         v-model="form.content"
                                         plugins="code"
-                                        toolbar = "code"
+                                        toolbar="code"
                                         placeholder="What is post content?"
                                         class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                        v-if="!isJson(form.content)"
+                                    />
+                                    <textarea
+                                        v-else
+                                        type="text"
+                                        class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                        rows="3"
+                                        v-model="form.content"
                                     />
                                     <InputError :message="form.errors.content" class="mt-2"/>
                                     <select
