@@ -9,11 +9,11 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\WidgetController;
 use App\Http\Controllers\Admin\WidgetIconController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\ServiceController;
@@ -51,30 +51,30 @@ Route::resource('posts', PostController::class)
 Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
-    Route::post('admin/category-store', [AdminController::class, 'categoryStore'])
+    Route::post('admin/category-store', [CategoryController::class, 'categoryStore'])
         ->name('admin.category-store');
-    Route::delete('admin/category-destroy/{category}', [AdminController::class, 'categoryDestroy'])
+    Route::delete('admin/category-destroy/{category}', [CategoryController::class, 'categoryDestroy'])
         ->name('admin.category-destroy');
-    Route::put('admin/category-update/{category}', [AdminController::class, 'categoryUpdate'])
+    Route::put('admin/category-update/{category}', [CategoryController::class, 'categoryUpdate'])
         ->name('admin.category-update');
-    Route::get('/admin/categories/', [AdminController::class, 'categories'])
+    Route::get('/admin/categories/', [CategoryController::class, 'categories'])
         ->name('admin.categories');
-    Route::get('admin/category-show/{category}', [AdminController::class, 'categoryShow'])
+    Route::get('admin/category-show/{category}', [CategoryController::class, 'categoryShow'])
         ->name('admin.category-show');
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('admin/post-store', [AdminController::class, 'postForm'])
+    Route::get('admin/post-store', [PostController::class, 'postForm'])
         ->name('admin.post-store');
-    Route::post('admin/post-store', [AdminController::class, 'postSave'])
+    Route::post('admin/post-store', [PostController::class, 'postSave'])
         ->name('admin.post-store');
-    Route::delete('admin/post-destroy/{post}', [AdminController::class, 'postDestroy'])
+    Route::delete('admin/post-destroy/{post}', [PostController::class, 'postDestroy'])
         ->name('admin.post-destroy');
-    Route::put('admin/post-update/{post}', [AdminController::class, 'postUpdate'])
+    Route::put('admin/post-update/{post}', [PostController::class, 'postUpdate'])
         ->name('admin.post-update');
-    Route::get('admin/post-update/{post}', [AdminController::class, 'postUpdateForm'])
+    Route::get('admin/post-update/{post}', [PostController::class, 'postUpdateForm'])
         ->name('admin.post-update');
-    Route::get('/admin/posts/', [AdminController::class, 'posts'])
+    Route::get('/admin/posts/', [PostController::class, 'posts'])
         ->name('admin.posts');
 });
 
