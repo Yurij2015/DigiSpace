@@ -17,6 +17,8 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
+use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\SubscriberController;
 use Illuminate\Support\Facades\Route;
 
@@ -107,6 +109,8 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/page-create', [PagesController::class, 'pageCreate'])->name('admin.page-create');
     Route::get('admin/page-update-form/{page}', [PagesController::class, 'pageUpdateForm'])->name('admin.page-update-form');
     Route::put('admin/page-update/{page}', [PagesController::class, 'pageUpdate'])->name('admin.page-update');
+    Route::get('/admin/services', [AdminServiceController::class, 'index'])->name('admin.services');
+    Route::get('/admin/products', [AdminProductController::class, 'index'])->name('admin.products');
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.profile');

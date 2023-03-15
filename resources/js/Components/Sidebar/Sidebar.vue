@@ -127,6 +127,18 @@ function toggleCollapseShow(classes) {
                             Pages
                         </SidebarNavLink>
                     </li>
+                    <li class="items-center">
+                        <SidebarNavLink :href="route('admin.services')" :active="route().current('admin.services')"
+                                        icon="fa fa-cube mr-2 text-sm">
+                            Services
+                        </SidebarNavLink>
+                    </li>
+                    <li class="items-center">
+                        <SidebarNavLink :href="route('admin.products')" :active="route().current('admin.products')"
+                                        icon="fa fa-globe mr-2 text-sm">
+                            Products
+                        </SidebarNavLink>
+                    </li>
                 </ul>
 
                 <!-- Divider -->
