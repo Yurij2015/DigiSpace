@@ -43,7 +43,7 @@ const props = defineProps(['page_title', 'services']);
                         {{ item.title }}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        <Link :href="route('admin.services', item.id)" :title="item.title">
+                        <Link :href="route('admin.service-show', item.id)" :title="item.title">
                             <button
                                 class="bg-teal-500 text-white active:bg-teal-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                 type="button">
