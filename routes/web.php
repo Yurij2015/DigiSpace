@@ -113,8 +113,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/services/{service}', [AdminServiceController::class, 'show'])->name('admin.service-show');
     Route::put('admin/service-update/{service}', [AdminServiceController::class, 'update'])->name('admin.service-update');
     Route::delete('admin/service-destroy/{service}', [AdminServiceController::class, 'destroy'])->name('admin.service-destroy');
-
     Route::get('/admin/products', [AdminProductController::class, 'index'])->name('admin.products');
+    Route::get('/admin/products/{product}', [AdminProductController::class, 'show'])->name('admin.product-show');
+    Route::put('admin/product-update/{product}', [AdminProductController::class, 'update'])->name('admin.product-update');
+    Route::delete('admin/product-destroy/{product}', [AdminProductController::class, 'destroy'])->name('admin.product-destroy');
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.profile');
