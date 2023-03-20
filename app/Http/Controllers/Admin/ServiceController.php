@@ -17,6 +17,11 @@ class ServiceController extends Controller
         return Inertia::render('Admin/Services/Index', ['services' => $services]);
     }
 
+    final public function serviceForm(): Response
+    {
+        return Inertia::render('Admin/Services/Create');
+    }
+
     final public function show(Service $service): Response
     {
         return Inertia::render('Admin/Services/Show', [
