@@ -109,10 +109,13 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/page-create', [PagesController::class, 'pageCreate'])->name('admin.page-create');
     Route::get('admin/page-update-form/{page}', [PagesController::class, 'pageUpdateForm'])->name('admin.page-update-form');
     Route::put('admin/page-update/{page}', [PagesController::class, 'pageUpdate'])->name('admin.page-update');
+
     Route::get('/admin/services', [AdminServiceController::class, 'index'])->name('admin.services');
+    Route::get('admin/service-form', [AdminServiceController::class, 'serviceForm'])->name('admin.service-form');
     Route::get('/admin/services/{service}', [AdminServiceController::class, 'show'])->name('admin.service-show');
     Route::put('admin/service-update/{service}', [AdminServiceController::class, 'update'])->name('admin.service-update');
     Route::delete('admin/service-destroy/{service}', [AdminServiceController::class, 'destroy'])->name('admin.service-destroy');
+
     Route::get('/admin/products', [AdminProductController::class, 'index'])->name('admin.products');
     Route::get('/admin/products/{product}', [AdminProductController::class, 'show'])->name('admin.product-show');
     Route::put('admin/product-update/{product}', [AdminProductController::class, 'update'])->name('admin.product-update');
