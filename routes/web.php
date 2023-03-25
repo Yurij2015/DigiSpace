@@ -33,7 +33,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', [LandingController::class, 'index']);
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('about', [AboutController::class, 'index'])->name('about');
 Route::get('services', [ServiceController::class, 'index'])->name('services');
@@ -104,26 +103,33 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/admin/dafault-pages', [DefaultPagesController::class, 'index'])->name('admin.dafault-pages');
     Route::get('/admin/pages', [PagesController::class, 'index'])->name('admin.pages');
-    Route::get('/admin/default-pages/{page}', [DefaultPagesController::class, 'show'])->name('admin.default-pages.page');
+    Route::get('/admin/default-pages/{page}', [DefaultPagesController::class, 'show'])
+        ->name('admin.default-pages.page');
     Route::get('admin/page-form', [PagesController::class, 'pageForm'])->name('admin.page-form');
     Route::post('admin/page-create', [PagesController::class, 'pageCreate'])->name('admin.page-create');
-    Route::get('admin/page-update-form/{page}', [PagesController::class, 'pageUpdateForm'])->name('admin.page-update-form');
+    Route::get('admin/page-update-form/{page}', [PagesController::class, 'pageUpdateForm'])
+        ->name('admin.page-update-form');
     Route::put('admin/page-update/{page}', [PagesController::class, 'pageUpdate'])->name('admin.page-update');
 
     Route::get('/admin/services', [AdminServiceController::class, 'index'])->name('admin.services');
-    Route::get('admin/service-form', [AdminServiceController::class, 'serviceForm'])->name('admin.service-form');
+    Route::get('admin/service-form', [AdminServiceController::class, 'serviceForm'])
+        ->name('admin.service-form');
     Route::get('/admin/services/{service}', [AdminServiceController::class, 'show'])->name('admin.service-show');
-    Route::put('admin/service-update/{service}', [AdminServiceController::class, 'update'])->name('admin.service-update');
-    Route::delete('admin/service-destroy/{service}', [AdminServiceController::class, 'destroy'])->name('admin.service-destroy');
+    Route::put('admin/service-update/{service}', [AdminServiceController::class, 'update'])
+        ->name('admin.service-update');
+    Route::delete('admin/service-destroy/{service}', [AdminServiceController::class, 'destroy'])
+        ->name('admin.service-destroy');
 
     Route::get('/admin/products', [AdminProductController::class, 'index'])->name('admin.products');
     Route::get('/admin/products/{product}', [AdminProductController::class, 'show'])->name('admin.product-show');
-    Route::put('admin/product-update/{product}', [AdminProductController::class, 'update'])->name('admin.product-update');
-    Route::delete('admin/product-destroy/{product}', [AdminProductController::class, 'destroy'])->name('admin.product-destroy');
+    Route::put('admin/product-update/{product}', [AdminProductController::class, 'update'])
+        ->name('admin.product-update');
+    Route::delete('admin/product-destroy/{product}', [AdminProductController::class, 'destroy'])
+        ->name('admin.product-destroy');
 });
 
-Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.profile');
-//Route::get('/', [LandingController::class, 'index'])->name('landing');
+Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])
+    ->name('admin.profile');
 Route::get('/landing', static function () {
     return "Landing vue notus";
 })->name('landing');
