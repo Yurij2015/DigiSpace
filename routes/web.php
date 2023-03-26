@@ -114,6 +114,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/services', [AdminServiceController::class, 'index'])->name('admin.services');
     Route::get('admin/service-form', [AdminServiceController::class, 'serviceForm'])
         ->name('admin.service-form');
+    Route::post('admin/service-store', [AdminServiceController::class, 'serviceSave'])
+        ->name('admin.service-store');
     Route::get('/admin/services/{service}', [AdminServiceController::class, 'show'])->name('admin.service-show');
     Route::put('admin/service-update/{service}', [AdminServiceController::class, 'update'])
         ->name('admin.service-update');
