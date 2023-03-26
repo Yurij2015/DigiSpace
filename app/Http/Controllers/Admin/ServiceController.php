@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ServiceSaveRequest;
 use App\Models\Service;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
@@ -20,6 +21,18 @@ class ServiceController extends Controller
     final public function serviceForm(): Response
     {
         return Inertia::render('Admin/Services/Create');
+    }
+
+    /**
+     * Save a newly created post in storage.
+     *
+     * @param ServiceSaveRequest $saveRequest
+     * @return RedirectResponse
+     */
+    final public function serviceSave(ServiceSaveRequest $saveRequest): RedirectResponse
+    {
+        Service::create($saveRequest->all());
+        return redirect(route('admin.services'))->with('message', 'Service Created Successfully');
     }
 
     final public function show(Service $service): Response
