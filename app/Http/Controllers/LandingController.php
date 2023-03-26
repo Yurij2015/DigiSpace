@@ -19,7 +19,9 @@ class LandingController extends Controller
         $widgetBodyTopSecondLeft = Widget::where('id', 7)->first();
         $widgetBodyTopSecondRight = Widget::with('widgetIcon')->where('id', 8)->latest()->first();
         $widgetBodyMiddleTop = Widget::where('id', 9)->first();
-        $widgetBodyMiddleCenter = Widget::with('widgetIcon')->where('widget_category_id', 4)->where('widget_image', '<>', null)->get();
+        $widgetBodyMiddleCenter = Widget::with('widgetIcon')
+            ->where('widget_category_id', 4)
+            ->where('widget_image', '<>', null)->get();
         $widgetBodyBottomTop = Widget::where('id', 14)->first();
         $widgetBodyBottomMiddle = Widget::where('widget_category_id', 5)->where('icon', '<>', null)->get();
         $widgetBodyContactForm = Widget::where('id', 18)->first();

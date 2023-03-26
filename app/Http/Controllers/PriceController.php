@@ -10,7 +10,6 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 
-
 class PriceController extends Controller
 {
     public function index(ServicesService $servicesService): Application|Factory|View
@@ -19,10 +18,9 @@ class PriceController extends Controller
         $productServices = ProductService::all();
         $servicesService->addStyleToService($products, $productServices);
         $page = Page::where('slug', '=', 'pricing')->first();
-        return view('prices.index',
-            [
-                'products' => $products,
-                'page' => $page
-            ]);
+        return view('prices.index', [
+            'products' => $products,
+            'page' => $page
+        ]);
     }
 }

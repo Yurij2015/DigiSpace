@@ -15,16 +15,15 @@ class AboutController extends Controller
 
     public function index()
     {
-        return view('about.index',
-            [
-                'aboutPageGeneralInfo' => $this->getAboutPageComponent(self::GENERAL_INFO_WIDGET_CATEGORY),
-                'teamInfoCategoryTitle' => $this->getAboutPageComponentCategory(self::TEAM_INFO)->description,
-                'teamInfo' => $this->getAboutPageComponent(self::TEAM_INFO),
-                'someFactsAboutCategory' => $this->getAboutPageComponentCategory(self::SOME_FACTS_ABOUT),
-                'someFactsAbout' => $this->getAboutPageComponent(self::SOME_FACTS_ABOUT),
-                'clientsCategory' => $this->getAboutPageComponentCategory(self::CLIENTS),
-                'clients' => $this->getAboutPageComponent(self::CLIENTS)
-            ]);
+        return view('about.index', [
+            'aboutPageGeneralInfo' => $this->getAboutPageComponent(self::GENERAL_INFO_WIDGET_CATEGORY),
+            'teamInfoCategoryTitle' => $this->getAboutPageComponentCategory(self::TEAM_INFO)->description,
+            'teamInfo' => $this->getAboutPageComponent(self::TEAM_INFO),
+            'someFactsAboutCategory' => $this->getAboutPageComponentCategory(self::SOME_FACTS_ABOUT),
+            'someFactsAbout' => $this->getAboutPageComponent(self::SOME_FACTS_ABOUT),
+            'clientsCategory' => $this->getAboutPageComponentCategory(self::CLIENTS),
+            'clients' => $this->getAboutPageComponent(self::CLIENTS)
+        ]);
     }
 
     private function getAboutPageComponent($widgetCategory)

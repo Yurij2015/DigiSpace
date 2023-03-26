@@ -59,7 +59,7 @@ class WidgetController extends Controller
             $fileName = time() . '.' . $request->file->extension();
             $request->file->move(public_path('uploads/widgets'), $fileName);
         } else {
-            $fileName = NULL;
+            $fileName = null;
         }
         Widget::create([
             'title' => $request->title,
