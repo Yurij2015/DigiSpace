@@ -26,6 +26,12 @@ class ProductController extends Controller
         ]);
     }
 
+    final public function productForm(): Response
+    {
+        return Inertia::render('Admin/Products/Create');
+    }
+
+
     final public function update(Request $request, Product $product): RedirectResponse
     {
         //
