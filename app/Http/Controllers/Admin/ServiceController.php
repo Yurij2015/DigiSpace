@@ -57,7 +57,7 @@ class ServiceController extends Controller
 
     final public function destroy(Service $service): RedirectResponse
     {
-        //
+        $service->delete();
         return redirect(route('admin.services'));
     }
 
