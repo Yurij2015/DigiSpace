@@ -117,12 +117,16 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/service-store', [AdminServiceController::class, 'serviceSave'])
         ->name('admin.service-store');
     Route::get('/admin/services/{service}', [AdminServiceController::class, 'show'])->name('admin.service-show');
+    Route::get('admin/service-update/{service}', [AdminServiceController::class, 'serviceUpdateForm'])
+        ->name('admin.service-update');
     Route::put('admin/service-update/{service}', [AdminServiceController::class, 'update'])
         ->name('admin.service-update');
     Route::delete('admin/service-destroy/{service}', [AdminServiceController::class, 'destroy'])
         ->name('admin.service-destroy');
 
     Route::get('/admin/products', [AdminProductController::class, 'index'])->name('admin.products');
+    Route::get('admin/product-form', [AdminServiceController::class, 'productForm'])
+        ->name('admin.product-form');
     Route::get('/admin/products/{product}', [AdminProductController::class, 'show'])->name('admin.product-show');
     Route::put('admin/product-update/{product}', [AdminProductController::class, 'update'])
         ->name('admin.product-update');

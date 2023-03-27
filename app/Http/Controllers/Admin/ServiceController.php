@@ -42,15 +42,22 @@ class ServiceController extends Controller
         ]);
     }
 
-    final public function update(Request $request, Service $service): RedirectResponse
+    final public function serviceUpdateForm(Service $service): Response
     {
-        //
-        return redirect(route('admin.services'));
+        return Inertia::render('Admin/Services/Update', [
+            'service' => $service,
+        ]);
+    }
+
+    final public function update(ServiceSaveRequest $saveRequest, Service $service): RedirectResponse
+    {
+        $service->update($saveRequest->all());
+        return redirect(route('admin.services'))->with('message', 'Service Updated Successfully');
     }
 
     final public function destroy(Service $service): RedirectResponse
     {
-        //
+        $service->delete();
         return redirect(route('admin.services'));
     }
 
