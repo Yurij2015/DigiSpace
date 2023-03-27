@@ -9,10 +9,15 @@ const props = defineProps(['page_title', 'products']);
     >
         <div class="rounded-t mb-0 px-4 py-3 border-0">
             <div class="flex flex-wrap items-center">
-                <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                <div class="relative w-full px-4 max-w-full flex-grow">
                     <h3 class="font-semibold text-base text-blueGray-700">
                         {{ page_title }}
                     </h3>
+                    <Link :href="route('admin.product-form')"
+                          class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 float-right"
+                          type="button">
+                        Add product
+                    </Link>
                 </div>
                 <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                 </div>

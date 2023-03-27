@@ -70,6 +70,13 @@ defineProps(['service']);
                                     </div>
                                 </div>
                             </div>
+                            <Link :href="route('admin.services')">
+                                <button
+                                    class="bg-emerald-700 text-white active:bg-emerald-800 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                    type="button">
+                                    Back
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
