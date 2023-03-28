@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductSaveRequest;
 use App\Models\Product;
-use App\Models\Service;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -29,6 +29,18 @@ class ProductController extends Controller
     final public function productForm(): Response
     {
         return Inertia::render('Admin/Products/Create');
+    }
+
+    /**
+     * Save a newly created post in storage.
+     *
+     * @param ProductSaveRequest $saveRequest
+     * @return RedirectResponse
+     */
+    final public function productSave(ProductSaveRequest $saveRequest): RedirectResponse
+    {
+        Product::create($saveRequest->all());
+        return redirect(route('admin.products'))->with('message', 'Product Created Successfully');
     }
 
 
