@@ -31,6 +31,13 @@ class ProductController extends Controller
         return Inertia::render('Admin/Products/Create');
     }
 
+    final public function productUpdateForm(Product $product): Response
+    {
+        return Inertia::render('Admin/Products/Update', [
+            'product' => $product,
+        ]);
+    }
+
     /**
      * Save a newly created post in storage.
      *
@@ -52,7 +59,7 @@ class ProductController extends Controller
 
     final public function destroy(Product $product): RedirectResponse
     {
-        //
+        $product->delete();
         return redirect(route('admin.products'));
     }
 }
