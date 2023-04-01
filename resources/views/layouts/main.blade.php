@@ -17,8 +17,9 @@
 <body>
 <!-- Page Loader-->
 <div id="page-loader">
-    <div class="page-loader-body"><img src="{{ asset('images/logo-default-95x80.png') }}" alt="" width="95"
-                                       height="80"/>
+    <div class="page-loader-body">
+        <img src="{{ asset('images/logo-default-95x80.png') }}" alt="" width="95"
+             height="80"/>
         <div class="cssload-wrapper">
             <div class="cssload-border">
                 <div class="cssload-whitespace">
