@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -10,7 +11,8 @@ class BlogController extends Controller
 {
     public function index(): Application|Factory|View
     {
-        return view('blog.index', ['sideBarData' => $this->sideBarData()]);
+        $posts = Post::all();
+        return view('blog.index', ['sideBarData' => $this->sideBarData(), 'posts' => $posts]);
     }
 
     public function show(string $slug)

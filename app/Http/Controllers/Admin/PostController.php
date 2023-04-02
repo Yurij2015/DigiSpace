@@ -73,7 +73,7 @@ class PostController extends Controller
         $this->authorize('postUpdate', $post);
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'content' => 'required|string|max:255',
+            'content' => 'required|string',
             'category_id' => 'int',
             'file' => '',
         ]);
@@ -96,7 +96,7 @@ class PostController extends Controller
     {
         Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'content' => 'required|string|max:255',
+            'content' => 'required|string',
             'category_id' => 'int',
             'file' => 'required',
         ])->validate();

@@ -23,6 +23,32 @@
         <div class="container">
             <article class="blog-layout">
                 <div class="blog-layout__main">
+                    @foreach($posts as $post)
+                        <!-- Post Classic-->
+                        <article class="post-classic">
+                            <h3 class="post-classic__title">
+                                <a href="{{ $post['slug'] }}">{{ $post['name'] }}</a>
+                            </h3>
+                            <ul class="post-classic__meta">
+                                <li><span class="icon mdi mdi-calendar-blank"></span><a href="blog-post.html">
+                                        <time datetime="2021">May 12, 2021</time>
+                                    </a></li>
+                                <li><span class="icon mdi mdi-comment-outline"></span><a href="blog-post.html">450
+                                        comments</a></li>
+                                <li><span class="icon mdi mdi-account"></span>
+                                    <span>by</span><a href="#">John Doe</a></li>
+                            </ul>
+                            <div class="post-classic__media">
+                                <a class="post-classic__figure" href="blog-post.html">
+                                    <img class="post-classic__image" src="{{ asset($post['img_path']) }}"
+                                         alt="" width="715"
+                                         height="417"/>
+                                </a>
+                            </div>
+                            <p>{!! $post['content'] !!}</p>
+                        </article>
+                    @endforeach
+
                     <!-- Post Classic-->
                     <article class="post-classic">
                         <h3 class="post-classic__title"><a href="blog-post.html">Benefits of Async/Await in
