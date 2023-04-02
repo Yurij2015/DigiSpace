@@ -14,45 +14,31 @@
     <div class="blog-layout__aside-item blog-layout__aside-item_bordered">
         <p class="custom-heading-line heading-8">Categories</p>
         <ul class="list-categories">
-            <li class="active"><a href="#">All categories</a><span class="count">64</span></li>
-            <li><a href="#">Software</a><span class="count">23</span></li>
-            <li><a href="#">Development</a><span class="count">10</span></li>
-            <li><a href="#">Programming</a><span class="count">10</span></li>
+            @foreach($sideBarData['categories'] as $categories )
+                <li class={{ $categories['name'] === 'All categories' ? 'active' : '' }}>
+                    <a href="{{ $categories['url'] }}">{{ $categories['name'] }}</a>
+                    <span class="count">{{ $categories['count'] }}</span>
+                </li>
+            @endforeach
         </ul>
     </div>
     <div class="blog-layout__aside-item blog-layout__aside-item_bordered">
         <p class="custom-heading-line heading-8">Latest Posts</p>
         <ul class="list-posts">
-            <li>
-                <!-- Post Line-->
-                <article class="post-line">
-                    <time class="post-line__time" datetime="2021"><span
-                            class="post-line__time-day">24</span><span
-                            class="post-line__time-month">may</span></time>
-                    <div class="post-line__title"><a href="blog-post.html">Startup Software
-                            Development</a></div>
-                </article>
-            </li>
-            <li>
-                <!-- Post Line-->
-                <article class="post-line">
-                    <time class="post-line__time" datetime="2021"><span
-                            class="post-line__time-day">12</span><span
-                            class="post-line__time-month">may</span></time>
-                    <div class="post-line__title"><a href="blog-post.html">Hybrid Cloud Management
-                            Software Solutions</a></div>
-                </article>
-            </li>
-            <li>
-                <!-- Post Line-->
-                <article class="post-line">
-                    <time class="post-line__time" datetime="2021"><span
-                            class="post-line__time-day">03</span><span
-                            class="post-line__time-month">may</span></time>
-                    <div class="post-line__title"><a href="blog-post.html">Creating Better Software
-                            Through Design Thinking</a></div>
-                </article>
-            </li>
+            @foreach($sideBarData['latestPosts'] as $latestPosts)
+                <li>
+                    <!-- Post Line-->
+                    <article class="post-line">
+                        <time class="post-line__time" datetime="{{ $latestPosts['year'] }}">
+                            <span class="post-line__time-day">{{ $latestPosts['day'] }}</span>
+                            <span class="post-line__time-month">{{ $latestPosts['month'] }}</span>
+                        </time>
+                        <div class="post-line__title">
+                            <a href="{{ $latestPosts['url'] }}">{{ $latestPosts['title'] }}</a>
+                        </div>
+                    </article>
+                </li>
+            @endforeach
         </ul>
     </div>
     <div class="blog-layout__aside-item blog-layout__aside-item_bordered">
@@ -60,12 +46,9 @@
         <!-- Select 2-->
         <select class="form-input select" data-placeholder="All"
                 data-minimum-results-for-search="Infinity" data-constraints="Required">
-            <option>August 2021</option>
-            <option value="1">July 2021</option>
-            <option value="2">June 2021</option>
-            <option value="3">May 2021</option>
-            <option value="4">April 2021</option>
-            <option value="5">March 2021</option>
+            @foreach($sideBarData['archive'] as $archiveItem)
+                <option value="{{ $archiveItem['id'] }}">{{ $archiveItem['monthYear'] }}</option>
+            @endforeach
         </select>
     </div>
     <div class="blog-layout__aside-item">

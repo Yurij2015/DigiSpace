@@ -145,7 +145,7 @@
                         </div>
                     </div>
                 </div>
-                <x-blog-aside></x-blog-aside>
+                <x-blog-aside :$sideBarData></x-blog-aside>
             </article>
         </div>
     </section>
