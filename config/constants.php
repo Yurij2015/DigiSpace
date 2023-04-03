@@ -1,6 +1,7 @@
 <?php
 return [
     'WIDGET_PER_PAGE' => 5,
+    'SERVICES_PER_PAGE' => 10,
     'FOOTER_CATEGORY' => 11,
     'PAGE_SUBMENU_FIRST' => 2,
     'PAGE_SUBMENU_SECOND' => 3,

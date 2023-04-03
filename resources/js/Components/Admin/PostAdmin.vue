@@ -8,7 +8,7 @@ import {Link} from '@inertiajs/inertia-vue3';
     <div class="flex flex-wrap">
         <div class="w-9/12 px-4">
             <span class="text-sm block my-4 p-3 text-blueGray-700 rounded border border-solid border-blueGray-100">
-                            <div>
+                <div>
                     <h6 class="text-xl font-normal leading-normal mt-0 mb-2 text-emerald-800">
                         {{ post.name }}
                     </h6>
