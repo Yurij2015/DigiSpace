@@ -5,6 +5,7 @@ import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, Link} from '@inertiajs/inertia-vue3';
 import CardServices from "@/Components/Admin/CardServices.vue";
+import Pagination from "@/Components/Pagination.vue";
 
 defineProps(['services']);
 let pageTitle = "Services";
@@ -17,7 +18,8 @@ let pageTitle = "Services";
         <AdminNavbar/>
         <HeaderStats/>
         <div class="px-4 md:px-10 mx-auto w-full -m-10">
-            <CardServices :page_title=pageTitle :services=services></CardServices>
+            <CardServices :page_title=pageTitle :services=services.data></CardServices>
+            <Pagination class="mt-6" :links="services.links"/>
             <FooterAdmin/>
         </div>
     </div>

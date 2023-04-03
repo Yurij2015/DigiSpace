@@ -14,7 +14,7 @@ class ServiceController extends Controller
 {
     public function index(): Response
     {
-        $services = Service::all();
+        $services = Service::paginate(config('constants.SERVICES_PER_PAGE'));
         return Inertia::render('Admin/Services/Index', ['services' => $services]);
     }
 
