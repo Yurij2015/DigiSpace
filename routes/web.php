@@ -125,8 +125,12 @@ Route::middleware('auth')->group(function () {
         ->name('admin.service-destroy');
 
     Route::get('/admin/products', [AdminProductController::class, 'index'])->name('admin.products');
-    Route::get('admin/product-form', [AdminServiceController::class, 'productForm'])
+    Route::get('admin/product-form', [AdminProductController::class, 'productForm'])
         ->name('admin.product-form');
+    Route::post('admin/product-store', [AdminProductController::class, 'productSave'])
+        ->name('admin.product-store');
+    Route::get('admin/product-update/{product}', [AdminProductController::class, 'productUpdateForm'])
+        ->name('admin.product-update');
     Route::get('/admin/products/{product}', [AdminProductController::class, 'show'])->name('admin.product-show');
     Route::put('admin/product-update/{product}', [AdminProductController::class, 'update'])
         ->name('admin.product-update');
