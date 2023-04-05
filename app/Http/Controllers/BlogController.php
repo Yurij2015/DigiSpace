@@ -15,9 +15,9 @@ class BlogController extends Controller
         return view('blog.index', ['sideBarData' => $this->sideBarData(), 'posts' => $posts]);
     }
 
-    public function show(string $slug)
+    public function show(Post $post): Factory|View|Application
     {
-        return view('blog.post_show', ['slug' => $slug, 'sideBarData' => $this->sideBarData()]);
+        return view('blog.post_show', ['post' => $post, 'sideBarData' => $this->sideBarData()]);
     }
 
     private function sideBarData(): array

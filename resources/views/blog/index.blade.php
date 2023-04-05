@@ -27,7 +27,8 @@
                         <!-- Post Classic-->
                         <article class="post-classic">
                             <h3 class="post-classic__title">
-                                <a href="{{ $post['slug'] }}">{{ $post['name'] }}</a>
+{{--                                <a href="{{ $post['slug'] }}">{{ $post['name'] }}</a>--}}
+                                <a href="{{ route('blog.post', $post['id']) }}">{{ $post['name'] }}</a>
                             </h3>
                             <ul class="post-classic__meta">
                                 <li><span class="icon mdi mdi-calendar-blank"></span><a href="blog-post.html">
@@ -51,23 +52,6 @@
 
                     <!-- Post Classic-->
                     <article class="post-classic">
-                        <h3 class="post-classic__title"><a href="blog-post.html">Benefits of Async/Await in
-                                Programming</a></h3>
-                        <ul class="post-classic__meta">
-                            <li><span class="icon mdi mdi-calendar-blank"></span><a href="blog-post.html">
-                                    <time datetime="2021">May 12, 2021</time>
-                                </a></li>
-                            <li><span class="icon mdi mdi-comment-outline"></span><a href="blog-post.html">450
-                                    comments</a></li>
-                            <li><span class="icon mdi mdi-account"></span><span>by</span><a href="#">John Doe</a></li>
-                        </ul>
-                        <div class="post-classic__media"><a class="post-classic__figure" href="blog-post.html"><img
-                                    class="post-classic__image" src="{{ asset('images/blog-post-1-715x417.jpg') }}"
-                                    alt="" width="715"
-                                    height="417"/></a></div>
-                    </article>
-                    <!-- Post Classic-->
-                    <article class="post-classic">
                         <h3 class="post-classic__title"><a href="blog-post.html">Key Considerations and Warnings of
                                 iPaaS</a></h3>
                         <ul class="post-classic__meta">
@@ -83,23 +67,7 @@
                                     alt="" width="715"
                                     height="417"/></a></div>
                     </article>
-                    <!-- Post Classic-->
-                    <article class="post-classic">
-                        <h3 class="post-classic__title"><a href="blog-post.html">Usage of Hibernate Query Language
-                                (HQL)</a></h3>
-                        <ul class="post-classic__meta">
-                            <li><span class="icon mdi mdi-calendar-blank"></span><a href="blog-post.html">
-                                    <time datetime="2021">May 12, 2021</time>
-                                </a></li>
-                            <li><span class="icon mdi mdi-comment-outline"></span><a href="blog-post.html">450
-                                    comments</a></li>
-                            <li><span class="icon mdi mdi-account"></span><span>by</span><a href="#">John Doe</a></li>
-                        </ul>
-                        <div class="post-classic__media"><a class="post-classic__figure" href="blog-post.html"><img
-                                    class="post-classic__image" src="{{ asset('images/blog-post-3-715x417.jpg') }}"
-                                    alt="" width="715"
-                                    height="417"/></a></div>
-                    </article>
+
                     <div class="pagination">
                         <div class="pagination__control"><a href="#">Older posts</a></div>
                         <ul class="pagination__list">
