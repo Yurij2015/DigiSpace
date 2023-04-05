@@ -49,7 +49,7 @@ class WidgetController extends Controller
     {
         Validator::make($request->all(), [
             'title' => 'required|string|max:255',
-            'subtitle' => 'required|string|max:255',
+            'subtitle' => 'max:255',
             'icon' => 'max:255',
             'content' => 'required|string',
             'widget_category_id' => 'int',
@@ -101,7 +101,7 @@ class WidgetController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'subtitle' => 'required|string|max:255',
+            'subtitle' => 'max:255',
             'icon' => 'max:255',
             'content' => 'required|string',
             'widget_category_id' => 'int',
