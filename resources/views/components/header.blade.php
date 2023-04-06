@@ -18,7 +18,6 @@
                             <a class="brand" href="{{ route('home.index') }}">
                                 <div class="brand__name">
                                     <img class="brand__logo-dark"
-{{--                                         src="{{ asset('images/logo-default-95x80.png') }}"--}}
                                          src="{{ asset('images/digi-space-logo.png') }}"
                                          alt="" width="95"
                                          height="80"/>
@@ -46,7 +45,7 @@
                                         <li>
                                             <dl class="list-terms-inline">
                                                 <dt>E-mail</dt>
-                                                <dd><a href="mailto:#">mail@demolink.org</a></dd>
+                                                <dd><a href="mailto:#">digispaceastudio@gmail.com</a></dd>
                                             </dl>
                                         </li>
                                         <li>
