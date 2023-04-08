@@ -18,11 +18,11 @@
                             <a class="brand" href="{{ route('home.index') }}">
                                 <div class="brand__name">
                                     <img class="brand__logo-dark"
-                                         src="{{ asset('images/digi-space-logo.png') }}"
+                                         src="{{ asset('images/DigiSpaceLogo2.svg') }}"
                                          alt="" width="95"
                                          height="80"/>
                                     <img class="brand__logo-mobile"
-                                         src="{{ asset('images/logo-mobile-170x50.png') }}"
+                                         src="{{ asset('images/DigiSpaceLogo2.svg') }}"
                                          alt="" width="170" height="50"/>
                                 </div>
                             </a>
@@ -38,6 +38,7 @@
                                     <ul class="list-bordered list-inline">
                                         <li>
                                             <dl class="list-terms-inline">
+                                                {{--add telegram bot--}}
                                                 <dt>24/7 Support</dt>
                                                 <dd><a href="tel:#">1-800-700-6200</a></dd>
                                             </dl>
