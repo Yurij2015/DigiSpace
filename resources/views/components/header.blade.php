@@ -19,7 +19,7 @@
                                 <div class="brand__name">
                                     <img class="brand__logo-dark"
                                          src="{{ asset('images/DigiSpaceLogo2.svg') }}"
-                                         alt="" width="95"
+                                         alt="" width="170"
                                          height="80"/>
                                     <img class="brand__logo-mobile"
                                          src="{{ asset('images/DigiSpaceLogo2.svg') }}"
