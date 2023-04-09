@@ -176,13 +176,22 @@
         <div class="container">
             <div class="row row-30 align-items-sm-center">
                 <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src="{{ asset('images/brand-1-126x68.png') }}" alt="" width="126" height="68"/></a></div>
+                            src="{{ asset('images/stock-vector-php-vector-line-icon-design-2283993771.jpg') }}" alt="" width="126" height="68"/></a></div>
+{{--                <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img--}}
+{{--                            src="{{ asset('images/brand-1-126x68.png') }}" alt="" width="126" height="68"/></a></div>--}}
                 <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src="{{ asset('images/brand-2-126x100.png') }}" alt="" width="126" height="100"/></a></div>
+                            src="{{ asset('images/stock-vector-mysql-icon-major-database-format-vector-icon-illustration-1904318650.jpg') }}" alt="" width="126" height="100"/></a></div>
                 <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src=" {{ asset('images/brand-3-134x83.png') }}" alt="" width="134" height="83"/></a></div>
+                            src=" {{ asset('images/stock-vector-javascript-vector-line-icon-design-2283993773.jpg') }}" alt="" width="134" height="83"/></a></div>
                 <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src=" {{ asset('images/brand-4-138x55.png') }}" alt="" width="138" height="55"/></a></div>
+                            src=" {{ asset('images/stock-vector-bash-shell-vector-logo-art-with-simple-shell-prompt-in-black-lines-made-with-simple-lines-and-curves-2206501211.jpg') }}" alt="" width="138" height="55"/></a></div>
+
+{{--                <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img--}}
+{{--                            src="{{ asset('images/brand-2-126x100.png') }}" alt="" width="126" height="100"/></a></div>--}}
+{{--                <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img--}}
+{{--                            src=" {{ asset('images/brand-3-134x83.png') }}" alt="" width="134" height="83"/></a></div>--}}
+{{--                <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img--}}
+{{--                            src=" {{ asset('images/brand-4-138x55.png') }}" alt="" width="138" height="55"/></a></div>--}}
             </div>
         </div>
     </section>
