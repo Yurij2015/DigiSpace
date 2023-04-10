@@ -179,22 +179,22 @@
             <div class="row row-30 align-items-sm-center">
                 <div class="col-sm-6 col-md-3 wow fadeIn">
                     <a class="link-image" href="#">
-                        <img src="{{ asset('images/php-about-page.jpg') }}" alt="" width="130" height="68"/>
+                        <img src="{{ asset('images/php-about-page.jpg') }}" alt="php" width="130" />
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-3 wow fadeIn">
                     <a class="link-image" href="#">
-                        <img src="{{ asset('images/mysql-about-page.jpg') }}" alt="" width="105" height="100"/>
+                        <img src="{{ asset('images/mysql-about-page.jpg') }}" alt="mysql" width="105" />
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-3 wow fadeIn">
                     <a class="link-image" href="#">
-                        <img src="{{ asset('images/javascript-about-page.jpg') }}" alt="" width="130" height="83"/>
+                        <img src="{{ asset('images/javascript-about-page.jpg') }}" alt="javascript" width="130" />
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-3 wow fadeIn">
                     <a class="link-image" href="#">
-                        <img src="{{ asset('images/bash-about-page.jpg') }}" alt="" width="105" height="55"/>
+                        <img src="{{ asset('images/bash-about-page.jpg') }}" alt="bash" width="105" />
                     </a>
                 </div>
             </div>
