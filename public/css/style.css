@@ -4709,10 +4709,11 @@ html .list-inline-md > * {
 	max-width: 90%;
 	margin-left: auto;
 	margin-right: auto;
+    opacity: 60%;
 }
 
 .link-image img {
-	opacity: 1;
+	opacity: 20%;
 	transition: .22s;
 }
 
