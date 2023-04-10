@@ -4,7 +4,7 @@
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">
         <div class="breadcrumbs-custom__aside bg-image context-dark"
-             style="background-image: url({{ asset('images/bg-image-11-1920x550.jpg') }});">
+             style="background-image: url({{ asset('images/bg-about-page.jpeg') }});">
             <div class="container">
                 <h2 class="breadcrumbs-custom__title">About</h2>
             </div>
