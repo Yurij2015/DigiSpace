@@ -40,7 +40,7 @@
                                             <dl class="list-terms-inline">
                                                 {{--add telegram bot--}}
                                                 <dt>24/7 Support</dt>
-                                                <dd><a href="tel:#">1-800-700-6200</a></dd>
+                                                <dd><a href="tel:#">+4-857-186-5188</a></dd>
                                             </dl>
                                         </li>
                                         <li>

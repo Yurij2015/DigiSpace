@@ -5,7 +5,7 @@
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">
         <div class="breadcrumbs-custom__aside bg-image context-dark"
-             style="background-image: url({{ asset("images/bg-image-12-1920x238.jpg") }});">
+             style="background-image: url({{ asset("images/services-page-title-bg.jpeg") }});">
             <div class="container">
                 <h2 class="breadcrumbs-custom__title">Services</h2>
             </div>
@@ -13,7 +13,7 @@
         <div class="breadcrumbs-custom__main bg-gray-light">
             <div class="container">
                 <ul class="breadcrumbs-custom__path">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{{ route('home.index') }}">Home</a></li>
                     <li class="active">Services</li>
                 </ul>
             </div>
