@@ -5,7 +5,7 @@
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">
         <div class="breadcrumbs-custom__aside bg-image context-dark"
-             style="background-image: url({{ asset("images/services-page-title-bg.jpeg") }});">
+             style="background-image: url({{ asset("images/services-page-title-bg.jpg") }});">
             <div class="container">
                 <h2 class="breadcrumbs-custom__title">Services</h2>
             </div>
