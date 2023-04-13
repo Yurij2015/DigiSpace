@@ -24,7 +24,7 @@
             <div class="row row-50 justify-content-md-center justify-content-lg-start">
                 <div class="col-md-10 col-lg-6">
                     <div class="image-custom-1">
-                        <img src="{{ asset('images/app-development.jpg') }}" alt="" width="602" height="359"/>
+                        <img src="{{ asset('images/web-development.jpg') }}" alt="" width="602" height="359"/>
                     </div>
                 </div>
                 <div class="col-md-10 col-lg-6">
