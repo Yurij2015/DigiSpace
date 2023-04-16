@@ -4,7 +4,7 @@
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">
         <div class="breadcrumbs-custom__aside bg-image context-dark"
-             style="background-image: url({{ asset('images/bg-image-11-1920x550.jpg') }});">
+             style="background-image: url({{ asset('images/bg-about-page.jpeg') }});">
             <div class="container">
                 <h2 class="breadcrumbs-custom__title">About</h2>
             </div>
@@ -23,8 +23,8 @@
         <div class="container">
             <div class="row row-50 justify-content-md-center justify-content-lg-start">
                 <div class="col-md-10 col-lg-6">
-                    <div class="image-custom-1"><img src="{{ asset('images/about-1-602x359.jpg') }}" alt="" width="602"
-                                                     height="359"/>
+                    <div class="image-custom-1">
+                        <img src="{{ asset('images/web-development.jpg') }}" alt="" width="602" height="359"/>
                     </div>
                 </div>
                 <div class="col-md-10 col-lg-6">
@@ -76,7 +76,9 @@
                                         @foreach($widget->widgetIcon as $icon)
                                             <li>
                                                 <a class="icon icon-xs icon-darker icon-style-brand {{ $icon->icon_class }}"
-                                                   href="#"></a></li>
+                                                   href="#">
+                                                </a>
+                                            </li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -159,7 +161,7 @@
                                             </g>
                                         </svg>
                                     </div>
-                                    <div class="quote-creative__main-text" >
+                                    <div class="quote-creative__main-text">
                                         {!! $widget->content !!}
                                     </div>
                                 </div>
@@ -171,18 +173,30 @@
             </div>
         </div>
     </section>
-    <!-- Partners-->
+    <!-- Technologies -->
     <section class="section section-md bg-white text-center">
         <div class="container">
             <div class="row row-30 align-items-sm-center">
-                <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src="{{ asset('images/brand-1-126x68.png') }}" alt="" width="126" height="68"/></a></div>
-                <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src="{{ asset('images/brand-2-126x100.png') }}" alt="" width="126" height="100"/></a></div>
-                <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src=" {{ asset('images/brand-3-134x83.png') }}" alt="" width="134" height="83"/></a></div>
-                <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src=" {{ asset('images/brand-4-138x55.png') }}" alt="" width="138" height="55"/></a></div>
+                <div class="col-sm-6 col-md-3 wow fadeIn">
+                    <a class="link-image" href="#">
+                        <img src="{{ asset('images/php-about-page.jpg') }}" alt="php" width="130" />
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeIn">
+                    <a class="link-image" href="#">
+                        <img src="{{ asset('images/mysql-about-page.jpg') }}" alt="mysql" width="105" />
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeIn">
+                    <a class="link-image" href="#">
+                        <img src="{{ asset('images/javascript-about-page.jpg') }}" alt="javascript" width="130" />
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeIn">
+                    <a class="link-image" href="#">
+                        <img src="{{ asset('images/bash-about-page.jpg') }}" alt="bash" width="105" />
+                    </a>
+                </div>
             </div>
         </div>
     </section>
