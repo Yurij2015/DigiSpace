@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="box-alice__main">
                                     <h5 class="box-alice__title">{{ $widget->title }}</h5>
-                                    <p>{{ $widget->content }}</p>
+                                    <p>{!! $widget->content !!}</p>
                                 </div>
                             </div>
                         </article>
