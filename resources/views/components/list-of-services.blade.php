@@ -6,7 +6,7 @@
                 <tr>
                     <th>#</th>
                     <th>Title</th>
-                    <th>Description</th>
+{{--                    <th>Description</th>--}}
                     <th>Price</th>
                 </tr>
                 </thead>
@@ -15,7 +15,7 @@
                     <tr>
                         <td>{{ $service->id }}</td>
                         <td>{{ $service->title }}</td>
-                        <td>{{ $service->details }}</td>
+{{--                        <td>{{ $service->details }}</td>--}}
                         <td>
                             @if($service->price)
                                 $
