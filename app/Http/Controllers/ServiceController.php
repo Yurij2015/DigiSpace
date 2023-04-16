@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Page;
 use App\Models\Product;
 use App\Models\ProductService;
+use App\Models\Service;
 use App\Models\WidgetCategory;
 use App\Services\ServicesService;
 use Illuminate\Contracts\Foundation\Application;
@@ -22,6 +23,7 @@ class ServiceController extends Controller
     {
         $products = Product::with('services')->get();
         $productServices = ProductService::all();
+        $listOfServices = Service::paginate(7);
         $servicesService->addStyleToService($products, $productServices);
         return view('services.index', [
             'products' => $products,
@@ -29,7 +31,8 @@ class ServiceController extends Controller
             'chooseUsWidgets' => $this->getServicesPageWidgets(self::CHOOSE_US),
             'answerQuestionCategory' => $this->getServicesPageWidgetsCategory(self::ANSWERS_QUESTIONS),
             'questionsLeft' => $this->getAnswersQuestionsWidgets(self::ANSWERS_QUESTIONS, 'left'),
-            'questionsRight' => $this->getAnswersQuestionsWidgets(self::ANSWERS_QUESTIONS, 'right')
+            'questionsRight' => $this->getAnswersQuestionsWidgets(self::ANSWERS_QUESTIONS, 'right'),
+            'listOfServices' => $listOfServices
         ]);
     }
 
