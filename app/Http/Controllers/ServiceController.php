@@ -12,6 +12,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Http\Request;
 
 
 class ServiceController extends Controller
@@ -23,7 +24,7 @@ class ServiceController extends Controller
     {
         $products = Product::with('services')->get();
         $productServices = ProductService::all();
-        $listOfServices = Service::paginate(7);
+        $listOfServices = Service::paginate(20);
         $servicesService->addStyleToService($products, $productServices);
         return view('services.index', [
             'products' => $products,
