@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,10 +22,8 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
-        //
-//        $this->loadViewsFrom(base_path('resources/views/admin'), 'admin');
-//        $this->loadViewsFrom(base_path('resources/views/site'), 'site');
+        Paginator::defaultView('pagination::default');
     }
 }
