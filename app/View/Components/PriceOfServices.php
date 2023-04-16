@@ -21,7 +21,7 @@ class PriceOfServices extends Component
      *
      * @return void
      */
-    public function __construct($products)
+    public function __construct(Collection $products)
     {
         $this->products = $products;
     }

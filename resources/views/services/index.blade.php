@@ -21,7 +21,14 @@
     </section>
     <section class="section section-lg text-center">
         <div class="container">
+            <h2>Service packages</h2>
             <x-price-of-services :$products></x-price-of-services>
+        </div>
+    </section>
+    <section class="section section-lg text-center">
+        <div class="container">
+            <h2>List of services</h2>
+            <x-list-of-services :$listOfServices></x-list-of-services>
         </div>
     </section>
     <section class="section section-sm bg-white text-center">
