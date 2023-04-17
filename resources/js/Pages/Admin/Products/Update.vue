@@ -12,7 +12,7 @@ const props = defineProps(['product']);
 const form = useForm({
     title: props.product.title,
     details: props.product.details,
-    price: props.product.price_value,
+    price_value: props.product.price_value,
 });
 
 </script>
@@ -55,12 +55,12 @@ const form = useForm({
                                     <InputError :message="form.errors.details" class="mt-2"/>
 
                                     <input
-                                        v-model="form.price"
+                                        v-model="form.price_value"
                                         placeholder="What is service price?"
                                         class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring
                                         focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                     >
-                                    <InputError :message="form.errors.price" class="mt-2"/>
+                                    <InputError :message="form.errors.price_value" class="mt-2"/>
 
                                     <PrimaryButton class="mt-4">Update product!</PrimaryButton>
                                     <Link :href="route('admin.products')">
