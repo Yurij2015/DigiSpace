@@ -51,9 +51,9 @@ class ProductController extends Controller
     }
 
 
-    final public function update(Request $request, Product $product): RedirectResponse
+    final public function update(ProductSaveRequest $saveRequest, Product $product): RedirectResponse
     {
-        //
+        $product->update($saveRequest->all());
         return redirect(route('admin.products'));
     }
 

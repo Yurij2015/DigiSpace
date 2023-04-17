@@ -3,7 +3,7 @@
     <article class="pricing-table__item pricing-table-creative__item">
         <div class="pricing-table__item-inner">
             @foreach($products as $product)
-                @if($product->title === 'Basic')
+                @if($product->title === 'Landing page')
                     <p class="pricing-table__item-title">{{ $product->title }}</p>
                     <div class="pricing-table__item-price">
                         <p class="pricing-table__item-price-value">
@@ -29,7 +29,7 @@
     <article class="pricing-table__item pricing-table-creative__item pricing-table-creative__item_prefered">
         <div class="pricing-table__item-inner">
             @foreach($products as $product)
-                @if($product->title === 'Optimal')
+                @if($product->title === 'Website with CMS')
                     <p class="pricing-table__item-title">{{ $product->title }}</p>
                     <div class="pricing-table__item-price">
                         <p class="pricing-table__item-price-value">
@@ -55,7 +55,7 @@
     <article class="pricing-table__item pricing-table-creative__item">
         <div class="pricing-table__item-inner">
             @foreach($products as $product)
-                @if($product->title === 'Ultimate')
+                @if($product->title === 'Custom development')
                     <p class="pricing-table__item-title">{{ $product->title }}</p>
                     <div class="pricing-table__item-price">
                         <p class="pricing-table__item-price-value"><span
