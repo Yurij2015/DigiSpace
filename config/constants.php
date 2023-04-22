@@ -7,5 +7,7 @@ return [
     'PAGE_SUBMENU_SECOND' => 3,
     'PAGE_SUBMENU_THIRD' => 4,
     'FOOTER_SUBMENU' => 5,
-    'NUMBER_POSTS_IN_MENU' => 6 // TODO - add to settings number of posts in menu
+    'NUMBER_POSTS_IN_MENU' => 6, // TODO - add to settings number of posts in menu
+    'CHOOSE_US_WIDGET_CATEGORY' => 12,
+    'ANSWERS_QUESTIONS_WIDGET_CATEGORY' => 13
 ];
