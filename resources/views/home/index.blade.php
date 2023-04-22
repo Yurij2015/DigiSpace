@@ -12,12 +12,14 @@
                             <div class="col-md-10 col-sm-12">
                                 <h1 data-caption-animate="fadeInUpSmall">Welcome to DigiSpace</h1>
                                 <p class="quote-classic__text call-subtitle_text" data-caption-animate="fadeInUpSmall"
-                                   data-caption-delay="200">Since our establishment, we have been delivering
-                                    high-quality and <br>sustainable software solutions for corporate business purposes.<span
-                                        class="group-item"></span></p><a class="button button-lg button-primary"
-                                                                         href="hosting.html"
-                                                                         data-caption-animate="fadeInUpSmall"
-                                                                         data-caption-delay="250">Read More</a>
+                                   data-caption-delay="200">We develop and support web applications of varying
+                                    complexity,<br>thematic focus, and corporate business goals.
+                                    <span class="group-item"></span>
+                                </p>
+                                <a class="button button-lg button-primary"
+                                   href="hosting.html"
+                                   data-caption-animate="fadeInUpSmall"
+                                   data-caption-delay="250">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -28,14 +30,16 @@
                     <div class="container text-start">
                         <div class="row justify-content-center">
                             <div class="col-md-10 col-sm-12">
-                                <h1 data-caption-animate="fadeInUpSmall">Award-Winning Software</h1>
+                                <h2 data-caption-animate="fadeInUpSmall">Analysis and technology selection</h2>
                                 <p class="quote-classic__text call-subtitle_text" data-caption-animate="fadeInUpSmall"
-                                   data-caption-delay="200">The software solutions developed by our company have
-                                    been<br>numerously awarded for usability and innovative features.<span
-                                        class="group-item"></span></p><a class="button button-lg button-primary"
-                                                                         href="hosting.html"
-                                                                         data-caption-animate="fadeInUpSmall"
-                                                                         data-caption-delay="250">Read More</a>
+                                   data-caption-delay="200">Exceptional proficiency and expertise in business process
+                                    analysis, prototype creation, model development, and database advancement.
+                                    <span class="group-item"></span>
+                                </p>
+                                <a class="button button-lg button-primary"
+                                   href="hosting.html"
+                                   data-caption-animate="fadeInUpSmall"
+                                   data-caption-delay="250">Read More</a>
                             </div>
                         </div>
                     </div>
