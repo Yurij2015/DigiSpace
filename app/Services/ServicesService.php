@@ -2,7 +2,9 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Facades\URL;
+use App\Models\Page;
+use App\Models\WidgetCategory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class ServicesService
 {
@@ -17,5 +19,25 @@ class ServicesService
                 }
             }
         }
+    }
+
+    public function getServicesPageWidgets($widgetCategory): object
+    {
+        return Page::with(['widgets' => function (BelongsToMany $query) use ($widgetCategory) {
+            $query->where('widget_category_id', '=', $widgetCategory);
+        }])->where('slug', '=', 'services')->first();
+    }
+
+    public function getServicesPageWidgetsCategory($widgetCategory): WidgetCategory
+    {
+        return WidgetCategory::where('id', '=', $widgetCategory)->first();
+    }
+
+    public function getAnswersQuestionsWidgets($widgetCategory, $position): object|null
+    {
+        return Page::with(['widgets' => function (BelongsToMany $query) use ($widgetCategory, $position) {
+            $query->where('widget_category_id', '=', $widgetCategory)
+                ->where('subtitle', '=', $position);
+        }])->where('slug', '=', 'services')->first();
     }
 }
