@@ -12,8 +12,9 @@
                             <div class="col-md-10 col-sm-12">
                                 <h1 data-caption-animate="fadeInUpSmall">Welcome to DigiSpace</h1>
                                 <p class="quote-classic__text call-subtitle_text" data-caption-animate="fadeInUpSmall"
-                                   data-caption-delay="200">We develop and support web applications of varying
-                                    complexity,<br>thematic focus, and corporate business goals.
+                                   data-caption-delay="200">We specialize in developing and supporting web applications
+                                    tailored<br> to specific industry domains and corporate missions, with <br>varying
+                                    levels of complexity and thematic focus.
                                     <span class="group-item"></span>
                                 </p>
                                 <a class="button button-lg button-primary"
@@ -32,8 +33,8 @@
                             <div class="col-md-10 col-sm-12">
                                 <h2 data-caption-animate="fadeInUpSmall">Analysis and technology selection</h2>
                                 <p class="quote-classic__text call-subtitle_text" data-caption-animate="fadeInUpSmall"
-                                   data-caption-delay="200">Exceptional proficiency and expertise in business process
-                                    analysis, prototype creation, model development, and database advancement.
+                                   data-caption-delay="200">Exceptional proficiency and expertise in business
+                                    process<br>analysis, prototype creation, model development,<br> and database advancement.
                                     <span class="group-item"></span>
                                 </p>
                                 <a class="button button-lg button-primary"
@@ -221,7 +222,7 @@
                                     </svg>
                                 </div>
                                 <div class="quote-creative__main-text">
-                                    <p>TechSoft is a highly skilled and uniquely capable firm with multitudes of talent
+                                    <p>DigiSpace is a highly skilled and uniquely capable firm with multitudes of talent
                                         on-board. We have collaborated on a number of diverse projects that have been a
                                         great success.</p>
                                 </div>
