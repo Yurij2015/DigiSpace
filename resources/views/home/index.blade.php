@@ -12,8 +12,9 @@
                             <div class="col-md-10 col-sm-12">
                                 <h1 data-caption-animate="fadeInUpSmall">Welcome to DigiSpace</h1>
                                 <p class="quote-classic__text call-subtitle_text" data-caption-animate="fadeInUpSmall"
-                                   data-caption-delay="200">We develop and support web applications of varying
-                                    complexity,<br>thematic focus, and corporate business goals.
+                                   data-caption-delay="200">We specialize in developing and supporting web applications
+                                    tailored<br> to specific industry domains and corporate missions, with <br>varying
+                                    levels of complexity and thematic focus.
                                     <span class="group-item"></span>
                                 </p>
                                 <a class="button button-lg button-primary"
@@ -32,8 +33,8 @@
                             <div class="col-md-10 col-sm-12">
                                 <h2 data-caption-animate="fadeInUpSmall">Analysis and technology selection</h2>
                                 <p class="quote-classic__text call-subtitle_text" data-caption-animate="fadeInUpSmall"
-                                   data-caption-delay="200">Exceptional proficiency and expertise in business process
-                                    analysis, prototype creation, model development, and database advancement.
+                                   data-caption-delay="200">Exceptional proficiency and expertise in business
+                                    process<br>analysis, prototype creation, model development,<br> and database advancement.
                                     <span class="group-item"></span>
                                 </p>
                                 <a class="button button-lg button-primary"
@@ -80,7 +81,7 @@
                         <div class="col-md-5 wow fadeInRightSmall">
                             <div class="box-width-3 box-centered">
                                 <h2>Some Facts About Us</h2>
-                                <p class="text-style-1">More than 1000 applications developed</p><a
+                                <p class="text-style-1">More than 200 web-applications developed</p><a
                                     class="button button-lg btn-primary button-ujarak" href="about.html">Read More</a>
                             </div>
                         </div>
@@ -92,12 +93,11 @@
                                         <!--Counter-->
                                         <article class="box-counter box-counter_modern">
                                             <div class="box-counter__main">
-                                                <div class="box-counter__icon linearicons-outbox"></div>
-                                                <div class="counter-prefix">1.</div>
-                                                <div class="counter">6</div>
-                                                <div class="small">k</div>
+                                                <div class="box-counter__icon linearicons-users2"></div>
+                                                <div class="counter">50</div>
+                                                <div class="counter-postfix">+</div>
                                             </div>
-                                            <p class="box-counter__title">Apps Installed</p>
+                                            <p class="box-counter__title">Customers</p>
                                         </article>
                                     </div>
                                 </div>
@@ -107,23 +107,11 @@
                                         <!--Counter-->
                                         <article class="box-counter box-counter_modern">
                                             <div class="box-counter__main">
-                                                <div class="box-counter__icon linearicons-diamond2"></div>
-                                                <div class="counter">27</div>
-                                            </div>
-                                            <p class="box-counter__title">Awards Won</p>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="col-inner">
-                                        <!--Counter-->
-                                        <article class="box-counter box-counter_modern">
-                                            <div class="box-counter__main">
-                                                <div class="box-counter__icon linearicons-user"></div>
-                                                <div class="counter">45</div>
+                                                <div class="box-counter__icon linearicons-server"></div>
+                                                <div class="counter">99</div>
                                                 <div class="counter-postfix">+</div>
                                             </div>
-                                            <p class="box-counter__title">Staff Members</p>
+                                            <p class="box-counter__title">Projects</p>
                                         </article>
                                     </div>
                                 </div>
@@ -132,11 +120,24 @@
                                         <!--Counter-->
                                         <article class="box-counter box-counter_modern">
                                             <div class="box-counter__main">
-                                                <div class="box-counter__icon linearicons-heart"></div>
-                                                <div class="counter">99</div>
-                                                <div class="small small_top">%</div>
+                                                <div class="box-counter__icon linearicons-cog2"></div>
+                                                <div class="counter">25</div>
+                                                <div class="counter-postfix">+</div>
                                             </div>
-                                            <p class="box-counter__title">Satisfied Customers</p>
+                                            <p class="box-counter__title">Technologies</p>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="col-inner">
+                                        <!--Counter-->
+                                        <article class="box-counter box-counter_modern">
+                                            <div class="box-counter__main">
+                                                <div class="box-counter__icon linearicons-code"></div>
+                                                <div class="counter">199</div>
+                                                <div class="small">k</div>
+                                            </div>
+                                            <p class="box-counter__title">Code rows</p>
                                         </article>
                                     </div>
                                 </div>
@@ -189,9 +190,9 @@
                                     </svg>
                                 </div>
                                 <div class="quote-creative__main-text">
-                                    <p>TechSoft offers a high caliber of resources skilled in Microsoft Azure .NET,
+                                    <p>DigiSpace offers a high caliber of resources skilled in Microsoft Azure .NET,
                                         mobile and Quality Assurance. They became our true business partners over the
-                                        past three years of our cooperation.</p>
+                                        past three years.</p>
                                 </div>
                             </div>
                         </article>
@@ -221,7 +222,7 @@
                                     </svg>
                                 </div>
                                 <div class="quote-creative__main-text">
-                                    <p>TechSoft is a highly skilled and uniquely capable firm with multitudes of talent
+                                    <p>DigiSpace is a highly skilled and uniquely capable firm with multitudes of talent
                                         on-board. We have collaborated on a number of diverse projects that have been a
                                         great success.</p>
                                 </div>
