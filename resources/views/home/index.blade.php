@@ -159,94 +159,9 @@
             </defs>
         </svg>
         <div class="container">
-            <h2>Our Projects</h2>
-            <!-- Owl Carousel-->
-            <div class="owl-outer-navigation-wrap owl-carousel_nav-modern wow fadeIn">
-                <div class="owl-carousel quote-creative-carousel review-carousel" data-items="1" data-lg-items="2"
-                     data-stage-padding="0" data-margin="30"
-                     data-owl="{&quot;dots&quot;:true,&quot;nav&quot;:true,&quot;loop&quot;:true,&quot;autoplayTimeout&quot;:3500,&quot;navContainer&quot;:&quot;#owl-carousel-nav&quot;,&quot;dotsEach&quot;:1}">
-                    <div class="item">
-                        <!-- Quote Creative-->
-                        <article class="quote-creative">
-                            <div class="quote-creative__header">
-                                <div class="quote-creative__media"><img src="{{ asset('images/user-2-112x99.jpg') }}"
-                                                                        alt=""
-                                                                        width="112" height="99"/>
-                                </div>
-                                <div class="quote-creative__info">
-                                    <p class="quote-creative__title">Michael Johnson</p>
-                                    <p class="quote-creative__subtitle">Regular Client</p>
-                                </div>
-                            </div>
-                            <div class="quote-creative__main">
-                                <div class="quote-creative__mark">
-                                    <svg x="0px" y="0px" width="39px" height="21px" viewbox="0 0 39 21">
-                                        <g fill="url(#grad1)">
-                                            <polyline
-                                                points="8.955,21 0,14.031 0.002,0.001 15.984,0.001 15.984,13.984 8.969,14.016 "></polyline>
-                                            <polyline
-                                                points="31.97,20.999 23.016,14.031 23.018,0.001 39,0.001 39,13.984 31.984,14.015 "></polyline>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="quote-creative__main-text">
-                                    <p>DigiSpace offers a high caliber of resources skilled in Microsoft Azure .NET,
-                                        mobile and Quality Assurance. They became our true business partners over the
-                                        past three years.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="item">
-                        <!-- Quote Creative-->
-                        <article class="quote-creative">
-                            <div class="quote-creative__header">
-                                <div class="quote-creative__media"><img src="{{ asset('images/user-1-112x99.jpg') }}"
-                                                                        alt=""
-                                                                        width="112" height="99"/>
-                                </div>
-                                <div class="quote-creative__info">
-                                    <p class="quote-creative__title">Rachel Adams</p>
-                                    <p class="quote-creative__subtitle">Regular Client</p>
-                                </div>
-                            </div>
-                            <div class="quote-creative__main">
-                                <div class="quote-creative__mark">
-                                    <svg x="0px" y="0px" width="39px" height="21px" viewbox="0 0 39 21">
-                                        <g fill="url(#grad1)">
-                                            <polyline
-                                                points="8.955,21 0,14.031 0.002,0.001 15.984,0.001 15.984,13.984 8.969,14.016 "></polyline>
-                                            <polyline
-                                                points="31.97,20.999 23.016,14.031 23.018,0.001 39,0.001 39,13.984 31.984,14.015 "></polyline>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="quote-creative__main-text">
-                                    <p>DigiSpace is a highly skilled and uniquely capable firm with multitudes of talent
-                                        on-board. We have collaborated on a number of diverse projects that have been a
-                                        great success.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="owl-outer-navigation" id="owl-carousel-nav"></div>
-            </div>
+            <x-our-projects :$clientsCategory :$clients></x-our-projects>
         </div>
     </section>
-    <!-- Partners-->
-    <section class="section section-md bg-white text-center">
-        <div class="container">
-            <div class="row row-30 align-items-sm-center">
-                <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src="{{ asset('images/brand-1-126x68.png') }}" alt="" width="126" height="68"/></a></div>
-                <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src="{{ asset('images/brand-2-126x100.png') }}" alt="" width="126" height="100"/></a></div>
-                <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src="{{ asset('images/brand-3-134x83.png') }}" alt="" width="134" height="83"/></a></div>
-                <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src="{{ asset('images/brand-4-138x55.png') }}" alt="" width="138" height="55"/></a></div>
-            </div>
-        </div>
-    </section>
+    <!-- Technologies -->
+    <x-technologies></x-technologies>
 @endsection
