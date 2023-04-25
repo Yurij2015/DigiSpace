@@ -9,5 +9,6 @@ return [
     'FOOTER_SUBMENU' => 5,
     'NUMBER_POSTS_IN_MENU' => 6, // TODO - add to settings number of posts in menu
     'CHOOSE_US_WIDGET_CATEGORY' => 12,
-    'ANSWERS_QUESTIONS_WIDGET_CATEGORY' => 13
+    'ANSWERS_QUESTIONS_WIDGET_CATEGORY' => 13,
+    'WIDGET_CATEGORY_PROJECTS' => 10 // rename from clients
 ];
