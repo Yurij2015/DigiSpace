@@ -119,19 +119,19 @@
                                 {{-- TODO add UsefulLinkFooterComponent --}}
                                 <div class="col-sm-6">
                                     <ul class="list-marked list-marked_primary">
-                                        <li><a href="#">DB Management</a></li>
-                                        <li><a href="#">iOS/MacOs Apps</a></li>
-                                        <li><a href="#">Android Apps</a></li>
-                                        <li><a href="#">Windows Apps</a></li>
-                                        <li><a href="#">UX Design</a></li>
+                                        <li><a href="#">Laravel</a></li>
+                                        <li><a href="#">Symfony</a></li>
+                                        <li><a href="#">Vue 3</a></li>
+                                        <li><a href="#">VueNotus</a></li>
+                                        <li><a href="#">LteAdmin</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-6">
                                     <ul class="list-marked list-marked_primary">
                                         <li><a href="#">Tutorials</a></li>
                                         <li><a href="#">Product Support</a></li>
-                                        <li><a href="contact-us.html">Contact Us</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="#">Blog</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -145,11 +145,15 @@
         <div class="container">
             <div class="footer-default__aside-inner">
                 <!-- Rights-->
-                <p class="rights"><span>&copy;&nbsp;</span><span
-                        class="copyright-year"></span><span>&nbsp;</span><span>Techsoft</span><span>.&nbsp;</span><a
-                        href="privacy-policy.html">Privacy Policy</a></p>
+                <p class="rights">
+                    <span>&copy;&nbsp;</span><span class="copyright-year"></span>
+                    <span>&nbsp;</span>
+                    <span>DigiSpace</span>
+                    <span>.&nbsp;</span>
+                    <a href="#">Privacy Policy</a>
+                </p>
                 <ul class="list-separated list-inline">
-                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">FAQ</a></li>
                     <li><a href="#">Support</a></li>
                 </ul>
             </div>
