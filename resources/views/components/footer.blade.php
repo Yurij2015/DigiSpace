@@ -116,24 +116,7 @@
                             <p class="custom-heading-1 custom-heading-bordered">{{ $widget->title }}</p>
                             <div class="divider"></div>
                             <div class="row row-5">
-                                {{-- TODO add UsefulLinkFooterComponent --}}
-                                <div class="col-sm-6">
-                                    <ul class="list-marked list-marked_primary">
-                                        <li><a href="#">Laravel</a></li>
-                                        <li><a href="#">Symfony</a></li>
-                                        <li><a href="#">Vue 3</a></li>
-                                        <li><a href="#">VueNotus</a></li>
-                                        <li><a href="#">LteAdmin</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6">
-                                    <ul class="list-marked list-marked_primary">
-                                        <li><a href="#">Tutorials</a></li>
-                                        <li><a href="#">Product Support</a></li>
-                                        <li><a href="#">Contact Us</a></li>
-                                        <li><a href="#">Blog</a></li>
-                                    </ul>
-                                </div>
+                                <x-useful-link-footer :$footerUsefulLinks/>
                             </div>
                         </div>
                     @endif

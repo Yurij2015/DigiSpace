@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\FooterUsefulLink;
 use App\Models\Menu;
 use App\Models\Post;
 use App\Models\Widget;
@@ -42,13 +43,15 @@ class ContentServiceProvider extends ServiceProvider
                 ->get();
             $postsForMenu = Post::limit(config('constants.NUMBER_POSTS_IN_MENU'))
                 ->get();
+            $footerUsefulLinks = FooterUsefulLink::all()->take(20);
 
             View::share([
                 'footerWidgets' => $footerWidgets,
                 'pageSubmenuFirst' => $pageSubmenuFirst,
                 'pageSubmenuSecond' => $pageSubmenuSecond,
                 'pageSubmenuThird' => $pageSubmenuThird,
-                'postsForMenu' => $postsForMenu
+                'postsForMenu' => $postsForMenu,
+                'footerUsefulLinks' => $footerUsefulLinks
             ]);
         } catch (\Exception $e) {
             //
