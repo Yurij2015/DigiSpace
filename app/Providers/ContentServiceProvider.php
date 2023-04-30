@@ -43,7 +43,7 @@ class ContentServiceProvider extends ServiceProvider
                 ->get();
             $postsForMenu = Post::limit(config('constants.NUMBER_POSTS_IN_MENU'))
                 ->get();
-            $footerUsefulLinks = FooterUsefulLink::all()->take(20);
+            $footerUsefulLinks = FooterUsefulLink::all()->where('status', '==', true)->take(20);
 
             View::share([
                 'footerWidgets' => $footerWidgets,

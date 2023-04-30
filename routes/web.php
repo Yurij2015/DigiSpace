@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DefaultPagesController;
+use App\Http\Controllers\Admin\FooterUsefulLinkController;
 use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\WidgetController;
@@ -136,6 +137,12 @@ Route::middleware('auth')->group(function () {
         ->name('admin.product-update');
     Route::delete('admin/product-destroy/{product}', [AdminProductController::class, 'destroy'])
         ->name('admin.product-destroy');
+
+    Route::get('/admin/useful-link-list/', [FooterUsefulLinkController::class, 'index'])
+        ->name('admin.useful-link-list');
+    Route::post('admin/useful-link-store', [FooterUsefulLinkController::class, 'linkStore'])
+        ->name('admin.useful-link-store');
+
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])
