@@ -14,7 +14,7 @@
                     {{ $item->name }}
                 </a>
             </p>
-            <time class="post-small__time" datetime="2023">{{ $item->created_at->isoFormat('ll') }}</time>
+            <time class="post-small__time" datetime="2023">{{ $item->created_at->toFormattedDateString() }}</time>
         </div>
     </article>
 @endforeach
