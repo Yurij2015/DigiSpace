@@ -69,43 +69,7 @@
                             <p class="custom-heading-1 custom-heading-bordered">{{ $widget->title }}</p>
                             <div class="divider"></div>
                             <div class="post-small-wrap">
-                                {{-- TODO add ArticleFooterComponent --}}
-                                <!-- Post small-->
-                                <article class="post-small">
-                                    <div class="post-small__aside">
-                                        <a class="post-small__media" href="#">
-                                            <img class="post-small__image"
-                                                 src="{{ asset('images/post-small-1-80x68.jpg') }}"
-                                                 alt="" width="80" height="68"/>
-                                        </a>
-                                    </div>
-                                    <div class="post-small__main">
-                                        <p class="post-small__title">
-                                            <a href="#">
-                                                Optimal techniques and approaches for constructing websites.
-                                            </a>
-                                        </p>
-                                        <time class="post-small__time" datetime="2022">April 27, 2023</time>
-                                    </div>
-                                </article>
-                                <!-- Post small-->
-                                <article class="post-small">
-                                    <div class="post-small__aside">
-                                        <a class="post-small__media" href="blog-post.html">
-                                            <img class="post-small__image"
-                                                 src="{{ asset('images/post-small-2-80x68.jpg') }}"
-                                                 alt="" width="80" height="68"/>
-                                        </a>
-                                    </div>
-                                    <div class="post-small__main">
-                                        <p class="post-small__title">
-                                            <a href="#">
-                                                Frameworks for developing the backend of websites.
-                                            </a>
-                                        </p>
-                                        <time class="post-small__time" datetime="2022">April 12, 2023</time>
-                                    </div>
-                                </article>
+                                <x-latest-news-in-footer :$footerLatestNews/>
                             </div>
                         </div>
                     @endif
