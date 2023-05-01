@@ -155,12 +155,6 @@ function toggleCollapseShow(classes) {
                             Useful Links
                         </SidebarNavLink>
                     </li>
-                    <li class="items-center">
-                        <SidebarNavLink :href="route('login')" :active="route().current('login')"
-                                        icon="fas fa-stream mr-2 text-sm">
-                            Latest news
-                        </SidebarNavLink>
-                    </li>
                 </ul>
 
                 <!-- Divider -->
