@@ -7,6 +7,7 @@ import Sidebar from "@/Components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import UsefulLink from "@/Pages/Admin/FooterUsefulLinks/Components/UsefulLink.vue";
+import Pagination from "@/Components/Pagination.vue";
 
 defineProps(['usefulLinks']);
 const form = useForm({
@@ -81,6 +82,7 @@ const form = useForm({
                                             :key="item.id"
                                             :usefulLink="item"
                                         />
+                                        <Pagination class="mt-6" :links="usefulLink.links"/>
                                     </div>
                                 </div>
                             </div>

@@ -44,6 +44,7 @@ class ContentServiceProvider extends ServiceProvider
             $postsForMenu = Post::limit(config('constants.NUMBER_POSTS_IN_MENU'))
                 ->get();
             $footerUsefulLinks = FooterUsefulLink::all()->where('status', '==', true)->take(20);
+            $footerLatestNews = Post::orderBy('created_at', 'DESC')->get()->take(2);
 
             View::share([
                 'footerWidgets' => $footerWidgets,
@@ -51,7 +52,8 @@ class ContentServiceProvider extends ServiceProvider
                 'pageSubmenuSecond' => $pageSubmenuSecond,
                 'pageSubmenuThird' => $pageSubmenuThird,
                 'postsForMenu' => $postsForMenu,
-                'footerUsefulLinks' => $footerUsefulLinks
+                'footerUsefulLinks' => $footerUsefulLinks,
+                'footerLatestNews' => $footerLatestNews
             ]);
         } catch (\Exception $e) {
             //

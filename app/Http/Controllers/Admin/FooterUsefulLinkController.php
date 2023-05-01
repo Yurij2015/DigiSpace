@@ -13,7 +13,7 @@ class FooterUsefulLinkController extends Controller
 {
     final public function index(): Response
     {
-        $usefulLinks = FooterUsefulLink::paginate(10);
+        $usefulLinks = FooterUsefulLink::paginate(5);
         return Inertia::render('Admin/FooterUsefulLinks/Index', [
             'usefulLinks' => compact('usefulLinks'),
         ]);
