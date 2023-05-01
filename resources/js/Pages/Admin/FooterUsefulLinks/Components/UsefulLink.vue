@@ -45,14 +45,11 @@ const editing = ref(false);
                                       method="delete">
                             Delete
                         </DropdownLink>
-                        <DropdownLink as="button" :href="route('admin.category-show', usefulLink.id)">
-                            View
-                        </DropdownLink>
                     </template>
                 </Dropdown>
             </div>
             <form v-if="editing"
-                  @submit.prevent="form.put(route('admin.category-update', usefulLink.id), { onSuccess: () => editing = false })">
+                  @submit.prevent="form.put(route('admin.useful-link-update', usefulLink.id), { onSuccess: () => editing = false })">
                 <input
                     v-model="form.name"
                     placeholder="What is category name?"

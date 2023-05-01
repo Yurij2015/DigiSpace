@@ -142,6 +142,8 @@ Route::middleware('auth')->group(function () {
         ->name('admin.useful-link-list');
     Route::post('admin/useful-link-store', [FooterUsefulLinkController::class, 'linkStore'])
         ->name('admin.useful-link-store');
+    Route::put('admin/useful-link-update/{usefulLink}', [FooterUsefulLinkController::class, 'linkUpdate'])
+        ->name('admin.useful-link-update');
 
 });
 

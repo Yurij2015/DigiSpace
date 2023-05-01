@@ -24,4 +24,10 @@ class FooterUsefulLinkController extends Controller
         FooterUsefulLink::create($saveRequest->all());
         return redirect(route('admin.useful-link-list'));
     }
+
+    final public function linkUpdate(FooterUsefulLinkSaveRequest $saveRequest, FooterUsefulLink $usefulLink): RedirectResponse
+    {
+        $usefulLink->update($saveRequest->all());
+        return redirect(route('admin.useful-link-list'));
+    }
 }
