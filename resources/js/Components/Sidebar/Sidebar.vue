@@ -155,6 +155,12 @@ function toggleCollapseShow(classes) {
                             Useful Links
                         </SidebarNavLink>
                     </li>
+                    <li class="items-center">
+                        <SidebarNavLink :href="route('admin.widget-icons', 34)+'?page=4'" :active="route().current('admin.widget-icons', 34)"
+                                        icon="fas fa-icons mr-2 text-sm">
+                            About US icons
+                        </SidebarNavLink>
+                    </li>
                 </ul>
 
                 <!-- Divider -->
