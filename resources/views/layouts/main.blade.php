@@ -15,35 +15,34 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-{{--<!-- Messenger Chat plugin Code -->--}}
-{{--<div id="fb-root"></div>--}}
-{{--<!-- Your Chat plugin code -->--}}
-{{--<div id="fb-customer-chat" class="fb-customerchat">--}}
-{{--</div>--}}
+<!-- Messenger Chat plugin Code -->
+<div id="fb-root"></div>
+<!-- Your Chat plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+<script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "105137005707119");
+    chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+<!-- Your SDK code -->
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            xfbml: true,
+            version: 'v16.0'
+        });
+    };
 
-{{--<script>--}}
-{{--    var chatbox = document.getElementById('fb-customer-chat');--}}
-{{--    chatbox.setAttribute("page_id", "105137005707119");--}}
-{{--    chatbox.setAttribute("attribution", "biz_inbox");--}}
-{{--</script>--}}
-
-{{--<!-- Your SDK code -->--}}
-{{--<script>--}}
-{{--    window.fbAsyncInit = function() {--}}
-{{--        FB.init({--}}
-{{--            xfbml            : true,--}}
-{{--            version          : 'v16.0'--}}
-{{--        });--}}
-{{--    };--}}
-
-{{--    (function(d, s, id) {--}}
-{{--        var js, fjs = d.getElementsByTagName(s)[0];--}}
-{{--        if (d.getElementById(id)) return;--}}
-{{--        js = d.createElement(s); js.id = id;--}}
-{{--        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';--}}
-{{--        fjs.parentNode.insertBefore(js, fjs);--}}
-{{--    }(document, 'script', 'facebook-jssdk'));--}}
-{{--</script>--}}
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 <!-- Page Loader-->
 <div id="page-loader">
     <div class="page-loader-body">
