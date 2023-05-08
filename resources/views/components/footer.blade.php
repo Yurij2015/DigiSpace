@@ -7,10 +7,13 @@
                         <div class="unit flex-sm-row">
                             @foreach($footerWidgets as $widget)
                                 @if($widget->title === 'Phone')
-                                    <div class="unit__left"><span
-                                            class="icon icon-md icon-default {{ $widget->icon }}"></span></div>
+                                    <div class="unit__left">
+                                        <span class="icon icon-md icon-default {{ $widget->icon }}"></span>
+                                    </div>
                                     <div class="unit__body">
-                                        <a class="link link-lg" href="tel:#">{{ $widget->subtitle }}</a>
+                                        <a class="link link-lg" href="{{ route('contact-us') }}">
+                                            {{ $widget->subtitle }}
+                                        </a>
                                         <p>{!! $widget->content !!}</p>
                                     </div>
                                 @endif
@@ -56,7 +59,7 @@
                                 @foreach($widget->widgetIcon as $icon)
                                     <li>
                                         <a class="icon icon-xxs icon-circle icon-filled icon-filled_brand {{ $icon->icon_class }}"
-                                           href="{{ $icon->url }}"></a>
+                                           href="{{ $icon->url }}" target="_blank"></a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -89,21 +92,6 @@
         </div>
     </div>
     <div class="footer-default__aside bg-gray-5">
-        <div class="container">
-            <div class="footer-default__aside-inner">
-                <!-- Rights-->
-                <p class="rights">
-                    <span>&copy;&nbsp;</span><span class="copyright-year"></span>
-                    <span>&nbsp;</span>
-                    <span>DigiSpace</span>
-                    <span>.&nbsp;</span>
-                    <a href="#">Privacy Policy</a>
-                </p>
-                <ul class="list-separated list-inline">
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Support</a></li>
-                </ul>
-            </div>
-        </div>
+        <x-footer-bottom-bar-content/>
     </div>
 </footer>

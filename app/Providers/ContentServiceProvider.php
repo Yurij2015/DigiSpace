@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\FooterBottomBarContent;
 use App\Models\FooterUsefulLink;
+use App\Models\HeaderNavBarContent;
 use App\Models\Menu;
 use App\Models\Post;
 use App\Models\Widget;
@@ -45,7 +47,8 @@ class ContentServiceProvider extends ServiceProvider
                 ->get();
             $footerUsefulLinks = FooterUsefulLink::all()->where('status', '==', true)->take(20);
             $footerLatestNews = Post::orderBy('created_at', 'DESC')->get()->take(2);
-
+            $headerNavBarContent = HeaderNavBarContent::all()->first();
+            $footerBottomBarContent = FooterBottomBarContent::all()->first();
             View::share([
                 'footerWidgets' => $footerWidgets,
                 'pageSubmenuFirst' => $pageSubmenuFirst,
@@ -53,7 +56,9 @@ class ContentServiceProvider extends ServiceProvider
                 'pageSubmenuThird' => $pageSubmenuThird,
                 'postsForMenu' => $postsForMenu,
                 'footerUsefulLinks' => $footerUsefulLinks,
-                'footerLatestNews' => $footerLatestNews
+                'footerLatestNews' => $footerLatestNews,
+                'headerNavBarContent' => $headerNavBarContent,
+                'footerBottomBarContent' => $footerBottomBarContent
             ]);
         } catch (\Exception $e) {
             //
