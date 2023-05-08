@@ -956,6 +956,22 @@ html .icon-outline {
 	box-shadow: 0 0 0 2px rgba(95, 130, 138, 0.9);
 }
 
+.icon-filled_brand[class*='telegram'] {
+    background: #2481cc;
+}
+
+.icon-filled_brand[class*='telegram']::after {
+    box-shadow: 0 0 0 2px rgba(36, 129, 204, 0.9);
+}
+
+.icon-filled_brand[class*='linkedin'] {
+    background: #0a66c2;
+}
+
+.icon-filled_brand[class*='linkedin']::after {
+    box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.9);
+}
+
 html .page a.icon-filled_brand:active, html .page a.icon-filled_brand:focus, html .page a.icon-filled_brand:hover {
 	color: #ffffff;
 }

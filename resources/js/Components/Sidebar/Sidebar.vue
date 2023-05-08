@@ -145,63 +145,46 @@ function toggleCollapseShow(classes) {
                 <h6
                     class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
                 >
+                    HEADER
+                </h6>
+                <!-- Navigation -->
+                <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
+                    <li class="items-center">
+                        <SidebarNavLink :href="route('admin.useful-link-list')"
+                                        :active="route().current('admin.useful-link-list')"
+                                        icon="fas fa-arrow-up mr-2 text-sm">
+                            Top bar settings
+                        </SidebarNavLink>
+                    </li>
+                </ul>
+                <!-- Divider -->
+                <hr class="my-4 md:min-w-full"/>
+                <h6
+                    class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+                >
                     FOOTER
                 </h6>
                 <!-- Navigation -->
                 <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
                     <li class="items-center">
-                        <SidebarNavLink :href="route('admin.useful-link-list')" :active="route().current('admin.useful-link-list')"
+                        <SidebarNavLink :href="route('admin.useful-link-list')"
+                                        :active="route().current('admin.useful-link-list')"
                                         icon="fas fa-link mr-2 text-sm">
                             Useful Links
                         </SidebarNavLink>
                     </li>
                     <li class="items-center">
-                        <SidebarNavLink :href="route('admin.widget-icons', 34)+'?page=4'" :active="route().current('admin.widget-icons', 34)"
+                        <SidebarNavLink :href="route('admin.widget-icons', 34)+'?page=4'"
+                                        :active="route().current('admin.widget-icons', 34)"
                                         icon="fas fa-icons mr-2 text-sm">
                             About US icons
                         </SidebarNavLink>
                     </li>
-                </ul>
-
-                <!-- Divider -->
-                <hr class="my-4 md:min-w-full"/>
-                <!-- Heading -->
-                <h6
-                    class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
-                >
-                    Auth Layout Pages
-                </h6>
-                <!-- Navigation -->
-
-                <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
                     <li class="items-center">
-                        <SidebarNavLink :href="route('login')" :active="route().current('login')"
-                                        icon="fas fa-fingerprint mr-2 text-sm">
-                            Login
-                        </SidebarNavLink>
-                    </li>
-                    <li class="items-center">
-                        <SidebarNavLink :href="route('register')" :active="route().current('register')"
-                                        icon="fas fa-clipboard-list mr-2 text-sm">
-                            Register
-                        </SidebarNavLink>
-                    </li>
-                </ul>
-
-                <!-- Divider -->
-                <hr class="my-4 md:min-w-full"/>
-                <!-- Heading -->
-                <h6
-                    class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
-                >
-                    No Layout Pages
-                </h6>
-                <!-- Navigation -->
-
-                <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
-                    <li class="items-center">
-                        <SidebarNavLink :href="route('landing')" icon="fas fa-newspaper text-blueGray-300 mr-2 text-sm">
-                            Landing (Site)
+                        <SidebarNavLink :href="route('admin.widget-icons', 34)+'?page=4'"
+                                        :active="route().current('admin.widget-icons', 34)"
+                                        icon="fas fa-arrow-down mr-2 text-sm">
+                            Bottom bar settings
                         </SidebarNavLink>
                     </li>
                 </ul>

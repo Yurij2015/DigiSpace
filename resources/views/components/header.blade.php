@@ -29,46 +29,9 @@
                         </div>
                     </div>
                     <div class="rd-navbar-body">
-                        <!-- RD Navbar Aside-->
+                        <!-- RD Navbar Top -->
                         <div class="rd-navbar-aside">
-                            <div class="rd-navbar-content-outer">
-                                <div class="rd-navbar-content__toggle rd-navbar-static--hidden"
-                                     data-rd-navbar-toggle=".rd-navbar-content"><span></span></div>
-                                <div class="rd-navbar-content">
-                                    <ul class="list-bordered list-inline">
-                                        <li>
-                                            <dl class="list-terms-inline">
-                                                {{--add telegram bot--}}
-                                                <dt>24/7 Support</dt>
-                                                <dd><a href="tel:#">+4-857-186-5188</a></dd>
-                                            </dl>
-                                        </li>
-                                        <li>
-                                            <dl class="list-terms-inline">
-                                                <dt>E-mail</dt>
-                                                <dd><a href="mailto:#">digispaceastudio@gmail.com</a></dd>
-                                            </dl>
-                                        </li>
-                                        <li>
-                                            <ul class="list-inline list-inline-xs">
-                                                <li><a class="icon icon-gray-dark icon-style-brand fa fa-facebook"
-                                                       href="#"></a></li>
-                                                <li><a class="icon icon-gray-dark icon-style-brand fa fa-twitter"
-                                                       href="#"></a></li>
-                                                <li>
-                                                    <a class="icon icon-gray-dark icon-style-brand fa fa-google-plus"
-                                                       href="#"></a></li>
-                                                <li>
-                                                    <a class="icon icon-gray-dark icon-style-brand fa fa-pinterest-p"
-                                                       href="#"></a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="rd-navbar-panel__button"><a
-                                    class="button button-xs button-icon button-icon-left button-default button-ujarak"
-                                    href="login.html"><span class="icon mdi mdi-account"></span>Login</a></div>
+                            <x-header-navbar-content/>
                         </div>
                         <!-- RD Navbar Nav Wrap-->
                         <div class="rd-navbar-nav-wrap">
@@ -92,23 +55,24 @@
                             </div>
                             <!-- RD Navbar Nav-->
                             <ul class="rd-navbar-nav">
-                                <li class="{{ Route::is('about') ? 'active' : '' }}"><a
-                                        href="{{ route('about') }}">About</a>
+                                <li class="{{ Route::is('about') ? 'active' : '' }}">
+                                    <a href="{{ route('about') }}">About</a>
                                 </li>
-                                <li class="{{ Route::is('services') ? 'active' : '' }}"><a
-                                        href="{{ route('services') }}">Services</a>
+                                <li class="{{ Route::is('services') ? 'active' : '' }}">
+                                    <a href="{{ route('services') }}">Services</a>
                                 </li>
-                                <li class="{{ Route::is('pricing') ? 'active' : '' }}"><a
-                                        href="{{ route('pricing') }}">Pricing</a>
+                                <li class="{{ Route::is('pricing') ? 'active' : '' }}">
+                                    <a href="{{ route('pricing') }}">Pricing</a>
                                 </li>
-                                <li class="{{ Route::is('promos') ? 'active' : '' }}"><a
-                                        href="{{ route('promos') }}">Promos</a>
+                                <li class="{{ Route::is('promos') ? 'active' : '' }}">
+                                    <a href="{{ route('promos') }}">Promos</a>
                                 </li>
-                                <li class="{{ Route::is('blog') ? 'active' : '' }}"><a
-                                        href="{{ route('blog') }}">Blog</a>
+                                <li class="{{ Route::is('blog') ? 'active' : '' }}">
+                                    <a href="{{ route('blog') }}">Blog</a>
                                     <ul class="rd-navbar-dropdown">
                                         @foreach($postsForMenu as $post)
-                                            <li><a href="{{ route('blog.post', $post->slug) }}">Blog post - {{ $post->id }}</a>
+                                            <li><a href="{{ route('blog.post', $post->slug) }}">Blog post
+                                                    - {{ $post->id }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -122,7 +86,9 @@
                                                 @foreach($pageSubmenuFirst as $submenu)
                                                     @foreach($submenu->menuItem as $item)
                                                         <li>
-                                                            <a href="{{ route('pages.page', $item->slug) }}">{{ $item->name }}</a>
+                                                            <a href="{{ route('pages.page', $item->slug) }}">
+                                                                {{ $item->name }}
+                                                            </a>
                                                         </li>
                                                     @endforeach
                                                 @endforeach
@@ -134,7 +100,9 @@
                                                 @foreach($pageSubmenuSecond as $submenu)
                                                     @foreach($submenu->menuItem as $item)
                                                         <li>
-                                                            <a href="{{ route('pages.page', $item->slug) }}">{{ $item->name }}</a>
+                                                            <a href="{{ route('pages.page', $item->slug) }}">
+                                                                {{ $item->name }}
+                                                            </a>
                                                         </li>
                                                     @endforeach
                                                 @endforeach
@@ -146,7 +114,9 @@
                                                 @foreach($pageSubmenuThird as $submenu)
                                                     @foreach($submenu->menuItem as $item)
                                                         <li>
-                                                            <a href="{{ route('pages.page', $item->slug) }}">{{ $item->name }}</a>
+                                                            <a href="{{ route('pages.page', $item->slug) }}">
+                                                                {{ $item->name }}
+                                                            </a>
                                                         </li>
                                                     @endforeach
                                                 @endforeach
