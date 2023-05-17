@@ -150,8 +150,8 @@ function toggleCollapseShow(classes) {
                 <!-- Navigation -->
                 <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
                     <li class="items-center">
-                        <SidebarNavLink :href="route('admin.useful-link-list')"
-                                        :active="route().current('admin.useful-link-list')"
+                        <SidebarNavLink :href="route('admin.top-bar-settings')"
+                                        :active="route().current('admin.top-bar-settings')"
                                         icon="fas fa-arrow-up mr-2 text-sm">
                             Top bar settings
                         </SidebarNavLink>
@@ -181,8 +181,8 @@ function toggleCollapseShow(classes) {
                         </SidebarNavLink>
                     </li>
                     <li class="items-center">
-                        <SidebarNavLink :href="route('admin.widget-icons', 34)+'?page=4'"
-                                        :active="route().current('admin.widget-icons', 34)"
+                        <SidebarNavLink :href="route('admin.bottom-bar-settings',)"
+                                        :active="route().current('admin.bottom-bar-settings')"
                                         icon="fas fa-arrow-down mr-2 text-sm">
                             Bottom bar settings
                         </SidebarNavLink>

@@ -4,7 +4,9 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DefaultPagesController;
+use App\Http\Controllers\Admin\FooterBottomBarContentController;
 use App\Http\Controllers\Admin\FooterUsefulLinkController;
+use App\Http\Controllers\Admin\HeaderNavBarContentController;
 use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\WidgetController;
@@ -145,6 +147,16 @@ Route::middleware('auth')->group(function () {
     Route::put('admin/useful-link-update/{usefulLink}', [FooterUsefulLinkController::class, 'linkUpdate'])
         ->name('admin.useful-link-update');
 
+    Route::get('/admin/top-bar-settings/', [HeaderNavBarContentController::class, 'index'])
+        ->name('admin.top-bar-settings');
+    Route::put('admin/top-bar-settings-update/{headerNavBarContent}', [HeaderNavBarContentController::class, 'update'])
+        ->name('admin.top-bar-settings-update');
+    Route::get('/admin/bottom-bar-settings/', [FooterBottomBarContentController::class, 'index'])
+        ->name('admin.bottom-bar-settings');
+    Route::put(
+        'admin/bottom-bar-settings-update/{bottomBarContent}',
+        [FooterBottomBarContentController::class, 'update']
+    )->name('admin.bottom-bar-settings-update');
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])
