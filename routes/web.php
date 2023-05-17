@@ -153,7 +153,10 @@ Route::middleware('auth')->group(function () {
         ->name('admin.top-bar-settings-update');
     Route::get('/admin/bottom-bar-settings/', [FooterBottomBarContentController::class, 'index'])
         ->name('admin.bottom-bar-settings');
-
+    Route::put(
+        'admin/bottom-bar-settings-update/{bottomBarContent}',
+        [FooterBottomBarContentController::class, 'update']
+    )->name('admin.bottom-bar-settings-update');
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])
