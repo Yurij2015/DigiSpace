@@ -161,6 +161,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/top-menu/', [HeaderTopMenuController::class, 'index'])->name('admin.top-menu');
     Route::get('/admin/top-menu-edit-form/{menuItem}', [HeaderTopMenuController::class, 'editForm'])
         ->name('admin.top-menu-edit-form');
+    Route::put('admin/top-menu-update/{menu}', [HeaderTopMenuController::class, 'update'])
+        ->name('admin.top-menu-update');
 
 });
 

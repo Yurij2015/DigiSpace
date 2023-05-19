@@ -158,7 +158,7 @@ function toggleCollapseShow(classes) {
                     </li>
                     <li class="items-center">
                         <SidebarNavLink :href="route('admin.top-menu')"
-                                        :active="route().current('admin.useful-link-list')"
+                                        :active="route().current('admin.top-menu')"
                                         icon="fas fa-list mr-2 text-sm">
                             Top menu settings
                         </SidebarNavLink>

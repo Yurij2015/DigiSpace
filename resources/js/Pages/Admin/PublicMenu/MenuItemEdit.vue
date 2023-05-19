@@ -41,7 +41,7 @@ const form = useForm({
                         <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
                             <div class="block w-full overflow-x-auto">
                                 <form
-                                    @submit.prevent="form.put(route('admin.bottom-bar-settings-update', menuItem.id), { onSuccess: () => editing = false })">
+                                    @submit.prevent="form.put(route('admin.top-menu-update', menuItem.id), { onSuccess: () => editing = false })">
                                     <div class="flex flex-wrap">
                                         <div class="w-full lg:w-12/12 px-4">
                                             <div class="relative w-full mb-3">
@@ -50,7 +50,7 @@ const form = useForm({
                                                     htmlFor="grid-password"
                                                     :for="menuItem.name"
                                                 >
-                                                     Name
+                                                    Name
                                                 </label>
                                                 <input
                                                     type="text"
@@ -84,7 +84,7 @@ const form = useForm({
                                                     htmlFor="grid-password"
                                                     :for="menuItem.level"
                                                 >
-                                                    Privacy policy title
+                                                    Level
                                                 </label>
                                                 <input
                                                     type="text"
@@ -101,7 +101,7 @@ const form = useForm({
                                                     htmlFor="grid-password"
                                                     :for="menuItem.position"
                                                 >
-                                                    Privacy policy href
+                                                    Position
                                                 </label>
                                                 <input
                                                     type="text"
@@ -118,7 +118,7 @@ const form = useForm({
                                                     htmlFor="grid-password"
                                                     :for="menuItem.description"
                                                 >
-                                                    FAQ
+                                                    Description
                                                 </label>
                                                 <input
                                                     type="text"
@@ -135,7 +135,7 @@ const form = useForm({
                                                     htmlFor="grid-password"
                                                     :for="menuItem.location"
                                                 >
-                                                    FAQ HREF
+                                                    Location
                                                 </label>
                                                 <input
                                                     type="text"
@@ -152,7 +152,7 @@ const form = useForm({
                                                     htmlFor="grid-password"
                                                     :for="menuItem.slug"
                                                 >
-                                                    SUPPORT
+                                                    Slug
                                                 </label>
                                                 <input
                                                     type="text"
@@ -170,7 +170,7 @@ const form = useForm({
                                                     htmlFor="grid-password"
                                                     :for="menuItem.href"
                                                 >
-                                                    SUPPORT HREF
+                                                    Href
                                                 </label>
                                                 <input
                                                     type="text"
@@ -181,12 +181,14 @@ const form = useForm({
                                             </div>
                                         </div>
                                         <PrimaryButton class="mt-4">Save!</PrimaryButton>
-                                        <button
-                                            class="mt-4 bg-orange-500 text-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                            type="button"
-                                        >
-                                            Back
-                                        </button>
+                                        <Link :href="route('admin.top-menu')">
+                                            <button
+                                                class="mt-4 bg-orange-500 text-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                type="button"
+                                            >
+                                                Back
+                                            </button>
+                                        </Link>
                                     </div>
                                     <hr class="mt-6 border-b-1 border-blueGray-300"/>
                                 </form>
