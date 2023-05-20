@@ -41,7 +41,7 @@ const form = useForm({
                         <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
                             <div class="block w-full overflow-x-auto">
                                 <form
-                                    @submit.prevent="form.put(route('admin.top-menu-update', menuItem.id), { onSuccess: () => editing = false })">
+                                    @submit.prevent="form.put(route('admin.top-menu-update', menuItem.id))">
                                     <div class="flex flex-wrap">
                                         <div class="w-full lg:w-12/12 px-4">
                                             <div class="relative w-full mb-3">

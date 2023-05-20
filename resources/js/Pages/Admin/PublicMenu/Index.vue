@@ -116,11 +116,13 @@ let pageTitle = "Public menu";
                                                     </div>
                                                     <div class="w-full px-4 flex-1">
                                                         <span class="text-sm block my-1 p-1 text-blueGray-700">
+                                                            <Link :href="route('admin.top-sub-menu-edit-form', submenu.id)" :title="submenu.name">
                                                                 <button
                                                                     class="bg-lightBlue-500 text-white active:bg-teal-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                                                     type="button">
                                                                     Edit submenu item
                                                                 </button>
+                                                            </Link>
                                                         </span>
                                                     </div>
                                                 </div>
