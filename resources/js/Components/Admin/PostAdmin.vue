@@ -15,6 +15,9 @@ import {Link} from '@inertiajs/inertia-vue3';
                     <small class="font-normal leading-normal mt-0 mb-4 text-blueGray-800">
                         Category: {{ post.category.name }}
                     </small>
+                    <small class="text-red-500 font-normal leading-normal mt-0 mb-4">
+                        Slug: {{ post.slug ? post.slug : 'no slug' }}
+                    </small>
                     <p class="text-base font-light leading-relaxed mt-0 mb-4 text-emerald-800" v-html='post.content'/>
                 </div>
             </span>

@@ -14,6 +14,10 @@ class MenuItem extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name', 'slug', 'href'
+    ];
+
     public function menus(): BelongsToMany
     {
         return $this->belongsToMany(Menu::class);

@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\DefaultPagesController;
 use App\Http\Controllers\Admin\FooterBottomBarContentController;
 use App\Http\Controllers\Admin\FooterUsefulLinkController;
 use App\Http\Controllers\Admin\HeaderNavBarContentController;
+use App\Http\Controllers\Admin\HeaderTopMenuController;
 use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\WidgetController;
@@ -157,6 +158,16 @@ Route::middleware('auth')->group(function () {
         'admin/bottom-bar-settings-update/{bottomBarContent}',
         [FooterBottomBarContentController::class, 'update']
     )->name('admin.bottom-bar-settings-update');
+    Route::get('/admin/top-menu/', [HeaderTopMenuController::class, 'index'])->name('admin.top-menu');
+    Route::get('/admin/top-menu-edit-form/{menuItem}', [HeaderTopMenuController::class, 'editForm'])
+        ->name('admin.top-menu-edit-form');
+    Route::put('admin/top-menu-update/{menu}', [HeaderTopMenuController::class, 'update'])
+        ->name('admin.top-menu-update');
+    Route::get('/admin/top-sub-menu-edit-form/{subMenuItem}', [HeaderTopMenuController::class, 'subMenuEditForm'])
+        ->name('admin.top-sub-menu-edit-form');
+    Route::put('admin/top-sub-menu-update/{subMenu}', [HeaderTopMenuController::class, 'subMenuUpdate'])
+        ->name('admin.top-sub-menu-update');
+
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])
@@ -166,7 +177,7 @@ Route::get('/landing', static function () {
 })->name('landing');
 
 Route::get('/pages/{slug}', [PageController::class, 'show'])->name('pages.page');
-Route::get('/blog/{post}', [BlogController::class, 'show'])->name('blog.post');
+Route::get('/blog/{postSlug}', [BlogController::class, 'show'])->name('blog.post');
 
 
 require __DIR__ . '/auth.php';

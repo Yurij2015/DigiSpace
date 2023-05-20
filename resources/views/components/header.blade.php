@@ -81,9 +81,9 @@
                                     <!-- RD Navbar Megamenu-->
                                     <ul class="rd-navbar-megamenu">
                                         <li>
-                                            <h5 class="rd-megamenu-header">SubMenu 1</h5>
-                                            <ul class="rd-megamenu-list">
-                                                @foreach($pageSubmenuFirst as $submenu)
+                                            @foreach($pageSubmenuFirst as $submenu)
+                                                <h5 class="rd-megamenu-header">{{ $submenu->title }}</h5>
+                                                <ul class="rd-megamenu-list">
                                                     @foreach($submenu->menuItem as $item)
                                                         <li>
                                                             <a href="{{ route('pages.page', $item->slug) }}">
@@ -91,13 +91,13 @@
                                                             </a>
                                                         </li>
                                                     @endforeach
-                                                @endforeach
-                                            </ul>
+                                                </ul>
+                                            @endforeach
                                         </li>
                                         <li>
-                                            <h5 class="rd-megamenu-header">SubMenu 2</h5>
-                                            <ul class="rd-megamenu-list">
-                                                @foreach($pageSubmenuSecond as $submenu)
+                                            @foreach($pageSubmenuSecond as $submenu)
+                                                <h5 class="rd-megamenu-header">{{ $submenu->title }}</h5>
+                                                <ul class="rd-megamenu-list">
                                                     @foreach($submenu->menuItem as $item)
                                                         <li>
                                                             <a href="{{ route('pages.page', $item->slug) }}">
@@ -105,13 +105,13 @@
                                                             </a>
                                                         </li>
                                                     @endforeach
-                                                @endforeach
-                                            </ul>
+                                                </ul>
+                                            @endforeach
                                         </li>
                                         <li>
-                                            <h5 class="rd-megamenu-header">SubMenu 3</h5>
-                                            <ul class="rd-megamenu-list">
-                                                @foreach($pageSubmenuThird as $submenu)
+                                            @foreach($pageSubmenuThird as $submenu)
+                                                <h5 class="rd-megamenu-header">{{ $submenu->title }}</h5>
+                                                <ul class="rd-megamenu-list">
                                                     @foreach($submenu->menuItem as $item)
                                                         <li>
                                                             <a href="{{ route('pages.page', $item->slug) }}">
@@ -119,13 +119,13 @@
                                                             </a>
                                                         </li>
                                                     @endforeach
-                                                @endforeach
-                                            </ul>
+                                                </ul>
+                                            @endforeach
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="{{ Route::is('contact-us') ? 'active' : '' }}"><a
-                                        href="{{ route('contact-us') }}">Contact Us</a>
+                                <li class="{{ Route::is('contact-us') ? 'active' : '' }}">
+                                    <a href="{{ route('contact-us') }}">Contact Us</a>
                                 </li>
                             </ul>
                         </div>
