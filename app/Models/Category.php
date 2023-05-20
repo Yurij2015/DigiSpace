@@ -12,7 +12,7 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'description'
+        'name', 'description', 'slug'
     ];
 
     public function user(): BelongsTo

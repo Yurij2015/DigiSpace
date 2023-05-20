@@ -2,34 +2,50 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Collection;
 
 class BlogController extends Controller
 {
     public function index(): Application|Factory|View
     {
         $posts = Post::paginate(config('constants.NUMBER_POSTS_IN_MENU'));
-        return view('blog.index', ['sideBarData' => $this->sideBarData(), 'posts' => $posts]);
+        return view('blog.index', [
+            'sideBarData' => $this->sideBarData(),
+            'posts' => $posts,
+            'postsNumber' => $this->getPostsNumber()
+        ]);
     }
 
     public function show(string $postSlug): Factory|View|Application
     {
         $post = Post::where('slug', $postSlug)->firstOrFail();
-        return view('blog.post_show', ['post' => $post, 'sideBarData' => $this->sideBarData()]);
+        return view('blog.post_show', [
+            'post' => $post,
+            'sideBarData' => $this->sideBarData(),
+            'postsNumber' => $this->getPostsNumber()
+        ]);
+    }
+
+    public function category(string $categorySlug): Factory|View|Application
+    {
+        $category = Category::where('slug', $categorySlug)->firstOrFail();
+        $posts = Post::where('category_id', $category->id)->paginate(10);
+        return view('blog.index', [
+            'posts' => $posts,
+            'sideBarData' => $this->sideBarData(),
+            'postsNumber' => $this->getPostsNumber()
+        ]);
     }
 
     private function sideBarData(): array
     {
         return [
-            'categories' => [
-                ['name' => 'All categories', 'count' => 64, 'url' => 'categories'],
-                ['name' => 'Software', 'count' => 23, 'url' => 'category/software'],
-                ['name' => 'Development', 'count' => 10, 'url' => 'category/development'],
-                ['name' => 'Programming', 'count' => 10, 'url' => 'category/programming']
-            ],
+            'categories' => $this->getCategories(),
             'latestPosts' => [
                 [
                     'day' => '24',
@@ -62,5 +78,13 @@ class BlogController extends Controller
                 ['id' => 6, 'url' => 'march-2022', 'monthYear' => 'March 2022']
             ]
         ];
+    }
+
+    private function getCategories(): Collection {
+        return Category::orderBy('created_at', 'DESC')->with('post')->get();
+    }
+
+    private function getPostsNumber(): int {
+        return Post::count();
     }
 }

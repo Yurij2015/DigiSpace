@@ -27,20 +27,28 @@
                         <!-- Post Classic-->
                         <article class="post-classic">
                             <h3 class="post-classic__title">
-{{--                                <a href="{{ $post['slug'] }}">{{ $post['name'] }}</a>--}}
-                                <a href="{{ route('blog.post', $post['id']) }}">{{ $post['name'] }}</a>
+                                <a href="{{ route('blog.post', $post['slug']) }}">{{ $post['name'] }}</a>
                             </h3>
                             <ul class="post-classic__meta">
-                                <li><span class="icon mdi mdi-calendar-blank"></span><a href="blog-post.html">
-                                        <time datetime="2021">May 12, 2021</time>
-                                    </a></li>
-                                <li><span class="icon mdi mdi-comment-outline"></span><a href="blog-post.html">450
-                                        comments</a></li>
-                                <li><span class="icon mdi mdi-account"></span>
-                                    <span>by</span><a href="#">John Doe</a></li>
+                                <li>
+                                    <span class="icon mdi mdi-calendar-blank"></span>
+                                    <a href="{{ route('blog.post', $post['slug']) }}">
+                                        <time>
+                                            {{ $post['created_at']->toFormattedDateString()  }}
+                                        </time>
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="icon mdi mdi-comment-outline"></span>
+                                    <a href="{{ route('blog.post', $post['slug']) }}">0 comments</a></li>
+                                <li>
+                                    <span class="icon mdi mdi-account"></span>
+                                    <span>by</span>
+                                    <a href="#">John Doe</a>
+                                </li>
                             </ul>
                             <div class="post-classic__media">
-                                <a class="post-classic__figure" href="blog-post.html">
+                                <a class="post-classic__figure" href="{{ route('blog.post', $post['slug']) }}">
                                     <img class="post-classic__image" src="{{ asset($post['img_path']) }}"
                                          alt="" width="715"
                                          height="417"/>
@@ -49,25 +57,6 @@
                             <p>{!! $post['content'] !!}</p>
                         </article>
                     @endforeach
-
-                    <!-- Post Classic-->
-                    <article class="post-classic">
-                        <h3 class="post-classic__title"><a href="blog-post.html">Key Considerations and Warnings of
-                                iPaaS</a></h3>
-                        <ul class="post-classic__meta">
-                            <li><span class="icon mdi mdi-calendar-blank"></span><a href="blog-post.html">
-                                    <time datetime="2021">May 12, 2021</time>
-                                </a></li>
-                            <li><span class="icon mdi mdi-comment-outline"></span><a href="blog-post.html">450
-                                    comments</a></li>
-                            <li><span class="icon mdi mdi-account"></span><span>by</span><a href="#">John Doe</a></li>
-                        </ul>
-                        <div class="post-classic__media"><a class="post-classic__figure" href="blog-post.html"><img
-                                    class="post-classic__image" src="{{ asset('images/blog-post-2-715x417.png') }}"
-                                    alt="" width="715"
-                                    height="417"/></a></div>
-                    </article>
-
                     <div class="pagination">
                         <div class="pagination__control"><a href="#">Older posts</a></div>
                         <ul class="pagination__list">
@@ -78,7 +67,7 @@
                         <div class="pagination__control"><a href="#">Newer posts</a></div>
                     </div>
                 </div>
-                <x-blog-aside :$sideBarData></x-blog-aside>
+                <x-blog-aside :$sideBarData :$postsNumber></x-blog-aside>
             </article>
         </div>
     </section>

@@ -14,15 +14,17 @@ class BlogAside extends Component
      * @var array
      */
     public array $sideBarData;
+    public int $postsNumber;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($sideBarData)
+    public function __construct($sideBarData, $postsNumber)
     {
         $this->sideBarData = $sideBarData;
+        $this->postsNumber = $postsNumber;
 
     }
 
