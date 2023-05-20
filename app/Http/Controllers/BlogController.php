@@ -11,12 +11,13 @@ class BlogController extends Controller
 {
     public function index(): Application|Factory|View
     {
-        $posts = Post::all();
+        $posts = Post::paginate(config('constants.NUMBER_POSTS_IN_MENU'));
         return view('blog.index', ['sideBarData' => $this->sideBarData(), 'posts' => $posts]);
     }
 
-    public function show(Post $post): Factory|View|Application
+    public function show(string $postSlug): Factory|View|Application
     {
+        $post = Post::where('slug', $postSlug)->firstOrFail();
         return view('blog.post_show', ['post' => $post, 'sideBarData' => $this->sideBarData()]);
     }
 
