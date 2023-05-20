@@ -73,7 +73,6 @@ class PostController extends Controller
         $this->authorize('postUpdate', $post);
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'slug' => 'string|max:255',
             'content' => 'required|string',
             'category_id' => 'int',
             'file' => '',
@@ -83,6 +82,7 @@ class PostController extends Controller
             $request->file->move(public_path('uploads'), $fileName);
             $post->img_path = $fileName;
         }
+        $post->slug = \Str::slug($request->name);
         $post->update($validated);
         return redirect(route('admin.posts'));
     }
@@ -107,6 +107,7 @@ class PostController extends Controller
 
         Post::create([
             'name' => $request->name,
+            'slug' => \Str::slug($request->name),
             'content' => $request['content'],
             'category_id' => $request->category_id,
             'user_id' => $request->user()->id,

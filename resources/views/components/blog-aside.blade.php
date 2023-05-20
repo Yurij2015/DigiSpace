@@ -14,10 +14,14 @@
     <div class="blog-layout__aside-item blog-layout__aside-item_bordered">
         <p class="custom-heading-line heading-8">Categories</p>
         <ul class="list-categories">
-            @foreach($sideBarData['categories'] as $categories )
-                <li class={{ $categories['name'] === 'All categories' ? 'active' : '' }}>
-                    <a href="{{ $categories['url'] }}">{{ $categories['name'] }}</a>
-                    <span class="count">{{ $categories['count'] }}</span>
+            <li class="{{ Route::is('blog') ? 'active' : '' }}">
+                <a href="{{ route('blog') }}">All categories</a>
+                <span class="count">{{ $postsNumber }}</span>
+            </li>
+            @foreach($sideBarData['categories'] as $category )
+                <li class="{{ url()->current() === route('blog-category', $category->slug) ? 'active' : '' }}">
+                    <a href="{{ route('blog-category', $category->slug) }}">{{ $category['name'] }}</a>
+                    <span class="count">{{ count($category['post']) }}</span>
                 </li>
             @endforeach
         </ul>

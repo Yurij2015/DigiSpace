@@ -31,6 +31,7 @@ class CategoryController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
+            'slug' => 'string|max:255',
             'description' => 'required|string|max:255'
         ]);
         $request->user()->categories()->create($validated);
@@ -64,8 +65,13 @@ class CategoryController extends Controller
             'description' => 'required|string|max:255'
         ]);
 
-        $category->update($validated);
+        if (!$request->slug) {
+            $category->slug = \Str::slug($request->name);
+        } else {
+            $category->slug = \Str::slug($request->slug);
+        }
 
+        $category->update($validated);
         return redirect(route('admin.categories'));
     }
 
