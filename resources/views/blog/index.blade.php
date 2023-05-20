@@ -33,7 +33,7 @@
                                 <li>
                                     <span class="icon mdi mdi-calendar-blank"></span>
                                     <a href="{{ route('blog.post', $post['slug']) }}">
-                                        <time>
+                                        <time datetime="{{ $post['created_at']->format('Y') }}">
                                             {{ $post['created_at']->toFormattedDateString()  }}
                                         </time>
                                     </a>

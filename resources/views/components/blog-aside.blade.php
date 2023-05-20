@@ -29,16 +29,16 @@
     <div class="blog-layout__aside-item blog-layout__aside-item_bordered">
         <p class="custom-heading-line heading-8">Latest Posts</p>
         <ul class="list-posts">
-            @foreach($sideBarData['latestPosts'] as $latestPosts)
+            @foreach($sideBarData['latestPosts'] as $post)
                 <li>
                     <!-- Post Line-->
                     <article class="post-line">
-                        <time class="post-line__time" datetime="{{ $latestPosts['year'] }}">
-                            <span class="post-line__time-day">{{ $latestPosts['day'] }}</span>
-                            <span class="post-line__time-month">{{ $latestPosts['month'] }}</span>
+                        <time class="post-line__time" datetime="{{ $post['created_at']->format('Y') }}">
+                            <span class="post-line__time-day">{{ $post['created_at']->format('d') }}</span>
+                            <span class="post-line__time-month">{{ $post['created_at']->format('M') }}</span>
                         </time>
                         <div class="post-line__title">
-                            <a href="{{ $latestPosts['url'] }}">{{ $latestPosts['title'] }}</a>
+                            <a href="{{ route('blog.post', $post->slug) }}">{{ $post['name'] }}</a>
                         </div>
                     </article>
                 </li>

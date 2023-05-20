@@ -46,29 +46,7 @@ class BlogController extends Controller
     {
         return [
             'categories' => $this->getCategories(),
-            'latestPosts' => [
-                [
-                    'day' => '24',
-                    'month' => 'may',
-                    'year' => 2023,
-                    'title' => 'Startup Software Development',
-                    'url' => 'startup-software-development'
-                ],
-                [
-                    'day' => '13',
-                    'month' => 'may',
-                    'year' => 2023,
-                    'title' => 'Hybrid Cloud Management Software Solutions',
-                    'url' => 'hybrid-cloud-management-software-solutions'
-                ],
-                [
-                    'day' => '03',
-                    'month' => 'may',
-                    'year' => 2023,
-                    'title' => 'Creating Better Software Through Design Thinking',
-                    'url' => 'creating-better-software-through-design-thinking'
-                ]
-            ],
+            'latestPosts' => $this->getLatestPosts(),
             'archive' => [
                 ['id' => 1, 'url' => 'august-2022', 'monthYear' => 'August 2022'],
                 ['id' => 2, 'url' => 'july-2022', 'monthYear' => 'July 2022'],
@@ -80,11 +58,18 @@ class BlogController extends Controller
         ];
     }
 
-    private function getCategories(): Collection {
+    private function getCategories(): Collection
+    {
         return Category::orderBy('created_at', 'DESC')->with('post')->get();
     }
 
-    private function getPostsNumber(): int {
+    private function getPostsNumber(): int
+    {
         return Post::count();
+    }
+
+    private function getLatestPosts(): Collection
+    {
+        return Post::orderBy('created_at', 'DESC')->get()->take(3);
     }
 }
