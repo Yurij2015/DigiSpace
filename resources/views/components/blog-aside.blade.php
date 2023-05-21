@@ -48,10 +48,12 @@
     <div class="blog-layout__aside-item blog-layout__aside-item_bordered">
         <p class="custom-heading-line heading-8">Archive</p>
         <!-- Select 2-->
-        <select class="form-input select" data-placeholder="All"
-                data-minimum-results-for-search="Infinity" data-constraints="Required">
-            @foreach($sideBarData['archive'] as $archiveItem)
-                <option value="{{ $archiveItem['id'] }}">{{ $archiveItem['monthYear'] }}</option>
+        <select class="form-input select" data-placeholder="All" data-minimum-results-for-search="Infinity"
+                data-constraints="Required" onchange="window.location.assign('/blog-archive/'+this.value)">
+        @foreach($sideBarData['archive'] as $archiveItem)
+                <option value="{{ $archiveItem->year .'-'. $archiveItem->month }}">
+                    {{ $archiveItem->month_name }} ({{ $archiveItem->post_count }})
+                </option>
             @endforeach
         </select>
     </div>

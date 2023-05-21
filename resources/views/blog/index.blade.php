@@ -27,20 +27,20 @@
                         <!-- Post Classic-->
                         <article class="post-classic">
                             <h3 class="post-classic__title">
-                                <a href="{{ route('blog.post', $post['slug']) }}">{{ $post['name'] }}</a>
+                                <a href="{{ route('blog.post', $post->slug) }}">{{ $post->name }}</a>
                             </h3>
                             <ul class="post-classic__meta">
                                 <li>
                                     <span class="icon mdi mdi-calendar-blank"></span>
-                                    <a href="{{ route('blog.post', $post['slug']) }}">
-                                        <time datetime="{{ $post['created_at']->format('Y') }}">
-                                            {{ $post['created_at']->toFormattedDateString()  }}
+                                    <a href="{{ route('blog.post', $post->slug) }}">
+                                        <time datetime="{{ Carbon\Carbon::parse($post->created_at)->format('Y') }}">
+                                            {{ Carbon\Carbon::parse($post->created_at)->toFormattedDateString()  }}
                                         </time>
                                     </a>
                                 </li>
                                 <li>
                                     <span class="icon mdi mdi-comment-outline"></span>
-                                    <a href="{{ route('blog.post', $post['slug']) }}">0 comments</a></li>
+                                    <a href="{{ route('blog.post', $post->slug) }}">0 comments</a></li>
                                 <li>
                                     <span class="icon mdi mdi-account"></span>
                                     <span>by</span>
@@ -48,13 +48,13 @@
                                 </li>
                             </ul>
                             <div class="post-classic__media">
-                                <a class="post-classic__figure" href="{{ route('blog.post', $post['slug']) }}">
-                                    <img class="post-classic__image" src="{{ asset($post['img_path']) }}"
+                                <a class="post-classic__figure" href="{{ route('blog.post', $post->slug) }}">
+                                    <img class="post-classic__image" src="{{ asset($post->img_path) }}"
                                          alt="" width="715"
                                          height="417"/>
                                 </a>
                             </div>
-                            <p>{!! $post['content'] !!}</p>
+                            <p>{!! $post->content !!}</p>
                         </article>
                     @endforeach
                     <div class="pagination">
