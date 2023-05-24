@@ -174,10 +174,10 @@ function toggleCollapseShow(classes) {
                 <!-- Navigation -->
                 <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
                     <li class="items-center">
-                        <SidebarNavLink :href="route('admin.widget-icons', 34)+'?page=4'"
-                                        :active="route().current('admin.widget-icons', 34)"
-                                        icon="fas fa-tools mr-2 text-sm">
-                            Settings
+                        <SidebarNavLink :href="route('admin.posts-banners')"
+                                        :active="route().current('admin.posts-banners')"
+                                        icon="fas fa-ad mr-2 text-sm">
+                            Banners
                         </SidebarNavLink>
                     </li>
                 </ul>
