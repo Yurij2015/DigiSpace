@@ -33,14 +33,20 @@
                             <ul class="post-single__meta">
                                 <li><span class="icon mdi icon mdi mdi-account"></span>
                                     <span>by</span>
-                                    <a href="#">John Doe</a>
+                                    <a href="#">{{ $post->user->name }}</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="post-single__time-wrap">
-                            <time class="post-single__time" datetime="2021"><span
-                                    class="post-single__time-day">25</span><span
-                                    class="post-single__time-month">June</span></time>
+                            <time class="post-single__time"
+                                  datetime="{{ Carbon\Carbon::parse($post->created_at)->format('Y') }}">
+                                <span class="post-single__time-day">
+                                    {{ Carbon\Carbon::parse($post->created_at)->format('d') }}
+                                </span>
+                                <span class="post-single__time-month">
+                                    {{ Carbon\Carbon::parse($post->created_at)->format('M') }}
+                                </span>
+                            </time>
                         </div>
                         <h4 class="post-single__title">{{ $post->name }}</h4>
                         <img src="{{ asset($post->img_path) }}" alt="" width="715" height="417"/>

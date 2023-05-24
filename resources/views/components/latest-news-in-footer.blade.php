@@ -10,7 +10,7 @@
         </div>
         <div class="post-small__main">
             <p class="post-small__title">
-                <a href="{{ route('blog.post', $item->id) }}">
+                <a href="{{ route('blog.post', $item->slug) }}">
                     {{ $item->name }}
                 </a>
             </p>
