@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BlogPostBannerController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DefaultPagesController;
 use App\Http\Controllers\Admin\FooterBottomBarContentController;
@@ -45,6 +46,7 @@ Route::get('promos', [PromoController::class, 'index'])->name('promos');
 Route::get('blog', [BlogController::class, 'index'])->name('blog');
 Route::get('blog-category/{categorySlug}', [BlogController::class, 'category'])->name('blog-category');
 Route::get('blog-archive/{yearMonth}', [BlogController::class, 'archive'])->name('blog-archive');
+Route::get('blog-search', [BlogController::class, 'search'])->name('blog-search');
 Route::get('contact-us', [ContactController::class, 'index'])->name('contact-us');
 Route::post('contact-us', [ContactController::class, 'save'])->name('contact.save');
 Route::post('subscriber-save', [SubscriberController::class, 'save'])->name('subscriber-save');
@@ -170,6 +172,18 @@ Route::middleware('auth')->group(function () {
     Route::put('admin/top-sub-menu-update/{subMenu}', [HeaderTopMenuController::class, 'subMenuUpdate'])
         ->name('admin.top-sub-menu-update');
 
+    Route::get('admin/posts-banners', [BlogPostBannerController::class, 'index'])
+        ->name('admin.posts-banners');
+    Route::get('admin/post-banner-add', [BlogPostBannerController::class, 'postBannerAdd'])
+        ->name('admin.post-banner-add');
+    Route::get('admin/post-banner-form/{post}', [BlogPostBannerController::class, 'postBannerForm'])
+        ->name('admin.post-banner-form');
+    Route::post('admin/post-banner-save/{post}', [BlogPostBannerController::class, 'postBannerSave'])
+        ->name('admin.post-banner-save');
+    Route::get('admin/banner-update-form/{banner}', [BlogPostBannerController::class, 'bannerUpdateForm'])
+        ->name('admin.banner-update-form');
+    Route::put('admin/banner-update/{banner}', [BlogPostBannerController::class, 'bannerUpdate'])
+        ->name('admin.banner-update');
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])

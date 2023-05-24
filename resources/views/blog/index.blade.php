@@ -44,7 +44,7 @@
                                 <li>
                                     <span class="icon mdi mdi-account"></span>
                                     <span>by</span>
-                                    <a href="#">John Doe</a>
+                                    <a href="#">{{ $post->user->name }}</a>
                                 </li>
                             </ul>
                             <div class="post-classic__media">

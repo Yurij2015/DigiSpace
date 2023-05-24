@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
-use App\Repository\BlogRepository;
-use DB;
+use App\Repositories\BlogRepository;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
@@ -57,6 +57,23 @@ class BlogController extends Controller
         return view('blog.index', [
             'posts' => $posts,
             'sideBarData' => $this->sideBarData(),
+            'postsNumber' => $this->getPostsNumber()
+        ]);
+    }
+
+    public function search(Request $request): View
+    {
+        $posts = Post::query();
+        if (request('search')) {
+            $posts
+                ->where('name', 'like', '%' . request('search') . '%')
+                ->orWhere('content', 'like', '%' . request('search') . '%');
+        }
+
+        $posts = $posts->paginate(config('constants.NUMBER_POSTS_IN_MENU'));
+        return view('blog.index', [
+            'sideBarData' => $this->sideBarData(),
+            'posts' => $posts,
             'postsNumber' => $this->getPostsNumber()
         ]);
     }

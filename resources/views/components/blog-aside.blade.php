@@ -1,11 +1,11 @@
 <div class="blog-layout__aside">
     <div class="blog-layout__aside-item">
         <!-- RD Search-->
-        <form class="rd-search rd-search_inline form_lg form_outline" action="search-results.html"
-              method="GET">
+        <form class="rd-search rd-search_inline form_lg form_outline" action="{{ route('blog-search') }}"
+              method="get">
             <div class="form-wrap">
                 <label class="form-label" for="rd-search-blog-form-input">Search the blog...</label>
-                <input class="form-input" id="rd-search-blog-form-input" type="text" name="s"
+                <input class="form-input" id="rd-search-blog-form-input" type="text" name="search"
                        autocomplete="off">
             </div>
             <button class="button-link fl-budicons-launch-search81" type="submit"></button>
