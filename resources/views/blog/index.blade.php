@@ -40,12 +40,15 @@
                                 </li>
                                 <li>
                                     <span class="icon mdi mdi-comment-outline"></span>
-                                    <a href="{{ route('blog.post', $post->slug) }}">0 comments</a></li>
-                                <li>
-                                    <span class="icon mdi mdi-account"></span>
-                                    <span>by</span>
-                                    <a href="#">{{ $post->user->name }}</a>
+                                    <a href="{{ route('blog.post', $post->slug) }}">0 comments</a>
                                 </li>
+                                @if(isset($post->user->name))
+                                    <li>
+                                        <span class="icon mdi mdi-account"></span>
+                                        <span>by</span>
+                                        <a href="#">{{ $post->user->name }}</a>
+                                    </li>
+                                @endif
                             </ul>
                             <div class="post-classic__media">
                                 <a class="post-classic__figure" href="{{ route('blog.post', $post->slug) }}">
