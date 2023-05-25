@@ -69,53 +69,36 @@
                     <div class="section-md section-collapse">
                         <p class="custom-heading-line heading-8">Recent posts</p>
                         <div class="row row-50">
-                            <div class="col-md-6">
-                                <!-- Post Minimal-->
-                                <article class="post-minimal"><a class="post-minimal__media" href="blog-post.html"><img
-                                            class="post-minimal__image"
-                                            src="{{ asset('images/single-post-2-368x293.jpg') }}" alt=""
-                                            width="368" height="293"/>
-                                    </a>
-                                    <h4 class="post-minimal__title">
-                                        <a href="blog-post.html">
-                                            Key Considerations and Warnings of iPaaS
-                                        </a></h4>
-                                    <ul class="post-minimal__meta">
-                                        <li>
-                                            <span class="icon mdi mdi-comment-outline"></span>
-                                            <a href="blog-post.html">450</a>
-                                        </li>
-                                        <li>
-                                            <span class="icon mdi mdi-thumb-up-outline"></span>
-                                            <a href="#">12</a>
-                                        </li>
-                                        <li>
-                                            <span class="icon mdi mdi-account"></span>
-                                            <span>by</span><a href="#">John
-                                                Doe</a></li>
-                                    </ul>
-                                </article>
-                            </div>
-                            <div class="col-md-6">
-                                <!-- Post Minimal-->
-                                <article class="post-minimal"><a class="post-minimal__media" href="blog-post.html"><img
-                                            class="post-minimal__image"
-                                            src="{{ asset('images/single-post-3-368x293.jpg') }}" alt=""
-                                            width="368" height="293"/></a>
-                                    <h4 class="post-minimal__title"><a href="blog-post.html">Usage of Hibernate Query
-                                            Language (HQL)</a></h4>
-                                    <ul class="post-minimal__meta">
-                                        <li><span class="icon mdi mdi-comment-outline"></span>
-                                            <a href="blog-post.html">450</a>
-                                        </li>
-                                        <li><span class="icon mdi mdi-thumb-up-outline"></span><a href="#">12</a></li>
-                                        <li><span class="icon mdi mdi-account"></span>
-                                            <span>by</span>
-                                            <a href="#">John Doe</a>
-                                        </li>
-                                    </ul>
-                                </article>
-                            </div>
+                            @foreach($recentPosts as $recentPost)
+                                <div class="col-md-6">
+                                    <!-- Post Minimal-->
+                                    <article class="post-minimal">
+                                        <a class="post-minimal__media" href="blog-post.html">
+                                            <img class="post-minimal__image"
+                                                 src="{{ asset($recentPost->img_path) }}" alt=""
+                                                 width="368" height="293"/>
+                                        </a>
+                                        <h4 class="post-minimal__title">
+                                            <a href="{{ route('blog.post', $recentPost->slug) }}">
+                                                {{ $recentPost->name }}
+                                            </a>
+                                        </h4>
+                                        <ul class="post-minimal__meta">
+                                            <li>
+                                                <span class="icon mdi mdi-comment-outline"></span>
+                                                <a href="blog-post.html">450</a>
+                                            </li>
+                                            <li>
+                                                <span class="icon mdi mdi-thumb-up-outline"></span>
+                                                <a href="#">12</a>
+                                            </li>
+                                            <li>
+                                                <span class="icon mdi mdi-account"></span>
+                                                <span>by</span><a href="#">{{ $recentPost->user->name }}</a></li>
+                                        </ul>
+                                    </article>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

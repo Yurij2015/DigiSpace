@@ -38,7 +38,8 @@ class BlogController extends Controller
             'post' => $post,
             'sideBarData' => $this->sideBarData(),
             'postsNumber' => $this->getPostsNumber(),
-            'banner' => $post->blogPostBanner ?: null
+            'banner' => $post->blogPostBanner ?: null,
+            'recentPosts' => $this->getLatestPosts(2),
         ]);
     }
 
@@ -92,7 +93,7 @@ class BlogController extends Controller
     {
         return [
             'categories' => $this->getCategories(),
-            'latestPosts' => $this->getLatestPosts(),
+            'latestPosts' => $this->getLatestPosts(3),
             'archive' => $this->blogRepository->getGroupedPosts()
         ];
     }
@@ -107,8 +108,8 @@ class BlogController extends Controller
         return Post::count();
     }
 
-    private function getLatestPosts(): Collection
+    private function getLatestPosts(int $count): Collection
     {
-        return Post::orderBy('created_at', 'DESC')->get()->take(3);
+        return Post::orderBy('created_at', 'DESC')->get()->take($count);
     }
 }
