@@ -49,6 +49,7 @@ const form = useForm({
                                         <option value='blog' selected="selected">blog</option>
                                         <option value='search'>search</option>
                                         <option value='archive'>archive</option>
+                                        <option value='category'>category</option>
                                     </select>
 
                                     <div>
