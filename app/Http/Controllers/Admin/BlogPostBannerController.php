@@ -73,4 +73,31 @@ class BlogPostBannerController extends Controller
         ]);
         return redirect(route('admin.posts-banners'))->with('message', 'Banner Updated Successfully');
     }
+
+    final public function blogBannerForm(): Response
+    {
+        return Inertia::render('Admin/BlogPostBanners/BlogBannerForm');
+    }
+
+    final public function blogBannerSave(Request $request): RedirectResponse
+    {
+        if (BlogPostBanner::where('blog_page_type', '=', $request->blog_page_type)->first()) {
+            return redirect(route('admin.blog-banner-form'))
+                ->with('message', 'A banner of this type already exists. Add a new one!');
+        }
+
+        Validator::make($request->all(), [
+            'blog_page_type' => 'string',
+            'file' => 'required',
+        ])->validate();
+
+        $fileName = time() . '.' . $request->file->extension();
+        $request->file->move(public_path('banners'), $fileName);
+
+        BlogPostBanner::create([
+            'blog_page_type' => $request->blog_page_type,
+            'img_path' => '/banners/' . $fileName
+        ]);
+        return redirect(route('admin.posts-banners'))->with('message', 'Banner Added Successfully');
+    }
 }

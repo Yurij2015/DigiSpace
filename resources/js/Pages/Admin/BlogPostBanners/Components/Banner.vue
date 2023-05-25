@@ -5,10 +5,15 @@ import {Link} from '@inertiajs/inertia-vue3';
 <template>
     <div class="flex flex-wrap mb-5 mt-5">
         <div class="w-8/12 px-4">
-            <div>
-                <h4 class="text-xl font-normal leading-normal mt-0 mb-2 text-emerald-800">
-                    {{ banner.post.name }}
-                </h4>
+            <div v-if="banner.post">
+                <p class="text-x font-normal leading-normal mt-0 mb-2 text-emerald-800">
+                    Post name: <span class="font-bold text-orange-500"> {{ banner.post.name }} </span>
+                </p>
+            </div>
+            <div v-if="banner.blog_page_type">
+                <p class="text-x font-normal leading-normal mt-0 mb-2 text-emerald-800">
+                    Blog page type name: <span class="font-bold text-emerald-500"> {{ banner.blog_page_type }} </span>
+                </p>
             </div>
         </div>
         <div class="w-2/12 px-4">
@@ -29,5 +34,5 @@ import {Link} from '@inertiajs/inertia-vue3';
             </span>
         </div>
     </div>
-    <hr class="border-dotted">
+    <hr class="border-solid">
 </template>
