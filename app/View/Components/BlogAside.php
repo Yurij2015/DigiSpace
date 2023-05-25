@@ -2,7 +2,7 @@
 
 namespace App\View\Components;
 
-use Closure;
+use App\Models\BlogPostBanner;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
@@ -15,18 +15,18 @@ class BlogAside extends Component
      */
     public array $sideBarData;
     public int $postsNumber;
-    public ?string $bannerImg = null;
+    public ?BlogPostBanner $banner = null;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($sideBarData, $postsNumber, $bannerImg)
+    public function __construct($sideBarData, $postsNumber, $banner)
     {
         $this->sideBarData = $sideBarData;
         $this->postsNumber = $postsNumber;
-        $this->bannerImg = $bannerImg;
+        $this->banner = $banner;
     }
 
     /**

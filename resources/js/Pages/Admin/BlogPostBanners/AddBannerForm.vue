@@ -6,10 +6,13 @@ import Sidebar from "@/Components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
+import InputError from "@/Components/InputError.vue";
 
 let props = defineProps(['post']);
 const form = useForm({
     name: props.post.name,
+    alt: '',
+    url: '',
     file: ''
 });
 </script>
@@ -38,6 +41,18 @@ const form = useForm({
                                         class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                         disabled="disabled"
                                     >
+                                    <input
+                                        v-model="form.url"
+                                        placeholder="Add url to banner"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                    >
+                                    <InputError :message="form.errors.url" class="mt-2"/>
+                                    <input
+                                        v-model="form.alt"
+                                        placeholder="Add alt to banner"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                    >
+                                    <InputError :message="form.errors.alt" class="mt-2"/>
                                     <div>
                                         <Label for="file" value="Banner"/>
                                         <input
@@ -46,7 +61,7 @@ const form = useForm({
                                             class="mt-1 block w-full"
                                             @input="form.file = $event.target.files[0]"
                                             autofocus/>
-                                        <span v-if="form.errors.name">{{ form.errors.file }}</span>
+                                        <span v-if="form.errors.file">{{ form.errors.file }}</span>
                                     </div>
                                     <PrimaryButton class="mt-4">Save banner!</PrimaryButton>
                                     <Link :href="route('admin.post-banner-add')">

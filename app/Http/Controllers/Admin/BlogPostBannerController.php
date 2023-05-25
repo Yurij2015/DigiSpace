@@ -38,7 +38,9 @@ class BlogPostBannerController extends Controller
     {
         Validator::make($request->all(), [
             'post_id' => 'int',
-            'file' => 'required',
+            'alt' => 'string',
+            'url' => 'string',
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ])->validate();
 
         $fileName = time() . '.' . $request->file->extension();
@@ -46,6 +48,8 @@ class BlogPostBannerController extends Controller
 
         BlogPostBanner::create([
             'post_id' => $post->id,
+            'alt' => $request->alt,
+            'url' => $request->url,
             'img_path' => '/banners/' . $fileName
         ]);
         return redirect(route('admin.posts-banners'))->with('message', 'Banner Added Successfully');
@@ -63,15 +67,29 @@ class BlogPostBannerController extends Controller
     final public function bannerUpdate(Request $request, BlogPostBanner $banner): RedirectResponse
     {
         Validator::make($request->all(), [
-            'file' => 'required',
+            'alt' => 'string',
+            'url' => 'string',
+            'file' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ])->validate();
 
-        $fileName = time() . '.' . $request->file->extension();
-        $request->file->move(public_path('banners'), $fileName);
+        if ($request->file) {
+            $fileName = time() . '.' . $request->file->extension();
+            $request->file->move(public_path('banners'), $fileName);
 
-        $banner->update([
-            'img_path' => '/banners/' . $fileName
-        ]);
+            $banner->update([
+                'alt' => $request->alt,
+                'url' => $request->url,
+                'img_path' => '/banners/' . $fileName
+            ]);
+        }
+
+        if (!$request->file) {
+            $banner->update([
+                'alt' => $request->alt,
+                'url' => $request->url,
+            ]);
+        }
+
         return redirect(route('admin.posts-banners'))->with('message', 'Banner Updated Successfully');
     }
 

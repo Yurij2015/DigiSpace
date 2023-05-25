@@ -9,10 +9,22 @@ import {Link} from '@inertiajs/inertia-vue3';
                 <p class="text-x font-normal leading-normal mt-0 mb-2 text-emerald-800">
                     Post name: <span class="font-bold text-orange-500"> {{ banner.post.name }} </span>
                 </p>
+                <p class="text-x font-normal leading-normal mt-0 mb-2 text-emerald-800">
+                    Banner url: <span class="font-bold text-orange-500"> {{ banner.url }} </span>
+                </p>
+                <p class="text-x font-normal leading-normal mt-0 mb-2 text-emerald-800">
+                    Banner alt: <span class="font-bold text-orange-500"> {{ banner.alt }} </span>
+                </p>
             </div>
             <div v-if="banner.blog_page_type">
                 <p class="text-x font-normal leading-normal mt-0 mb-2 text-emerald-800">
                     Blog page type name: <span class="font-bold text-emerald-500"> {{ banner.blog_page_type }} </span>
+                </p>
+                <p class="text-x font-normal leading-normal mt-0 mb-2 text-emerald-800">
+                    Banner url: <span class="font-bold text-orange-500"> {{ banner.url }} </span>
+                </p>
+                <p class="text-x font-normal leading-normal mt-0 mb-2 text-emerald-800">
+                    Banner alt: <span class="font-bold text-orange-500"> {{ banner.alt }} </span>
                 </p>
             </div>
         </div>
