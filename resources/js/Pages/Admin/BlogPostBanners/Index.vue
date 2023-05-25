@@ -5,6 +5,7 @@ import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, Link} from '@inertiajs/inertia-vue3';
 import Banner from "@/Pages/Admin/BlogPostBanners/Components/Banner.vue";
+import Pagination from "@/Components/Pagination.vue";
 
 defineProps(['blogPostBanners']);
 </script>
@@ -48,6 +49,7 @@ defineProps(['blogPostBanners']);
                         </div>
                     </div>
                 </div>
+                <Pagination class="mt-6" :links="blogPostBanners.links"/>
                 <FooterAdmin/>
             </div>
         </div>

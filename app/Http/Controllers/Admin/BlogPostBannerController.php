@@ -16,7 +16,7 @@ class BlogPostBannerController extends Controller
     final public function index(): Response
     {
         return Inertia::render('Admin/BlogPostBanners/Index', [
-            'blogPostBanners' => BlogPostBanner::with('post')->paginate(20)
+            'blogPostBanners' => BlogPostBanner::with('post')->paginate(5)
         ]);
     }
 
@@ -56,6 +56,7 @@ class BlogPostBannerController extends Controller
         $post = Post::with('blogPostBanner')->find($banner->post_id);
         return Inertia::render('Admin/BlogPostBanners/UpdateBanner', [
             'post' => $post,
+            'banner' => $banner
         ]);
     }
 

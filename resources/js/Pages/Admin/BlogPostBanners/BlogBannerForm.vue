@@ -62,7 +62,7 @@ const form = useForm({
                                         <span v-if="form.errors.name">{{ form.errors.file }}</span>
                                     </div>
                                     <PrimaryButton class="mt-4">Save banner!</PrimaryButton>
-                                    <Link :href="route('admin.post-banner-add')">
+                                    <Link :href="route('admin.posts-banners')">
                                         <button
                                             class="bg-orange-500 text-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                             type="button">
