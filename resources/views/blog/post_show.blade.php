@@ -119,7 +119,7 @@
                         </div>
                     </div>
                 </div>
-                <x-blog-aside :$sideBarData :$postsNumber></x-blog-aside>
+                <x-blog-aside :$sideBarData :$postsNumber :$bannerImg></x-blog-aside>
             </article>
         </div>
     </section>

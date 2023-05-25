@@ -24,17 +24,19 @@ class BlogController extends Controller
         return view('blog.index', [
             'sideBarData' => $this->sideBarData(),
             'posts' => $posts,
-            'postsNumber' => $this->getPostsNumber()
+            'postsNumber' => $this->getPostsNumber(),
+            'bannerImg' => '' ?: null
         ]);
     }
 
     public function show(string $postSlug): View
     {
-        $post = Post::where('slug', $postSlug)->firstOrFail();
+        $post = Post::where('slug', $postSlug)->with('blogPostBanner')->firstOrFail();
         return view('blog.post_show', [
             'post' => $post,
             'sideBarData' => $this->sideBarData(),
-            'postsNumber' => $this->getPostsNumber()
+            'postsNumber' => $this->getPostsNumber(),
+            'bannerImg' => $post->blogPostBanner?->img_path ?: null
         ]);
     }
 
@@ -45,7 +47,8 @@ class BlogController extends Controller
         return view('blog.index', [
             'posts' => $posts,
             'sideBarData' => $this->sideBarData(),
-            'postsNumber' => $this->getPostsNumber()
+            'postsNumber' => $this->getPostsNumber(),
+            'bannerImg' => '' ?: null
         ]);
     }
 
@@ -57,7 +60,8 @@ class BlogController extends Controller
         return view('blog.index', [
             'posts' => $posts,
             'sideBarData' => $this->sideBarData(),
-            'postsNumber' => $this->getPostsNumber()
+            'postsNumber' => $this->getPostsNumber(),
+            'bannerImg' => '' ?: null
         ]);
     }
 
@@ -74,7 +78,8 @@ class BlogController extends Controller
         return view('blog.index', [
             'sideBarData' => $this->sideBarData(),
             'posts' => $posts,
-            'postsNumber' => $this->getPostsNumber()
+            'postsNumber' => $this->getPostsNumber(),
+            'bannerImg' => '' ?: null
         ]);
     }
 

@@ -50,7 +50,7 @@
         <!-- Select 2-->
         <select class="form-input select" data-placeholder="All" data-minimum-results-for-search="Infinity"
                 data-constraints="Required" onchange="window.location.assign('/blog-archive/'+this.value)">
-        @foreach($sideBarData['archive'] as $archiveItem)
+            @foreach($sideBarData['archive'] as $archiveItem)
                 <option value="{{ $archiveItem->year .'-'. $archiveItem->month }}">
                     {{ $archiveItem->month_name }} ({{ $archiveItem->post_count }})
                 </option>
@@ -59,7 +59,10 @@
     </div>
     <div class="blog-layout__aside-item">
         <a class="link-banner" href="#">
-            <img src="{{ asset('images/banner-305x302.jpg') }}" alt="" width="305" height="302"/>
+            @if($bannerImg)
+                <img src="{{ $bannerImg }}" alt="" width="305" height="302"/>
+            @endif
+
         </a>
     </div>
 </div>
