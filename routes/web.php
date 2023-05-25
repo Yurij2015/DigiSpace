@@ -184,6 +184,10 @@ Route::middleware('auth')->group(function () {
         ->name('admin.banner-update-form');
     Route::put('admin/banner-update/{banner}', [BlogPostBannerController::class, 'bannerUpdate'])
         ->name('admin.banner-update');
+    Route::get('admin/blog-banner-form', [BlogPostBannerController::class, 'blogBannerForm'])
+        ->name('admin.blog-banner-form');
+    Route::post('admin/blog-banner-save', [BlogPostBannerController::class, 'blogBannerSave'])
+        ->name('admin.blog-banner-save');
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])
