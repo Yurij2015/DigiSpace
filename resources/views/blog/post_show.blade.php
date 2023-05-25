@@ -73,7 +73,7 @@
                                 <div class="col-md-6">
                                     <!-- Post Minimal-->
                                     <article class="post-minimal">
-                                        <a class="post-minimal__media" href="blog-post.html">
+                                        <a class="post-minimal__media" href="{{ route('blog.post', $recentPost->slug) }}">
                                             <img class="post-minimal__image"
                                                  src="{{ asset($recentPost->img_path) }}" alt=""
                                                  width="368" height="293"/>
