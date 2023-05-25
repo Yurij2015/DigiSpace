@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BlogPostBanner;
 use App\Models\Category;
 use App\Models\Post;
 use App\Repositories\BlogRepository;
@@ -21,20 +22,23 @@ class BlogController extends Controller
     public function index(): View
     {
         $posts = Post::paginate(config('constants.NUMBER_POSTS_IN_MENU'));
+        $bannerImg = BlogPostBanner::where('blog_page_type', 'blog')->first()->img_path;
         return view('blog.index', [
             'sideBarData' => $this->sideBarData(),
             'posts' => $posts,
-            'postsNumber' => $this->getPostsNumber()
+            'postsNumber' => $this->getPostsNumber(),
+            'bannerImg' => $bannerImg ?: null
         ]);
     }
 
     public function show(string $postSlug): View
     {
-        $post = Post::where('slug', $postSlug)->firstOrFail();
+        $post = Post::where('slug', $postSlug)->with('blogPostBanner')->firstOrFail();
         return view('blog.post_show', [
             'post' => $post,
             'sideBarData' => $this->sideBarData(),
-            'postsNumber' => $this->getPostsNumber()
+            'postsNumber' => $this->getPostsNumber(),
+            'bannerImg' => $post->blogPostBanner?->img_path ?: null
         ]);
     }
 
@@ -42,10 +46,12 @@ class BlogController extends Controller
     {
         $category = Category::where('slug', $categorySlug)->firstOrFail();
         $posts = Post::where('category_id', $category->id)->paginate(10);
+        $bannerImg = BlogPostBanner::where('blog_page_type', 'category')->first()->img_path;
         return view('blog.index', [
             'posts' => $posts,
             'sideBarData' => $this->sideBarData(),
-            'postsNumber' => $this->getPostsNumber()
+            'postsNumber' => $this->getPostsNumber(),
+            'bannerImg' => $bannerImg ?: null
         ]);
     }
 
@@ -54,10 +60,12 @@ class BlogController extends Controller
         $explodedYearsMonth = explode('-', $yearMonth);
         [$year, $month] = $explodedYearsMonth;
         $posts = $this->blogRepository->getArchivedPosts($year, $month);
+        $bannerImg = BlogPostBanner::where('blog_page_type', 'archive')->first()?->img_path;
         return view('blog.index', [
             'posts' => $posts,
             'sideBarData' => $this->sideBarData(),
-            'postsNumber' => $this->getPostsNumber()
+            'postsNumber' => $this->getPostsNumber(),
+            'bannerImg' => $bannerImg ?: null
         ]);
     }
 
@@ -71,10 +79,12 @@ class BlogController extends Controller
         }
 
         $posts = $posts->paginate(config('constants.NUMBER_POSTS_IN_MENU'));
+        $bannerImg = BlogPostBanner::where('blog_page_type', 'search')->first()->img_path;
         return view('blog.index', [
             'sideBarData' => $this->sideBarData(),
             'posts' => $posts,
-            'postsNumber' => $this->getPostsNumber()
+            'postsNumber' => $this->getPostsNumber(),
+            'bannerImg' => $bannerImg ?: null
         ]);
     }
 
