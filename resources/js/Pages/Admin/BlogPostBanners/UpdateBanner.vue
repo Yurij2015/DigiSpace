@@ -6,9 +6,12 @@ import Sidebar from "@/Components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
+import InputError from "@/Components/InputError.vue";
 
 let props = defineProps(['post', 'banner']);
 const form = useForm({
+    alt: props.banner.alt,
+    url: props.banner.url,
     file: null
 });
 
@@ -41,11 +44,23 @@ const form = useForm({
                                         disabled="disabled"
                                     >
                                     <input
-                                        v-if="banner"
+                                        v-if="banner.blog_page_type"
                                         v-model="banner.blog_page_type"
                                         class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                         disabled="disabled"
                                     >
+                                    <input
+                                        v-model="form.url"
+                                        placeholder="Add url"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                    >
+                                    <InputError :message="form.errors.url" class="mt-2"/>
+                                    <input
+                                        v-model="form.alt"
+                                        placeholder="Add alt"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                    >
+                                    <InputError :message="form.errors.alt" class="mt-2"/>
                                     <div class="columns-1 mt-3">
                                         <img :src="banner.img_path" width="200" alt=""/>
                                     </div>

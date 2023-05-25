@@ -11,7 +11,7 @@ class BlogPostBanner extends Model
     use HasFactory;
 
     protected $fillable = [
-        'img_path', 'blog_page_type', 'post_id'
+        'img_path', 'blog_page_type', 'post_id', 'alt', 'url'
     ];
 
     public function post(): BelongsTo

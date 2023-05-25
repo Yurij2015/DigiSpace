@@ -22,12 +22,12 @@ class BlogController extends Controller
     public function index(): View
     {
         $posts = Post::paginate(config('constants.NUMBER_POSTS_IN_MENU'));
-        $bannerImg = BlogPostBanner::where('blog_page_type', 'blog')->first()->img_path;
+        $banner = BlogPostBanner::where('blog_page_type', 'blog')->first();
         return view('blog.index', [
             'sideBarData' => $this->sideBarData(),
             'posts' => $posts,
             'postsNumber' => $this->getPostsNumber(),
-            'bannerImg' => $bannerImg ?: null
+            'banner' => $banner ?: null
         ]);
     }
 
@@ -38,7 +38,7 @@ class BlogController extends Controller
             'post' => $post,
             'sideBarData' => $this->sideBarData(),
             'postsNumber' => $this->getPostsNumber(),
-            'bannerImg' => $post->blogPostBanner?->img_path ?: null
+            'banner' => $post->blogPostBanner ?: null
         ]);
     }
 
@@ -46,12 +46,12 @@ class BlogController extends Controller
     {
         $category = Category::where('slug', $categorySlug)->firstOrFail();
         $posts = Post::where('category_id', $category->id)->paginate(10);
-        $bannerImg = BlogPostBanner::where('blog_page_type', 'category')->first()->img_path;
+        $banner = BlogPostBanner::where('blog_page_type', 'category')->first();
         return view('blog.index', [
             'posts' => $posts,
             'sideBarData' => $this->sideBarData(),
             'postsNumber' => $this->getPostsNumber(),
-            'bannerImg' => $bannerImg ?: null
+            'banner' => $banner ?: null
         ]);
     }
 
@@ -60,12 +60,12 @@ class BlogController extends Controller
         $explodedYearsMonth = explode('-', $yearMonth);
         [$year, $month] = $explodedYearsMonth;
         $posts = $this->blogRepository->getArchivedPosts($year, $month);
-        $bannerImg = BlogPostBanner::where('blog_page_type', 'archive')->first()?->img_path;
+        $banner = BlogPostBanner::where('blog_page_type', 'archive')->first();
         return view('blog.index', [
             'posts' => $posts,
             'sideBarData' => $this->sideBarData(),
             'postsNumber' => $this->getPostsNumber(),
-            'bannerImg' => $bannerImg ?: null
+            'banner' => $banner ?: null
         ]);
     }
 
@@ -79,12 +79,12 @@ class BlogController extends Controller
         }
 
         $posts = $posts->paginate(config('constants.NUMBER_POSTS_IN_MENU'));
-        $bannerImg = BlogPostBanner::where('blog_page_type', 'search')->first()->img_path;
+        $banner = BlogPostBanner::where('blog_page_type', 'search')->first();
         return view('blog.index', [
             'sideBarData' => $this->sideBarData(),
             'posts' => $posts,
             'postsNumber' => $this->getPostsNumber(),
-            'bannerImg' => $bannerImg ?: null
+            'bannerImg' => $banner ?: null
         ]);
     }
 

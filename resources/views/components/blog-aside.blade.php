@@ -58,11 +58,10 @@
         </select>
     </div>
     <div class="blog-layout__aside-item">
-        <a class="link-banner" href="#">
-            @if($bannerImg)
-                <img src="{{ $bannerImg }}" alt="" width="305" height="302"/>
-            @endif
-
-        </a>
+        @if($banner)
+            <a class="link-banner" href="{{ $banner->url }}">
+                <img src="{{ $banner->img_path }}" alt="{{ $banner->alt }}" width="305" height="302"/>
+            </a>
+        @endif
     </div>
 </div>
