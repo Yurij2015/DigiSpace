@@ -7,9 +7,8 @@ import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
 
-let props = defineProps(['post']);
+let props = defineProps(['post', 'banner']);
 const form = useForm({
-    name: props.post.name,
     file: null
 });
 
@@ -34,14 +33,21 @@ const form = useForm({
                         <div class="flex flex-wrap">
                             <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
                                 <form
-                                    @submit.prevent="form.put(route('admin.banner-update', post.blog_post_banner.id))">
+                                    @submit.prevent="form.put(route('admin.banner-update', banner.id))">
                                     <input
-                                        v-model="form.name"
+                                        v-if="post"
+                                        v-model="post.name"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                        disabled="disabled"
+                                    >
+                                    <input
+                                        v-if="banner"
+                                        v-model="banner.blog_page_type"
                                         class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                         disabled="disabled"
                                     >
                                     <div class="columns-1 mt-3">
-                                        <img :src="post.blog_post_banner.img_path" width="200" alt=""/>
+                                        <img :src="banner.img_path" width="200" alt=""/>
                                     </div>
                                     <div>
                                         <Label for="file" value="Banner"/>
@@ -54,7 +60,7 @@ const form = useForm({
                                         <span v-if="form.errors.name">{{ form.errors.file }}</span>
                                     </div>
                                     <PrimaryButton class="mt-4">Save edited banner!</PrimaryButton>
-                                    <Link :href="route('admin.post-banner-add')">
+                                    <Link :href="route('admin.posts-banners')">
                                         <button
                                             class="bg-orange-500 text-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                             type="button">
