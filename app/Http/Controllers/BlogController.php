@@ -21,7 +21,7 @@ class BlogController extends Controller
 
     public function index(): View
     {
-        $posts = Post::paginate(config('constants.NUMBER_POSTS_IN_MENU'));
+        $posts = Post::with('category')->paginate(config('constants.NUMBER_POSTS_IN_MENU'));
         $banner = BlogPostBanner::where('blog_page_type', 'blog')->first();
         return view('blog.index', [
             'sideBarData' => $this->sideBarData(),
@@ -33,7 +33,10 @@ class BlogController extends Controller
 
     public function show(string $postSlug): View
     {
-        $post = Post::where('slug', $postSlug)->with('blogPostBanner')->firstOrFail();
+        $post = Post::where('slug', $postSlug)
+            ->with('blogPostBanner')
+            ->with('category')
+            ->firstOrFail();
         return view('blog.post_show', [
             'post' => $post,
             'sideBarData' => $this->sideBarData(),
@@ -110,6 +113,6 @@ class BlogController extends Controller
 
     private function getLatestPosts(int $count): Collection
     {
-        return Post::orderBy('created_at', 'DESC')->get()->take($count);
+        return Post::orderBy('created_at', 'DESC')->with('category')->get()->take($count);
     }
 }
