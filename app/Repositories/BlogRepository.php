@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Models\Post;
 use DB;
 use Illuminate\Support\Collection;
 
@@ -17,9 +18,7 @@ class BlogRepository
 
     public function getArchivedPosts(int $year, int $month): Collection
     {
-        return DB::table('posts')
-            ->select(DB::raw("*, CONCAT('uploads/', img_path) as img_path"))
-            ->whereRaw("YEAR(created_at) = $year AND MONTH(created_at) = $month")
-            ->get();
+        return Post::whereRaw("YEAR(`posts`.`created_at`) = $year AND MONTH(`posts`.`created_at`) = $month")
+            ->with('category')->get();
     }
 }
