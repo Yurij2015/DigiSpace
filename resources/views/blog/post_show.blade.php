@@ -27,8 +27,11 @@
                     <article class="post-single">
                         <div class="post-single__header">
                             <ul class="post-single__meta">
-                                <li><span class="icon mdi mdi-comment-outline"></span><a href="#">3</a></li>
-                                <li><span class="icon mdi mdi-thumb-up-outline"></span><a href="#">12</a></li>
+                                <li><span class="icon mdi mdi-view-list"></span>
+                                    <a href="{{ route('blog-category', $post->category->slug) }}">
+                                        {{ $post->category->name }}
+                                    </a>
+                                </li>
                             </ul>
                             <ul class="post-single__meta">
                                 <li><span class="icon mdi icon mdi mdi-account"></span>
@@ -86,12 +89,10 @@
                                         </h4>
                                         <ul class="post-minimal__meta">
                                             <li>
-                                                <span class="icon mdi mdi-comment-outline"></span>
-                                                <a href="blog-post.html">450</a>
-                                            </li>
-                                            <li>
-                                                <span class="icon mdi mdi-thumb-up-outline"></span>
-                                                <a href="#">12</a>
+                                                <span class="icon mdi mdi-format-list-bulleted"></span>
+                                                <a href="{{ route('blog-category', $recentPost->category->slug) }}">
+                                                    {{ $recentPost->category->name }}
+                                                </a>
                                             </li>
                                             <li>
                                                 <span class="icon mdi mdi-account"></span>

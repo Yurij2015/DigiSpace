@@ -39,8 +39,10 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <span class="icon mdi mdi-comment-outline"></span>
-                                    <a href="{{ route('blog.post', $post->slug) }}">0 comments</a>
+                                    <span class="icon mdi mdi-format-list-bulleted"></span>
+                                    <a href="{{ route('blog-category', $post->category->slug) }}">
+                                        {{ $post->category->name }}
+                                    </a>
                                 </li>
                                 @if(isset($post->user->name))
                                     <li>
