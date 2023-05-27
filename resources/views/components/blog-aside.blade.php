@@ -49,8 +49,9 @@
         <p class="custom-heading-line heading-8">Archive</p>
         <!-- Select 2-->
         <select class="form-input select" data-placeholder="All" data-minimum-results-for-search="Infinity"
-                data-constraints="{!! '@' !!}Required" onchange="window.location.assign('/blog-archive/'+this.value)">
-            <option {{ !$sideBarData['archive'] ? 'selected' : 'disabled' }}>All</option>
+                data-constraints="{!! '@' !!}Required"
+                onchange="this.value !== 'All' ? window.location.assign('/blog-archive/'+this.value) : window.location.assign('/blog')">
+            <option {{ !$sideBarData['archive'] ? 'selected' : '' }}>All</option>
             @foreach($sideBarData['archive'] as $archiveItem)
                 <option
                     {{ url()->current() === route('blog-archive', $archiveItem->year .'-'. $archiveItem->month) ? 'selected' : '' }}

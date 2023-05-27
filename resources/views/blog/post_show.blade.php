@@ -14,13 +14,18 @@
                 <ul class="breadcrumbs-custom__path">
                     <li><a href="{{ route('home.index')}}">Home</a></li>
                     <li><a href="{{ route('blog') }}"> Blog</a></li>
-                    <li><a href="{{ route('blog-category', $post->category->slug) }}">{{ $post->category->name }}</a></li>
+                    <li><a href="{{ route('blog-category', $post->category->slug) }}">{{ $post->category->name }}</a>
+                    </li>
                     <li class="active">{{ $post->name }}</li>
                 </ul>
             </div>
         </div>
     </section>
     <!-- Blog post-->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0&appId=967852944647080&autoLogAppEvents=1"
+            nonce="MuP4VX7O"></script>
     <section class="section section-lg bg-white">
         <div class="container">
             <article class="blog-layout">
@@ -61,12 +66,10 @@
                         <div class="post-single__footer">
                             <div class="post-single__footer-inner">
                                 <h5>Share this post</h5>
-                                <ul class="list-inline list-inline-xs">
-                                    <li><a class="icon icon-xs icon-gray-dark fa fa-facebook" href="#"></a></li>
-                                    <li><a class="icon icon-xs icon-gray-dark fa fa-twitter" href="#"></a></li>
-                                    <li><a class="icon icon-xs icon-gray-dark fa fa-google-plus" href="#"></a></li>
-                                    <li><a class="icon icon-xs icon-gray-dark fa fa-pinterest-p" href="#"></a></li>
-                                </ul>
+                                <div class="fb-like" data-href="{{ route('blog.post', $post->slug) }}"
+                                     data-width="300" data-layout="button" data-action="like" data-size="large"
+                                     data-share="true" data-show-faces="true">
+                                </div>
                             </div>
                         </div>
                     </article>
