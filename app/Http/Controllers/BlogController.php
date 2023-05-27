@@ -88,7 +88,7 @@ class BlogController extends Controller
             'sideBarData' => $this->sideBarData(),
             'posts' => $posts,
             'postsNumber' => $this->getPostsNumber(),
-            'bannerImg' => $banner ?: null
+            'banner' => $banner ?: null
         ]);
     }
 
