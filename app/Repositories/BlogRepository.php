@@ -5,7 +5,6 @@ namespace App\Repositories;
 use App\Models\Post;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
-use Nette\Utils\Paginator;
 
 class BlogRepository
 {
