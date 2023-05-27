@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
+    <!--  Facebook -->
     @if(url()->current() === route('blog.post', $post->slug))
         <meta property="og:url" content="{{ route('blog.post', $post->slug) }}"/>
         <meta property="og:type" content="article"/>
@@ -22,6 +23,14 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
+<!-- New Relic -->
+<script type="text/javascript">
+    ;window.NREUM||(NREUM={});NREUM.init={distributed_tracing:{enabled:true},privacy:{cookies_enabled:true},ajax:{deny_list:["bam.eu01.nr-data.net"]}};
+
+    ;NREUM.loader_config={accountID:"3946944",trustKey:"3946944",agentID:"538475567",licenseKey:"NRJS-26995cb680e01431d2b",applicationID:"538475567"}
+    ;NREUM.info={beacon:"bam.eu01.nr-data.net",errorBeacon:"bam.eu01.nr-data.net",licenseKey:"NRJS-26995cb680e01431d2b",applicationID:"538475567",sa:1}
+    ;(()=>{var e,t,r={9071:(e,t,r)=>{"use strict";r.d(t,{I:()=>n});var n=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(n=+i[1])},8768:(e,t,r)=>{"use strict";r.d(t,{T:()=>n,p:()=>i});const n=/(iPad|iPhone|iPod)/g.t>
+</script>
 <!-- Messenger Chat plugin Code -->
 <div id="fb-root"></div>
 <!-- Your Chat plugin code -->
