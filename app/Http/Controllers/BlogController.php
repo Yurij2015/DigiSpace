@@ -21,7 +21,8 @@ class BlogController extends Controller
 
     public function index(): View
     {
-        $posts = Post::with('category')->paginate(config('constants.NUMBER_POSTS_IN_MENU'));
+        $posts = Post::with('category')
+            ->paginate(config('constants.NUMBER_POSTS_IN_BLOG_PAGE'));
         $banner = BlogPostBanner::where('blog_page_type', 'blog')->first();
         return view('blog.index', [
             'sideBarData' => $this->sideBarData(),
@@ -49,7 +50,8 @@ class BlogController extends Controller
     public function category(string $categorySlug): View
     {
         $category = Category::where('slug', $categorySlug)->firstOrFail();
-        $posts = Post::where('category_id', $category->id)->paginate(10);
+        $posts = Post::where('category_id', $category->id)
+            ->paginate(config('constants.NUMBER_POSTS_IN_BLOG_PAGE'));
         $banner = BlogPostBanner::where('blog_page_type', 'category')->first();
         return view('blog.index', [
             'posts' => $posts,
