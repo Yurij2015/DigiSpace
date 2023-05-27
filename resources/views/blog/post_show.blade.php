@@ -25,7 +25,23 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
             src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0&appId=967852944647080&autoLogAppEvents=1"
-            nonce="MuP4VX7O"></script>
+            nonce="MuP4VX7O">
+    </script>
+    <script>window.twttr = (function (d, s, id) {
+            let js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            t._e = [];
+            t.ready = function (f) {
+                t._e.push(f);
+            };
+            return t;
+        }(document, "script", "twitter-wjs"));
+    </script>
     <section class="section section-lg bg-white">
         <div class="container">
             <article class="blog-layout">
@@ -66,11 +82,25 @@
                         <div class="post-single__footer">
                             <div class="post-single__footer-inner">
                                 <h5>Share this post</h5>
-                                <div class="fb-like" data-href="{{ route('blog.post', $post->slug) }}"
-                                     data-width="300" data-layout="button" data-action="like" data-size="large"
-                                     data-share="true" data-show-faces="true">
+                                <div class="product-social-links">
+                                    <div class="fb-like"
+                                         data-href="{{ route('blog.post', $post->slug) }}"
+                                         data-width="100"
+                                         data-layout="button"
+                                         data-action="like"
+                                         data-size="large"
+                                         data-share="true"
+                                         data-show-faces="true">
+                                    </div>
+                                    <a class="twitter-share-button"
+                                       data-size="large"
+                                       href="{{ route('blog.post', $post->slug) }}"
+                                       data-hashtags="digispace,digispacepro">
+                                        Tweet
+                                    </a>
                                 </div>
                             </div>
+
                         </div>
                     </article>
                     <div class="section-md section-collapse">
@@ -100,7 +130,11 @@
                                             </li>
                                             <li>
                                                 <span class="icon mdi mdi-account"></span>
-                                                <span>by</span><a href="#">{{ $recentPost->user->name }}</a></li>
+                                                <span>by</span>
+                                                <a href="#">
+                                                    {{ $recentPost->user->name }}
+                                                </a>
+                                            </li>
                                         </ul>
                                     </article>
                                 </div>
@@ -112,5 +146,9 @@
             </article>
         </div>
     </section>
-
 @endsection
+<style>
+    .product-social-links {
+        display: flex;
+    }
+</style>
