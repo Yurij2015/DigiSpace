@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <!--  Facebook Open Graph-->
-    @if(url()->current() === route('blog.post', $post->slug))
+    @if(isset($post) && url()->current() === route('blog.post', $post->slug))
         <meta property="og:url" content="{{ route('blog.post', $post->slug) }}"/>
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="{{ $post->name }}"/>
