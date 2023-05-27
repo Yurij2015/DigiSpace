@@ -12,7 +12,7 @@
         <meta property="og:url" content="{{ route('blog.post', $post->slug) }}"/>
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="{{ $post->name }}"/>
-        <meta property="og:description" content="Add post description!!!"/>
+        <meta property="og:description" content="{{ $post->description }}"/>
         <meta property="og:image" content="{{ $post->img_path }}"/>
     @endif
     <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
@@ -37,7 +37,7 @@
 <div id="fb-customer-chat" class="fb-customerchat">
 </div>
 <script>
-    var chatbox = document.getElementById('fb-customer-chat');
+    let chatbox = document.getElementById('fb-customer-chat');
     chatbox.setAttribute("page_id", "105137005707119");
     chatbox.setAttribute("attribution", "biz_inbox");
 </script>
