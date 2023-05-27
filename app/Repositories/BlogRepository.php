@@ -3,7 +3,6 @@
 namespace App\Repositories;
 
 use App\Models\Post;
-use DB;
 use Illuminate\Support\Collection;
 
 class BlogRepository
