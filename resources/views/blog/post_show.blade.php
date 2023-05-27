@@ -14,6 +14,7 @@
                 <ul class="breadcrumbs-custom__path">
                     <li><a href="{{ route('home.index')}}">Home</a></li>
                     <li><a href="{{ route('blog') }}"> Blog</a></li>
+                    <li><a href="{{ route('blog-category', $post->category->slug) }}">{{ $post->category->name }}</a></li>
                     <li class="active">{{ $post->name }}</li>
                 </ul>
             </div>
