@@ -7,6 +7,13 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
+    @if(url()->current() === route('blog.post', $post->slug))
+        <meta property="og:url" content="{{ route('blog.post', $post->slug) }}"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="{{ $post->name }}"/>
+        <meta property="og:description" content="Add post description!!!"/>
+        <meta property="og:image" content="{{ $post->img_path }}"/>
+    @endif
     <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700%7CSpace+Mono">
