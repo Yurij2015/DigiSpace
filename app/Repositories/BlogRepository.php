@@ -3,7 +3,9 @@
 namespace App\Repositories;
 
 use App\Models\Post;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
+use Nette\Utils\Paginator;
 
 class BlogRepository
 {
@@ -17,9 +19,9 @@ class BlogRepository
             ->get();
     }
 
-    public function getArchivedPosts(int $year, int $month): Collection
+    public function getArchivedPosts(int $year, int $month): LengthAwarePaginator
     {
         return Post::whereRaw("YEAR(`posts`.`created_at`) = $year AND MONTH(`posts`.`created_at`) = $month")
-            ->with('category')->get();
+            ->with('category')->paginate(config('constants.NUMBER_POSTS_IN_BLOG_PAGE'));
     }
 }

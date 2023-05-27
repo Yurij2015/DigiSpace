@@ -63,13 +63,7 @@
                         </article>
                     @endforeach
                     <div class="pagination">
-                        <div class="pagination__control"><a href="#">Older posts</a></div>
-                        <ul class="pagination__list">
-                            <li><a href="#">1</a></li>
-                            <li class="active"><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                        </ul>
-                        <div class="pagination__control"><a href="#">Newer posts</a></div>
+                        {!! $posts->links() !!}
                     </div>
                 </div>
                 <x-blog-aside :$sideBarData :$postsNumber :$banner></x-blog-aside>
