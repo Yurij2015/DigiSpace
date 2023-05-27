@@ -13,7 +13,11 @@
             <div class="container">
                 <ul class="breadcrumbs-custom__path">
                     <li><a href="{{ route('home.index')}}">Home</a></li>
-                    <li><a href="{{ route('blog') }}"> Blog</a></li>
+                    @if(isset($category) || isset($archive))
+                        <li><a href="{{ route('blog') }}"> Blog</a></li>
+                    @else
+                        <li class="active">Blog</li>
+                    @endif
                     @if(isset($category))
                         <li class="active">{{ $category->name }}</li>
                     @endif
