@@ -74,6 +74,7 @@ class PostController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'content' => 'required|string',
+            'description' => 'string',
             'category_id' => 'int',
             'file' => '',
         ]);
@@ -98,6 +99,7 @@ class PostController extends Controller
         Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'content' => 'required|string',
+            'description' => 'string',
             'category_id' => 'int',
             'file' => 'required',
         ])->validate();
@@ -109,6 +111,7 @@ class PostController extends Controller
             'name' => $request->name,
             'slug' => \Str::slug($request->name),
             'content' => $request['content'],
+            'description' => $request->description,
             'category_id' => $request->category_id,
             'user_id' => $request->user()->id,
             'img_path' => $fileName

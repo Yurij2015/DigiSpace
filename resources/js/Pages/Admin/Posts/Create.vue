@@ -15,6 +15,7 @@ let api_key_tinymce = props.api_key_tinymce;
 const form = useForm({
     name: '',
     content: '',
+    description: '',
     category_id: '',
     file: ''
 });
@@ -52,6 +53,12 @@ const form = useForm({
                                         class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                     ></Editor>
                                     <InputError :message="form.errors.content" class="mt-2"/>
+                                    <input
+                                        v-model="form.description"
+                                        placeholder="What is post description?"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                    >
+                                    <InputError :message="form.errors.description" class="mt-2"/>
                                     <select
                                         class='block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3'
                                         v-model='form.category_id'>

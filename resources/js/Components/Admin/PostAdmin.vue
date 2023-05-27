@@ -12,12 +12,21 @@ import {Link} from '@inertiajs/inertia-vue3';
                     <h6 class="text-xl font-normal leading-normal mt-0 mb-2 text-emerald-800">
                         {{ post.name }}
                     </h6>
-                    <small class="font-normal leading-normal mt-0 mb-4 text-blueGray-800">
-                        Category: {{ post.category.name }}
-                    </small>
-                    <small class="text-red-500 font-normal leading-normal mt-0 mb-4">
-                        Slug: {{ post.slug ? post.slug : 'no slug' }}
-                    </small>
+                    <p>
+                        <small class="font-normal leading-normal mt-0 mb-4 text-blueGray-800">
+                            Category: {{ post.category.name }}
+                        </small>
+                    </p>
+                    <p>
+                        <small class="text-red-500 font-normal leading-normal mt-0 mb-4">
+                            Slug: {{ post.slug ? post.slug : 'no slug' }}
+                        </small>
+                    </p>
+                    <p>
+                         <small class="text-blue-500 font-normal leading-normal mt-0 mb-4">
+                            Description: {{ post.description ? post.description : 'no description' }}
+                        </small>
+                    </p>
                     <p class="text-base font-light leading-relaxed mt-0 mb-4 text-emerald-800" v-html='post.content'/>
                 </div>
             </span>
