@@ -57,7 +57,8 @@ class BlogController extends Controller
             'posts' => $posts,
             'sideBarData' => $this->sideBarData(),
             'postsNumber' => $this->getPostsNumber(),
-            'banner' => $banner ?: null
+            'banner' => $banner ?: null,
+            'category' => $category
         ]);
     }
 
@@ -71,7 +72,8 @@ class BlogController extends Controller
             'posts' => $posts,
             'sideBarData' => $this->sideBarData(),
             'postsNumber' => $this->getPostsNumber(),
-            'banner' => $banner ?: null
+            'banner' => $banner ?: null,
+            'archive' => $yearMonth
         ]);
     }
 

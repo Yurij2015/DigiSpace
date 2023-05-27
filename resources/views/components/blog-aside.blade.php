@@ -50,8 +50,11 @@
         <!-- Select 2-->
         <select class="form-input select" data-placeholder="All" data-minimum-results-for-search="Infinity"
                 data-constraints="{!! '@' !!}Required" onchange="window.location.assign('/blog-archive/'+this.value)">
+            <option {{ !$sideBarData['archive'] ? 'selected' : 'disabled' }}>All</option>
             @foreach($sideBarData['archive'] as $archiveItem)
-                <option value="{{ $archiveItem->year .'-'. $archiveItem->month }}">
+                <option
+                    {{ url()->current() === route('blog-archive', $archiveItem->year .'-'. $archiveItem->month) ? 'selected' : '' }}
+                    value="{{ $archiveItem->year .'-'. $archiveItem->month }}">
                     {{ $archiveItem->month_name }} ({{ $archiveItem->post_count }})
                 </option>
             @endforeach
