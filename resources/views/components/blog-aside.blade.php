@@ -49,7 +49,7 @@
         <p class="custom-heading-line heading-8">Archive</p>
         <!-- Select 2-->
         <select class="form-input select" data-placeholder="All" data-minimum-results-for-search="Infinity"
-                data-constraints="Required" onchange="window.location.assign('/blog-archive/'+this.value)">
+                data-constraints="{!! '@' !!}Required" onchange="window.location.assign('/blog-archive/'+this.value)">
             @foreach($sideBarData['archive'] as $archiveItem)
                 <option value="{{ $archiveItem->year .'-'. $archiveItem->month }}">
                     {{ $archiveItem->month_name }} ({{ $archiveItem->post_count }})
