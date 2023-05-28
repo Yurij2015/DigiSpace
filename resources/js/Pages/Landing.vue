@@ -1,7 +1,7 @@
 <script setup>
-import Navbar from "@/components/Navbars/AuthNavbar.vue";
-import FooterComponent from "@/components/Footers/Footer.vue";
-import WidgetHeader from "@/components/Landing/WidgetHeader.vue"
+import Navbar from "@/Components/Navbars/AuthNavbar.vue";
+import FooterComponent from "@/Components/Footers/Footer.vue";
+import WidgetHeader from "@/Components/Landing/WidgetHeader.vue"
 import WidgetMiddleLeft from "@/Components/Landing/WidgetMiddleLeft.vue";
 import WidgetMiddleCenter from "@/Components/Landing/WidgetMiddleCenter.vue";
 import WidgetMiddleRight from "@/Components/Landing/WidgetMiddleRight.vue";

@@ -5,7 +5,7 @@ import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
 import {useForm} from '@inertiajs/inertia-vue3';
 import Navbar from "@/Components/Navbars/AuthNavbar.vue";
-import FooterSmall from "@/components/Footers/FooterSmall.vue";
+import FooterSmall from "@/Components/Footers/FooterSmall.vue";
 import {Link} from '@inertiajs/inertia-vue3';
 
 defineProps({
