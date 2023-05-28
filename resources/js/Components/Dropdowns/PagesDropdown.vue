@@ -29,7 +29,7 @@ let toggleDropdown = function (event) {
             ref="btnDropdownRef"
             v-on:click="toggleDropdown($event)"
         >
-            Demo Pages
+            Menu
         </a>
         <div
             ref="popoverDropdownRef"
@@ -42,29 +42,6 @@ let toggleDropdown = function (event) {
       <span
           class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
       >
-        Menu
-      </span>
-            <Link :href="route('dashboard')"
-                  class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-            >
-                Dashboard
-            </Link>
-            <Link
-                :href="route('categories.index')"
-                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-            >
-                Categories
-            </Link>
-            <Link
-                :href="route('posts.index')"
-                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-            >
-                Posts
-            </Link>
-            <div class="h-0 mx-4 my-2 border border-solid border-blueGray-100"/>
-            <span
-                class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
-            >
         Auth
       </span>
             <Link :href="route('login')" v-if="!$page.props.auth.user"

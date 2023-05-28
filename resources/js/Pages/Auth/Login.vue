@@ -4,7 +4,7 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
 import {useForm} from '@inertiajs/inertia-vue3';
-import Navbar from "@/components/Navbars/AuthNavbar.vue";
+import Navbar from "@/Components/Navbars/AuthNavbar.vue";
 import FooterSmall from "@/components/Footers/FooterSmall.vue";
 import {Link} from '@inertiajs/inertia-vue3';
 
@@ -97,7 +97,7 @@ const submit = () => {
                             </div>
                             <div class="flex flex-wrap mt-6 relative">
                                 <div class="w-1/2">
-                                    <Link :href="route('dashboard')" class="text-blueGray-200">
+                                    <Link :href="route('home.index')" class="text-blueGray-200" onclick="window.location.assign(route('home.index'))">
                                         <small>Site</small>
                                     </Link>
                                 </div>

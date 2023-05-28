@@ -101,7 +101,7 @@ const submit = () => {
                             </div>
                             <div class="flex flex-wrap mt-6 relative">
                                 <div class="w-1/2">
-                                    <Link :href="route('dashboard')" class="text-blueGray-200">
+                                    <Link :href="route('home.index')" class="text-blueGray-200" onclick="window.location.assign(route('home.index'))">
                                         <small>Site</small>
                                     </Link>
                                 </div>

@@ -9,7 +9,6 @@ use Illuminate\View\View;
 class PageController extends Controller
 {
     /**
-     * Display the specified resource.
      * @param string $slug
      * @return Response|View
      */
