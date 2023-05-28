@@ -51,12 +51,6 @@ const absolute = {
                                 Blog
                             </Link>
                         </li>
-                        <li>
-                            <Link to="/"
-                                  class="text-white hover:text-blueGray-300 text-sm font-semibold block py-1 px-3">
-                                MIT License
-                            </Link>
-                        </li>
                     </ul>
                 </div>
             </div>

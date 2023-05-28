@@ -13,7 +13,9 @@ const props = defineProps(['categories', 'post']);
 
 const form = useForm({
     name: props.post.name,
+    slug: props.post.slug,
     content: props.post.content,
+    description: props.post.description,
     category_id: props.post.category_id,
     file: null
 });
@@ -39,9 +41,14 @@ const form = useForm({
                         <div class="flex flex-wrap">
                             <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
                                 <form
-                                    @submit.prevent="form.put(route('admin.post-update', post.id), { onSuccess: () => form.reset() })">
+                                    @submit.prevent="form.put(route('admin.post-update', post.id))">
                                     <input
                                         v-model="form.name"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                    >
+                                    <InputError :message="form.errors.name" class="mt-2"/>
+                                    <input
+                                        v-model="form.slug"
                                         class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                     >
                                     <InputError :message="form.errors.name" class="mt-2"/>
@@ -52,6 +59,11 @@ const form = useForm({
                                         class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                     />
                                     <InputError :message="form.errors.content" class="mt-2"/>
+                                    <input
+                                        v-model="form.description"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                    >
+                                    <InputError :message="form.errors.description" class="mt-2"/>
                                     <select
                                         class='block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3'
                                         v-model='form.category_id'>

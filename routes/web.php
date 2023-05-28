@@ -2,8 +2,13 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BlogPostBannerController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DefaultPagesController;
+use App\Http\Controllers\Admin\FooterBottomBarContentController;
+use App\Http\Controllers\Admin\FooterUsefulLinkController;
+use App\Http\Controllers\Admin\HeaderNavBarContentController;
+use App\Http\Controllers\Admin\HeaderTopMenuController;
 use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\WidgetController;
@@ -12,6 +17,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NotFoundController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\PriceController;
@@ -39,6 +45,9 @@ Route::get('services', [ServiceController::class, 'index'])->name('services');
 Route::get('pricing', [PriceController::class, 'index'])->name('pricing');
 Route::get('promos', [PromoController::class, 'index'])->name('promos');
 Route::get('blog', [BlogController::class, 'index'])->name('blog');
+Route::get('blog-category/{categorySlug}', [BlogController::class, 'category'])->name('blog-category');
+Route::get('blog-archive/{yearMonth}', [BlogController::class, 'archive'])->name('blog-archive');
+Route::get('blog-search', [BlogController::class, 'search'])->name('blog-search');
 Route::get('contact-us', [ContactController::class, 'index'])->name('contact-us');
 Route::post('contact-us', [ContactController::class, 'save'])->name('contact.save');
 Route::post('subscriber-save', [SubscriberController::class, 'save'])->name('subscriber-save');
@@ -136,6 +145,50 @@ Route::middleware('auth')->group(function () {
         ->name('admin.product-update');
     Route::delete('admin/product-destroy/{product}', [AdminProductController::class, 'destroy'])
         ->name('admin.product-destroy');
+
+    Route::get('/admin/useful-link-list/', [FooterUsefulLinkController::class, 'index'])
+        ->name('admin.useful-link-list');
+    Route::post('admin/useful-link-store', [FooterUsefulLinkController::class, 'linkStore'])
+        ->name('admin.useful-link-store');
+    Route::put('admin/useful-link-update/{usefulLink}', [FooterUsefulLinkController::class, 'linkUpdate'])
+        ->name('admin.useful-link-update');
+
+    Route::get('/admin/top-bar-settings/', [HeaderNavBarContentController::class, 'index'])
+        ->name('admin.top-bar-settings');
+    Route::put('admin/top-bar-settings-update/{headerNavBarContent}', [HeaderNavBarContentController::class, 'update'])
+        ->name('admin.top-bar-settings-update');
+    Route::get('/admin/bottom-bar-settings/', [FooterBottomBarContentController::class, 'index'])
+        ->name('admin.bottom-bar-settings');
+    Route::put(
+        'admin/bottom-bar-settings-update/{bottomBarContent}',
+        [FooterBottomBarContentController::class, 'update']
+    )->name('admin.bottom-bar-settings-update');
+    Route::get('/admin/top-menu/', [HeaderTopMenuController::class, 'index'])->name('admin.top-menu');
+    Route::get('/admin/top-menu-edit-form/{menuItem}', [HeaderTopMenuController::class, 'editForm'])
+        ->name('admin.top-menu-edit-form');
+    Route::put('admin/top-menu-update/{menu}', [HeaderTopMenuController::class, 'update'])
+        ->name('admin.top-menu-update');
+    Route::get('/admin/top-sub-menu-edit-form/{subMenuItem}', [HeaderTopMenuController::class, 'subMenuEditForm'])
+        ->name('admin.top-sub-menu-edit-form');
+    Route::put('admin/top-sub-menu-update/{subMenu}', [HeaderTopMenuController::class, 'subMenuUpdate'])
+        ->name('admin.top-sub-menu-update');
+
+    Route::get('admin/posts-banners', [BlogPostBannerController::class, 'index'])
+        ->name('admin.posts-banners');
+    Route::get('admin/post-banner-add', [BlogPostBannerController::class, 'postBannerAdd'])
+        ->name('admin.post-banner-add');
+    Route::get('admin/post-banner-form/{post}', [BlogPostBannerController::class, 'postBannerForm'])
+        ->name('admin.post-banner-form');
+    Route::post('admin/post-banner-save/{post}', [BlogPostBannerController::class, 'postBannerSave'])
+        ->name('admin.post-banner-save');
+    Route::get('admin/banner-update-form/{banner}', [BlogPostBannerController::class, 'bannerUpdateForm'])
+        ->name('admin.banner-update-form');
+    Route::put('admin/banner-update/{banner}', [BlogPostBannerController::class, 'bannerUpdate'])
+        ->name('admin.banner-update');
+    Route::get('admin/blog-banner-form', [BlogPostBannerController::class, 'blogBannerForm'])
+        ->name('admin.blog-banner-form');
+    Route::post('admin/blog-banner-save', [BlogPostBannerController::class, 'blogBannerSave'])
+        ->name('admin.blog-banner-save');
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])
@@ -145,7 +198,8 @@ Route::get('/landing', static function () {
 })->name('landing');
 
 Route::get('/pages/{slug}', [PageController::class, 'show'])->name('pages.page');
-Route::get('/blog/{post}', [BlogController::class, 'show'])->name('blog.post');
+Route::get('/blog/{postSlug}', [BlogController::class, 'show'])->name('blog.post');
+Route::get('/page-not-found', [NotFoundController::class, 'index'])->name('error-404');
 
 
 require __DIR__ . '/auth.php';

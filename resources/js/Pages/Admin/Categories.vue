@@ -18,7 +18,7 @@ const form = useForm({
 <template>
     <Head><title>Categories | Admin Panel</title></Head>
     <div>
-        <sidebar/>
+        <Sidebar/>
         <div class="relative md:ml-64 bg-blueGray-100">
             <AdminNavbar/>
             <HeaderStats/>

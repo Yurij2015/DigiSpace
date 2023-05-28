@@ -12,12 +12,15 @@
                             <div class="col-md-10 col-sm-12">
                                 <h1 data-caption-animate="fadeInUpSmall">Welcome to DigiSpace</h1>
                                 <p class="quote-classic__text call-subtitle_text" data-caption-animate="fadeInUpSmall"
-                                   data-caption-delay="200">Since our establishment, we have been delivering
-                                    high-quality and <br>sustainable software solutions for corporate business purposes.<span
-                                        class="group-item"></span></p><a class="button button-lg button-primary"
-                                                                         href="hosting.html"
-                                                                         data-caption-animate="fadeInUpSmall"
-                                                                         data-caption-delay="250">Read More</a>
+                                   data-caption-delay="200">We specialize in developing and supporting web applications
+                                    tailored<br> to specific industry domains and corporate missions, with <br>varying
+                                    levels of complexity and thematic focus.
+                                    <span class="group-item"></span>
+                                </p>
+                                <a class="button button-lg button-primary"
+                                   href="#"
+                                   data-caption-animate="fadeInUpSmall"
+                                   data-caption-delay="250">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -28,14 +31,17 @@
                     <div class="container text-start">
                         <div class="row justify-content-center">
                             <div class="col-md-10 col-sm-12">
-                                <h1 data-caption-animate="fadeInUpSmall">Award-Winning Software</h1>
+                                <h2 data-caption-animate="fadeInUpSmall">Analysis and technology selection</h2>
                                 <p class="quote-classic__text call-subtitle_text" data-caption-animate="fadeInUpSmall"
-                                   data-caption-delay="200">The software solutions developed by our company have
-                                    been<br>numerously awarded for usability and innovative features.<span
-                                        class="group-item"></span></p><a class="button button-lg button-primary"
-                                                                         href="hosting.html"
-                                                                         data-caption-animate="fadeInUpSmall"
-                                                                         data-caption-delay="250">Read More</a>
+                                   data-caption-delay="200">Exceptional proficiency and expertise in business
+                                    process<br>analysis, prototype creation, model development,<br> and database
+                                    advancement.
+                                    <span class="group-item"></span>
+                                </p>
+                                <a class="button button-lg button-primary"
+                                   href="#"
+                                   data-caption-animate="fadeInUpSmall"
+                                   data-caption-delay="250">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -46,310 +52,26 @@
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
     </section>
+    <div id="app">
+        <navbar></navbar>
+    </div>
     <!-- Our service-->
     <section class="section section-lg bg-white text-center">
         <div class="container">
-            <h2>Our Services</h2>
-            <div class="row row-30 justify-content-md-center">
-                <div class="col-md-6 col-lg-4">
-                    <!-- Box Chloe-->
-                    <article class="box-chloe box-chloe_secondary">
-                        <div class="box-chloe__icon linearicons-window"></div>
-                        <div class="box-chloe__main">
-                            <h4 class="box-chloe__title">Windows Applications</h4>
-                            <p>We design and develop a variety of applications for Windows including specialized and
-                                custom software.</p><a class="button button-sm button-default button-ujarak"
-                                                       href="hosting.html">View Details</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <!-- Box Chloe-->
-                    <article class="box-chloe box-chloe_secondary">
-                        <div class="box-chloe__icon linearicons-database-check"></div>
-                        <div class="box-chloe__main">
-                            <h4 class="box-chloe__title">Database Management</h4>
-                            <p>TechSoft provides top-notch database management solutions for small and medium businesses
-                                worldwide.</p><a class="button button-sm button-default button-ujarak"
-                                                 href="hosting.html">View Details</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <!-- Box Chloe-->
-                    <article class="box-chloe box-chloe_secondary">
-                        <div class="box-chloe__icon linearicons-vector"></div>
-                        <div class="box-chloe__main">
-                            <h4 class="box-chloe__title">UX & UI Design</h4>
-                            <p>Our team of UX designers creates easy-to-understand interfaces for all kinds of
-                                applications.</p><a class="button button-sm button-default button-ujarak"
-                                                    href="hosting.html">View Details</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <!-- Box Chloe-->
-                    <article class="box-chloe box-chloe_secondary">
-                        <div class="box-chloe__icon linearicons-desktop"></div>
-                        <div class="box-chloe__main">
-                            <h4 class="box-chloe__title">iOS/MacOS Apps</h4>
-                            <p>Our company also develops multipurpose applications for iOS and MacOS systems and
-                                devices.</p><a class="button button-sm button-default button-ujarak"
-                                               href="hosting.html">View Details</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <!-- Box Chloe-->
-                    <article class="box-chloe box-chloe_secondary">
-                        <div class="box-chloe__icon linearicons-bug"></div>
-                        <div class="box-chloe__main">
-                            <h4 class="box-chloe__title">QA & Testing</h4>
-                            <p>We pay a lot of attention to QA and Testing procedures to ensure the best quality of our
-                                software.</p><a class="button button-sm button-default button-ujarak"
-                                                href="hosting.html">View Details</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <!-- Box Chloe-->
-                    <article class="box-chloe box-chloe_secondary">
-                        <div class="box-chloe__icon linearicons-tablet2"></div>
-                        <div class="box-chloe__main">
-                            <h4 class="box-chloe__title">Android Applications</h4>
-                            <p>Our Android apps are highly rated by media and our users as they offer great features on
-                                all Android devices.</p><a class="button button-sm button-default button-ujarak"
-                                                           href="hosting.html">View Details</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
+            <x-our-services-component/>
         </div>
     </section>
     <!-- Pricing Tables-->
     <section class="section section-md bg-gray-2 text-center oh">
         <div class="container wow fadeInUpSmall">
             <h2>Pricing Plans</h2>
-            <div class="pricing-table pricing-table-classic">
-                <!-- Pricing table item-->
-                <article class="pricing-table__item pricing-table-classic__item">
-                    <div class="pricing-table__item-header">
-                        <p class="pricing-table__item-title">Basic</p>
-                    </div>
-                    <div class="pricing-table__item-price"><span
-                            class="pricing-table__item-price-currency">$</span><span
-                            class="pricing-table__item-price-value">399</span>
-                        <div class="pricing-table__item-price-aside"><span class="top">99</span></div>
-                    </div>
-                    <ul class="pricing-table__item-features">
-                        <li><span class="text-marked">Concept development<br>UI design</span></li>
-                        <li>Configuration management</li>
-                        <li>Software quality assurance</li>
-                        <li>App integration</li>
-                    </ul>
-                    <div class="pricing-table__item-control"><a class="button button-default button-ujarak" href="#">Order
-                            now</a></div>
-                </article>
-                <!-- Pricing table item-->
-                <article class="pricing-table__item pricing-table-classic__item pricing-table-classic__item_prefered">
-                    <div class="pricing-table__item-header">
-                        <div class="pricing-table__item-label">Bestseller</div>
-                        <p class="pricing-table__item-title">Optimal</p>
-                    </div>
-                    <div class="pricing-table__item-price"><span
-                            class="pricing-table__item-price-currency">$</span><span
-                            class="pricing-table__item-price-value">599</span>
-                        <div class="pricing-table__item-price-aside"><span class="top">99</span></div>
-                    </div>
-                    <ul class="pricing-table__item-features">
-                        <li><span class="text-marked">Concept development<br>UI design</span></li>
-                        <li><span class="text-marked">Configuration management</span></li>
-                        <li><span class="text-marked">Software quality assurance</span></li>
-                        <li>App integration</li>
-                    </ul>
-                    <div class="pricing-table__item-control"><a class="button btn-primary" href="#">Order now</a></div>
-                </article>
-                <!-- Pricing table item-->
-                <article class="pricing-table__item pricing-table-classic__item">
-                    <div class="pricing-table__item-header">
-                        <p class="pricing-table__item-title">Ultimate</p>
-                    </div>
-                    <div class="pricing-table__item-price"><span
-                            class="pricing-table__item-price-currency">$</span><span
-                            class="pricing-table__item-price-value">999</span>
-                        <div class="pricing-table__item-price-aside"><span class="top">99</span></div>
-                    </div>
-                    <ul class="pricing-table__item-features">
-                        <li><span class="text-marked">Concept development<br>UI design</span></li>
-                        <li><span class="text-marked">Configuration management</span></li>
-                        <li><span class="text-marked">Software quality assurance</span></li>
-                        <li><span class="text-marked">App integration</span></li>
-                    </ul>
-                    <div class="pricing-table__item-control"><a class="button button-default button-ujarak" href="#">Order
-                            now</a></div>
-                </article>
-            </div>
+            <x-price-of-services :$products></x-price-of-services>
         </div>
     </section>
     <!-- Why Choose Us-->
     <section class="section section-sm bg-white text-center">
         <div class="container">
-            <h2>Why Choose Us</h2>
-            <div class="row row-30 wow fadeIn">
-                <div class="col-md-6 col-lg-4">
-                    <!-- Box Alice-->
-                    <article class="box-alice">
-                        <div class="box-alice__inner">
-                            <div class="box-alice__aside">
-                                <div class="box-alice__icon-outer">
-                                    <div class="icon-figure">
-                                        <div class="box-triangle">
-                                            <svg x="0px" y="0px" width="80px" height="80px" viewBox="0 0 100 100"
-                                                 style="fill: #f7f7f7;">
-                                                <path
-                                                    d="M20,93.301c-11,0-15.5-7.794-10-17.321l30-51.962c5.5-9.526,14.5-9.526,20,0l30,51.962 c5.5,9.526,1,17.321-10,17.321H20z"></path>
-                                            </svg>
-                                        </div>
-                                        <span class="box-alice__icon linearicons-cog"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-alice__main">
-                                <h5 class="box-alice__title">High Quality Hardware</h5>
-                                <p>We use top-notch hardware to develop the most efficient apps for our customers.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <!-- Box Alice-->
-                    <article class="box-alice">
-                        <div class="box-alice__inner">
-                            <div class="box-alice__aside">
-                                <div class="box-alice__icon-outer">
-                                    <div class="icon-figure">
-                                        <div class="box-triangle">
-                                            <svg x="0px" y="0px" width="80px" height="80px" viewBox="0 0 100 100"
-                                                 style="fill: #f7f7f7;">
-                                                <path
-                                                    d="M20,93.301c-11,0-15.5-7.794-10-17.321l30-51.962c5.5-9.526,14.5-9.526,20,0l30,51.962 c5.5,9.526,1,17.321-10,17.321H20z"></path>
-                                            </svg>
-                                        </div>
-                                        <span class="box-alice__icon linearicons-headset"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-alice__main">
-                                <h5 class="box-alice__title">Dedicated 24\7 Support</h5>
-                                <p>You can rely on our 24/7 tech support that will gladly solve any app issue you may
-                                    have.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <!-- Box Alice-->
-                    <article class="box-alice">
-                        <div class="box-alice__inner">
-                            <div class="box-alice__aside">
-                                <div class="box-alice__icon-outer">
-                                    <div class="icon-figure">
-                                        <div class="box-triangle">
-                                            <svg x="0px" y="0px" width="80px" height="80px" viewBox="0 0 100 100"
-                                                 style="fill: #f7f7f7;">
-                                                <path
-                                                    d="M20,93.301c-11,0-15.5-7.794-10-17.321l30-51.962c5.5-9.526,14.5-9.526,20,0l30,51.962 c5.5,9.526,1,17.321-10,17.321H20z"></path>
-                                            </svg>
-                                        </div>
-                                        <span class="box-alice__icon linearicons-wallet"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-alice__main">
-                                <h5 class="box-alice__title">30-Day Money-back Guarantee</h5>
-                                <p>If you are not satisfied with our apps, we will return your money in the first 30
-                                    days.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <!-- Box Alice-->
-                    <article class="box-alice">
-                        <div class="box-alice__inner">
-                            <div class="box-alice__aside">
-                                <div class="box-alice__icon-outer">
-                                    <div class="icon-figure">
-                                        <div class="box-triangle">
-                                            <svg x="0px" y="0px" width="80px" height="80px" viewBox="0 0 100 100"
-                                                 style="fill: #f7f7f7;">
-                                                <path
-                                                    d="M20,93.301c-11,0-15.5-7.794-10-17.321l30-51.962c5.5-9.526,14.5-9.526,20,0l30,51.962 c5.5,9.526,1,17.321-10,17.321H20z"></path>
-                                            </svg>
-                                        </div>
-                                        <span class="box-alice__icon linearicons-rocket"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-alice__main">
-                                <h5 class="box-alice__title">Agile and Fast Working Style</h5>
-                                <p>This type of approach to our work helps our specialists to quickly develop better
-                                    apps.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <!-- Box Alice-->
-                    <article class="box-alice">
-                        <div class="box-alice__inner">
-                            <div class="box-alice__aside">
-                                <div class="box-alice__icon-outer">
-                                    <div class="icon-figure">
-                                        <div class="box-triangle">
-                                            <svg x="0px" y="0px" width="80px" height="80px" viewBox="0 0 100 100"
-                                                 style="fill: #f7f7f7;">
-                                                <path
-                                                    d="M20,93.301c-11,0-15.5-7.794-10-17.321l30-51.962c5.5-9.526,14.5-9.526,20,0l30,51.962 c5.5,9.526,1,17.321-10,17.321H20z"></path>
-                                            </svg>
-                                        </div>
-                                        <span class="box-alice__icon linearicons-phone"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-alice__main">
-                                <h5 class="box-alice__title">Some Apps are Free</h5>
-                                <p>We also develop free apps that can be downloaded online without any payments.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <!-- Box Alice-->
-                    <article class="box-alice">
-                        <div class="box-alice__inner">
-                            <div class="box-alice__aside">
-                                <div class="box-alice__icon-outer">
-                                    <div class="icon-figure">
-                                        <div class="box-triangle">
-                                            <svg x="0px" y="0px" width="80px" height="80px" viewBox="0 0 100 100"
-                                                 style="fill: #f7f7f7;">
-                                                <path
-                                                    d="M20,93.301c-11,0-15.5-7.794-10-17.321l30-51.962c5.5-9.526,14.5-9.526,20,0l30,51.962 c5.5,9.526,1,17.321-10,17.321H20z"></path>
-                                            </svg>
-                                        </div>
-                                        <span class="box-alice__icon linearicons-thumbs-up"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-alice__main">
-                                <h5 class="box-alice__title">High Level of Usability</h5>
-                                <p>All our products have high usability allowing users to easily operate the apps.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
+            <x-choose-us-component :$chooseUsCategory :$chooseUsWidgets/>
         </div>
     </section>
     <!-- Facts-->
@@ -358,74 +80,7 @@
         <div class="parallax-content">
             <div class="section-lg text-center text-sm-start">
                 <div class="container">
-                    <div
-                        class="row row-50 flex-md-row-reverse justify-content-md-between align-items-center align-items-lg-start">
-                        <div class="col-md-5 wow fadeInRightSmall">
-                            <div class="box-width-3 box-centered">
-                                <h2>Some Facts About Us</h2>
-                                <p class="text-style-1">More than 1000 applications developed</p><a
-                                    class="button button-lg btn-primary button-ujarak" href="about.html">Read More</a>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-lg-6 wow fadeInLeftSmall">
-                            <div class="row row-style-1">
-                                <div class="col-sm-6">
-                                    <div class="col-inner">
-                                        <!-- Box counter-->
-                                        <!--Counter-->
-                                        <article class="box-counter box-counter_modern">
-                                            <div class="box-counter__main">
-                                                <div class="box-counter__icon linearicons-outbox"></div>
-                                                <div class="counter-prefix">1.</div>
-                                                <div class="counter">6</div>
-                                                <div class="small">k</div>
-                                            </div>
-                                            <p class="box-counter__title">Apps Installed</p>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="col-inner">
-                                        <!-- Box counter-->
-                                        <!--Counter-->
-                                        <article class="box-counter box-counter_modern">
-                                            <div class="box-counter__main">
-                                                <div class="box-counter__icon linearicons-diamond2"></div>
-                                                <div class="counter">27</div>
-                                            </div>
-                                            <p class="box-counter__title">Awards Won</p>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="col-inner">
-                                        <!--Counter-->
-                                        <article class="box-counter box-counter_modern">
-                                            <div class="box-counter__main">
-                                                <div class="box-counter__icon linearicons-user"></div>
-                                                <div class="counter">45</div>
-                                                <div class="counter-postfix">+</div>
-                                            </div>
-                                            <p class="box-counter__title">Staff Members</p>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="col-inner">
-                                        <!--Counter-->
-                                        <article class="box-counter box-counter_modern">
-                                            <div class="box-counter__main">
-                                                <div class="box-counter__icon linearicons-heart"></div>
-                                                <div class="counter">99</div>
-                                                <div class="small small_top">%</div>
-                                            </div>
-                                            <p class="box-counter__title">Satisfied Customers</p>
-                                        </article>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <x-some-facts-about-us-main/>
                 </div>
             </div>
         </div>
@@ -441,94 +96,9 @@
             </defs>
         </svg>
         <div class="container">
-            <h2>Our Projects</h2>
-            <!-- Owl Carousel-->
-            <div class="owl-outer-navigation-wrap owl-carousel_nav-modern wow fadeIn">
-                <div class="owl-carousel quote-creative-carousel review-carousel" data-items="1" data-lg-items="2"
-                     data-stage-padding="0" data-margin="30"
-                     data-owl="{&quot;dots&quot;:true,&quot;nav&quot;:true,&quot;loop&quot;:true,&quot;autoplayTimeout&quot;:3500,&quot;navContainer&quot;:&quot;#owl-carousel-nav&quot;,&quot;dotsEach&quot;:1}">
-                    <div class="item">
-                        <!-- Quote Creative-->
-                        <article class="quote-creative">
-                            <div class="quote-creative__header">
-                                <div class="quote-creative__media"><img src="{{ asset('images/user-2-112x99.jpg') }}"
-                                                                        alt=""
-                                                                        width="112" height="99"/>
-                                </div>
-                                <div class="quote-creative__info">
-                                    <p class="quote-creative__title">Michael Johnson</p>
-                                    <p class="quote-creative__subtitle">Regular Client</p>
-                                </div>
-                            </div>
-                            <div class="quote-creative__main">
-                                <div class="quote-creative__mark">
-                                    <svg x="0px" y="0px" width="39px" height="21px" viewbox="0 0 39 21">
-                                        <g fill="url(#grad1)">
-                                            <polyline
-                                                points="8.955,21 0,14.031 0.002,0.001 15.984,0.001 15.984,13.984 8.969,14.016 "></polyline>
-                                            <polyline
-                                                points="31.97,20.999 23.016,14.031 23.018,0.001 39,0.001 39,13.984 31.984,14.015 "></polyline>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="quote-creative__main-text">
-                                    <p>TechSoft offers a high caliber of resources skilled in Microsoft Azure .NET,
-                                        mobile and Quality Assurance. They became our true business partners over the
-                                        past three years of our cooperation.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="item">
-                        <!-- Quote Creative-->
-                        <article class="quote-creative">
-                            <div class="quote-creative__header">
-                                <div class="quote-creative__media"><img src="{{ asset('images/user-1-112x99.jpg') }}"
-                                                                        alt=""
-                                                                        width="112" height="99"/>
-                                </div>
-                                <div class="quote-creative__info">
-                                    <p class="quote-creative__title">Rachel Adams</p>
-                                    <p class="quote-creative__subtitle">Regular Client</p>
-                                </div>
-                            </div>
-                            <div class="quote-creative__main">
-                                <div class="quote-creative__mark">
-                                    <svg x="0px" y="0px" width="39px" height="21px" viewbox="0 0 39 21">
-                                        <g fill="url(#grad1)">
-                                            <polyline
-                                                points="8.955,21 0,14.031 0.002,0.001 15.984,0.001 15.984,13.984 8.969,14.016 "></polyline>
-                                            <polyline
-                                                points="31.97,20.999 23.016,14.031 23.018,0.001 39,0.001 39,13.984 31.984,14.015 "></polyline>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="quote-creative__main-text">
-                                    <p>TechSoft is a highly skilled and uniquely capable firm with multitudes of talent
-                                        on-board. We have collaborated on a number of diverse projects that have been a
-                                        great success.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="owl-outer-navigation" id="owl-carousel-nav"></div>
-            </div>
+            <x-our-projects :$clientsCategory :$clients></x-our-projects>
         </div>
     </section>
-    <!-- Partners-->
-    <section class="section section-md bg-white text-center">
-        <div class="container">
-            <div class="row row-30 align-items-sm-center">
-                <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src="{{ asset('images/brand-1-126x68.png') }}" alt="" width="126" height="68"/></a></div>
-                <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src="{{ asset('images/brand-2-126x100.png') }}" alt="" width="126" height="100"/></a></div>
-                <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src="{{ asset('images/brand-3-134x83.png') }}" alt="" width="134" height="83"/></a></div>
-                <div class="col-sm-6 col-md-3 wow fadeIn"><a class="link-image" href="#"><img
-                            src="{{ asset('images/brand-4-138x55.png') }}" alt="" width="138" height="55"/></a></div>
-            </div>
-        </div>
-    </section>
+    <!-- Technologies -->
+    <x-technologies></x-technologies>
 @endsection

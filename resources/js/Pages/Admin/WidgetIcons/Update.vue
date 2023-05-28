@@ -38,7 +38,7 @@ const form = useForm({
                                 <form
                                     @submit.prevent="form.put(route('admin.widget-icon-update', icon.id)+'?page='+page, { onSuccess: () => form.reset() })">
                                     <input
-                                        v-model="icon.icon_class"
+                                        v-model="form.icon_class"
                                         class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                     >
                                     <InputError :message="form.errors.icon_class" class="mt-2"/>

@@ -7,11 +7,14 @@
                         <div class="unit flex-sm-row">
                             @foreach($footerWidgets as $widget)
                                 @if($widget->title === 'Phone')
-                                    <div class="unit__left"><span
-                                            class="icon icon-md icon-default {{ $widget->icon }}"></span></div>
+                                    <div class="unit__left">
+                                        <span class="icon icon-md icon-default {{ $widget->icon }}"></span>
+                                    </div>
                                     <div class="unit__body">
-                                        <a class="link link-lg" href="tel:#">{{ $widget->subtitle }}</a>
-                                        <p>{{ $widget->content }}</p>
+                                        <a class="link link-lg" href="{{ route('contact-us') }}">
+                                            {{ $widget->subtitle }}
+                                        </a>
+                                        <p>{!! $widget->content !!}</p>
                                     </div>
                                 @endif
                             @endforeach
@@ -56,7 +59,7 @@
                                 @foreach($widget->widgetIcon as $icon)
                                     <li>
                                         <a class="icon icon-xxs icon-circle icon-filled icon-filled_brand {{ $icon->icon_class }}"
-                                           href="{{ $icon->url }}"></a>
+                                           href="{{ $icon->url }}" target="_blank"></a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -69,35 +72,7 @@
                             <p class="custom-heading-1 custom-heading-bordered">{{ $widget->title }}</p>
                             <div class="divider"></div>
                             <div class="post-small-wrap">
-                                {{-- TODO add ArticleFooterComponent --}}
-                                <!-- Post small-->
-                                <article class="post-small">
-                                    <div class="post-small__aside"><a class="post-small__media"
-                                                                      href="blog-post.html"><img
-                                                class="post-small__image"
-                                                src="{{ asset('images/post-small-1-80x68.jpg') }}"
-                                                alt=""
-                                                width="80" height="68"/></a></div>
-                                    <div class="post-small__main">
-                                        <p class="post-small__title"><a href="blog-post.html">Benefits of Async/Await in
-                                                Programming</a></p>
-                                        <time class="post-small__time" datetime="2022">January 12, 2022</time>
-                                    </div>
-                                </article>
-                                <!-- Post small-->
-                                <article class="post-small">
-                                    <div class="post-small__aside"><a class="post-small__media"
-                                                                      href="blog-post.html"><img
-                                                class="post-small__image"
-                                                src="{{ asset('images/post-small-2-80x68.jpg') }}"
-                                                alt=""
-                                                width="80" height="68"/></a></div>
-                                    <div class="post-small__main">
-                                        <p class="post-small__title"><a href="blog-post.html">Key Considerations and
-                                                Warnings of iPaaS</a></p>
-                                        <time class="post-small__time" datetime="2022">January 12, 2022</time>
-                                    </div>
-                                </article>
+                                <x-latest-news-in-footer :$footerLatestNews/>
                             </div>
                         </div>
                     @endif
@@ -108,24 +83,7 @@
                             <p class="custom-heading-1 custom-heading-bordered">{{ $widget->title }}</p>
                             <div class="divider"></div>
                             <div class="row row-5">
-                                {{-- TODO add UsefulLinkFooterComponent --}}
-                                <div class="col-sm-6">
-                                    <ul class="list-marked list-marked_primary">
-                                        <li><a href="#">DB Management</a></li>
-                                        <li><a href="#">iOS/MacOs Apps</a></li>
-                                        <li><a href="#">Android Apps</a></li>
-                                        <li><a href="#">Windows Apps</a></li>
-                                        <li><a href="#">UX Design</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6">
-                                    <ul class="list-marked list-marked_primary">
-                                        <li><a href="#">Tutorials</a></li>
-                                        <li><a href="#">Product Support</a></li>
-                                        <li><a href="contact-us.html">Contact Us</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                    </ul>
-                                </div>
+                                <x-useful-link-footer :$footerUsefulLinks/>
                             </div>
                         </div>
                     @endif
@@ -134,17 +92,6 @@
         </div>
     </div>
     <div class="footer-default__aside bg-gray-5">
-        <div class="container">
-            <div class="footer-default__aside-inner">
-                <!-- Rights-->
-                <p class="rights"><span>&copy;&nbsp;</span><span
-                        class="copyright-year"></span><span>&nbsp;</span><span>Techsoft</span><span>.&nbsp;</span><a
-                        href="privacy-policy.html">Privacy Policy</a></p>
-                <ul class="list-separated list-inline">
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="#">Support</a></li>
-                </ul>
-            </div>
-        </div>
+        <x-footer-bottom-bar-content/>
     </div>
 </footer>

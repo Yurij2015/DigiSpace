@@ -30,7 +30,8 @@ class PagesController extends Controller
     {
         return Inertia::render('Admin/Pages/Create', [
             'menuItems' => $pagesService->filteredMenuItems(MenuItem::all()),
-            'pageCategories' => PageCategory::all()
+            'pageCategories' => PageCategory::all(),
+            'api_key_tinymce' => env('TINY_MCE_API_KEY')
         ]);
     }
 
@@ -57,7 +58,8 @@ class PagesController extends Controller
         return Inertia::render('Admin/Pages/Update', [
             'menuItems' => $pagesService->filteredMenuItems(MenuItem::all()),
             'pageCategories' => PageCategory::all(),
-            'page' => $page->load('menuItem')->load('pageCategory')
+            'page' => $page->load('menuItem')->load('pageCategory'),
+            'api_key_tinymce' => env('TINY_MCE_API_KEY')
         ]);
     }
 

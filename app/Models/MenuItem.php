@@ -14,12 +14,16 @@ class MenuItem extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name', 'slug', 'href'
+    ];
+
     public function menus(): BelongsToMany
     {
         return $this->belongsToMany(Menu::class);
     }
 
-    public function page(): HasMany
+    public function pages(): HasMany
     {
         return $this->hasMany(Page::class);
     }

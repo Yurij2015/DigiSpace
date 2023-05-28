@@ -47,14 +47,6 @@ const date = new Date().getFullYear();
                                 Blog
                             </a>
                         </li>
-                        <li>
-                            <a
-                                href="/"
-                                class="text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
-                            >
-                                MIT License
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </div>

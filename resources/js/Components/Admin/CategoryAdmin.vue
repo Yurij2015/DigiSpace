@@ -13,6 +13,7 @@ const props = defineProps(['category']);
 
 const form = useForm({
     name: props.category.name,
+    slug: props.category.slug,
     description: props.category.description,
 });
 
@@ -30,18 +31,18 @@ const editing = ref(false);
             <div class="flex justify-between items-center">
                 <div>
                     <span class="text-gray-800">{{ category.name }}</span>
-                    <small class="ml-2 text-sm text-gray-600">{{
-                            new Date(category.created_at).toLocaleString()
-                        }}</small>
-                    <small class="ml-2 text-sm text-gray-600 text-red-400">{{
-                            dayjs(category.created_at).fromNow()
-                        }}</small>
+                    <small class="ml-2 text-sm text-gray-600">
+                        {{ new Date(category.created_at).toLocaleString() }}
+                    </small>
+                    <small class="ml-2 text-sm text-gray-600 text-red-400">
+                        {{ dayjs(category.created_at).fromNow() }}
+                    </small>
                     <small v-if="category.created_at !== category.updated_at" class="text-sm text-gray-600"> &middot;
                         edited</small>
                     <small v-if="category.created_at !== category.updated_at"
-                           class="ml-2 text-sm text-gray-600 text-red-400">- {{
-                            dayjs(category.updated_at).fromNow()
-                        }}</small>
+                           class="ml-2 text-sm text-gray-600 text-red-400">-
+                        {{ dayjs(category.updated_at).fromNow() }}
+                    </small>
                 </div>
                 <Dropdown>
                     <template #trigger>
@@ -82,12 +83,20 @@ const editing = ref(false);
                     class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                 >
                 <InputError :message="form.errors.description" class="mt-2"/>
+                <input
+                    v-model="form.slug"
+                    placeholder="What is category slug?"
+                    class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                >
+                <InputError :message="form.errors.slug" class="mt-2"/>
                 <div class="space-x-2">
                     <PrimaryButton class="mt-4">Save</PrimaryButton>
                     <button class="mt-4" @click="editing = false; form.reset(); form.clearErrors()">Cancel</button>
                 </div>
             </form>
             <p class="mt-4 text-lg text-gray-900">{{ category.description }}</p>
+            <p class="mt-4 text-lg text-gray-900">{{ category.slug ? category.slug : 'no slug' }}</p>
+
         </div>
     </div>
 </template>

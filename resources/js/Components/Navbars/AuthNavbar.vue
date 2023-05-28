@@ -63,7 +63,7 @@ const setNavbarOpen = function () {
                             <i
                                 class="lg:text-blueGray-200 text-blueGray-400 fab fa-facebook text-lg leading-lg"
                             />
-                            <span class="lg:hidden inline-block ml-2">Share</span>
+                            <span class="lg:hidden inline-block ml-2">Facebook</span>
                         </Link>
                     </li>
 
@@ -76,7 +76,7 @@ const setNavbarOpen = function () {
                             <i
                                 class="lg:text-blueGray-200 text-blueGray-400 fab fa-twitter text-lg leading-lg"
                             />
-                            <span class="lg:hidden inline-block ml-2">Tweet</span>
+                            <span class="lg:hidden inline-block ml-2">Twitter</span>
                         </Link>
                     </li>
 
@@ -89,17 +89,8 @@ const setNavbarOpen = function () {
                             <i
                                 class="lg:text-blueGray-200 text-blueGray-400 fab fa-github text-lg leading-lg"
                             />
-                            <span class="lg:hidden inline-block ml-2">Star</span>
+                            <span class="lg:hidden inline-block ml-2">GitHub</span>
                         </Link>
-                    </li>
-
-                    <li class="flex items-center">
-                        <button
-                            class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
-                            type="button"
-                        >
-                            <i class="fas fa-arrow-alt-circle-down"></i> Download
-                        </button>
                     </li>
                 </ul>
             </div>
