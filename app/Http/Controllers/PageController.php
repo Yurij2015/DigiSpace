@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MenuItem;
+use Illuminate\View\View;
+
 class PageController extends Controller
 {
     /**
      * Display the specified resource.
      * @param string $slug
-     * @return string
+     * @return View
      */
-    public function show(string $slug): string
+    public function show(string $slug): View
     {
-        return view('pages.show', ['slug' => $slug]);
+        $menuItemPage = MenuItem::with('pages')->where('slug', $slug)->firstOrFail();
+        return view('pages.show', [
+            'page' => $menuItemPage->pages->first(),
+        ]);
     }
 }

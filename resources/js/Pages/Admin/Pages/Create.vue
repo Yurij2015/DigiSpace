@@ -6,6 +6,7 @@ import Sidebar from "@/Components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
+import Editor from '@tinymce/tinymce-vue'
 
 let props = defineProps(['pageCategories', 'menuItems']);
 const form = useForm({
@@ -37,7 +38,7 @@ const form = useForm({
                         <div class="flex flex-wrap">
                             <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
                                 <form
-                                    @submit.prevent="form.post(route('admin.page-create'), { onSuccess: () => form.reset() })">
+                                    @submit.prevent="form.post(route('admin.page-create'))">
                                     <input
                                         v-model="form.name"
                                         placeholder="What is page title?"
@@ -55,15 +56,16 @@ const form = useForm({
                                     <textarea
                                         v-model="form.description"
                                         placeholder="What is page description?"
-                                        class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                     ></textarea>
                                     <InputError :message="form.errors.description" class="mt-2"/>
 
-                                    <textarea
+                                    <Editor
+                                        :api-key=api_key_tinymce
                                         v-model="form.content"
                                         placeholder="What is page content?"
                                         class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
-                                    ></textarea>
+                                    ></Editor>
                                     <InputError :message="form.errors.content" class="mt-2"/>
 
                                     <input
