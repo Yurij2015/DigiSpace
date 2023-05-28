@@ -23,7 +23,7 @@ class MenuItem extends Model
         return $this->belongsToMany(Menu::class);
     }
 
-    public function page(): HasMany
+    public function pages(): HasMany
     {
         return $this->hasMany(Page::class);
     }
