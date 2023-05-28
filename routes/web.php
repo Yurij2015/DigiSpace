@@ -17,6 +17,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NotFoundController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\PriceController;
@@ -198,6 +199,7 @@ Route::get('/landing', static function () {
 
 Route::get('/pages/{slug}', [PageController::class, 'show'])->name('pages.page');
 Route::get('/blog/{postSlug}', [BlogController::class, 'show'])->name('blog.post');
+Route::get('/page-not-found', [NotFoundController::class, 'index'])->name('error-404');
 
 
 require __DIR__ . '/auth.php';
