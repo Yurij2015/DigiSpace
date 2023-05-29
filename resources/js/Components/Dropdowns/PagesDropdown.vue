@@ -49,11 +49,11 @@ let toggleDropdown = function (event) {
             >
                 Login
             </Link>
-            <Link :href="route('register')" v-if="!$page.props.auth.user"
-                  class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-            >
-                Register
-            </Link>
+<!--            <Link :href="route('register')" v-if="!$page.props.auth.user"-->
+<!--                  class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"-->
+<!--            >-->
+<!--                Register-->
+<!--            </Link>-->
 
             <DropdownLink :href="route('logout')" method="post"
                           v-if="$page.props.auth.user" as="button">

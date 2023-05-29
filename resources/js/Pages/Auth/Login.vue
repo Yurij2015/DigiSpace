@@ -102,9 +102,9 @@ const submit = () => {
                                     </Link>
                                 </div>
                                 <div class="w-1/2 text-right">
-                                    <Link :href="route('register')" class="text-blueGray-200">
+<!--                                    <Link :href="route('register')" class="text-blueGray-200">-->
                                         <small>Register</small>
-                                    </Link>
+<!--                                    </Link>-->
                                 </div>
                             </div>
                         </div>
