@@ -6,9 +6,10 @@ use App\Models\BlogPostBanner;
 use App\Models\Category;
 use App\Models\Post;
 use App\Repositories\BlogRepository;
-use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class BlogController extends Controller
 {
@@ -19,10 +20,13 @@ class BlogController extends Controller
         $this->blogRepository = $blogRepository;
     }
 
-    public function index(): View
+    public function index(): Response | View
     {
         $posts = Post::with('category')
             ->paginate(config('constants.NUMBER_POSTS_IN_BLOG_PAGE'));
+        if ($posts->count() === 0) {
+            return response()->view('errors.page-not-found')->setStatusCode(404);
+        }
         $banner = BlogPostBanner::where('blog_page_type', 'blog')->first();
         return view('blog.index', [
             'sideBarData' => $this->sideBarData(),
@@ -32,12 +36,15 @@ class BlogController extends Controller
         ]);
     }
 
-    public function show(string $postSlug): View
+    public function show(string $postSlug): View | Response
     {
         $post = Post::where('slug', $postSlug)
             ->with('blogPostBanner')
             ->with('category')
-            ->firstOrFail();
+            ->first();
+        if ($post === null) {
+            return response()->view('errors.page-not-found')->setStatusCode(404);
+        }
         return view('blog.post_show', [
             'post' => $post,
             'sideBarData' => $this->sideBarData(),
