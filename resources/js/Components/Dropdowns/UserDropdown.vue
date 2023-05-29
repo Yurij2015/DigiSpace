@@ -34,7 +34,7 @@ let toggleDropdown = function (event) {
           <img
               alt="..."
               class="w-full rounded-full align-middle border-none shadow-lg"
-              :src="'/img/ava.jpg'"
+              :src="'/images/ava.jpg'"
           />
         </span>
             </div>
