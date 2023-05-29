@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -17,22 +16,22 @@ class ProductSeeder extends Seeder
     {
         $products = [
             [
-                'title' => "Basic",
-                'price_value' => '399.99',
-                'details' => 'starting at',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'title' => 'Optimal',
-                'price_value' => '599.99',
-                'details' => 'starting at',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'title' => "Ultimate",
+                'title' => "Landing page",
                 'price_value' => '999.99',
+                'details' => 'starting at',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'title' => 'Website with CMS',
+                'price_value' => '1499.99',
+                'details' => 'starting at',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'title' => "Custom development",
+                'price_value' => '1999.99',
                 'details' => 'starting at',
                 'created_at' => now(),
                 'updated_at' => now()
