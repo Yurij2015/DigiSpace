@@ -71,8 +71,7 @@
                                     <a href="{{ route('blog') }}">Blog</a>
                                     <ul class="rd-navbar-dropdown">
                                         @foreach($postsForMenu as $post)
-                                            <li><a href="{{ route('blog.post', $post->slug) }}">Blog post
-                                                    - {{ $post->id }}</a>
+                                            <li><a href="{{ route('blog.post', $post->slug) }}">{{ $post->name }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
