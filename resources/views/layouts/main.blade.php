@@ -14,6 +14,8 @@
         <meta property="og:title" content="{{ $post->name }}"/>
         <meta property="og:description" content="{{ $post->description }}"/>
         <meta property="og:image" content="{{ $post->img_path }}"/>
+        <meta name="description" content="{{ $post->description }}"/>
+        <meta name="keywords" content="{{ $post->name }}"/>
     @endif
     <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     <!-- Stylesheets-->
