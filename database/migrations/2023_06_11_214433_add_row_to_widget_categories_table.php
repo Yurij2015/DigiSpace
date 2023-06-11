@@ -12,8 +12,8 @@ return new class extends Migration {
     {
         DB::table('widget_categories')->insert([
             'name' => 'Images for pages',
-            'title' => 'Images for pages',
-            'description' => 'Images for pages',
+            'title' => 'Images for pages category',
+            'description' => 'Images for use on pages',
             'image' => null,
             'created_at' => now(),
             'updated_at' => now()
