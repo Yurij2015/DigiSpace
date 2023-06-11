@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Str;
 
 class Page extends Model
 {
@@ -25,5 +27,14 @@ class Page extends Model
     public function pageCategory(): BelongsTo
     {
         return $this->belongsTo(PageCategory::class);
+    }
+
+    protected static function boot(): void
+    {
+        parent::boot();
+
+        static::updating(static function ($page) {
+            $page->slug = Str::slug($page->name);
+        });
     }
 }

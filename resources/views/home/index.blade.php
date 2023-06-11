@@ -10,15 +10,16 @@
                     <div class="container text-start">
                         <div class="row justify-content-center">
                             <div class="col-md-10 col-sm-12">
-                                <h1 data-caption-animate="fadeInUpSmall">Welcome to DigiSpace</h1>
+                                <h1 data-caption-animate="fadeInUpSmall">Opening the Space of High Technologies -
+                                    DigiSpace</h1>
                                 <p class="quote-classic__text call-subtitle_text" data-caption-animate="fadeInUpSmall"
-                                   data-caption-delay="200">We specialize in developing and supporting web applications
-                                    tailored<br> to specific industry domains and corporate missions, with <br>varying
-                                    levels of complexity and thematic focus.
+                                   data-caption-delay="200">Our web development agency is your reliable partner for
+                                    business automation and web development for specific industries. We offer our
+                                    expertise combined with top-notch technologies!
                                     <span class="group-item"></span>
                                 </p>
                                 <a class="button button-lg button-primary"
-                                   href="#"
+                                   href="{{ route('pages.page', 'opening-the-space-of-high-technologies') }}"
                                    data-caption-animate="fadeInUpSmall"
                                    data-caption-delay="250">Read More</a>
                             </div>
@@ -31,11 +32,12 @@
                     <div class="container text-start">
                         <div class="row justify-content-center">
                             <div class="col-md-10 col-sm-12">
-                                <h2 data-caption-animate="fadeInUpSmall">Analysis and technology selection</h2>
+                                <h2 data-caption-animate="fadeInUpSmall">Top-Notch Analytics and Consulting on Web
+                                    Development Technologies</h2>
                                 <p class="quote-classic__text call-subtitle_text" data-caption-animate="fadeInUpSmall"
-                                   data-caption-delay="200">Exceptional proficiency and expertise in business
-                                    process<br>analysis, prototype creation, model development,<br> and database
-                                    advancement.
+                                   data-caption-delay="200">Our expertise is at your service. We provide consulting
+                                    services and an overall evaluation of your ideas to select the best technologies and
+                                    solutions for your benefit.
                                     <span class="group-item"></span>
                                 </p>
                                 <a class="button button-lg button-primary"

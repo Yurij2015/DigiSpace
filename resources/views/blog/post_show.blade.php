@@ -6,7 +6,7 @@
         <div class="breadcrumbs-custom__aside bg-image context-dark"
              style="background-image: url({{ asset('images/bg-image-15-1920x860.jpg')}});">
             <div class="container">
-                <h2 class="breadcrumbs-custom__title">{{ $post->name }}</h2>
+                <h1 class="post-title">{{ $post->name }}</h1>
             </div>
         </div>
         <div class="breadcrumbs-custom__main bg-gray-light">
@@ -150,5 +150,9 @@
 <style>
     .product-social-links {
         display: flex;
+    }
+
+    .post-title {
+        font-size: 28px;
     }
 </style>

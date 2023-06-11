@@ -6,7 +6,7 @@
         <div class="breadcrumbs-custom__aside bg-image context-dark"
              style="background-image: url({{ asset('images/bg-image-15-1920x860.jpg')}});">
             <div class="container">
-                <h2 class="breadcrumbs-custom__title">{{ $page->name }}</h2>
+                <h1 class="post-title">{{ $page->name }}</h1>
             </div>
         </div>
         <div class="breadcrumbs-custom__main bg-gray-light">
@@ -20,25 +20,22 @@
         </div>
     </section>
     <!-- Page title-->
-    <section class="section section-xs bg-white text-center">
+    <section class="section section-lg bg-white">
         <div class="container">
-            <div class="row justify-content-md-center">
-                <div class="col-md-9 col-lg-8 col-xl-6">
-                    <h3>{{ $page->name }}</h3>
-                    <p class="big">{!! $page->description !!}</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section section-xs bg-white">
-        <div class="container grid-system-bordered grid-demonstration">
-            <div class="row">
-                <div class="col-10 offset-1">
-                    <article class="quote-classic quote-classic_secondary">
-                        {!! $page->content !!}
+            <article class="post-layout">
+                <div class="blog-layout__main">
+                    <article class="post-single">
+                        <div class="quote-classic quote-classic_secondary">
+                            <p>{!! $page->content !!}</p>
+                        </div>
                     </article>
                 </div>
-            </div>
+            </article>
         </div>
     </section>
 @endsection
+<style>
+    .post-title {
+        font-size: 28px;
+    }
+</style>
