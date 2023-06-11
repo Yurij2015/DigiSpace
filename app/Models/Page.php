@@ -36,5 +36,9 @@ class Page extends Model
         static::updating(static function ($page) {
             $page->slug = Str::slug($page->name);
         });
+
+        static::creating(static function ($page) {
+            $page->slug = Str::slug($page->name);
+        });
     }
 }
