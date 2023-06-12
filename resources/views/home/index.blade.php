@@ -41,7 +41,7 @@
                                     <span class="group-item"></span>
                                 </p>
                                 <a class="button button-lg button-primary"
-                                   href="#"
+                                   href="{{ route('pages.page', 'top-notch-analytics-and-consulting-on-web-development-technologies') }}"
                                    data-caption-animate="fadeInUpSmall"
                                    data-caption-delay="250">Read More</a>
                             </div>
