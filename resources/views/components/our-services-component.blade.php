@@ -6,9 +6,10 @@
             <div class="box-chloe__icon linearicons-window"></div>
             <div class="box-chloe__main">
                 <h4 class="box-chloe__title text-21">Template Implementation</h4>
-                <p>We provide html template implementation for websites built on Symfony, Laravel, and Yii2 php
+                <p>We provide HTML template implementation for websites built on Symphony, Laravel, and Yii2 PHP
                     frameworks.</p>
-                <a class="button button-sm button-default button-ujarak" href="hosting.html">
+                <a class="button button-sm button-default button-ujarak"
+                   href="{{ route('pages.page', 'template-implementation') }}">
                     View Details
                 </a>
             </div>
@@ -20,10 +21,10 @@
             <div class="box-chloe__icon linearicons-code"></div>
             <div class="box-chloe__main">
                 <h4 class="box-chloe__title text-21">Legacy Code Refactoring</h4>
-                <p>We provide refactoring of legacy projects using new technologies and frameworks such as
-                    Symfony, Laravel, Yii2.</p>
+                <p>We provide refactoring of legacy projects using new technologies and frameworks such as Symphony,
+                    Laravel, and Yii2.</p>
                 <a class="button button-sm button-default button-ujarak"
-                   href="hosting.html">View Details</a>
+                   href="{{ route('pages.page', 'legacy-code-refactoring') }}">View Details</a>
             </div>
         </article>
     </div>
@@ -33,9 +34,10 @@
             <div class="box-chloe__icon linearicons-chart-settings"></div>
             <div class="box-chloe__main">
                 <h4 class="box-chloe__title">CRM and CMS systems</h4>
-                <p>Our team develops diverse CMS apps for simple website administration, and CRM apps for managing
+                <p>Our team develops diverse CMS apps for simple website administration and CRM apps for managing
                     customers.</p>
-                <a class="button button-sm button-default button-ujarak" href="hosting.html">
+                <a class="button button-sm button-default button-ujarak"
+                   href="{{ route('pages.page', 'crm-and-cms-systems') }}">
                     View Details
                 </a>
             </div>
@@ -50,7 +52,7 @@
                 <p>We specialize in crafting versatile web applications that cater to a diverse range of business areas
                     and operations.</p>
                 <a class="button button-sm button-default button-ujarak"
-                   href="hosting.html">View Details</a>
+                   href="{{ route('pages.page', 'web-applications') }}">View Details</a>
             </div>
         </article>
     </div>
@@ -60,8 +62,9 @@
             <div class="box-chloe__icon linearicons-bug"></div>
             <div class="box-chloe__main">
                 <h4 class="box-chloe__title">QA & Testing</h4>
-                <p>We prioritize QA and testing procedures to guarantee top-notch quality for our software.</p>
-                <a class="button button-sm button-default button-ujarak" href="hosting.html">View Details</a>
+                <p>We prioritize QA and testing procedures to guarantee top-notch quality for your software.</p>
+                <a class="button button-sm button-default button-ujarak"
+                   href="{{ route('pages.page', 'qa-testing') }}">View Details</a>
             </div>
         </article>
     </div>
@@ -72,7 +75,8 @@
             <div class="box-chloe__main">
                 <h4 class="box-chloe__title">Responsive Web Apps</h4>
                 <p>We develop responsive web apps that provide enhanced user experience across multiple devices.</p>
-                <a class="button button-sm button-default button-ujarak" href="hosting.html">View Details</a>
+                <a class="button button-sm button-default button-ujarak"
+                   href="{{ route('pages.page', 'responsive-web-apps') }}">View Details</a>
             </div>
         </article>
     </div>

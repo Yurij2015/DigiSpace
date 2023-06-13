@@ -4,7 +4,10 @@
         <div class="box-width-3 box-centered">
             <h2>Some Facts About Us</h2>
             <p class="text-style-1">More than 200 web-applications developed</p><a
-                class="button button-lg btn-primary button-ujarak" href="about.html">Read More</a>
+                class="button button-lg btn-primary button-ujarak"
+                href="{{ route('pages.page', 'meet-digispace-the-company-which-opens-a-new-era-in-the-web-development-industry') }}">
+                Read More
+            </a>
         </div>
     </div>
     <div class="col-md-7 col-lg-6 wow fadeInLeftSmall">

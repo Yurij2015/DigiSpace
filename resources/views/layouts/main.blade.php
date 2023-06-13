@@ -17,6 +17,15 @@
         <meta name="description" content="{{ $post->description }}"/>
         <meta name="keywords" content="{{ $post->name }}"/>
     @endif
+    @if(isset($page) && url()->current() === route('pages.page', $page->slug))
+        <meta property="og:url" content="{{ route('pages.page', $page->slug) }}"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="{{ $page->name }}"/>
+        <meta property="og:description" content="{{ $page->description }}"/>
+        <meta property="og:image" content="{{ $pageImage }}"/>
+        <meta name="description" content="{{ $page->description }}"/>
+        <meta name="keywords" content="{{ $page->meta }}"/>
+    @endif
     <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700%7CSpace+Mono">
