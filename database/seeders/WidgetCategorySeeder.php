@@ -84,7 +84,7 @@ class WidgetCategorySeeder extends Seeder
                 'name' => 'Some Facts About Us',
                 'title' => 'DigiSpace | Some Facts About Us',
                 'description' => 'More than 1000 apps developed',
-                'image' => 'images/bg-3-1920x480.jpg',
+                'image' => 'images/bg-about-page-some-facts.jpeg',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
