@@ -5,14 +5,17 @@
     <section class="section swiper-container swiper-slider swiper_style-1 swiper_height-1 swiper-controls-classic"
              data-swiper='{"loop":true,"autoplay":{"delay":5000},"simulateTouch":false}'>
         <div class="swiper-wrapper">
-            <div class="swiper-slide bg-image-dark" data-slide-bg="images/slider-classic-slide-1-1920x710.jpg">
+            <div class="swiper-slide bg-image-dark"
+                 data-slide-bg="{{ asset('images/slider-first-home-page.jpg') }}">
                 <div class="swiper-slide-caption">
                     <div class="container text-start">
                         <div class="row justify-content-center">
-                            <div class="col-md-10 col-sm-12">
+                            <div class="col-md-10 col-sm-12"
+                                 style="background-color: rgba(128,171,229,0.78); padding: 50px">
                                 <h1 data-caption-animate="fadeInUpSmall">Opening the Space of High Technologies -
                                     DigiSpace</h1>
-                                <p class="quote-classic__text call-subtitle_text" data-caption-animate="fadeInUpSmall"
+                                <p class="quote-classic__text call-subtitle_text"
+                                   data-caption-animate="fadeInUpSmall"
                                    data-caption-delay="200">Our web development agency is your reliable partner for
                                     business automation and web development for specific industries. We offer our
                                     expertise combined with top-notch technologies!
@@ -27,11 +30,12 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide bg-image-dark" data-slide-bg="images/slider-classic-slide-2-1920x710.jpg">
+            <div class="swiper-slide bg-image-dark" data-slide-bg="images/slider-second-home-page.jpg">
                 <div class="swiper-slide-caption">
                     <div class="container text-start">
                         <div class="row justify-content-center">
-                            <div class="col-md-10 col-sm-12">
+                            <div class="col-md-10 col-sm-12"
+                                 style="background-color: rgba(128,171,229,0.78); padding: 50px">
                                 <h2 data-caption-animate="fadeInUpSmall">Top-Notch Analytics and Consulting on Web
                                     Development Technologies</h2>
                                 <p class="quote-classic__text call-subtitle_text" data-caption-animate="fadeInUpSmall"
@@ -78,7 +82,7 @@
     </section>
     <!-- Facts-->
     <section class="section parallax-container bg-gray-darker"
-             data-parallax-img="{{ asset('images/bg-2-1920x545.jpg') }}">
+             data-parallax-img="{{ asset('images/bg-about-page-some-facts.jpeg') }}">
         <div class="parallax-content">
             <div class="section-lg text-center text-sm-start">
                 <div class="container">
