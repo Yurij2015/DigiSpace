@@ -54,3 +54,9 @@ import {Link} from '@inertiajs/inertia-vue3';
         </div>
     </div>
 </template>
+<style>
+img {
+    max-width: 30%;
+    height: auto;
+}
+</style>
