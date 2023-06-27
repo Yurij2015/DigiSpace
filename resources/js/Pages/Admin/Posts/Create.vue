@@ -48,6 +48,18 @@ const form = useForm({
                                     <InputError :message="form.errors.name" class="mt-2"/>
                                     <Editor
                                         :api-key=api_key_tinymce
+                                        :init="{
+                                            height: 500,
+                                            plugins: [
+                                           'advlist autolink lists link image charmap print preview anchor',
+                                           'searchreplace visualblocks code fullscreen',
+                                           'insertdatetime media table paste code help wordcount'
+                                           ],
+                                            toolbar:
+                                           'undo redo | formatselect | bold italic backcolor | \
+                                           alignleft aligncenter alignright alignjustify | \
+                                           bullist numlist outdent indent | removeformat | help'
+                                        }"
                                         v-model="form.content"
                                         placeholder="What is post content?"
                                         class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
