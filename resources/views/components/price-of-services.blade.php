@@ -13,7 +13,7 @@
                     </div>
                     <div class="pricing-table__item-control">
                         <div class="button-wrap">
-                            <a class="button btn-primary-outline button-ujarak" href="#">Order now</a>
+                            <a class="button btn-primary-outline button-ujarak" href="{{ route('contact-us') }}">Order now</a>
                         </div>
                     </div>
                     <ul class="pricing-table__item-features">
@@ -39,7 +39,7 @@
                     </div>
                     <div class="pricing-table__item-control">
                         <div class="button-wrap">
-                            <a class="button btn-white-outline button-ujarak" href="#">Order now</a>
+                            <a class="button btn-white-outline button-ujarak" href="{{ route('contact-us') }}">Order now</a>
                         </div>
                     </div>
                     <ul class="pricing-table__item-features">
@@ -64,7 +64,7 @@
                     </div>
                     <div class="pricing-table__item-control">
                         <div class="button-wrap">
-                            <a class="button btn-primary-outline button-ujarak" href="#">Order now</a>
+                            <a class="button btn-primary-outline button-ujarak" href="{{ route('contact-us') }}">Order now</a>
                         </div>
                     </div>
                     <ul class="pricing-table__item-features">

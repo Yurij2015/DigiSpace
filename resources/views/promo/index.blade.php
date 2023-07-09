@@ -54,7 +54,7 @@
                                     </div>
                                     <p class="promo-classic__price-old">{{ $content->price_old }}</p>
                                     <div class="promo-classic__control">
-                                        <a class="button button-primary button-ujarak" href="#">Order now</a>
+                                        <a class="button button-primary button-ujarak" href="{{ route('contact-us') }}">Order now</a>
                                     </div>
                                 </div>
                             </div>
