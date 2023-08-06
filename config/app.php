@@ -211,5 +211,5 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
-
+    'facebook_pixel_id' => env('FACEBOOK_PIXEL_ID'),
 ];
