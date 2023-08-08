@@ -15,10 +15,10 @@ use Illuminate\Http\RedirectResponse;
 
 class PagesController extends Controller
 {
+    public const EXCLUDED_SLUGS = ['about', 'services', 'pricing', 'promos', 'blog', 'pages', 'contact-us'];
     public function index(PagesService $pagesService): Response
     {
-        $excluledPages = ['about', 'services', 'pricing', 'promos', 'blog', 'pages', 'contact-us'];
-        $pages = $pagesService->filteredMenuItems($excluledPages, 6);
+        $pages = $pagesService->filteredPages(self::EXCLUDED_SLUGS, 6);
         return Inertia::render('Admin/Pages/Index', ['pages' => $pages]);
     }
 
@@ -30,7 +30,7 @@ class PagesController extends Controller
     final public function pageForm(PagesService $pagesService): Response
     {
         return Inertia::render('Admin/Pages/Create', [
-            'menuItems' => $pagesService->filteredMenuItems(MenuItem::all()),
+            'menuItems' => $pagesService->filteredMenuItems(self::EXCLUDED_SLUGS),
             'pageCategories' => PageCategory::all(),
             'api_key_tinymce' => config('app.tiny_mce_api_key')
         ]);
@@ -57,7 +57,7 @@ class PagesController extends Controller
     final public function pageUpdateForm(Page $page, PagesService $pagesService): Response
     {
         return Inertia::render('Admin/Pages/Update', [
-            'menuItems' => $pagesService->filteredMenuItems(MenuItem::all()),
+            'menuItems' => $pagesService->filteredMenuItems(self::EXCLUDED_SLUGS),
             'pageCategories' => PageCategory::all(),
             'page' => $page->load('menuItem')->load('pageCategory'),
             'api_key_tinymce' => config('app.tiny_mce_api_key')
