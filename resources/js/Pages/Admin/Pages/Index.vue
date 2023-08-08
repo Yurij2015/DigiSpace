@@ -5,6 +5,7 @@ import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, Link} from '@inertiajs/inertia-vue3';
 import Page from "@/Components/Admin/Page.vue";
+import Pagination from "@/Components/Pagination.vue";
 
 defineProps(['pages']);
 let pageTitle = "Pages";
@@ -33,7 +34,7 @@ let pageTitle = "Pages";
                     <div class="flex flex-wrap">
                         <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
                             <Page
-                                v-for="page in pages"
+                                v-for="page in pages.data"
                                 :key="page.id"
                                 :page="page"
                             />
@@ -41,6 +42,7 @@ let pageTitle = "Pages";
                     </div>
                 </div>
             </div>
+            <Pagination class="mt-6" :links="pages.links"/>
             <FooterAdmin/>
         </div>
     </div>

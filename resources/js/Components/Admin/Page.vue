@@ -15,13 +15,13 @@ import {Link} from '@inertiajs/inertia-vue3';
                         Slug: {{ page.slug }}
                     </h6>
                     <div>
-                        <small class="font-normal leading-normal mt-0 mb-4 text-blueGray-800">
+                        <small class="font-normal leading-normal mt-0 mb-4 text-blueGray-800" v-if="page.menu_item">
                             Menu item: {{ page.menu_item.name }}
                         </small>
                     </div>
                     <div>
-                        <small class="font-normal leading-normal mt-0 mb-4 text-blueGray-800">
-                            Page Category: {{ page.page_category_id }}
+                        <small class="font-normal leading-normal mt-0 mb-4 text-blueGray-800" v-if="page.page_category">
+                            Page Category: {{ page.page_category.name }}
                         </small>
                     </div>
                 </div>

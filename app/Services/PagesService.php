@@ -2,17 +2,14 @@
 
 namespace App\Services;
 
-use App\Models\MenuItem;
 use App\Models\Page;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class PagesService
 {
-    public function filteredMenuItems($menuItems): Collection
+    public function filteredMenuItems($excluledPages, $count): LengthAwarePaginator
     {
-        $excluledPages = ['about', 'services', 'pricing', 'promos', 'blog', 'pages', 'contact-us'];
-        return $menuItems->reject(function (MenuItem|Page $value) use ($excluledPages) {
-            return in_array($value->slug, $excluledPages, true);
-        });
+        return Page::with('menuItem')->whereNotIn('slug', $excluledPages)
+            ->orderBy('created_at', 'desc')->paginate($count);
     }
 }
