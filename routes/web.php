@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\WidgetIconController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FooterPagesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NotFoundController;
 use App\Http\Controllers\PageController;
@@ -201,5 +202,8 @@ Route::get('/pages/{slug}', [PageController::class, 'show'])->name('pages.page')
 Route::get('/blog/{postSlug}', [BlogController::class, 'show'])->name('blog.post');
 Route::get('/page-not-found', [NotFoundController::class, 'index'])->name('error-404');
 
+Route::get('privacy-policy', [FooterPagesController::class, 'privacyPolicy'])->name('privacy-policy');
+Route::get('faq', [FooterPagesController::class, 'faq'])->name('faq');
+Route::get('support', [FooterPagesController::class, 'support'])->name('support');
 
 require __DIR__ . '/auth.php';

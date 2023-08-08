@@ -212,4 +212,5 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
     'facebook_pixel_id' => env('FACEBOOK_PIXEL_ID'),
+    'tiny_mce_api_key' => env('TINY_MCE_API_KEY'),
 ];

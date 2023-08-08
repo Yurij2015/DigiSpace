@@ -35,7 +35,7 @@ class WidgetController extends Controller
     {
         return Inertia::render('Admin/Widgets/Create', [
             'widgetCategories' => WidgetCategory::all(),
-            'api_key_tinymce' => env('TINY_MCE_API_KEY')
+            'api_key_tinymce' => config('app.tiny_mce_api_key')
         ]);
     }
 
@@ -86,7 +86,7 @@ class WidgetController extends Controller
         return Inertia::render('Admin/Widgets/Update', [
             'widget' => $widget,
             'widgetCategories' => WidgetCategory::all(),
-            'api_key_tinymce' => env('TINY_MCE_API_KEY')
+            'api_key_tinymce' => config('app.tiny_mce_api_key')
         ]);
     }
 

@@ -17,7 +17,8 @@ class PagesController extends Controller
 {
     public function index(PagesService $pagesService): Response
     {
-        $pages = $pagesService->filteredMenuItems(Page::with('menuItem')->get());
+        $excluledPages = ['about', 'services', 'pricing', 'promos', 'blog', 'pages', 'contact-us'];
+        $pages = $pagesService->filteredMenuItems($excluledPages, 6);
         return Inertia::render('Admin/Pages/Index', ['pages' => $pages]);
     }
 
@@ -31,7 +32,7 @@ class PagesController extends Controller
         return Inertia::render('Admin/Pages/Create', [
             'menuItems' => $pagesService->filteredMenuItems(MenuItem::all()),
             'pageCategories' => PageCategory::all(),
-            'api_key_tinymce' => env('TINY_MCE_API_KEY')
+            'api_key_tinymce' => config('app.tiny_mce_api_key')
         ]);
     }
 
@@ -59,7 +60,7 @@ class PagesController extends Controller
             'menuItems' => $pagesService->filteredMenuItems(MenuItem::all()),
             'pageCategories' => PageCategory::all(),
             'page' => $page->load('menuItem')->load('pageCategory'),
-            'api_key_tinymce' => env('TINY_MCE_API_KEY')
+            'api_key_tinymce' => config('app.tiny_mce_api_key')
         ]);
     }
 

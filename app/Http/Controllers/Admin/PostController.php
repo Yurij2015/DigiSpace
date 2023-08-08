@@ -39,7 +39,7 @@ class PostController extends Controller
     {
         return Inertia::render('Admin/Posts/Create', [
             'categories' => Category::all(),
-            'api_key_tinymce' => env('TINY_MCE_API_KEY')
+            'api_key_tinymce' => config('app.tiny_mce_api_key')
         ]);
     }
 
