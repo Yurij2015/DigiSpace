@@ -10,11 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Compile CSS and Javascript
-      run: |
-        npm install
-        npm run build
-  
+    - name: Install project dependencies
+      run: npm install 
+    - name: Build project
+      run: npm run build 
     - name: Configure PHP 8.1
       uses: shivammathur/setup-php@master
       with:
