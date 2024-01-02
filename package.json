@@ -27,6 +27,7 @@
         "chart.js": "2.9.4",
         "core-js": "3.9.1",
         "dayjs": "^1.11.5",
-        "vue-router": "4.0.5"
+        "vue-router": "4.0.5",
+        "ziggy-js": "github:tightenco/ziggy"
     }
 }
