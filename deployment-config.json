@@ -2,7 +2,8 @@
     {
         "name": "test-server",
         "ip": "159.89.15.103",
-        "username": "digi-space-test",
+        "port": "22",
+        "username": "root",
         "beforeHooks": "",
         "afterHooks": "",
         "path": "/var/www/t-digi-space"
