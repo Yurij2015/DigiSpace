@@ -96,7 +96,7 @@ jobs:
         env:
           GITHUB_SHA: ${{ github.sha }}
           RELEASE_PATH: ${{ matrix.server.path }}/releases/${{ github.sha }}
-          ACTIVE_RELEASE_PATH: ${{ matrix.server.path }}
+          ACTIVE_RELEASE_PATH: ${{ matrix.server.path }}/current
           STORAGE_PATH: ${{ matrix.server.path }}/storage
           BASE_PATH: ${{ matrix.server.path }}
         with:
@@ -121,7 +121,7 @@ jobs:
         env:
           GITHUB_SHA: ${{ github.sha }}
           RELEASE_PATH: ${{ matrix.server.path }}/releases/${{ github.sha }}
-          ACTIVE_RELEASE_PATH: ${{ matrix.server.path }}
+          ACTIVE_RELEASE_PATH: ${{ matrix.server.path }}/current
           STORAGE_PATH: ${{ matrix.server.path }}/storage
           BASE_PATH: ${{ matrix.server.path }}
           LARAVEL_ENV: ${{ secrets.LARAVEL_ENV }}
@@ -151,7 +151,7 @@ jobs:
         env:
           GITHUB_SHA: ${{ github.sha }}
           RELEASE_PATH: ${{ matrix.server.path }}/releases/${{ github.sha }}
-          ACTIVE_RELEASE_PATH: ${{ matrix.server.path }}
+          ACTIVE_RELEASE_PATH: ${{ matrix.server.path }}/current
           STORAGE_PATH: ${{ matrix.server.path }}/storage
           BASE_PATH: ${{ matrix.server.path }}
         with:
