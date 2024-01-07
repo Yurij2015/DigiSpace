@@ -1,0 +1,10 @@
+[
+    {
+        "name": "server-1",
+        "ip": "159.89.15.103",
+        "username": "digi-space-test",
+        "beforeHooks": "",
+        "afterHooks": "",
+        "path": "/var/www/t-digi-space"
+    }
+]
