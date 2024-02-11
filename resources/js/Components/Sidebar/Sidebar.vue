@@ -89,9 +89,21 @@ function toggleCollapseShow(classes) {
 
                 <ul class="md:flex-col md:min-w-full flex flex-col list-none">
                     <li class="items-center">
-                        <SidebarNavLink :href="route('portfolio.education')" :active="route().current('portfolio.education')"
+                        <SidebarNavLink :href="route('portfolio.education')"
+                                        :active="route().current('portfolio.education')"
                                         icon="fa fa-graduation-cap mr-2 text-sm">
                             Education
+                        </SidebarNavLink>
+                    </li>
+                    <li class="items-center">
+                        <SidebarNavLink :href="route('portfolio.skills')"
+                                        :active="route().current('portfolio.skills') ||
+                                        route().current('portfolio.add-skill-type') ||
+                                        route().current('portfolio.add-skill-locale') ||
+                                        route().current('portfolio.add-skill') ||
+                                        route().current('portfolio.add-skill-subcategory')"
+                                        icon="fa fa-tasks mr-2 text-sm">
+                            Skills
                         </SidebarNavLink>
                     </li>
                 </ul>

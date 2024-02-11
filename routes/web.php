@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\HeaderNavBarContentController;
 use App\Http\Controllers\Admin\HeaderTopMenuController;
 use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\Admin\Portfolio\EducationController;
+use App\Http\Controllers\Admin\Portfolio\SkillsController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\ProfileController;
@@ -175,6 +176,19 @@ Route::controller(EducationController::class)->middleware('auth')->group(functio
     Route::post('portfolio/education-item-store', 'store')->name('portfolio.education-item-store');
     Route::get('portfolio/edu-item-edit/{eduItem}', 'edit')->name('portfolio.edu-item-edit');
     Route::put('portfolio/edu-item-update/{eduItem}', 'update')->name('portfolio.edu-item-update');
+});
+
+Route::controller(SkillsController::class)->middleware('auth')->group(function () {
+    Route::get('portfolio/skills', 'index')->name('portfolio.skills');
+    Route::get('portfolio/add-skill-type', 'addSkillType')->name('portfolio.add-skill-type');
+    Route::get('portfolio/add-skill-subcategory', 'addSkillSubcategory')->name('portfolio.add-skill-subcategory');
+    Route::get('portfolio/add-skill', 'addSkill')->name('portfolio.add-skill');
+    Route::get('portfolio/add-skill-locale', 'addSkillLocale')->name('portfolio.add-skill-locale');
+    Route::post('portfolio/skill-type-store', 'skillTypeStore')->name('portfolio.skill-type-store');
+    Route::post('portfolio/skill-locale-store', 'skillLocaleStore')->name('portfolio.skill-locale-store');
+    Route::post('portfolio/skill-subcategory-store', 'skillSubcategoryStore')
+        ->name('portfolio.skill-subcategory-store');
+    Route::post('portfolio/skill-store', 'skillStore')->name('portfolio.skill-store');
 });
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])
