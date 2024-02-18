@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\HeaderNavBarContentController;
 use App\Http\Controllers\Admin\HeaderTopMenuController;
 use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\Admin\Portfolio\EducationController;
+use App\Http\Controllers\Admin\Portfolio\SectionController;
 use App\Http\Controllers\Admin\Portfolio\SkillsController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
@@ -190,6 +191,19 @@ Route::controller(SkillsController::class)->middleware('auth')->group(function (
         ->name('portfolio.skill-subcategory-store');
     Route::post('portfolio/skill-store', 'skillStore')->name('portfolio.skill-store');
 });
+
+Route::controller(SectionController::class)->middleware('auth')->group(function () {
+    Route::get('portfolio/sections', 'index')->name('portfolio.sections');
+    Route::post('portfolio/section-store', 'store')->name('portfolio.section-store');
+    Route::post('portfolio/subcategory-store', 'subcategoryStore')->name('portfolio.subcategory-store');
+    Route::post('portfolio/place-store', 'placeStore')->name('portfolio.place-store');
+    Route::post('portfolio/section-item-store', 'sectionItemStore')->name('portfolio.section-store');
+    Route::post('portfolio/language-store', 'languageStore')->name('portfolio.language-store');
+    Route::post('portfolio/locale-store', 'localeStore')->name('portfolio.locale-store');
+    Route::post('portfolio/link-store', 'linkStore')->name('portfolio.link-store');
+
+});
+
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])
     ->name('admin.profile');

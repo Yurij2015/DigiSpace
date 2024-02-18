@@ -106,6 +106,13 @@ function toggleCollapseShow(classes) {
                             Skills
                         </SidebarNavLink>
                     </li>
+                    <li class="items-center">
+                        <SidebarNavLink :href="route('portfolio.sections')"
+                                        :active="route().current('portfolio.sections')"
+                                        icon="fa fa-toolbox mr-2 text-sm">
+                            Section Management
+                        </SidebarNavLink>
+                    </li>
                 </ul>
                 <!-- Divider -->
                 <hr class="my-3 md:min-w-full"/>
