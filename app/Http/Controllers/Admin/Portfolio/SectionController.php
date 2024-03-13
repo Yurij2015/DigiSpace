@@ -3,13 +3,10 @@
 namespace App\Http\Controllers\Admin\Portfolio;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\LanguageSaveRequest;
-use App\Http\Requests\LinkSaveRequest;
-use App\Http\Requests\LocaleSaveRequest;
-use App\Http\Requests\PlaceSaveRequest;
-use App\Http\Requests\SectionItemSaveRequest;
-use App\Http\Requests\SectionSaveRequest;
-use App\Http\Requests\SubcategorySaveRequest;
+use App\Http\Requests\Section\PlaceSaveRequest;
+use App\Http\Requests\Section\SectionItemSaveRequest;
+use App\Http\Requests\Section\SectionSaveRequest;
+use App\Http\Requests\Section\SubcategorySaveRequest;
 use App\Models\Portfolio\PfLanguage;
 use App\Models\Portfolio\PfLink;
 use App\Models\Portfolio\PfLocale;
@@ -28,55 +25,100 @@ class SectionController extends Controller
         $sections = PfSection::all();
         $subcategories = PfSubcategory::all();
         $places = PfPlace::all();
-        return Inertia::render('Admin/Portfolio/Sections/Index', compact('sections', 'subcategories', 'places'));
+        $sectionItems = PfSectionItem::with(
+            'section',
+            'subcategory',
+            'place',
+            'locales.en',
+            'locales.ua',
+            'locales.pl',
+            'links')
+            ->get();
+
+        return Inertia::render(
+            'Admin/Portfolio/Sections/Index',
+            compact(
+                'sections',
+                'subcategories',
+                'places',
+                'sectionItems'
+            )
+        );
     }
 
-    public function store(SectionSaveRequest $request): RedirectResponse
+    public function store(SectionSaveRequest $sectionRequest): RedirectResponse
     {
-        $validated = $request->validated();
-        PfSection::create($validated);
+        $validatedSection = $sectionRequest->validated();
+        $section = PfSection::create($validatedSection);
+
+        $this->addLangAndLocale($section, $sectionRequest->get('locales'), 'section_id');
+
         return redirect()->route('portfolio.sections');
     }
 
     public function subcategoryStore(SubcategorySaveRequest $request): RedirectResponse
     {
         $validated = $request->validated();
-        PfSubcategory::create($validated);
+        $subcategory = PfSubcategory::create($validated);
+
+        $this->addLangAndLocale($subcategory, $request->get('locales'), 'subcategory_id');
+
         return redirect()->route('portfolio.sections');
     }
 
     public function placeStore(PlaceSaveRequest $request): RedirectResponse
     {
         $validated = $request->validated();
-        PfPlace::create($validated);
+        $place = PfPlace::create($validated);
+
+        $this->addLangAndLocale($place, $request->get('locales'), 'place_id');
+
         return redirect()->route('portfolio.sections');
     }
 
     public function sectionItemStore(SectionItemSaveRequest $request): RedirectResponse
     {
         $validated = $request->validated();
-        PfSectionItem::create($validated);
+        $item = PfSectionItem::create($validated);
+
+        $this->addLangAndLocale($item, $request->get('locales'), 'item_id');
+        $this->addLinks($request->get('links'), $item);
+
         return redirect()->route('portfolio.sections');
     }
 
-    public function languageStore(LanguageSaveRequest $request): RedirectResponse
+    private function addLinks($links, $item): void
     {
-        $validated = $request->validated();
-        PfLanguage::create($validated);
-        return redirect()->route('portfolio.sections');
+        foreach ($links as $link) {
+            PfLink::create([
+                'item_id' => $item->id,
+                'fa_icon' => $link['fa_icon'],
+                'href' => $link['href']
+            ]);
+        }
     }
 
-    public function localeStore(LocaleSaveRequest $request): RedirectResponse
+    private function addLangAndLocale($type, $locales, $typeKey): void
     {
-        $validated = $request->validated();
-        PfLocale::create($validated);
-        return redirect()->route('portfolio.sections');
-    }
+        $enId = null;
+        $uaId = null;
+        $plId = null;
 
-    public function linkStore(LinkSaveRequest $request): RedirectResponse
-    {
-        $validated = $request->validated();
-        PfLink::create($validated);
-        return redirect()->route('portfolio.sections');
+        foreach ($locales as $key => $locale) {
+            $language = PfLanguage::create([
+                'lang_code' => $key,
+                'title' => $locale['title'],
+                'description' => $locale['description']
+            ]);
+            $lang_id = $key . 'Id';
+            $$lang_id = $language->id;
+        }
+
+        PfLocale::create([
+            $typeKey => $type->id,
+            'en_id' => $enId,
+            'ua_id' => $uaId,
+            'pl_id' => $plId
+        ]);
     }
 }

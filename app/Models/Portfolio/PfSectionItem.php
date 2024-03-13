@@ -6,6 +6,8 @@ use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 
 /**
@@ -66,4 +68,29 @@ class PfSectionItem extends Model
     protected $casts = [
         'period' => 'array',
     ];
+
+    public function section(): BelongsTo
+    {
+        return $this->belongsTo(PfSection::class);
+    }
+
+    public function subcategory(): BelongsTo
+    {
+        return $this->belongsTo(PfSubcategory::class);
+    }
+
+    public function place(): BelongsTo
+    {
+        return $this->belongsTo(PfPlace::class);
+    }
+
+    public function links(): HasMany
+    {
+        return $this->hasMany(PfLink::class, 'item_id');
+    }
+
+    public function locales(): HasMany
+    {
+        return $this->hasMany(PfLocale::class, 'item_id');
+    }
 }

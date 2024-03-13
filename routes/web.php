@@ -197,13 +197,8 @@ Route::controller(SectionController::class)->middleware('auth')->group(function 
     Route::post('portfolio/section-store', 'store')->name('portfolio.section-store');
     Route::post('portfolio/subcategory-store', 'subcategoryStore')->name('portfolio.subcategory-store');
     Route::post('portfolio/place-store', 'placeStore')->name('portfolio.place-store');
-    Route::post('portfolio/section-item-store', 'sectionItemStore')->name('portfolio.section-store');
-    Route::post('portfolio/language-store', 'languageStore')->name('portfolio.language-store');
-    Route::post('portfolio/locale-store', 'localeStore')->name('portfolio.locale-store');
-    Route::post('portfolio/link-store', 'linkStore')->name('portfolio.link-store');
-
+    Route::post('portfolio/section-item-store', 'sectionItemStore')->name('portfolio.section-item-store');
 });
-
 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])
     ->name('admin.profile');

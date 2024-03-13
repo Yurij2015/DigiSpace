@@ -5,6 +5,7 @@ namespace App\Models\Portfolio;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 
 /**
@@ -38,4 +39,40 @@ use Illuminate\Support\Carbon;
 class PfLocale extends Model
 {
     protected $fillable = ['section_id', 'item_id', 'place_id', 'subcategory_id', 'en_id', 'ua_id', 'pl_id'];
+
+    public function sectionItem(): BelongsTo
+    {
+        return $this->belongsTo(PfSectionItem::class, 'item_id', 'id');
+    }
+
+    public function section(): BelongsTo
+    {
+        return $this->belongsTo(PfSection::class, 'section_id', 'id');
+    }
+
+    public function place(): BelongsTo
+    {
+        return $this->belongsTo(PfPlace::class, 'place_id', 'id');
+    }
+
+    public function subcategory(): BelongsTo
+    {
+        return $this->belongsTo(PfSubcategory::class, 'subcategory_id', 'id');
+    }
+
+    public function en(): BelongsTo
+    {
+        return $this->belongsTo(PfLanguage::class, 'en_id', 'id');
+    }
+
+    public function ua(): BelongsTo
+    {
+        return $this->belongsTo(PfLanguage::class, 'ua_id', 'id');
+    }
+
+    public function pl(): BelongsTo
+    {
+        return $this->belongsTo(PfLanguage::class, 'pl_id', 'id');
+    }
+
 }

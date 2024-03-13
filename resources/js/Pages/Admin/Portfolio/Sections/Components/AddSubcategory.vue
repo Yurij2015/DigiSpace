@@ -12,6 +12,11 @@ const form = useForm({
     type: '',
     progress: '',
     fa_icon: '',
+    locales: {
+        en: {title: '', description: ''},
+        ua: {title: '', description: ''},
+        pl: {title: '', description: ''}
+    }
 });
 
 const submitForm = (emit) => {
@@ -44,7 +49,7 @@ const submitForm = (emit) => {
                     <div>
                         <label for="skillTypeId" class="font-bold">Subcategory section</label>
                         <select
-                            class='block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3 mb-4'
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
                             id="skillTypeId"
                             v-model='form.section_id'>
                             <option v-for='section in sections'
@@ -53,55 +58,109 @@ const submitForm = (emit) => {
                             </option>
                         </select>
                     </div>
-                    <div>
+                    <div class="mt-3">
                         <label for="name" class="font-bold">Subcategory Name</label>
                         <input
                             v-model="form.name"
                             id="name"
                             placeholder="Subcategory name"
-                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm p-3"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full'
                         >
                         <InputError :message="form.errors.name" class="mt-2"/>
                     </div>
-                    <div class="mt-4">
+                    <div class="mt-3">
                         <label for="slug" class="font-bold">Subcategory Slug</label>
                         <input
                             v-model="form.slug"
                             id="slug"
                             placeholder="Subcategory slug"
-                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm p-3"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
                         >
                         <InputError :message="form.errors.slug"/>
                     </div>
-                    <div class="mt-4">
+                    <div class="mt-3">
                         <label for="type" class="font-bold">Subcategory Type</label>
                         <input
                             v-model="form.type"
-                            id="slug"
+                            id="type"
                             placeholder="Subcategory type"
-                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm p-3"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
                         >
                         <InputError :message="form.errors.type"/>
                     </div>
-                    <div class="mt-4">
+                    <div class="mt-3">
                         <label for="progress" class="font-bold">Subcategory Progress</label>
                         <input
                             v-model="form.progress"
                             id="progress"
                             placeholder="Subcategory progress"
-                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm p-3 mt-2"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
                         >
                         <InputError :message="form.errors.progress"/>
                     </div>
-                    <div class="mt-4">
+                    <div class="mt-3">
                         <label for="fa_icon" class="font-bold">Subcategory FaIcon</label>
                         <input
                             v-model="form.fa_icon"
                             id="fa_icon"
                             placeholder="Section description"
-                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm p-3 mt-2"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
                         >
                         <InputError :message="form.errors.fa_icon"/>
+                    </div>
+                    <div class="mt-3">
+                        <label for="enTitle" class="font-bold">Title (en)</label>
+                        <input
+                            v-model="form.locales.en.title"
+                            id="enTitle"
+                            placeholder="Title (en)"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                        >
+                    </div>
+                    <div class="mt-3">
+                        <label for="enDescription" class="font-bold">Description (en)</label>
+                        <input
+                            v-model="form.locales.en.description"
+                            placeholder="Description (en)"
+                            id="enDescription"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                        >
+                    </div>
+                    <div class="mt-3">
+                        <label for="uaTitle" class="font-bold">Title (ua)</label>
+                        <input
+                            v-model="form.locales.ua.title"
+                            placeholder="Title (ua)"
+                            id="uaTitle"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                        >
+                    </div>
+                    <div class="mt-3">
+                        <label for="uaDescription" class="font-bold">Description (ua)</label>
+                        <input
+                            v-model="form.locales.ua.description"
+                            placeholder="Description (ua)"
+                            id="uaDescription"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                        >
+                    </div>
+                    <div class="mt-3">
+                        <label for="plTitle" class="font-bold">Title (pl)</label>
+                        <input
+                            v-model="form.locales.pl.title"
+                            placeholder="Title (pl)"
+                            id="plTitle"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                        >
+                    </div>
+                    <div class="mt-3">
+                        <label for="plDescription" class="font-bold">Description (pl)</label>
+                        <input
+                            v-model="form.locales.pl.description"
+                            placeholder="Description (pl)"
+                            id="plDescription"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                        >
                     </div>
                 </div>
                 <div
@@ -114,7 +173,7 @@ const submitForm = (emit) => {
                     <button
                         class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                         type="submit">
-                        Save section!
+                        Save subcategory!
                     </button>
                 </div>
             </form>

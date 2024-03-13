@@ -9,6 +9,11 @@ const form = useForm({
     slug: '',
     logo_url: '',
     fa_icon: '',
+    locales: {
+        en: {title: '', description: ''},
+        ua: {title: '', description: ''},
+        pl: {title: '', description: ''}
+    }
 });
 
 const submitForm = (emit) => {
@@ -44,7 +49,7 @@ const submitForm = (emit) => {
                             v-model="form.name"
                             id="name"
                             placeholder="Section name"
-                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm p-3"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
                         >
                         <InputError :message="form.errors.name" class="mt-2"/>
                     </div>
@@ -55,7 +60,7 @@ const submitForm = (emit) => {
                             v-model="form.slug"
                             id="slug"
                             placeholder="Place slug"
-                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm p-3"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
                         >
                         <InputError :message="form.errors.slug"/>
                     </div>
@@ -65,7 +70,7 @@ const submitForm = (emit) => {
                             v-model="form.logo_url"
                             id="logo_url"
                             placeholder="Place logo url"
-                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm p-3 mt-2"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
                         >
                         <InputError :message="form.errors.logo_url"/>
                     </div>
@@ -75,9 +80,36 @@ const submitForm = (emit) => {
                             v-model="form.fa_icon"
                             id="fa_icon"
                             placeholder="Place FaIcon"
-                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm p-3 mt-2"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
                         >
                         <InputError :message="form.errors.fa_icon"/>
+                    </div>
+                    <div class="mt-4">
+                        <label for="enTitle" class="font-bold">Title (en)</label>
+                        <input
+                            v-model="form.locales.en.title"
+                            id="enTitle"
+                            placeholder="Title (en)"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                        >
+                    </div>
+                    <div class="mt-4">
+                        <label for="uaTitle" class="font-bold">Title (ua)</label>
+                        <input
+                            v-model="form.locales.ua.title"
+                            placeholder="Title (ua)"
+                            id="uaTitle"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                        >
+                    </div>
+                    <div class="mt-4">
+                        <label for="plTitle" class="font-bold">Title (pl)</label>
+                        <input
+                            v-model="form.locales.pl.title"
+                            placeholder="Title (pl)"
+                            id="plTitle"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                        >
                     </div>
                 </div>
                 <div
@@ -90,7 +122,7 @@ const submitForm = (emit) => {
                     <button
                         class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                         type="submit">
-                        Save section!
+                        Save place!
                     </button>
                 </div>
             </form>

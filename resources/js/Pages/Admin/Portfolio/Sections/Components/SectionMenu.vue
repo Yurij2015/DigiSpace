@@ -4,9 +4,6 @@ import AddSection from "@/Pages/Admin/Portfolio/Sections/Components/AddSection.v
 import AddSubcategory from "@/Pages/Admin/Portfolio/Sections/Components/AddSubcategory.vue";
 import AddPlace from "@/Pages/Admin/Portfolio/Sections/Components/AddPlace.vue";
 import AddSectionItem from "@/Pages/Admin/Portfolio/Sections/Components/AddSectionItem.vue";
-import AddLanguage from "@/Pages/Admin/Portfolio/Sections/Components/AddLanguage.vue";
-import AddLocale from "@/Pages/Admin/Portfolio/Sections/Components/AddLocale.vue";
-import AddLink from "@/Pages/Admin/Portfolio/Sections/Components/AddLink.vue";
 
 const menuItems = {
     1: {
@@ -25,18 +22,6 @@ const menuItems = {
         component: AddSectionItem,
         name: 'Add section item'
     },
-    5: {
-        component: AddLanguage,
-        name: 'Add language'
-    },
-    6: {
-        component: AddLocale,
-        name: 'Add locale'
-    },
-    7: {
-        component: AddLink,
-        name: 'Add link'
-    }
 };
 
 

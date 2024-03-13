@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('lang_code')->nullable();
             $table->string('title')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->string('subtitle')->nullable();
             $table->string('subtitle_description')->nullable();
             $table->json('tags')->nullable();

@@ -8,6 +8,11 @@ const form = useForm({
     name: '',
     description: '',
     slug: '',
+    locales: {
+        en: {title: '', description: ''},
+        ua: {title: '', description: ''},
+        pl: {title: '', description: ''}
+    }
 });
 
 const submitForm = (emit) => {
@@ -43,7 +48,7 @@ const submitForm = (emit) => {
                             v-model="form.name"
                             id="name"
                             placeholder="Section name"
-                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm p-3"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full'
                         >
                         <InputError :message="form.errors.name" class="mt-2"/>
                     </div>
@@ -53,20 +58,73 @@ const submitForm = (emit) => {
                             v-model="form.description"
                             id="description"
                             placeholder="Section description"
-                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm p-3 mt-2"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full'
                         >
                         <InputError :message="form.errors.description"/>
                     </div>
                     <div class="mt-4">
-
                         <label for="slug" class="font-bold">Section Slug</label>
                         <input
                             v-model="form.slug"
                             id="slug"
                             placeholder="Section slug"
-                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm p-3"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full'
                         >
                         <InputError :message="form.errors.slug"/>
+                    </div>
+                    <div class="mt-4">
+                        <label for="enTitle" class="font-bold">Title (en)</label>
+                        <input
+                            v-model="form.locales.en.title"
+                            id="enTitle"
+                            placeholder="Title (en)"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full'
+                        >
+                    </div>
+                    <div class="mt-4">
+                        <label for="enDescription" class="font-bold">Description (en)</label>
+                        <input
+                            v-model="form.locales.en.description"
+                            placeholder="Description (en)"
+                            id="enDescription"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full'
+                        >
+                    </div>
+                    <div class="mt-4">
+                        <label for="uaTitle" class="font-bold">Title (ua)</label>
+                        <input
+                            v-model="form.locales.ua.title"
+                            placeholder="Title (ua)"
+                            id="uaTitle"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full'
+                        >
+                    </div>
+                    <div class="mt-4">
+                        <label for="uaDescription" class="font-bold">Description (ua)</label>
+                        <input
+                            v-model="form.locales.ua.description"
+                            placeholder="Description (ua)"
+                            id="uaDescription"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full'
+                        >
+                    </div>
+                    <div class="mt-4">
+                        <label for="plTitle" class="font-bold">Title (pl)</label>
+                        <input
+                            v-model="form.locales.pl.title"
+                            placeholder="Title (pl)"
+                            id="plTitle"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full'
+                        >
+                    </div>
+                    <div class="mt-4">
+                        <label for="plDescription" class="font-bold">Description (pl)</label>
+                        <input
+                            v-model="form.locales.pl.description"
+                            placeholder="Description (pl)"
+                            id="plDescription"
+                            class='px-2 py-1 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full'
+                        >
                     </div>
                 </div>
                 <div

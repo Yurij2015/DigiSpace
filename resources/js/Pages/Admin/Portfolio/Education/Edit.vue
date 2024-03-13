@@ -10,21 +10,25 @@ import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
 const props = defineProps(['eduItem']);
 
 const itemLocaleName = (locale) => {
-    return props.eduItem.pf_education_item_locale.find(item => item.locale === locale).title;
+    const item = props.eduItem.pf_education_item_locale.find(item => item.locale === locale);
+    return item && item.title ? item.title : null;
 };
 
 const itemLocaleDescription = (locale) => {
-    return props.eduItem.pf_education_item_locale.find(item => item.locale === locale).description;
+    const item = props.eduItem.pf_education_item_locale.find(item => item.locale === locale);
+    return item && item.description ? item.description : null;
 };
 
 const [pf_education_item_place] = props.eduItem.pf_education_item_place;
 
 const itemPlaceLocaleName = (locale) => {
-    return pf_education_item_place.pf_education_item_place_locale.find(item => item.locale === locale).title;
+    const item = pf_education_item_place.pf_education_item_place_locale.find(item => item.locale === locale);
+    return item && item.title ? item.title : null;
 };
 
 const itemPlaceLocaleDescription = (locale) => {
-    return pf_education_item_place.pf_education_item_place_locale.find(item => item.locale === locale).description;
+    const item = pf_education_item_place.pf_education_item_place_locale.find(item => item.locale === locale);
+    return item && item.description ? item.description : null;
 };
 
 
