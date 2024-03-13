@@ -79,7 +79,44 @@ function toggleCollapseShow(classes) {
                 </form>
 
                 <!-- Divider -->
-                <hr class="my-4 md:min-w-full"/>
+                <hr class="my-3 md:min-w-full"/>
+                <!-- Heading -->
+                <h6
+                    class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+                >
+                    Portfolio management
+                </h6>
+
+                <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+                    <li class="items-center">
+                        <SidebarNavLink :href="route('portfolio.education')"
+                                        :active="route().current('portfolio.education')"
+                                        icon="fa fa-graduation-cap mr-2 text-sm">
+                            Education
+                        </SidebarNavLink>
+                    </li>
+                    <li class="items-center">
+                        <SidebarNavLink :href="route('portfolio.skills')"
+                                        :active="route().current('portfolio.skills') ||
+                                        route().current('portfolio.add-skill-type') ||
+                                        route().current('portfolio.add-skill-locale') ||
+                                        route().current('portfolio.add-skill') ||
+                                        route().current('portfolio.add-skill-subcategory')"
+                                        icon="fa fa-tasks mr-2 text-sm">
+                            Skills
+                        </SidebarNavLink>
+                    </li>
+                    <li class="items-center">
+                        <SidebarNavLink :href="route('portfolio.sections')"
+                                        :active="route().current('portfolio.sections')"
+                                        icon="fa fa-toolbox mr-2 text-sm">
+                            Section Management
+                        </SidebarNavLink>
+                    </li>
+                </ul>
+                <!-- Divider -->
+                <hr class="my-3 md:min-w-full"/>
+                <!-- Navigation -->
                 <!-- Heading -->
                 <h6
                     class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
