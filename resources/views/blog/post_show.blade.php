@@ -83,13 +83,6 @@
                             <div class="post-single__footer-inner">
                                 <h5>Share this post</h5>
                                 <div class="product-social-links">
-                                    <div class="fb-like"
-                                         data-href="{{ route('blog.post', $post->slug) }}"
-                                         data-layout="button_count"
-                                         data-action="like"
-                                         data-size="large"
-                                    >
-                                    </div>
                                     <div class="fb-share-button" style="margin-right: 10px"
                                          data-href="{{ route('blog.post', $post->slug) }}"
                                          data-layout="button"
