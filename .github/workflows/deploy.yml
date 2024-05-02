@@ -12,6 +12,7 @@ jobs:
       DEPLOYMENT_MATRIX: ${{ steps.export-deployment-matrix.outputs.DEPLOYMENT_MATRIX }}
     steps:
       - uses: actions/checkout@v4
+      - uses: nanasess/setup-php@v4
       - name: Composer install
         run: |
           composer install --no-dev --no-interaction --prefer-dist
@@ -19,10 +20,10 @@ jobs:
         run: npm install
       - name: Build project
         run: npm run build
-      - name: Configure PHP 8.1
-        uses: shivammathur/setup-php@master
+      - name: Configure PHP 8.2
+        uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.1
+          php-version: 8.2
           extensions: mbstring, ctype, fileinfo, openssl, PDO, bcmath, json, tokenizer, xml
       - name: Create deployment artifact
         env:
