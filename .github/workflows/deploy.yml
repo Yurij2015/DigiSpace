@@ -99,7 +99,8 @@ jobs:
           ACTIVE_RELEASE_PATH: ${{ matrix.server.path }}/current
           STORAGE_PATH: ${{ matrix.server.path }}/storage
           BASE_PATH: ${{ matrix.server.path }}
-          IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/uploads/profiles/images
+          IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/images
+          UPLD_IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/uploads
         with:
           host: ${{ matrix.server.ip }}
           username: ${{ matrix.server.username }}
@@ -116,9 +117,16 @@ jobs:
 
             if [ -d "${IMG_DIR_PATH}" ]; then
               cp -r "${IMG_DIR_PATH}" "${BASE_PATH}/backup_images"
-              echo "Previous files in public/uploads/profiles/images saved."
+              echo "Previous files in public/images saved."
             else
-              echo "No files found in public/uploads/profiles/images for backup."
+              echo "No files found in public/images for backup."
+            fi
+
+            if [ -d "${UPLD_IMG_DIR_PATH}" ]; then
+              cp -r "${UPLD_IMG_DIR_PATH}" "${BASE_PATH}/backup_upld_images"
+              echo "Previous files in public/uploads saved."
+            else
+              echo "No files found in public/uploads for backup."
             fi
 
             ${{ matrix.server.beforeHooks }}
@@ -176,8 +184,10 @@ jobs:
           ACTIVE_RELEASE_PATH: ${{ matrix.server.path }}/current
           STORAGE_PATH: ${{ matrix.server.path }}/storage
           BASE_PATH: ${{ matrix.server.path }}
-          IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/uploads/profiles/images
+          IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/images
+          UPLD_IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/uploads
           BACKUP_IMG_DIR_PATH: ${{ matrix.server.path }}/backup_images
+          BACKUP_UPLD_IMG_DIR_PATH: ${{ matrix.server.path }}/backup_upld_images
         with:
           host: ${{ matrix.server.ip }}
           username: ${{ matrix.server.username }}
@@ -190,6 +200,13 @@ jobs:
               echo "Restored images from backup."
             else
               echo "No images dir backup found."
+            fi
+
+            if [ -e "${BACKUP_UPLD_IMG_DIR_PATH}" ]; then
+              cp "${BACKUP_UPLD_IMG_DIR_PATH}" "${UPLD_IMG_DIR_PATH}"
+              echo "Restored upload images from backup."
+            else
+              echo "No upload images dir backup found."
             fi
 
             ${{ matrix.server.afterHooks }}
