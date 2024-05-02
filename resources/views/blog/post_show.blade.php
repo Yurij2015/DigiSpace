@@ -24,8 +24,8 @@
     <!-- Blog post-->
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
-            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0&appId=967852944647080&autoLogAppEvents=1"
-            nonce="MuP4VX7O">
+            src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v19.0&appId=237947959554390"
+            nonce="dW1O7aPf">
     </script>
     <script>window.twttr = (function (d, s, id) {
             let js, fjs = d.getElementsByTagName(s)[0],
@@ -85,18 +85,22 @@
                                 <div class="product-social-links">
                                     <div class="fb-like"
                                          data-href="{{ route('blog.post', $post->slug) }}"
-                                         data-width="100"
-                                         data-layout="button"
+                                         data-layout="button_count"
                                          data-action="like"
                                          data-size="large"
-                                         data-share="true"
-                                         data-show-faces="true">
+                                    >
                                     </div>
-                                    <a class="twitter-share-button"
+                                    <div class="fb-share-button" style="margin-right: 10px"
+                                         data-href="{{ route('blog.post', $post->slug) }}"
+                                         data-layout="button"
+                                         data-size="large"
+                                    >
+                                    </div>
+                                    <a class="twitter-share-button x-button-left-margin"
                                        data-size="large"
                                        href="{{ route('blog.post', $post->slug) }}"
                                        data-hashtags="digispace,digispacepro">
-                                        Tweet
+                                        Share
                                     </a>
                                 </div>
                             </div>
@@ -154,5 +158,9 @@
 
     .post-title {
         font-size: 28px;
+    }
+
+    .x-button-left-margin {
+        margin-left: 10px;
     }
 </style>
