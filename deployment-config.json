@@ -5,7 +5,7 @@
         "port": "22",
         "username": "root",
         "beforeHooks": "",
-        "afterHooks": "sudo chown -R www-data:www-data /var/www/t-digi-space/current/storage && sudo chown -R www-data:www-data /var/www//t-digi-space/current/public/uploads && sudo chmod -R 777 /var/www/t-digi-space/current/storage && sudo chmod -R 777 /var/www//t-digi-space/current/public/uploads && php /var/www/digispace.pro/current/artisan storage:link && php /var/www/digispace.pro/current/artisan migrate",
+        "afterHooks": "sudo chown -R www-data:www-data /var/www/t-digi-space/current/storage && sudo chown -R www-data:www-data /var/www/t-digi-space/current/public/uploads && sudo chmod -R 777 /var/www/t-digi-space/current/storage && sudo chmod -R 777 /var/www/t-digi-space/current/public/uploads && php /var/www/t-digi-space/current/artisan storage:link && php /var/www/t-digi-space/current/artisan migrate",
         "path": "/var/www/t-digi-space"
     },
     {
