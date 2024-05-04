@@ -119,7 +119,7 @@ jobs:
             mkdir -p "${BASE_PATH}/backup_images"
 
             if [ -d "${IMG_DIR_PATH}" ]; then
-              cp -r "${IMG_DIR_PATH}" "${BASE_PATH}/backup_images"
+              cp -a "${IMG_DIR_PATH}/." "${BASE_PATH}/backup_images/"
               echo "Previous files in public/images saved."
             else
               echo "No files found in public/images for backup."
@@ -128,7 +128,7 @@ jobs:
             mkdir -p "${BASE_PATH}/backup_upld_images"
 
             if [ -d "${UPLD_IMG_DIR_PATH}" ]; then
-              cp -r "${UPLD_IMG_DIR_PATH}" "${BASE_PATH}/backup_upld_images"
+              cp -a "${UPLD_IMG_DIR_PATH}/." "${BASE_PATH}/backup_upld_images/"
               echo "Previous files in public/uploads saved."
             else
               echo "No files found in public/uploads for backup."
@@ -201,14 +201,14 @@ jobs:
           envs: GITHUB_SHA,RELEASE_PATH,ACTIVE_RELEASE_PATH,STORAGE_PATH,BASE_PATH,IMG_DIR_PATH,UPLD_IMG_DIR_PATH,BACKUP_IMG_DIR_PATH,BACKUP_UPLD_IMG_DIR_PATH
           script: |
             if [ -e "${BACKUP_IMG_DIR_PATH}" ]; then
-              cp "${BACKUP_IMG_DIR_PATH}" "${IMG_DIR_PATH}"
+              cp -a "${BACKUP_IMG_DIR_PATH}/." "${IMG_DIR_PATH}/"
               echo "Restored images from backup."
             else
               echo "No images dir backup found."
             fi
 
             if [ -e "${BACKUP_UPLD_IMG_DIR_PATH}" ]; then
-              cp "${BACKUP_UPLD_IMG_DIR_PATH}" "${UPLD_IMG_DIR_PATH}"
+              cp "${BACKUP_UPLD_IMG_DIR_PATH}/." "${UPLD_IMG_DIR_PATH}/"
               echo "Restored upload images from backup."
             else
               echo "No upload images dir backup found."
