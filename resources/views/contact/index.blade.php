@@ -31,7 +31,7 @@
                                 <dl class="list-terms-medium list-terms-medium_secondary">
                                     @php($facebook = $content->address->value)
                                     <dt>{{ $content->address->name }}</dt>
-                                    <dd><a href="https://{{ $facebook }}">{{ $facebook }}</a></dd>
+                                    <dd><a href="https://{{ $facebook }}" target="_blank">{{ $facebook }}</a></dd>
                                 </dl>
                             </li>
                             <li>
