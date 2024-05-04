@@ -29,8 +29,9 @@
                         <ul class="list-creative">
                             <li>
                                 <dl class="list-terms-medium list-terms-medium_secondary">
+                                    @php($facebook = $content->address->value)
                                     <dt>{{ $content->address->name }}</dt>
-                                    <dd><a href="#">{{ $content->address->value }}</a></dd>
+                                    <dd><a href="https://{{ $facebook }}">{{ $facebook }}</a></dd>
                                 </dl>
                             </li>
                             <li>
