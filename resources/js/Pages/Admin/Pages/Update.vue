@@ -8,7 +8,7 @@ import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
 import Editor from '@tinymce/tinymce-vue'
 
-let props = defineProps(['page', 'pageCategories', 'menuItems']);
+let props = defineProps(['page', 'pageCategories', 'menuItems', 'api_key_tinymce']);
 const form = useForm({
     name: props.page.name,
     meta: props.page.meta,
@@ -16,7 +16,8 @@ const form = useForm({
     content: props.page.content,
     slug: props.page.slug,
     page_category_id: props.page.page_category_id,
-    menu_item_id: props.page.menu_item_id
+    menu_item_id: props.page.menu_item_id,
+    api_key_tinymce: props.api_key_tinymce
 });
 </script>
 <template>
