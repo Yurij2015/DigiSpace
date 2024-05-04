@@ -102,12 +102,13 @@ jobs:
           BASE_PATH: ${{ matrix.server.path }}
           IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/images
           UPLD_IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/uploads
+          BANNERS_IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/banners
         with:
           host: ${{ matrix.server.ip }}
           username: ${{ matrix.server.username }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ matrix.server.port }}
-          envs: GITHUB_SHA,RELEASE_PATH,ACTIVE_RELEASE_PATH,STORAGE_PATH,BASE_PATH,IMG_DIR_PATH,UPLD_IMG_DIR_PATH
+          envs: GITHUB_SHA,RELEASE_PATH,ACTIVE_RELEASE_PATH,STORAGE_PATH,BASE_PATH,IMG_DIR_PATH,UPLD_IMG_DIR_PATH,BANNERS_IMG_DIR_PATH
           script: |
             if [ -e "${BASE_PATH}/.env" ]; then
               cp "${BASE_PATH}/.env" "${BASE_PATH}/.env_prev"
@@ -132,6 +133,15 @@ jobs:
               echo "Previous files in public/uploads saved."
             else
               echo "No files found in public/uploads for backup."
+            fi
+
+            mkdir -p "${BASE_PATH}/backup_banners_images"
+
+            if [ -d "${BANNERS_IMG_DIR_PATH}" ]; then
+              cp -a "${BANNERS_IMG_DIR_PATH}/." "${BASE_PATH}/backup_banners_images/"
+              echo "Previous files in public/banners saved."
+            else
+              echo "No files found in public/banners for backup."
             fi
 
             ${{ matrix.server.beforeHooks }}
@@ -193,6 +203,8 @@ jobs:
           UPLD_IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/uploads
           BACKUP_IMG_DIR_PATH: ${{ matrix.server.path }}/backup_images
           BACKUP_UPLD_IMG_DIR_PATH: ${{ matrix.server.path }}/backup_upld_images
+          BANNERS_IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/banners
+          BACKUP_BANNERS_IMG_DIR_PATH: ${{ matrix.server.path }}/backup_banners_images
         with:
           host: ${{ matrix.server.ip }}
           username: ${{ matrix.server.username }}
@@ -203,6 +215,8 @@ jobs:
             if [ -e "${BACKUP_IMG_DIR_PATH}" ]; then
               cp -a "${BACKUP_IMG_DIR_PATH}/." "${IMG_DIR_PATH}/"
               echo "Restored images from backup."
+              rm -rf "${BACKUP_IMG_DIR_PATH}"
+              echo "Removed backup img dir."
             else
               echo "No images dir backup found."
             fi
@@ -210,8 +224,19 @@ jobs:
             if [ -e "${BACKUP_UPLD_IMG_DIR_PATH}" ]; then
               cp -a "${BACKUP_UPLD_IMG_DIR_PATH}/." "${UPLD_IMG_DIR_PATH}/"
               echo "Restored upload images from backup."
+              rm -rf "${BACKUP_UPLD_IMG_DIR_PATH}"
+              echo "Removed backup upld img dir."
             else
               echo "No upload images dir backup found."
+            fi
+
+            if [ -e "${BACKUP_BANNERS_IMG_DIR_PATH}" ]; then
+              cp -a "${BACKUP_BANNERS_IMG_DIR_PATH}/." "${BANNERS_IMG_DIR_PATH}/"
+              echo "Restored banners images from backup."
+              rm -rf "${BACKUP_BANNERS_IMG_DIR_PATH}"
+              echo "Removed banners img dir."
+            else
+              echo "No banners images dir backup found."
             fi
 
             ${{ matrix.server.afterHooks }}
