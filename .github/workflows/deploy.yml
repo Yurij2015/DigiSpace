@@ -210,7 +210,7 @@ jobs:
           username: ${{ matrix.server.username }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ matrix.server.port }}
-          envs: GITHUB_SHA,RELEASE_PATH,ACTIVE_RELEASE_PATH,STORAGE_PATH,BASE_PATH,IMG_DIR_PATH,UPLD_IMG_DIR_PATH,BACKUP_IMG_DIR_PATH,BACKUP_UPLD_IMG_DIR_PATH
+          envs: GITHUB_SHA,RELEASE_PATH,ACTIVE_RELEASE_PATH,STORAGE_PATH,BASE_PATH,IMG_DIR_PATH,UPLD_IMG_DIR_PATH,BACKUP_IMG_DIR_PATH,BACKUP_UPLD_IMG_DIR_PATH,BANNERS_IMG_DIR_PATH,BACKUP_BANNERS_IMG_DIR_PATH
           script: |
             if [ -e "${BACKUP_IMG_DIR_PATH}" ]; then
               cp -a "${BACKUP_IMG_DIR_PATH}/." "${IMG_DIR_PATH}/"
