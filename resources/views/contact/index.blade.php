@@ -38,8 +38,13 @@
                                     <dt>{{ $content->phones->name }}</dt>
                                     <dd>
                                         <ul class="list-comma">
-                                            <li><a href="tel:#">{{ $content->phones->value->first }}</a></li>
-                                            <li><a href="tel:#">{{ $content->phones->value->second }}</a></li>
+                                            @php($telegram = $content->phones->value)
+                                            <li>
+                                                <a href="https://t.me/{{$telegram->first}}">{{ $content->phones->value->first }}</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://t.me/{{$telegram->second}}">{{ $content->phones->value->second }}</a>
+                                            </li>
                                         </ul>
                                     </dd>
                                 </dl>
