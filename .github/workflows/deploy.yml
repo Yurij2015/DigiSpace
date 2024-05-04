@@ -208,7 +208,7 @@ jobs:
             fi
 
             if [ -e "${BACKUP_UPLD_IMG_DIR_PATH}" ]; then
-              cp "${BACKUP_UPLD_IMG_DIR_PATH}/." "${UPLD_IMG_DIR_PATH}/"
+              cp -a "${BACKUP_UPLD_IMG_DIR_PATH}/." "${UPLD_IMG_DIR_PATH}/"
               echo "Restored upload images from backup."
             else
               echo "No upload images dir backup found."
