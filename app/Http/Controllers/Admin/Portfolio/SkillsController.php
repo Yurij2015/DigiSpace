@@ -7,13 +7,13 @@ use App\Http\Requests\SkillLocaleSaveRequest;
 use App\Http\Requests\SkillSaveRequest;
 use App\Http\Requests\SkillSubcategorySaveRequest;
 use App\Http\Requests\SkillTypeSaveRequest;
-use App\Models\PfSkillLocale;
-use App\Models\PfSkills;
-use App\Models\PfSkillSubcategory;
-use App\Models\PfSkillType;
+use App\Models\Portfolio\PfSkillLocale;
+use App\Models\Portfolio\PfSkills;
+use App\Models\Portfolio\PfSkillSubcategory;
+use App\Models\Portfolio\PfSkillType;
 use Illuminate\Http\RedirectResponse;
-use Inertia\Response;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class SkillsController extends Controller
 {
