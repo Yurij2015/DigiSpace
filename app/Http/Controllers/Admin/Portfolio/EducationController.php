@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\Admin\Portfolio;
 
 use App\Http\Controllers\Controller;
-use App\Models\PfEducation;
-use App\Models\PfEducationItem;
-use App\Models\PfEducationItemLocale;
-use App\Models\PfEducationItemPlace;
-use App\Models\PfEducationItemPlaceLocale;
+use App\Models\Portfolio\PfEducation;
+use App\Models\Portfolio\PfEducationItem;
+use App\Models\Portfolio\PfEducationItemLocale;
+use App\Models\Portfolio\PfEducationItemPlace;
+use App\Models\Portfolio\PfEducationItemPlaceLocale;
 use DB;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
-use Illuminate\Http\Request;
 use JsonException;
 use Log;
 

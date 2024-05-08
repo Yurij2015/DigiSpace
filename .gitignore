@@ -17,3 +17,5 @@ yarn-error.log
 /.vscode
 /public/uploads
 /public/images
+/.sonarlint/
+.env.testing

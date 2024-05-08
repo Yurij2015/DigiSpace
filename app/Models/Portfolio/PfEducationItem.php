@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Portfolio;
 
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
@@ -19,7 +19,7 @@ use Illuminate\Support\Carbon;
  * @property mixed $period
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * @property-read \App\Models\PfEducation $pfEducation
+ * @property-read \App\Models\Portfolio\PfEducation $pfEducation
  * @property-read Collection<int, PfEducationItemLocale> $pfEducationItemLocale
  * @property-read int|null $pf_education_item_locale_count
  * @property-read Collection<int, PfEducationItemPlace> $pfEducationItemPlace
