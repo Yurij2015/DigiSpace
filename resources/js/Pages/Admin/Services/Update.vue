@@ -6,6 +6,7 @@ import Sidebar from "@/Components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
+import Label from "@/Components/InputLabel.vue";
 
 const props = defineProps(['service']);
 
@@ -13,6 +14,15 @@ const form = useForm({
     title: props.service.title,
     details: props.service.details,
     price: props.service.price,
+    service_category_id: props.service.service_category_id,
+    seo_keywords: props.service.seo_keywords,
+    seo_description: props.service.seo_description,
+    seo_title: props.service.seo_title,
+    image_alt: props.service.image_alt,
+    image: props.service.image,
+    description: props.service.description,
+    slug: props.service.slug,
+    file: null
 });
 
 </script>
@@ -35,27 +45,121 @@ const form = useForm({
                         <div class="flex flex-wrap">
                             <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
                                 <form
-                                    @submit.prevent="form.put(route('admin.service-update', service.id), { onSuccess: () => form.reset() })">
-                                    <input
-                                        v-model="form.title"
-                                        placeholder="What is service title?"
-                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
-                                    >
-                                    <InputError :message="form.errors.title" class="mt-2"/>
+                                    @submit.prevent="form.put(route('admin.service-update', service.id))">
+                                    <div class="mt-3">
+                                        <label for="title" class="text-sm font-bold">Title of service:</label>
+                                        <input
+                                            v-model="form.title"
+                                            placeholder="What is service title?"
+                                            id="title"
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                        >
+                                        <InputError :message="form.errors.title" class="mt-2"/>
+                                    </div>
+                                    <div class="mt-3">
+                                        <label for="title" class="text-sm font-bold">Service details:</label>
+                                        <input
+                                            v-model="form.details"
+                                            placeholder="What is service details?"
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                        >
+                                        <InputError :message="form.errors.details" class="mt-2"/>
+                                    </div>
+                                    <div class="mt-3">
+                                        <label for="title" class="text-sm font-bold">Price:</label>
+                                        <input
+                                            v-model="form.price"
+                                            placeholder="What is service price?"
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                        >
+                                        <InputError :message="form.errors.price" class="mt-2"/>
+                                    </div>
 
-                                    <input
-                                        v-model="form.details"
-                                        placeholder="What is service details?"
-                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
-                                    >
-                                    <InputError :message="form.errors.details" class="mt-2"/>
+                                    <div class="mt-3">
+                                        <label for="title" class="text-sm font-bold">Category:</label>
+                                        <input
+                                            v-model="form.service_category_id"
+                                            placeholder="What is service category?"
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                        >
+                                        <InputError :message="form.errors.service_category_id" class="mt-2"/>
+                                    </div>
 
-                                    <input
-                                        v-model="form.price"
-                                        placeholder="What is service price?"
-                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
-                                    >
-                                    <InputError :message="form.errors.price" class="mt-2"/>
+                                    <div class="mt-3">
+                                        <label for="title" class="text-sm font-bold">Keywords:</label>
+                                        <input
+                                            v-model="form.seo_keywords"
+                                            placeholder="What is service keywords?"
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                        >
+                                        <InputError :message="form.errors.seo_keywords" class="mt-2"/>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <label for="title" class="text-sm font-bold">SEO Description:</label>
+                                        <input
+                                            v-model="form.seo_description"
+                                            placeholder="What is service SEO description?"
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                        >
+                                        <InputError :message="form.errors.seo_description" class="mt-2"/>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <label for="title" class="text-sm font-bold">SEO Title:</label>
+                                        <input
+                                            v-model="form.seo_title"
+                                            placeholder="What is service title?"
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                        >
+                                        <InputError :message="form.errors.seo_title" class="mt-2"/>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <label for="title" class="text-sm font-bold">Description:</label>
+                                        <input
+                                            v-model="form.description"
+                                            placeholder="What is service description?"
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                        >
+                                        <InputError :message="form.errors.description" class="mt-2"/>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <label for="title" class="text-sm font-bold">Slug:</label>
+                                        <input
+                                            v-model="form.slug"
+                                            placeholder="What is service slug?"
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                        >
+                                        <InputError :message="form.errors.slug" class="mt-2"/>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <label for="title" class="text-sm font-bold">Image alt:</label>
+                                        <input
+                                            v-model="form.image_alt"
+                                            placeholder="What is service image alt?"
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                        >
+                                        <InputError :message="form.errors.image_alt" class="mt-2"/>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <div class="columns-1 mt-3">
+                                            <img :src="'/uploads/' + service.image" width="400"/>
+                                        </div>
+                                        <div>
+                                            <Label for="file" value="File"/>
+                                            <input
+                                                id="file"
+                                                type="file"
+                                                class="mt-1 block w-full"
+                                                @input="form.file = $event.target.files[0]"
+                                                autofocus/>
+                                            <span v-if="form.errors.title">{{ form.errors.file }}</span>
+                                        </div>
+                                    </div>
 
                                     <PrimaryButton class="mt-4">Update service!</PrimaryButton>
                                     <Link :href="route('admin.services')">

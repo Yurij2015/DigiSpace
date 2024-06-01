@@ -28,55 +28,132 @@ defineProps(['service']);
                     <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
                         <div class="flex flex-wrap">
                             <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
-                                <div class="p-6 flex space-x-2">
+                                <div class="py-6 px-0">
                                     <div class="flex-1">
-                                        <div class="grid grid-cols-0">
-                                            <div class="flex flex-wrap justify-center">
-                                                <div class="w-9/12 sm:w-9/12">
-                                                    <h6 class="text-xl font-normal leading-normal mt-0 mb-2 text-emerald-800">
-                                                        Name of service: {{ service.title }}
-                                                    </h6>
-                                                    <small
-                                                        class="font-normal leading-normal mt-0 mb-4 text-blueGray-800">
-                                                        Details: {{ service.details }}
-                                                    </small>
-                                                    <div class="font-normal leading-normal mt-0 text-blueGray-800">
-                                                        Icon: {{ service.price }}
-                                                    </div>
-                                                </div>
-
-                                                <div class="w-2/12 sm:w-2/12">
-                                                    <div style="float:right">
-                                                        <Link :href="route('admin.service-update', service.id)"
-                                                              method="get">
-                                                            <button
-                                                                class="bg-teal-500 text-white active:bg-teal-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                                                type="button">
-                                                                Edit
-                                                            </button>
-                                                        </Link>
-                                                        <Link :href="route('admin.service-destroy', service.id)"
-                                                              method="delete" as="button">
-                                                            <button
-                                                                class="bg-orange-500 text-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                                                type="button">
-                                                                Delete
-                                                            </button>
-                                                        </Link>
-                                                    </div>
-                                                </div>
+                                        <div class="flex justify-center">
+                                            <div class="w-10/12 sm:w-10/12">
+                                                <table class="w-full table-hover">
+                                                    <tbody>
+                                                    <tr class="hover:bg-sky-100">
+                                                        <th class="border border-blueGray-300 text-left px-5 w-3/12">
+                                                            Name of service
+                                                        </th>
+                                                        <td class="border border-blueGray-300 px-5 py-2 w-9/12">
+                                                            {{ service.title }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="hover:bg-sky-100">
+                                                        <th class="border border-blueGray-300 text-left px-5 py-2">
+                                                            Details
+                                                        </th>
+                                                        <td class="border border-blueGray-300 px-5">
+                                                            {{ service.details }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="hover:bg-sky-100">
+                                                        <th class="border border-blueGray-300 text-left px-5 py-2">
+                                                            Price
+                                                        </th>
+                                                        <td class="border border-blueGray-300 px-5">
+                                                            {{ service.price }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="hover:bg-sky-100">
+                                                        <th class="border border-blueGray-300 text-left px-5 py-2">
+                                                            Description
+                                                        </th>
+                                                        <td class="border border-blueGray-300 px-5 py-2">
+                                                            {{ service.description }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="hover:bg-sky-100">
+                                                        <th class="border border-blueGray-300 text-left px-5 py-2">
+                                                            Service category
+                                                        </th>
+                                                        <td class="border border-blueGray-300 px-5 py-2">
+                                                            {{ service.service_category_id }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="hover:bg-sky-100">
+                                                        <th class="border border-blueGray-300 text-left px-5 py-2">
+                                                            Keywords
+                                                        </th>
+                                                        <td class="border border-blueGray-300 px-5 py-2">
+                                                            {{ service.seo_keywords }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="hover:bg-sky-100">
+                                                        <th class="border border-blueGray-300 text-left px-5 py-2">
+                                                            SEO description
+                                                        </th>
+                                                        <td class="border border-blueGray-300 px-5 py-2">
+                                                            {{ service.seo_description }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="hover:bg-sky-100">
+                                                        <th class="border border-blueGray-300 text-left px-5 py-2">
+                                                            SEO Title
+                                                        </th>
+                                                        <td class="border border-blueGray-300 px-5 py-2">
+                                                            {{ service.seo_title }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="hover:bg-sky-100">
+                                                        <th class="border border-blueGray-300 text-left px-5 py-2">
+                                                            Image alt
+                                                        </th>
+                                                        <td class="border border-blueGray-300 px-5 py-2">
+                                                            {{  service.image_alt }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="hover:bg-sky-100">
+                                                        <th class="border border-blueGray-300 text-left px-5 py-2">
+                                                            Image
+                                                        </th>
+                                                        <td class="border border-blueGray-300 px-5 py-2">
+                                                            {{ service.image }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="hover:bg-sky-100">
+                                                        <th class="border border-blueGray-300 text-left px-5 py-2">
+                                                            Slug
+                                                        </th>
+                                                        <td class="border border-blueGray-300 px-5 py-2">
+                                                            {{ service.slug }}
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="w-2/12 sm:w-2/12 text-right">
+                                                <Link :href="route('admin.service-update', service.id)"
+                                                      method="get">
+                                                    <button
+                                                        class="bg-teal-500 text-white active:bg-teal-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                        type="button">
+                                                        Edit
+                                                    </button>
+                                                </Link>
+                                                <Link :href="route('admin.service-destroy', service.id)"
+                                                      method="delete" as="button">
+                                                    <button
+                                                        class="bg-orange-500 text-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                        type="button">
+                                                        Delete
+                                                    </button>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <Link :href="route('admin.services')">
+                                    <button
+                                        class="bg-emerald-700 text-white active:bg-emerald-800 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                        type="button">
+                                        Back
+                                    </button>
+                                </Link>
                             </div>
-                            <Link :href="route('admin.services')">
-                                <button
-                                    class="bg-emerald-700 text-white active:bg-emerald-800 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                    type="button">
-                                    Back
-                                </button>
-                            </Link>
                         </div>
                     </div>
                 </div>

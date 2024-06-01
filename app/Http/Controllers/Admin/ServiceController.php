@@ -8,7 +8,8 @@ use App\Models\Service;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Inertia\Response;
-use Request;
+use Illuminate\Http\Request;
+use Str;
 
 class ServiceController extends Controller
 {
@@ -49,9 +50,32 @@ class ServiceController extends Controller
         ]);
     }
 
-    final public function update(ServiceSaveRequest $saveRequest, Service $service): RedirectResponse
+    final public function update(Request $saveRequest, Service $service): RedirectResponse
     {
-        $service->update($saveRequest->all());
+
+        $slug = Str::slug($saveRequest->title);
+        $image = $service->image ?? null;
+
+        if ($saveRequest->file) {
+            $fileName = "service_$slug" . "_" . time() . '.' . $saveRequest->file->extension();
+            $saveRequest->file->move(public_path('uploads'), $fileName);
+            $image = $fileName;
+        }
+
+        $service->update([
+            'title' => $saveRequest->title,
+            'details' => $saveRequest->details,
+            'price' => $saveRequest->price,
+            'service_category_id' => $saveRequest->service_category_id,
+            'seo_keywords' => $saveRequest->seo_keywords,
+            'seo_description' => $saveRequest->seo_description,
+            'seo_title' => $saveRequest->seo_title,
+            'image_alt' => $saveRequest->image_alt,
+            'image' => $image,
+            'description' => $saveRequest->description,
+            'slug' => $slug,
+        ]);
+
         return redirect(route('admin.services'))->with('message', 'Service Updated Successfully');
     }
 
