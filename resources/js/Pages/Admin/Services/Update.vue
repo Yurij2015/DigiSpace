@@ -146,7 +146,7 @@ const form = useForm({
                                     </div>
 
                                     <div class="mt-3">
-                                        <div class="columns-1 mt-3">
+                                        <div class="columns-1 mt-3" v-if="service.image">
                                             <img :src="'/uploads/' + service.image" width="400"/>
                                         </div>
                                         <div>

@@ -8,7 +8,6 @@ use App\Models\Service;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Inertia\Response;
-use Illuminate\Http\Request;
 use Str;
 
 class ServiceController extends Controller
@@ -50,31 +49,18 @@ class ServiceController extends Controller
         ]);
     }
 
-    final public function update(Request $saveRequest, Service $service): RedirectResponse
+    final public function update(ServiceSaveRequest $saveRequest, Service $service): RedirectResponse
     {
+        $data = $saveRequest->validated();
 
-        $slug = Str::slug($saveRequest->title);
-        $image = $service->image ?? null;
+        $service->slug = Str::slug($saveRequest->title);
+        $data['slug'] = $service->slug;
 
         if ($saveRequest->file) {
-            $fileName = "service_$slug" . "_" . time() . '.' . $saveRequest->file->extension();
-            $saveRequest->file->move(public_path('uploads'), $fileName);
-            $image = $fileName;
+            $data['image'] = $this->uploadImage($saveRequest, $service);
         }
 
-        $service->update([
-            'title' => $saveRequest->title,
-            'details' => $saveRequest->details,
-            'price' => $saveRequest->price,
-            'service_category_id' => $saveRequest->service_category_id,
-            'seo_keywords' => $saveRequest->seo_keywords,
-            'seo_description' => $saveRequest->seo_description,
-            'seo_title' => $saveRequest->seo_title,
-            'image_alt' => $saveRequest->image_alt,
-            'image' => $image,
-            'description' => $saveRequest->description,
-            'slug' => $slug,
-        ]);
+        $service->update($data);
 
         return redirect(route('admin.services'))->with('message', 'Service Updated Successfully');
     }
@@ -85,4 +71,10 @@ class ServiceController extends Controller
         return redirect(route('admin.services'));
     }
 
+    private function uploadImage($request, $service): string
+    {
+        $fileName = "service_$service->slug" . "_" . time() . '.' . $request->file->extension();
+        $request->file->move(public_path('uploads'), $fileName);
+        return $fileName;
+    }
 }
