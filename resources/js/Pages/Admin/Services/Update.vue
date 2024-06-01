@@ -22,8 +22,12 @@ const form = useForm({
     image: props.service.image,
     description: props.service.description,
     slug: props.service.slug,
+    status: props.service.status,
     file: null
 });
+
+const statuses = ['active', 'inactive', 'pending', 'suspended'];
+
 
 </script>
 <template>
@@ -57,18 +61,20 @@ const form = useForm({
                                         <InputError :message="form.errors.title" class="mt-2"/>
                                     </div>
                                     <div class="mt-3">
-                                        <label for="title" class="text-sm font-bold">Service details:</label>
+                                        <label for="details" class="text-sm font-bold">Service details:</label>
                                         <input
                                             v-model="form.details"
+                                            id="details"
                                             placeholder="What is service details?"
                                             class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
                                         >
                                         <InputError :message="form.errors.details" class="mt-2"/>
                                     </div>
                                     <div class="mt-3">
-                                        <label for="title" class="text-sm font-bold">Price:</label>
+                                        <label for="price" class="text-sm font-bold">Price:</label>
                                         <input
                                             v-model="form.price"
+                                            id="price"
                                             placeholder="What is service price?"
                                             class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
                                         >
@@ -76,9 +82,10 @@ const form = useForm({
                                     </div>
 
                                     <div class="mt-3">
-                                        <label for="title" class="text-sm font-bold">Category:</label>
+                                        <label for="service_category_id" class="text-sm font-bold">Category:</label>
                                         <input
                                             v-model="form.service_category_id"
+                                            id="service_category_id"
                                             placeholder="What is service category?"
                                             class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
                                         >
@@ -86,9 +93,10 @@ const form = useForm({
                                     </div>
 
                                     <div class="mt-3">
-                                        <label for="title" class="text-sm font-bold">Keywords:</label>
+                                        <label for="seo_keywords" class="text-sm font-bold">Keywords:</label>
                                         <input
                                             v-model="form.seo_keywords"
+                                            id="seo_keywords"
                                             placeholder="What is service keywords?"
                                             class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
                                         >
@@ -96,9 +104,10 @@ const form = useForm({
                                     </div>
 
                                     <div class="mt-3">
-                                        <label for="title" class="text-sm font-bold">SEO Description:</label>
+                                        <label for="seo_description" class="text-sm font-bold">SEO Description:</label>
                                         <input
                                             v-model="form.seo_description"
+                                            id="seo_description"
                                             placeholder="What is service SEO description?"
                                             class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
                                         >
@@ -106,9 +115,10 @@ const form = useForm({
                                     </div>
 
                                     <div class="mt-3">
-                                        <label for="title" class="text-sm font-bold">SEO Title:</label>
+                                        <label for="seo_title" class="text-sm font-bold">SEO Title:</label>
                                         <input
                                             v-model="form.seo_title"
+                                            id="seo_title"
                                             placeholder="What is service title?"
                                             class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
                                         >
@@ -116,9 +126,10 @@ const form = useForm({
                                     </div>
 
                                     <div class="mt-3">
-                                        <label for="title" class="text-sm font-bold">Description:</label>
+                                        <label for="description" class="text-sm font-bold">Description:</label>
                                         <input
                                             v-model="form.description"
+                                            id="description"
                                             placeholder="What is service description?"
                                             class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
                                         >
@@ -126,9 +137,10 @@ const form = useForm({
                                     </div>
 
                                     <div class="mt-3">
-                                        <label for="title" class="text-sm font-bold">Slug:</label>
+                                        <label for="slug" class="text-sm font-bold">Slug:</label>
                                         <input
                                             v-model="form.slug"
+                                            id="slug"
                                             placeholder="What is service slug?"
                                             class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
                                         >
@@ -136,9 +148,22 @@ const form = useForm({
                                     </div>
 
                                     <div class="mt-3">
-                                        <label for="title" class="text-sm font-bold">Image alt:</label>
+                                        <label for="status" class="text-sm font-bold">Status:</label>
+                                        <select
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                            v-model='form.status'
+                                            id="status"
+                                        >
+                                            <option v-for="status in statuses" :value="status">{{  status }}</option>
+                                        </select>
+                                        <InputError :message="form.errors.category_id" class="mt-2"/>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <label for="image_alt" class="text-sm font-bold">Image alt:</label>
                                         <input
                                             v-model="form.image_alt"
+                                            id="image_alt"
                                             placeholder="What is service image alt?"
                                             class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
                                         >

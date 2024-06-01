@@ -43,6 +43,14 @@ defineProps(['service']);
                                                         </td>
                                                     </tr>
                                                     <tr class="hover:bg-sky-100">
+                                                        <th class="border border-blueGray-300 text-left px-5 w-3/12">
+                                                            Status
+                                                        </th>
+                                                        <td class="border border-blueGray-300 text-blue-700 font-bold px-5 py-2 w-9/12 bg-red-200">
+                                                            {{ service.status }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="hover:bg-sky-100">
                                                         <th class="border border-blueGray-300 text-left px-5 py-2">
                                                             Details
                                                         </th>

@@ -20,6 +20,7 @@ class ServiceSaveRequest extends FormRequest
             'description' => 'nullable|string',
             'slug' => 'nullable|string|max:255',
             'image' => 'nullable|string|max:255',
+            'status' => 'required|string|max:30',
             'file' => '',
         ];
     }
