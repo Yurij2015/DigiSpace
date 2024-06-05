@@ -31,6 +31,7 @@ use App\Http\Controllers\PromoController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SubscriberController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ServiceCategoriesController as AdminServiceCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -123,6 +124,12 @@ Route::controller(AdminServiceController::class)->middleware('auth')->group(func
     Route::get('admin/service-update/{service}', 'serviceUpdateForm')->name('admin.service-update');
     Route::put('admin/service-update/{service}', 'update')->name('admin.service-update');
     Route::delete('admin/service-destroy/{service}', 'destroy')->name('admin.service-destroy');
+});
+
+Route::controller(AdminServiceCategoryController::class)->middleware('auth')->group(function () {
+    Route::get('/admin/service-categories', 'index')->name('admin.service-categories');
+    Route::post('/admin/service-categories', 'store')->name('admin.service-category-save');
+    Route::put('/admin/service-category-update/{serviceCategory}', 'update')->name('admin.service-category-update');
 });
 
 Route::controller(AdminProductController::class)->middleware('auth')->group(function () {

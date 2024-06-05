@@ -1,8 +1,25 @@
 <script setup>
 import {Link} from '@inertiajs/inertia-vue3';
 import {sanitizeUrl} from "@braintree/sanitize-url";
+import {ref} from "vue";
+import AddCategory from "@/Pages/Admin/ServiceCategories/Components/AddCategory.vue";
+import EditCategory from "@/Pages/Admin/ServiceCategories/Components/EditCategory.vue";
 
-const props = defineProps(['page_title', 'services']);
+const props = defineProps(['page_title', 'categories']);
+
+const addCategoryModal = ref(false);
+const editCategoryModal = ref(false);
+const selectedCategory = ref(null);
+
+const showAddCategoryModal = () => {
+    addCategoryModal.value = true;
+}
+
+const showEditCategoryModal = (category) => {
+    selectedCategory.value = category;
+    editCategoryModal.value = true;
+}
+
 </script>
 <template>
     <div
@@ -14,18 +31,12 @@ const props = defineProps(['page_title', 'services']);
                     <h3 class="font-semibold text-base font-bold text-blueGray-700 flex-1">
                         {{ page_title }}
                     </h3>
-                    <Link :href="route('admin.service-form')"
-                          class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 float-right"
-                          type="button">
-                        Add service
-                    </Link>
-                    <Link :href="route('admin.service-categories')"
-                          class="bg-orange-400 text-white active:bg-emerald-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 float-right"
-                          type="button">
-                        Service Categories
-                    </Link>
-                </div>
-                <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+                    <button
+                        class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 float-right"
+                        type="button"
+                        @click='showAddCategoryModal'>
+                        Add category
+                    </button>
                 </div>
             </div>
         </div>
@@ -37,19 +48,16 @@ const props = defineProps(['page_title', 'services']);
                         id
                     </th>
                     <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-4 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                        Service name
-                    </th>
-                    <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-4 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                        Image
+                        Name
                     </th>
                     <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-4 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                         SEO title
                     </th>
                     <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-4 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                        Status
+                        SEO description
                     </th>
                     <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-4 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                        Price
+                        SEO keywords
                     </th>
                     <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-4 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                         Operation
@@ -58,44 +66,46 @@ const props = defineProps(['page_title', 'services']);
                 </thead>
                 <tbody>
 
-                <tr v-for="(item, key) in services">
+                <tr v-for="item in categories">
                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                         {{ item.id }}
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        {{ item.title }}
-                    </td>
-                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        <img :src="'/uploads/' + item.image" width="200" v-if="item.image" :alt="item.image_alt" />
+                        {{ item.name }}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                         {{ item.seo_title }}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        {{ item.status }}
+                        {{ item.seo_description }}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        {{ item.price }}
+                        {{ item.seo_keywords }}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        <Link :href="sanitizeUrl(route('admin.service-show', item.id))" :title="item.title">
-                            <button
-                                class="bg-teal-500 text-white active:bg-teal-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button">
-                                Show
-                            </button>
-                        </Link>
-                        <Link :href="sanitizeUrl(route('admin.service-update', item.id))" :title="item.title">
-                            <button
-                                class="bg-orange-500 text-white active:bg-teal-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button">
-                                Edit
-                            </button>
-                        </Link>
+                        <button
+                            class="bg-orange-500 text-white active:bg-teal-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                            type="button"
+                            @click='showEditCategoryModal(item)'
+                        >
+                            Edit
+                        </button>
                     </td>
                 </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div v-if="addCategoryModal"
+         class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+        <div class="relative w-full my-6 mx-auto max-w-3xl">
+            <AddCategory @close-modal="addCategoryModal = false"/>
+        </div>
+    </div>
+    <div v-if="editCategoryModal"
+         class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+        <div class="relative w-full my-6 mx-auto max-w-3xl">
+            <EditCategory @close-modal="editCategoryModal = false" :category="selectedCategory"/>
         </div>
     </div>
 </template>
