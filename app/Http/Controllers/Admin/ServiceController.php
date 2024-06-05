@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ServiceSaveRequest;
 use App\Models\Service;
+use App\Models\ServiceCategory;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -38,14 +39,16 @@ class ServiceController extends Controller
     final public function show(Service $service): Response
     {
         return Inertia::render('Admin/Services/Show', [
-            'service' => $service,
+            'service' => $service->load('serviceCategory'),
         ]);
     }
 
     final public function serviceUpdateForm(Service $service): Response
     {
+        $serviceCategories = ServiceCategory::all();
         return Inertia::render('Admin/Services/Update', [
             'service' => $service,
+            'serviceCategories' => $serviceCategories,
         ]);
     }
 
