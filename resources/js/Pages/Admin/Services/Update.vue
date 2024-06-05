@@ -8,7 +8,7 @@ import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
 import Label from "@/Components/InputLabel.vue";
 
-const props = defineProps(['service']);
+const props = defineProps(['service' , 'serviceCategories']);
 
 const form = useForm({
     title: props.service.title,
@@ -83,12 +83,14 @@ const statuses = ['active', 'inactive', 'pending', 'suspended'];
 
                                     <div class="mt-3">
                                         <label for="service_category_id" class="text-sm font-bold">Category:</label>
-                                        <input
-                                            v-model="form.service_category_id"
-                                            id="service_category_id"
-                                            placeholder="What is service category?"
+                                        <select
                                             class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
-                                        >
+                                            v-model='form.service_category_id'>
+                                            <option v-for='category in serviceCategories'
+                                                    :value='category.id'>
+                                                {{ category.name }}
+                                            </option>
+                                        </select>
                                         <InputError :message="form.errors.service_category_id" class="mt-2"/>
                                     </div>
 

@@ -79,7 +79,7 @@ defineProps(['service']);
                                                             Service category
                                                         </th>
                                                         <td class="border border-blueGray-300 px-5 py-2">
-                                                            {{ service.service_category_id }}
+                                                            {{ service.service_category ? service.service_category.name : 'No category'}}
                                                         </td>
                                                     </tr>
                                                     <tr class="hover:bg-sky-100">
