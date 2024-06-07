@@ -7,8 +7,9 @@ import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
 import Label from "@/Components/InputLabel.vue";
+import Editor from '@tinymce/tinymce-vue'
 
-const props = defineProps(['service' , 'serviceCategories']);
+const props = defineProps(['service', 'serviceCategories', 'api_key_tinymce']);
 
 const form = useForm({
     title: props.service.title,
@@ -26,8 +27,9 @@ const form = useForm({
     file: null
 });
 
-const statuses = ['active', 'inactive', 'pending', 'suspended'];
+let api_key_tinymce = props.api_key_tinymce;
 
+const statuses = ['active', 'inactive', 'pending', 'suspended'];
 
 </script>
 <template>
@@ -62,12 +64,12 @@ const statuses = ['active', 'inactive', 'pending', 'suspended'];
                                     </div>
                                     <div class="mt-3">
                                         <label for="details" class="text-sm font-bold">Service details:</label>
-                                        <input
+                                        <textarea
                                             v-model="form.details"
                                             id="details"
                                             placeholder="What is service details?"
                                             class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
-                                        >
+                                        />
                                         <InputError :message="form.errors.details" class="mt-2"/>
                                     </div>
                                     <div class="mt-3">
@@ -107,12 +109,13 @@ const statuses = ['active', 'inactive', 'pending', 'suspended'];
 
                                     <div class="mt-3">
                                         <label for="seo_description" class="text-sm font-bold">SEO Description:</label>
-                                        <input
+                                        <textarea
                                             v-model="form.seo_description"
                                             id="seo_description"
+                                            rows="3"
                                             placeholder="What is service SEO description?"
                                             class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
-                                        >
+                                        />
                                         <InputError :message="form.errors.seo_description" class="mt-2"/>
                                     </div>
 
@@ -129,12 +132,24 @@ const statuses = ['active', 'inactive', 'pending', 'suspended'];
 
                                     <div class="mt-3">
                                         <label for="description" class="text-sm font-bold">Description:</label>
-                                        <input
+                                        <Editor
+                                            :api-key=api_key_tinymce
+                                            :init="{
+                                            height: 500,
+                                            plugins: [
+                                           'advlist autolink lists link image charmap print preview anchor',
+                                           'searchreplace visualblocks code fullscreen',
+                                           'insertdatetime media table paste code help wordcount'
+                                           ],
+                                            toolbar:
+                                           'undo redo | formatselect | bold italic backcolor | \
+                                           alignleft aligncenter alignright alignjustify | \
+                                           bullist numlist outdent indent | removeformat | help'
+                                        }"
                                             v-model="form.description"
-                                            id="description"
                                             placeholder="What is service description?"
-                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
-                                        >
+                                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                        />
                                         <InputError :message="form.errors.description" class="mt-2"/>
                                     </div>
 
@@ -156,7 +171,7 @@ const statuses = ['active', 'inactive', 'pending', 'suspended'];
                                             v-model='form.status'
                                             id="status"
                                         >
-                                            <option v-for="status in statuses" :value="status">{{  status }}</option>
+                                            <option v-for="status in statuses" :value="status">{{ status }}</option>
                                         </select>
                                         <InputError :message="form.errors.category_id" class="mt-2"/>
                                     </div>

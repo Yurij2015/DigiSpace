@@ -70,16 +70,18 @@ defineProps(['service']);
                                                         <th class="border border-blueGray-300 text-left px-5 py-2">
                                                             Description
                                                         </th>
-                                                        <td class="border border-blueGray-300 px-5 py-2">
-                                                            {{ service.description }}
-                                                        </td>
+                                                        <td class="border border-blueGray-300 px-5 py-2"
+                                                            v-html="service.description"
+                                                        />
                                                     </tr>
                                                     <tr class="hover:bg-sky-100">
                                                         <th class="border border-blueGray-300 text-left px-5 py-2">
                                                             Service category
                                                         </th>
                                                         <td class="border border-blueGray-300 px-5 py-2">
-                                                            {{ service.service_category ? service.service_category.name : 'No category'}}
+                                                            {{
+                                                                service.service_category ? service.service_category.name : 'No category'
+                                                            }}
                                                         </td>
                                                     </tr>
                                                     <tr class="hover:bg-sky-100">
