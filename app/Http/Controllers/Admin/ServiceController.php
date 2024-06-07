@@ -49,6 +49,7 @@ class ServiceController extends Controller
         return Inertia::render('Admin/Services/Update', [
             'service' => $service,
             'serviceCategories' => $serviceCategories,
+            'api_key_tinymce' => config('app.tiny_mce_api_key')
         ]);
     }
 
