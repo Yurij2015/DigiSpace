@@ -122,7 +122,7 @@ defineProps(['service']);
                                                         </th>
                                                         <td class="border border-blueGray-300 px-5 py-2">
                                                             {{ service.image }}
-                                                            <img :src="'/uploads/' + service.image" width="400"/>
+                                                            <img :src="'/uploads/' + service.image" width="400" :alt="service.title"/>
                                                         </td>
                                                     </tr>
                                                     <tr class="hover:bg-sky-100">
