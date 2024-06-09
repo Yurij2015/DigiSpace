@@ -122,7 +122,7 @@ defineProps(['service']);
                                                         </th>
                                                         <td class="border border-blueGray-300 px-5 py-2">
                                                             {{ service.image }}
-                                                            <img :src="'/uploads/' + service.image" width="400" :alt="service.title"/>
+                                                            <img :src="service.image" width="400" :alt="service.title"/>
                                                         </td>
                                                     </tr>
                                                     <tr class="hover:bg-sky-100">
@@ -137,7 +137,7 @@ defineProps(['service']);
                                                 </table>
                                             </div>
                                             <div class="w-2/12 sm:w-2/12 text-right">
-                                                <Link :href="route('admin.service-update', service.id)"
+                                                <Link :href="route('admin.service-update', service.slug)"
                                                       method="get">
                                                     <button
                                                         class="bg-teal-500 text-white active:bg-teal-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
@@ -145,7 +145,7 @@ defineProps(['service']);
                                                         Edit
                                                     </button>
                                                 </Link>
-                                                <Link :href="route('admin.service-destroy', service.id)"
+                                                <Link :href="route('admin.service-destroy', service.slug)"
                                                       method="delete" as="button">
                                                     <button
                                                         class="bg-orange-500 text-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"

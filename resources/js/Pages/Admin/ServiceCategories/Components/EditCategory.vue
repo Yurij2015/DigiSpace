@@ -37,7 +37,7 @@ const submitForm = (emit) => {
         </div>
         <div class="relative p-6 flex-auto">
             <form
-                @submit.prevent="form.put(route('admin.service-category-update', category.id));  submitForm($emit)">
+                @submit.prevent="form.put(route('admin.service-category-update', category.slug));  submitForm($emit)">
                 <div class="mb-12">
                     <div class="mt-3">
                         <label for="name" class="font-bold">Category Name</label>

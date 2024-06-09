@@ -189,7 +189,7 @@ const statuses = ['active', 'inactive', 'pending', 'suspended'];
 
                                     <div class="mt-3">
                                         <div class="columns-1 mt-3" v-if="service.image">
-                                            <img :src="'/uploads/' + service.image" width="400" :alt="service.title"/>
+                                            <img :src="service.image" width="400" :alt="service.title"/>
                                         </div>
                                         <div>
                                             <Label for="file" value="File"/>

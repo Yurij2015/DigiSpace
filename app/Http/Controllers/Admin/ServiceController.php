@@ -60,6 +60,10 @@ class ServiceController extends Controller
         $service->slug = Str::slug($saveRequest->title);
         $data['slug'] = $service->slug;
 
+        if ($service->image && !$saveRequest->file) {
+            $data['image'] = str_replace('/uploads/', '', $service->image);
+        }
+
         if ($saveRequest->file) {
             $data['image'] = $this->uploadImage($saveRequest, $service);
         }

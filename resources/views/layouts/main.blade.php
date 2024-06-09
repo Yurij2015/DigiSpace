@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <!--  Facebook Open Graph-->
-    @if(isset($post) && url()->current() === route('blog.post', $post->slug))
+    @if(isset($post) && $post->slug && url()->current() === route('blog.post', $post->slug))
         <meta property="og:url" content="{{ route('blog.post', $post->slug) }}"/>
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="{{ $post->name }}"/>
@@ -25,6 +25,14 @@
         <meta property="og:image" content="{{ $pageImage }}"/>
         <meta name="description" content="{{ $page->description }}"/>
         <meta name="keywords" content="{{ $page->meta }}"/>
+    @endif
+    @if(isset($serviceCategory) && $serviceCategory->slug && url()->current() === route('category-services', $serviceCategory->slug))
+        <meta property="og:url" content="{{ route('category-services', $serviceCategory->slug) }}"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="{{ $serviceCategory->seo_title }}"/>
+        <meta property="og:description" content="{{ $serviceCategory->seo_description }}"/>
+{{--        <meta property="og:image" content="{{ $serviceCategory->img_path }}"/>--}}
+        <meta name="keywords" content="{{ $serviceCategory->seo_keywords }}"/>
     @endif
     <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     <!-- Stylesheets-->

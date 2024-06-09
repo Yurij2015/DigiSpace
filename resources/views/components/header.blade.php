@@ -60,6 +60,17 @@
                                 </li>
                                 <li class="{{ Route::is('services') ? 'active' : '' }}">
                                     <a href="{{ route('services') }}">Services</a>
+                                    @if(isset($serviceCategories) && count($serviceCategories));
+                                        <ul class="rd-navbar-dropdown">
+                                            @foreach($serviceCategories as $serviceCategory)
+                                                <li>
+                                                    <a href="{{ route('category-services', $serviceCategory->slug) }}">
+                                                        {{ $serviceCategory->name }}
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
                                 </li>
                                 <li class="{{ Route::is('pricing') ? 'active' : '' }}">
                                     <a href="{{ route('pricing') }}">Pricing</a>
@@ -71,7 +82,10 @@
                                     <a href="{{ route('blog') }}">Blog</a>
                                     <ul class="rd-navbar-dropdown">
                                         @foreach($postsForMenu as $post)
-                                            <li><a href="{{ route('blog.post', $post->slug) }}">{{ $post->name }}</a>
+                                            <li>
+                                                <a href="{{ route('blog.post', $post->slug) }}">
+                                                    {{ $post->name }}
+                                                </a>
                                             </li>
                                         @endforeach
                                     </ul>

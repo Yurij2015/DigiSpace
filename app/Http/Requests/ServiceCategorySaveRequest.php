@@ -10,6 +10,7 @@ class ServiceCategorySaveRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
+            'slug' => 'nullable|string|max:255',
             'seo_keywords' => 'nullable|string|max:255',
             'seo_description' => 'nullable|string',
             'seo_title' => 'nullable|string|max:255',

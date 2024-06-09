@@ -214,6 +214,10 @@ Route::get('/pages/{slug}', [PageController::class, 'show'])->name('pages.page')
 Route::get('/blog/{postSlug}', [BlogController::class, 'show'])->name('blog.post');
 Route::get('/page-not-found', [NotFoundController::class, 'index'])->name('error-404');
 
+Route::get('/service-category/{serviceCategory}', [ServiceController::class, 'categoryServices'])->name('category-services');
+Route::get('/service-category/{serviceCategory}/{service}', [ServiceController::class, 'serviceShow'])->name('category-service');
+Route::get('/service-search', [ServiceController::class, 'search'])->name('service-search');
+
 Route::controller(FooterPagesController::class)->group(function () {
     Route::get('privacy-policy', 'privacyPolicy')->name('privacy-policy');
     Route::get('faq', 'faq')->name('faq');
