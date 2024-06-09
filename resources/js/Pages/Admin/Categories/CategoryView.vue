@@ -30,7 +30,7 @@ defineProps(['category', 'posts']);
                                 </div>
                             </div>
                             <div v-for="post in posts">
-                                <Link :href="route('admin.post-update', post.id)" :title="`${'Edit post - ' + post.name}`">
+                                <Link :href="route('admin.post-update-form', post.id)" :title="`${'Edit post - ' + post.name}`">
                                     <ul role="list" class="marker:text-sky-400 list-disc pl-5 space-y-3 text-slate-400">
                                         <li>{{post.name}}</li>
                                     </ul>
