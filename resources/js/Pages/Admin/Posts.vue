@@ -18,7 +18,7 @@ defineProps(['posts']);
                     <div class="columns-2">
                         <div style="line-height: 40px" class="font-bold">Posts</div>
                         <div style="float: right">
-                            <a href="/admin/post-store">
+                            <a href="/admin/post-form">
                                 <div class="btn btn-blue text-center">
                                     Create
                                 </div>

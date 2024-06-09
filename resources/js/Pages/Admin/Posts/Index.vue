@@ -22,7 +22,7 @@ defineProps(['posts']);
                     <div class="rounded-t bg-white mb-0 px-6 py-6">
                         <div class="text-center flex justify-between">
                             <h6 class="text-blueGray-700 text-xl font-bold">Posts</h6>
-                            <Link :href="route('admin.post-store')"
+                            <Link :href="route('admin.post-form')"
                                   class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                                   type="button">
                                 Create

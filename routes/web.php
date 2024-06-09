@@ -79,17 +79,17 @@ Route::controller(CategoryController::class)->middleware('auth')->group(function
 });
 
 Route::controller(PostController::class)->middleware('auth')->group(function () {
-    Route::get('admin/post-store', 'postForm')->name('admin.post-store');
+    Route::get('admin/post-form', 'postForm')->name('admin.post-form');
     Route::post('admin/post-store', 'postSave')->name('admin.post-store');
     Route::delete('admin/post-destroy/{post}', 'postDestroy')->name('admin.post-destroy');
     Route::put('admin/post-update/{post}', 'postUpdate')->name('admin.post-update');
-    Route::get('admin/post-update/{post}', 'postUpdateForm')->name('admin.post-update');
+    Route::get('admin/post-update-form/{post}', 'postUpdateForm')->name('admin.post-update-form');
     Route::get('/admin/posts/', 'posts')->name('admin.posts');
 });
 
 Route::controller(WidgetController::class)->middleware('auth')->group(function () {
     Route::get('/admin/widgets/', 'index')->name('admin.widgets');
-    Route::get('admin/widget-update/{widget}', 'widgetUpdateForm')->name('admin.widget-update');
+    Route::get('admin/widget-update-form/{widget}', 'widgetUpdateForm')->name('admin.widget-update-form');
     Route::get('admin/widget-form', 'widgetForm')->name('admin.widget-form');
     Route::post('admin/widget-save', 'widgetSave')->name('admin.widget-save');
     Route::put('admin/widget-update/{widget}', 'widgetUpdate')->name('admin.widget-update');
@@ -121,7 +121,7 @@ Route::controller(AdminServiceController::class)->middleware('auth')->group(func
     Route::get('admin/service-form', 'serviceForm')->name('admin.service-form');
     Route::post('admin/service-store', 'serviceSave')->name('admin.service-store');
     Route::get('/admin/services/{service}', 'show')->name('admin.service-show');
-    Route::get('admin/service-update/{service}', 'serviceUpdateForm')->name('admin.service-update');
+    Route::get('admin/service-update-form/{service}', 'serviceUpdateForm')->name('admin.service-update-form');
     Route::put('admin/service-update/{service}', 'update')->name('admin.service-update');
     Route::delete('admin/service-destroy/{service}', 'destroy')->name('admin.service-destroy');
 });
@@ -136,7 +136,7 @@ Route::controller(AdminProductController::class)->middleware('auth')->group(func
     Route::get('/admin/products', 'index')->name('admin.products');
     Route::get('admin/product-form', 'productForm')->name('admin.product-form');
     Route::post('admin/product-store', 'productSave')->name('admin.product-store');
-    Route::get('admin/product-update/{product}', 'productUpdateForm')->name('admin.product-update');
+    Route::get('admin/product-update-form/{product}', 'productUpdateForm')->name('admin.product-update-form');
     Route::get('/admin/products/{product}', 'show')->name('admin.product-show');
     Route::put('admin/product-update/{product}', 'update')->name('admin.product-update');
     Route::delete('admin/product-destroy/{product}', 'destroy')->name('admin.product-destroy');

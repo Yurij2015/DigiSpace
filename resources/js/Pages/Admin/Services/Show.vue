@@ -137,7 +137,7 @@ defineProps(['service']);
                                                 </table>
                                             </div>
                                             <div class="w-2/12 sm:w-2/12 text-right">
-                                                <Link :href="route('admin.service-update', service.slug)"
+                                                <Link :href="route('admin.service-update-form', service.slug)"
                                                       method="get">
                                                     <button
                                                         class="bg-teal-500 text-white active:bg-teal-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"

@@ -39,7 +39,7 @@ import {Link} from '@inertiajs/inertia-vue3';
                                  class="shadow rounded max-w-full h-auto align-middle border-none"/>
                         </div>
                         <div class="mt-5">
-                            <Link :href="route('admin.post-update', post.id)" method="get">
+                            <Link :href="route('admin.post-update-form', post.id)" method="get">
                                 <button
                                     class="bg-teal-500 text-white active:bg-teal-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                     type="button">
