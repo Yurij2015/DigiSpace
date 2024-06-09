@@ -7,6 +7,7 @@ use App\Models\FooterUsefulLink;
 use App\Models\HeaderNavBarContent;
 use App\Models\Menu;
 use App\Models\Post;
+use App\Models\ServiceCategory;
 use App\Models\Widget;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -49,6 +50,7 @@ class ContentServiceProvider extends ServiceProvider
             $footerLatestNews = Post::orderBy('created_at', 'DESC')->get()->take(2);
             $headerNavBarContent = HeaderNavBarContent::all()->first();
             $footerBottomBarContent = FooterBottomBarContent::all()->first();
+            $serviceCategories = ServiceCategory::all();
             View::share([
                 'footerWidgets' => $footerWidgets,
                 'pageSubmenuFirst' => $pageSubmenuFirst,
@@ -58,7 +60,8 @@ class ContentServiceProvider extends ServiceProvider
                 'footerUsefulLinks' => $footerUsefulLinks,
                 'footerLatestNews' => $footerLatestNews,
                 'headerNavBarContent' => $headerNavBarContent,
-                'footerBottomBarContent' => $footerBottomBarContent
+                'footerBottomBarContent' => $footerBottomBarContent,
+                'serviceCategories' => $serviceCategories
             ]);
         } catch (\Exception $e) {
             //
