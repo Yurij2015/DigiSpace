@@ -11,6 +11,9 @@ return new class extends Migration {
     public function up(): void
     {
         DB::table('services')->get()->each(function ($row) {
+            if (!empty($row->slug)) {
+                return;
+            }
             $firstWord = explode(' ', $row->title)[0];
             $slug = Str::slug($row->title);
             $count = DB::table('services')->where('title', $row->title)->count();
