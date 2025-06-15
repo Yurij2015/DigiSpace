@@ -1,0 +1,20 @@
+[
+    {
+        "name": "test-server",
+        "ip": "159.89.15.103",
+        "port": "22",
+        "username": "root",
+        "beforeHooks": "",
+        "afterHooks": "php /var/www/t-digi-space/current/artisan migrate",
+        "path": "/var/www/t-digi-space"
+    },
+    {
+        "name": "prod-server",
+        "ip": "64.226.108.149",
+        "port": "22",
+        "username": "root",
+        "beforeHooks": "",
+        "afterHooks": "php /var/www/digispace.pro/current/artisan migrate",
+        "path": "/var/www/digispace.pro"
+    }
+]
