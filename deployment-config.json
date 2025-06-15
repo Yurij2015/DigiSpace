@@ -6,6 +6,6 @@
     "username": "testdigispace",
     "beforeHooks": "",
     "afterHooks": "php /home/testdigispace/htdocs/t-digi-space.inf.ua/current/artisan migrate",
-    "path": "/home/testdigispace/htdocs/t-digi-space.inf.ua/"
+    "path": "/home/testdigispace/htdocs/t-digi-space.inf.ua"
   }
 ]
