@@ -181,7 +181,6 @@ jobs:
             fi
             ln -s -f $STORAGE_PATH $RELEASE_PATH
             ln -s -n -f $RELEASE_PATH $ACTIVE_RELEASE_PATH
-            systemctl reload apache2
 
   run-after-hooks:
     name: "${{ matrix.server.name }}: After hook"
