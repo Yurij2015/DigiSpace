@@ -3,7 +3,7 @@
     "name": "test-server-cloudpanel",
     "ip": "138.201.196.61",
     "port": "2226",
-    "username": "netpostpanel",
+    "username": "testdigispace",
     "beforeHooks": "",
     "afterHooks": "php /home/testdigispace/htdocs/http:/t-digi-space.inf.ua/current/artisan migrate",
     "path": "/home/testdigispace/htdocs/http:/t-digi-space.inf.ua/"
