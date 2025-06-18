@@ -3,10 +3,10 @@
     "name": "test-domain-cloudpanel",
     "ip": "138.201.196.61",
     "port": "2226",
-    "username": "testdigispace",
+    "username": "t-digi-space",
     "beforeHooks": "",
-    "afterHooks": "/usr/bin/php8.2 /home/testdigispace/htdocs/t-digi-space.inf.ua/current/artisan migrate",
-    "path": "/home/testdigispace/htdocs/t-digi-space.inf.ua"
+    "afterHooks": "/usr/bin/php8.2 /home/t-digi-space/htdocs/t-digi-space.inf.ua/current/artisan migrate",
+    "path": "/home/t-digi-space/htdocs/t-digi-space.inf.ua"
   },
   {
     "name": "main-domain-cloudpanel",
