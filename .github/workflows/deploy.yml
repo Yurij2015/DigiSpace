@@ -39,7 +39,10 @@ jobs:
             --exclude='public/uploads' \
             --exclude='public/images' \
             --exclude='public/banners' \
-             app bootstrap config database public resources routes artisan composer.* package*.json webpack.mix.js vite.config.js
+             app bootstrap config database lang public resources routes \
+             artisan composer.* package*.json vite.config.js tailwind.config.js \
+             postcss.config.js phpunit.xml phpstan.neon docker-compose.yml \
+             deployment-config.json example.deployment-config.json jsconfig.json qodana.yaml
 
       - name: Store artifact for distribution
         uses: actions/upload-artifact@v4
