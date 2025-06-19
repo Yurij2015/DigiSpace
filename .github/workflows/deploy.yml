@@ -28,21 +28,7 @@ jobs:
       - name: Create deployment artifact
         env:
           GITHUB_SHA: ${{ github.sha }}
-        run: |
-          tar -czf "${GITHUB_SHA}.tar.gz" \
-            --exclude='.git' \
-            --exclude='node_modules' \
-            --exclude='.env' \
-            --exclude='storage' \
-            --exclude='tests' \
-            --exclude='*.log' \
-            --exclude='public/uploads' \
-            --exclude='public/images' \
-            --exclude='public/banners' \
-             app bootstrap config database lang public resources routes \
-             artisan composer.* package*.json vite.config.js tailwind.config.js \
-             postcss.config.js phpunit.xml phpstan.neon docker-compose.yml \
-             deployment-config.json example.deployment-config.json jsconfig.json qodana.yaml
+        run: tar -czf "${GITHUB_SHA}".tar.gz --exclude=*.git --exclude=node_modules *
 
       - name: Store artifact for distribution
         uses: actions/upload-artifact@v4
@@ -96,10 +82,6 @@ jobs:
 
             mkdir -p ${{ matrix.server.path }}/storage/{app,public,framework,logs}
             mkdir -p ${{ matrix.server.path }}/storage/framework/{cache,sessions,testing,views}
-            
-            rm -rf ${{ matrix.server.path }}/storage/framework/views/*
-            rm -rf ${{ matrix.server.path }}/storage/framework/cache/*
-            
             chmod -R 0777 ${{ matrix.server.path }}/storage
 
   run-before-hooks:
