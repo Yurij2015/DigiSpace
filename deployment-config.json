@@ -5,7 +5,8 @@
     "port": "2226",
     "username": "testdigispace",
     "beforeHooks": "",
-    "afterHooks": "cd /home/testdigispace/htdocs/t-digi-space.inf.ua/current &&  composer install --no-dev --no-interaction --prefer-dist &&  /usr/bin/php8.2 artisan migrate &&  /usr/bin/php8.2 artisan config:cache &&  /usr/bin/php8.2 artisan route:cache",
+    "afterHooks": "cd /home/testdigispace/htdocs/t-digi-space.inf.ua/current && /usr/bin/php8.2 /usr/local/bin/composer install --no-dev --no-interaction --prefer-dist && /usr/bin/php8.2 artisan migrate && /usr/bin/php8.2 artisan config:cache && /usr/bin/php8.2 artisan route:cache",
+
     "path": "/home/testdigispace/htdocs/t-digi-space.inf.ua"
   },
   {
@@ -14,7 +15,7 @@
     "port": "2226",
     "username": "digispace-main",
     "beforeHooks": "",
-    "afterHooks": "cd /home/digispace-main/htdocs/digispace.pro/current &&  composer install --no-dev --no-interaction --prefer-dist &&  /usr/bin/php8.2 artisan migrate &&  /usr/bin/php8.2 artisan config:cache &&  /usr/bin/php8.2 artisan route:cache",
+    "afterHooks": "cd /home/digispace-main/htdocs/digispace.pro/current &&  /usr/bin/php8.2 /usr/local/bin/composer install --no-dev --no-interaction --prefer-dist &&  /usr/bin/php8.2 artisan migrate &&  /usr/bin/php8.2 artisan config:cache &&  /usr/bin/php8.2 artisan route:cache",
     "path": "/home/digispace-main/htdocs/digispace.pro"
   }
 ]
