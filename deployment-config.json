@@ -7,14 +7,5 @@
     "beforeHooks": "",
     "afterHooks": "/usr/bin/php8.2 /home/testdigispace/htdocs/t-digi-space.inf.ua/current/artisan migrate",
     "path": "/home/testdigispace/htdocs/t-digi-space.inf.ua"
-  },
-  {
-    "name": "main-domain-cloudpanel",
-    "ip": "138.201.196.61",
-    "port": "2226",
-    "username": "digispace",
-    "beforeHooks": "",
-    "afterHooks": "/usr/bin/php8.2 /home/digispace-main/htdocs/digispace.pro/current/artisan migrate",
-    "path": "/home/digispace-main/htdocs/digispace.pro"
   }
 ]
