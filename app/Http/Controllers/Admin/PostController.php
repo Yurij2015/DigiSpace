@@ -9,6 +9,7 @@ use App\Services\PostService;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -19,12 +20,14 @@ class PostController extends Controller
      * Get and change array with posts
      *
      * @param PostService $postService
+     *
      * @return Response
      */
     final public function posts(PostService $postService): Response
     {
         $posts = Post::with('category:id,name')->latest()->get();
         $postService->changeImgPathIfNullInPosts($posts);
+
         return Inertia::render('Admin/Posts/Index', [
             'posts' => $posts,
         ]);
@@ -48,12 +51,14 @@ class PostController extends Controller
      *
      * @param $post
      * @param PostService $postService
+     *
      * @return Response
      */
     final public function postUpdateForm($post, PostService $postService): Response
     {
         $post = Post::where('id', $post)->first();
         $postService->changeImgPathIfNull($post);
+
         return Inertia::render('Admin/Posts/Update', [
             'post' => $post,
             'categories' => Category::all()
@@ -65,6 +70,7 @@ class PostController extends Controller
      *
      * @param Request $request
      * @param Post $post
+     *
      * @return RedirectResponse
      * @throws AuthorizationException
      */
@@ -78,13 +84,17 @@ class PostController extends Controller
             'category_id' => 'int',
             'file' => '',
         ]);
+
         if ($request->file) {
-            $fileName = time() . '.' . $request->file->extension();
-            $request->file->move(public_path('uploads'), $fileName);
+            $fileName = $this->storeImageOnMinio($request);
+
             $post->img_path = $fileName;
         }
+
         $post->slug = \Str::slug($request->name);
+
         $post->update($validated);
+
         return redirect(route('admin.posts'));
     }
 
@@ -92,6 +102,7 @@ class PostController extends Controller
      * Save a newly created post in storage.
      *
      * @param Request $request
+     *
      * @return RedirectResponse
      */
     final public function postSave(Request $request): RedirectResponse
@@ -104,8 +115,7 @@ class PostController extends Controller
             'file' => 'required',
         ])->validate();
 
-        $fileName = time() . '.' . $request->file->extension();
-        $request->file->move(public_path('uploads'), $fileName);
+        $fileName = $this->storeImageOnMinio($request);
 
         Post::create([
             'name' => $request->name,
@@ -116,6 +126,7 @@ class PostController extends Controller
             'user_id' => $request->user()->id,
             'img_path' => $fileName
         ]);
+
         return redirect(route('admin.posts'))->with('message', 'Post Created Successfully');
     }
 
@@ -123,6 +134,7 @@ class PostController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Post $post
+     *
      * @return RedirectResponse
      * @throws AuthorizationException
      */
@@ -130,6 +142,29 @@ class PostController extends Controller
     {
         $this->authorize('postDestroy', $post);
         $post->delete();
+
         return redirect(route('admin.posts'));
+    }
+
+    /**
+     * @param Request $request
+     *
+     * @return string
+     */
+    private function storeImageOnMinio(Request $request): string
+    {
+        $fileName = null;
+        $user = auth()->user();
+
+        if ($request->hasFile('file')) {
+            $image = $request->file('file');
+            $imageName = $image->getClientOriginalName();
+            $filePath = rtrim('posts/' . $user->id, '/') . '/' . ltrim($imageName, '/');
+            Storage::disk('s3')->put($filePath, file_get_contents($image));
+            $fileName = Storage::disk('s3')->url($filePath);
+            $user->save();
+        }
+
+        return $fileName;
     }
 }
