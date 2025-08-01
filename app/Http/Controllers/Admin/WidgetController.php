@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Widget;
 use App\Models\WidgetCategory;
 use App\Services\WidgetService;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -55,20 +56,24 @@ class WidgetController extends Controller
             'widget_category_id' => 'int',
             'file' => '',
         ])->validate();
-        if ($request->file) {
-            $fileName = time() . '.' . $request->file->extension();
-            $request->file->move(public_path('uploads/widgets'), $fileName);
-        } else {
-            $fileName = null;
-        }
-        Widget::create([
+
+        $newWidget = Widget::create([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
             'content' => $request['content'],
             'widget_category_id' => $request->widget_category_id,
-            'icon' => $request->icon,
-            'widget_image' => $fileName
+            'icon' => $request->icon
         ]);
+
+        if ($request->file) {
+            $fileName = $this->storeWidgetImageOnMinio($request, $newWidget);
+        } else {
+            $fileName = null;
+        }
+
+        $newWidget->widget_image = $fileName;
+        $newWidget->save();
+
         return redirect(route('admin.widgets'))->with('message', 'Widget Created Successfully');
     }
 
@@ -107,11 +112,13 @@ class WidgetController extends Controller
             'widget_category_id' => 'int',
             'file' => '',
         ]);
+
         if ($request->file) {
-            $fileName = time() . '.' . $request->file->extension();
-            $request->file->move(public_path('uploads/widgets'), $fileName);
+            $fileName = $this->storeWidgetImageOnMinio($request, $widget);
+
             $widget->widget_image = $fileName;
         }
+
         $widget->update($validated);
         return redirect(route('admin.widgets'));
     }
@@ -126,5 +133,21 @@ class WidgetController extends Controller
     {
         $widget->delete();
         return redirect(route('admin.widgets'));
+    }
+
+    private function storeWidgetImageOnMinio(Request $request, Widget $widget): string
+    {
+        $fileName = null;
+
+        if ($request->hasFile('file')) {
+            $image = $request->file('file');
+            $imageName = time() . '.' . $image->extension();
+            $filePath = 'widgets/' . $widget->id . "/" . $imageName;
+
+            Storage::disk('s3')->put($filePath, file_get_contents($image));
+            $fileName = Storage::disk('s3')->url($filePath);
+        }
+
+        return $fileName;
     }
 }
