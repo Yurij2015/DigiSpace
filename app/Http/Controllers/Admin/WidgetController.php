@@ -80,11 +80,13 @@ class WidgetController extends Controller
     {
         $widget = Widget::where('id', $widget)->first();
         $widgetService->changeImgPathIfNull($widget);
+        $currentPage = request()->query('page');
 
         return Inertia::render('Admin/Widgets/Update', [
             'widget' => $widget,
             'widgetCategories' => WidgetCategory::all(),
             'api_key_tinymce' => config('app.tiny_mce_api_key'),
+            'currentPage' => $currentPage,
         ]);
     }
 
@@ -102,6 +104,8 @@ class WidgetController extends Controller
             'file' => '',
         ]);
 
+        $page = request()->query('page');
+
         if ($request->file) {
             $fileName = $this->storeWidgetImageOnMinio($request, $widget);
 
@@ -110,7 +114,7 @@ class WidgetController extends Controller
 
         $widget->update($validated);
 
-        return redirect(route('admin.widgets'));
+        return redirect(route('admin.widgets', ['page' => $page]));
     }
 
     /**
