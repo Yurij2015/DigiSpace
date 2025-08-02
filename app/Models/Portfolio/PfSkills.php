@@ -32,6 +32,7 @@ use Illuminate\Support\Carbon;
  * @property string $fa_icon
  * @property-read PfSkillType|null $skill
  * @method static Builder|PfSkills whereSkillTypeId($value)
+ * @property-read PfSkillType $skillType
  * @mixin Eloquent
  */
 class PfSkills extends Model

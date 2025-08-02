@@ -21,6 +21,8 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfSkillType whereId($value)
  * @method static Builder|PfSkillType whereSkill($value)
  * @method static Builder|PfSkillType whereUpdatedAt($value)
+ * @property string $skill_type
+ * @method static Builder<static>|PfSkillType whereSkillType($value)
  * @mixin Eloquent
  */
 class PfSkillType extends Model

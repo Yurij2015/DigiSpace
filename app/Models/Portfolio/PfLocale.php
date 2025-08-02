@@ -34,6 +34,13 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfLocale whereSubcategoryId($value)
  * @method static Builder|PfLocale whereUaId($value)
  * @method static Builder|PfLocale whereUpdatedAt($value)
+ * @property-read PfLanguage|null $en
+ * @property-read PfLanguage|null $pl
+ * @property-read PfPlace|null $place
+ * @property-read PfSection|null $section
+ * @property-read PfSectionItem|null $sectionItem
+ * @property-read PfSubcategory|null $subcategory
+ * @property-read PfLanguage|null $ua
  * @mixin Eloquent
  */
 class PfLocale extends Model
@@ -74,5 +81,4 @@ class PfLocale extends Model
     {
         return $this->belongsTo(PfLanguage::class, 'pl_id', 'id');
     }
-
 }

@@ -4,7 +4,7 @@ namespace App\Models\Portfolio;
 
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -46,6 +46,13 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfSectionItem whereTitle($value)
  * @method static Builder|PfSectionItem whereUpdatedAt($value)
  * @method static Builder|PfSectionItem whereValue($value)
+ * @property-read Collection<int, PfLink> $links
+ * @property-read int|null $links_count
+ * @property-read Collection<int, PfLocale> $locales
+ * @property-read int|null $locales_count
+ * @property-read PfPlace|null $place
+ * @property-read PfSection|null $section
+ * @property-read PfSubcategory|null $subcategory
  * @mixin Eloquent
  */
 class PfSectionItem extends Model

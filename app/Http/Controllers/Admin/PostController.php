@@ -162,7 +162,7 @@ class PostController extends Controller
             $filePath = rtrim('posts/' . $user->id, '/') . '/' . ltrim($imageName, '/');
             Storage::disk('s3')->put($filePath, file_get_contents($image));
             $fileName = Storage::disk('s3')->url($filePath);
-            $user->save();
+//            $user->save();
         }
 
         return $fileName;
