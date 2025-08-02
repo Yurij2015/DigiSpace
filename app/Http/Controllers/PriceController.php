@@ -18,9 +18,10 @@ class PriceController extends Controller
         $productServices = ProductService::all();
         $servicesService->addStyleToService($products, $productServices);
         $page = Page::where('slug', '=', 'pricing')->first();
+
         return view('prices.index', [
             'products' => $products,
-            'page' => $page
+            'page' => $page,
         ]);
     }
 }

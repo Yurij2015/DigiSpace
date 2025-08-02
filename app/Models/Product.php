@@ -18,6 +18,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $updated_at
  * @property-read Collection<int, Service> $services
  * @property-read int|null $services_count
+ *
  * @method static Builder<static>|Product newModelQuery()
  * @method static Builder<static>|Product newQuery()
  * @method static Builder<static>|Product query()
@@ -27,13 +28,15 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|Product wherePriceValue($value)
  * @method static Builder<static>|Product whereTitle($value)
  * @method static Builder<static>|Product whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class Product extends Model
 {
     protected $fillable = [
-        'title', 'details', 'price_value'
+        'title', 'details', 'price_value',
     ];
+
     public function services(): BelongsToMany
     {
         return $this->belongsToMany(Service::class);

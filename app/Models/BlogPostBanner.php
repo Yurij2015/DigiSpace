@@ -18,6 +18,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property-read Post|null $post
+ *
  * @method static Builder<static>|BlogPostBanner newModelQuery()
  * @method static Builder<static>|BlogPostBanner newQuery()
  * @method static Builder<static>|BlogPostBanner query()
@@ -29,12 +30,13 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|BlogPostBanner wherePostId($value)
  * @method static Builder<static>|BlogPostBanner whereUpdatedAt($value)
  * @method static Builder<static>|BlogPostBanner whereUrl($value)
+ *
  * @mixin Eloquent
  */
 class BlogPostBanner extends Model
 {
     protected $fillable = [
-        'img_path', 'blog_page_type', 'post_id', 'alt', 'url'
+        'img_path', 'blog_page_type', 'post_id', 'alt', 'url',
     ];
 
     public function post(): BelongsTo

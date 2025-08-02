@@ -27,6 +27,7 @@ use Illuminate\Support\Carbon;
  * @property-read BlogPostBanner|null $blogPostBanner
  * @property-read Category $category
  * @property-read User|null $user
+ *
  * @method static Builder<static>|Post newModelQuery()
  * @method static Builder<static>|Post newQuery()
  * @method static Builder<static>|Post query()
@@ -43,23 +44,22 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|Post whereSlug($value)
  * @method static Builder<static>|Post whereUpdatedAt($value)
  * @method static Builder<static>|Post whereUserId($value)
+ *
  * @mixin Eloquent
  */
 class Post extends Model
 {
     protected $fillable = [
-        'name', 'slug', 'content', 'description', 'category_id', 'user_id', 'img_path'
+        'name', 'slug', 'content', 'description', 'category_id', 'user_id', 'img_path',
     ];
 
     /**
      * Get the img_path correct path.
-     *
-     * @return Attribute
      */
     protected function imgPath(): Attribute
     {
         return Attribute::make(
-            get: static fn($value) => $value,
+            get: static fn ($value) => $value,
         );
     }
 

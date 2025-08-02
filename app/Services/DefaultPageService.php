@@ -6,7 +6,7 @@ use App\Models\Page;
 
 class DefaultPageService
 {
-    public function getPageData($slug): object|null
+    public function getPageData($slug): ?object
     {
         return Page::with(['widgets'])->where('slug', '=', $slug)->first();
     }

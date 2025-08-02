@@ -20,7 +20,7 @@ class BlogController extends Controller
         $this->blogRepository = $blogRepository;
     }
 
-    public function index(): Response | View
+    public function index(): Response|View
     {
         $posts = Post::with('category')
             ->paginate(config('constants.NUMBER_POSTS_IN_BLOG_PAGE'));
@@ -28,15 +28,16 @@ class BlogController extends Controller
             return response()->view('errors.page-not-found')->setStatusCode(404);
         }
         $banner = BlogPostBanner::where('blog_page_type', 'blog')->first();
+
         return view('blog.index', [
             'sideBarData' => $this->sideBarData(),
             'posts' => $posts,
             'postsNumber' => $this->getPostsNumber(),
-            'banner' => $banner ?: null
+            'banner' => $banner ?: null,
         ]);
     }
 
-    public function show(string $postSlug): View | Response
+    public function show(string $postSlug): View|Response
     {
         $post = Post::where('slug', $postSlug)
             ->with('blogPostBanner')
@@ -45,6 +46,7 @@ class BlogController extends Controller
         if ($post === null) {
             return response()->view('errors.page-not-found')->setStatusCode(404);
         }
+
         return view('blog.post_show', [
             'post' => $post,
             'sideBarData' => $this->sideBarData(),
@@ -60,12 +62,13 @@ class BlogController extends Controller
         $posts = Post::where('category_id', $category->id)
             ->paginate(config('constants.NUMBER_POSTS_IN_BLOG_PAGE'));
         $banner = BlogPostBanner::where('blog_page_type', 'category')->first();
+
         return view('blog.index', [
             'posts' => $posts,
             'sideBarData' => $this->sideBarData(),
             'postsNumber' => $this->getPostsNumber(),
             'banner' => $banner ?: null,
-            'category' => $category
+            'category' => $category,
         ]);
     }
 
@@ -75,12 +78,13 @@ class BlogController extends Controller
         [$year, $month] = $explodedYearsMonth;
         $posts = $this->blogRepository->getArchivedPosts($year, $month);
         $banner = BlogPostBanner::where('blog_page_type', 'archive')->first();
+
         return view('blog.index', [
             'posts' => $posts,
             'sideBarData' => $this->sideBarData(),
             'postsNumber' => $this->getPostsNumber(),
             'banner' => $banner ?: null,
-            'archive' => $yearMonth
+            'archive' => $yearMonth,
         ]);
     }
 
@@ -89,17 +93,18 @@ class BlogController extends Controller
         $posts = Post::query();
         if (request('search')) {
             $posts
-                ->where('name', 'like', '%' . request('search') . '%')
-                ->orWhere('content', 'like', '%' . request('search') . '%');
+                ->where('name', 'like', '%'.request('search').'%')
+                ->orWhere('content', 'like', '%'.request('search').'%');
         }
 
         $posts = $posts->paginate(config('constants.NUMBER_POSTS_IN_MENU'));
         $banner = BlogPostBanner::where('blog_page_type', 'search')->first();
+
         return view('blog.index', [
             'sideBarData' => $this->sideBarData(),
             'posts' => $posts,
             'postsNumber' => $this->getPostsNumber(),
-            'banner' => $banner ?: null
+            'banner' => $banner ?: null,
         ]);
     }
 
@@ -108,7 +113,7 @@ class BlogController extends Controller
         return [
             'categories' => $this->getCategories(),
             'latestPosts' => $this->getLatestPosts(3),
-            'archive' => $this->blogRepository->getGroupedPosts()
+            'archive' => $this->blogRepository->getGroupedPosts(),
         ];
     }
 

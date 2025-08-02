@@ -18,6 +18,7 @@ use Illuminate\Support\Carbon;
  * @property string|null $url
  * @property string|null $css_class
  * @property-read Widget $widget
+ *
  * @method static Builder<static>|WidgetIcon newModelQuery()
  * @method static Builder<static>|WidgetIcon newQuery()
  * @method static Builder<static>|WidgetIcon query()
@@ -29,12 +30,13 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|WidgetIcon whereUpdatedAt($value)
  * @method static Builder<static>|WidgetIcon whereUrl($value)
  * @method static Builder<static>|WidgetIcon whereWidgetId($value)
+ *
  * @mixin Eloquent
  */
 class WidgetIcon extends Model
 {
     protected $fillable = [
-        'icon_class', 'description', 'url', 'css_class'
+        'icon_class', 'description', 'url', 'css_class',
     ];
 
     public function widget(): BelongsTo

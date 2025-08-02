@@ -15,6 +15,7 @@ use Illuminate\Support\Carbon;
  * @property string|null $email
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static Builder<static>|ContactForm newModelQuery()
  * @method static Builder<static>|ContactForm newQuery()
  * @method static Builder<static>|ContactForm query()
@@ -25,6 +26,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|ContactForm whereName($value)
  * @method static Builder<static>|ContactForm wherePhone($value)
  * @method static Builder<static>|ContactForm whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class ContactForm extends Model

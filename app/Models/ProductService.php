@@ -15,6 +15,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $updated_at
  * @property string|null $service_css_class
  * @property string|null $product_css_class
+ *
  * @method static Builder<static>|ProductService newModelQuery()
  * @method static Builder<static>|ProductService newQuery()
  * @method static Builder<static>|ProductService query()
@@ -25,6 +26,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|ProductService whereServiceCssClass($value)
  * @method static Builder<static>|ProductService whereServiceId($value)
  * @method static Builder<static>|ProductService whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class ProductService extends Model

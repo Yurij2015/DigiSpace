@@ -14,6 +14,7 @@ use Illuminate\Support\Carbon;
  * @property string|null $description
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static Builder<static>|Setting newModelQuery()
  * @method static Builder<static>|Setting newQuery()
  * @method static Builder<static>|Setting query()
@@ -23,8 +24,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|Setting whereName($value)
  * @method static Builder<static>|Setting whereUpdatedAt($value)
  * @method static Builder<static>|Setting whereValue($value)
+ *
  * @mixin Eloquent
  */
-class Setting extends Model
-{
-}
+class Setting extends Model {}

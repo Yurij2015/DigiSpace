@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 
@@ -19,6 +18,7 @@ use Illuminate\Support\Carbon;
  * @property string $support_href
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static Builder<static>|FooterBottomBarContent newModelQuery()
  * @method static Builder<static>|FooterBottomBarContent newQuery()
  * @method static Builder<static>|FooterBottomBarContent query()
@@ -32,6 +32,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|FooterBottomBarContent whereSupport($value)
  * @method static Builder<static>|FooterBottomBarContent whereSupportHref($value)
  * @method static Builder<static>|FooterBottomBarContent whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class FooterBottomBarContent extends Model
@@ -43,6 +44,6 @@ class FooterBottomBarContent extends Model
         'faq',
         'faq_href',
         'support',
-        'support_href'
+        'support_href',
     ];
 }

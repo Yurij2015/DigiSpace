@@ -26,6 +26,7 @@ use Illuminate\Support\Carbon;
  * @property int $login_button_status
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static Builder<static>|HeaderNavBarContent newModelQuery()
  * @method static Builder<static>|HeaderNavBarContent newQuery()
  * @method static Builder<static>|HeaderNavBarContent query()
@@ -47,6 +48,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|HeaderNavBarContent whereThirdSocButtonHref($value)
  * @method static Builder<static>|HeaderNavBarContent whereThirdSocButtonStyle($value)
  * @method static Builder<static>|HeaderNavBarContent whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class HeaderNavBarContent extends Model
@@ -66,6 +68,6 @@ class HeaderNavBarContent extends Model
         'third_soc_button_href',
         'fourth_soc_button_style',
         'fourth_soc_button_href',
-        'login_button_status'
+        'login_button_status',
     ];
 }

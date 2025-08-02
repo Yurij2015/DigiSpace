@@ -28,6 +28,7 @@ use Illuminate\Support\Carbon;
  * @property string|null $href
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static Builder|PfSectionItem newModelQuery()
  * @method static Builder|PfSectionItem newQuery()
  * @method static Builder|PfSectionItem query()
@@ -46,6 +47,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfSectionItem whereTitle($value)
  * @method static Builder|PfSectionItem whereUpdatedAt($value)
  * @method static Builder|PfSectionItem whereValue($value)
+ *
  * @property-read Collection<int, PfLink> $links
  * @property-read int|null $links_count
  * @property-read Collection<int, PfLocale> $locales
@@ -53,6 +55,7 @@ use Illuminate\Support\Carbon;
  * @property-read PfPlace|null $place
  * @property-read PfSection|null $section
  * @property-read PfSubcategory|null $subcategory
+ *
  * @mixin Eloquent
  */
 class PfSectionItem extends Model

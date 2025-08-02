@@ -42,7 +42,7 @@ class LandingController extends Controller
                 'widgetBodyBottomTop' => $widgetBodyBottomTop,
                 'widgetBodyBottomMiddle' => $widgetBodyBottomMiddle,
                 'widgetBodyContactForm' => $widgetBodyContactForm,
-                'widgetFooter' => $widgetFooter
+                'widgetFooter' => $widgetFooter,
             ],
         ]);
     }

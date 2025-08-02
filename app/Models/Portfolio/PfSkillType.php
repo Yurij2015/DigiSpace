@@ -14,6 +14,7 @@ use Illuminate\Support\Carbon;
  * @property string $skill
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static Builder|PfSkillType newModelQuery()
  * @method static Builder|PfSkillType newQuery()
  * @method static Builder|PfSkillType query()
@@ -21,8 +22,11 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfSkillType whereId($value)
  * @method static Builder|PfSkillType whereSkill($value)
  * @method static Builder|PfSkillType whereUpdatedAt($value)
+ *
  * @property string $skill_type
+ *
  * @method static Builder<static>|PfSkillType whereSkillType($value)
+ *
  * @mixin Eloquent
  */
 class PfSkillType extends Model

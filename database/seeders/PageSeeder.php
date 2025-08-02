@@ -18,7 +18,7 @@ class PageSeeder extends Seeder
                 'content' => null,
                 'slug' => 'about',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => null,
@@ -28,7 +28,7 @@ class PageSeeder extends Seeder
                 'content' => null,
                 'slug' => 'services',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Our prices',
@@ -38,7 +38,7 @@ class PageSeeder extends Seeder
                 'content' => null,
                 'slug' => 'pricing',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Promos',
@@ -48,7 +48,7 @@ class PageSeeder extends Seeder
                 'content' => null,
                 'slug' => 'promos',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Contact Us',
@@ -58,7 +58,7 @@ class PageSeeder extends Seeder
                 'content' => null,
                 'slug' => 'contact-us',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
         ];
         DB::table('pages')->insert($pages);

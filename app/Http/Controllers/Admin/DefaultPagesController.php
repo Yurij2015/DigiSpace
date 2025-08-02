@@ -16,11 +16,11 @@ class DefaultPagesController extends Controller
     {
         return Inertia::render('Admin/DefaultPages/Index', [
             'defaultPages' => [
-                "about" => ['page' => $defaultPage->getPageData("about")],
-                "services" => ['page' => $defaultPage->getPageData("services")],
-                "pricing" => ['page' => $defaultPage->getPageData("pricing")],
-                "promos" => ['page' => $defaultPage->getPageData("promos")],
-                "contact-us" => ['page' => $defaultPage->getPageData("contact-us")],
+                'about' => ['page' => $defaultPage->getPageData('about')],
+                'services' => ['page' => $defaultPage->getPageData('services')],
+                'pricing' => ['page' => $defaultPage->getPageData('pricing')],
+                'promos' => ['page' => $defaultPage->getPageData('promos')],
+                'contact-us' => ['page' => $defaultPage->getPageData('contact-us')],
             ],
         ]);
     }
@@ -32,12 +32,14 @@ class DefaultPagesController extends Controller
         }])->where('id', '=', $pageId)->first();
         if ($page) {
             $widgetService->changeImgPathIfNullInWidgets($page->widgets);
+
             return Inertia::render('Admin/DefaultPages/Show', [
                 'widgets' => $page->widgets,
                 'pageSlug' => $page->slug,
-                'pageId' => $pageId
+                'pageId' => $pageId,
             ]);
         }
+
         return Inertia::render('Admin/DefaultPages/Show', [
             'widgets' => null,
         ]);

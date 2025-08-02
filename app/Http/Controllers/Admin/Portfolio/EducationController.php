@@ -24,8 +24,9 @@ class EducationController extends Controller
             'pfEducationItem.pfEducationItemPlace.pfEducationItemPlaceLocale',
             'pfEducationInfoLocale', 'pfEducationItem.pfEducationItemLocale'
         )->first();
+
         return Inertia::render('Admin/Portfolio/Education/Index', [
-            'education' => $education
+            'education' => $education,
         ]);
     }
 
@@ -50,37 +51,34 @@ class EducationController extends Controller
                 'period' => [$request->get('itemPeriod')],
             ]);
 
-            Log::info('$pfEducationItem ' . $pfEducationItem->id);
+            Log::info('$pfEducationItem '.$pfEducationItem->id);
 
             PfEducationItemLocale::create([
                 'education_item_id' => $pfEducationItem->id,
                 'locale' => 'en',
                 'title' => $request->get('itemLocaleEnName'),
-                'description' => $request->get('itemLocaleEnDescription')
+                'description' => $request->get('itemLocaleEnDescription'),
             ]);
 
             Log::info('PfEducationItemLocale en');
-
 
             PfEducationItemLocale::create([
                 'education_item_id' => $pfEducationItem->id,
                 'locale' => 'ua',
                 'title' => $request->get('itemLocaleUaName'),
-                'description' => $request->get('itemLocaleUaDescription')
+                'description' => $request->get('itemLocaleUaDescription'),
             ]);
 
             Log::info('PfEducationItemLocale ua');
-
 
             PfEducationItemLocale::create([
                 'education_item_id' => $pfEducationItem->id,
                 'locale' => 'pl',
                 'title' => $request->get('itemLocalePlName'),
-                'description' => $request->get('itemLocalePlDescription')
+                'description' => $request->get('itemLocalePlDescription'),
             ]);
 
             Log::info('PfEducationItemLocale pl');
-
 
             $pfEducationItemPlace = PfEducationItemPlace::create([
                 'education_item_id' => $pfEducationItem->id,
@@ -88,34 +86,31 @@ class EducationController extends Controller
                 'faIcon' => $request->get('placeFaIcon'),
             ]);
 
-            Log::info('$pfEducationItemPlace ' . $pfEducationItemPlace);
-
+            Log::info('$pfEducationItemPlace '.$pfEducationItemPlace);
 
             PfEducationItemPlaceLocale::create([
                 'education_item_place_id' => $pfEducationItemPlace->id,
                 'locale' => 'en',
                 'title' => $request->get('itemPlaceLocaleEnName'),
-                'description' => $request->get('itemPlaceLocaleEnDescription')
+                'description' => $request->get('itemPlaceLocaleEnDescription'),
             ]);
 
             Log::info('PfEducationItemPlaceLocale en');
-
 
             PfEducationItemPlaceLocale::create([
                 'education_item_place_id' => $pfEducationItemPlace->id,
                 'locale' => 'ua',
                 'title' => $request->get('itemPlaceLocaleUaName'),
-                'description' => $request->get('itemPlaceLocaleUaDescription')
+                'description' => $request->get('itemPlaceLocaleUaDescription'),
             ]);
 
             Log::info('PfEducationItemPlaceLocale ua');
-
 
             PfEducationItemPlaceLocale::create([
                 'education_item_place_id' => $pfEducationItemPlace->id,
                 'locale' => 'pl',
                 'title' => $request->get('itemPlaceLocalePlName'),
-                'description' => $request->get('itemPlaceLocalePlDescription')
+                'description' => $request->get('itemPlaceLocalePlDescription'),
             ]);
 
             Log::info('PfEducationItemPlaceLocale pl');
@@ -127,6 +122,7 @@ class EducationController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
             Log::info($e->getMessage());
+
             return redirect(route('portfolio.education'))->with('error', 'Error occurred. Transaction rolled back.');
         }
     }
@@ -157,14 +153,14 @@ class EducationController extends Controller
                 'period' => $request->get('itemPeriod'),
             ]);
 
-            Log::info('$pfEducationItem ' . $pfEducationItem->id);
+            Log::info('$pfEducationItem '.$pfEducationItem->id);
 
             foreach (['en', 'ua', 'pl'] as $locale) {
                 PfEducationItemLocale::updateOrCreate(
                     ['education_item_id' => $pfEducationItem->id, 'locale' => $locale],
                     [
-                        'title' => $request->get("itemLocale" . ucfirst($locale) . "Name"),
-                        'description' => $request->get("itemLocale" . ucfirst($locale) . "Description"),
+                        'title' => $request->get('itemLocale'.ucfirst($locale).'Name'),
+                        'description' => $request->get('itemLocale'.ucfirst($locale).'Description'),
                     ]
                 );
                 Log::info("PfEducationItemLocale $locale");
@@ -178,14 +174,14 @@ class EducationController extends Controller
                 ]
             );
 
-            Log::info('$pfEducationItemPlace ' . $pfEducationItemPlace->id);
+            Log::info('$pfEducationItemPlace '.$pfEducationItemPlace->id);
 
             foreach (['en', 'ua', 'pl'] as $locale) {
                 PfEducationItemPlaceLocale::updateOrCreate(
                     ['education_item_place_id' => $pfEducationItemPlace->id, 'locale' => $locale],
                     [
-                        'title' => $request->get("itemPlaceLocale" . ucfirst($locale) . "Name"),
-                        'description' => $request->get("itemPlaceLocale" . ucfirst($locale) . "Description"),
+                        'title' => $request->get('itemPlaceLocale'.ucfirst($locale).'Name'),
+                        'description' => $request->get('itemPlaceLocale'.ucfirst($locale).'Description'),
                     ]
                 );
                 Log::info("PfEducationItemPlaceLocale $locale");
@@ -198,8 +194,8 @@ class EducationController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
             Log::info($e->getMessage());
+
             return redirect(route('portfolio.education'))->with('error', 'Error occurred. Transaction rolled back.');
         }
     }
-
 }

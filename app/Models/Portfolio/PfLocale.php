@@ -21,6 +21,7 @@ use Illuminate\Support\Carbon;
  * @property int|null $pl_id
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static Builder|PfLocale newModelQuery()
  * @method static Builder|PfLocale newQuery()
  * @method static Builder|PfLocale query()
@@ -34,6 +35,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfLocale whereSubcategoryId($value)
  * @method static Builder|PfLocale whereUaId($value)
  * @method static Builder|PfLocale whereUpdatedAt($value)
+ *
  * @property-read PfLanguage|null $en
  * @property-read PfLanguage|null $pl
  * @property-read PfPlace|null $place
@@ -41,6 +43,7 @@ use Illuminate\Support\Carbon;
  * @property-read PfSectionItem|null $sectionItem
  * @property-read PfSubcategory|null $subcategory
  * @property-read PfLanguage|null $ua
+ *
  * @mixin Eloquent
  */
 class PfLocale extends Model

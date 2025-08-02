@@ -16,6 +16,7 @@ use Illuminate\Support\Carbon;
  * @property mixed $locales
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static Builder|PfSkillSubcategory newModelQuery()
  * @method static Builder|PfSkillSubcategory newQuery()
  * @method static Builder|PfSkillSubcategory query()
@@ -26,12 +27,16 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfSkillSubcategory whereProgress($value)
  * @method static Builder|PfSkillSubcategory whereType($value)
  * @method static Builder|PfSkillSubcategory whereUpdatedAt($value)
+ *
  * @property int $skill_type_id
  * @property string $fa_icon
  * @property-read PfSkillType|null $skill
+ *
  * @method static Builder|PfSkillSubcategory whereSkillTypeId($value)
+ *
  * @property string $type
  * @property-read PfSkillType $skillType
+ *
  * @mixin Eloquent
  */
 class PfSkillSubcategory extends Model

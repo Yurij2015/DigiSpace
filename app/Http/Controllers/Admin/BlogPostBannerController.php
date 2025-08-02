@@ -16,7 +16,7 @@ class BlogPostBannerController extends Controller
     final public function index(): Response
     {
         return Inertia::render('Admin/BlogPostBanners/Index', [
-            'blogPostBanners' => BlogPostBanner::with('post')->paginate(5)
+            'blogPostBanners' => BlogPostBanner::with('post')->paginate(5),
         ]);
     }
 
@@ -43,24 +43,26 @@ class BlogPostBannerController extends Controller
             'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ])->validate();
 
-        $fileName = time() . '.' . $request->file->extension();
+        $fileName = time().'.'.$request->file->extension();
         $request->file->move(public_path('banners'), $fileName);
 
         BlogPostBanner::create([
             'post_id' => $post->id,
             'alt' => $request->alt,
             'url' => $request->url,
-            'img_path' => '/banners/' . $fileName
+            'img_path' => '/banners/'.$fileName,
         ]);
+
         return redirect(route('admin.posts-banners'))->with('message', 'Banner Added Successfully');
     }
 
     final public function bannerUpdateForm(BlogPostBanner $banner): Response
     {
         $post = Post::with('blogPostBanner')->find($banner->post_id);
+
         return Inertia::render('Admin/BlogPostBanners/UpdateBanner', [
             'post' => $post,
-            'banner' => $banner
+            'banner' => $banner,
         ]);
     }
 
@@ -73,17 +75,17 @@ class BlogPostBannerController extends Controller
         ])->validate();
 
         if ($request->file) {
-            $fileName = time() . '.' . $request->file->extension();
+            $fileName = time().'.'.$request->file->extension();
             $request->file->move(public_path('banners'), $fileName);
 
             $banner->update([
                 'alt' => $request->alt,
                 'url' => $request->url,
-                'img_path' => '/banners/' . $fileName
+                'img_path' => '/banners/'.$fileName,
             ]);
         }
 
-        if (!$request->file) {
+        if (! $request->file) {
             $banner->update([
                 'alt' => $request->alt,
                 'url' => $request->url,
@@ -110,13 +112,14 @@ class BlogPostBannerController extends Controller
             'file' => 'required',
         ])->validate();
 
-        $fileName = time() . '.' . $request->file->extension();
+        $fileName = time().'.'.$request->file->extension();
         $request->file->move(public_path('banners'), $fileName);
 
         BlogPostBanner::create([
             'blog_page_type' => $request->blog_page_type,
-            'img_path' => '/banners/' . $fileName
+            'img_path' => '/banners/'.$fileName,
         ]);
+
         return redirect(route('admin.posts-banners'))->with('message', 'Banner Added Successfully');
     }
 }

@@ -13,6 +13,7 @@ use Illuminate\Support\Carbon;
  * @property int $status
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static Builder<static>|Subscriber newModelQuery()
  * @method static Builder<static>|Subscriber newQuery()
  * @method static Builder<static>|Subscriber query()
@@ -21,6 +22,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|Subscriber whereId($value)
  * @method static Builder<static>|Subscriber whereStatus($value)
  * @method static Builder<static>|Subscriber whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class Subscriber extends Model

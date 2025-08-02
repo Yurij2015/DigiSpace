@@ -22,6 +22,7 @@ use Illuminate\Support\Carbon;
  * @property-read Collection<int, Post> $post
  * @property-read int|null $post_count
  * @property-read User|null $user
+ *
  * @method static Builder<static>|Category newModelQuery()
  * @method static Builder<static>|Category newQuery()
  * @method static Builder<static>|Category query()
@@ -33,12 +34,13 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|Category whereSlug($value)
  * @method static Builder<static>|Category whereUpdatedAt($value)
  * @method static Builder<static>|Category whereUserId($value)
+ *
  * @mixin Eloquent
  */
 class Category extends Model
 {
     protected $fillable = [
-        'name', 'description', 'slug'
+        'name', 'description', 'slug',
     ];
 
     public function user(): BelongsTo

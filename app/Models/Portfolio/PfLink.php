@@ -16,6 +16,7 @@ use Illuminate\Support\Carbon;
  * @property string|null $href
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static Builder|PfLink newModelQuery()
  * @method static Builder|PfLink newQuery()
  * @method static Builder|PfLink query()
@@ -25,6 +26,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfLink whereId($value)
  * @method static Builder|PfLink whereItemId($value)
  * @method static Builder|PfLink whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class PfLink extends Model

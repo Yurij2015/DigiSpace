@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -28,6 +27,7 @@ use Str;
  * @property-read PageCategory|null $pageCategory
  * @property-read Collection<int, Widget> $widgets
  * @property-read int|null $widgets_count
+ *
  * @method static Builder<static>|Page newModelQuery()
  * @method static Builder<static>|Page newQuery()
  * @method static Builder<static>|Page query()
@@ -42,12 +42,13 @@ use Str;
  * @method static Builder<static>|Page wherePageCategoryId($value)
  * @method static Builder<static>|Page whereSlug($value)
  * @method static Builder<static>|Page whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class Page extends Model
 {
     protected $fillable = [
-        'name', 'content', 'meta', 'description', 'slug', 'page_category_id', 'menu_item_id'
+        'name', 'content', 'meta', 'description', 'slug', 'page_category_id', 'menu_item_id',
     ];
 
     public function widgets(): BelongsToMany

@@ -7,6 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class HeaderNavBarSettingsSaveRequest extends FormRequest
 {
     public const CELL_RULE_VALUES = 'required|string|max:255';
+
     public function rules(): array
     {
         return [
@@ -24,7 +25,7 @@ class HeaderNavBarSettingsSaveRequest extends FormRequest
             'third_soc_button_href' => self::CELL_RULE_VALUES,
             'fourth_soc_button_style' => self::CELL_RULE_VALUES,
             'fourth_soc_button_href' => self::CELL_RULE_VALUES,
-            'login_button_status' => 'required|bool'
+            'login_button_status' => 'required|bool',
         ];
     }
 }

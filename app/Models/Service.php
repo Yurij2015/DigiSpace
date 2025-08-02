@@ -26,6 +26,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property-read ServiceCategory|null $serviceCategory
+ *
  * @method static Builder<static>|Service newModelQuery()
  * @method static Builder<static>|Service newQuery()
  * @method static Builder<static>|Service query()
@@ -44,12 +45,13 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|Service whereStatus($value)
  * @method static Builder<static>|Service whereTitle($value)
  * @method static Builder<static>|Service whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class Service extends Model
 {
     protected $fillable = [
-        'title', 'details', 'price', 'service_category_id', 'seo_keywords', 'seo_description', 'seo_title', 'image_alt', 'description', 'slug', 'image', 'status'
+        'title', 'details', 'price', 'service_category_id', 'seo_keywords', 'seo_description', 'seo_title', 'image_alt', 'description', 'slug', 'image', 'status',
     ];
 
     public function serviceCategory(): BelongsTo
@@ -60,7 +62,7 @@ class Service extends Model
     protected function image(): Attribute
     {
         return Attribute::make(
-            get: static fn($value) => $value ? '/uploads/' . $value : '/uploads/no_image.png'
+            get: static fn ($value) => $value ? '/uploads/'.$value : '/uploads/no_image.png'
         );
     }
 

@@ -19,6 +19,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $updated_at
  * @property-read Collection<int, Widget> $post
  * @property-read int|null $post_count
+ *
  * @method static Builder<static>|WidgetCategory newModelQuery()
  * @method static Builder<static>|WidgetCategory newQuery()
  * @method static Builder<static>|WidgetCategory query()
@@ -29,6 +30,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|WidgetCategory whereName($value)
  * @method static Builder<static>|WidgetCategory whereTitle($value)
  * @method static Builder<static>|WidgetCategory whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class WidgetCategory extends Model

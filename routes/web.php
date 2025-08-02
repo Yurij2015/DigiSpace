@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\Portfolio\SkillsController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\ServiceCategoriesController as AdminServiceCategoryController;
 use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
 use App\Http\Controllers\Admin\WidgetController;
 use App\Http\Controllers\Admin\WidgetIconController;
@@ -31,7 +32,6 @@ use App\Http\Controllers\PromoController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SubscriberController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\ServiceCategoriesController as AdminServiceCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -224,4 +224,4 @@ Route::controller(FooterPagesController::class)->group(function () {
     Route::get('support', 'support')->name('support');
 });
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

@@ -27,6 +27,7 @@ use Illuminate\Support\Carbon;
  * @property-read WidgetCategory $widgetCategory
  * @property-read Collection<int, WidgetIcon> $widgetIcon
  * @property-read int|null $widget_icon_count
+ *
  * @method static Builder<static>|Widget newModelQuery()
  * @method static Builder<static>|Widget newQuery()
  * @method static Builder<static>|Widget query()
@@ -42,12 +43,13 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|Widget whereUpdatedAt($value)
  * @method static Builder<static>|Widget whereWidgetCategoryId($value)
  * @method static Builder<static>|Widget whereWidgetImage($value)
+ *
  * @mixin Eloquent
  */
 class Widget extends Model
 {
     protected $fillable = [
-        'title', 'content', 'subtitle', 'widget_category_id', 'icon', 'widget_image'
+        'title', 'content', 'subtitle', 'widget_category_id', 'icon', 'widget_image',
     ];
 
     public function widgetCategory(): BelongsTo
@@ -57,13 +59,11 @@ class Widget extends Model
 
     /**
      * Get the img_path correct path.
-     *
-     * @return Attribute
      */
     protected function widgetImage(): Attribute
     {
         return Attribute::make(
-            get: static fn($value) => url('uploads/widgets/' . $value),
+            get: static fn ($value) => url('uploads/widgets/'.$value),
         );
     }
 

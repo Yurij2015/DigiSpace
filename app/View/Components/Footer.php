@@ -11,8 +11,6 @@ class Footer extends Component
 {
     /**
      * The footer phone.
-     *
-     * @var object
      */
     public object $footerWidgets;
 
@@ -28,8 +26,6 @@ class Footer extends Component
 
     /**
      * Get the view / contents that represent the component.
-     *
-     * @return Application|Factory|View
      */
     public function render(): View|Factory|Application
     {

@@ -19,6 +19,7 @@ class ServiceController extends Controller
         $productServices = ProductService::all();
         $listOfServices = Service::paginate(20);
         $servicesService->addStyleToService($products, $productServices);
+
         return view('services.index', [
             'products' => $products,
             'chooseUsCategory' => $servicesService
@@ -31,7 +32,7 @@ class ServiceController extends Controller
                 ->getAnswersQuestionsWidgets(config('constants.ANSWERS_QUESTIONS_WIDGET_CATEGORY'), 'left'),
             'questionsRight' => $servicesService
                 ->getAnswersQuestionsWidgets(config('constants.ANSWERS_QUESTIONS_WIDGET_CATEGORY'), 'right'),
-            'listOfServices' => $listOfServices
+            'listOfServices' => $listOfServices,
         ]);
     }
 
@@ -45,7 +46,7 @@ class ServiceController extends Controller
         return view('services.service-category.index', [
             'serviceCategory' => $serviceCategory,
             'services' => $services,
-            'serviceCategories' => $serviceCategories
+            'serviceCategories' => $serviceCategories,
         ]);
     }
 
@@ -56,7 +57,7 @@ class ServiceController extends Controller
         return view('services.service', [
             'service' => $service,
             'serviceCategory' => $serviceCategory,
-            'serviceCategories' => $serviceCategories
+            'serviceCategories' => $serviceCategories,
         ]);
     }
 
@@ -67,16 +68,17 @@ class ServiceController extends Controller
         if (request('search')) {
             $services
                 ->with('serviceCategory')
-                ->where('title', 'like', '%' . request('search') . '%')
+                ->where('title', 'like', '%'.request('search').'%')
                 ->where('service_category_id', '!=', null)
-                ->orWhere('description', 'like', '%' . request('search') . '%');
+                ->orWhere('description', 'like', '%'.request('search').'%');
         }
-        if (!$services->count()) {
+        if (! $services->count()) {
             return response()->view('errors.nothin-found')->setStatusCode(404);
         }
+
         return view('services.search', [
             'services' => $services->paginate(5),
-            'serviceCategories' => $serviceCategories
+            'serviceCategories' => $serviceCategories,
         ]);
     }
 }

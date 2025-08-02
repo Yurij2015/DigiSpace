@@ -14,6 +14,7 @@ class SubscriberController extends Controller
             'email' => 'required|email|unique:subscribers',
         ]);
         Subscriber::create($request->all());
+
         return back()->with('success', 'You are successfully subscribed!');
     }
 }

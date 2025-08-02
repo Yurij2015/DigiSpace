@@ -21,6 +21,7 @@ use Str;
  * @property Carbon|null $updated_at
  * @property-read Collection<int, Service> $service
  * @property-read int|null $service_count
+ *
  * @method static Builder<static>|ServiceCategory newModelQuery()
  * @method static Builder<static>|ServiceCategory newQuery()
  * @method static Builder<static>|ServiceCategory query()
@@ -32,12 +33,13 @@ use Str;
  * @method static Builder<static>|ServiceCategory whereSeoTitle($value)
  * @method static Builder<static>|ServiceCategory whereSlug($value)
  * @method static Builder<static>|ServiceCategory whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class ServiceCategory extends Model
 {
     protected $fillable = [
-        'name', 'seo_keywords', 'seo_description', 'seo_title', 'slug'
+        'name', 'seo_keywords', 'seo_description', 'seo_title', 'slug',
     ];
 
     protected static function boot(): void

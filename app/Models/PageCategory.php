@@ -17,6 +17,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $updated_at
  * @property-read Collection<int, Page> $page
  * @property-read int|null $page_count
+ *
  * @method static Builder<static>|PageCategory newModelQuery()
  * @method static Builder<static>|PageCategory newQuery()
  * @method static Builder<static>|PageCategory query()
@@ -25,6 +26,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|PageCategory whereId($value)
  * @method static Builder<static>|PageCategory whereName($value)
  * @method static Builder<static>|PageCategory whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class PageCategory extends Model

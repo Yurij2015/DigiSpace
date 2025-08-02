@@ -5,7 +5,6 @@ namespace App\Models;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
@@ -24,6 +23,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $updated_at
  * @property-read Collection<int, MenuItem> $menuItem
  * @property-read int|null $menu_item_count
+ *
  * @method static Builder<static>|Menu newModelQuery()
  * @method static Builder<static>|Menu newQuery()
  * @method static Builder<static>|Menu query()
@@ -38,12 +38,13 @@ use Illuminate\Support\Carbon;
  * @method static Builder<static>|Menu whereSlug($value)
  * @method static Builder<static>|Menu whereTitle($value)
  * @method static Builder<static>|Menu whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class Menu extends Model
 {
     protected $fillable = [
-        'name', 'title', 'level', 'position', 'description', 'location', 'slug', 'href'
+        'name', 'title', 'level', 'position', 'description', 'location', 'slug', 'href',
     ];
 
     public function menuItem(): HasMany

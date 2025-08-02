@@ -7,6 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class FooterBottomBarSettingsSaveRequest extends FormRequest
 {
     public const CELL_RULE_VALUES = 'required|string|max:255';
+
     public function rules(): array
     {
         return [
@@ -16,7 +17,7 @@ class FooterBottomBarSettingsSaveRequest extends FormRequest
             'faq' => self::CELL_RULE_VALUES,
             'faq_href' => self::CELL_RULE_VALUES,
             'support' => self::CELL_RULE_VALUES,
-            'support_href' => self::CELL_RULE_VALUES
+            'support_href' => self::CELL_RULE_VALUES,
         ];
     }
 }
