@@ -63,7 +63,7 @@ class Widget extends Model
     protected function widgetImage(): Attribute
     {
         return Attribute::make(
-            get: static fn ($value) => $value,
+            get: static fn ($value) => $value ?: url('uploads/widgets/no_image.png'),
         );
     }
 
