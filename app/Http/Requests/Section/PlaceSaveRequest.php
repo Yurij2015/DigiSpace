@@ -7,6 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class PlaceSaveRequest extends FormRequest
 {
     public const CELL_RULE_VALUES = 'nullable|string|max:255';
+
     public function rules(): array
     {
         return [

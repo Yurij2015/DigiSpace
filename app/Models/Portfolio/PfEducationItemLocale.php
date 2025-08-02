@@ -19,6 +19,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property-read PfEducationItem $pfEducationItem
+ *
  * @method static Builder|PfEducationItemLocale newModelQuery()
  * @method static Builder|PfEducationItemLocale newQuery()
  * @method static Builder|PfEducationItemLocale query()
@@ -29,6 +30,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfEducationItemLocale whereLocale($value)
  * @method static Builder|PfEducationItemLocale whereTitle($value)
  * @method static Builder|PfEducationItemLocale whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class PfEducationItemLocale extends Model
@@ -39,6 +41,7 @@ class PfEducationItemLocale extends Model
         'title',
         'description',
     ];
+
     public function pfEducationItem(): BelongsTo
     {
         return $this->belongsTo(PfEducationItem::class, 'education_item_id', 'id');

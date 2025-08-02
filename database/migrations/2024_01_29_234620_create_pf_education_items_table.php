@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('pf_education_items', static function (Blueprint $table) {
             $table->id();
             $table->foreignId('education_id')->constrained('pf_education')->cascadeOnDelete();
-            $table->string('name'); //online_course_udacity
+            $table->string('name'); // online_course_udacity
             $table->json('period');
             $table->timestamps();
         });

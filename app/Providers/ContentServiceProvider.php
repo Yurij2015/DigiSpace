@@ -16,8 +16,6 @@ class ContentServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
-     *
-     * @return void
      */
     public function register(): void
     {
@@ -26,8 +24,6 @@ class ContentServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap services.
-     *
-     * @return void
      */
     public function boot(): void
     {
@@ -61,7 +57,7 @@ class ContentServiceProvider extends ServiceProvider
                 'footerLatestNews' => $footerLatestNews,
                 'headerNavBarContent' => $headerNavBarContent,
                 'footerBottomBarContent' => $footerBottomBarContent,
-                'serviceCategories' => $serviceCategories
+                'serviceCategories' => $serviceCategories,
             ]);
         } catch (\Exception $e) {
             //

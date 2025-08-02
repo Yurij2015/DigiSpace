@@ -16,6 +16,7 @@ use Illuminate\Support\Carbon;
  * @property mixed $locales
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static Builder|PfSkills newModelQuery()
  * @method static Builder|PfSkills newQuery()
  * @method static Builder|PfSkills query()
@@ -27,11 +28,16 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfSkills whereSkillId($value)
  * @method static Builder|PfSkills whereUpdatedAt($value)
  * @method static Builder|PfSkills whereValue($value)
+ *
  * @property int $skill_type_id
  * @property string $image_icon_url
  * @property string $fa_icon
  * @property-read PfSkillType|null $skill
+ *
  * @method static Builder|PfSkills whereSkillTypeId($value)
+ *
+ * @property-read PfSkillType $skillType
+ *
  * @mixin Eloquent
  */
 class PfSkills extends Model

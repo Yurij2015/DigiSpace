@@ -7,6 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class MenuSaveRequest extends FormRequest
 {
     public const CELL_RULE_VALUES_STRING = 'string|max:255';
+
     public const CELL_RULE_VALUES_INT = 'int';
 
     public function rules(): array
@@ -19,7 +20,7 @@ class MenuSaveRequest extends FormRequest
             'description' => self::CELL_RULE_VALUES_STRING,
             'location' => self::CELL_RULE_VALUES_STRING,
             'slug' => self::CELL_RULE_VALUES_STRING,
-            'href' => self::CELL_RULE_VALUES_STRING
+            'href' => self::CELL_RULE_VALUES_STRING,
         ];
     }
 }

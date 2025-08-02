@@ -18,10 +18,6 @@ class PostController extends Controller
 {
     /**
      * Get and change array with posts
-     *
-     * @param PostService $postService
-     *
-     * @return Response
      */
     final public function posts(PostService $postService): Response
     {
@@ -35,24 +31,17 @@ class PostController extends Controller
 
     /**
      * Send categories to view, render post create view.
-     *
-     * @return Response
      */
     final public function postForm(): Response
     {
         return Inertia::render('Admin/Posts/Create', [
             'categories' => Category::all(),
-            'api_key_tinymce' => config('app.tiny_mce_api_key')
+            'api_key_tinymce' => config('app.tiny_mce_api_key'),
         ]);
     }
 
     /**
      * Send post and categories to view, render post edit view.
-     *
-     * @param $post
-     * @param PostService $postService
-     *
-     * @return Response
      */
     final public function postUpdateForm($post, PostService $postService): Response
     {
@@ -61,17 +50,14 @@ class PostController extends Controller
 
         return Inertia::render('Admin/Posts/Update', [
             'post' => $post,
-            'categories' => Category::all()
+            'categories' => Category::all(),
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param Post $post
      *
-     * @return RedirectResponse
      * @throws AuthorizationException
      */
     final public function postUpdate(Request $request, Post $post): RedirectResponse
@@ -100,10 +86,6 @@ class PostController extends Controller
 
     /**
      * Save a newly created post in storage.
-     *
-     * @param Request $request
-     *
-     * @return RedirectResponse
      */
     final public function postSave(Request $request): RedirectResponse
     {
@@ -124,7 +106,7 @@ class PostController extends Controller
             'description' => $request->description,
             'category_id' => $request->category_id,
             'user_id' => $request->user()->id,
-            'img_path' => $fileName
+            'img_path' => $fileName,
         ]);
 
         return redirect(route('admin.posts'))->with('message', 'Post Created Successfully');
@@ -133,9 +115,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Post $post
      *
-     * @return RedirectResponse
      * @throws AuthorizationException
      */
     final public function postDestroy(Post $post): RedirectResponse
@@ -146,11 +126,6 @@ class PostController extends Controller
         return redirect(route('admin.posts'));
     }
 
-    /**
-     * @param Request $request
-     *
-     * @return string
-     */
     private function storeImageOnMinio(Request $request): string
     {
         $fileName = null;
@@ -159,10 +134,10 @@ class PostController extends Controller
         if ($request->hasFile('file')) {
             $image = $request->file('file');
             $imageName = $image->getClientOriginalName();
-            $filePath = rtrim('posts/' . $user->id, '/') . '/' . ltrim($imageName, '/');
+            $filePath = rtrim('posts/'.$user->id, '/').'/'.ltrim($imageName, '/');
             Storage::disk('s3')->put($filePath, file_get_contents($image));
             $fileName = Storage::disk('s3')->url($filePath);
-            $user->save();
+            //            $user->save();
         }
 
         return $fileName;

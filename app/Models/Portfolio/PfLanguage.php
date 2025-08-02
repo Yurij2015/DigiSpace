@@ -19,6 +19,7 @@ use Illuminate\Support\Carbon;
  * @property mixed|null $tags
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static Builder|PfLanguage newModelQuery()
  * @method static Builder|PfLanguage newQuery()
  * @method static Builder|PfLanguage query()
@@ -31,6 +32,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfLanguage whereTags($value)
  * @method static Builder|PfLanguage whereTitle($value)
  * @method static Builder|PfLanguage whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class PfLanguage extends Model

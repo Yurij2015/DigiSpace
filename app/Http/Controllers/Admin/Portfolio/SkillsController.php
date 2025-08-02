@@ -23,6 +23,7 @@ class SkillsController extends Controller
         $skillLocales = PfSkillLocale::all();
         $skillSubcategories = PfSkillSubcategory::with('skillType')->get();
         $skills = PfSkills::with('skillType')->get();
+
         return Inertia::render('Admin/Portfolio/Skills/Index', compact(
             'skillTypes',
             'skillLocales',
@@ -39,12 +40,14 @@ class SkillsController extends Controller
     public function addSkillSubcategory(): Response
     {
         $skillTypes = PfSkillType::all();
+
         return Inertia::render('Admin/Portfolio/Skills/AddSkillSubcategory', compact('skillTypes'));
     }
 
     public function addSkill(): Response
     {
         $skillTypes = PfSkillType::all();
+
         return Inertia::render('Admin/Portfolio/Skills/AddSkill', compact('skillTypes'));
     }
 
@@ -57,6 +60,7 @@ class SkillsController extends Controller
     {
         $validated = $request->validated();
         PfSkillType::create($validated);
+
         return redirect()->route('portfolio.skills');
     }
 
@@ -64,6 +68,7 @@ class SkillsController extends Controller
     {
         $validated = $request->validated();
         PfSkillLocale::create($validated);
+
         return redirect()->route('portfolio.skills');
     }
 
@@ -72,6 +77,7 @@ class SkillsController extends Controller
         $validated = $request->validated();
         $validated['progress'] = $validated['skill_progress'];
         PfSkillSubcategory::create($validated);
+
         return redirect()->route('portfolio.skills');
     }
 
@@ -79,6 +85,7 @@ class SkillsController extends Controller
     {
         $validated = $request->validated();
         PfSkills::create($validated);
+
         return redirect()->route('portfolio.skills');
     }
 }

@@ -10,13 +10,12 @@ class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return Response
      */
     public function index(): Response
     {
         $posts = Post::with('category:id,name')->latest()->get();
         $this->changeImgPathIfNullInPosts($posts);
+
         return Inertia::render('Posts/Index', [
             'posts' => $posts,
         ]);
@@ -38,14 +37,12 @@ class PostController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param Post $post
-     * @return Response
      */
     public function show(Post $post): Response
     {
         $post = Post::with('category:id,name')->where('id', $post->id)->get()->first();
         $this->changeImgPathIfNull($post);
+
         return Inertia::render('Posts/View', [
             'post' => $post,
         ]);

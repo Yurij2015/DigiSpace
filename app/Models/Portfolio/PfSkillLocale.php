@@ -16,6 +16,7 @@ use Illuminate\Support\Carbon;
  * @property string $description
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static Builder|PfSkillLocale newModelQuery()
  * @method static Builder|PfSkillLocale newQuery()
  * @method static Builder|PfSkillLocale query()
@@ -25,6 +26,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfSkillLocale whereLang($value)
  * @method static Builder|PfSkillLocale whereTitle($value)
  * @method static Builder|PfSkillLocale whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class PfSkillLocale extends Model

@@ -15,6 +15,7 @@ class HeaderTopMenuController extends Controller
     public function index(): Response
     {
         $menu = Menu::with('menuItem')->get();
+
         return Inertia::render(
             'Admin/PublicMenu/Index',
             ['menu' => $menu]
@@ -32,9 +33,9 @@ class HeaderTopMenuController extends Controller
     final public function update(Menu $menu, SaveRequest $saveRequest): RedirectResponse
     {
         $menu->update($saveRequest->all());
+
         return redirect(route('admin.top-menu'))->with('message', 'Menu Updated Successfully');
     }
-
 
     public function subMenuEditForm(MenuItem $subMenuItem): Response
     {
@@ -47,6 +48,7 @@ class HeaderTopMenuController extends Controller
     final public function subMenuUpdate(MenuItem $subMenu, SaveRequest $saveRequest): RedirectResponse
     {
         $subMenu->update($saveRequest->all());
+
         return redirect(route('admin.top-menu'))->with('message', 'SubMenu Updated Successfully');
     }
 }

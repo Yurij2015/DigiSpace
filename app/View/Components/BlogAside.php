@@ -10,11 +10,11 @@ class BlogAside extends Component
 {
     /**
      * The sidebar data
-     *
-     * @var array
      */
     public array $sideBarData;
+
     public int $postsNumber;
+
     public ?BlogPostBanner $banner = null;
 
     /**
@@ -31,8 +31,6 @@ class BlogAside extends Component
 
     /**
      * Get the view / contents that represent the component.
-     *
-     * @return View
      */
     public function render(): View
     {

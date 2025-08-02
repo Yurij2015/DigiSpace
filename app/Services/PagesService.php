@@ -4,8 +4,9 @@ namespace App\Services;
 
 use App\Models\MenuItem;
 use App\Models\Page;
-use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 class PagesService
 {
     public function filteredPages($excluledPages, $count): LengthAwarePaginator

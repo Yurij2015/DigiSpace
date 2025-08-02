@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class AboutService
 {
-    public function getAboutPageComponent($widgetCategory): object|null
+    public function getAboutPageComponent($widgetCategory): ?object
     {
         return Page::with(['widgets' => function (BelongsToMany $query) use ($widgetCategory) {
             $query->where('widget_category_id', '=', $widgetCategory);

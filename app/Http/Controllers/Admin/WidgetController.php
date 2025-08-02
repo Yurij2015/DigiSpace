@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Models\Widget;
 use App\Models\WidgetCategory;
 use App\Services\WidgetService;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 use Inertia\Response;
-
 
 class WidgetController extends Controller
 {
@@ -22,28 +22,25 @@ class WidgetController extends Controller
             ->latest('id')
             ->paginate(config('constants.WIDGET_PER_PAGE'));
         $widgetService->changeImgPathIfNullInWidgets($widgets);
+
         return Inertia::render('Admin/Widgets/Index', [
-            'widgets' => $widgets
+            'widgets' => $widgets,
         ]);
     }
 
     /**
      * Send widtetCategories to view, render widget create view.
-     * @return Response
      */
     final public function widgetForm(): Response
     {
         return Inertia::render('Admin/Widgets/Create', [
             'widgetCategories' => WidgetCategory::all(),
-            'api_key_tinymce' => config('app.tiny_mce_api_key')
+            'api_key_tinymce' => config('app.tiny_mce_api_key'),
         ]);
     }
 
     /**
      * Save a newly created post in storage.
-     *
-     * @param Request $request
-     * @return RedirectResponse
      */
     final public function widgetSave(Request $request): RedirectResponse
     {
@@ -55,28 +52,29 @@ class WidgetController extends Controller
             'widget_category_id' => 'int',
             'file' => '',
         ])->validate();
-        if ($request->file) {
-            $fileName = time() . '.' . $request->file->extension();
-            $request->file->move(public_path('uploads/widgets'), $fileName);
-        } else {
-            $fileName = null;
-        }
-        Widget::create([
+
+        $newWidget = Widget::create([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
             'content' => $request['content'],
             'widget_category_id' => $request->widget_category_id,
             'icon' => $request->icon,
-            'widget_image' => $fileName
         ]);
+
+        if ($request->file) {
+            $fileName = $this->storeWidgetImageOnMinio($request, $newWidget);
+        } else {
+            $fileName = null;
+        }
+
+        $newWidget->widget_image = $fileName;
+        $newWidget->save();
+
         return redirect(route('admin.widgets'))->with('message', 'Widget Created Successfully');
     }
 
     /**
      * Send widget and widtetCategories to view, render widget update view.
-     * @param $widget
-     * @param WidgetService $widgetService
-     * @return Response
      */
     final public function widgetUpdateForm($widget, WidgetService $widgetService): Response
     {
@@ -86,16 +84,12 @@ class WidgetController extends Controller
         return Inertia::render('Admin/Widgets/Update', [
             'widget' => $widget,
             'widgetCategories' => WidgetCategory::all(),
-            'api_key_tinymce' => config('app.tiny_mce_api_key')
+            'api_key_tinymce' => config('app.tiny_mce_api_key'),
         ]);
     }
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param Widget $widget
-     * @return RedirectResponse
      */
     final public function widgetUpdate(Request $request, Widget $widget): RedirectResponse
     {
@@ -107,24 +101,41 @@ class WidgetController extends Controller
             'widget_category_id' => 'int',
             'file' => '',
         ]);
+
         if ($request->file) {
-            $fileName = time() . '.' . $request->file->extension();
-            $request->file->move(public_path('uploads/widgets'), $fileName);
+            $fileName = $this->storeWidgetImageOnMinio($request, $widget);
+
             $widget->widget_image = $fileName;
         }
+
         $widget->update($validated);
+
         return redirect(route('admin.widgets'));
     }
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param Widget $widget
-     * @return RedirectResponse
      */
     final public function widgetDestroy(Widget $widget): RedirectResponse
     {
         $widget->delete();
+
         return redirect(route('admin.widgets'));
+    }
+
+    private function storeWidgetImageOnMinio(Request $request, Widget $widget): string
+    {
+        $fileName = null;
+
+        if ($request->hasFile('file')) {
+            $image = $request->file('file');
+            $imageName = time().'.'.$image->extension();
+            $filePath = 'widgets/'.$widget->id.'/'.$imageName;
+
+            Storage::disk('s3')->put($filePath, file_get_contents($image));
+            $fileName = Storage::disk('s3')->url($filePath);
+        }
+
+        return $fileName;
     }
 }

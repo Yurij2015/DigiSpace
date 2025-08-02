@@ -24,6 +24,7 @@ use Illuminate\Support\Carbon;
  * @property-read int|null $pf_education_item_locale_count
  * @property-read Collection<int, PfEducationItemPlace> $pfEducationItemPlace
  * @property-read int|null $pf_education_item_place_count
+ *
  * @method static Builder|PfEducationItem newModelQuery()
  * @method static Builder|PfEducationItem newQuery()
  * @method static Builder|PfEducationItem query()
@@ -33,6 +34,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfEducationItem whereName($value)
  * @method static Builder|PfEducationItem wherePeriod($value)
  * @method static Builder|PfEducationItem whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class PfEducationItem extends Model
@@ -44,7 +46,7 @@ class PfEducationItem extends Model
     ];
 
     protected $casts = [
-        'period' => 'array'
+        'period' => 'array',
     ];
 
     public function pfEducation(): BelongsTo

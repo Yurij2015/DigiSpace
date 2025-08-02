@@ -11,6 +11,7 @@ class PfEducationController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *
      * @throws JsonException
      */
     public function index(): JsonResponse
@@ -20,6 +21,7 @@ class PfEducationController extends Controller
             'pfEducationInfoLocale', 'pfEducationItem.pfEducationItemLocale'
         )->get();
         $education = $this->prepareJsonToClient($education);
+
         return response()->json($education);
     }
 
@@ -32,6 +34,7 @@ class PfEducationController extends Controller
         $data = reset($data);
         $eduInfoLocales = $this->getEduInfoLocales($data['pf_education_info_locale']);
         $items = $this->getEduItems($data);
+
         return ['locales' => $eduInfoLocales, 'items' => $items];
     }
 
@@ -43,6 +46,7 @@ class PfEducationController extends Controller
                 'description' => $locale['description'],
             ];
         }
+
         return $eduInfoLocales ?? null;
     }
 
@@ -64,8 +68,8 @@ class PfEducationController extends Controller
                 'id' => $eduPlace['name'],
                 'place' => $this->getEduItemPlace($eduPlace),
                 'period' => $eduPlace['period'],
-//                'period' => json_decode($eduPlace['period'], false, 512, JSON_THROW_ON_ERROR),
-                'locales' => $eduItemLocales
+                //                'period' => json_decode($eduPlace['period'], false, 512, JSON_THROW_ON_ERROR),
+                'locales' => $eduItemLocales,
             ];
         }
 
@@ -86,9 +90,9 @@ class PfEducationController extends Controller
         }
 
         return [
-            "logoUrl" => $logoUrl,
-            "faIcon" => $faIcon,
-            'locales' => $eduItemPlacelocales
+            'logoUrl' => $logoUrl,
+            'faIcon' => $faIcon,
+            'locales' => $eduItemPlacelocales,
         ];
     }
 
@@ -100,4 +104,3 @@ class PfEducationController extends Controller
         ] ?? null;
     }
 }
-

@@ -1,4 +1,5 @@
 <?php
+
 return [
     'WIDGET_PER_PAGE' => 5,
     'SERVICES_PER_PAGE' => 10,

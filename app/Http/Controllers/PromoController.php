@@ -9,7 +9,6 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-
 class PromoController extends Controller
 {
     public const PROMOS = 14;
@@ -19,10 +18,11 @@ class PromoController extends Controller
         $promosCategory = $this->getPromosPageWidgetsCategory(self::PROMOS);
         $promosWidgets = $this->getPromosPageWidgets(self::PROMOS);
         $page = Page::where('slug', '=', 'promos')->first();
+
         return view('promo.index', [
             'promosCategory' => $promosCategory,
             'promosWidgets' => $promosWidgets,
-            'page' => $page
+            'page' => $page,
         ]);
     }
 

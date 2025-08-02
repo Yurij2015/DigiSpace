@@ -16,6 +16,7 @@ use Illuminate\Support\Carbon;
  * @property string|null $slug
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static Builder|PfSection newModelQuery()
  * @method static Builder|PfSection newQuery()
  * @method static Builder|PfSection query()
@@ -25,6 +26,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfSection whereName($value)
  * @method static Builder|PfSection whereSlug($value)
  * @method static Builder|PfSection whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class PfSection extends Model
