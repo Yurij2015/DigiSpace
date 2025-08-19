@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\UpdatePostRequest;
 use App\Models\Category;
 use App\Models\Post;
 use App\Services\PostService;
@@ -47,10 +48,16 @@ class PostController extends Controller
     {
         $post = Post::where('id', $post)->first();
         $postService->changeImgPathIfNull($post);
+        $statuses = [
+            'draft' => 'Draft',
+            'published' => 'Published',
+            'archived' => 'Archived',
+        ];
 
         return Inertia::render('Admin/Posts/Update', [
             'post' => $post,
             'categories' => Category::all(),
+            'statuses' => $statuses,
         ]);
     }
 
@@ -60,16 +67,10 @@ class PostController extends Controller
      *
      * @throws AuthorizationException
      */
-    final public function postUpdate(Request $request, Post $post): RedirectResponse
+    final public function postUpdate(UpdatePostRequest $request, Post $post): RedirectResponse
     {
         $this->authorize('postUpdate', $post);
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'content' => 'required|string',
-            'description' => 'string',
-            'category_id' => 'int',
-            'file' => '',
-        ]);
+        $validated = $request->validated();
 
         if ($request->file) {
             $fileName = $this->storeImageOnMinio($request);
@@ -134,7 +135,7 @@ class PostController extends Controller
         if ($request->hasFile('file')) {
             $image = $request->file('file');
             $imageName = $image->getClientOriginalName();
-            $filePath = rtrim('posts/'.$user->id, '/').'/'.ltrim($imageName, '/');
+            $filePath = rtrim('posts/' . $user->id, '/') . '/' . ltrim($imageName, '/');
             Storage::disk('s3')->put($filePath, file_get_contents($image));
             $fileName = Storage::disk('s3')->url($filePath);
             //            $user->save();

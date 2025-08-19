@@ -50,7 +50,7 @@ use Illuminate\Support\Carbon;
 class Post extends Model
 {
     protected $fillable = [
-        'name', 'slug', 'content', 'description', 'category_id', 'user_id', 'img_path',
+        'name', 'slug', 'content', 'status', 'description', 'category_id', 'user_id', 'img_path',
     ];
 
     /**

@@ -9,12 +9,13 @@ import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
 import Editor from '@tinymce/tinymce-vue'
 
-const props = defineProps(['categories', 'post']);
+const props = defineProps(['categories', 'post', 'statuses']);
 
 const form = useForm({
     name: props.post.name,
     slug: props.post.slug,
     content: props.post.content,
+    status: props.post.status ? props.post.status : 'draft',
     description: props.post.description,
     category_id: props.post.category_id,
     file: null
@@ -85,8 +86,20 @@ const form = useForm({
                                         </option>
                                     </select>
                                     <InputError :message="form.errors.category_id" class="mt-2"/>
+                                    <select
+                                        class='block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3'
+                                        v-model='form.status'>
+                                        <option
+                                            v-for="(value, key) in statuses"
+                                            :key="key"
+                                            :value="key"
+                                        >
+                                            {{ value }}
+                                        </option>
+                                    </select>
+                                    <InputError :message="form.errors.status" class="mt-2"/>
                                     <div class="columns-1 mt-3">
-                                        <img :src="post.img_path" width="400"/>
+                                        <img :src="post.img_path" width="400" alt=""/>
                                     </div>
                                     <div>
                                         <Label for="file" value="File"/>
