@@ -23,6 +23,7 @@ class BlogController extends Controller
     public function index(): Response|View
     {
         $posts = Post::with('category')
+            ->where('status', 'published')
             ->paginate(config('constants.NUMBER_POSTS_IN_BLOG_PAGE'));
         if ($posts->count() === 0) {
             return response()->view('errors.page-not-found')->setStatusCode(404);
