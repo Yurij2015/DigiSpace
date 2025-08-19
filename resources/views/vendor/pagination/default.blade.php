@@ -1,6 +1,13 @@
 @if ($paginator->hasPages())
-{{--    <div class="pagination__control"><a href="{{ $paginator->previousPageUrl() }}#services-table">Previous</a></div>--}}
-    <div class="pagination__control"><a href="{{$paginator->currentPage() > 1 ? $paginator->previousPageUrl() : '' }}#services-table">Previous5</a></div>
+    @php
+        $base = url()->current();
+        $current = $paginator->currentPage();
+        $prevFor2ndPage = $current === 2 ? $base : $paginator->previousPageUrl();
+        $prevUrl = $current <= 1 ? null : $prevFor2ndPage;
+    @endphp
+    <div class="pagination__control">
+        <a href="{{ $prevUrl  }}#services-table">Previous5</a>
+    </div>
     <nav>
         <ul class="pagination__list">
             {{-- Previous Page Link --}}
@@ -10,7 +17,8 @@
                 </li>
             @else
                 <li class="pagination__control">
-                    <a href="{{ $paginator->previousPageUrl() }}#services-table" rel="prev" aria-label="@lang('pagination.previous')">&lsaquo;</a>
+                    <a href="{{ $paginator->previousPageUrl() }}#services-table" rel="prev"
+                       aria-label="@lang('pagination.previous')">&lsaquo;</a>
                 </li>
             @endif
 
@@ -36,7 +44,8 @@
             {{-- Next Page Link --}}
             @if ($paginator->hasMorePages())
                 <li class="pagination__control">
-                    <a href="{{ $paginator->nextPageUrl() }}#services-table" rel="next" aria-label="@lang('pagination.next')">&rsaquo;</a>
+                    <a href="{{ $paginator->nextPageUrl() }}#services-table" rel="next"
+                       aria-label="@lang('pagination.next')">&rsaquo;</a>
                 </li>
             @else
                 <li class="disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
