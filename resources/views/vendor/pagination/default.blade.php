@@ -1,5 +1,6 @@
 @if ($paginator->hasPages())
-    <div class="pagination__control"><a href="{{ $paginator->previousPageUrl() }}#services-table">Previous</a></div>
+{{--    <div class="pagination__control"><a href="{{ $paginator->previousPageUrl() }}#services-table">Previous</a></div>--}}
+    <div class="pagination__control"><a href="{{$paginator->currentPage() > 1 ? $paginator->previousPageUrl() : '' }}#services-table">Previous5</a></div>
     <nav>
         <ul class="pagination__list">
             {{-- Previous Page Link --}}
