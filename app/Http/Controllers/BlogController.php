@@ -41,6 +41,7 @@ class BlogController extends Controller
     public function show(string $postSlug): View|Response
     {
         $post = Post::where('slug', $postSlug)
+            ->where('status', 'published')
             ->with('blogPostBanner')
             ->with('category')
             ->first();
@@ -60,7 +61,7 @@ class BlogController extends Controller
     public function category(string $categorySlug): View
     {
         $category = Category::where('slug', $categorySlug)->firstOrFail();
-        $posts = Post::where('category_id', $category->id)
+        $posts = Post::where('category_id', $category->id)->where('status', 'published')
             ->paginate(config('constants.NUMBER_POSTS_IN_BLOG_PAGE'));
         $banner = BlogPostBanner::where('blog_page_type', 'category')->first();
 
@@ -94,8 +95,8 @@ class BlogController extends Controller
         $posts = Post::query();
         if (request('search')) {
             $posts
-                ->where('name', 'like', '%'.request('search').'%')
-                ->orWhere('content', 'like', '%'.request('search').'%');
+                ->where('name', 'like', '%' . request('search') . '%')
+                ->orWhere('content', 'like', '%' . request('search') . '%');
         }
 
         $posts = $posts->paginate(config('constants.NUMBER_POSTS_IN_MENU'));
@@ -120,16 +121,22 @@ class BlogController extends Controller
 
     private function getCategories(): Collection
     {
-        return Category::orderBy('created_at', 'DESC')->with('post')->get();
+        return Category::orderByDesc('created_at')
+            ->withWhereHas('post', fn($q) => $q->where('status', 'published'))
+            ->get();
     }
 
     private function getPostsNumber(): int
     {
-        return Post::count();
+        return Post::where('status', 'published')->count();
     }
 
     private function getLatestPosts(int $count): Collection
     {
-        return Post::orderBy('created_at', 'DESC')->with('category')->get()->take($count);
+        return Post::orderBy('created_at', 'DESC')
+            ->where('status', 'published')
+            ->with('category')
+            ->get()
+            ->take($count);
     }
 }
