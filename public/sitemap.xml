@@ -177,18 +177,8 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://digispace.pro/blog-category/web-development?page=2</loc>
-        <changefreq>never</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://digispace.pro/blog/custom-software-development-services-tailored-to-your-business-needs</loc>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://digispace.pro/blog-category/web-development?page=1</loc>
-        <changefreq>never</changefreq>
         <priority>0.8</priority>
     </url>
 </urlset>
