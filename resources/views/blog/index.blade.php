@@ -1,5 +1,17 @@
 @extends('layouts.main')
 @section('title', 'DigiSpace | Blog')
+
+@php
+    $p = (int) request('page', 1);
+    $base = isset($category)
+        ? route('blog-category', $category->slug)
+        : route('blog');
+@endphp
+
+@push('head')
+    <link rel="canonical" href="{{ $p <= 1 ? $base : $base.'?page='.$p }}">
+@endpush
+
 @section('content')
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">
