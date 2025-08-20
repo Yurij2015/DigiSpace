@@ -14,7 +14,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://digispace.pro/contact-us</loc>
+        <loc>https://digispace.pro/services</loc>
         <changefreq>never</changefreq>
         <priority>0.8</priority>
     </url>
@@ -24,18 +24,8 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://digispace.pro/about</loc>
-        <changefreq>never</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://digispace.pro/promos</loc>
         <changefreq>never</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://digispace.pro/blog</loc>
-        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
@@ -44,12 +34,12 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://digispace.pro/services</loc>
-        <changefreq>never</changefreq>
+        <loc>https://digispace.pro/blog/proven-tactics-for-optimized-website-development</loc>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://digispace.pro/blog/proven-tactics-for-optimized-website-development</loc>
+        <loc>https://digispace.pro/blog</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -59,37 +49,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://digispace.pro/pages/opening-the-space-of-high-technologies</loc>
-        <changefreq>never</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://digispace.pro/blog/mastering-content-for-website-development</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://digispace.pro/pages/crm-and-cms-systems</loc>
-        <changefreq>never</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://digispace.pro/pages/legacy-code-refactoring</loc>
-        <changefreq>never</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://digispace.pro/blog/leveraging-html-templates-for-efficient-web-development</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://digispace.pro/pages/template-implementation</loc>
-        <changefreq>never</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://digispace.pro/blog/e-commerce-development-building-online-stores</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -99,12 +59,47 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://digispace.pro/pages/web-applications</loc>
+        <loc>https://digispace.pro/contact-us</loc>
         <changefreq>never</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://digispace.pro/pages/responsive-web-apps</loc>
+        <loc>https://digispace.pro/pages/legacy-code-refactoring</loc>
+        <changefreq>never</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://digispace.pro/blog/mastering-content-for-website-development</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://digispace.pro/pages/opening-the-space-of-high-technologies</loc>
+        <changefreq>never</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://digispace.pro/pages/template-implementation</loc>
+        <changefreq>never</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://digispace.pro/about</loc>
+        <changefreq>never</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://digispace.pro/blog/e-commerce-development-building-online-stores</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://digispace.pro/pages/crm-and-cms-systems</loc>
+        <changefreq>never</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://digispace.pro/pages/qa-testing</loc>
         <changefreq>never</changefreq>
         <priority>0.8</priority>
     </url>
@@ -116,12 +111,27 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://digispace.pro/pages/mysql-website-development-the-technology-which-became-legendary</loc>
+        <loc>https://digispace.pro/pages/web-applications</loc>
         <changefreq>never</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://digispace.pro/pages/qa-testing</loc>
+        <loc>https://digispace.pro/pages/websites-and-apps-developed-using-javascript-frameworks</loc>
+        <changefreq>never</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://digispace.pro/blog/laravel-for-e-commerce-from-packages-to-headless-architecture</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://digispace.pro/pages/responsive-web-apps</loc>
+        <changefreq>never</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://digispace.pro/pages/mysql-website-development-the-technology-which-became-legendary</loc>
         <changefreq>never</changefreq>
         <priority>0.8</priority>
     </url>
@@ -137,42 +147,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://digispace.pro/pages/websites-and-apps-developed-using-javascript-frameworks</loc>
-        <changefreq>never</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://digispace.pro/privacy-policy</loc>
-        <changefreq>never</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://digispace.pro/blog/laravel-for-e-commerce-from-packages-to-headless-architecture</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://digispace.pro/support</loc>
-        <changefreq>never</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://digispace.pro/faq</loc>
-        <changefreq>never</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://digispace.pro/blog?page=2</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://digispace.pro/blog-category/e-commerce-websites</loc>
-        <changefreq>never</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://digispace.pro/blog-category/web-development</loc>
         <changefreq>never</changefreq>
         <priority>0.8</priority>
     </url>
@@ -182,13 +157,38 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://digispace.pro/blog?page=3</loc>
-        <changefreq>monthly</changefreq>
+        <loc>https://digispace.pro/faq</loc>
+        <changefreq>never</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://digispace.pro/blog-category/web-development</loc>
+        <changefreq>never</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://digispace.pro/blog-category/e-commerce-websites</loc>
+        <changefreq>never</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://digispace.pro/blog-category/web-development-trends</loc>
         <changefreq>never</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://digispace.pro/blog?page=2</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://digispace.pro/support</loc>
+        <changefreq>never</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://digispace.pro/blog?page=3</loc>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
@@ -202,33 +202,13 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://digispace.pro/blog-category/web-development?page=3</loc>
-        <changefreq>never</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://digispace.pro/blog/custom-software-development-services-tailored-to-your-business-needs</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://digispace.pro/blog/post-10</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://digispace.pro/blog/post-8</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://digispace.pro/blog-category/web-development?page=1</loc>
         <changefreq>never</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://digispace.pro/blog/post-9</loc>
-        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 </urlset>
