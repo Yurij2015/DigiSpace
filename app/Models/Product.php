@@ -34,7 +34,15 @@ use Illuminate\Support\Carbon;
 class Product extends Model
 {
     protected $fillable = [
-        'title', 'details', 'price_value',
+        'title',
+        'details',
+        'price_value',
+        'product_code',
+        'product_name',
+        'description',
+        'is_active',
+        'position',
+        'is_prefered'
     ];
 
     public function services(): BelongsToMany

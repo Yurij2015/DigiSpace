@@ -140,6 +140,8 @@ Route::controller(AdminProductController::class)->middleware('auth')->group(func
     Route::get('/admin/products/{product}', 'show')->name('admin.product-show');
     Route::put('admin/product-update/{product}', 'update')->name('admin.product-update');
     Route::delete('admin/product-destroy/{product}', 'destroy')->name('admin.product-destroy');
+    Route::get('/admin/product-services-style/{product}', 'productServicesStyle')->name('admin.product-services-style');
+    Route::put('/admin/product-services-style/{product}', 'saveProductServiceStyle')->name('admin.save-product-services-style');
 });
 
 Route::controller(FooterUsefulLinkController::class)->middleware('auth')->group(function () {
