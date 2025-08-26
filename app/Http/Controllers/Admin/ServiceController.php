@@ -22,7 +22,13 @@ class ServiceController extends Controller
 
     final public function serviceForm(): Response
     {
-        return Inertia::render('Admin/Services/Create');
+        $serviceCategories = ServiceCategory::all();
+        $serviceCategories->load('service');
+
+        return Inertia::render('Admin/Services/Create', [
+            'serviceCategories' => $serviceCategories,
+            'api_key_tinymce' => config('app.tiny_mce_api_key'),
+        ]);
     }
 
     /**
@@ -30,7 +36,10 @@ class ServiceController extends Controller
      */
     final public function serviceSave(ServiceSaveRequest $saveRequest): RedirectResponse
     {
-        Service::create($saveRequest->all());
+        $data = $saveRequest->validated();
+        $data['slug'] = Str::slug($saveRequest->title);
+
+        Service::create($data);
 
         return redirect(route('admin.services'))->with('message', 'Service Created Successfully');
     }
@@ -60,7 +69,7 @@ class ServiceController extends Controller
         $service->slug = Str::slug($saveRequest->title);
         $data['slug'] = $service->slug;
 
-        if ($service->image && ! $saveRequest->file) {
+        if ($service->image && !$saveRequest->file) {
             $data['image'] = str_replace('/uploads/', '', $service->image);
         }
 
@@ -82,7 +91,7 @@ class ServiceController extends Controller
 
     private function uploadImage($request, $service): string
     {
-        $fileName = "service_$service->slug".'_'.time().'.'.$request->file->extension();
+        $fileName = "service_$service->slug" . '_' . time() . '.' . $request->file->extension();
         $request->file->move(public_path('uploads'), $fileName);
 
         return $fileName;
