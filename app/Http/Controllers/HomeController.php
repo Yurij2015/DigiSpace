@@ -13,7 +13,10 @@ class HomeController extends Controller
 {
     public function index(ServicesService $servicesService, AboutService $aboutService): Application|Factory|View
     {
-        $products = Product::with('services')->get();
+        $products = Product::with('services')
+            ->where('is_active', true)
+            ->orderBy('position')->get();
+
         $chooseUsCategory = $servicesService
             ->getServicesPageWidgetsCategory(config('constants.CHOOSE_US_WIDGET_CATEGORY'));
         $chooseUsWidgets = $servicesService

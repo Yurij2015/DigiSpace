@@ -15,7 +15,10 @@ class ServiceController extends Controller
 {
     public function index(ServicesService $servicesService): Application|Factory|View
     {
-        $products = Product::with('services')->get();
+        $products = Product::with('services')
+            ->where('is_active', true)
+            ->orderBy('position')->get();
+
         $productServices = ProductService::all();
         $listOfServices = Service::paginate(20);
         $servicesService->addStyleToService($products, $productServices);
