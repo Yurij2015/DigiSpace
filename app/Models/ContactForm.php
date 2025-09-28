@@ -31,5 +31,5 @@ use Illuminate\Support\Carbon;
  */
 class ContactForm extends Model
 {
-    protected $fillable = ['name', 'email', 'phone', 'message'];
+    protected $fillable = ['first_name', 'last_name', 'name', 'email', 'phone', 'message'];
 }
