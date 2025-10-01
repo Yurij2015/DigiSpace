@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactFormSaveRequest;
 use App\Models\ContactForm;
 use App\Models\Page;
+use App\Rules\RecaptchaRule;
 use com\zoho\crm\api\HeaderMap;
 use com\zoho\crm\api\record\ActionWrapper;
 use com\zoho\crm\api\record\APIException;
@@ -28,6 +30,7 @@ use com\zoho\crm\api\InitializeBuilder;
 use com\zoho\crm\api\record\GetRecordsParam;
 use com\zoho\crm\api\ParameterMap;
 use com\zoho\crm\api\record\RecordOperations;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 class ContactController extends Controller
@@ -85,16 +88,9 @@ class ContactController extends Controller
     /**
      * @throws SDKException
      */
-    public function save(Request $request): RedirectResponse
+    public function save(ContactFormSaveRequest $request): RedirectResponse
     {
-        $validated = $this->validate($request, [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'message' => 'required',
-        ]);
-
+        $validated = $request->validated();
         $validated['name'] = $validated['first_name'] . ' ' . $validated['last_name'];
 
         ContactForm::create($validated);

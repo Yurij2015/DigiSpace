@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
     <!-- Meta Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
@@ -70,6 +71,7 @@
 
     gtag('config', 'G-5SMHNENJQK');
 </script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <!-- Page Loader-->
 <div id="page-loader">
     <div class="page-loader-body">
