@@ -170,5 +170,6 @@ return [
     */
 
     'attributes' => [],
+    'phone' => 'The :attribute field must be a valid number.',
 
 ];

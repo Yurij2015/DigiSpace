@@ -27,7 +27,7 @@ class ContactFormSaveRequest extends FormRequest
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required|email',
-            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'phone' => 'required|phone:INTERNATIONAL',
             'message' => 'required',
             'g-recaptcha-response' => ['required', new RecaptchaRule()],
         ];
