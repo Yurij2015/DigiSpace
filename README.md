@@ -1,1 +1,1 @@
-Laravel, Vue, Inertia, Vite, Blade
+Laravel, Vue, Inertia, Vite, Blade, MySQL
