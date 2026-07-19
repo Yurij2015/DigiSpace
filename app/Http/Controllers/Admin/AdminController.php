@@ -12,11 +12,12 @@ class AdminController extends Controller
     {
         $ordersPerMonth = [
             [30, 78, 56, 34, 100, 45, 13],
-            [27, 68, 86, 74, 10, 4, 87]
+            [27, 68, 86, 74, 10, 4, 87],
         ];
+
         return Inertia::render('Admin/Index', [
             'ordersPerMonth' => $ordersPerMonth,
-            'profileImg' => "/img/team-2-800x800.jpg"
+            'profileImg' => '/img/team-2-800x800.jpg',
         ]);
     }
 }

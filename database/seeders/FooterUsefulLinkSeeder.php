@@ -9,81 +9,79 @@ class FooterUsefulLinkSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run(): void
     {
         $footerUsefulLinks = [
             [
-                'name' => "Laravel",
-                'url' => "/",
+                'name' => 'Laravel',
+                'url' => '/',
                 'status' => true,
                 'position' => 1,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
-                'name' => "Symfony",
-                'url' => "/",
+                'name' => 'Symfony',
+                'url' => '/',
                 'status' => true,
                 'position' => 1,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
-                'name' => "Vue 3",
-                'url' => "/",
+                'name' => 'Vue 3',
+                'url' => '/',
                 'status' => true,
                 'position' => 1,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
-                'name' => "VueNotus",
-                'url' => "/",
+                'name' => 'VueNotus',
+                'url' => '/',
                 'status' => true,
                 'position' => 1,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
-                'name' => "LteAdmin",
-                'url' => "/",
+                'name' => 'LteAdmin',
+                'url' => '/',
                 'status' => true,
                 'position' => 1,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
-                'name' => "Tutorials",
-                'url' => "/",
+                'name' => 'Tutorials',
+                'url' => '/',
                 'status' => true,
                 'position' => 2,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
-                'name' => "Support",
-                'url' => "/",
+                'name' => 'Support',
+                'url' => '/',
                 'status' => true,
                 'position' => 2,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],            [
-                'name' => "Contact Us",
-                'url' => "/",
+                'name' => 'Contact Us',
+                'url' => '/',
                 'status' => true,
                 'position' => 2,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],            [
-                'name' => "Blog",
-                'url' => "/",
+                'name' => 'Blog',
+                'url' => '/',
                 'status' => true,
                 'position' => 2,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
         ];
         DB::table('footer_useful_links')->insert($footerUsefulLinks);

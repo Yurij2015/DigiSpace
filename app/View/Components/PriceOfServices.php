@@ -11,8 +11,6 @@ class PriceOfServices extends Component
 {
     /**
      * The products data
-     *
-     * @var Collection
      */
     public Collection $products;
 
@@ -28,8 +26,6 @@ class PriceOfServices extends Component
 
     /**
      * Get the view / contents that represent the component.
-     *
-     * @return View|Closure|string
      */
     public function render(): View|string|Closure
     {

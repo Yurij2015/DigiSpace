@@ -20,6 +20,7 @@ use Illuminate\Support\Carbon;
  * @property-read int|null $pf_education_info_locale_count
  * @property-read Collection<int, PfEducationItem> $pfEducationItem
  * @property-read int|null $pf_education_item_count
+ *
  * @method static Builder|PfEducation newModelQuery()
  * @method static Builder|PfEducation newQuery()
  * @method static Builder|PfEducation query()
@@ -27,6 +28,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfEducation whereId($value)
  * @method static Builder|PfEducation whereName($value)
  * @method static Builder|PfEducation whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class PfEducation extends Model

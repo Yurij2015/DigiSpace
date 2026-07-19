@@ -9,7 +9,7 @@ import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
 import Editor from '@tinymce/tinymce-vue'
 
-const props = defineProps(['widgetCategories', 'widget']);
+const props = defineProps(['widgetCategories', 'widget', 'currentPage']);
 
 const form = useForm({
     title: props.widget.title,
@@ -48,8 +48,8 @@ function isJson(str) {
                         <div class="flex flex-wrap">
                             <div class="w-full xl:w-full mb-12 xl:mb-0 px-4 mt-2">
                                 <form
-                                    @submit.prevent="form.put(route('admin.widget-update', widget.id), { onSuccess: () => form.reset() })">
-                                    <input
+                                    @submit.prevent="form.put(`${route('admin.widget-update', widget.id)}?page=${currentPage}`, { onSuccess: () => form.reset() })">
+                                <input
                                         v-model="form.title"
                                         class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                     >

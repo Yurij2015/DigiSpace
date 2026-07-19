@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -10,8 +9,6 @@ class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run(): void
     {
@@ -22,7 +19,7 @@ class CategorySeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
                 'deleted_at' => null,
-                'user_id' => 1
+                'user_id' => 1,
             ],
         ];
         DB::table('categories')->insert($categories);

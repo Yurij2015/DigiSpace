@@ -60,7 +60,8 @@
                                 </li>
                                 <li class="{{ Route::is('services') ? 'active' : '' }}">
                                     <a href="{{ route('services') }}">Services</a>
-                                    @if(isset($serviceCategories) && count($serviceCategories));
+                                    @if(isset($serviceCategories) && count($serviceCategories))
+                                        ;
                                         <ul class="rd-navbar-dropdown">
                                             @foreach($serviceCategories as $serviceCategory)
                                                 <li>
@@ -75,9 +76,14 @@
                                 <li class="{{ Route::is('pricing') ? 'active' : '' }}">
                                     <a href="{{ route('pricing') }}">Pricing</a>
                                 </li>
-                                <li class="{{ Route::is('promos') ? 'active' : '' }}">
-                                    <a href="{{ route('promos') }}">Promos</a>
-                                </li>
+                                @php
+                                    $isPromoTabActive = config('settings.is_promo_tab_active');
+                                @endphp
+                                @if($isPromoTabActive)
+                                    <li class="{{ Route::is('promos') ? 'active' : '' }}">
+                                        <a href="{{ route('promos') }}">Promos</a>
+                                    </li>
+                                @endif
                                 <li class="{{ Route::is('blog') ? 'active' : '' }}">
                                     <a href="{{ route('blog') }}">Blog</a>
                                     <ul class="rd-navbar-dropdown">

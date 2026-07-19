@@ -13,10 +13,11 @@ class ServiceCategoriesController extends Controller
     public function index(): Response
     {
         $categories = ServiceCategory::paginate(config('constants.SERVICE_CATEGORIES_PER_PAGE'));
+
         return Inertia::render('Admin/ServiceCategories/Index', compact('categories'));
     }
 
-    public function  store(ServiceCategorySaveRequest $request)
+    public function store(ServiceCategorySaveRequest $request)
     {
         ServiceCategory::create($request->validated());
 

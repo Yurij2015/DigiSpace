@@ -6,11 +6,25 @@ import Sidebar from "@/Components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
+import Label from "@/Components/InputLabel.vue";
+import Editor from "@tinymce/tinymce-vue";
+
+const props = defineProps(['api_key_tinymce']);
 
 const form = useForm({
     title: '',
     details: '',
     price: '',
+    service_category_id: '',
+    seo_keywords: '',
+    seo_description: '',
+    seo_title: '',
+    image_alt: '',
+    image: '',
+    description: '',
+    slug: '',
+    status: 'active',
+    file: ''
 });
 </script>
 <template>
@@ -53,6 +67,123 @@ const form = useForm({
                                         class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                     >
                                     <InputError :message="form.errors.price" class="mt-2"/>
+
+                                    <div class="mt-3">
+                                        <label for="service_category_id" class="text-sm font-bold">Category:</label>
+                                        <select
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                            v-model='form.service_category_id'>
+                                            <option v-for='category in serviceCategories'
+                                                    :value='category.id'>
+                                                {{ category.name }}
+                                            </option>
+                                        </select>
+                                        <InputError :message="form.errors.service_category_id" class="mt-2"/>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <label for="seo_keywords" class="text-sm font-bold">Keywords:</label>
+                                        <input
+                                            v-model="form.seo_keywords"
+                                            id="seo_keywords"
+                                            placeholder="What is service keywords?"
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                        >
+                                        <InputError :message="form.errors.seo_keywords" class="mt-2"/>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <label for="seo_description" class="text-sm font-bold">SEO Description:</label>
+                                        <textarea
+                                            v-model="form.seo_description"
+                                            id="seo_description"
+                                            rows="3"
+                                            placeholder="What is service SEO description?"
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                        />
+                                        <InputError :message="form.errors.seo_description" class="mt-2"/>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <label for="seo_title" class="text-sm font-bold">SEO Title:</label>
+                                        <input
+                                            v-model="form.seo_title"
+                                            id="seo_title"
+                                            placeholder="What is service title?"
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                        >
+                                        <InputError :message="form.errors.seo_title" class="mt-2"/>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <label for="description" class="text-sm font-bold">Description:</label>
+                                        <Editor
+                                            :api-key=api_key_tinymce
+                                            :init="{
+                                            height: 500,
+                                            plugins: [
+                                           'advlist autolink lists link image charmap print preview anchor',
+                                           'searchreplace visualblocks code fullscreen',
+                                           'insertdatetime media table paste code help wordcount'
+                                           ],
+                                            toolbar:
+                                           'undo redo | formatselect | bold italic backcolor | \
+                                           alignleft aligncenter alignright alignjustify | \
+                                           bullist numlist outdent indent | removeformat | help'
+                                        }"
+                                            v-model="form.description"
+                                            placeholder="What is service description?"
+                                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                        />
+                                        <InputError :message="form.errors.description" class="mt-2"/>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <label for="slug" class="text-sm font-bold">Slug:</label>
+                                        <input
+                                            v-model="form.slug"
+                                            id="slug"
+                                            placeholder="What is service slug?"
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                        >
+                                        <InputError :message="form.errors.slug" class="mt-2"/>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <label for="status" class="text-sm font-bold">Status:</label>
+                                        <select
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                            v-model='form.status'
+                                            id="status"
+                                        >
+                                            <option v-for="status in statuses" :value="status">{{ status }}</option>
+                                        </select>
+                                        <InputError :message="form.errors.category_id" class="mt-2"/>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <label for="image_alt" class="text-sm font-bold">Image alt:</label>
+                                        <input
+                                            v-model="form.image_alt"
+                                            id="image_alt"
+                                            placeholder="What is service image alt?"
+                                            class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 p-3 py-1 text-sm border border-blueGray-300"
+                                        >
+                                        <InputError :message="form.errors.image_alt" class="mt-2"/>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <div>
+                                            <Label for="file" value="File"/>
+                                            <input
+                                                id="file"
+                                                type="file"
+                                                class="mt-1 block w-full"
+                                                @input="form.file = $event.target.files[0]"
+                                                autofocus/>
+                                            <span v-if="form.errors.title">{{ form.errors.file }}</span>
+                                        </div>
+                                    </div>
 
                                     <PrimaryButton class="mt-4">Save service!</PrimaryButton>
                                     <Link :href="route('admin.services')">

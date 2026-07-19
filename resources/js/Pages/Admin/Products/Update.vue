@@ -7,12 +7,19 @@ import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
 import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
 
-const props = defineProps(['product']);
+const props = defineProps(['product', 'services']);
 
 const form = useForm({
     title: props.product.title,
     details: props.product.details,
     price_value: props.product.price_value,
+    product_code: props.product.product_code,
+    product_name: props.product.product_name,
+    description: props.product.description,
+    position: props.product.position,
+    is_prefered: props.product.is_prefered,
+    is_active: props.product.is_active,
+    services: props.product.services.map(s => s.id)
 });
 
 </script>
@@ -38,29 +45,110 @@ const form = useForm({
                                 <form
                                     @submit.prevent="form.put(route('admin.product-update', product.id),
                                     { onSuccess: () => form.reset() })">
+
+                                    <label for="title" class="font-bold">Title</label>
                                     <input
                                         v-model="form.title"
-                                        placeholder="What is service title?"
+                                        placeholder="What is product title?"
                                         class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring
                                         focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                     >
                                     <InputError :message="form.errors.title" class="mt-2"/>
 
+                                    <label for="details" class="font-bold">Details</label>
                                     <input
                                         v-model="form.details"
-                                        placeholder="What is service details?"
+                                        placeholder="What is product details?"
                                         class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring
                                         focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                     >
                                     <InputError :message="form.errors.details" class="mt-2"/>
 
+                                    <label for="price_value" class="font-bold">Price</label>
                                     <input
                                         v-model="form.price_value"
-                                        placeholder="What is service price?"
+                                        placeholder="What is product price?"
                                         class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring
                                         focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
                                     >
                                     <InputError :message="form.errors.price_value" class="mt-2"/>
+
+                                    <label for="product_code" class="font-bold">Product Code</label>
+                                    <input
+                                        v-model="form.product_code"
+                                        placeholder="What is product code?"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring
+                                        focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                    >
+                                    <InputError :message="form.errors.product_code" class="mt-2"/>
+
+                                    <label for="product_name" class="font-bold">Product Name</label>
+                                    <input
+                                        v-model="form.product_name"
+                                        placeholder="What is product name?"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring
+                                        focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                    >
+                                    <InputError :message="form.errors.product_name" class="mt-2"/>
+
+                                    <label for="description" class="font-bold">Description</label>
+                                    <input
+                                        type="text"
+                                        v-model="form.description"
+                                        placeholder="What is product description?"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring
+                                        focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                    >
+                                    <InputError :message="form.errors.description" class="mt-2"/>
+
+                                    <label for="is_prefered" class="font-bold">Is Prefered</label>
+                                    <input
+                                        type="number"
+                                        v-model="form.is_prefered"
+                                        placeholder="Product is prefered?"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring
+                                        focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                    >
+                                    <InputError :message="form.errors.is_prefered" class="mt-2"/>
+
+                                    <label for="position" class="font-bold">Position</label>
+                                    <input
+                                        type="number"
+                                        v-model="form.position"
+                                        placeholder="Product position in list?"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring
+                                        focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                    >
+                                    <InputError :message="form.errors.position" class="mt-2"/>
+
+                                    <label for="is_active" class="font-bold">Is Active</label>
+                                    <input
+                                        type="number"
+                                        v-model="form.is_active"
+                                        placeholder="What is product price?"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring
+                                        focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                    >
+                                    <InputError :message="form.errors.is_active" class="mt-2"/>
+
+                                    <label for="services" class="font-bold">Services</label>
+                                    <select
+                                        v-model="form.services"
+                                        name="services[]"
+                                        multiple
+                                        size="10"
+                                        class="mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring
+                                        focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-3 p-3"
+                                    >
+                                        <option
+                                            v-for="service in services"
+                                            :key="service.id"
+                                            :value="service.id"
+                                        >
+                                            {{ service.title }}
+                                        </option>
+                                    </select>
+                                    <InputError :message="form.errors.services" class="mt-2"/>
 
                                     <PrimaryButton class="mt-4">Update product!</PrimaryButton>
                                     <Link :href="route('admin.products')">

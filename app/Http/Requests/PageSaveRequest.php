@@ -12,7 +12,7 @@ class PageSaveRequest extends FormRequest
             'name' => 'required|string|max:255',
             'meta' => 'required|string|max:255',
             'description' => 'required|string|max:255',
-            'content' => 'required|string'
+            'content' => 'required|string',
         ];
     }
 }

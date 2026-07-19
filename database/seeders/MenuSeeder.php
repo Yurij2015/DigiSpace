@@ -2,15 +2,13 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class MenuSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run(): void
     {
@@ -25,7 +23,7 @@ class MenuSeeder extends Seeder
                 'slug' => 'main',
                 'href' => 'main',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'page menu first',
@@ -37,7 +35,7 @@ class MenuSeeder extends Seeder
                 'slug' => 'submenu-first',
                 'href' => 'submenu-first',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'page menu second',
@@ -49,7 +47,7 @@ class MenuSeeder extends Seeder
                 'slug' => 'submenu-second',
                 'href' => 'submenu-second',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'page menu third',
@@ -61,7 +59,7 @@ class MenuSeeder extends Seeder
                 'slug' => 'submenu-third',
                 'href' => 'submenu-third',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'footer submenu',
@@ -73,7 +71,7 @@ class MenuSeeder extends Seeder
                 'slug' => 'footer-submenu',
                 'href' => 'footer-submenu',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
         ];
         DB::table('menus')->insert($menus);

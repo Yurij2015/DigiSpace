@@ -16,23 +16,31 @@ class ServiceController extends Controller
     public function index(): Response
     {
         $services = Service::paginate(config('constants.SERVICES_PER_PAGE'));
+
         return Inertia::render('Admin/Services/Index', ['services' => $services]);
     }
 
     final public function serviceForm(): Response
     {
-        return Inertia::render('Admin/Services/Create');
+        $serviceCategories = ServiceCategory::all();
+        $serviceCategories->load('service');
+
+        return Inertia::render('Admin/Services/Create', [
+            'serviceCategories' => $serviceCategories,
+            'api_key_tinymce' => config('app.tiny_mce_api_key'),
+        ]);
     }
 
     /**
      * Save a newly created post in storage.
-     *
-     * @param ServiceSaveRequest $saveRequest
-     * @return RedirectResponse
      */
     final public function serviceSave(ServiceSaveRequest $saveRequest): RedirectResponse
     {
-        Service::create($saveRequest->all());
+        $data = $saveRequest->validated();
+        $data['slug'] = Str::slug($saveRequest->title);
+
+        Service::create($data);
+
         return redirect(route('admin.services'))->with('message', 'Service Created Successfully');
     }
 
@@ -46,10 +54,11 @@ class ServiceController extends Controller
     final public function serviceUpdateForm(Service $service): Response
     {
         $serviceCategories = ServiceCategory::all();
+
         return Inertia::render('Admin/Services/Update', [
             'service' => $service,
             'serviceCategories' => $serviceCategories,
-            'api_key_tinymce' => config('app.tiny_mce_api_key')
+            'api_key_tinymce' => config('app.tiny_mce_api_key'),
         ]);
     }
 
@@ -76,13 +85,15 @@ class ServiceController extends Controller
     final public function destroy(Service $service): RedirectResponse
     {
         $service->delete();
+
         return redirect(route('admin.services'));
     }
 
     private function uploadImage($request, $service): string
     {
-        $fileName = "service_$service->slug" . "_" . time() . '.' . $request->file->extension();
+        $fileName = "service_$service->slug" . '_' . time() . '.' . $request->file->extension();
         $request->file->move(public_path('uploads'), $fileName);
+
         return $fileName;
     }
 }

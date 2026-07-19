@@ -8,18 +8,30 @@
                 {{Session::get('success')}}
             </div>
         @endif
-        <div class="col-md-6 ">
+        <div class="col-md-4">
             <div class="form-wrap contact-form-input">
-                <input class="form-input {{ $errors->has('name') ? 'error' : '' }}" id="contact-name" type="text"
-                       name="name">
-                @if ($errors->has('name'))
-                    <label class="form-label label-error" for="contact-name">{{ $errors->first('name') }}</label>
+                <input class="form-input {{ $errors->has('first_name') ? 'error' : '' }}" id="first-name" type="text"
+                       name="first_name">
+                @if ($errors->has('first_name'))
+                    <label class="form-label label-error" for="contact-name">{{ $errors->first('first_name') }}</label>
                 @else
-                    <label class="form-label" for="contact-name">Your Name</label>
+                    <label class="form-label" for="first-name">First Name</label>
                 @endif
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
+            <div class="form-wrap contact-form-input">
+                <input class="form-input {{ $errors->has('last_name') ? 'error' : '' }}" id="last-name" type="text"
+                       name="last_name">
+                @if ($errors->has('last_name'))
+                    <label class="form-label label-error text-sm"
+                           for="last-name">{{ $errors->first('last_name') }}</label>
+                @else
+                    <label class="form-label" for="last-name">Last Name</label>
+                @endif
+            </div>
+        </div>
+        <div class="col-md-4">
             <div class="form-wrap contact-form-input">
                 <input class="form-input {{ $errors->has('phone') ? 'error' : '' }}" id="contact-phone" type="text"
                        name="phone">
@@ -41,7 +53,7 @@
                 @endif
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="form-wrap contact-form-input">
                 <input class="form-input {{ $errors->has('email') ? 'error' : '' }}" id="contact-email" type="email"
                        name="email">
@@ -52,12 +64,29 @@
                 @endif
             </div>
         </div>
+        @if ($errors->has('g-recaptcha-response'))
+            <span class="m-0 recaptchaStyle">{{ $errors->first('g-recaptcha-response') }}</span>
+        @endif
+        <div class="col-md-6">
+            <div class="g-recaptcha"
+                 data-size="normal"
+                 data-sitekey="{{ config('services.recaptcha.site_key') }}"
+            ></div>
+        </div>
         <div class="col-md-6 send-message-button">
             <button class="button button-block button-primary button-ujarak" type="submit">Send Message</button>
         </div>
     </div>
 </form>
 
+@push('head')
+    <style>
+        .recaptchaStyle {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+@endpush
 
 <!-- RD Mailform -->
 {{--<form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact"--}}

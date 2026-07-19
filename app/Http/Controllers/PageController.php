@@ -9,10 +9,6 @@ use Illuminate\View\View;
 
 class PageController extends Controller
 {
-    /**
-     * @param string $slug
-     * @return Response|View
-     */
     public function show(string $slug): Response|View
     {
         $menuItemPage = MenuItem::with('pages')->where('slug', $slug)->firstOrFail();
@@ -23,9 +19,10 @@ class PageController extends Controller
         if ($menuItemPage->pages->count() === 0) {
             return response()->view('errors.page-not-found')->setStatusCode(404);
         }
+
         return view('pages.show', [
             'page' => $menuItemPage->pages->first(),
-            'pageImage' => $pageImage
+            'pageImage' => $pageImage,
         ]);
     }
 }

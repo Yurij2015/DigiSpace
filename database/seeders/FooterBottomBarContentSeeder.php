@@ -9,8 +9,6 @@ class FooterBottomBarContentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run(): void
     {
@@ -24,8 +22,8 @@ class FooterBottomBarContentSeeder extends Seeder
                 'support' => 'Support',
                 'support_href' => 'support',
                 'created_at' => now(),
-                'updated_at' => now()
-            ]
+                'updated_at' => now(),
+            ],
         ];
         DB::table('footer_bottom_bar_contents')->insert($footerBottomBarContent);
     }

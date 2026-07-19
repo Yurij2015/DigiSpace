@@ -7,7 +7,9 @@ use Illuminate\Foundation\Http\FormRequest;
 class SubcategorySaveRequest extends FormRequest
 {
     public const CELL_RULE_INT = 'nullable|integer';
+
     public const CELL_RULE_STRING = 'nullable|string|max:255';
+
     public function rules(): array
     {
         return [

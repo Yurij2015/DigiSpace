@@ -11,10 +11,9 @@ use Illuminate\View\Component;
 
 class OurProjects extends Component
 {
-
     public WidgetCategory $clientsCategory;
-    public Page $clients;
 
+    public Page $clients;
 
     public function __construct($clientsCategory, $clients)
     {
@@ -24,8 +23,6 @@ class OurProjects extends Component
 
     /**
      * Get the view / contents that represent the component.
-     *
-     * @return Application|Factory|View
      */
     public function render(): View|Factory|Application
     {

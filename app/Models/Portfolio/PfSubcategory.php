@@ -19,6 +19,7 @@ use Illuminate\Support\Carbon;
  * @property string|null $fa_icon
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static Builder|PfSubcategory newModelQuery()
  * @method static Builder|PfSubcategory newQuery()
  * @method static Builder|PfSubcategory query()
@@ -31,6 +32,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfSubcategory whereSlug($value)
  * @method static Builder|PfSubcategory whereType($value)
  * @method static Builder|PfSubcategory whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class PfSubcategory extends Model

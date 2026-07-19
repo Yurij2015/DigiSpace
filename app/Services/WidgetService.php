@@ -15,7 +15,7 @@ class WidgetService
 
     final public function changeImgPathIfNull($widget): void
     {
-        if ($widget->widget_image === URL::to('/') . '/uploads/widgets') {
+        if ($widget->widget_image === URL::to('/').'/uploads/widgets') {
             $widget->widget_image = 'no_image.png';
         }
     }

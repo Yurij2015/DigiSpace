@@ -9,8 +9,6 @@ class HeaderNavBarContentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run(): void
     {
@@ -32,8 +30,8 @@ class HeaderNavBarContentSeeder extends Seeder
                 'fourth_soc_button_href' => 'linkedin.com/groups/12675620',
                 'login_button_status' => true,
                 'created_at' => now(),
-                'updated_at' => now()
-            ]
+                'updated_at' => now(),
+            ],
         ];
         DB::table('header_nav_bar_contents')->insert($headerNavBarContent);
     }

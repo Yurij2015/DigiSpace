@@ -2,11 +2,10 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up(): void
     {
@@ -16,7 +15,7 @@ return new class extends Migration {
             'description' => 'Images for use on pages',
             'image' => null,
             'created_at' => now(),
-            'updated_at' => now()
+            'updated_at' => now(),
         ]);
     }
 };

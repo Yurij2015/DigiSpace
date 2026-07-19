@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -22,7 +21,7 @@ class WidgetCategorySeeder extends Seeder
                 'description' => 'Widget of top of landing',
                 'image' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Landing.  Midle block',
@@ -30,7 +29,7 @@ class WidgetCategorySeeder extends Seeder
                 'description' => 'Widget of middle of landing',
                 'image' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Landing. Body Top',
@@ -38,7 +37,7 @@ class WidgetCategorySeeder extends Seeder
                 'description' => 'Widget of body top',
                 'image' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Landing. Body Middle',
@@ -46,7 +45,7 @@ class WidgetCategorySeeder extends Seeder
                 'description' => 'Widget of body middle',
                 'image' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Landing. Body Bottom',
@@ -54,7 +53,7 @@ class WidgetCategorySeeder extends Seeder
                 'description' => 'Widget of body bottom',
                 'image' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Landing. Footer',
@@ -62,7 +61,7 @@ class WidgetCategorySeeder extends Seeder
                 'description' => 'Widget of footer',
                 'image' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'DigiSpace | About | General Info',
@@ -70,7 +69,7 @@ class WidgetCategorySeeder extends Seeder
                 'description' => 'Widgets of the about page | General info',
                 'image' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'DigiSpace | About | Team',
@@ -78,7 +77,7 @@ class WidgetCategorySeeder extends Seeder
                 'description' => 'Meet Our Team',
                 'image' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Some Facts About Us',
@@ -86,7 +85,7 @@ class WidgetCategorySeeder extends Seeder
                 'description' => 'More than 1000 apps developed',
                 'image' => 'images/bg-about-page-some-facts.jpeg',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Our Clients',
@@ -94,7 +93,7 @@ class WidgetCategorySeeder extends Seeder
                 'description' => 'Our Clients',
                 'image' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Footer',
@@ -102,7 +101,7 @@ class WidgetCategorySeeder extends Seeder
                 'description' => 'Footer',
                 'image' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Why Choose Us',
@@ -110,7 +109,7 @@ class WidgetCategorySeeder extends Seeder
                 'description' => 'Why Choose Us',
                 'image' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Frequently Asked Questions',
@@ -118,7 +117,7 @@ class WidgetCategorySeeder extends Seeder
                 'description' => 'Question-Answer block',
                 'image' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Promos',
@@ -126,7 +125,7 @@ class WidgetCategorySeeder extends Seeder
                 'description' => 'Promos widgets',
                 'image' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'name' => 'Get in Touch',
@@ -134,7 +133,7 @@ class WidgetCategorySeeder extends Seeder
                 'description' => 'Get in Touch widgets',
                 'image' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
         ];
         DB::table('widget_categories')->insert($widgetCategories);

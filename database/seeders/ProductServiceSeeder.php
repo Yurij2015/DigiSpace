@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -10,8 +9,6 @@ class ProductServiceSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run(): void
     {
@@ -22,7 +19,7 @@ class ProductServiceSeeder extends Seeder
                 'service_css_class' => 'text-marked',
                 'product_css_class' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'product_id' => 1,
@@ -30,7 +27,7 @@ class ProductServiceSeeder extends Seeder
                 'service_css_class' => 'text-marked',
                 'product_css_class' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'product_id' => 1,
@@ -38,7 +35,7 @@ class ProductServiceSeeder extends Seeder
                 'service_css_class' => '',
                 'product_css_class' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'product_id' => 1,
@@ -46,7 +43,7 @@ class ProductServiceSeeder extends Seeder
                 'service_css_class' => '',
                 'product_css_class' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'product_id' => 2,
@@ -54,7 +51,7 @@ class ProductServiceSeeder extends Seeder
                 'service_css_class' => 'text-marked',
                 'product_css_class' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'product_id' => 2,
@@ -62,7 +59,7 @@ class ProductServiceSeeder extends Seeder
                 'service_css_class' => 'text-marked',
                 'product_css_class' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'product_id' => 2,
@@ -70,7 +67,7 @@ class ProductServiceSeeder extends Seeder
                 'service_css_class' => 'text-marked',
                 'product_css_class' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'product_id' => 2,
@@ -78,7 +75,7 @@ class ProductServiceSeeder extends Seeder
                 'service_css_class' => 'text-accent',
                 'product_css_class' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'product_id' => 3,
@@ -86,7 +83,7 @@ class ProductServiceSeeder extends Seeder
                 'service_css_class' => 'text-marked',
                 'product_css_class' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'product_id' => 3,
@@ -94,7 +91,7 @@ class ProductServiceSeeder extends Seeder
                 'service_css_class' => 'text-marked',
                 'product_css_class' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'product_id' => 3,
@@ -102,7 +99,7 @@ class ProductServiceSeeder extends Seeder
                 'service_css_class' => 'text-marked',
                 'product_css_class' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'product_id' => 3,
@@ -110,7 +107,7 @@ class ProductServiceSeeder extends Seeder
                 'service_css_class' => 'text-marked',
                 'product_css_class' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
         ];
         DB::table('product_service')->insert($productService);

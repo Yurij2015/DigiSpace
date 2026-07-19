@@ -93,7 +93,7 @@ class SectionController extends Controller
             PfLink::create([
                 'item_id' => $item->id,
                 'fa_icon' => $link['fa_icon'],
-                'href' => $link['href']
+                'href' => $link['href'],
             ]);
         }
     }
@@ -108,9 +108,9 @@ class SectionController extends Controller
             $language = PfLanguage::create([
                 'lang_code' => $key,
                 'title' => $locale['title'],
-                'description' => $locale['description']
+                'description' => $locale['description'],
             ]);
-            $lang_id = $key . 'Id';
+            $lang_id = $key.'Id';
             $$lang_id = $language->id;
         }
 
@@ -118,7 +118,7 @@ class SectionController extends Controller
             $typeKey => $type->id,
             'en_id' => $enId,
             'ua_id' => $uaId,
-            'pl_id' => $plId
+            'pl_id' => $plId,
         ]);
     }
 }

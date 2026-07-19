@@ -22,6 +22,7 @@ use Illuminate\Support\Carbon;
  * @property-read PfEducationItem $pfEducationItem
  * @property-read Collection<int, PfEducationItemPlaceLocale> $pfEducationItemPlaceLocale
  * @property-read int|null $pf_education_item_place_locale_count
+ *
  * @method static Builder|PfEducationItemPlace newModelQuery()
  * @method static Builder|PfEducationItemPlace newQuery()
  * @method static Builder|PfEducationItemPlace query()
@@ -31,6 +32,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfEducationItemPlace whereId($value)
  * @method static Builder|PfEducationItemPlace whereLogoUrl($value)
  * @method static Builder|PfEducationItemPlace whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class PfEducationItemPlace extends Model
@@ -50,5 +52,4 @@ class PfEducationItemPlace extends Model
     {
         return $this->hasMany(PfEducationItemPlaceLocale::class, 'education_item_place_id', 'id');
     }
-
 }

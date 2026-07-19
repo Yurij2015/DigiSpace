@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      */
@@ -16,18 +15,15 @@ return new class extends Migration {
             $count = DB::table('services')->where('title', $row->title)->count();
 
             if ($count > 1) {
-                $slug .= '-' . Str::slug($firstWord) . Str::random(2);
+                $slug .= '-'.Str::slug($firstWord).Str::random(2);
             }
 
             DB::table('services')->where('id', $row->id)->update(['slug' => $slug]);
         });
     }
 
-
     /**
      * Reverse the migrations.
      */
-    public function down(): void
-    {
-    }
+    public function down(): void {}
 };

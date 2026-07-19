@@ -9,12 +9,14 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 
-
 class HomeController extends Controller
 {
     public function index(ServicesService $servicesService, AboutService $aboutService): Application|Factory|View
     {
-        $products = Product::with('services')->get();
+        $products = Product::with('services')
+            ->where('is_active', true)
+            ->orderBy('position')->get();
+
         $chooseUsCategory = $servicesService
             ->getServicesPageWidgetsCategory(config('constants.CHOOSE_US_WIDGET_CATEGORY'));
         $chooseUsWidgets = $servicesService
@@ -25,7 +27,7 @@ class HomeController extends Controller
             'chooseUsCategory' => $chooseUsCategory,
             'chooseUsWidgets' => $chooseUsWidgets,
             'clientsCategory' => $aboutService->getAboutPageComponentCategory(config('constants.WIDGET_CATEGORY_PROJECTS')),
-            'clients' => $aboutService->getAboutPageComponent(config('constants.WIDGET_CATEGORY_PROJECTS'))
+            'clients' => $aboutService->getAboutPageComponent(config('constants.WIDGET_CATEGORY_PROJECTS')),
         ]);
     }
 }

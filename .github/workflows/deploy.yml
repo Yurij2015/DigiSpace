@@ -11,7 +11,7 @@ jobs:
     outputs:
       DEPLOYMENT_MATRIX: ${{ steps.export-deployment-matrix.outputs.DEPLOYMENT_MATRIX }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: nanasess/setup-php@v4
       - name: Composer install
         run: |
@@ -53,7 +53,7 @@ jobs:
       matrix:
         server: ${{ fromJson(needs.create-deployment-artifacts.outputs.DEPLOYMENT_MATRIX) }}
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           name: app-build
       - name: Upload

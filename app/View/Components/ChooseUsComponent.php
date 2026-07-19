@@ -8,8 +8,8 @@ use Illuminate\View\Component;
 
 class ChooseUsComponent extends Component
 {
-
     public WidgetCategory $chooseUsCategory;
+
     public Page $chooseUsWidgets;
 
     public function __construct($chooseUsCategory, $chooseUsWidgets)

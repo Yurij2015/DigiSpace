@@ -15,7 +15,7 @@ class PostService
 
     final public function changeImgPathIfNull($post): void
     {
-        if ($post->img_path === URL::to('/') . '/uploads') {
+        if ($post->img_path === URL::to('/').'/uploads') {
             $post->img_path = 'no_image.png';
         }
     }

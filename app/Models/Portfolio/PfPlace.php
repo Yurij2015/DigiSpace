@@ -17,6 +17,7 @@ use Illuminate\Support\Carbon;
  * @property string|null $fa_icon
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ *
  * @method static Builder|PfPlace newModelQuery()
  * @method static Builder|PfPlace newQuery()
  * @method static Builder|PfPlace query()
@@ -27,6 +28,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|PfPlace whereName($value)
  * @method static Builder|PfPlace whereSlug($value)
  * @method static Builder|PfPlace whereUpdatedAt($value)
+ *
  * @mixin Eloquent
  */
 class PfPlace extends Model

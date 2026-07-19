@@ -22,7 +22,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => '',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '8',
@@ -31,7 +31,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => '',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '8',
@@ -40,7 +40,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => '',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '10',
@@ -49,7 +49,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'bg-pink-500',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '10',
@@ -58,7 +58,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'bg-red-600',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ], [
                 'widget_id' => '10',
                 'icon_class' => 'fab fa-twitter',
@@ -66,7 +66,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'bg-lightBlue-400',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '11',
@@ -75,7 +75,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'bg-red-600',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '11',
@@ -84,7 +84,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'bg-pink-500',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ], [
                 'widget_id' => '11',
                 'icon_class' => 'fab fa-twitter',
@@ -92,7 +92,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'bg-lightBlue-400',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ], [
                 'widget_id' => '11',
                 'icon_class' => 'fab fa-instagram',
@@ -100,7 +100,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'bg-blueGray-700 ',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '12',
@@ -109,7 +109,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'bg-pink-500',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '12',
@@ -118,7 +118,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'bg-red-600',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ], [
                 'widget_id' => '12',
                 'icon_class' => 'fab fa-instagram',
@@ -126,7 +126,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'bg-blueGray-700',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ], [
                 'widget_id' => '12',
                 'icon_class' => 'fab fa-facebook-f',
@@ -134,7 +134,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'bg-lightBlue-600',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ], [
                 'widget_id' => '12',
                 'icon_class' => 'fab fa-twitter',
@@ -142,7 +142,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'bg-lightBlue-400',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '13',
@@ -151,7 +151,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'bg-pink-500',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '13',
@@ -160,7 +160,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'bg-lightBlue-400',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '13',
@@ -169,7 +169,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'bg-red-600',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '19',
@@ -178,7 +178,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'text-lightBlue-400',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '19',
@@ -187,7 +187,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'text-lightBlue-600',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '19',
@@ -196,7 +196,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'text-pink-400',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '19',
@@ -205,7 +205,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'text-blueGray-800',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '23',
@@ -214,7 +214,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => '',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '23',
@@ -223,7 +223,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'text-blueGray-800',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ], [
                 'widget_id' => '23',
                 'icon_class' => 'fa fa-google-plus',
@@ -231,7 +231,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'text-blueGray-800',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ], [
                 'widget_id' => '23',
                 'icon_class' => 'fab fa-github',
@@ -239,7 +239,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'fa fa-pinterest-p',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '24',
@@ -248,7 +248,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'text-blueGray-800',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '24',
@@ -257,7 +257,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'text-blueGray-800',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ], [
                 'widget_id' => '24',
                 'icon_class' => 'fa fa-google-plus',
@@ -265,7 +265,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'text-blueGray-800',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ], [
                 'widget_id' => '24',
                 'icon_class' => 'fa fa-pinterest-p',
@@ -273,7 +273,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'text-blueGray-800',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '25',
@@ -282,7 +282,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'text-blueGray-800',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '25',
@@ -291,7 +291,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'text-blueGray-800',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '25',
@@ -300,7 +300,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'text-blueGray-800',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '25',
@@ -309,7 +309,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => 'text-blueGray-800',
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '34',
@@ -318,7 +318,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '34',
@@ -327,7 +327,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '34',
@@ -336,7 +336,7 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => null,
                 'created_at' => now(),
-                'updated_at' => now()
+                'updated_at' => now(),
             ],
             [
                 'widget_id' => '34',
@@ -345,8 +345,8 @@ class WidgetIconSeeder extends Seeder
                 'url' => '',
                 'css_class' => null,
                 'created_at' => now(),
-                'updated_at' => now()
-            ]
+                'updated_at' => now(),
+            ],
         ];
         DB::table('widget_icons')->insert($widgetIcons);
     }

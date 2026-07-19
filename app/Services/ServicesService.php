@@ -33,7 +33,7 @@ class ServicesService
         return WidgetCategory::where('id', '=', $widgetCategory)->first();
     }
 
-    public function getAnswersQuestionsWidgets($widgetCategory, $position): object|null
+    public function getAnswersQuestionsWidgets($widgetCategory, $position): ?object
     {
         return Page::with(['widgets' => function (BelongsToMany $query) use ($widgetCategory, $position) {
             $query->where('widget_category_id', '=', $widgetCategory)
