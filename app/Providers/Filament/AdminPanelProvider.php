@@ -65,7 +65,7 @@ class AdminPanelProvider extends PanelProvider
                 NavigationItem::make('Categories')
                     ->group('Admin Layout Pages')
                     ->icon('heroicon-o-table-cells')
-                    ->url(fn (): string => route('admin.categories')),
+                    ->url(fn (): string => route('filament.control.resources.categories.index')),
                 NavigationItem::make('Widgets')
                     ->group('Admin Layout Pages')
                     ->icon('heroicon-o-cog-6-tooth')
