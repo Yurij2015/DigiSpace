@@ -11,6 +11,7 @@ last_verified_at: 2026-09-13
 
 - [ ] Resolve the current PHP runtime (Sail is configured for PHP 8.3) and all direct package versions in the lockfile.
 - [ ] Upgrade Laravel in isolated steps 11 → 12 → 13, following each official upgrade guide; keep tests and the production build green after each major.
+- [ ] Before Laravel 13, plan and execute the Inertia v1 → v2 and Ziggy compatibility upgrade; keep legacy Vue `/admin` behavior green.
 - [ ] Check PHPUnit, Carbon, Sanctum, Inertia, Sentry, database drivers, queue/cache and deployment image compatibility after each upgrade.
 - [ ] Record the current Tailwind 3/Vite visual baseline for public pages and legacy `/admin` screens.
 - [ ] Upgrade Tailwind 3 → 4 in a separate frontend commit: migrate `@tailwind` directives, Vite/PostCSS integration and config loading; verify forms plugin, VueNotus CSS and browser support.

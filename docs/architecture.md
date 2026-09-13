@@ -9,7 +9,7 @@ stale_after: 2027-03-13
 
 # Architecture
 
-Single Laravel 11 application (`laravel/framework` v11.46, PHP ^8.2, MySQL 8). The example/default configuration uses a synchronous queue and file cache/session. Compose has no Redis or queue worker; live configuration was not verified.
+Single Laravel 12 application (`laravel/framework` v12.69, PHP ^8.3, MySQL 8). The example/default configuration uses a synchronous queue and file cache/session. Compose has no Redis or queue worker; live configuration was not verified.
 
 ## Two rendering stacks in one app
 
@@ -81,5 +81,5 @@ Request ───────► │ EncryptCookies → Session → CSRF → Sub
 
 - `App\Http\Kernel` / `app/Console/Kernel.php` are the Laravel ≤10 structure even though the framework is 11 — the app was upgraded in place and does not use `bootstrap/app.php` middleware configuration.
 - Route name `admin.dafault-pages` (typo) is referenced from Vue; renaming requires a sweep of `resources/js`.
-- `docker-compose.yml` builds the Sail **8.3** runtime while `composer.json` requires `^8.2` and production runs PHP 8.2 (`deployment-config.json`). Use 8.2-compatible syntax.
+- `../compose.yml`, CI and deployment hooks use PHP **8.3**. Keep application syntax compatible with PHP 8.3.
 - `config/constants.php` carries TODOs to move counts into the `settings` table; they are still constants.

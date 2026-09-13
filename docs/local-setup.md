@@ -11,7 +11,7 @@ stale_after: 2027-03-13
 
 ## Requirements
 
-- Docker (for Sail) **or** host PHP ≥ 8.2 with `pdo_mysql`, `mbstring`, `fileinfo`, `gd`/`exif` + a MySQL 8 server
+- Docker (for Sail) **or** host PHP ≥ 8.3 with `pdo_mysql`, `mbstring`, `fileinfo`, `gd`/`exif` + a MySQL 8 server
 - Node 18+ / npm
 - Composer 2
 
@@ -50,7 +50,7 @@ vendor/bin/sail artisan migrate
 # Review the seed caveat below before populating data.
 ```
 
-`docker-compose.yml` defines two services: `digi-space-app` (Sail PHP **8.3** runtime, container `global-digi-space`) and `digi-space-db` (MySQL 8, container `digi-spase-db`, volume `digispace-mysql`). On first initialization of a new volume, the MySQL init script also creates an empty `testing` database used by PHPUnit.
+`../compose.yml` defines two services: `digi-space-app` (Sail PHP **8.3** runtime, container `global-digi-space`) and `digi-space-db` (MySQL 8, container `digi-spase-db`, volume `digispace-mysql`). On first initialization of a new volume, the MySQL init script also creates an empty `testing` database used by PHPUnit.
 
 Without Sail: set `DB_HOST=127.0.0.1`, create the `global_digi_space` and `testing` databases, then `php artisan migrate` and `php artisan serve`; review seed caveats first.
 

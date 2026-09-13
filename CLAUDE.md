@@ -37,7 +37,7 @@ If Sail is not running, the same commands work on host PHP (`php artisan …`) a
 
 ## What this project is
 
-Company website + blog + service catalogue for **digispace.pro**, with a self-written admin panel. Laravel 11 on PHP ^8.2, MySQL 8. One repository, one app, two rendering stacks:
+Company website + blog + service catalogue for **digispace.pro**, with a self-written admin panel. Laravel 12 on PHP ^8.3, MySQL 8. One repository, one app, two rendering stacks:
 
 | Surface | Stack | Where |
 |---|---|---|
@@ -110,7 +110,7 @@ Coverage of the domain (widgets/pages/blog/admin) is essentially zero; the exist
 
 ## Deployment
 
-`push` to `master` triggers `.github/workflows/deploy.yml`: build on CI (composer `--no-dev`, `npm run build`, tarball), then for each server in `deployment-config.json` (matrix; see `example.deployment-config.json` — test + prod on CloudPanel, PHP 8.2 CLI path hard-coded in `afterHooks`): upload → extract into `releases/<sha>` → backup `.env` + image dirs → write `.env` from the `LARAVEL_ENV` secret and immediately restore the previous one (so the server's `.env` wins) → symlink `storage` and `current` → restore images → `artisan migrate` → prune old releases. Details in [`docs/deployment/README.md`](docs/deployment/README.md).
+`push` to `master` triggers `.github/workflows/deploy.yml`: build on CI (composer `--no-dev`, `npm run build`, tarball), then for each server in `deployment-config.json` (matrix; see `example.deployment-config.json` — test + prod on CloudPanel, PHP 8.3 CLI path hard-coded in `afterHooks`): upload → extract into `releases/<sha>` → backup `.env` + image dirs → write `.env` from the `LARAVEL_ENV` secret and immediately restore the previous one (so the server's `.env` wins) → symlink `storage` and `current` → restore images → `artisan migrate` → prune old releases. Details in [`docs/deployment/README.md`](docs/deployment/README.md).
 
 `deployment-config.json` (real server IPs/users/paths) **is committed**; `.env` is git-ignored. Treat both as sensitive — never paste their contents into issues, PRs or chat.
 

@@ -2,7 +2,7 @@
 
 Company website, blog and service catalogue for [digispace.pro](https://digispace.pro), with a built-in admin panel.
 
-**Stack:** Laravel 11 · PHP ^8.2 · MySQL 8 · Blade (public site) · Inertia.js + Vue 3 (admin) · Vite · Tailwind · Sanctum
+**Stack:** Laravel 12 · PHP ^8.3 · MySQL 8 · Blade (public site) · Inertia.js + Vue 3 (admin) · Vite · Tailwind · Sanctum
 
 ## Quick start
 

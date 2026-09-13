@@ -1,7 +1,7 @@
 ---
 type: Overview
 title: "DigiSpace Documentation"
-description: "Index of project documentation for the DigiSpace website (Laravel 11, Blade public site, Inertia/Vue admin)."
+description: "Index of project documentation for the DigiSpace website (Laravel 12, Blade public site, Inertia/Vue admin)."
 tags: [docs]
 status: stable
 stale_after: 2027-03-13
