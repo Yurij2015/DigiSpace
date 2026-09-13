@@ -54,6 +54,50 @@ Only `.env`, shared `storage` and the three copied image directories have explic
 
 Check the active revision, readable environment/storage links, migration output and HTTP responses for home, blog, a menu-backed page, login and admin assets. Confirm a sample local image and S3 image loads. Inspect application logs and scheduler configuration. Test lead creation only with an explicitly intended test submission because it writes to Zoho.
 
+## SSH troubleshooting with Proxmox and CloudPanel
+
+The testing target may be a CloudPanel VM behind Proxmox. In the current layout,
+the public SSH endpoint is forwarded as:
+
+```text
+<PROXMOX_PUBLIC_IP>:2226 → Proxmox DNAT → <CLOUDPANEL_VM_IP>:22 (CloudPanel VM)
+```
+
+When deployment fails at the SCP/SSH upload step, check Hetzner and CloudPanel
+firewalls, then verify the Proxmox DNAT and `FORWARD` rules, followed by `sshd`
+and UFW inside the VM. Fail2ban on the VM can ban the Proxmox bridge address
+(`<PROXMOX_BRIDGE_IP>`) after repeated failed login attempts. A ban produces SYN
+packets in the VM's tcpdump with no SYN-ACK response and appears in:
+
+```bash
+sudo fail2ban-client status sshd
+```
+
+Remove an accidental bridge ban with:
+
+```bash
+sudo fail2ban-client set sshd unbanip <PROXMOX_BRIDGE_IP>
+```
+
+After confirming the private network is controlled, consider adding the trusted
+bridge IP to the `sshd` jail's `ignoreip` list. Do not disable Fail2ban globally.
+
+Useful Proxmox checks:
+
+```bash
+sudo iptables -t nat -L PREROUTING -n -v | grep 2226
+sudo iptables -L FORWARD -n -v | grep <CLOUDPANEL_VM_IP>
+nc -vz <CLOUDPANEL_VM_IP> 22
+```
+
+Run VM-side checks from the CloudPanel console, not from the Proxmox host:
+
+```bash
+hostname
+sudo ss -lntp | grep ':22'
+sudo ufw status verbose
+```
+
 ## Rollback procedure
 
 There is no automated rollback job. Before any manual rollback:
