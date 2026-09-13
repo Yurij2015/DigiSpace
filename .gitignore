@@ -1,8 +1,11 @@
 /node_modules
 /public/build
+/public/css/filament
+/public/fonts/filament
 /public/hot
 /public/storage
 /public/img
+/public/js/filament
 /storage/*.key
 /vendor
 .env

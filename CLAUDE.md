@@ -14,9 +14,9 @@ npm run dev          # HMR
 npm run build        # production assets → public/build
 
 # Tests (PHPUnit 10, NOT Pest) — see "Testing" below before running anything with RefreshDatabase
-vendor/bin/sail artisan test
-vendor/bin/sail artisan test --filter=AuthenticationTest
-vendor/bin/sail artisan test tests/Feature/Auth/AuthenticationTest.php
+vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit
+vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit --filter=AuthenticationTest
+vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit tests/Feature/Auth/AuthenticationTest.php
 
 # Static analysis (Larastan level 5, app/ only) and code style
 vendor/bin/phpstan analyse
@@ -102,7 +102,7 @@ The example/default queue is `sync` and cache is `file`; Compose provides no Red
 
 ## Testing
 
-PHPUnit 10 (`phpunit.xml`), `tests/Unit` and `tests/Feature`. Sail commands require `APP_SERVICE=digi-space-app`. Breeze auth tests use `RefreshDatabase`, which **migrates fresh on whatever DB the test process resolves**. `phpunit.xml` sets `DB_DATABASE=testing` but keeps `DB_HOST`/connection from `.env`, and there is no `.env.testing` committed. Sail's MySQL creates the `testing` database on first initialization of a new volume (`create-testing-database.sh`); on any other host, create it first and double-check the resolved connection, host and database locally under explicit test environment variables before running the suite. Never point tests at the production/dev database name.
+PHPUnit 11 (`phpunit.xml`), `tests/Unit` and `tests/Feature`. Sail commands require `APP_SERVICE=digi-space-app`. Breeze auth tests use `RefreshDatabase`, which **migrates fresh on whatever DB the test process resolves**. `phpunit.xml` sets `DB_DATABASE=testing` but keeps `DB_HOST`/connection from `.env`, and there is no `.env.testing` committed. Sail's MySQL creates the `testing` database on first initialization of a new volume (`create-testing-database.sh`); on any other host, create it first and double-check the resolved connection, host and database locally under explicit test environment variables before running the suite. Never point tests at the production/dev database name.
 
 There is no `RefreshDatabase` safety guard in `tests/TestCase.php` (unlike the VetSpace API) — the only protection is the `testing` DB name from `phpunit.xml`. Do not run tests with a stale `bootstrap/cache/config.php`; run `php artisan config:clear` first if `config:cache` was ever used locally.
 

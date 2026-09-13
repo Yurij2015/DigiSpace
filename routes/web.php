@@ -29,6 +29,7 @@ use App\Http\Controllers\NotFoundController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\PromoController;
+use App\Http\Controllers\PostController as PublicPostController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SubscriberController;
 use Illuminate\Support\Facades\Route;
@@ -66,7 +67,7 @@ Route::post('subscriber-save', [SubscriberController::class, 'save'])->name('sub
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth']);
 Route::resource('categories', CategoryController::class)->only(['index', 'show']);
 
-Route::resource('posts', PostController::class)->only(['index', 'show']);
+Route::resource('posts', PublicPostController::class)->only(['index', 'show']);
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware(['auth', 'verified']);
 

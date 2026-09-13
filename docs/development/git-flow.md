@@ -30,7 +30,7 @@ GitHub repository settings if the team wants GitHub to enforce them.
 3. Run the relevant checks locally. For the Laravel app, the usual checks are:
 
    ```bash
-   docker compose exec -T digi-space-app php artisan test --compact
+   docker compose exec -T digi-space-app vendor/bin/phpunit
    docker compose exec -T digi-space-app vendor/bin/pint --dirty
    npm run build
    ```
