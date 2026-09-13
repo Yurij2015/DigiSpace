@@ -12,7 +12,7 @@ class WidgetCategorySeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(bool $fixedIds = false)
     {
         $widgetCategories = [
             [
@@ -136,6 +136,14 @@ class WidgetCategorySeeder extends Seeder
                 'updated_at' => now(),
             ],
         ];
+        // These IDs are referenced by widget fixtures and public template constants.
+        if ($fixedIds) {
+            foreach ($widgetCategories as $index => &$category) {
+                $category['id'] = $index + 1;
+            }
+            unset($category);
+        }
+
         DB::table('widget_categories')->insert($widgetCategories);
     }
 }
