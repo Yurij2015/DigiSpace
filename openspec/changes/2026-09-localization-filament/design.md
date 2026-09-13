@@ -40,6 +40,20 @@ Start with read-only resources for Page, Post, Service, Product, Category and Wi
 
 The old admin remains the source of truth during staged rollout. Each resource gets a documented ownership boundary and a migration flag. Avoid registering the same destructive action in both panels until the team agrees which panel owns it.
 
+## Legacy Vue field matrix
+
+Filament resources must be derived from the existing Inertia/Vue forms and their controller validation, not from table columns alone:
+
+| Resource | Form fields and behavior |
+| --- | --- |
+| Page | `name`, `meta`, `description`, rich `content`, `slug`, `page_category_id`, `menu_item_id`; model hooks derive a slug from the name on create/update. |
+| Post | `name`, rich `content`, `description`, `category_id`, image upload; edit additionally exposes `slug` and `status` (`draft`, `published`, `archived`). Create assigns the authenticated `user_id`. |
+| Widget | `title`, `subtitle`, `icon`, rich `content`, `widget_category_id`, image upload; update form currently renders content in two controls and needs one canonical rich-editor field in Filament. |
+| Service | `title`, `details`, `price`, `service_category_id`, `seo_keywords`, `seo_description`, `seo_title`, `description`, `slug`, `status`, `image_alt`, image upload. |
+| Product | `title`, `details`, `price_value`, `product_code`, `product_name`, `description`, numeric preference/position/active flags; edit additionally manages related services. |
+
+Tables should expose the identifying title/name, status/category, updated time and safe preview/link actions. Upload fields must preserve the existing storage helper and URL behavior. Validation and policy behavior must be copied from the corresponding `app/Http/Controllers/Admin/*Controller.php` before enabling writes.
+
 ## SEO and operations
 
 Generate canonical and `hreflang` links from the resolved locale and translated slug. Add sitemap coverage and 404/redirect tests. Keep deployment additive: install dependencies in a tested release, run migrations before switching `current`, and retain a rollback path for both code and schema.
