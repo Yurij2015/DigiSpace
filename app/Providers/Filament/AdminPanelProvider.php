@@ -77,7 +77,7 @@ class AdminPanelProvider extends PanelProvider
                 NavigationItem::make('Services')
                     ->group('Admin Layout Pages')
                     ->icon('heroicon-o-cube')
-                    ->url(fn (): string => route('admin.services')),
+                    ->url(fn (): string => route('filament.control.resources.services.index')),
                 NavigationItem::make('Products')
                     ->group('Admin Layout Pages')
                     ->icon('heroicon-o-globe-alt')
