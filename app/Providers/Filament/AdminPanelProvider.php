@@ -69,7 +69,7 @@ class AdminPanelProvider extends PanelProvider
                 NavigationItem::make('Widgets')
                     ->group('Admin Layout Pages')
                     ->icon('heroicon-o-cog-6-tooth')
-                    ->url(fn (): string => route('admin.widgets')),
+                    ->url(fn (): string => route('filament.control.resources.widgets.index')),
                 NavigationItem::make('Default pages')
                     ->group('Admin Layout Pages')
                     ->icon('heroicon-o-squares-2x2')
@@ -81,7 +81,11 @@ class AdminPanelProvider extends PanelProvider
                 NavigationItem::make('Products')
                     ->group('Admin Layout Pages')
                     ->icon('heroicon-o-globe-alt')
-                    ->url(fn (): string => route('admin.products')),
+                    ->url(fn (): string => route('filament.control.resources.products.index')),
+                NavigationItem::make('Service Categories')
+                    ->group('Admin Layout Pages')
+                    ->icon('heroicon-o-tag')
+                    ->url(fn (): string => route('filament.control.resources.service-categories.index')),
                 NavigationItem::make('Top bar settings')
                     ->group('Header')
                     ->icon('heroicon-o-arrow-up')

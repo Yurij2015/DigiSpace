@@ -11,34 +11,19 @@ class CategoryPolicy
 {
     use HandlesAuthorization;
 
-    /**
-     * Determine whether the user can view any models.
-     *
-     * @return Response|bool
-     */
-    public function viewAny(User $user)
+    public function viewAny(...$arguments): bool
     {
-        //
+        return true;
     }
 
-    /**
-     * Determine whether the user can view the model.
-     *
-     * @return Response|bool
-     */
-    public function view(User $user, Category $category)
+    public function view(...$arguments): bool
     {
-        //
+        return true;
     }
 
-    /**
-     * Determine whether the user can create models.
-     *
-     * @return Response|bool
-     */
-    public function create(User $user)
+    public function create(...$arguments): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -57,23 +42,23 @@ class CategoryPolicy
         return $category->user()->is($user);
     }
 
-    /**
-     * Determine whether the user can restore the model.
-     *
-     * @return Response|bool
-     */
-    public function restore(User $user, Category $category)
+    public function update(User $user, Category $category): bool
     {
-        //
+        return true;
     }
 
-    /**
-     * Determine whether the user can permanently delete the model.
-     *
-     * @return Response|bool
-     */
-    public function forceDelete(User $user, Category $category)
+    public function delete(User $user, Category $category): bool
     {
-        //
+        return true;
+    }
+
+    public function restore(...$arguments): bool
+    {
+        return true;
+    }
+
+    public function forceDelete(...$arguments): bool
+    {
+        return true;
     }
 }
