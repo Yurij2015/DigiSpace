@@ -73,14 +73,25 @@ packets in the VM's tcpdump with no SYN-ACK response and appears in:
 sudo fail2ban-client status sshd
 ```
 
-Remove an accidental bridge ban with:
+Run these two simple commands in the CloudPanel VM to unblock the Proxmox bridge
+and add it to the running `sshd` jail's ignore list:
 
 ```bash
 sudo fail2ban-client set sshd unbanip <PROXMOX_BRIDGE_IP>
+sudo fail2ban-client set sshd addignoreip <PROXMOX_BRIDGE_IP>
 ```
 
-After confirming the private network is controlled, consider adding the trusted
-bridge IP to the `sshd` jail's `ignoreip` list. Do not disable Fail2ban globally.
+The `unbanip` command takes effect immediately. The `addignoreip` command adds
+the exception to the running jail; repeat it after a Fail2ban restart unless the
+same address is also placed in the server's persistent Fail2ban configuration.
+Verify both lists with:
+
+```bash
+sudo fail2ban-client get sshd banip
+sudo fail2ban-client get sshd ignoreip
+```
+
+Do not disable Fail2ban globally.
 
 Useful Proxmox checks:
 
