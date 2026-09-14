@@ -17,8 +17,10 @@ trait HasLocalizedContent
             ?? $value;
     }
 
-    protected function localized(string $field): Attribute
+    protected function localizedAttribute(?string $field = null): Attribute
     {
+        $field ??= '';
+
         return Attribute::make(
             get: fn (mixed $value): mixed => $this->localizedValue($field, $value),
         );
