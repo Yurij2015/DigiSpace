@@ -37,6 +37,7 @@ Keys that matter (everything else in `.env.example` is Laravel boilerplate):
 | `SENTRY_LARAVEL_DSN` | Error tracking | empty locally |
 | `IS_PROMO_TAB_ACTIVE` | Shows the Promos tab | `false` |
 | `FACEBOOK_PIXEL_ID` | Inline pixel in layout | empty locally |
+| `FILAMENT_ADMIN_EMAILS` | Comma-separated emails allowed into `/control` outside `local` | empty locally (all local authenticated users are allowed) |
 
 `QUEUE_CONNECTION=sync`, `CACHE_DRIVER=file`, `SESSION_DRIVER=file` are the example/default configuration. Compose does not include Redis; live production configuration was not verified.
 

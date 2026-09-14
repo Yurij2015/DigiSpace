@@ -6,6 +6,31 @@ The project has a second admin surface at `/control`. It is implemented with Fil
 
 Open `/control/login` and use an existing application user. In local development all authenticated users can enter the panel. Outside local, access is limited to the comma-separated addresses in `FILAMENT_ADMIN_EMAILS`.
 
+### Granting access on a test or production server
+
+Add the administrator's email to the server's shared `.env` file. Keep this value
+outside the repository; deployments restore the existing server `.env` after the
+release is activated.
+
+```bash
+cd /home/<account>/htdocs/<site>
+printf '\nFILAMENT_ADMIN_EMAILS=<admin-email>\n' >> .env
+php8.3 current/artisan optimize:clear
+php8.3 current/artisan tinker --execute='dump(config("filament.admin_emails"));'
+```
+
+If `FILAMENT_ADMIN_EMAILS` already exists, replace its value instead of adding a
+second line. Multiple administrators are separated by commas:
+
+```dotenv
+FILAMENT_ADMIN_EMAILS=admin-one@example.com,admin-two@example.com
+```
+
+The allowlist is read through `config/filament.php`. After changing `.env`,
+`optimize:clear` is required when configuration was cached; otherwise the old
+empty allowlist remains active and a successful login is followed by a `403` at
+`/control`. The authenticated user must also match an existing application user.
+
 The panel uses the same session authentication as the application. A user must be authenticated before any resource route is available.
 
 ## Resource map

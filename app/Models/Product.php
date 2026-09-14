@@ -48,22 +48,22 @@ class Product extends Model
 
     protected function title(): Attribute
     {
-        return $this->localized('title');
+        return $this->localizedAttribute('title');
     }
 
     protected function details(): Attribute
     {
-        return $this->localized('details');
+        return $this->localizedAttribute('details');
     }
 
     protected function productName(): Attribute
     {
-        return $this->localized('product_name');
+        return $this->localizedAttribute('product_name');
     }
 
     protected function description(): Attribute
     {
-        return $this->localized('description');
+        return $this->localizedAttribute('description');
     }
 
     public function services(): BelongsToMany

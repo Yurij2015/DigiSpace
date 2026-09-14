@@ -65,37 +65,37 @@ class Service extends Model
 
     protected function title(): Attribute
     {
-        return $this->localized('title');
+        return $this->localizedAttribute('title');
     }
 
     protected function details(): Attribute
     {
-        return $this->localized('details');
+        return $this->localizedAttribute('details');
     }
 
     protected function description(): Attribute
     {
-        return $this->localized('description');
+        return $this->localizedAttribute('description');
     }
 
     protected function seoKeywords(): Attribute
     {
-        return $this->localized('seo_keywords');
+        return $this->localizedAttribute('seo_keywords');
     }
 
     protected function seoDescription(): Attribute
     {
-        return $this->localized('seo_description');
+        return $this->localizedAttribute('seo_description');
     }
 
     protected function seoTitle(): Attribute
     {
-        return $this->localized('seo_title');
+        return $this->localizedAttribute('seo_title');
     }
 
     protected function imageAlt(): Attribute
     {
-        return $this->localized('image_alt');
+        return $this->localizedAttribute('image_alt');
     }
 
     public function serviceCategory(): BelongsTo

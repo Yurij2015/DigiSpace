@@ -62,27 +62,27 @@ class Page extends Model
 
     protected function name(): Attribute
     {
-        return $this->localized('name');
+        return $this->localizedAttribute('name');
     }
 
     protected function content(): Attribute
     {
-        return $this->localized('content');
+        return $this->localizedAttribute('content');
     }
 
     protected function meta(): Attribute
     {
-        return $this->localized('meta');
+        return $this->localizedAttribute('meta');
     }
 
     protected function description(): Attribute
     {
-        return $this->localized('description');
+        return $this->localizedAttribute('description');
     }
 
     protected function keywords(): Attribute
     {
-        return $this->localized('keywords');
+        return $this->localizedAttribute('keywords');
     }
 
     public function widgets(): BelongsToMany

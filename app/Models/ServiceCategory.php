@@ -53,22 +53,22 @@ class ServiceCategory extends Model
 
     protected function name(): Attribute
     {
-        return $this->localized('name');
+        return $this->localizedAttribute('name');
     }
 
     protected function seoKeywords(): Attribute
     {
-        return $this->localized('seo_keywords');
+        return $this->localizedAttribute('seo_keywords');
     }
 
     protected function seoDescription(): Attribute
     {
-        return $this->localized('seo_description');
+        return $this->localizedAttribute('seo_description');
     }
 
     protected function seoTitle(): Attribute
     {
-        return $this->localized('seo_title');
+        return $this->localizedAttribute('seo_title');
     }
 
     protected static function boot(): void
