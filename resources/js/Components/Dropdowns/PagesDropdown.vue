@@ -1,6 +1,6 @@
 <script setup>
 import {createPopper} from "@popperjs/core";
-import {Link} from '@inertiajs/inertia-vue3';
+import {Link} from '@inertiajs/vue3';
 import {ref} from "vue";
 import DropdownLink from "@/Components/DropdownLink.vue";
 import Categories from "@/Pages/Admin/Categories.vue";

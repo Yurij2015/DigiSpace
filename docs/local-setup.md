@@ -11,8 +11,8 @@ stale_after: 2027-03-13
 
 ## Requirements
 
-- Docker (for Sail) **or** host PHP ≥ 8.2 with `pdo_mysql`, `mbstring`, `fileinfo`, `gd`/`exif` + a MySQL 8 server
-- Node 18+ / npm
+- Docker (for Sail) **or** host PHP ≥ 8.3 with `pdo_mysql`, `mbstring`, `fileinfo`, `gd`/`exif` + a MySQL 8 server
+- Node 20.19+ / npm (required by Laravel Boost; also supports the Vite build)
 - Composer 2
 
 ## 1. Environment
@@ -50,7 +50,7 @@ vendor/bin/sail artisan migrate
 # Review the seed caveat below before populating data.
 ```
 
-`docker-compose.yml` defines two services: `digi-space-app` (Sail PHP **8.3** runtime, container `global-digi-space`) and `digi-space-db` (MySQL 8, container `digi-spase-db`, volume `digispace-mysql`). On first initialization of a new volume, the MySQL init script also creates an empty `testing` database used by PHPUnit.
+`../compose.yml` defines two services: `digi-space-app` (Sail PHP **8.3** runtime, container `global-digi-space`) and `digi-space-db` (MySQL 8, container `digi-spase-db`, volume `digispace-mysql`). On first initialization of a new volume, the MySQL init script also creates an empty `testing` database used by PHPUnit.
 
 Without Sail: set `DB_HOST=127.0.0.1`, create the `global_digi_space` and `testing` databases, then `php artisan migrate` and `php artisan serve`; review seed caveats first.
 
@@ -90,6 +90,17 @@ vendor/bin/phpstan analyse                     # Larastan level 5 over app/
 vendor/bin/pint --dirty                        # format changed PHP files
 vendor/bin/sail artisan route:list --path=admin
 ```
+
+## 6. Laravel Boost
+
+Boost is a development dependency and provides project-specific AI guidelines, skills and an MCP server. After `composer install`, refresh its generated guidance with:
+
+```bash
+vendor/bin/sail artisan boost:update
+vendor/bin/sail artisan boost:list-skills
+```
+
+The MCP server is configured in `.mcp.json` and runs through Sail. Do not install Boost into the production dependency set.
 
 ## Troubleshooting
 

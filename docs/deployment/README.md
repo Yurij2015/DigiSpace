@@ -13,17 +13,17 @@ The source of truth is [deploy.yml](../../.github/workflows/deploy.yml) and the 
 
 ## Trigger and prerequisites
 
-A push to `master` runs the deployment across entries in the configured server matrix. The active `deployment-config.json` currently contains only the testing target; add a reviewed production entry when production deployment is intentionally re-enabled. There is no test job or manual environment approval in this workflow. The existing configuration targets CloudPanel hosts and invokes PHP 8.2 for migrations. Do not copy server addresses, usernames or paths into public documentation; `example.deployment-config.json` describes the matrix fields.
+A push to `master` runs the deployment across entries in the configured server matrix. The active `deployment-config.json` currently contains only the testing target; add a reviewed production entry when production deployment is intentionally re-enabled. There is no test job or manual environment approval in this workflow. The existing configuration targets CloudPanel hosts and invokes PHP 8.3 for migrations. Do not copy server addresses, usernames or paths into public documentation; `example.deployment-config.json` describes the matrix fields.
 
 Required GitHub secrets are `SSH_KEY_2` for SCP/SSH and `LARAVEL_ENV` for initial environment provisioning. Servers need PHP and its required extensions, database connectivity, a web root targeting `current/public`, writable shared storage and sufficient space for releases and image backups.
 
 ## Implemented sequence
 
-1. **Build:** check out the revision, install Composer dependencies with `--no-dev`, run `npm install` and `npm run build`. Explicit PHP 8.2 setup occurs after Composer installation. The tarball is made from shell `*`, so top-level dotfiles are not included. `vendor` and `public/build` are included; `node_modules` is excluded.
+1. **Build:** check out the revision, install Composer dependencies with `--no-dev`, run `npm install` and `npm run build`. Explicit PHP 8.3 setup occurs after Composer installation. The tarball is made from shell `*`, so top-level dotfiles are not included. `vendor` and `public/build` are included; `node_modules` is excluded.
 2. **Prepare:** upload the artifact and extract into `releases/<sha>`. Remove its bundled storage directory and create shared `storage` directories. The workflow currently applies mode `0777` recursively.
 3. **Before hooks:** copy the existing base `.env` to `.env_prev` and copy active `public/images`, `public/uploads`, `public/banners` into separate backup directories. Then run the server's `beforeHooks` (currently empty).
 4. **Activate:** write `LARAVEL_ENV` into base `.env`, link it to the release, then restore `.env_prev` if present. Therefore an existing server environment wins over the secret. Link shared storage and switch `current` to the new release.
-5. **After hooks:** restore images into the now-active release, remove image backup directories, then run each configured `afterHooks`. Current hooks invoke `artisan migrate` with PHP 8.2; they do not include `--force`.
+5. **After hooks:** restore images into the now-active release, remove image backup directories, then run each configured `afterHooks`. Current hooks invoke `artisan migrate` with PHP 8.3; they do not include `--force`.
 6. **Cleanup:** intends to retain the newest five releases and artifacts using modification-time ordering. `ARTIFACTS_PATH` is declared as a step environment variable but omitted from the SSH action's `envs` list; verify remote behavior before relying on artifact cleanup.
 
 ```text

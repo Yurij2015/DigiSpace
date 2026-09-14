@@ -6,7 +6,7 @@ import AdminNavbar from "@/Components/Navbars/AdminNavbar.vue";
 import Sidebar from "@/Components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
-import {Head, useForm, Link} from '@inertiajs/inertia-vue3';
+import {Head, useForm, Link} from '@inertiajs/vue3';
 import Editor from '@tinymce/tinymce-vue'
 
 const props = defineProps(['categories', 'post', 'statuses']);

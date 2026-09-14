@@ -11,15 +11,15 @@ stale_after: 2027-03-13
 
 Sail commands assume `APP_SERVICE=digi-space-app` in `.env` (see [local setup](local-setup.md)).
 
-Framework: **PHPUnit 10** (`phpunit/phpunit ^10`, `brianium/paratest` available). This project does **not** use Pest — write classic `class FooTest extends TestCase` tests with `test_*` methods or `#[Test]` attributes, matching `tests/Feature/Auth/*`.
+Framework: **PHPUnit 11** (`phpunit/phpunit ^11`, `brianium/paratest` available). This project does **not** use Pest — write classic `class FooTest extends TestCase` tests with `test_*` methods or `#[Test]` attributes, matching `tests/Feature/Auth/*`.
 
 ## Running
 
 ```bash
-vendor/bin/sail artisan test                              # whole suite
-vendor/bin/sail artisan test --testsuite=Unit             # fast, no DB
-vendor/bin/sail artisan test --filter=AuthenticationTest  # one class
-vendor/bin/sail artisan test tests/Feature/Auth/AuthenticationTest.php
+vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit                              # whole suite
+vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit --testsuite=Unit             # fast, no DB
+vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit --filter=AuthenticationTest  # one class
+vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit tests/Feature/Auth/AuthenticationTest.php
 
 ```
 

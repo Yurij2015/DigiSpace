@@ -2,7 +2,7 @@
 
 Company website, blog and service catalogue for [digispace.pro](https://digispace.pro), with a built-in admin panel.
 
-**Stack:** Laravel 11 · PHP ^8.2 · MySQL 8 · Blade (public site) · Inertia.js + Vue 3 (admin) · Vite · Tailwind · Sanctum
+**Stack:** Laravel 13 · PHP ^8.3 · MySQL 8 · Blade (public site) · Inertia.js + Vue 3 (admin) · Vite · Tailwind · Sanctum
 
 ## Quick start
 
@@ -40,7 +40,7 @@ Admin panel: `/login` → `/admin` (users come from `database/seeders/UserSeeder
 ## Common commands
 
 ```bash
-vendor/bin/sail artisan test              # PHPUnit (needs a `testing` MySQL database — see docs/testing.md)
+vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit  # PHPUnit (needs a `testing` MySQL database — see docs/testing.md)
 vendor/bin/phpstan analyse                # Larastan, level 5
 vendor/bin/pint --dirty                   # code style
 vendor/bin/sail artisan sitemap:generate  # public/sitemap.xml (also scheduled daily)

@@ -49,7 +49,7 @@ use Illuminate\Support\Carbon;
 class Widget extends Model
 {
     protected $fillable = [
-        'title', 'content', 'subtitle', 'widget_category_id', 'icon', 'widget_image',
+        'title', 'content', 'subtitle', 'widget_category_id', 'icon', 'widget_image', 'css_class', 'anchor', 'element_id',
     ];
 
     public function widgetCategory(): BelongsTo

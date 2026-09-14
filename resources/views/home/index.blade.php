@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'DigiSpace | Welcome to DigiSpace')
+@section('title', __('site.home_title'))
 @section('content')
     <!-- Swiper-->
     <section class="section swiper-container swiper-slider swiper_style-1 swiper_height-1 swiper-controls-classic"

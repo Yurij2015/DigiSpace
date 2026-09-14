@@ -5,6 +5,7 @@ namespace App\Models\Portfolio;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 
 /**
@@ -42,4 +43,9 @@ class PfSubcategory extends Model
     protected $casts = [
         'progress' => 'array',
     ];
+
+    public function locales(): HasMany
+    {
+        return $this->hasMany(PfLocale::class, 'subcategory_id');
+    }
 }

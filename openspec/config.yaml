@@ -1,0 +1,13 @@
+schema: spec-driven
+
+context: |
+  Tech stack: PHP 8.3+, Laravel 13, Blade public site, Inertia/Vue 3 legacy admin, Filament 5 control panel, PostgreSQL/MySQL via Laravel migrations.
+  Admin stack: Filament 5 is implemented in a separate /control panel; the legacy /admin and /portfolio surfaces remain available during parity work.
+  Supported public UI locales: Ukrainian, Polish and English. Existing portfolio database locale values include ua, pl and en.
+  Existing /admin routes and Inertia/Vue pages are compatibility boundaries and must remain available during the migration.
+
+rules:
+  specs:
+    - Every spec must start with YAML frontmatter containing type, title, description, tags, status, last_verified_at, and sources.
+    - Repository references in sources use repo://<path> and point to existing files.
+    - Specs are grouped by domain directory.

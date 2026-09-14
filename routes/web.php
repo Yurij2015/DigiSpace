@@ -27,10 +27,13 @@ use App\Http\Controllers\FooterPagesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NotFoundController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PostController as PublicPostController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SubscriberController;
+use App\Support\Locales;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,29 +47,44 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home.index');
-Route::get('about', [AboutController::class, 'index'])->name('about');
-Route::get('services', [ServiceController::class, 'index'])->name('services');
-Route::get('pricing', [PriceController::class, 'index'])->name('pricing');
-Route::get('promos', [PromoController::class, 'index'])->name('promos');
+Route::get('locale/{locale}', function (string $locale, Request $request) {
+    $normalized = Locales::normalize($locale);
 
-Route::controller(BlogController::class)->group(function () {
-    Route::get('blog', 'index')->name('blog');
-    Route::get('blog-category/{categorySlug}', 'category')->name('blog-category');
-    Route::get('blog-archive/{yearMonth}', 'archive')->name('blog-archive');
-    Route::get('blog-search', 'search')->name('blog-search');
-});
+    abort_unless($normalized !== null, 404);
 
-Route::controller(ContactController::class)->group(function () {
-    Route::get('contact-us', 'index')->name('contact-us');
-    Route::post('contact-us', 'save')->name('contact.save');
-});
+    $request->session()->put('locale', $normalized);
 
-Route::post('subscriber-save', [SubscriberController::class, 'save'])->name('subscriber-save');
+    return redirect()->back();
+})->whereIn('locale', config('locales.supported'))->name('locale.switch');
+
+Route::prefix('{locale?}')
+    ->whereIn('locale', config('locales.supported'))
+    ->group(function (): void {
+        Route::get('/', [HomeController::class, 'index'])->name('home.index');
+        Route::get('about', [AboutController::class, 'index'])->name('about');
+        Route::get('services', [ServiceController::class, 'index'])->name('services');
+        Route::get('pricing', [PriceController::class, 'index'])->name('pricing');
+        Route::get('promos', [PromoController::class, 'index'])->name('promos');
+
+        Route::controller(BlogController::class)->group(function () {
+            Route::get('blog', 'index')->name('blog');
+            Route::get('blog-category/{categorySlug}', 'category')->name('blog-category');
+            Route::get('blog-archive/{yearMonth}', 'archive')->name('blog-archive');
+            Route::get('blog-search', 'search')->name('blog-search');
+        });
+
+        Route::controller(ContactController::class)->group(function () {
+            Route::get('contact-us', 'index')->name('contact-us');
+            Route::post('contact-us', 'save')->name('contact.save');
+        });
+
+        Route::post('subscriber-save', [SubscriberController::class, 'save'])->name('subscriber-save');
+    });
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth']);
 Route::resource('categories', CategoryController::class)->only(['index', 'show']);
 
-Route::resource('posts', PostController::class)->only(['index', 'show']);
+Route::resource('posts', PublicPostController::class)->only(['index', 'show']);
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware(['auth', 'verified']);
 
@@ -212,18 +230,23 @@ Route::controller(SectionController::class)->middleware('auth')->group(function 
 Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])
     ->name('admin.profile');
 
-Route::get('/pages/{slug}', [PageController::class, 'show'])->name('pages.page');
-Route::get('/blog/{postSlug}', [BlogController::class, 'show'])->name('blog.post');
-Route::get('/page-not-found', [NotFoundController::class, 'index'])->name('error-404');
+Route::prefix('{locale?}')
+    ->whereIn('locale', config('locales.supported'))
+    ->group(function (): void {
+        Route::get('/pages/{slug}', [PageController::class, 'show'])->name('pages.page');
+        Route::get('/blog/{postSlug}', [BlogController::class, 'show'])->name('blog.post');
+        Route::get('/page-not-found', [NotFoundController::class, 'index'])->name('error-404');
 
-Route::get('/service-category/{serviceCategory}', [ServiceController::class, 'categoryServices'])->name('category-services');
-Route::get('/service-category/{serviceCategory}/{service}', [ServiceController::class, 'serviceShow'])->name('category-service');
-Route::get('/service-search', [ServiceController::class, 'search'])->name('service-search');
+        Route::get('/service-category/{serviceCategory}', [ServiceController::class, 'categoryServices'])->name('category-services');
+        Route::get('/service-category/{serviceCategory}/{service}', [ServiceController::class, 'serviceShow'])->name('category-service');
+        Route::get('/service-search', [ServiceController::class, 'search'])->name('service-search');
 
-Route::controller(FooterPagesController::class)->group(function () {
-    Route::get('privacy-policy', 'privacyPolicy')->name('privacy-policy');
-    Route::get('faq', 'faq')->name('faq');
-    Route::get('support', 'support')->name('support');
-});
+        Route::controller(FooterPagesController::class)->group(function () {
+            Route::get('privacy-policy', 'privacyPolicy')->name('privacy-policy');
+            Route::get('faq', 'faq')->name('faq');
+            Route::get('support', 'support')->name('support');
+        });
+
+    });
 
 require __DIR__.'/auth.php';

@@ -9,7 +9,7 @@ Read [architecture](../../../docs/architecture.md); inspect a sibling controller
 
 ## Follow the installed stack
 
-- Frontend uses `@inertiajs/inertia-vue3` and `@inertiajs/inertia`, not the newer `@inertiajs/vue3`. Verify APIs against installed packages; do not migrate dependencies during a CRUD task.
+- Frontend uses Inertia v2 with `@inertiajs/vue3` and `inertiajs/inertia-laravel:^2.0`. Verify APIs against installed packages; do not migrate dependencies during a CRUD task.
 - `Inertia::render('Admin/Posts/Update')` resolves `resources/js/Pages/Admin/Posts/Update.vue`. Keep exact path/case and prop names aligned.
 - Routes in `routes/web.php` use explicit controller groups, verbs and Ziggy names. Preserve existing names, including `admin.dafault-pages`, unless renaming all consumers is in scope.
 - Shared props are in `HandleInertiaRequests`; inspect them instead of inventing a JSON response envelope. Successful form actions generally redirect.

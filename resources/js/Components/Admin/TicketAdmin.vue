@@ -1,7 +1,7 @@
 <script setup>
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import {useForm} from '@inertiajs/inertia-vue3';
+import {useForm} from '@inertiajs/vue3';
 
 dayjs.extend(relativeTime);
 const props = defineProps(['ticket']);

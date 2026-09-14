@@ -1,7 +1,7 @@
 <script setup>
 defineProps(['icon', 'page']);
 
-import {Link} from '@inertiajs/inertia-vue3';
+import {Link} from '@inertiajs/vue3';
 </script>
 <template>
     <div class="p-6 flex space-x-2">

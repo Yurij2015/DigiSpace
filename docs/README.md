@@ -1,7 +1,7 @@
 ---
 type: Overview
 title: "DigiSpace Documentation"
-description: "Index of project documentation for the DigiSpace website (Laravel 11, Blade public site, Inertia/Vue admin)."
+description: "Index of project documentation for the DigiSpace website (Laravel 13, Blade public site, Inertia/Vue admin)."
 tags: [docs]
 status: stable
 stale_after: 2027-03-13
@@ -36,6 +36,12 @@ Zoho CRM leads, Google reCAPTCHA, MinIO/S3 uploads, Sentry, TinyMCE, Facebook Pi
 
 ### [Analysis and known gaps](./project-analysis.md)
 Source-verified findings, fresh-install limitations, access-control behavior and validation scope.
+
+### [OpenSpec: localization and Filament](../openspec/changes/2026-09-localization-filament/README.md)
+Reviewable proposal, architecture decisions, behavior specs and implementation gates for the new public locales and the parallel Filament panel.
+
+### [Filament control panel](admin/filament.md)
+Current `/control` resources, menu areas, storage behavior, authorization and verification commands.
 
 ## Project skills
 
