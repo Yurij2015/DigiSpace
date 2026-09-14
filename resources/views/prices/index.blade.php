@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'DigiSpace | Prices')
+@section('title', __('site.prices_title'))
 @section('content')
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">

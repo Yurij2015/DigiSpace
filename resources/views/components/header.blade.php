@@ -56,10 +56,10 @@
                             <!-- RD Navbar Nav-->
                             <ul class="rd-navbar-nav">
                                 <li class="{{ Route::is('about') ? 'active' : '' }}">
-                                    <a href="{{ route('about') }}">About</a>
+                                    <a href="{{ route('about') }}">{{ __('site.about') }}</a>
                                 </li>
                                 <li class="{{ Route::is('services') ? 'active' : '' }}">
-                                    <a href="{{ route('services') }}">Services</a>
+                                    <a href="{{ route('services') }}">{{ __('site.services') }}</a>
                                     @if(isset($serviceCategories) && count($serviceCategories))
                                         ;
                                         <ul class="rd-navbar-dropdown">
@@ -74,18 +74,18 @@
                                     @endif
                                 </li>
                                 <li class="{{ Route::is('pricing') ? 'active' : '' }}">
-                                    <a href="{{ route('pricing') }}">Pricing</a>
+                                    <a href="{{ route('pricing') }}">{{ __('site.pricing') }}</a>
                                 </li>
                                 @php
                                     $isPromoTabActive = config('settings.is_promo_tab_active');
                                 @endphp
                                 @if($isPromoTabActive)
                                     <li class="{{ Route::is('promos') ? 'active' : '' }}">
-                                        <a href="{{ route('promos') }}">Promos</a>
+                                        <a href="{{ route('promos') }}">{{ __('site.promos') }}</a>
                                     </li>
                                 @endif
                                 <li class="{{ Route::is('blog') ? 'active' : '' }}">
-                                    <a href="{{ route('blog') }}">Blog</a>
+                                    <a href="{{ route('blog') }}">{{ __('site.blog') }}</a>
                                     <ul class="rd-navbar-dropdown">
                                         @foreach($postsForMenu as $post)
                                             <li>
@@ -96,7 +96,7 @@
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li><a href="#">Pages</a>
+                                <li><a href="#">{{ __('site.pages') }}</a>
                                     <!-- RD Navbar Megamenu-->
                                     <ul class="rd-navbar-megamenu">
                                         <li>
@@ -144,7 +144,7 @@
                                     </ul>
                                 </li>
                                 <li class="{{ Route::is('contact-us') ? 'active' : '' }}">
-                                    <a href="{{ route('contact-us') }}">Contact Us</a>
+                                    <a href="{{ route('contact-us') }}">{{ __('site.contact_us') }}</a>
                                 </li>
                             </ul>
                         </div>

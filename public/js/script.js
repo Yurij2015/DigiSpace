@@ -60,7 +60,7 @@
 				lightDynamicGalleryItem: $("[data-lightgallery='dynamic']"),
 				mailchimp:               $('.mailchimp-mailform'),
 				campaignMonitor:         $('.campaign-mailform'),
-				selectFilter:            $("select"),
+				selectFilter:            $("select").not(".site-language-control select"),
 				counter:                 document.querySelectorAll('.counter'),
 				progressLinear:          document.querySelectorAll('.progress-linear'),
 				progressCircle:          document.querySelectorAll('.progress-circle'),

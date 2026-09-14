@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'DigiSpace | Blog')
+@section('title', 'DigiSpace | ' . __('site.blog'))
 
 @php
     $p = (int) request('page', 1);
@@ -8,9 +8,6 @@
         : route('blog');
 @endphp
 
-@push('head')
-    <link rel="canonical" href="{{ $p <= 1 ? $base : $base.'?page='.$p }}">
-@endpush
 
 @section('content')
     <!-- Breadcrumbs-->

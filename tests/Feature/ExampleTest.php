@@ -54,4 +54,26 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_localized_public_routes_expose_language_and_alternates(): void
+    {
+        $response = $this->get('/uk');
+
+        $response
+            ->assertOk()
+            ->assertSee('<html class="wide wow-animation" lang="uk">', false)
+            ->assertSee('hreflang="en"', false)
+            ->assertSee('href="http://localhost:8100/en"', false)
+            ->assertSee('<li class="language-switcher">', false)
+            ->assertSee('<ul class="rd-navbar-dropdown">', false);
+    }
+
+    public function test_locale_switch_persists_for_admin_and_public_requests(): void
+    {
+        $this->get('/locale/pl')->assertRedirect();
+
+        $this->get('/')
+            ->assertOk()
+            ->assertSee('<html class="wide wow-animation" lang="pl">', false);
+    }
 }

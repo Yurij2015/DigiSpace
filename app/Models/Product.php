@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasLocalizedContent;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -33,17 +35,36 @@ use Illuminate\Support\Carbon;
  */
 class Product extends Model
 {
+    use HasLocalizedContent;
+
     protected $fillable = [
-        'title',
-        'details',
-        'price_value',
-        'product_code',
-        'product_name',
-        'description',
-        'is_active',
-        'position',
-        'is_prefered'
+        'title', 'details', 'price_value', 'product_code', 'product_name', 'description', 'is_active', 'position', 'is_prefered', 'translations',
     ];
+
+    protected function casts(): array
+    {
+        return ['translations' => 'array'];
+    }
+
+    protected function title(): Attribute
+    {
+        return $this->localized('title');
+    }
+
+    protected function details(): Attribute
+    {
+        return $this->localized('details');
+    }
+
+    protected function productName(): Attribute
+    {
+        return $this->localized('product_name');
+    }
+
+    protected function description(): Attribute
+    {
+        return $this->localized('description');
+    }
 
     public function services(): BelongsToMany
     {

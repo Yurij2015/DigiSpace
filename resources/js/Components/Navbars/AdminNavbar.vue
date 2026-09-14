@@ -1,5 +1,6 @@
 <script setup>
 import UserDropdown from "@/Components/Dropdowns/UserDropdown.vue";
+import LanguageSwitcher from "@/Components/LanguageSwitcher.vue";
 import {Link} from '@inertiajs/vue3';
 
 </script>
@@ -64,6 +65,9 @@ import {Link} from '@inertiajs/vue3';
                     />
                 </div>
             </form>
+            <!-- Language -->
+            <LanguageSwitcher contrast class="mr-3" />
+
             <!-- User -->
             <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
                 <user-dropdown/>

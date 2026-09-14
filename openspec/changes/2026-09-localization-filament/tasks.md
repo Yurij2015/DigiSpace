@@ -23,9 +23,9 @@ last_verified_at: 2026-09-14
 
 ## Phase 1 — locale foundation
 
-- [ ] Add configured supported locales and a single resolver middleware before shared content loading.
-- [ ] Add `en`, `uk`, `pl` PHP/frontend dictionaries with identical keys; map legacy portfolio `ua` to `uk` at the boundary.
-- [ ] Add locale URL helpers, fallback tests and compatibility redirects for existing URLs.
+- [x] Add configured supported locales and a single resolver middleware before shared content loading.
+- [x] Add initial `en`, `uk`, `pl` PHP dictionaries with identical UI keys; map legacy portfolio `ua` to `uk` at the boundary.
+- [x] Add locale URL helpers, canonical/hreflang SEO links, language switcher and fallback tests; preserve existing unprefixed URLs.
 
 ## Phase 2 — content translations
 

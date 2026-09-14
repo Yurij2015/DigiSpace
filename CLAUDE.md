@@ -25,6 +25,8 @@ vendor/bin/pint --dirty
 # Migrations / seed — read docs/local-setup.md first; full seed deletes users and has ID drift
 vendor/bin/sail artisan migrate
 vendor/bin/sail artisan db:seed          # DatabaseSeeder → widget categories, widgets, pages, menus, products, services, posts, users
+# Fresh installs: use LocalDevelopmentSeeder instead (fixes category-ID drift, adds site chrome) — local app only, guarded against populated DBs
+vendor/bin/sail artisan db:seed --class=LocalDevelopmentSeeder
 
 # SEO sitemap (also scheduled daily in app/Console/Kernel.php)
 vendor/bin/sail artisan sitemap:generate
@@ -58,7 +60,7 @@ The public site combines static templates with database-backed content; read [`d
 - **`menus` → `menu_items`** — navigation; `menu_items.slug` is what `/pages/{slug}` resolves (`PageController::show` goes *MenuItem → pages*, not `Page::where('slug')`).
 - **`settings`**, `header_nav_bar_contents`, `footer_bottom_bar_contents`, `footer_useful_links` — singleton-ish site chrome edited from admin.
 
-**Magic IDs live in `config/constants.php`** (`FOOTER_CATEGORY = 11`, `CHOOSE_US_WIDGET_CATEGORY = 12`, `PAGE_SUBMENU_FIRST = 2`, `PAGES_IMAGES = 16`, …) and `ContactController::GET_IN_TOUCH = 15`. They are primary keys of seeded rows, so the seeders and production DB must agree with them. Never renumber; if you add a category, add a constant and a seeder row together.
+**Magic IDs live in `config/constants.php`** (`FOOTER_CATEGORY = 11`, `CHOOSE_US_WIDGET_CATEGORY = 12`, `PAGE_SUBMENU_FIRST = 2`, `PAGES_IMAGES = 16`, …) and `ContactController::GET_IN_TOUCH = 15`. They are primary keys of seeded rows, so the seeders and production DB must agree with them. Never renumber; if you add a category, add a constant and a seeder row together. `WidgetCategorySeeder` accepts `fixedIds: true` (used by `LocalDevelopmentSeeder`) to assign explicit IDs 1–15 that match the constants; plain `DatabaseSeeder` relies on auto-increment and can drift.
 
 `ContentServiceProvider::boot()` runs on **every request** and `View::share()`s footer widgets, sub-menus, latest posts, header/footer bar content and service categories to all Blade views (wrapped in a swallow-all `try/catch` so `artisan` works on an empty DB). Anything global to the layout goes there; do not re-query it in controllers.
 
