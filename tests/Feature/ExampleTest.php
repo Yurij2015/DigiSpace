@@ -64,8 +64,10 @@ class ExampleTest extends TestCase
             ->assertSee('<html class="wide wow-animation" lang="uk">', false)
             ->assertSee('hreflang="en"', false)
             ->assertSee('href="http://localhost:8100/en"', false)
-            ->assertSee('<li class="language-switcher">', false)
-            ->assertSee('<ul class="rd-navbar-dropdown">', false);
+            ->assertSee('<div class="site-language-control">', false)
+            ->assertSee('aria-label="Мова"', false)
+            ->assertSee('value="http://localhost:8100/en"', false)
+            ->assertSee('value="http://localhost:8100/pl"', false);
     }
 
     public function test_locale_switch_persists_for_admin_and_public_requests(): void

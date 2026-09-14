@@ -2,6 +2,7 @@
 /public/build
 /public/css/filament
 /public/fonts/filament
+/public/vendor/livewire
 /public/hot
 /public/storage
 /public/img
