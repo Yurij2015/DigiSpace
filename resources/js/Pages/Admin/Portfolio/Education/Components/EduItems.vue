@@ -1,7 +1,7 @@
 <script setup>
 import EduItemPlaces from "@/Pages/Admin/Portfolio/Education/Components/EduItemPlaces.vue";
 import EduItemLocales from "@/Pages/Admin/Portfolio/Education/Components/EduItemLocales.vue";
-import {Link} from "@inertiajs/inertia-vue3";
+import {Link} from "@inertiajs/vue3";
 
 const props = defineProps(['eduItem', 'education']);
 </script>

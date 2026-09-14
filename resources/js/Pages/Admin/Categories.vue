@@ -2,7 +2,7 @@
 import CategoryAdmin from '@/Components/Admin/CategoryAdmin.vue';
 import InputError from '@/Components/InputError.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
-import {useForm, Head} from '@inertiajs/inertia-vue3';
+import {useForm, Head} from '@inertiajs/vue3';
 import AdminNavbar from "@/Components/Navbars/AdminNavbar.vue";
 import Sidebar from "@/Components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/Components/Headers/HeaderStats.vue";

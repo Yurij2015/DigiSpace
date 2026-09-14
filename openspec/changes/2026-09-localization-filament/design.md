@@ -18,7 +18,7 @@ sources:
 
 ## Framework and compatibility spike (mandatory gate)
 
-The repository is currently on Laravel 12 with a Sail PHP 8.3 runtime. Laravel 13 requires PHP 8.3+ and is the preferred long-term target because it is the currently supported line with first-party AI-oriented primitives. The current `inertiajs/inertia-laravel` 1.x dependency does not support Laravel 13, so Laravel 13 is gated behind a separate Inertia v2/Ziggy compatibility upgrade. Verify every direct package, PHPUnit version, Carbon behavior, queue/cache integration and deployment image before accepting that upgrade. “Better AI packages” is not a reason to upgrade blindly: choose the AI package/API separately after the framework baseline is stable.
+The repository baseline is Laravel 13 with a Sail PHP 8.3 runtime. The framework upgrade and Inertia v2/Ziggy compatibility work are complete; PHPUnit, Pint and the production Vite build pass. “Better AI packages” is not a reason to upgrade blindly: choose the AI package/API separately after the framework baseline is stable.
 
 The frontend currently uses Tailwind `^3.1.0`, PostCSS and `@tailwind` directives in `resources/css/app.css`. Upgrade Tailwind in its own frontend step after the Laravel/Vite baseline: v4 uses `@import "tailwindcss"`, recommends `@tailwindcss/vite`, does not auto-detect a JavaScript config, and has modern browser requirements. Preserve the existing Vue/Inertia visual baseline with screenshot or route smoke checks, and explicitly review the `@tailwindcss/forms` plugin and the legacy VueNotus stylesheet.
 

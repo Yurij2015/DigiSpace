@@ -37,7 +37,7 @@ If Sail is not running, the same commands work on host PHP (`php artisan …`) a
 
 ## What this project is
 
-Company website + blog + service catalogue for **digispace.pro**, with a self-written admin panel. Laravel 12 on PHP ^8.3, MySQL 8. One repository, one app, two rendering stacks:
+Company website + blog + service catalogue for **digispace.pro**, with a self-written admin panel. Laravel 13 on PHP ^8.3, MySQL 8. One repository, one app, two rendering stacks:
 
 | Surface | Stack | Where |
 |---|---|---|

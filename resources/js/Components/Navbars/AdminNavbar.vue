@@ -1,6 +1,6 @@
 <script setup>
 import UserDropdown from "@/Components/Dropdowns/UserDropdown.vue";
-import {Link} from '@inertiajs/inertia-vue3';
+import {Link} from '@inertiajs/vue3';
 
 </script>
 <template>

@@ -13,7 +13,7 @@ Reviewed on 2026-09-13 from the working tree: dependencies, routes, bootstrap/pr
 
 ## Application boundaries
 
-DigiSpace is a single Laravel 12/MySQL application: a public Blade company site with blog, services/pricing, contact capture and menu-backed pages; a legacy Inertia/Vue 3 admin; and portfolio/CV editing. There are two explicit routes in `routes/api.php`, not a full CMS REST API.
+DigiSpace is a single Laravel 13/MySQL application: a public Blade company site with blog, services/pricing, contact capture and menu-backed pages; a legacy Inertia/Vue 3 admin; and portfolio/CV editing. There are two explicit routes in `routes/api.php`, not a full CMS REST API.
 
 | Endpoint | Current implementation |
 |---|---|

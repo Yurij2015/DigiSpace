@@ -9,7 +9,7 @@ stale_after: 2027-03-13
 
 # Architecture
 
-Single Laravel 12 application (`laravel/framework` v12.69, PHP ^8.3, MySQL 8). The example/default configuration uses a synchronous queue and file cache/session. Compose has no Redis or queue worker; live configuration was not verified.
+Single Laravel 13 application (`laravel/framework` v13, PHP ^8.3, MySQL 8). The example/default configuration uses a synchronous queue and file cache/session. Compose has no Redis or queue worker; live configuration was not verified.
 
 ## Two rendering stacks in one app
 
@@ -42,7 +42,7 @@ Request ───────► │ EncryptCookies → Session → CSRF → Sub
 
 The legacy admin panel uses Inertia + Vue 3. It remains available at `/admin` and `/portfolio` while the Filament panel is rolled out.
 
-- Scaffolded from Laravel Breeze (Inertia/Vue), kept on the legacy `@inertiajs/inertia-vue3` 0.6 packages (not `@inertiajs/vue3`). `resources/js/app.js` mounts the app; pages are resolved from `resources/js/Pages/**` by the string passed to `Inertia::render()`.
+- Scaffolded from Laravel Breeze (Inertia/Vue), now using Inertia Laravel 2 and `@inertiajs/vue3` 2. `resources/js/app.js` mounts the app; pages are resolved from `resources/js/Pages/**` by the string passed to `Inertia::render()`.
 - Shared props (`app/Http/Middleware/HandleInertiaRequests.php`): `auth.user`, `ziggy` (named routes + current URL), `flash.message`.
 - Layouts: `resources/js/Layouts/AuthenticatedLayout.vue` (admin shell, sidebar in `resources/js/Components/Sidebar`), `GuestLayout.vue` (auth screens).
 - Each admin area = one controller in `app/Http/Controllers/Admin/` + a `Route::controller()->middleware('auth')->group()` in `routes/web.php` + a folder in `resources/js/Pages/Admin/<Area>/` (`Index.vue`, `Create.vue`, `Update.vue`, optional `Components/`).

@@ -1,6 +1,6 @@
 <script setup>
 import PagesDropdown from "@/Components/Dropdowns/PagesDropdown.vue";
-import {Link} from '@inertiajs/inertia-vue3';
+import {Link} from '@inertiajs/vue3';
 
 const navbarOpen = false;
 

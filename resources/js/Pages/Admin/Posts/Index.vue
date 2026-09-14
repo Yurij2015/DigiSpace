@@ -4,7 +4,7 @@ import AdminNavbar from "@/Components/Navbars/AdminNavbar.vue";
 import Sidebar from "@/Components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/Components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/Components/Footers/FooterAdmin.vue";
-import {Head, Link} from '@inertiajs/inertia-vue3';
+import {Head, Link} from '@inertiajs/vue3';
 
 defineProps(['posts']);
 </script>

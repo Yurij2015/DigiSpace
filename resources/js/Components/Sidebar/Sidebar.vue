@@ -1,7 +1,7 @@
 <script setup>
 import NotificationDropdown from "@/Components/Dropdowns/NotificationDropdown.vue";
 import UserDropdown from "@/Components/Dropdowns/UserDropdown.vue";
-import {Link} from '@inertiajs/inertia-vue3';
+import {Link} from '@inertiajs/vue3';
 import {ref} from 'vue'
 import SidebarNavLink from '@/Components/SidebarNavLink.vue';
 

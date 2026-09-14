@@ -1,5 +1,5 @@
 <script setup>
-import {Link} from '@inertiajs/inertia-vue3';
+import {Link} from '@inertiajs/vue3';
 import {sanitizeUrl} from "@braintree/sanitize-url";
 import {ref} from "vue";
 import AddCategory from "@/Pages/Admin/ServiceCategories/Components/AddCategory.vue";
