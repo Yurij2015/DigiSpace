@@ -12,7 +12,7 @@ stale_after: 2027-03-13
 ## Requirements
 
 - Docker (for Sail) **or** host PHP ≥ 8.3 with `pdo_mysql`, `mbstring`, `fileinfo`, `gd`/`exif` + a MySQL 8 server
-- Node 18+ / npm
+- Node 20.19+ / npm (required by Laravel Boost; also supports the Vite build)
 - Composer 2
 
 ## 1. Environment
@@ -90,6 +90,17 @@ vendor/bin/phpstan analyse                     # Larastan level 5 over app/
 vendor/bin/pint --dirty                        # format changed PHP files
 vendor/bin/sail artisan route:list --path=admin
 ```
+
+## 6. Laravel Boost
+
+Boost is a development dependency and provides project-specific AI guidelines, skills and an MCP server. After `composer install`, refresh its generated guidance with:
+
+```bash
+vendor/bin/sail artisan boost:update
+vendor/bin/sail artisan boost:list-skills
+```
+
+The MCP server is configured in `.mcp.json` and runs through Sail. Do not install Boost into the production dependency set.
 
 ## Troubleshooting
 

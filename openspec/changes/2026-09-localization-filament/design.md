@@ -20,9 +20,9 @@ sources:
 
 The repository baseline is Laravel 13 with a Sail PHP 8.3 runtime. The framework upgrade and Inertia v2/Ziggy compatibility work are complete; PHPUnit, Pint and the production Vite build pass. “Better AI packages” is not a reason to upgrade blindly: choose the AI package/API separately after the framework baseline is stable.
 
-The frontend currently uses Tailwind `^3.1.0`, PostCSS and `@tailwind` directives in `resources/css/app.css`. Upgrade Tailwind in its own frontend step after the Laravel/Vite baseline: v4 uses `@import "tailwindcss"`, recommends `@tailwindcss/vite`, does not auto-detect a JavaScript config, and has modern browser requirements. Preserve the existing Vue/Inertia visual baseline with screenshot or route smoke checks, and explicitly review the `@tailwindcss/forms` plugin and the legacy VueNotus stylesheet.
+The frontend uses Tailwind 4 with PostCSS and the `@tailwindcss/vite` integration. The legacy VueNotus stylesheet remains part of the bundle; preserve the existing Vue/Inertia visual baseline with route smoke checks.
 
-After the framework and Tailwind upgrades, pin and install a Filament major supported by the resolved Laravel/Livewire/Tailwind versions. Filament 5 currently requires PHP 8.2+, Laravel 11.28+, Livewire 4 and Tailwind 4. This repository currently has no Filament or Livewire panel, so verify the generated provider, asset build and existing Vite/Tailwind integration in an isolated branch.
+Filament 5 is installed on the Laravel 13/Livewire 4/Tailwind 4 baseline. The separate provider serves `/control`; generated assets and the existing Vite integration have been verified.
 
 Filament must use a path other than `/admin` (recommended `/control`) and a dedicated provider. Do not enable the generated default `/admin` panel. Register the provider using the Laravel 11 mechanism present in the installed application.
 

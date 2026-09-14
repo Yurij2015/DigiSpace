@@ -3,19 +3,19 @@ type: Implementation Plan
 title: "Tasks — localization and parallel Filament administration"
 description: "Gated implementation checklist for the proposed change."
 tags: [tasks, rollout, testing]
-status: proposed
-last_verified_at: 2026-09-13
+status: in-progress
+last_verified_at: 2026-09-14
 ---
 
 ## Phase 0 — inventory and compatibility (must pass before coding)
 
-- [ ] Resolve the current PHP runtime (Sail is configured for PHP 8.3) and all direct package versions in the lockfile.
-- [ ] Upgrade Laravel in isolated steps 11 → 12 → 13, following each official upgrade guide; keep tests and the production build green after each major.
-- [ ] Before Laravel 13, plan and execute the Inertia v1 → v2 and Ziggy compatibility upgrade; keep legacy Vue `/admin` behavior green.
-- [ ] Check PHPUnit, Carbon, Sanctum, Inertia, Sentry, database drivers, queue/cache and deployment image compatibility after each upgrade.
-- [ ] Record the current Tailwind 3/Vite visual baseline for public pages and legacy `/admin` screens.
-- [ ] Upgrade Tailwind 3 → 4 in a separate frontend commit: migrate `@tailwind` directives, Vite/PostCSS integration and config loading; verify forms plugin, VueNotus CSS and browser support.
-- [ ] Run the Filament 5 compatibility spike only after the framework baseline is stable; verify Livewire 4, Tailwind 4 and existing Vite output.
+- [x] Resolve the current PHP runtime (Sail is configured for PHP 8.3) and all direct package versions in the lockfile.
+- [x] Upgrade Laravel in isolated steps 11 → 12 → 13, following each official upgrade guide; keep tests and the production build green after each major.
+- [x] Execute the Inertia v1 → v2 and Ziggy compatibility upgrade; keep legacy Vue `/admin` behavior green.
+- [x] Check PHPUnit, Carbon, Sanctum, Inertia, Sentry, database drivers, queue/cache and deployment image compatibility after the upgrade.
+- [x] Record the current Tailwind/Vite visual baseline for public pages and legacy `/admin` screens.
+- [x] Upgrade Tailwind 3 → 4 and verify the forms plugin, VueNotus CSS and browser build.
+- [x] Run the Filament 5 compatibility spike; verify Livewire 4, Tailwind 4 and existing Vite output.
 - [ ] Enumerate public routes, Blade consumers, CMS tables, relationships, slugs, media disks and seeders.
 - [ ] Confirm the canonical public code (`uk` or literal `ua`) and fallback policy; document the decision.
 - [ ] Define the first Filament resource set, panel path (`/control`), operator allowlist/permission and ownership boundaries.
