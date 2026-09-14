@@ -3,11 +3,11 @@
 namespace App\Filament\Resources\Products\Schemas;
 
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Tab;
-use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Tabs;
+use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Schema;
 
 class ProductForm

@@ -4,10 +4,10 @@ namespace App\Filament\Resources\Services\Schemas;
 
 use App\Filament\Support\ContentImage;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Tab;
-use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Tabs;
+use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Schema;
 
 class ServiceForm
