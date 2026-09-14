@@ -1,0 +1,29 @@
+/* DigiSpace public-site overrides on top of the theme (style.css). Loaded after style.css. */
+
+/* Footer subscribe feedback */
+.subscribe-form-feedback { margin: 12px 0 0; font-size: 14px; line-height: 1.4; }
+.subscribe-form-feedback_error { color: #ff6b6b; }
+.subscribe-form-feedback_success { color: #7ed957; }
+
+/* Header actions: language switcher + login button (desktop static navbar) */
+.rd-navbar-static.rd-navbar-classic .rd-navbar-aside > .site-header-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.rd-navbar-static.rd-navbar-classic .rd-navbar-aside { flex-wrap: nowrap; gap: 16px; }
+.rd-navbar-static .rd-navbar-content-outer { min-width: 0; }
+
+/* Language switcher control */
+.site-language-control select { width: 72px; height: 36px; padding: 0 8px; border: 1px solid #eaeced; border-radius: 6px; background: #fff; color: #151515; font: 600 13px Arial, sans-serif; cursor: pointer; }
+.site-language-control select:focus-visible { outline: 2px solid #00a9ff; outline-offset: 2px; }
+.site-language-control .select2-container { width: 72px !important; }
+.site-language-control .select2-choice { min-height: 36px; padding: 0 8px; }
+.site-language-control__links { display: flex; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.site-language-control__links a { display: inline-block; padding: 6px 8px; border: 1px solid #eaeced; border-radius: 6px; font: 600 13px Arial, sans-serif; color: #151515; }
+.site-language-control__links a[aria-current="true"] { background: #00a9ff; border-color: #00a9ff; color: #fff; }
+
+/* Mobile / fixed navbar: keep the switcher beside the toggle, shrink the logo so nothing overlaps down to 320px */
+.rd-navbar-fixed .rd-navbar-brand .brand img { width: 130px !important; max-width: 130px !important; height: auto; }
+.rd-navbar-fixed .site-language-control { position: fixed; top: 10px; right: 104px; z-index: 1002; }
+@media (max-width: 360px) {
+  .rd-navbar-fixed .rd-navbar-brand .brand img { width: 100px !important; max-width: 100px !important; }
+  .rd-navbar-fixed .site-language-control { right: 92px; }
+  .rd-navbar-fixed .site-language-control select { width: 60px; }
+}

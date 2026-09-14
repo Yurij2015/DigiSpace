@@ -1,72 +1,64 @@
-<h3 class="text-center">Contact Form</h3>
-<!-- TODO - set up with RD Mailform -->
+<h3 class="text-center">{{ __('site.contact_form') }}</h3>
 <form method="post" action="{{ route('contact.save') }}">
     @csrf
     <div class="row align-items-md-end row-30">
         @if(Session::has('success'))
-            <div class="contact-success-sent">
-                {{Session::get('success')}}
+            <div class="col-12">
+                <div class="contact-success-sent" role="status">
+                    {{ Session::get('success') }}
+                </div>
             </div>
         @endif
-        <div class="col-md-4">
-            <div class="form-wrap contact-form-input">
-                <input class="form-input {{ $errors->has('first_name') ? 'error' : '' }}" id="first-name" type="text"
-                       name="first_name">
-                @if ($errors->has('first_name'))
-                    <label class="form-label label-error" for="contact-name">{{ $errors->first('first_name') }}</label>
-                @else
-                    <label class="form-label" for="first-name">First Name</label>
-                @endif
+        @php
+            $contactFields = [
+                ['name' => 'first_name', 'id' => 'first-name', 'label' => __('site.first_name'), 'type' => 'text', 'autocomplete' => 'given-name', 'col' => 'col-md-4'],
+                ['name' => 'last_name', 'id' => 'last-name', 'label' => __('site.last_name'), 'type' => 'text', 'autocomplete' => 'family-name', 'col' => 'col-md-4'],
+                ['name' => 'phone', 'id' => 'contact-phone', 'label' => __('site.phone'), 'type' => 'tel', 'autocomplete' => 'tel', 'col' => 'col-md-4'],
+            ];
+        @endphp
+        @foreach($contactFields as $field)
+            <div class="{{ $field['col'] }}">
+                <div class="form-wrap contact-form-input">
+                    <input class="form-input @error($field['name']) error @enderror" id="{{ $field['id'] }}"
+                           type="{{ $field['type'] }}" name="{{ $field['name'] }}" value="{{ old($field['name']) }}"
+                           autocomplete="{{ $field['autocomplete'] }}" required
+                           @error($field['name']) aria-invalid="true" @enderror>
+                    @error($field['name'])
+                        <label class="form-label label-error" for="{{ $field['id'] }}">{{ $message }}</label>
+                    @else
+                        <label class="form-label" for="{{ $field['id'] }}">{{ $field['label'] }}</label>
+                    @enderror
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-wrap contact-form-input">
-                <input class="form-input {{ $errors->has('last_name') ? 'error' : '' }}" id="last-name" type="text"
-                       name="last_name">
-                @if ($errors->has('last_name'))
-                    <label class="form-label label-error text-sm"
-                           for="last-name">{{ $errors->first('last_name') }}</label>
-                @else
-                    <label class="form-label" for="last-name">Last Name</label>
-                @endif
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-wrap contact-form-input">
-                <input class="form-input {{ $errors->has('phone') ? 'error' : '' }}" id="contact-phone" type="text"
-                       name="phone">
-                @if ($errors->has('phone'))
-                    <label class="form-label  label-error" for="contact-phone">{{ $errors->first('phone') }}</label>
-                @else
-                    <label class="form-label" for="contact-phone">Phone</label>
-                @endif
-            </div>
-        </div>
+        @endforeach
         <div class="col-sm-12">
             <div class="form-wrap contact-form-input">
-                <textarea class="form-input {{ $errors->has('message') ? 'error' : '' }}" id="contact-message"
-                          name="message"></textarea>
-                @if ($errors->has('message'))
-                    <label class="form-label  label-error" for="contact-message">{{ $errors->first('message') }}</label>
+                <textarea class="form-input @error('message') error @enderror" id="contact-message" name="message"
+                          required @error('message') aria-invalid="true" @enderror>{{ old('message') }}</textarea>
+                @error('message')
+                    <label class="form-label label-error" for="contact-message">{{ $message }}</label>
                 @else
-                    <label class="form-label" for="contact-message">Your Message</label>
-                @endif
+                    <label class="form-label" for="contact-message">{{ __('site.your_message') }}</label>
+                @enderror
             </div>
         </div>
         <div class="col-md-12">
             <div class="form-wrap contact-form-input">
-                <input class="form-input {{ $errors->has('email') ? 'error' : '' }}" id="contact-email" type="email"
-                       name="email">
-                @if ($errors->has('phone'))
-                    <label class="form-label label-error" for="contact-email">{{ $errors->first('email') }}</label>
+                <input class="form-input @error('email') error @enderror" id="contact-email" type="email" name="email"
+                       value="{{ old('email') }}" autocomplete="email" required
+                       @error('email') aria-invalid="true" @enderror>
+                @error('email')
+                    <label class="form-label label-error" for="contact-email">{{ $message }}</label>
                 @else
-                    <label class="form-label" for="contact-email">E-mail</label>
-                @endif
+                    <label class="form-label" for="contact-email">{{ __('site.email') }}</label>
+                @enderror
             </div>
         </div>
-        @if ($errors->has('g-recaptcha-response'))
-            <span class="m-0 recaptchaStyle">{{ $errors->first('g-recaptcha-response') }}</span>
-        @endif
+        @error('g-recaptcha-response')
+            <div class="col-12">
+                <span class="m-0 recaptchaStyle" role="alert">{{ $message }}</span>
+            </div>
+        @enderror
         <div class="col-md-6">
             <div class="g-recaptcha"
                  data-size="normal"
@@ -74,7 +66,7 @@
             ></div>
         </div>
         <div class="col-md-6 send-message-button">
-            <button class="button button-block button-primary button-ujarak" type="submit">Send Message</button>
+            <button class="button button-block button-primary button-ujarak" type="submit">{{ __('site.send_message') }}</button>
         </div>
     </div>
 </form>
@@ -87,42 +79,3 @@
         }
     </style>
 @endpush
-
-<!-- RD Mailform -->
-{{--<form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact"--}}
-{{--      method="post" action="{{ route('contact.save') }}">--}}
-{{--    @csrf--}}
-{{--    <div class="row align-items-md-end row-30">--}}
-{{--        <div class="col-md-6">--}}
-{{--            <div class="form-wrap">--}}
-{{--                <input class="form-input {{ $errors->has('name') ? 'error' : '' }}" id="contact-name" type="text"--}}
-{{--                       name="name">--}}
-{{--                <label class="form-label" for="contact-name">Your Name</label>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div class="col-md-6">--}}
-{{--            <div class="form-wrap">--}}
-{{--                <input class="form-input {{ $errors->has('phone') ? 'error' : '' }}" id="contact-phone" type="text"--}}
-{{--                       name="phone">--}}
-{{--                <label class="form-label" for="contact-phone">Phone</label>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div class="col-sm-12">--}}
-{{--            <div class="form-wrap">--}}
-{{--                <label class="form-label" for="contact-message">Your Message</label>--}}
-{{--                <textarea class="form-input {{ $errors->has('message') ? 'error' : '' }}" id="contact-message"--}}
-{{--                          name="message"></textarea>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div class="col-md-6">--}}
-{{--            <div class="form-wrap">--}}
-{{--                <input class="form-input {{ $errors->has('email') ? 'error' : '' }}" id="contact-email" type="email"--}}
-{{--                       name="email">--}}
-{{--                <label class="form-label" for="contact-email">E-mail</label>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div class="col-md-6">--}}
-{{--            <input class="button button-block button-primary button-ujarak" type="submit" value="Send Message">--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</form>--}}

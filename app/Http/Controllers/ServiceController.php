@@ -75,11 +75,14 @@ class ServiceController extends Controller
         $serviceCategories = ServiceCategory::with('service')->get();
         $services = Service::query();
         if (request('search')) {
+            $term = '%'.request('search').'%';
             $services
                 ->with('serviceCategory')
-                ->where('title', 'like', '%'.request('search').'%')
-                ->where('service_category_id', '!=', null)
-                ->orWhere('description', 'like', '%'.request('search').'%');
+                ->whereHas('serviceCategory')
+                ->where(function ($query) use ($term) {
+                    $query->where('title', 'like', $term)
+                        ->orWhere('description', 'like', $term);
+                });
         }
         if (! $services->count()) {
             return response()->view('errors.nothin-found')->setStatusCode(404);

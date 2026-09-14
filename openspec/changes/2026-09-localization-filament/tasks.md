@@ -25,9 +25,12 @@ last_verified_at: 2026-09-14
 
 - [x] Add configured supported locales and a single resolver middleware before shared content loading.
 - [x] Add initial `en`, `uk`, `pl` PHP dictionaries with identical UI keys; map legacy portfolio `ua` to `uk` at the boundary.
-- [x] Add locale URL helpers, canonical/hreflang SEO links, language switcher and fallback tests; preserve existing unprefixed URLs.
+- [x] Add locale URL helpers, canonical/hreflang SEO links, language switcher and fallback tests.
+- [x] Preserve existing unprefixed URLs — implemented in change `public-site-ux-ui-audit` (fallback route `LegacyUrlRedirectController`, 302 to the resolved locale, `tests/Feature/LegacyUrlRedirectTest.php`); do not re-implement here.
 
 ## Phase 2 — content translations
+
+- [ ] Follow-up from `public-site-ux-ui-audit`: verify whether production `widgets.widget_image` rows in the "Our Clients" category hold bare filenames (locally `/1687119194.png` → 404) or full MinIO URLs; if bare, extend the widget image fallback per `docs/content-model.md`.
 
 - [ ] Create translation tables and constraints from the Phase 0 inventory.
 - [ ] Backfill existing scalar values into the canonical locale; generate a missing-translation report.

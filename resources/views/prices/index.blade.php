@@ -6,14 +6,14 @@
         <div class="breadcrumbs-custom__aside bg-image context-dark"
              style="background-image: url({{ asset("images/bg-pricing.jpg") }});">
             <div class="container">
-                <h2 class="breadcrumbs-custom__title">Pricing</h2>
+                <h2 class="breadcrumbs-custom__title">{{ __('site.pricing') }}</h2>
             </div>
         </div>
         <div class="breadcrumbs-custom__main bg-gray-light">
             <div class="container">
                 <ul class="breadcrumbs-custom__path">
-                    <li><a href="{{ route('home.index') }}">Home</a></li>
-                    <li class="active">Pricing</li>
+                    <li><a href="{{ route('home.index') }}">{{ __('site.home') }}</a></li>
+                    <li class="active">{{ __('site.pricing') }}</li>
                 </ul>
             </div>
         </div>

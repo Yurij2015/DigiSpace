@@ -12,6 +12,12 @@ return [
         'uk' => 'Українська',
         'pl' => 'Polski',
     ],
+    // Compact codes shown in the public header switcher (product choice: "UA" for uk).
+    'short_labels' => [
+        'en' => 'EN',
+        'uk' => 'UA',
+        'pl' => 'PL',
+    ],
     'route_names' => [
         'home.index', 'about', 'services', 'pricing', 'promos', 'blog',
         'blog-category', 'blog-archive', 'blog-search', 'contact-us',

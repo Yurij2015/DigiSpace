@@ -58,6 +58,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/site.css') }}">
 
     <!-- Meta Pixel Code -->
     <script>
@@ -93,7 +94,7 @@
 <!-- Page Loader-->
 <div id="page-loader">
     <div class="page-loader-body">
-        <img src="{{ asset('images/DigiSpaceLogo2.svg') }}" alt="" width="170"
+        <img src="{{ asset('images/DigiSpaceLogo2.svg') }}" alt="{{ config('app.name') }}" width="170"
              height="80"/>
         <div class="cssload-wrapper">
             <div class="cssload-border">

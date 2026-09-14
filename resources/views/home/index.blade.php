@@ -12,42 +12,36 @@
                         <div class="row justify-content-center">
                             <div class="col-md-10 col-sm-12"
                                  style="background-color: rgba(128,171,229,0.78); padding: 50px">
-                                <h1 data-caption-animate="fadeInUpSmall">Opening the Space of High Technologies -
-                                    DigiSpace</h1>
+                                <h1 data-caption-animate="fadeInUpSmall">{{ __('site.hero_first_title') }}</h1>
                                 <p class="quote-classic__text call-subtitle_text"
                                    data-caption-animate="fadeInUpSmall"
-                                   data-caption-delay="200">Our web development agency is your reliable partner for
-                                    business automation and web development for specific industries. We offer our
-                                    expertise combined with top-notch technologies!
+                                   data-caption-delay="200">{{ __('site.hero_first_text') }}
                                     <span class="group-item"></span>
                                 </p>
                                 <a class="button button-lg button-primary"
                                    href="{{ route('pages.page', 'opening-the-space-of-high-technologies') }}"
                                    data-caption-animate="fadeInUpSmall"
-                                   data-caption-delay="250">Read More</a>
+                                   data-caption-delay="250">{{ __('site.read_more') }}</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide bg-image-dark" data-slide-bg="images/slider-second-home-page.jpg">
+            <div class="swiper-slide bg-image-dark" data-slide-bg="{{ asset('images/slider-second-home-page.jpg') }}">
                 <div class="swiper-slide-caption">
                     <div class="container text-start">
                         <div class="row justify-content-center">
                             <div class="col-md-10 col-sm-12"
                                  style="background-color: rgba(128,171,229,0.78); padding: 50px">
-                                <h2 data-caption-animate="fadeInUpSmall">Top-Notch Analytics and Consulting on Web
-                                    Development Technologies</h2>
+                                <h2 data-caption-animate="fadeInUpSmall">{{ __('site.hero_second_title') }}</h2>
                                 <p class="quote-classic__text call-subtitle_text" data-caption-animate="fadeInUpSmall"
-                                   data-caption-delay="200">Our expertise is at your service. We provide consulting
-                                    services and an overall evaluation of your ideas to select the best technologies and
-                                    solutions for your benefit.
+                                   data-caption-delay="200">{{ __('site.hero_second_text') }}
                                     <span class="group-item"></span>
                                 </p>
                                 <a class="button button-lg button-primary"
                                    href="{{ route('pages.page', 'top-notch-analytics-and-consulting-on-web-development-technologies') }}"
                                    data-caption-animate="fadeInUpSmall"
-                                   data-caption-delay="250">Read More</a>
+                                   data-caption-delay="250">{{ __('site.read_more') }}</a>
                             </div>
                         </div>
                     </div>
@@ -58,9 +52,6 @@
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
     </section>
-    <div id="app">
-        <navbar></navbar>
-    </div>
     <!-- Our service-->
     <section class="section section-lg bg-white text-center">
         <div class="container">
@@ -70,7 +61,7 @@
     <!-- Pricing Tables-->
     <section class="section section-md bg-gray-2 text-center oh">
         <div class="container wow fadeInUpSmall">
-            <h2>Pricing Plans</h2>
+            <h2>{{ __('site.pricing_plans') }}</h2>
             <x-price-of-services :$products></x-price-of-services>
         </div>
     </section>
