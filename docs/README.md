@@ -40,6 +40,9 @@ Source-verified findings, fresh-install limitations, access-control behavior and
 ### [OpenSpec: localization and Filament](../openspec/changes/2026-09-localization-filament/README.md)
 Reviewable proposal, architecture decisions, behavior specs and implementation gates for the new public locales and the parallel Filament panel.
 
+### [Filament control panel](admin/filament.md)
+Current `/control` resources, menu areas, storage behavior, authorization and verification commands.
+
 ## Project skills
 
 - [CMS content](../.claude/skills/digispace-cms-content/SKILL.md) — Blade, widget slots, pages and menus.

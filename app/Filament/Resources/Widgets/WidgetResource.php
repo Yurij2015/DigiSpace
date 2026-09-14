@@ -16,6 +16,26 @@ use Filament\Tables\Table;
 
 class WidgetResource extends Resource
 {
+    public static function getNavigationLabel(): string
+    {
+        return 'Widgets';
+    }
+
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Admin Layout Pages';
+    }
+
+    public static function getNavigationSort(): ?int
+    {
+        return 12;
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Widgets';
+    }
+
     protected static ?string $model = Widget::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

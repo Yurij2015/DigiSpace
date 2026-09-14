@@ -16,6 +16,26 @@ use Filament\Tables\Table;
 
 class PostResource extends Resource
 {
+    public static function getNavigationLabel(): string
+    {
+        return 'Posts';
+    }
+
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Admin Layout Pages';
+    }
+
+    public static function getNavigationSort(): ?int
+    {
+        return 10;
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Posts';
+    }
+
     protected static ?string $model = Post::class;
 
     protected static ?string $navigationLabel = 'Posts';

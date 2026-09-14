@@ -40,7 +40,7 @@ use Illuminate\Support\Carbon;
 class Category extends Model
 {
     protected $fillable = [
-        'name', 'description', 'slug',
+        'name', 'description', 'slug', 'user_id',
     ];
 
     public function user(): BelongsTo

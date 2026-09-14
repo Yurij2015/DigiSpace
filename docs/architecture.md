@@ -38,7 +38,9 @@ Request ───────► │ EncryptCookies → Session → CSRF → Sub
 - Reusable blocks are **Blade class components** (`app/View/Components/*.php` + `resources/views/components/*.blade.php`): header, footer, footer useful links, latest news, "choose us", FAQ, our projects, technologies, pricing, contact form, Google map.
 - Global layout data (footer widgets, sub-menus, latest posts, header/footer bars, service categories) is pushed into every view by `App\Providers\ContentServiceProvider::boot()` via `View::share()`. It runs on every request including artisan; the `try/catch` around it exists so the app boots without a database.
 
-### Admin panel (Inertia + Vue 3)
+### Admin panels
+
+The legacy admin panel uses Inertia + Vue 3. It remains available at `/admin` and `/portfolio` while the Filament panel is rolled out.
 
 - Scaffolded from Laravel Breeze (Inertia/Vue), kept on the legacy `@inertiajs/inertia-vue3` 0.6 packages (not `@inertiajs/vue3`). `resources/js/app.js` mounts the app; pages are resolved from `resources/js/Pages/**` by the string passed to `Inertia::render()`.
 - Shared props (`app/Http/Middleware/HandleInertiaRequests.php`): `auth.user`, `ziggy` (named routes + current URL), `flash.message`.
@@ -46,6 +48,8 @@ Request ───────► │ EncryptCookies → Session → CSRF → Sub
 - Each admin area = one controller in `app/Http/Controllers/Admin/` + a `Route::controller()->middleware('auth')->group()` in `routes/web.php` + a folder in `resources/js/Pages/Admin/<Area>/` (`Index.vue`, `Create.vue`, `Update.vue`, optional `Components/`).
 - Auth: Breeze session auth (`routes/auth.php`, `app/Http/Controllers/Auth/`). Registration is disabled; `/admin` and `/admin/profile` declare `verified`, but `User` does not implement `MustVerifyEmail`, so verification is not enforced by that middleware for the current model.
 - Portfolio module (`Admin/Portfolio/*`, `app/Models/Portfolio/Pf*`) is a multi-locale CV data set with its own migrations (`2024_01_29_*`, `2024_02_*`) and a single public JSON endpoint `GET /api/education`.
+
+The new Filament panel is served at `/control` by `App\Providers\Filament\AdminPanelProvider`. Resource classes live under `app/Filament/Resources`; the panel currently covers CMS content, menus, banners, site chrome and Portfolio records. See [`admin/filament.md`](admin/filament.md) for the resource map and upload rules.
 
 ### API
 

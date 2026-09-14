@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Filament\Resources\PfSkills\Schemas;
+
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Schema;
+
+class PfSkillsForm
+{
+    public static function configure(Schema $schema): Schema
+    {
+        return $schema
+            ->components([
+                Select::make('skill_type_id')
+                    ->relationship('skillType', 'skill_type')->searchable()->preload()
+                    ->required(),
+                TextInput::make('image_icon_url')->url(),
+                TextInput::make('fa_icon'),
+                TextInput::make('value'),
+                Section::make('EN')->schema([TextInput::make('locales.en.title'), Textarea::make('locales.en.description')]),
+                Section::make('UA')->schema([TextInput::make('locales.ua.title'), Textarea::make('locales.ua.description')]),
+                Section::make('PL')->schema([TextInput::make('locales.pl.title'), Textarea::make('locales.pl.description')]),
+            ]);
+    }
+}

@@ -29,6 +29,8 @@ return [
     */
 
     'disks' => [
+        'service_images' => ['driver' => 'local', 'root' => public_path('uploads'), 'url' => '/uploads', 'visibility' => 'public', 'throw' => true],
+        'banner_images' => ['driver' => 'local', 'root' => public_path('banners'), 'url' => '/banners', 'visibility' => 'public', 'throw' => true],
 
         'local' => [
             'driver' => 'local',

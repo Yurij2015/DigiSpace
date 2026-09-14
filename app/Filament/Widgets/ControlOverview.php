@@ -28,12 +28,12 @@ class ControlOverview extends StatsOverviewWidget
                 ->description('Open legacy service manager')
                 ->descriptionIcon('heroicon-m-wrench-screwdriver')
                 ->color('success')
-                ->url(route('admin.services')),
+                ->url(route('filament.control.resources.services.index')),
             Stat::make('Products', Product::count())
                 ->description('Open legacy product manager')
                 ->descriptionIcon('heroicon-m-cube')
                 ->color('info')
-                ->url(route('admin.products')),
+                ->url(route('filament.control.resources.products.index')),
         ];
     }
 }

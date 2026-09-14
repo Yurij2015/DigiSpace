@@ -9,7 +9,7 @@ last_verified_at: 2026-09-13
 
 # OpenSpec change: public localization and parallel Filament administration
 
-This is a planning artifact. It does not install Filament, change routes, migrate content, or remove the existing Inertia/Vue admin.
+This change started as a planning artifact. The additive Filament panel is now implemented at `/control`; the existing Inertia/Vue admin remains available while localization and remaining parity work continue.
 
 Read in this order:
 

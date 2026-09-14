@@ -16,6 +16,26 @@ use Filament\Tables\Table;
 
 class ProductResource extends Resource
 {
+    public static function getNavigationLabel(): string
+    {
+        return 'Products';
+    }
+
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Admin Layout Pages';
+    }
+
+    public static function getNavigationSort(): ?int
+    {
+        return 15;
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Products';
+    }
+
     protected static ?string $model = Product::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

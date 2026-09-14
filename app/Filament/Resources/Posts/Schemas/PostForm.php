@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Posts\Schemas;
 
+use App\Filament\Support\ContentImage;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -28,7 +29,7 @@ class PostForm
                     ->default('draft'),
                 TextInput::make('description')->maxLength(255),
                 TextInput::make('keywords'),
-                TextInput::make('img_path'),
+                ContentImage::make('img_path', 's3', 'posts', true),
             ]);
     }
 }

@@ -12,7 +12,7 @@ class PageForm
     public static function configure(Schema $schema): Schema
     {
         return $schema
-            ->components([
+            ->components([Select::make('widgets')->relationship('widgets', 'title')->multiple()->searchable()->preload()->columnSpanFull(),
                 Select::make('page_category_id')
                     ->relationship('pageCategory', 'name')
                     ->searchable()

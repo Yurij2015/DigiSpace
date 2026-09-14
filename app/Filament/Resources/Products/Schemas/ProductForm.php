@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Products\Schemas;
 
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -13,20 +14,21 @@ class ProductForm
     {
         return $schema
             ->components([
-                TextInput::make('product_code'),
-                TextInput::make('product_name'),
-                Textarea::make('description')
+                TextInput::make('title')->required()->maxLength(255),
+                TextInput::make('product_name')->maxLength(255),
+                TextInput::make('product_code')->maxLength(255),
+                TextInput::make('price_value')->numeric()->prefix('$'),
+                TextInput::make('details')->maxLength(255),
+                Textarea::make('description')->columnSpanFull(),
+                Select::make('services')
+                    ->relationship('services', 'title')
+                    ->multiple()
+                    ->searchable()
+                    ->preload()
                     ->columnSpanFull(),
-                TextInput::make('position')
-                    ->numeric(),
-                Toggle::make('is_prefered')
-                    ->required(),
-                Toggle::make('is_active')
-                    ->required(),
-                TextInput::make('title'),
-                TextInput::make('price_value')
-                    ->numeric(),
-                TextInput::make('details'),
+                TextInput::make('position')->numeric(),
+                Toggle::make('is_prefered')->label('Preferred'),
+                Toggle::make('is_active')->default(true)->required(),
             ]);
     }
 }

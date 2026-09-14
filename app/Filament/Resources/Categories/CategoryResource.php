@@ -16,6 +16,26 @@ use Filament\Tables\Table;
 
 class CategoryResource extends Resource
 {
+    public static function getNavigationLabel(): string
+    {
+        return 'Categories';
+    }
+
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Admin Layout Pages';
+    }
+
+    public static function getNavigationSort(): ?int
+    {
+        return 11;
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Categories';
+    }
+
     protected static ?string $model = Category::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

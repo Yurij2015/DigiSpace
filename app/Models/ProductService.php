@@ -34,7 +34,7 @@ class ProductService extends Model
     public $table = 'product_service';
 
     protected $fillable = [
-        'service_css_class',
-        'product_css_class'
+        'product_id', 'service_id', 'service_css_class',
+        'product_css_class',
     ];
 }

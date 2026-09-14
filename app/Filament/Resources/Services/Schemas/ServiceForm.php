@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Services\Schemas;
 
+use App\Filament\Support\ContentImage;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -30,7 +31,7 @@ class ServiceForm
                     ->default('inactive')
                     ->required(),
                 TextInput::make('image_alt')->maxLength(255),
-                TextInput::make('image')->label('Image path or URL')->maxLength(255),
+                ContentImage::make('image', 'service_images'),
                 Textarea::make('description')->columnSpanFull(),
                 Textarea::make('seo_description')->columnSpanFull(),
                 TextInput::make('seo_title')->maxLength(255),

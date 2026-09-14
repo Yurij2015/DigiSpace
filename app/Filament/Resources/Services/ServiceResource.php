@@ -16,6 +16,26 @@ use Filament\Tables\Table;
 
 class ServiceResource extends Resource
 {
+    public static function getNavigationLabel(): string
+    {
+        return 'Services';
+    }
+
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Admin Layout Pages';
+    }
+
+    public static function getNavigationSort(): ?int
+    {
+        return 14;
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Services';
+    }
+
     protected static ?string $model = Service::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

@@ -7,7 +7,6 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
-use Filament\Navigation\NavigationItem;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -37,80 +36,8 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Dashboard::class,
             ])
-            ->navigationItems([
-                NavigationItem::make('Education')
-                    ->group('Portfolio management')
-                    ->icon('heroicon-o-academic-cap')
-                    ->url(fn (): string => route('portfolio.education')),
-                NavigationItem::make('Skills')
-                    ->group('Portfolio management')
-                    ->icon('heroicon-o-check-badge')
-                    ->url(fn (): string => route('portfolio.skills')),
-                NavigationItem::make('Section Management')
-                    ->group('Portfolio management')
-                    ->icon('heroicon-o-wrench-screwdriver')
-                    ->url(fn (): string => route('portfolio.sections')),
-                NavigationItem::make('Pages')
-                    ->group('Admin Layout Pages')
-                    ->icon('heroicon-o-document-text')
-                    ->url(fn (): string => route('filament.control.resources.pages.index')),
-                NavigationItem::make('Posts')
-                    ->group('Admin Layout Pages')
-                    ->icon('heroicon-o-rectangle-stack')
-                    ->url(fn (): string => route('filament.control.resources.posts.index')),
-                NavigationItem::make('Admin')
-                    ->group('Admin Layout Pages')
-                    ->icon('heroicon-o-tv')
-                    ->url(fn (): string => route('admin')),
-                NavigationItem::make('Categories')
-                    ->group('Admin Layout Pages')
-                    ->icon('heroicon-o-table-cells')
-                    ->url(fn (): string => route('filament.control.resources.categories.index')),
-                NavigationItem::make('Widgets')
-                    ->group('Admin Layout Pages')
-                    ->icon('heroicon-o-cog-6-tooth')
-                    ->url(fn (): string => route('filament.control.resources.widgets.index')),
-                NavigationItem::make('Default pages')
-                    ->group('Admin Layout Pages')
-                    ->icon('heroicon-o-squares-2x2')
-                    ->url(fn (): string => route('admin.dafault-pages')),
-                NavigationItem::make('Services')
-                    ->group('Admin Layout Pages')
-                    ->icon('heroicon-o-cube')
-                    ->url(fn (): string => route('filament.control.resources.services.index')),
-                NavigationItem::make('Products')
-                    ->group('Admin Layout Pages')
-                    ->icon('heroicon-o-globe-alt')
-                    ->url(fn (): string => route('filament.control.resources.products.index')),
-                NavigationItem::make('Service Categories')
-                    ->group('Admin Layout Pages')
-                    ->icon('heroicon-o-tag')
-                    ->url(fn (): string => route('filament.control.resources.service-categories.index')),
-                NavigationItem::make('Top bar settings')
-                    ->group('Header')
-                    ->icon('heroicon-o-arrow-up')
-                    ->url(fn (): string => route('admin.top-bar-settings')),
-                NavigationItem::make('Top menu settings')
-                    ->group('Header')
-                    ->icon('heroicon-o-list-bullet')
-                    ->url(fn (): string => route('admin.top-menu')),
-                NavigationItem::make('Banners')
-                    ->group('Blog sidebar')
-                    ->icon('heroicon-o-megaphone')
-                    ->url(fn (): string => route('admin.posts-banners')),
-                NavigationItem::make('Useful Links')
-                    ->group('Footer')
-                    ->icon('heroicon-o-link')
-                    ->url(fn (): string => route('admin.useful-link-list')),
-                NavigationItem::make('About US icons')
-                    ->group('Footer')
-                    ->icon('heroicon-o-sparkles')
-                    ->url(fn (): string => route('admin.widget-icons', 34).'?page=4'),
-                NavigationItem::make('Bottom bar settings')
-                    ->group('Footer')
-                    ->icon('heroicon-o-arrow-down')
-                    ->url(fn (): string => route('admin.bottom-bar-settings')),
-            ])
+            ->navigationGroups(['Portfolio management', 'Admin Layout Pages', 'Header', 'Blog sidebar', 'Footer'])
+            ->databaseTransactions()
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
                 ControlOverview::class,

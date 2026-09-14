@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Widgets\Schemas;
 
+use App\Filament\Support\ContentImage;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -20,8 +21,7 @@ class WidgetForm
                     ->relationship('widgetCategory', 'name')
                     ->required(),
                 TextInput::make('icon'),
-                TextInput::make('widget_image')
-                    ->label('Image path or URL'),
+                ContentImage::make('widget_image', 's3', 'widgets', true),
                 Textarea::make('content')
                     ->required()
                     ->columnSpanFull(),

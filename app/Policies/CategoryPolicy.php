@@ -4,6 +4,7 @@ namespace App\Policies;
 
 use App\Models\Category;
 use App\Models\User;
+use Filament\Facades\Filament;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Auth\Access\Response;
 
@@ -11,19 +12,19 @@ class CategoryPolicy
 {
     use HandlesAuthorization;
 
-    public function viewAny(...$arguments): bool
+    public function viewAny(User $user): bool
     {
-        return true;
+        return $user->canAccessPanel(Filament::getPanel('control'));
     }
 
-    public function view(...$arguments): bool
+    public function view(User $user, Category $category): bool
     {
-        return true;
+        return $user->canAccessPanel(Filament::getPanel('control'));
     }
 
-    public function create(...$arguments): bool
+    public function create(User $user): bool
     {
-        return true;
+        return $user->canAccessPanel(Filament::getPanel('control'));
     }
 
     /**
@@ -44,21 +45,21 @@ class CategoryPolicy
 
     public function update(User $user, Category $category): bool
     {
-        return true;
+        return $user->canAccessPanel(Filament::getPanel('control')) && (int) $category->user_id === (int) $user->id;
     }
 
     public function delete(User $user, Category $category): bool
     {
-        return true;
+        return $user->canAccessPanel(Filament::getPanel('control')) && (int) $category->user_id === (int) $user->id;
     }
 
-    public function restore(...$arguments): bool
+    public function restore(User $user, Category $category): bool
     {
-        return true;
+        return false;
     }
 
-    public function forceDelete(...$arguments): bool
+    public function forceDelete(User $user, Category $category): bool
     {
-        return true;
+        return false;
     }
 }

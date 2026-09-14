@@ -4,6 +4,7 @@ namespace App\Policies;
 
 use App\Models\Post;
 use App\Models\User;
+use Filament\Facades\Filament;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Auth\Access\Response;
 
@@ -11,39 +12,39 @@ class PostPolicy
 {
     use HandlesAuthorization;
 
-    public function viewAny(...$arguments): bool
+    public function viewAny(User $user): bool
     {
-        return true;
+        return $user->canAccessPanel(Filament::getPanel('control'));
     }
 
-    public function view(...$arguments): bool
+    public function view(User $user, Post $post): bool
     {
-        return true;
+        return $user->canAccessPanel(Filament::getPanel('control'));
     }
 
-    public function create(...$arguments): bool
+    public function create(User $user): bool
     {
-        return true;
+        return $user->canAccessPanel(Filament::getPanel('control'));
     }
 
-    public function update(...$arguments): bool
+    public function update(User $user, Post $post): bool
     {
-        return true;
+        return $user->canAccessPanel(Filament::getPanel('control')) && (int) $post->user_id === (int) $user->id;
     }
 
-    public function delete(...$arguments): bool
+    public function delete(User $user, Post $post): bool
     {
-        return true;
+        return $user->canAccessPanel(Filament::getPanel('control')) && (int) $post->user_id === (int) $user->id;
     }
 
-    public function restore(...$arguments): bool
+    public function restore(User $user, Post $post): bool
     {
-        return true;
+        return false;
     }
 
-    public function forceDelete(...$arguments): bool
+    public function forceDelete(User $user, Post $post): bool
     {
-        return true;
+        return false;
     }
 
     /**
