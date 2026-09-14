@@ -8,6 +8,10 @@ context: |
 
 rules:
   specs:
-    - Every spec must start with YAML frontmatter containing type, title, description, tags, status, last_verified_at, and sources.
-    - Repository references in sources use repo://<path> and point to existing files.
+    - Every spec must start with YAML frontmatter containing type, title,
+      description, tags, status, last_verified_at, and sources.
+    - Repository references in sources use repo://<path> and point to existing
+      files.
     - Specs are grouped by domain directory.
+githubCopilot:
+  cloudAgent: true
