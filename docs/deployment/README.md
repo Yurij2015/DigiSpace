@@ -52,7 +52,7 @@ Only `.env`, shared `storage` and the three copied image directories have explic
 
 ## Verification after an authorized deployment
 
-Check the active revision, readable environment/storage links, migration output and HTTP responses for home, blog, a menu-backed page, login and admin assets. Confirm a sample local image and S3 image loads. Inspect application logs and scheduler configuration. Test lead creation only with an explicitly intended test submission because it writes to Zoho.
+Check the active revision, readable environment/storage links, migration output and HTTP responses for home, blog, a menu-backed page, login and admin assets. For Filament, verify `/control/login`, confirm that `FILAMENT_ADMIN_EMAILS` contains the intended test administrators, and check that Livewire assets under `/vendor/livewire` return `200`. Confirm a sample local image and S3 image loads. Inspect application logs and scheduler configuration. Test lead creation only with an explicitly intended test submission because it writes to Zoho.
 
 ## SSH troubleshooting with Proxmox and CloudPanel
 

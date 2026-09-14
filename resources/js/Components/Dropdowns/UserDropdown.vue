@@ -1,11 +1,17 @@
 <script setup>
 import {createPopper} from "@popperjs/core";
-import {Link} from '@inertiajs/vue3';
-import {ref} from "vue";
+import {Link, usePage} from '@inertiajs/vue3';
+import {computed, ref} from "vue";
 
 let dropdownPopoverShow = ref(false);
 let btnDropdownRef;
 let popoverDropdownRef;
+const page = usePage();
+const userInitial = computed(() => {
+    const identity = page.props.auth?.user?.name || page.props.auth?.user?.email || 'U';
+
+    return identity.charAt(0).toUpperCase();
+});
 
 let toggleDropdown = function (event) {
     event.preventDefault();
@@ -28,15 +34,13 @@ let toggleDropdown = function (event) {
             v-on:click="toggleDropdown($event)"
         >
             <div class="items-center flex">
-        <span
-            class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"
-        >
-          <img
-              alt="..."
-              class="w-full rounded-full align-middle border-none shadow-lg"
-              :src="'/images/ava.jpg'"
-          />
-        </span>
+                <span
+                    class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"
+                >
+                    <span class="w-full h-full rounded-full bg-blueGray-500 inline-flex items-center justify-center font-semibold">
+                        {{ userInitial }}
+                    </span>
+                </span>
             </div>
         </a>
         <div
