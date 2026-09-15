@@ -29,6 +29,8 @@ concurrency:
 
 env:
   PHP_VERSION: "8.3"
+  # Release directory per run: re-deploying an already active commit must never rm -rf the live release.
+  RELEASE_NAME: ${{ github.sha }}-${{ github.run_id }}
   PHP_EXTENSIONS: mbstring, ctype, fileinfo, openssl, pdo_mysql, bcmath, json, tokenizer, xml, gd, zip, curl, intl
 
 jobs:
@@ -158,16 +160,21 @@ jobs:
         uses: appleboy/ssh-action@v1
         env:
           GITHUB_SHA: ${{ github.sha }}
+          RELEASE_NAME: ${{ env.RELEASE_NAME }}
           BASE_PATH: ${{ matrix.server.path }}
         with:
           host: ${{ matrix.server.ip }}
           port: ${{ matrix.server.port }}
           username: ${{ matrix.server.username }}
           key: ${{ secrets.SSH_KEY_2 }}
-          envs: GITHUB_SHA,BASE_PATH
+          envs: GITHUB_SHA,RELEASE_NAME,BASE_PATH
           script: |
             set -euo pipefail
-            RELEASE_PATH="${BASE_PATH}/releases/${GITHUB_SHA}"
+            RELEASE_PATH="${BASE_PATH}/releases/${RELEASE_NAME}"
+            if [ "$(readlink -f "${BASE_PATH}/current" 2>/dev/null)" = "$(readlink -f "$RELEASE_PATH")" ]; then
+              echo "::error::${RELEASE_PATH} is the active release; refusing to overwrite it"
+              exit 1
+            fi
             rm -rf "$RELEASE_PATH"
             mkdir -p "$RELEASE_PATH"
             tar xzf "${BASE_PATH}/artifacts/${GITHUB_SHA}.tar.gz" -C "$RELEASE_PATH"
@@ -294,7 +301,7 @@ jobs:
         env:
           GITHUB_SHA: ${{ github.sha }}
           BASE_PATH: ${{ matrix.server.path }}
-          RELEASE_PATH: ${{ matrix.server.path }}/releases/${{ github.sha }}
+          RELEASE_PATH: ${{ matrix.server.path }}/releases/${{ env.RELEASE_NAME }}
           ACTIVE_RELEASE_PATH: ${{ matrix.server.path }}/current
           STORAGE_PATH: ${{ matrix.server.path }}/storage
           DEPLOY_BEFORE_HOOKS: ${{ vars.DEPLOY_BEFORE_HOOKS }}
@@ -337,7 +344,7 @@ jobs:
         uses: appleboy/ssh-action@v1
         env:
           BASE_PATH: ${{ matrix.server.path }}
-          RELEASE_PATH: ${{ matrix.server.path }}/releases/${{ github.sha }}
+          RELEASE_PATH: ${{ matrix.server.path }}/releases/${{ env.RELEASE_NAME }}
           ACTIVE_RELEASE_PATH: ${{ matrix.server.path }}/current
           STORAGE_PATH: ${{ matrix.server.path }}/storage
         with:
