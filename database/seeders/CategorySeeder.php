@@ -2,27 +2,12 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use Database\Seeders\Support\JsonTableSeeder;
 
-class CategorySeeder extends Seeder
+/**
+ * Rows and their en/uk/pl values live in database/seeders/data/categories.json.
+ */
+class CategorySeeder extends JsonTableSeeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
-    {
-        $categories = [
-            [
-                'name' => 'Category 1',
-                'slug' => 'category-1',
-                'description' => 'Category 1',
-                'created_at' => now(),
-                'updated_at' => now(),
-                'deleted_at' => null,
-                'user_id' => 1,
-            ],
-        ];
-        DB::table('categories')->insert($categories);
-    }
+    protected string $table = 'categories';
 }

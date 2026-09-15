@@ -12,7 +12,7 @@
         </form>
     </div>
     <div class="blog-layout__aside-item blog-layout__aside-item_bordered">
-        <p class="custom-heading-line heading-8">Service Categories</p>
+        <p class="custom-heading-line heading-8">{{ __('site.service_categories') }}</p>
         <ul class="list-categories">
             @foreach($serviceCategories as $category )
                 <li class="{{ url()->current() === route('category-services', $category->slug) ? 'active' : '' }}">

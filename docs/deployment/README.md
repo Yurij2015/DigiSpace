@@ -89,6 +89,16 @@ the server as `.env_prev`.
   current -> releases/<sha>
 ```
 
+## One-off: seeding structure translations on a server
+
+`StructureTranslationsSeeder` adds the uk/pl translations from `database/seeders/data/*.json` to
+an already populated database — only missing locales, base columns untouched, editor changes
+preserved, safe to repeat. Run it once per environment after the release that ships it, either
+by hand over SSH (`<php_binary> <base>/current/artisan db:seed --class=StructureTranslationsSeeder --force`)
+or for a single deploy through the environment Variable
+`DEPLOY_AFTER_HOOKS="$PHP_BINARY $ACTIVE_RELEASE_PATH/artisan db:seed --class=StructureTranslationsSeeder --force"`
+(remove the Variable afterwards). It prints a per-table summary (updated / unchanged / unmatched).
+
 ## Persistence boundaries
 
 Only `.env`, shared `storage` and the three image directories are carried across releases. S3/MinIO

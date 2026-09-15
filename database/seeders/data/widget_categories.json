@@ -1,0 +1,328 @@
+{
+  "table": "widget_categories",
+  "identity": [
+    "id"
+  ],
+  "translatable": [
+    "name",
+    "title",
+    "description"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "image": null,
+      "i18n": {
+        "en": {
+          "name": "Landing. Header block",
+          "title": "Landing. Header block",
+          "description": "Widget of top of landing"
+        },
+        "uk": {
+          "name": "Лендінг. Блок шапки",
+          "title": "Лендінг. Блок шапки",
+          "description": "Віджет верхньої частини лендінгу"
+        },
+        "pl": {
+          "name": "Landing. Blok nagłówka",
+          "title": "Landing. Blok nagłówka",
+          "description": "Widget górnej części landingu"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "image": null,
+      "i18n": {
+        "en": {
+          "name": "Landing.  Midle block",
+          "title": "Landing.  Midle block",
+          "description": "Widget of middle of landing"
+        },
+        "uk": {
+          "name": "Лендінг. Середній блок",
+          "title": "Лендінг. Середній блок",
+          "description": "Віджет середньої частини лендінгу"
+        },
+        "pl": {
+          "name": "Landing. Blok środkowy",
+          "title": "Landing. Blok środkowy",
+          "description": "Widget środkowej części landingu"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "image": null,
+      "i18n": {
+        "en": {
+          "name": "Landing. Body Top",
+          "title": "Landing. Body Top",
+          "description": "Widget of body top"
+        },
+        "uk": {
+          "name": "Лендінг. Верх тіла сторінки",
+          "title": "Лендінг. Верх тіла сторінки",
+          "description": "Віджет верхньої частини тіла сторінки"
+        },
+        "pl": {
+          "name": "Landing. Góra treści",
+          "title": "Landing. Góra treści",
+          "description": "Widget górnej części treści"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "image": null,
+      "i18n": {
+        "en": {
+          "name": "Landing. Body Middle",
+          "title": "Landing. Body Middle",
+          "description": "Widget of body middle"
+        },
+        "uk": {
+          "name": "Лендінг. Середина тіла сторінки",
+          "title": "Лендінг. Середина тіла сторінки",
+          "description": "Віджет середньої частини тіла сторінки"
+        },
+        "pl": {
+          "name": "Landing. Środek treści",
+          "title": "Landing. Środek treści",
+          "description": "Widget środkowej części treści"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "image": null,
+      "i18n": {
+        "en": {
+          "name": "Landing. Body Bottom",
+          "title": "Landing. Body Bottom",
+          "description": "Widget of body bottom"
+        },
+        "uk": {
+          "name": "Лендінг. Низ тіла сторінки",
+          "title": "Лендінг. Низ тіла сторінки",
+          "description": "Віджет нижньої частини тіла сторінки"
+        },
+        "pl": {
+          "name": "Landing. Dół treści",
+          "title": "Landing. Dół treści",
+          "description": "Widget dolnej części treści"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "image": null,
+      "i18n": {
+        "en": {
+          "name": "Landing. Footer",
+          "title": "Landing. Footer",
+          "description": "Widget of footer"
+        },
+        "uk": {
+          "name": "Лендінг. Футер",
+          "title": "Лендінг. Футер",
+          "description": "Віджет футера"
+        },
+        "pl": {
+          "name": "Landing. Stopka",
+          "title": "Landing. Stopka",
+          "description": "Widget stopki"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "image": null,
+      "i18n": {
+        "en": {
+          "name": "DigiSpace | About | General Info",
+          "title": "DigiSpace | About | General Info",
+          "description": "Widgets of the about page | General info"
+        },
+        "uk": {
+          "name": "DigiSpace | Про нас | Загальна інформація",
+          "title": "DigiSpace | Про нас | Загальна інформація",
+          "description": "Віджети сторінки «Про нас» | Загальна інформація"
+        },
+        "pl": {
+          "name": "DigiSpace | O nas | Informacje ogólne",
+          "title": "DigiSpace | O nas | Informacje ogólne",
+          "description": "Widgety strony „O nas” | Informacje ogólne"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "image": null,
+      "i18n": {
+        "en": {
+          "name": "DigiSpace | About | Team",
+          "title": "DigiSpace | About | Team",
+          "description": "Meet Our Team"
+        },
+        "uk": {
+          "name": "DigiSpace | Про нас | Команда",
+          "title": "DigiSpace | Про нас | Команда",
+          "description": "Знайомтесь: наша команда"
+        },
+        "pl": {
+          "name": "DigiSpace | O nas | Zespół",
+          "title": "DigiSpace | O nas | Zespół",
+          "description": "Poznaj nasz zespół"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "image": "images/bg-about-page-some-facts.jpeg",
+      "i18n": {
+        "en": {
+          "name": "Some Facts About Us",
+          "title": "DigiSpace | Some Facts About Us",
+          "description": "More than 1000 apps developed"
+        },
+        "uk": {
+          "name": "Кілька фактів про нас",
+          "title": "DigiSpace | Кілька фактів про нас",
+          "description": "Понад 1000 розроблених застосунків"
+        },
+        "pl": {
+          "name": "Kilka faktów o nas",
+          "title": "DigiSpace | Kilka faktów o nas",
+          "description": "Ponad 1000 stworzonych aplikacji"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "image": null,
+      "i18n": {
+        "en": {
+          "name": "Our Clients",
+          "title": "DigiSpace | Our Clients",
+          "description": "Our Clients"
+        },
+        "uk": {
+          "name": "Наші клієнти",
+          "title": "DigiSpace | Наші клієнти",
+          "description": "Наші клієнти"
+        },
+        "pl": {
+          "name": "Nasi klienci",
+          "title": "DigiSpace | Nasi klienci",
+          "description": "Nasi klienci"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "image": null,
+      "i18n": {
+        "en": {
+          "name": "Footer",
+          "title": "DigiSpace | Footer",
+          "description": "Footer"
+        },
+        "uk": {
+          "name": "Футер",
+          "title": "DigiSpace | Футер",
+          "description": "Футер"
+        },
+        "pl": {
+          "name": "Stopka",
+          "title": "DigiSpace | Stopka",
+          "description": "Stopka"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "image": null,
+      "i18n": {
+        "en": {
+          "name": "Why Choose Us",
+          "title": "DigiSpace | Why Choose Us",
+          "description": "Why Choose Us"
+        },
+        "uk": {
+          "name": "Чому обирають нас",
+          "title": "DigiSpace | Чому обирають нас",
+          "description": "Чому обирають нас"
+        },
+        "pl": {
+          "name": "Dlaczego my",
+          "title": "DigiSpace | Dlaczego my",
+          "description": "Dlaczego my"
+        }
+      }
+    },
+    {
+      "id": 13,
+      "image": null,
+      "i18n": {
+        "en": {
+          "name": "Frequently Asked Questions",
+          "title": "DigiSpace | Question-Answer",
+          "description": "Question-Answer block"
+        },
+        "uk": {
+          "name": "Часті запитання",
+          "title": "DigiSpace | Запитання-відповідь",
+          "description": "Блок «Запитання-відповідь»"
+        },
+        "pl": {
+          "name": "Najczęściej zadawane pytania",
+          "title": "DigiSpace | Pytania i odpowiedzi",
+          "description": "Blok „Pytania i odpowiedzi”"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "image": null,
+      "i18n": {
+        "en": {
+          "name": "Promos",
+          "title": "DigiSpace | Promos",
+          "description": "Promos widgets"
+        },
+        "uk": {
+          "name": "Акції",
+          "title": "DigiSpace | Акції",
+          "description": "Віджети акцій"
+        },
+        "pl": {
+          "name": "Promocje",
+          "title": "DigiSpace | Promocje",
+          "description": "Widgety promocji"
+        }
+      }
+    },
+    {
+      "id": 15,
+      "image": null,
+      "i18n": {
+        "en": {
+          "name": "Get in Touch",
+          "title": "DigiSpace | Get in Touch",
+          "description": "Get in Touch widgets"
+        },
+        "uk": {
+          "name": "Зв'яжіться з нами",
+          "title": "DigiSpace | Зв'яжіться з нами",
+          "description": "Віджети «Зв'яжіться з нами»"
+        },
+        "pl": {
+          "name": "Skontaktuj się z nami",
+          "title": "DigiSpace | Skontaktuj się z nami",
+          "description": "Widgety „Skontaktuj się z nami”"
+        }
+      }
+    }
+  ]
+}

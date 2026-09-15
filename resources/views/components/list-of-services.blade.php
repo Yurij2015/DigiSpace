@@ -5,9 +5,9 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Title</th>
+                    <th>{{ __('site.title') }}</th>
 {{--                    <th>Description</th>--}}
-                    <th>Price</th>
+                    <th>{{ __('site.price') }}</th>
                 </tr>
                 </thead>
                 <tbody>

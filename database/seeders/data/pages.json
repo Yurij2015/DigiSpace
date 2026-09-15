@@ -1,0 +1,160 @@
+{
+  "table": "pages",
+  "identity": [
+    "slug"
+  ],
+  "translatable": [
+    "name",
+    "content",
+    "meta",
+    "description",
+    "keywords"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "page_category_id": null,
+      "slug": "about",
+      "menu_item_id": null,
+      "i18n": {
+        "en": {
+          "name": null,
+          "content": null,
+          "meta": null,
+          "description": null,
+          "keywords": null
+        },
+        "uk": {
+          "name": null,
+          "content": null,
+          "meta": null,
+          "description": null,
+          "keywords": null
+        },
+        "pl": {
+          "name": null,
+          "content": null,
+          "meta": null,
+          "description": null,
+          "keywords": null
+        }
+      }
+    },
+    {
+      "id": 2,
+      "page_category_id": null,
+      "slug": "services",
+      "menu_item_id": null,
+      "i18n": {
+        "en": {
+          "name": null,
+          "content": null,
+          "meta": null,
+          "description": null,
+          "keywords": null
+        },
+        "uk": {
+          "name": null,
+          "content": null,
+          "meta": null,
+          "description": null,
+          "keywords": null
+        },
+        "pl": {
+          "name": null,
+          "content": null,
+          "meta": null,
+          "description": null,
+          "keywords": null
+        }
+      }
+    },
+    {
+      "id": 3,
+      "page_category_id": null,
+      "slug": "pricing",
+      "menu_item_id": null,
+      "i18n": {
+        "en": {
+          "name": "Our prices",
+          "content": null,
+          "meta": null,
+          "description": "Prices of our services",
+          "keywords": null
+        },
+        "uk": {
+          "name": "Наші ціни",
+          "content": null,
+          "meta": null,
+          "description": "Ціни на наші послуги",
+          "keywords": null
+        },
+        "pl": {
+          "name": "Nasze ceny",
+          "content": null,
+          "meta": null,
+          "description": "Ceny naszych usług",
+          "keywords": null
+        }
+      }
+    },
+    {
+      "id": 4,
+      "page_category_id": null,
+      "slug": "promos",
+      "menu_item_id": null,
+      "i18n": {
+        "en": {
+          "name": "Promos",
+          "content": null,
+          "meta": null,
+          "description": "Promos of our company",
+          "keywords": null
+        },
+        "uk": {
+          "name": "Акції",
+          "content": null,
+          "meta": null,
+          "description": "Акції нашої компанії",
+          "keywords": null
+        },
+        "pl": {
+          "name": "Promocje",
+          "content": null,
+          "meta": null,
+          "description": "Promocje naszej firmy",
+          "keywords": null
+        }
+      }
+    },
+    {
+      "id": 5,
+      "page_category_id": null,
+      "slug": "contact-us",
+      "menu_item_id": null,
+      "i18n": {
+        "en": {
+          "name": "Contact Us",
+          "content": null,
+          "meta": null,
+          "description": "Contact Us",
+          "keywords": null
+        },
+        "uk": {
+          "name": "Зв'язатися з нами",
+          "content": null,
+          "meta": null,
+          "description": "Зв'язатися з нами",
+          "keywords": null
+        },
+        "pl": {
+          "name": "Kontakt",
+          "content": null,
+          "meta": null,
+          "description": "Kontakt",
+          "keywords": null
+        }
+      }
+    }
+  ]
+}

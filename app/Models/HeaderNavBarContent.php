@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasLocalizedContent;
+use App\Models\Concerns\HasTranslatableColumns;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 
@@ -51,9 +54,24 @@ use Illuminate\Support\Carbon;
  *
  * @mixin Eloquent
  */
-class HeaderNavBarContent extends Model
+class HeaderNavBarContent extends Model implements HasTranslatableColumns
 {
+    use HasLocalizedContent;
+
+    /**
+     * Base-language columns that also live under translations.{locale}.
+     *
+     * @var list<string>
+     */
+    public const TRANSLATABLE = ['first_col_name', 'second_col_name', 'first_col_href_content'];
+
+    public static function translatableColumns(): array
+    {
+        return self::TRANSLATABLE;
+    }
+
     protected $fillable = [
+        'translations',
         'first_col_name',
         'first_col_href',
         'first_col_href_content',
@@ -70,4 +88,19 @@ class HeaderNavBarContent extends Model
         'fourth_soc_button_href',
         'login_button_status',
     ];
+
+    protected function firstColName(): Attribute
+    {
+        return $this->localizedAttribute('first_col_name');
+    }
+
+    protected function secondColName(): Attribute
+    {
+        return $this->localizedAttribute('second_col_name');
+    }
+
+    protected function firstColHrefContent(): Attribute
+    {
+        return $this->localizedAttribute('first_col_href_content');
+    }
 }

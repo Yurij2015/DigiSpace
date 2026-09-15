@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasLocalizedContent;
+use App\Models\Concerns\HasTranslatableColumns;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 
@@ -35,9 +38,24 @@ use Illuminate\Support\Carbon;
  *
  * @mixin Eloquent
  */
-class FooterBottomBarContent extends Model
+class FooterBottomBarContent extends Model implements HasTranslatableColumns
 {
+    use HasLocalizedContent;
+
+    /**
+     * Base-language columns that also live under translations.{locale}.
+     *
+     * @var list<string>
+     */
+    public const TRANSLATABLE = ['privacy_policy_title', 'faq', 'support'];
+
+    public static function translatableColumns(): array
+    {
+        return self::TRANSLATABLE;
+    }
+
     protected $fillable = [
+        'translations',
         'company_name',
         'privacy_policy_title',
         'privacy_policy_href',
@@ -46,4 +64,19 @@ class FooterBottomBarContent extends Model
         'support',
         'support_href',
     ];
+
+    protected function privacyPolicyTitle(): Attribute
+    {
+        return $this->localizedAttribute('privacy_policy_title');
+    }
+
+    protected function faq(): Attribute
+    {
+        return $this->localizedAttribute('faq');
+    }
+
+    protected function support(): Attribute
+    {
+        return $this->localizedAttribute('support');
+    }
 }

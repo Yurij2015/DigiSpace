@@ -15,7 +15,7 @@
         <p class="custom-heading-line heading-8">{{ __('site.categories') }}</p>
         <ul class="list-categories">
             <li class="{{ Route::is('blog') ? 'active' : '' }}">
-                <a href="{{ route('blog') }}">All categories</a>
+                <a href="{{ route('blog') }}">{{ __('site.all_categories') }}</a>
                 <span class="count">{{ $postsNumber }}</span>
             </li>
             @foreach($sideBarData['categories'] as $category )
@@ -27,7 +27,7 @@
         </ul>
     </div>
     <div class="blog-layout__aside-item blog-layout__aside-item_bordered">
-        <p class="custom-heading-line heading-8">Latest Posts</p>
+        <p class="custom-heading-line heading-8">{{ __('site.latest_posts') }}</p>
         <ul class="list-posts">
             @foreach($sideBarData['latestPosts'] as $post)
                 <li>
