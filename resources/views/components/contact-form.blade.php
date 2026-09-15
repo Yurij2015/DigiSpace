@@ -4,9 +4,9 @@
     <div class="row align-items-md-end row-30">
         @if(Session::has('success'))
             <div class="col-12">
-                <div class="contact-success-sent" role="status">
+                <output class="contact-success-sent">
                     {{ Session::get('success') }}
-                </div>
+                </output>
             </div>
         @endif
         @php

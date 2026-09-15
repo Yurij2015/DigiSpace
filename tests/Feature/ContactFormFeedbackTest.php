@@ -14,6 +14,10 @@ class ContactFormFeedbackTest extends TestCase
     use RefreshDatabase;
     use SeedsPublicSite;
 
+    private const EN_CONTACT = '/en/contact-us';
+
+    private const UK_CONTACT = '/uk/contact-us';
+
     private const VALID = [
         'first_name' => 'Yurii',
         'last_name' => 'Mokryi',
@@ -34,14 +38,14 @@ class ContactFormFeedbackTest extends TestCase
 
     public function test_invalid_email_keeps_the_other_values_and_shows_only_the_email_error(): void
     {
-        $response = $this->from('/en/contact-us')
-            ->post('/en/contact-us', ['email' => 'not-an-email'] + self::VALID)
-            ->assertRedirect('/en/contact-us')
+        $this->from(self::EN_CONTACT)
+            ->post(self::EN_CONTACT, ['email' => 'not-an-email'] + self::VALID)
+            ->assertRedirect(self::EN_CONTACT)
             ->assertSessionHasErrors(['email'])
             ->assertSessionDoesntHaveErrors(['first_name', 'last_name', 'phone', 'message']);
 
-        $page = $this->followingRedirects()->from('/en/contact-us')
-            ->post('/en/contact-us', ['email' => 'not-an-email'] + self::VALID);
+        $page = $this->followingRedirects()->from(self::EN_CONTACT)
+            ->post(self::EN_CONTACT, ['email' => 'not-an-email'] + self::VALID);
 
         $page->assertOk()
             ->assertSee('value="Yurii"', false)
@@ -94,9 +98,9 @@ class ContactFormFeedbackTest extends TestCase
             $mock->shouldReceive('sendLead')->once()->withArgs(fn (array $lead) => $lead['name'] === 'Yurii Mokryi');
         });
 
-        $this->from('/uk/contact-us')
-            ->post('/uk/contact-us', self::VALID)
-            ->assertRedirect('/uk/contact-us')
+        $this->from(self::UK_CONTACT)
+            ->post(self::UK_CONTACT, self::VALID)
+            ->assertRedirect(self::UK_CONTACT)
             ->assertSessionHasNoErrors()
             ->assertSessionHas('success', 'Ми отримали ваше повідомлення. Дякуємо, що написали нам!');
 

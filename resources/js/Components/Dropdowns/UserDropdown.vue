@@ -12,7 +12,7 @@ const userInitial = computed(() => {
 const avatarColor = computed(() => {
     const palette = ['#dbeafe', '#e0e7ff', '#fce7f3', '#fef3c7', '#ede9fe', '#ffedd5'];
     const identity = page.props.auth?.user?.name || page.props.auth?.user?.email || 'U';
-    const index = identity.toUpperCase().charCodeAt(0) % palette.length;
+    const index = identity.toUpperCase().codePointAt(0) % palette.length;
 
     return palette[index];
 });

@@ -3,12 +3,14 @@
 /* Footer subscribe feedback */
 .subscribe-form-feedback { margin: 12px 0 0; font-size: 14px; line-height: 1.4; }
 .subscribe-form-feedback_error { color: #ff6b6b; }
-.subscribe-form-feedback_success { color: #7ed957; }
+.subscribe-form-feedback_success { color: #b8f28b; }
 
 /* Header actions: language switcher + login button (desktop static navbar) */
 .rd-navbar-static.rd-navbar-classic .rd-navbar-aside > .site-header-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 .rd-navbar-static.rd-navbar-classic .rd-navbar-aside { flex-wrap: nowrap; gap: 16px; }
 .rd-navbar-static .rd-navbar-content-outer { min-width: 0; }
+.rd-navbar-content__toggle { border: 0; }
+.rd-navbar-link { border: 0; background: transparent; font: inherit; color: inherit; cursor: pointer; }
 
 /* Language switcher control */
 .site-language-control select { width: 72px; height: 36px; padding: 0 8px; border: 1px solid #eaeced; border-radius: 6px; background: #fff; color: #151515; font: 600 13px Arial, sans-serif; cursor: pointer; }

@@ -49,7 +49,7 @@
                                 <p class="subscribe-form-feedback subscribe-form-feedback_error" id="subscribe-form-footer-form-error" role="alert">{{ $message }}</p>
                             @enderror
                             @if(session('subscribe_success'))
-                                <p class="subscribe-form-feedback subscribe-form-feedback_success" role="status">{{ session('subscribe_success') }}</p>
+                                <output class="subscribe-form-feedback subscribe-form-feedback_success">{{ session('subscribe_success') }}</output>
                             @endif
                         @endif
                     @endforeach

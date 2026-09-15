@@ -11,6 +11,8 @@ class LegacyUrlRedirectTest extends TestCase
     use RefreshDatabase;
     use SeedsPublicSite;
 
+    private const ABOUT = '/about';
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -20,13 +22,13 @@ class LegacyUrlRedirectTest extends TestCase
 
     public function test_unprefixed_top_level_page_redirects_to_the_default_locale(): void
     {
-        $this->get('/about')->assertRedirect('/en/about');
+        $this->get(self::ABOUT)->assertRedirect('/en/about');
     }
 
     public function test_unprefixed_page_resolves_after_the_redirect(): void
     {
         $this->followingRedirects()
-            ->get('/about')
+            ->get(self::ABOUT)
             ->assertOk()
             ->assertSee('<html class="wide wow-animation" lang="en">', false);
     }
@@ -34,7 +36,7 @@ class LegacyUrlRedirectTest extends TestCase
     public function test_unprefixed_urls_redirect_to_the_session_locale(): void
     {
         $this->withSession(['locale' => 'pl'])
-            ->get('/about')
+            ->get(self::ABOUT)
             ->assertRedirect('/pl/about');
     }
 
@@ -47,7 +49,7 @@ class LegacyUrlRedirectTest extends TestCase
 
     public function test_head_requests_redirect_like_get(): void
     {
-        $this->head('/about')->assertRedirect('/en/about');
+        $this->head(self::ABOUT)->assertRedirect('/en/about');
     }
 
     public function test_unprefixed_blog_post_url_redirects(): void

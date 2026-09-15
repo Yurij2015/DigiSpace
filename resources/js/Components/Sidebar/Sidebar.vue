@@ -264,8 +264,8 @@ function toggleCollapseShow(classes) {
 <style scoped>
 .legacy-sidebar-heading {
     margin: 0;
-    font-size: 0.68rem !important;
-    line-height: 1rem !important;
+    font-size: 0.68rem;
+    line-height: 1.25rem;
     letter-spacing: 0.06em;
     font-weight: 700;
 }

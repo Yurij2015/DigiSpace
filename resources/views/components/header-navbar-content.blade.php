@@ -1,8 +1,8 @@
 <div class="rd-navbar-content-outer">
-    <div class="rd-navbar-content__toggle rd-navbar-static--hidden"
-         data-rd-navbar-toggle=".rd-navbar-content" role="button" tabindex="0" aria-label="{{ __('site.toggle_contacts') }}">
+    <button type="button" class="rd-navbar-content__toggle rd-navbar-static--hidden"
+         data-rd-navbar-toggle=".rd-navbar-content" aria-label="{{ __('site.toggle_contacts') }}">
         <span></span>
-    </div>
+    </button>
     <div class="rd-navbar-content">
         <ul class="list-bordered list-inline">
             <li>

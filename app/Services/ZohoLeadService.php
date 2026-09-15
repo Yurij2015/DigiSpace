@@ -80,53 +80,58 @@ class ZohoLeadService
         $headerInstance = new HeaderMap;
         $response = $recordOperations->createRecords($bodyWrapper, $headerInstance);
 
-        if ($response !== null) {
-            if ($response->isExpected()) {
-                $actionHandler = $response->getObject();
-                if ($actionHandler instanceof ActionWrapper) {
-                    $actionWrapper = $actionHandler;
-                    $actionResponses = $actionWrapper->getData();
-                    foreach ($actionResponses as $actionResponse) {
-                        if ($actionResponse instanceof SuccessResponse) {
-                            Log::info('Lead added to Zoho CRM, Lead data', $leadData);
-                            $successResponse = $actionResponse;
-                            Log::info(
-                                'Lead added to Zoho CRM',
-                                [
-                                    'Message' => $successResponse->getMessage(
-                                    ) instanceof Choice ? $successResponse->getMessage()->getValue(
-                                    ) : $successResponse->getMessage(),
-                                ]
-                            );
-                        }
-                        if ($actionResponse instanceof APIException) {
-                            $exception = $actionResponse;
-                            Log::error('1Failed to add lead to Zoho CRM, Lead data', $leadData);
-                            Log::error('1Failed to add lead to Zoho CRM', [
-                                'Status' => $exception->getStatus()->getValue(),
-                                'Code' => $exception->getCode()->getValue(),
-                                'Details' => $exception->getDetails(),
-                                'Message' => ($exception->getMessage() instanceof Choice ? $exception->getMessage(
-                                )->getValue() : $exception->getMessage()),
-                            ]);
-                        }
-                    }
-                }
-                if ($actionHandler instanceof APIException) {
-                    $exception = $actionHandler;
-                    Log::error('2Failed to add lead to Zoho CRM, Lead data', $leadData);
-                    Log::error('2Failed to add lead to Zoho CRM', [
-                        'Status' => $exception->getStatus()->getValue(),
-                        'Code' => $exception->getCode()->getValue(),
-                        'Details' => $exception->getDetails(),
-                        'Message' => ($exception->getMessage() instanceof Choice ? $exception->getMessage()->getValue(
-                        ) : $exception->getMessage()),
-                    ]);
-                }
-            } else {
-                Log::info('UnExpected response received from Zoho CRM');
+        $this->handleCreateResponse($response, $leadData);
+    }
+
+    private function handleCreateResponse(mixed $response, array $leadData): void
+    {
+        if ($response === null) {
+            return;
+        }
+
+        if (! $response->isExpected()) {
+            Log::info('UnExpected response received from Zoho CRM');
+
+            return;
+        }
+
+        $handler = $response->getObject();
+        if ($handler instanceof ActionWrapper) {
+            foreach ($handler->getData() as $actionResponse) {
+                $this->logActionResponse($actionResponse, $leadData);
             }
         }
+
+        if ($handler instanceof APIException) {
+            $this->logApiException($handler, '2', $leadData);
+        }
+    }
+
+    private function logActionResponse(mixed $response, array $leadData): void
+    {
+        if ($response instanceof SuccessResponse) {
+            Log::info('Lead added to Zoho CRM, Lead data', $leadData);
+            $message = $response->getMessage();
+            Log::info('Lead added to Zoho CRM', [
+                'Message' => $message instanceof Choice ? $message->getValue() : $message,
+            ]);
+        }
+
+        if ($response instanceof APIException) {
+            $this->logApiException($response, '1', $leadData);
+        }
+    }
+
+    private function logApiException(APIException $exception, string $prefix, array $leadData): void
+    {
+        Log::error($prefix.'Failed to add lead to Zoho CRM, Lead data', $leadData);
+        $message = $exception->getMessage();
+        Log::error($prefix.'Failed to add lead to Zoho CRM', [
+            'Status' => $exception->getStatus()->getValue(),
+            'Code' => $exception->getCode()->getValue(),
+            'Details' => $exception->getDetails(),
+            'Message' => $message instanceof Choice ? $message->getValue() : $message,
+        ]);
     }
 
     /**

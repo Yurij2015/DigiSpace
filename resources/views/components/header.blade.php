@@ -95,7 +95,7 @@
                                     </ul>
                                 </li>
                                 {{-- No href: the theme opens the megamenu on hover/touch; a "#" href would trigger its anchor handler. --}}
-                                <li><a role="button" tabindex="0" aria-haspopup="true">{{ __('site.pages') }}</a>
+                                <li><button type="button" class="rd-navbar-link" aria-haspopup="true">{{ __('site.pages') }}</button>
                                     <!-- RD Navbar Megamenu-->
                                     <ul class="rd-navbar-megamenu">
                                         <li>
