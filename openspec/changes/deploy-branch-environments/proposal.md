@@ -46,7 +46,7 @@ Today one workflow deploys every push to `master` to whatever is in the committe
 
 - `.github/workflows/deploy.yml` (rewritten), new `.github/actions/export-deploy-matrix/action.yml`, new `.github/scripts/after-deploy.sh`, `deployment-config.json` removed from git (kept locally via `.gitignore`), `example.deployment-config.json` updated.
 - `tests/TestCase.php` gains `withoutVite()` so the Breeze/Inertia pages render in CI without a Vite build; `phpunit.xml` unchanged (it already pins `DB_DATABASE=testing`).
-- GitHub repository settings (operator task, not code): environments `testing` and `production`, repository Variables `DEPLOYMENT_MATRIX` + shared defaults, per-environment Variables/Secrets listed above, `SSH_KEY` secret (rename of `SSH_KEY_2` or reuse). Production environment can carry a required-reviewer rule later without workflow changes.
+- GitHub repository settings (operator task, not code): environments `testing` and `production`, repository Variables `DEPLOYMENT_MATRIX` + shared defaults, per-environment Variables/Secrets listed above, `SSH_KEY_2` secret (reused). Production environment can carry a required-reviewer rule later without workflow changes.
 - Servers: no new software. The generated `.env` must reproduce every value currently on each server before the first run (one-time migration of values into GitHub, verified by diffing `.env_prev`).
 - `docs/deployment/README.md`, `CLAUDE.md` deployment paragraph, `docs/local-setup.md` mention of the config file.
 - Not affected: application code, database schema, admin surfaces, the `copilot-setup-steps.yml` workflow.

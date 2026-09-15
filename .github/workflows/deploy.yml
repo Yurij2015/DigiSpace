@@ -150,7 +150,7 @@ jobs:
           host: ${{ matrix.server.ip }}
           port: ${{ matrix.server.port }}
           username: ${{ matrix.server.username }}
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY_2 }}
           source: ${{ github.sha }}.tar.gz,.github/scripts/after-deploy.sh
           target: ${{ matrix.server.path }}/artifacts
           strip_components: 0
@@ -163,7 +163,7 @@ jobs:
           host: ${{ matrix.server.ip }}
           port: ${{ matrix.server.port }}
           username: ${{ matrix.server.username }}
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY_2 }}
           envs: GITHUB_SHA,BASE_PATH
           script: |
             set -euo pipefail
@@ -258,7 +258,7 @@ jobs:
           host: ${{ matrix.server.ip }}
           port: ${{ matrix.server.port }}
           username: ${{ matrix.server.username }}
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY_2 }}
           envs: BASE_PATH,ENV_FILE
           script: |
             set -euo pipefail
@@ -294,7 +294,7 @@ jobs:
           host: ${{ matrix.server.ip }}
           port: ${{ matrix.server.port }}
           username: ${{ matrix.server.username }}
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY_2 }}
           envs: GITHUB_SHA,BASE_PATH,RELEASE_PATH,ACTIVE_RELEASE_PATH,STORAGE_PATH,DEPLOY_BEFORE_HOOKS
           script: |
             set -euo pipefail
@@ -336,7 +336,7 @@ jobs:
           host: ${{ matrix.server.ip }}
           port: ${{ matrix.server.port }}
           username: ${{ matrix.server.username }}
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY_2 }}
           envs: BASE_PATH,RELEASE_PATH,ACTIVE_RELEASE_PATH,STORAGE_PATH
           script: |
             set -euo pipefail
@@ -366,7 +366,7 @@ jobs:
           host: ${{ matrix.server.ip }}
           port: ${{ matrix.server.port }}
           username: ${{ matrix.server.username }}
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY_2 }}
           envs: BASE_PATH,ACTIVE_RELEASE_PATH,PHP_BINARY,DEPLOY_AFTER_HOOKS
           script: |
             set -euo pipefail
@@ -430,7 +430,7 @@ jobs:
           host: ${{ matrix.server.ip }}
           port: ${{ matrix.server.port }}
           username: ${{ matrix.server.username }}
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY_2 }}
           envs: RELEASES_PATH,ARTIFACTS_PATH
           script: |
             set -euo pipefail

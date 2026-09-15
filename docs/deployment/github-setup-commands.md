@@ -82,16 +82,17 @@ gh variable set DEPLOYMENT_MATRIX --repo "$REPO" --body '[
 ]'
 ```
 
-## 3. `SSH_KEY` (Secret)
+## 3. `SSH_KEY_2` (Secret)
 
-Private key whose public half is in `~/.ssh/authorized_keys` of each site user. One repository-level
+Private key whose public half is in `~/.ssh/authorized_keys` of each site user. The name is kept
+from the previous workflow so the existing repository secret keeps working. One repository-level
 secret is enough when both hosts accept the same key; set it per environment to use different keys.
 
 ```bash
-gh secret set SSH_KEY --repo "$REPO" < ~/.ssh/<deploy-key>            # repository-level
+gh secret set SSH_KEY_2 --repo "$REPO" < ~/.ssh/<deploy-key>            # repository-level (already set)
 # or per environment:
-gh secret set SSH_KEY --repo "$REPO" --env testing    < ~/.ssh/<test-deploy-key>
-gh secret set SSH_KEY --repo "$REPO" --env production < ~/.ssh/<prod-deploy-key>
+gh secret set SSH_KEY_2 --repo "$REPO" --env testing    < ~/.ssh/<test-deploy-key>
+gh secret set SSH_KEY_2 --repo "$REPO" --env production < ~/.ssh/<prod-deploy-key>
 ```
 
 ## 4. Repository-level Variables (shared defaults, override per environment when needed)
@@ -183,9 +184,9 @@ gh run watch
 
 ## 10. Retire the legacy secrets
 
-After both environments have deployed successfully, delete the secrets the old workflow used:
+After both environments have deployed successfully, delete the secret the old workflow no longer needs
+(`SSH_KEY_2` stays — it is the deploy key):
 
 ```bash
-gh secret delete SSH_KEY_2   --repo "$REPO"
 gh secret delete LARAVEL_ENV --repo "$REPO"
 ```

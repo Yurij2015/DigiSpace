@@ -48,7 +48,7 @@ See `proposal.md` — Why. Observed state that shapes the approach:
 ## Decisions
 
 ### D1 — Keep the core-api job graph, swap the execution layer for SSH
-Jobs: `create-deployment-artifacts` → `tests` → `prepare-release-on-servers` → `create-env-file` → `run-before-hooks` → `activate-release` → `run-after-hooks` (incl. health check) → `clean-up`, each server job `runs-on: ubuntu-latest`, `environment: ${{ matrix.server.environment }}`, matrix from `fromJson(needs.create-deployment-artifacts.outputs.DEPLOYMENT_MATRIX)`. Every server step is an `appleboy/ssh-action` (or `scp-action`) call with `host/port/username` from the matrix and `key: ${{ secrets.SSH_KEY }}` (Environment secret first, repo secret fallback — GitHub resolves that automatically).
+Jobs: `create-deployment-artifacts` → `tests` → `prepare-release-on-servers` → `create-env-file` → `run-before-hooks` → `activate-release` → `run-after-hooks` (incl. health check) → `clean-up`, each server job `runs-on: ubuntu-latest`, `environment: ${{ matrix.server.environment }}`, matrix from `fromJson(needs.create-deployment-artifacts.outputs.DEPLOYMENT_MATRIX)`. Every server step is an `appleboy/ssh-action` (or `scp-action`) call with `host/port/username` from the matrix and `key: ${{ secrets.SSH_KEY_2 }}` (Environment secret first, repo secret fallback — GitHub resolves that automatically).
 
 - Why not one job with a loop: per-job `environment:` is what scopes Variables/Secrets and enables protection rules; the matrix fan-out is also what core-api operators already read.
 - Pin `appleboy/ssh-action@v1` and `appleboy/scp-action@v1` (currently `@master`, which is unpinned and has broken before).
@@ -70,7 +70,7 @@ Alternative rejected: two workflows (`deploy-test.yml`, `deploy-prod.yml`) — d
 
 | Variables (per environment) | Secrets (per environment) | Repo-level defaults |
 |---|---|---|
-| `APP_NAME`, `APP_ENV`, `APP_URL`, `APP_DEBUG`, `LOG_LEVEL`, `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `MINIO_ENDPOINT`, `AWS_URL`, `MINIO_BUCKET`, `AWS_ACCESS_KEY_ID`, `AWS_DEFAULT_REGION`, `MAIL_MAILER`, `MAIL_HOST`, `MAIL_PORT`, `MAIL_USERNAME`, `MAIL_FROM_ADDRESS`, `RECAPTCHA_SITE_KEY`, `ZOHO_CLIENT_ID`, `FACEBOOK_PIXEL_ID`, `FILAMENT_ADMIN_EMAILS`, `IS_PROMO_TAB_ACTIVE`, `SENTRY_TRACES_SAMPLE_RATE` | `APP_KEY`, `DB_PASSWORD`, `AWS_SECRET_ACCESS_KEY`, `MAIL_PASSWORD`, `RECAPTCHA_SECRET_KEY`, `ZOHO_CLIENT_SECRET`, `ZOHO_GRANT_TOKEN`, `TINY_MCE_API_KEY`, `SENTRY_LARAVEL_DSN`, `SSH_KEY` | `LOG_CHANNEL=stack`, `CACHE_DRIVER=file`, `QUEUE_CONNECTION=sync`, `SESSION_DRIVER=file`, `FILESYSTEM_DISK=local`, `AWS_USE_PATH_STYLE_ENDPOINT=true`, `BROADCAST_DRIVER=log` |
+| `APP_NAME`, `APP_ENV`, `APP_URL`, `APP_DEBUG`, `LOG_LEVEL`, `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `MINIO_ENDPOINT`, `AWS_URL`, `MINIO_BUCKET`, `AWS_ACCESS_KEY_ID`, `AWS_DEFAULT_REGION`, `MAIL_MAILER`, `MAIL_HOST`, `MAIL_PORT`, `MAIL_USERNAME`, `MAIL_FROM_ADDRESS`, `RECAPTCHA_SITE_KEY`, `ZOHO_CLIENT_ID`, `FACEBOOK_PIXEL_ID`, `FILAMENT_ADMIN_EMAILS`, `IS_PROMO_TAB_ACTIVE`, `SENTRY_TRACES_SAMPLE_RATE` | `APP_KEY`, `DB_PASSWORD`, `AWS_SECRET_ACCESS_KEY`, `MAIL_PASSWORD`, `RECAPTCHA_SECRET_KEY`, `ZOHO_CLIENT_SECRET`, `ZOHO_GRANT_TOKEN`, `TINY_MCE_API_KEY`, `SENTRY_LARAVEL_DSN`, `SSH_KEY_2` | `LOG_CHANNEL=stack`, `CACHE_DRIVER=file`, `QUEUE_CONNECTION=sync`, `SESSION_DRIVER=file`, `FILESYSTEM_DISK=local`, `AWS_USE_PATH_STYLE_ENDPOINT=true`, `BROADCAST_DRIVER=log` |
 
 `APP_KEY` and `DB_PASSWORD` are asserted non-empty before writing (spec "Missing APP_KEY"). Secrets pass through `envs:` of the SSH action, never through `script:` interpolation, so they are masked in logs.
 
@@ -105,7 +105,7 @@ Backup before activation → restore after activation is kept verbatim (it is th
 
 ## Migration Plan
 
-1. Operator (once, before merging): create environments, set `DEPLOYMENT_MATRIX` (testing entry from the current JSON with `environment: testing`, `php_binary: /usr/bin/php8.3`; production entry with `enabled: false` until values are ready), set Variables/Secrets per environment from the live server `.env` files, set `SSH_KEY` (same key as `SSH_KEY_2`).
+1. Operator (once, before merging): create environments, set `DEPLOYMENT_MATRIX` (testing entry from the current JSON with `environment: testing`, `php_binary: /usr/bin/php8.3`; production entry with `enabled: false` until values are ready), set Variables/Secrets per environment from the live server `.env` files, set `SSH_KEY_2` (same key as `SSH_KEY_2`).
 2. Merge to `dev` → run deploys testing. Verify: `diff <base>/.env_prev <base>/.env` on the test server shows only intended changes; health check green; `/control/login` 200; Livewire assets 200.
 3. Enable the production entry, run `workflow_dispatch environment=production` from `master` (or merge `dev` → `master`). Same verification on production.
 4. Rollback of the workflow itself: revert the commit — the old workflow still needs `deployment-config.json`, which is kept locally (ignored) and can be re-added temporarily. Rollback of a release: unchanged manual procedure (`current` → previous release, `.env_prev` → `.env` if config changed).

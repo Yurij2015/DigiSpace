@@ -37,7 +37,7 @@ workflow.
   `name`, `ip`, `port`, `username`, `path`, `environment`, `enabled`, `php_binary`
   (CloudPanel: `/usr/bin/php8.3`). Disabled entries are skipped; an empty filtered matrix fails the
   run before anything is uploaded.
-- **`SSH_KEY`** (Secret, repository-level or per environment) — private key for `username@ip:port`.
+- **`SSH_KEY_2`** (Secret, repository-level or per environment) — private key for `username@ip:port`.
 - **Environment Variables** — every non-secret `.env` key (`APP_URL`, `DB_HOST`, `MINIO_*`,
   `RECAPTCHA_SITE_KEY`, `FILAMENT_ADMIN_EMAILS`, `IS_PROMO_TAB_ACTIVE`, …) with defaults in
   [`compose-env.sh`](../../.github/scripts/compose-env.sh).

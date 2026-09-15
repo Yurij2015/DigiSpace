@@ -40,12 +40,12 @@ Workflow YAML is validated locally with `actionlint` (`brew install actionlint`)
 ## 4. Documentation
 
 - [x] 4.1 Rewrite `docs/deployment/README.md`: triggers and branch mapping, GitHub configuration model, job sequence, persistence, health gate, rollback, first-run verification (`diff .env_prev .env`), keep the Proxmox/fail2ban troubleshooting section; verify links resolve and no real address/user/path appears (`grep -nE "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|/home/" docs/deployment/README.md` shows only placeholders).
-- [x] 4.2 Create `docs/deployment/github-setup-commands.md` with the `gh` commands: create environments, repo-level defaults, `DEPLOYMENT_MATRIX` template, per-environment Variables and Secrets for the key table in design D5, `SSH_KEY`; verify every key used by `deploy.yml` (`grep -oE "(vars|secrets)\.[A-Z_]+" .github/workflows/deploy.yml | sort -u`) appears in the runbook.
+- [x] 4.2 Create `docs/deployment/github-setup-commands.md` with the `gh` commands: create environments, repo-level defaults, `DEPLOYMENT_MATRIX` template, per-environment Variables and Secrets for the key table in design D5, `SSH_KEY_2`; verify every key used by `deploy.yml` (`grep -oE "(vars|secrets)\.[A-Z_]+" .github/workflows/deploy.yml | sort -u`) appears in the runbook.
 - [x] 4.3 Update `CLAUDE.md` (Deployment paragraph) and `docs/local-setup.md` / `docs/README.md` mentions of `deployment-config.json`; verify `grep -rn "deployment-config.json" CLAUDE.md docs` only points at the example file.
 
 ## 5. Rollout (operator steps, recorded here so the change is complete)
 
-- [ ] 5.1 In GitHub: create `testing` and `production` environments, set `DEPLOYMENT_MATRIX` (testing enabled, production `enabled:false`), set Variables/Secrets for `testing` from the live server `.env`, set `SSH_KEY`; verify `gh variable list --env testing` and `gh secret list --env testing` show every key from the runbook.
+- [ ] 5.1 In GitHub: create `testing` and `production` environments, set `DEPLOYMENT_MATRIX` (testing enabled, production `enabled:false`), set Variables/Secrets for `testing` from the live server `.env`, set `SSH_KEY_2`; verify `gh variable list --env testing` and `gh secret list --env testing` show every key from the runbook.
 - [ ] 5.2 Push the change to `dev`; verify the run: tests green, testing server deployed, `diff <base>/.env_prev <base>/.env` shows only intended differences, health check green, `/control/login` and `/vendor/livewire/*` return 200, an uploaded service image still loads.
 - [ ] 5.3 Set production Variables/Secrets, set the production matrix entry `enabled:true`, run `workflow_dispatch environment=production` from `master` (or merge `dev → master`); verify the same checklist on production and that a `dev` push afterwards does not touch production.
-- [ ] 5.4 Remove `SSH_KEY_2` and `LARAVEL_ENV` secrets from GitHub once both environments have deployed successfully; verify the next `dev` run is still green.
+- [ ] 5.4 Remove the `LARAVEL_ENV` secret from GitHub once both environments have deployed successfully; verify the next `dev` run is still green.
