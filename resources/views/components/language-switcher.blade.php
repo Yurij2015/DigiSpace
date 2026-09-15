@@ -25,24 +25,46 @@
 @endphp
 
 @if ($localeLinks->isNotEmpty())
-    <div class="site-language-control">
-        <select aria-label="{{ __('site.language') }}" onchange="window.location.assign(this.value)">
-            @foreach ($localeLinks as $locale => $url)
-                <option value="{{ $url }}" lang="{{ $locale }}" title="{{ config('locales.labels.'.$locale, $locale) }}" @selected($locale === $currentLocale)>
-                    {{ config('locales.short_labels.'.$locale, strtoupper($locale)) }}
-                </option>
-            @endforeach
-        </select>
-        <noscript>
-            <ul class="site-language-control__links" aria-label="{{ __('site.language') }}">
+    @php
+        $currentLabel = config('locales.labels.'.$currentLocale, $currentLocale);
+        $currentCode = config('locales.short_labels.'.$currentLocale, strtoupper($currentLocale));
+    @endphp
+    {{-- <details>/<summary>: works without JS, options are real links (no on-input context change, crawlable). --}}
+    <div {{ $attributes->class(['site-language-control']) }}>
+        <details class="site-language-control__menu">
+            <summary class="site-language-control__toggle" aria-label="{{ __('site.language') }}: {{ $currentLabel }}">
+                <svg class="site-language-control__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                <span class="site-language-control__current" lang="{{ $currentLocale }}">{{ $currentLabel }}</span>
+                <span class="site-language-control__code" aria-hidden="true">{{ $currentCode }}</span>
+                <svg class="site-language-control__caret" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            </summary>
+            <ul class="site-language-control__list">
                 @foreach ($localeLinks as $locale => $url)
                     <li>
-                        <a href="{{ $url }}" hreflang="{{ $locale }}" lang="{{ $locale }}" @if($locale === $currentLocale) aria-current="true" @endif>
-                            {{ config('locales.short_labels.'.$locale, strtoupper($locale)) }}
-                        </a>
+                        <a href="{{ $url }}" hreflang="{{ $locale }}" lang="{{ $locale }}"{!! $locale === $currentLocale ? ' aria-current="true"' : '' !!}>{{ config('locales.labels.'.$locale, $locale) }}</a>
                     </li>
                 @endforeach
             </ul>
-        </noscript>
+        </details>
     </div>
+    @once
+        {{-- Inline (not @push('head')): components render after the layout's <head> stack has been printed. --}}
+            <script>
+                // Close an open language menu on outside click / Escape (the <details> itself needs no JS to work).
+                document.addEventListener('click', function (event) {
+                    document.querySelectorAll('.site-language-control__menu[open]').forEach(function (menu) {
+                        if (!menu.contains(event.target)) { menu.removeAttribute('open'); }
+                    });
+                });
+                document.addEventListener('keydown', function (event) {
+                    if (event.key !== 'Escape') { return; }
+                    document.querySelectorAll('.site-language-control__menu[open]').forEach(function (menu) {
+                        menu.removeAttribute('open');
+                        menu.querySelector('summary').focus();
+                    });
+                });
+            </script>
+    @endonce
 @endif

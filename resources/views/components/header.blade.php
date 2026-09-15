@@ -27,6 +27,8 @@
                                 </div>
                             </a>
                         </div>
+                        {{-- Mobile (rd-navbar-fixed) switcher lives in the fixed top bar; hidden on the static layout. --}}
+                        <x-language-switcher class="site-language-control--mobile"/>
                     </div>
                     <div class="rd-navbar-body">
                         <!-- RD Navbar Top -->
@@ -36,6 +38,8 @@
                         <!-- RD Navbar Nav Wrap-->
                         <div class="rd-navbar-nav-wrap">
                             <div class="rd-navbar-element">
+                                {{-- Desktop switcher sits in the main nav row so it survives the stuck (scrolled) state. --}}
+                                <x-language-switcher class="site-language-control--desktop"/>
                                 <!-- RD Navbar Search-->
                                 <div class="rd-navbar-search rd-navbar-search-toggled">
                                     <button class="rd-navbar-search-toggle"
@@ -94,8 +98,10 @@
                                         @endforeach
                                     </ul>
                                 </li>
-                                {{-- No href: the theme opens the megamenu on hover/touch; a "#" href would trigger its anchor handler. --}}
-                                <li><button type="button" class="rd-navbar-link" aria-haspopup="true">{{ __('site.pages') }}</button>
+                                {{-- Must stay an <a>: the theme binds megamenu hover/touch to "li > a" and styles only anchors.
+                                     No href (a "#" would hit its anchor handler); the class keeps bootstrap's href-less-anchor
+                                     grey from applying, and script.js's page-transition now ignores anchors without href. --}}
+                                <li><a class="rd-navbar-nav__label" role="button" tabindex="0" aria-haspopup="true">{{ __('site.pages') }}</a>
                                     <!-- RD Navbar Megamenu-->
                                     <ul class="rd-navbar-megamenu">
                                         <li>
