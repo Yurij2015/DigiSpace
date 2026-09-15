@@ -35,19 +35,25 @@ class ZohoLeadService
     {
         $logger = (new LogBuilder)
             ->level(Levels::INFO)
-            ->filePath('../php_sdk_log.log')
+            ->filePath(storage_path('logs/zoho_php_sdk_log.log'))
             ->build();
 
         $environment = USDataCenter::PRODUCTION();
 
-        $token = (new OAuthBuilder)
+        $tokenBuilder = (new OAuthBuilder)
             ->clientID(config('services.zoho.client_id'))
             ->clientSecret(config('services.zoho.client_secret'))
-            ->grantToken(config('services.zoho.grant_token'))
-            ->findUser(false)
-            ->build();
+            ->findUser(false);
 
-        $tokenStore = new FileStore('../zohoStore.txt');
+        if (config('services.zoho.refresh_token')) {
+            $tokenBuilder->refreshToken(config('services.zoho.refresh_token'));
+        } elseif (config('services.zoho.grant_token')) {
+            $tokenBuilder->grantToken(config('services.zoho.grant_token'));
+        }
+
+        $token = $tokenBuilder->build();
+
+        $tokenStore = new FileStore(storage_path('zohoStore.txt'));
 
         (new InitializeBuilder)
             ->environment($environment)
