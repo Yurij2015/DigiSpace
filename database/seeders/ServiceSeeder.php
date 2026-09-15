@@ -2,46 +2,12 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use Database\Seeders\Support\JsonTableSeeder;
 
-class ServiceSeeder extends Seeder
+/**
+ * Rows and their en/uk/pl values live in database/seeders/data/services.json.
+ */
+class ServiceSeeder extends JsonTableSeeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
-    {
-        $services = [
-            [
-                'title' => 'Concept development',
-                'details' => null,
-                'price' => null,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'UI design',
-                'details' => null,
-                'price' => null,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'Configuration management',
-                'details' => null,
-                'price' => null,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'Software quality assurance',
-                'details' => null,
-                'price' => null,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-        ];
-        DB::table('services')->insert($services);
-    }
+    protected string $table = 'services';
 }

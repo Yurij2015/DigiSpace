@@ -2,39 +2,12 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use Database\Seeders\Support\JsonTableSeeder;
 
-class ProductSeeder extends Seeder
+/**
+ * Rows and their en/uk/pl values live in database/seeders/data/products.json.
+ */
+class ProductSeeder extends JsonTableSeeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
-    {
-        $products = [
-            [
-                'title' => 'Landing page',
-                'price_value' => '999.99',
-                'details' => 'starting at',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'Website with CMS',
-                'price_value' => '1499.99',
-                'details' => 'starting at',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'title' => 'Custom development',
-                'price_value' => '1999.99',
-                'details' => 'starting at',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-        ];
-        DB::table('products')->insert($products);
-    }
+    protected string $table = 'products';
 }
