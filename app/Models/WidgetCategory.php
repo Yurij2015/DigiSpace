@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasLocalizedContent;
+use App\Models\Concerns\HasTranslatableColumns;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -33,10 +36,41 @@ use Illuminate\Support\Carbon;
  *
  * @mixin Eloquent
  */
-class WidgetCategory extends Model
+class WidgetCategory extends Model implements HasTranslatableColumns
 {
+    use HasLocalizedContent;
+
+    protected $fillable = ['translations'];
+
+    /**
+     * Base-language columns that also live under translations.{locale}.
+     *
+     * @var list<string>
+     */
+    public const TRANSLATABLE = ['name', 'title', 'description'];
+
+    public static function translatableColumns(): array
+    {
+        return self::TRANSLATABLE;
+    }
+
     public function post(): HasMany
     {
         return $this->hasMany(Widget::class);
+    }
+
+    protected function name(): Attribute
+    {
+        return $this->localizedAttribute('name');
+    }
+
+    protected function title(): Attribute
+    {
+        return $this->localizedAttribute('title');
+    }
+
+    protected function description(): Attribute
+    {
+        return $this->localizedAttribute('description');
     }
 }
