@@ -53,6 +53,12 @@ A page's blocks are the widgets attached via `page_widget`; controllers load the
 - `footer_useful_links` — `name`, `url`, `status`, `position`; split into two columns by `FOOTER_USEFUL_LINKS_COL_LEFT/RIGHT`, max 20 active (`/admin/useful-link-list`).
 - `settings` — key/value, currently barely used (counts still live in `config/constants.php`).
 
+### Translations
+
+Every CMS entity that renders on the public site carries a nullable `translations` JSON column shaped `{"uk": {field: value}, "pl": {...}}` next to the base (English) columns: `posts`, `pages`, `categories`, `services`, `service_categories`, `products` **and** the structure — `menus.title`, `menu_items.name`, `widgets.title/subtitle/content`, `widget_categories.name/title/description`, `footer_useful_links.name`, `header_nav_bar_contents.*_col_name/first_col_href_content`, `footer_bottom_bar_contents.privacy_policy_title/faq/support`. Models use `HasLocalizedContent`: reading `$widget->title` resolves *request locale → en → base column*, so Blade needs no changes. `App\Support\Translations` prunes empty values on write (a blank `<p></p>` from the editor is not a translation). Each model lists its translatable base columns in `TRANSLATABLE` (`HasTranslatableColumns`) so the control panel fills edit forms from raw values.
+
+**Slot keys.** Templates that pick a widget for a layout slot must not compare the (now localized) title. The footer uses `Widget::slot` = `element_id` (`footer-phone`, `footer-subscribe`, `footer-about`, `footer-latest-news`, `footer-useful-links`), falling back to the base-language title for rows without a key. `StructureTranslationsSeeder` backfills these keys.
+
 ## Magic IDs (`config/constants.php`)
 
 The category/menu constants are expected primary keys; column and pagination constants are not database IDs. The seeders assume insertion order, but the image-category migration runs before seeding and shifts fresh-install IDs. The table describes the intended mapping, not a guarantee about a newly seeded database:

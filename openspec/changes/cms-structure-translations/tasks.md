@@ -29,9 +29,9 @@ Depends on `filament-content-editing` helpers (`FillsRawTranslatableFields`, `Co
 
 ## 3. Translations for populated databases
 
-- [ ] 3.1 Create `database/seeders/StructureTranslationsSeeder.php` (design D4: identity matching per table, existing translations win, `element_id` backfill for footer widgets, summary output); verify `php artisan db:seed --class=StructureTranslationsSeeder` on the local DB prints a summary and a second run reports zero updates.
-- [ ] 3.2 Write `tests/Feature/StructureTranslationsSeederTest.php` (missing translations filled, editor-made `uk` title preserved, unknown rows untouched and reported, base columns unchanged, idempotent); verify it passes.
-- [ ] 3.3 Document the seeder and the slot keys in `docs/content-model.md`, seeding in `docs/local-setup.md`, and the one-off `DEPLOY_AFTER_HOOKS` invocation in `docs/deployment/README.md`; verify links and that no server paths appear.
+- [x] 3.1 Create `database/seeders/StructureTranslationsSeeder.php` (design D4: identity matching per table, existing translations win, `element_id` backfill for footer widgets, summary output); verify `php artisan db:seed --class=StructureTranslationsSeeder` on the local DB prints a summary and a second run reports zero updates.
+- [x] 3.2 Write `tests/Feature/StructureTranslationsSeederTest.php` (missing translations filled, editor-made `uk` title preserved, unknown rows untouched and reported, base columns unchanged, idempotent); verify it passes.
+- [x] 3.3 Document the seeder and the slot keys in `docs/content-model.md`, seeding in `docs/local-setup.md`, and the one-off `DEPLOY_AFTER_HOOKS` invocation in `docs/deployment/README.md`; verify links and that no server paths appear.
 
 ## 4. Public rendering tests
 

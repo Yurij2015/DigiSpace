@@ -69,16 +69,24 @@ If the admin renders without styles or with "Unable to locate file in Vite manif
 
 ## 4. Seed data and logging in
 
-`DatabaseSeeder` seeds, in order: widget categories → widgets → widget icons → users → pages → page_widget → menus → menu items → products → services → product_service → categories → posts. This is historical seed data, not a verified complete fresh-install fixture. The migration `2023_06_11_214433_add_row_to_widget_categories_table.php` inserts the image category before seeders run. On an empty database it takes ID 1; `WidgetCategorySeeder` then inserts 15 categories without explicit IDs, shifting them to 2–16 while widget foreign keys/constants expect 1–15. Header/footer content seeders exist but are not called by `DatabaseSeeder`. `UserSeeder` deletes existing users; do not rerun the full seed on a populated database.
+Seed rows live in **`database/seeders/data/*.json`** — one file per table, each row with an `i18n` block holding `en`, `uk` and `pl` values side by side (edit the JSON to change wording or translations; `tests/Unit/SeedDataTest.php` fails if a locale is missing). The seeder classes (`WidgetSeeder`, `MenuItemSeeder`, …) are thin `JsonTableSeeder`s that insert those rows **with their recorded IDs**, so `config/constants.php` and the pivot seeders (`page_widget`, `product_service`, `widget_icons`) stay consistent. They are for empty tables only.
 
-For a clean local database, run the guarded fixture instead:
+`DatabaseSeeder` calls: widget categories → widgets → widget icons → users → pages → page_widget → menus → menu items → products → services → product_service → categories → posts. Header/footer chrome seeders are only called by `LocalDevelopmentSeeder`. `UserSeeder` deletes existing users; never rerun a full seed on a populated database.
+
+For a clean local database run the guarded fixture:
 
 ```bash
 vendor/bin/sail artisan migrate
 vendor/bin/sail artisan db:seed --class=LocalDevelopmentSeeder
 ```
 
-`LocalDevelopmentSeeder` runs only when `APP_ENV=local`, refuses populated tables or non-fresh ID sequences, relocates the migration-created image category to ID 16, seeds widget categories with fixed IDs, adds the omitted site-chrome fixtures, publishes all posts, and prints a generated local password for the seeded admin. It is intentionally not called by `DatabaseSeeder` and must never be used against an existing database.
+`LocalDevelopmentSeeder` runs only when `APP_ENV=local`, refuses populated tables or non-fresh ID sequences, relocates the migration-created image category (`2023_06_11_214433`) to `PAGES_IMAGES` (16), seeds widget categories 1–15, adds the site-chrome fixtures, publishes all posts and prints a generated local password for the seeded admin. After it, `/uk` and `/pl` render fully translated menus, headings and footer.
+
+**Adding translations to an existing database** (local dev DB, testing, production) — additive and repeatable, base columns untouched, editor-made translations preserved:
+
+```bash
+vendor/bin/sail artisan db:seed --class=StructureTranslationsSeeder
+```
 
 Admin users come from `database/seeders/UserSeeder.php` (emails `admin*@globaldigispace.com`; passwords are set in the seeder). Registration is disabled in `routes/auth.php`. Routes `/admin` and `/admin/profile` declare `verified`, but `User` does not implement `MustVerifyEmail`, so that middleware does not enforce verification for the current model. Sail does not start the Mailhog service named in `.env.example`; use `MAIL_MAILER=log` locally for password-reset mail.
 
