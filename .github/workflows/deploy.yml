@@ -262,11 +262,15 @@ jobs:
           envs: BASE_PATH,ENV_FILE
           script: |
             set -euo pipefail
-            if [ -f "${BASE_PATH}/.env" ]; then
-              cp -a "${BASE_PATH}/.env" "${BASE_PATH}/.env_prev"
-            fi
             umask 077
-            printf '%s\n' "$ENV_FILE" > "${BASE_PATH}/.env"
+            # Files left by earlier deploys may belong to another user: replace directory
+            # entries (rm/mv) instead of writing into or preserving attributes of the old files.
+            if [ -f "${BASE_PATH}/.env" ]; then
+              rm -f "${BASE_PATH}/.env_prev"
+              cp "${BASE_PATH}/.env" "${BASE_PATH}/.env_prev"
+            fi
+            printf '%s\n' "$ENV_FILE" > "${BASE_PATH}/.env.next"
+            mv -f "${BASE_PATH}/.env.next" "${BASE_PATH}/.env"
             echo ".env written ($(wc -l < "${BASE_PATH}/.env") lines); previous copy in .env_prev"
 
   run-before-hooks:
