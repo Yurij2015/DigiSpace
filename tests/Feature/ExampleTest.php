@@ -37,10 +37,11 @@ class ExampleTest extends TestCase
             ->assertSee('<html class="wide wow-animation" lang="uk">', false)
             ->assertSee('hreflang="en"', false)
             ->assertSee('href="http://localhost:8100/en"', false)
-            ->assertSee('<div class="site-language-control">', false)
-            ->assertSee('aria-label="Мова"', false)
-            ->assertSee('value="http://localhost:8100/en"', false)
-            ->assertSee('value="http://localhost:8100/pl"', false);
+            ->assertSee('class="site-language-control site-language-control--desktop"', false)
+            ->assertSee('aria-label="Мова: Українська"', false)
+            ->assertSee('href="http://localhost:8100/en" hreflang="en" lang="en">English</a>', false)
+            ->assertSee('href="http://localhost:8100/pl" hreflang="pl" lang="pl">Polski</a>', false)
+            ->assertSee('href="http://localhost:8100/uk" hreflang="uk" lang="uk" aria-current="true">Українська</a>', false);
     }
 
     public function test_locale_switch_persists_for_admin_and_public_requests(): void

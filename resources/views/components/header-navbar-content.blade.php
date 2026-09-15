@@ -49,7 +49,6 @@
     </div>
 </div>
 <div class="site-header-actions">
-    <x-language-switcher />
     @if($headerNavBarContent->login_button_status)
         <x-login-button/>
     @endif

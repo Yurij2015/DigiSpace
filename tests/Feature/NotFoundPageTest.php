@@ -26,7 +26,7 @@ class NotFoundPageTest extends TestCase
             ->assertSee('Sorry, but the page was not found')
             ->assertSee('class="rd-navbar-brand"', false)
             ->assertSee('class="section footer-classic', false)
-            ->assertSee('class="site-language-control"', false)
+            ->assertSee('class="site-language-control site-language-control--desktop"', false)
             ->assertDontSee('DigiSpace | About');
     }
 

@@ -51,9 +51,11 @@ class PublicAccessibilityTest extends TestCase
 
     public function test_language_selector_is_labelled_in_the_resolved_locale(): void
     {
-        $this->get('/uk')->assertOk()->assertSee('<select aria-label="Мова"', false);
-        $this->get('/pl')->assertOk()->assertSee('<select aria-label="Język"', false);
-        $this->get('/en')->assertOk()->assertSee('<select aria-label="Language"', false);
+        $this->get('/uk')->assertOk()
+            ->assertSee('<summary class="site-language-control__toggle" aria-label="Мова: Українська">', false)
+            ->assertSee('>Українська</a>', false)->assertSee('>Polski</a>', false)->assertSee('>English</a>', false);
+        $this->get('/pl')->assertOk()->assertSee('aria-label="Język: Polski"', false);
+        $this->get('/en')->assertOk()->assertSee('aria-label="Language: English"', false);
     }
 
     public function test_navigation_has_no_stray_text_when_service_categories_exist(): void

@@ -50,23 +50,4 @@ class ContactController extends Controller
 
         return back()->with('success', __('site.contact_success'));
     }
-
-    /**
-     * @throws SDKException
-     */
-    private function getLeadsData()
-    {
-        self::zohoInitializer();
-
-        $leads = new RecordOperations('leads');
-        $paramInstance = new ParameterMap;
-        $fieldNames = 'Lead_Name,First_Name,Last_Name,Email,Phone,Description';
-
-        /** @var object $fieldNames */
-        $paramInstance->add(GetRecordsParam::fields(), $fieldNames);
-
-        $response = $leads->getRecords($paramInstance);
-
-        return $response->getObject()->getData();
-    }
 }

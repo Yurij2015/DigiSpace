@@ -4,7 +4,6 @@ namespace App\Support;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 
 final class Locales
 {
@@ -66,17 +65,21 @@ final class Locales
         $locale ??= app()->getLocale();
         [$pathOnly, $query] = array_pad(explode('?', $path, 2), 2, null);
         $candidate = '/'.$locale.'/'.ltrim($pathOnly, '/');
+        $request = Request::create($candidate, 'GET');
+        $localizedRouteNames = config('locales.route_names', []);
 
-        try {
-            $route = Route::getRoutes()->match(Request::create($candidate, 'GET'));
-        } catch (HttpExceptionInterface) {
-            return null;
+        // Route::matches() only tests; RouteCollection::match() would also bind() the
+        // matched route to this synthetic request and clobber the current route's parameters.
+        foreach (Route::getRoutes()->get('GET') as $route) {
+            if ($route->isFallback || ! $route->matches($request)) {
+                continue;
+            }
+
+            return in_array($route->getName(), $localizedRouteNames, true)
+                ? rtrim($candidate, '/').($query !== null ? '?'.$query : '')
+                : null;
         }
 
-        if ($route->isFallback || ! in_array($route->getName(), config('locales.route_names', []), true)) {
-            return null;
-        }
-
-        return rtrim($candidate, '/').($query !== null ? '?'.$query : '');
+        return null;
     }
 }

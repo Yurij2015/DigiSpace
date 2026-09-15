@@ -3,6 +3,8 @@
 namespace Tests\Unit;
 
 use App\Support\Locales;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use Tests\TestCase;
 
 class LocalesTest extends TestCase
@@ -42,5 +44,16 @@ class LocalesTest extends TestCase
         self::assertSame('/login', Locales::localizeUrl('/login'));
         self::assertSame('/admin', Locales::localizeUrl('/admin'));
         self::assertSame('/no-such-page', Locales::localizeUrl('/no-such-page'));
+    }
+
+    public function test_localized_path_does_not_rebind_the_currently_matched_route(): void
+    {
+        $current = Route::getRoutes()->match(Request::create('/uk/pages/about', 'GET'));
+        self::assertSame('about', $current->parameter('slug'));
+
+        self::assertSame('/uk/pages/faq', Locales::localizedPath('/pages/faq', 'uk'));
+
+        self::assertSame('about', $current->parameter('slug'));
+        self::assertSame('uk', $current->parameter('locale'));
     }
 }
