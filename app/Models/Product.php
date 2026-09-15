@@ -37,13 +37,21 @@ class Product extends Model
 {
     use HasLocalizedContent;
 
+    /**
+     * Base-language columns that also live under translations.{locale}; read by the
+     * control-panel edit pages so forms are filled from raw values (see FillsRawTranslatableFields).
+     *
+     * @var list<string>
+     */
+    public const TRANSLATABLE = ['title', 'details', 'product_name', 'description'];
+
     protected $fillable = [
         'title', 'details', 'price_value', 'product_code', 'product_name', 'description', 'is_active', 'position', 'is_prefered', 'translations',
     ];
 
     protected function casts(): array
     {
-        return ['translations' => 'array'];
+        return [];
     }
 
     protected function title(): Attribute

@@ -52,13 +52,21 @@ class Post extends Model
 {
     use HasLocalizedContent;
 
+    /**
+     * Base-language columns that also live under translations.{locale}; read by the
+     * control-panel edit pages so forms are filled from raw values (see FillsRawTranslatableFields).
+     *
+     * @var list<string>
+     */
+    public const TRANSLATABLE = ['name', 'content', 'description', 'keywords'];
+
     protected $fillable = [
-        'name', 'slug', 'content', 'status', 'description', 'category_id', 'user_id', 'img_path', 'translations',
+        'name', 'slug', 'content', 'status', 'description', 'keywords', 'category_id', 'user_id', 'img_path', 'translations',
     ];
 
     protected function casts(): array
     {
-        return ['translations' => 'array'];
+        return [];
     }
 
     protected function name(): Attribute

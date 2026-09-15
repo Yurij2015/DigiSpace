@@ -43,13 +43,21 @@ class Category extends Model
 {
     use HasLocalizedContent;
 
+    /**
+     * Base-language columns that also live under translations.{locale}; read by the
+     * control-panel edit pages so forms are filled from raw values (see FillsRawTranslatableFields).
+     *
+     * @var list<string>
+     */
+    public const array TRANSLATABLE = ['name', 'description'];
+
     protected $fillable = [
         'name', 'description', 'slug', 'user_id', 'translations',
     ];
 
     protected function casts(): array
     {
-        return ['translations' => 'array'];
+        return [];
     }
 
     protected function name(): Attribute
