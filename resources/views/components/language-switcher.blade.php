@@ -49,22 +49,4 @@
             </ul>
         </details>
     </div>
-    @once
-        {{-- Inline (not @push('head')): components render after the layout's <head> stack has been printed. --}}
-            <script>
-                // Close an open language menu on outside click / Escape (the <details> itself needs no JS to work).
-                document.addEventListener('click', function (event) {
-                    document.querySelectorAll('.site-language-control__menu[open]').forEach(function (menu) {
-                        if (!menu.contains(event.target)) { menu.removeAttribute('open'); }
-                    });
-                });
-                document.addEventListener('keydown', function (event) {
-                    if (event.key !== 'Escape') { return; }
-                    document.querySelectorAll('.site-language-control__menu[open]').forEach(function (menu) {
-                        menu.removeAttribute('open');
-                        menu.querySelector('summary').focus();
-                    });
-                });
-            </script>
-    @endonce
 @endif

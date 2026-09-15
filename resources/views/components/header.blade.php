@@ -98,10 +98,10 @@
                                         @endforeach
                                     </ul>
                                 </li>
-                                {{-- Must stay an <a>: the theme binds megamenu hover/touch to "li > a" and styles only anchors.
-                                     No href (a "#" would hit its anchor handler); the class keeps bootstrap's href-less-anchor
-                                     grey from applying, and script.js's page-transition now ignores anchors without href. --}}
-                                <li><a class="rd-navbar-nav__label" role="button" tabindex="0" aria-haspopup="true">{{ __('site.pages') }}</a>
+                                {{-- Kept as an anchor element (not a button): the theme binds megamenu hover/touch to
+                                     "li > a" and styles only anchors. No href, since "#" would trigger its anchor handler;
+                                     the class stops bootstrap greying href-less anchors, and js/site.js adds keyboard toggling. --}}
+                                <li><a class="rd-navbar-nav__label" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">{{ __('site.pages') }}</a>
                                     <!-- RD Navbar Megamenu-->
                                     <ul class="rd-navbar-megamenu">
                                         <li>

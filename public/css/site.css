@@ -27,8 +27,8 @@
 .site-language-control__code { display: none; }
 .site-language-control__list { position: absolute; top: calc(100% + 6px); right: 0; z-index: 1003; min-width: 160px; margin: 0; padding: 6px 0; list-style: none; background: #fff; border: 1px solid #eaeced; border-radius: 6px; box-shadow: 0 8px 24px rgba(0, 0, 0, .12); }
 .site-language-control__list a { display: block; padding: 8px 14px; font: 500 14px/1.3 Arial, sans-serif; color: #151515; text-decoration: none; white-space: nowrap; }
-.site-language-control__list a:hover, .site-language-control__list a:focus-visible { background: #f2f9ff; color: #00a9ff; outline: none; }
-.site-language-control__list a[aria-current="true"] { font-weight: 700; color: #00a9ff; }
+.site-language-control__list a:hover, .site-language-control__list a:focus-visible { background: #f2f9ff; color: #006ea8; outline: none; }
+.site-language-control__list a[aria-current="true"] { font-weight: 700; color: #006ea8; }
 .site-language-control__list a[aria-current="true"]::after { content: " \2713"; }
 
 /* Header (mobile, fixed navbar): switcher in the fixed top bar between the logo and the contacts toggle */

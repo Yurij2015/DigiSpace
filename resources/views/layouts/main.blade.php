@@ -132,5 +132,6 @@
 <script src="{{ asset('js/new-relic.js') }}"></script>
 <script src="{{ asset('js/core.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
+<script src="{{ asset('js/site.js') }}"></script>
 </body>
 </html>
