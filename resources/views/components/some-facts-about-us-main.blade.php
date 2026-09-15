@@ -2,12 +2,10 @@
     class="row row-50 flex-md-row-reverse justify-content-md-between align-items-center align-items-lg-start">
     <div class="col-md-5 wow fadeInRightSmall">
         <div class="box-width-3 box-centered">
-            <h2>Some Facts About Us</h2>
-            <p class="text-style-1">Facts say more than words! Get relevant info about us in facts and numbers!</p><a
+            <h2>{{ __('site.facts_title') }}</h2>
+            <p class="text-style-1">{{ __('site.facts_text') }}</p><a
                 class="button button-lg btn-primary button-ujarak"
-                href="{{ route('pages.page', 'meet-digispace-the-company-which-opens-a-new-era-in-the-web-development-industry') }}">
-                Read More
-            </a>
+                href="{{ route('pages.page', 'meet-digispace-the-company-which-opens-a-new-era-in-the-web-development-industry') }}">{{ __('site.read_more') }}</a>
         </div>
     </div>
     <div class="col-md-7 col-lg-6 wow fadeInLeftSmall">
@@ -22,7 +20,7 @@
                             <div class="counter">50</div>
                             <div class="counter-postfix">+</div>
                         </div>
-                        <p class="box-counter__title">Customers</p>
+                        <p class="box-counter__title">{{ __('site.facts_customers') }}</p>
                     </article>
                 </div>
             </div>
@@ -36,7 +34,7 @@
                             <div class="counter">99</div>
                             <div class="counter-postfix">+</div>
                         </div>
-                        <p class="box-counter__title">Projects</p>
+                        <p class="box-counter__title">{{ __('site.facts_projects') }}</p>
                     </article>
                 </div>
             </div>
@@ -49,7 +47,7 @@
                             <div class="counter">25</div>
                             <div class="counter-postfix">+</div>
                         </div>
-                        <p class="box-counter__title">Technologies</p>
+                        <p class="box-counter__title">{{ __('site.facts_technologies') }}</p>
                     </article>
                 </div>
             </div>
@@ -63,7 +61,7 @@
                             <div class="small">k</div>
                             <div class="counter-postfix">+</div>
                         </div>
-                        <p class="box-counter__title">Code rows</p>
+                        <p class="box-counter__title">{{ __('site.facts_code_rows') }}</p>
                     </article>
                 </div>
             </div>

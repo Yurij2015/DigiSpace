@@ -1,0 +1,37 @@
+{
+  "table": "footer_bottom_bar_contents",
+  "identity": [
+    "singleton"
+  ],
+  "translatable": [
+    "privacy_policy_title",
+    "faq",
+    "support"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "company_name": "DigiSpace",
+      "privacy_policy_href": "privacy-policy",
+      "faq_href": "faq",
+      "support_href": "support",
+      "i18n": {
+        "en": {
+          "privacy_policy_title": "Privacy Policy",
+          "faq": "FAQ",
+          "support": "Support"
+        },
+        "uk": {
+          "privacy_policy_title": "Політика конфіденційності",
+          "faq": "Питання й відповіді",
+          "support": "Підтримка"
+        },
+        "pl": {
+          "privacy_policy_title": "Polityka prywatności",
+          "faq": "FAQ",
+          "support": "Wsparcie"
+        }
+      }
+    }
+  ]
+}

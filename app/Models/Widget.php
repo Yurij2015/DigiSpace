@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasLocalizedContent;
+use App\Models\Concerns\HasTranslatableColumns;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -10,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 
 /**
  * @property int $id
@@ -46,9 +49,24 @@ use Illuminate\Support\Carbon;
  *
  * @mixin Eloquent
  */
-class Widget extends Model
+class Widget extends Model implements HasTranslatableColumns
 {
+    use HasLocalizedContent;
+
+    /**
+     * Base-language columns that also live under translations.{locale}.
+     *
+     * @var list<string>
+     */
+    public const TRANSLATABLE = ['title', 'subtitle', 'content'];
+
+    public static function translatableColumns(): array
+    {
+        return self::TRANSLATABLE;
+    }
+
     protected $fillable = [
+        'translations',
         'title', 'content', 'subtitle', 'widget_category_id', 'icon', 'widget_image', 'css_class', 'anchor', 'element_id',
     ];
 
@@ -70,5 +88,34 @@ class Widget extends Model
     public function widgetIcon(): HasMany
     {
         return $this->hasMany(WidgetIcon::class);
+    }
+
+    protected function title(): Attribute
+    {
+        return $this->localizedAttribute('title');
+    }
+
+    protected function subtitle(): Attribute
+    {
+        return $this->localizedAttribute('subtitle');
+    }
+
+    protected function content(): Attribute
+    {
+        return $this->localizedAttribute('content');
+    }
+
+    /**
+     * Stable key templates use to pick a widget for a layout slot (the footer's phone /
+     * subscribe / about / latest-news / useful-links blocks). element_id when set, else the
+     * base-language title as a slug so un-keyed rows from older databases keep matching.
+     */
+    protected function slot(): Attribute
+    {
+        return Attribute::make(
+            get: fn (): string => filled($this->getRawOriginal('element_id'))
+                ? (string) $this->getRawOriginal('element_id')
+                : Str::slug((string) $this->getRawOriginal('title')),
+        );
     }
 }

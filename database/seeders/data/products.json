@@ -1,0 +1,98 @@
+{
+  "table": "products",
+  "identity": [
+    "title"
+  ],
+  "translatable": [
+    "title",
+    "details",
+    "product_name",
+    "description"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "product_code": null,
+      "position": null,
+      "is_prefered": 0,
+      "is_active": 1,
+      "price_value": 999.99,
+      "i18n": {
+        "en": {
+          "title": "Landing page",
+          "details": "starting at",
+          "product_name": null,
+          "description": null
+        },
+        "uk": {
+          "title": "Лендінг",
+          "details": "від",
+          "product_name": null,
+          "description": null
+        },
+        "pl": {
+          "title": "Strona docelowa (landing page)",
+          "details": "od",
+          "product_name": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "id": 2,
+      "product_code": null,
+      "position": null,
+      "is_prefered": 0,
+      "is_active": 1,
+      "price_value": 1499.99,
+      "i18n": {
+        "en": {
+          "title": "Website with CMS",
+          "details": "starting at",
+          "product_name": null,
+          "description": null
+        },
+        "uk": {
+          "title": "Сайт із CMS",
+          "details": "від",
+          "product_name": null,
+          "description": null
+        },
+        "pl": {
+          "title": "Strona z CMS",
+          "details": "od",
+          "product_name": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "id": 3,
+      "product_code": null,
+      "position": null,
+      "is_prefered": 0,
+      "is_active": 1,
+      "price_value": 1999.99,
+      "i18n": {
+        "en": {
+          "title": "Custom development",
+          "details": "starting at",
+          "product_name": null,
+          "description": null
+        },
+        "uk": {
+          "title": "Індивідуальна розробка",
+          "details": "від",
+          "product_name": null,
+          "description": null
+        },
+        "pl": {
+          "title": "Rozwiązania na zamówienie",
+          "details": "od",
+          "product_name": null,
+          "description": null
+        }
+      }
+    }
+  ]
+}

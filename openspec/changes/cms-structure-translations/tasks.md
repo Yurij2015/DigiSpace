@@ -16,22 +16,22 @@ Depends on `filament-content-editing` helpers (`FillsRawTranslatableFields`, `Co
 
 ## 1. Schema and models
 
-- [ ] 1.1 Create the migration adding nullable `translations` JSON to `menus`, `menu_items`, `widgets`, `widget_categories`, `footer_useful_links`, `header_nav_bar_contents`, `footer_bottom_bar_contents` (design D1) with a `down()`; verify `migrate` and `migrate:rollback` on the local DB.
+- [x] 1.1 Create the migration adding nullable `translations` JSON to `menus`, `menu_items`, `widgets`, `widget_categories`, `footer_useful_links`, `header_nav_bar_contents`, `footer_bottom_bar_contents` (design D1) with a `down()`; verify `migrate` and `migrate:rollback` on the local DB.
 - [ ] 1.2 Add `HasLocalizedContent`, `translations` cast/fillable and `localizedAttribute()` accessors to the seven models for the columns listed in design Context; add `Widget::slot()` (design D2); verify PHPStan and that `/uk` still renders identically before any translation exists (fallback).
-- [ ] 1.3 Switch `components/footer.blade.php` slot matching to `$widget->slot` with the raw-title fallback; verify the footer renders on `/`, `/uk`, `/pl` locally with the current (un-keyed) rows and `tests/Feature/SubscribeFormFeedbackTest` still passes.
+- [x] 1.3 Switch `components/footer.blade.php` slot matching to `$widget->slot` with the raw-title fallback; verify the footer renders on `/`, `/uk`, `/pl` locally with the current (un-keyed) rows and `tests/Feature/SubscribeFormFeedbackTest` still passes.
 
 ## 2. Seed data as JSON
 
-- [ ] 2.1 Create `database/seeders/Support/SeedData.php` (load, validate all three locales per translatable field, map to base + `translations`) and `tests/Unit/SeedDataTest.php` (completeness, unique identities, widget-category IDs/names match `config/constants.php`); verify the unit test runs green on an empty data set first.
-- [ ] 2.2 Export the existing inline seed arrays into `database/seeders/data/*.json` (widget_categories, widgets, menus, menu_items, footer_useful_links, header_nav_bar_contents, footer_bottom_bar_contents, pages, categories, services, products, posts) with `en` values, identities (`id` for fixed-ID categories, `slug`, `element_id` for the five footer widgets, `url`); verify a fresh `LocalDevelopmentSeeder` run produces the same row counts and IDs as before (compare `SELECT COUNT(*)`/ids per table against a pre-change dump).
-- [ ] 2.3 Author `uk` and `pl` values for every translatable field in the JSON files (design D3: literal translations, demo texts translated not rewritten); verify `SeedDataTest` is green and hand the files to the user for wording review before merge.
-- [ ] 2.4 Rewrite the seeders to read the JSON through `SeedData`, keeping class names, `fixedIds` and the `LocalDevelopmentSeeder`/`DatabaseSeeder` order; verify `migrate:fresh` + `LocalDevelopmentSeeder` locally and that `/uk` and `/pl` show translated menu labels, section headings and footer captions (`tests/Feature/LocalDevelopmentSeederTest.php`).
+- [x] 2.1 Create `database/seeders/Support/SeedData.php` (load, validate all three locales per translatable field, map to base + `translations`) and `tests/Unit/SeedDataTest.php` (completeness, unique identities, widget-category IDs/names match `config/constants.php`); verify the unit test runs green on an empty data set first.
+- [x] 2.2 Export the existing inline seed arrays into `database/seeders/data/*.json` (widget_categories, widgets, menus, menu_items, footer_useful_links, header_nav_bar_contents, footer_bottom_bar_contents, pages, categories, services, products, posts) with `en` values, identities (`id` for fixed-ID categories, `slug`, `element_id` for the five footer widgets, `url`); verify a fresh `LocalDevelopmentSeeder` run produces the same row counts and IDs as before (compare `SELECT COUNT(*)`/ids per table against a pre-change dump).
+- [x] 2.3 Author `uk` and `pl` values for every translatable field in the JSON files (design D3: literal translations, demo texts translated not rewritten); verify `SeedDataTest` is green and hand the files to the user for wording review before merge.
+- [x] 2.4 Rewrite the seeders to read the JSON through `SeedData`, keeping class names, `fixedIds` and the `LocalDevelopmentSeeder`/`DatabaseSeeder` order; verify `migrate:fresh` + `LocalDevelopmentSeeder` locally and that `/uk` and `/pl` show translated menu labels, section headings and footer captions (`tests/Feature/LocalDevelopmentSeederTest.php`).
 
 ## 3. Translations for populated databases
 
-- [ ] 3.1 Create `database/seeders/StructureTranslationsSeeder.php` (design D4: identity matching per table, existing translations win, `element_id` backfill for footer widgets, summary output); verify `php artisan db:seed --class=StructureTranslationsSeeder` on the local DB prints a summary and a second run reports zero updates.
-- [ ] 3.2 Write `tests/Feature/StructureTranslationsSeederTest.php` (missing translations filled, editor-made `uk` title preserved, unknown rows untouched and reported, base columns unchanged, idempotent); verify it passes.
-- [ ] 3.3 Document the seeder and the slot keys in `docs/content-model.md`, seeding in `docs/local-setup.md`, and the one-off `DEPLOY_AFTER_HOOKS` invocation in `docs/deployment/README.md`; verify links and that no server paths appear.
+- [x] 3.1 Create `database/seeders/StructureTranslationsSeeder.php` (design D4: identity matching per table, existing translations win, `element_id` backfill for footer widgets, summary output); verify `php artisan db:seed --class=StructureTranslationsSeeder` on the local DB prints a summary and a second run reports zero updates.
+- [x] 3.2 Write `tests/Feature/StructureTranslationsSeederTest.php` (missing translations filled, editor-made `uk` title preserved, unknown rows untouched and reported, base columns unchanged, idempotent); verify it passes.
+- [x] 3.3 Document the seeder and the slot keys in `docs/content-model.md`, seeding in `docs/local-setup.md`, and the one-off `DEPLOY_AFTER_HOOKS` invocation in `docs/deployment/README.md`; verify links and that no server paths appear.
 
 ## 4. Public rendering tests
 

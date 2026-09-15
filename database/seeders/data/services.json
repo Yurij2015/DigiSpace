@@ -1,0 +1,165 @@
+{
+  "table": "services",
+  "identity": [
+    "slug"
+  ],
+  "translatable": [
+    "title",
+    "details",
+    "description",
+    "seo_keywords",
+    "seo_description",
+    "seo_title",
+    "image_alt"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "price": null,
+      "service_category_id": null,
+      "image": null,
+      "slug": "concept-development",
+      "status": "inactive",
+      "i18n": {
+        "en": {
+          "title": "Concept development",
+          "details": null,
+          "description": null,
+          "seo_keywords": null,
+          "seo_description": null,
+          "seo_title": null,
+          "image_alt": null
+        },
+        "uk": {
+          "title": "Розробка концепції",
+          "details": null,
+          "description": null,
+          "seo_keywords": null,
+          "seo_description": null,
+          "seo_title": null,
+          "image_alt": null
+        },
+        "pl": {
+          "title": "Opracowanie koncepcji",
+          "details": null,
+          "description": null,
+          "seo_keywords": null,
+          "seo_description": null,
+          "seo_title": null,
+          "image_alt": null
+        }
+      }
+    },
+    {
+      "id": 2,
+      "price": null,
+      "service_category_id": null,
+      "image": null,
+      "slug": "ui-design",
+      "status": "inactive",
+      "i18n": {
+        "en": {
+          "title": "UI design",
+          "details": null,
+          "description": null,
+          "seo_keywords": null,
+          "seo_description": null,
+          "seo_title": null,
+          "image_alt": null
+        },
+        "uk": {
+          "title": "UI-дизайн",
+          "details": null,
+          "description": null,
+          "seo_keywords": null,
+          "seo_description": null,
+          "seo_title": null,
+          "image_alt": null
+        },
+        "pl": {
+          "title": "Projektowanie UI",
+          "details": null,
+          "description": null,
+          "seo_keywords": null,
+          "seo_description": null,
+          "seo_title": null,
+          "image_alt": null
+        }
+      }
+    },
+    {
+      "id": 3,
+      "price": null,
+      "service_category_id": null,
+      "image": null,
+      "slug": "configuration-management",
+      "status": "inactive",
+      "i18n": {
+        "en": {
+          "title": "Configuration management",
+          "details": null,
+          "description": null,
+          "seo_keywords": null,
+          "seo_description": null,
+          "seo_title": null,
+          "image_alt": null
+        },
+        "uk": {
+          "title": "Керування конфігурацією",
+          "details": null,
+          "description": null,
+          "seo_keywords": null,
+          "seo_description": null,
+          "seo_title": null,
+          "image_alt": null
+        },
+        "pl": {
+          "title": "Zarządzanie konfiguracją",
+          "details": null,
+          "description": null,
+          "seo_keywords": null,
+          "seo_description": null,
+          "seo_title": null,
+          "image_alt": null
+        }
+      }
+    },
+    {
+      "id": 4,
+      "price": null,
+      "service_category_id": null,
+      "image": null,
+      "slug": "software-quality-assurance",
+      "status": "inactive",
+      "i18n": {
+        "en": {
+          "title": "Software quality assurance",
+          "details": null,
+          "description": null,
+          "seo_keywords": null,
+          "seo_description": null,
+          "seo_title": null,
+          "image_alt": null
+        },
+        "uk": {
+          "title": "Забезпечення якості ПЗ",
+          "details": null,
+          "description": null,
+          "seo_keywords": null,
+          "seo_description": null,
+          "seo_title": null,
+          "image_alt": null
+        },
+        "pl": {
+          "title": "Zapewnienie jakości oprogramowania",
+          "details": null,
+          "description": null,
+          "seo_keywords": null,
+          "seo_description": null,
+          "seo_title": null,
+          "image_alt": null
+        }
+      }
+    }
+  ]
+}

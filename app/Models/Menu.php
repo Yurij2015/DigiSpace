@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasLocalizedContent;
+use App\Models\Concerns\HasTranslatableColumns;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -41,14 +44,34 @@ use Illuminate\Support\Carbon;
  *
  * @mixin Eloquent
  */
-class Menu extends Model
+class Menu extends Model implements HasTranslatableColumns
 {
+    use HasLocalizedContent;
+
+    /**
+     * Base-language columns that also live under translations.{locale}.
+     *
+     * @var list<string>
+     */
+    public const TRANSLATABLE = ['title'];
+
+    public static function translatableColumns(): array
+    {
+        return self::TRANSLATABLE;
+    }
+
     protected $fillable = [
+        'translations',
         'name', 'title', 'level', 'position', 'description', 'location', 'slug', 'href',
     ];
 
     public function menuItem(): HasMany
     {
         return $this->hasMany(MenuItem::class);
+    }
+
+    protected function title(): Attribute
+    {
+        return $this->localizedAttribute('title');
     }
 }

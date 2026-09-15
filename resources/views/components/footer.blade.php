@@ -1,3 +1,5 @@
+{{-- Footer widgets are picked by slot key (widgets.element_id: footer-phone, footer-subscribe, footer-about,
+     footer-latest-news, footer-useful-links); the raw English title is the fallback for rows without a key. --}}
 <footer class="section footer-classic context-dark">
     <div class="footer-classic__main bg-gray-3">
         <div class="container">
@@ -6,7 +8,7 @@
                     <div class="footer-classic__custom-column">
                         <div class="unit flex-sm-row">
                             @foreach($footerWidgets as $widget)
-                                @if($widget->title === 'Phone')
+                                @if($widget->slot === 'footer-phone' || $widget->getRawOriginal('title') === 'Phone')
                                     <div class="unit__left">
                                         <span class="icon icon-md icon-default {{ $widget->icon }}"></span>
                                     </div>
@@ -23,7 +25,7 @@
                 </div>
                 <div class="col-md-10 col-lg-6">
                     @foreach($footerWidgets as $widget)
-                        @if($widget->title === 'Subscribe')
+                        @if($widget->slot === 'footer-subscribe' || $widget->getRawOriginal('title') === 'Subscribe')
                             <div class="group-md">
                                 <h3>{{ $widget->title }}</h3>
                                 <p class="large">{{ $widget->subtitle }}</p>
@@ -57,7 +59,7 @@
             </div>
             <div class="row row-50 justify-content-md-center justify-content-lg-start justify-content-xl-between">
                 @foreach($footerWidgets as $widget)
-                    @if($widget->title === 'About us')
+                    @if($widget->slot === 'footer-about' || $widget->getRawOriginal('title') === 'About us')
                         <div class="col-md-5 col-lg-3">
                             <p class="custom-heading-1 custom-heading-bordered"> {{ $widget->title }}</p>
                             <div class="divider"></div>
@@ -76,7 +78,7 @@
                     @endif
                 @endforeach
                 @foreach($footerWidgets as $widget)
-                    @if($widget->title === 'Latest news')
+                    @if($widget->slot === 'footer-latest-news' || $widget->getRawOriginal('title') === 'Latest news')
                         <div class="col-md-5 col-lg-4 col-xl-3">
                             <p class="custom-heading-1 custom-heading-bordered">{{ $widget->title }}</p>
                             <div class="divider"></div>
@@ -87,7 +89,7 @@
                     @endif
                 @endforeach
                 @foreach($footerWidgets as $widget)
-                    @if($widget->title === 'Useful Links')
+                    @if($widget->slot === 'footer-useful-links' || $widget->getRawOriginal('title') === 'Useful Links')
                         <div class="col-md-10 col-lg-5 col-xl-4">
                             <p class="custom-heading-1 custom-heading-bordered">{{ $widget->title }}</p>
                             <div class="divider"></div>

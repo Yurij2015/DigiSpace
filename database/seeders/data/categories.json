@@ -1,0 +1,31 @@
+{
+  "table": "categories",
+  "identity": [
+    "slug"
+  ],
+  "translatable": [
+    "name",
+    "description"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "slug": "category-1",
+      "i18n": {
+        "en": {
+          "name": "Category 1",
+          "description": "Category 1"
+        },
+        "uk": {
+          "name": "Категорія 1",
+          "description": "Категорія 1"
+        },
+        "pl": {
+          "name": "Kategoria 1",
+          "description": "Kategoria 1"
+        }
+      }
+    }
+  ]
+}
