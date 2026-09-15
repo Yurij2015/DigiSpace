@@ -39,6 +39,7 @@ Run tests via Sail (`vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit �
 
 ## 5. Verification and rollout
 
-- [ ] 5.1 Full suite, Pint, PHPStan green; `npm run build` unaffected (no Vite changes); verify `vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit` reports 0 failures.
-- [ ] 5.2 Manual pass on local `/control` with the panel switched to Українська: edit an existing post that has inline `style=` in its content, save, compare the public rendering before/after (expected: styles dropped, structure intact); record the outcome in this file.
+- [x] 5.1 Full suite, Pint, PHPStan green; `npm run build` unaffected (no Vite changes); verify `vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit` reports 0 failures.
+- [x] 5.2 Manual pass on local `/control` with the panel switched to Українська: edit an existing post that has inline `style=` in its content, save, compare the public rendering before/after (expected: styles dropped, structure intact); record the outcome in this file.
+  Outcome (2026-09-15, page `support`, 7 × `style="text-align: justify"`): after an edit + save from the browser the stored HTML has 0 style attributes; h4/h5/ul/li/strong counts unchanged, list items now wrap their text in `<p>`; text identical; `/uk/support` renders correctly. Untouched saves keep the original HTML byte-for-byte (the editor only re-serialises when the field is edited).
 - [ ] 5.3 Push to `dev` → testing deploy; repeat 5.2 on the testing site including an image insert from the editor (MinIO) and "View on site"; then merge to `master` → production deploy; verify the production health check and `/control/posts` list render.
