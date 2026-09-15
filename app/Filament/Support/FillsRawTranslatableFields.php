@@ -2,22 +2,23 @@
 
 namespace App\Filament\Support;
 
+use App\Models\Concerns\HasTranslatableColumns;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * For EditRecord pages of models using HasLocalizedContent: fill the form from the raw
  * base-language columns instead of the locale-aware accessors, so the English tab always
  * shows English and saving never copies a uk/pl translation into the base columns.
- * The model lists its base columns in Model::TRANSLATABLE.
+ * The model lists its base columns through HasTranslatableColumns::translatableColumns().
  */
 trait FillsRawTranslatableFields
 {
     protected function mutateFormDataBeforeFill(array $data): array
     {
-        /** @var Model $record */
+        /** @var Model&HasTranslatableColumns $record */
         $record = $this->getRecord();
 
-        foreach ($record::TRANSLATABLE as $field) {
+        foreach ($record::translatableColumns() as $field) {
             $data[$field] = $record->getRawOriginal($field);
         }
 

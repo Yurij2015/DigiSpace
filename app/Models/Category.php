@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Concerns\HasLocalizedContent;
+use App\Models\Concerns\HasTranslatableColumns;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -39,7 +40,7 @@ use Illuminate\Support\Carbon;
  *
  * @mixin Eloquent
  */
-class Category extends Model
+class Category extends Model implements HasTranslatableColumns
 {
     use HasLocalizedContent;
 
@@ -50,6 +51,11 @@ class Category extends Model
      * @var list<string>
      */
     public const array TRANSLATABLE = ['name', 'description'];
+
+    public static function translatableColumns(): array
+    {
+        return self::TRANSLATABLE;
+    }
 
     protected $fillable = [
         'name', 'description', 'slug', 'user_id', 'translations',
