@@ -16,6 +16,7 @@ set_env() {
   fi
 }
 
+set_env APP_NAME DigiSpace
 set_env APP_ENV testing
 set_env APP_URL "http://localhost:8100"
 set_env DB_CONNECTION mysql

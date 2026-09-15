@@ -68,16 +68,16 @@ jobs:
           GITHUB_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
+          # Write outside the tree (tar aborts with "file changed as we read it" otherwise).
           # Anchored excludes: only the top-level directories, not e.g. vendor/**/storage.
-          tar -czf "${GITHUB_SHA}.tar.gz" \
+          tar -czf "${RUNNER_TEMP}/${GITHUB_SHA}.tar.gz" \
             --exclude=./.git --exclude=./node_modules --exclude=./storage --exclude=./tests \
-            --exclude='./*.tar.gz' \
             .
       - name: Store artifact for distribution
         uses: actions/upload-artifact@v4
         with:
           name: app-build
-          path: ${{ github.sha }}.tar.gz
+          path: ${{ runner.temp }}/${{ github.sha }}.tar.gz
           retention-days: 3
       - name: Export deployment matrix
         id: export-deployment-matrix
