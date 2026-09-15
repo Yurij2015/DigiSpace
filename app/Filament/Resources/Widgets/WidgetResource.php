@@ -7,6 +7,7 @@ use App\Filament\Resources\Widgets\Pages\EditWidget;
 use App\Filament\Resources\Widgets\Pages\ListWidgets;
 use App\Filament\Resources\Widgets\Schemas\WidgetForm;
 use App\Filament\Resources\Widgets\Tables\WidgetsTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\Widget;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class WidgetResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Admin Layout Pages';
+        return PanelNavigationGroup::Settings->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 12;
+        return 50;
     }
 
     public static function getPluralModelLabel(): string

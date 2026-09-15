@@ -7,6 +7,7 @@ use App\Filament\Resources\ProductServices\Pages\EditProductService;
 use App\Filament\Resources\ProductServices\Pages\ListProductServices;
 use App\Filament\Resources\ProductServices\Schemas\ProductServiceForm;
 use App\Filament\Resources\ProductServices\Tables\ProductServicesTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\ProductService;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class ProductServiceResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Admin Layout Pages';
+        return PanelNavigationGroup::Settings->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 16;
+        return 20;
     }
 
     public static function getPluralModelLabel(): string

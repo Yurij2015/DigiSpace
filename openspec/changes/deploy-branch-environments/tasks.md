@@ -45,7 +45,9 @@ Workflow YAML is validated locally with `actionlint` (`brew install actionlint`)
 
 ## 5. Rollout (operator steps, recorded here so the change is complete)
 
+Lessons from the first production rollout (2026-09-15): the CloudPanel site PHP version must be 8.3 before the first deploy (the vhost ran an older PHP → "Composer detected issues in your platform"); re-deploying the active commit corrupted the `storage` symlink, fixed by per-run release directories.
+
 - [x] 5.1 In GitHub: create `testing` and `production` environments, set `DEPLOYMENT_MATRIX` (testing enabled, production `enabled:false`), set Variables/Secrets for `testing` from the live server `.env`, set `SSH_KEY_2`; verify `gh variable list --env testing` and `gh secret list --env testing` show every key from the runbook.
 - [x] 5.2 Push the change to `dev`; verify the run: tests green, testing server deployed, `diff <base>/.env_prev <base>/.env` shows only intended differences, health check green, `/control/login` and `/vendor/livewire/*` return 200, an uploaded service image still loads.
-- [ ] 5.3 Set production Variables/Secrets, set the production matrix entry `enabled:true`, run `workflow_dispatch environment=production` from `master` (or merge `dev → master`); verify the same checklist on production and that a `dev` push afterwards does not touch production.
+- [x] 5.3 Set production Variables/Secrets, set the production matrix entry `enabled:true`, run `workflow_dispatch environment=production` from `master` (or merge `dev → master`); verify the same checklist on production and that a `dev` push afterwards does not touch production.
 - [ ] 5.4 Remove the `LARAVEL_ENV` secret from GitHub once both environments have deployed successfully; verify the next `dev` run is still green.

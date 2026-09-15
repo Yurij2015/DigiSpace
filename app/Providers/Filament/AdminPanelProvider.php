@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Support\PanelNavigationGroup;
 use App\Filament\Widgets\ControlOverview;
 use App\Http\Middleware\SetLocale;
 use Filament\Http\Middleware\Authenticate;
@@ -40,7 +41,11 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Dashboard::class,
             ])
-            ->navigationGroups(['Portfolio management', 'Admin Layout Pages', 'Header', 'Blog sidebar', 'Footer'])
+            ->navigationGroups([
+                PanelNavigationGroup::Content->make(),
+                PanelNavigationGroup::Settings->make(),
+                PanelNavigationGroup::Portfolio->make(),
+            ])
             ->databaseTransactions()
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([

@@ -7,6 +7,7 @@ use App\Filament\Resources\WidgetIcons\Pages\EditWidgetIcon;
 use App\Filament\Resources\WidgetIcons\Pages\ListWidgetIcons;
 use App\Filament\Resources\WidgetIcons\Schemas\WidgetIconForm;
 use App\Filament\Resources\WidgetIcons\Tables\WidgetIconsTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\WidgetIcon;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class WidgetIconResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Footer';
+        return PanelNavigationGroup::Settings->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 23;
+        return 60;
     }
 
     public static function getPluralModelLabel(): string

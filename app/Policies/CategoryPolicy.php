@@ -43,14 +43,18 @@ class CategoryPolicy
         return $category->user()->is($user);
     }
 
+    /**
+     * Control panel (Filament): anyone admitted to the panel edits any record. The legacy
+     * Inertia admin keeps the author-only categoryUpdate/categoryDestroy abilities below.
+     */
     public function update(User $user, Category $category): bool
     {
-        return $user->canAccessPanel(Filament::getPanel('control')) && (int) $category->user_id === (int) $user->id;
+        return $user->canAccessPanel(Filament::getPanel('control'));
     }
 
     public function delete(User $user, Category $category): bool
     {
-        return $user->canAccessPanel(Filament::getPanel('control')) && (int) $category->user_id === (int) $user->id;
+        return $user->canAccessPanel(Filament::getPanel('control'));
     }
 
     public function restore(User $user, Category $category): bool

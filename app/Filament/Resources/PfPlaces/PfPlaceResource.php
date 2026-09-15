@@ -7,6 +7,7 @@ use App\Filament\Resources\PfPlaces\Pages\EditPfPlace;
 use App\Filament\Resources\PfPlaces\Pages\ListPfPlaces;
 use App\Filament\Resources\PfPlaces\Schemas\PfPlaceForm;
 use App\Filament\Resources\PfPlaces\Tables\PfPlacesTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\Portfolio\PfPlace;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class PfPlaceResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Portfolio management';
+        return PanelNavigationGroup::Portfolio->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 8;
+        return 80;
     }
 
     public static function getPluralModelLabel(): string
