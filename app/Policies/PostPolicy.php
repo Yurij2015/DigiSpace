@@ -27,14 +27,18 @@ class PostPolicy
         return $user->canAccessPanel(Filament::getPanel('control'));
     }
 
+    /**
+     * Control panel (Filament): anyone admitted to the panel edits any record. The legacy
+     * Inertia admin keeps the author-only postUpdate/postDestroy abilities below.
+     */
     public function update(User $user, Post $post): bool
     {
-        return $user->canAccessPanel(Filament::getPanel('control')) && (int) $post->user_id === (int) $user->id;
+        return $user->canAccessPanel(Filament::getPanel('control'));
     }
 
     public function delete(User $user, Post $post): bool
     {
-        return $user->canAccessPanel(Filament::getPanel('control')) && (int) $post->user_id === (int) $user->id;
+        return $user->canAccessPanel(Filament::getPanel('control'));
     }
 
     public function restore(User $user, Post $post): bool

@@ -25,6 +25,8 @@ Run tests via Sail (`vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit â
 - [x] 2.2 Write `tests/Feature/Filament/MakesFilamentAdmin.php` helper + `tests/Feature/Filament/TranslationSafetyTest.php`: with `app()->setLocale('uk')`, `Livewire::test(EditPost::class, ['record' => $post->id])` asserts form data `name`/`content` equal the raw columns and `translations.uk.name` equals the translation; `->call('save')` leaves `name`, `content`, `slug`, `translations` unchanged; same for `EditPage`; verify it passes and that it fails when the trait is removed (temporarily).
 - [x] 2.3 `SetLocale`: resolve `/admin`, `/admin/*`, `/portfolio/*` to `Locales::default()` (design D3); add `tests/Feature/LegacyAdminLocaleTest.php` (`GET /admin/post-edit/{id}` as an authenticated user with `Accept-Language: uk` â†’ Inertia prop `post.name` equals the raw column); verify it passes and the public/`/control` locale tests still pass.
 
+- [x] 2.4 `PostPolicy`/`CategoryPolicy`: `update`/`delete` for the control panel require panel access only (the author-only check made every post read-only for other admins on the testing site); legacy `postUpdate`/`categoryUpdate` abilities unchanged; verify `tests/Feature/Filament/PanelAuthorizationTest.php` (admin edits another author's post; legacy ability still author-only) passes.
+
 ## 3. Editor
 
 - [x] 3.1 Create `app/Filament/Support/ContentEditor.php` (design D1: toolbar groups, `s3` attachments, directory per resource, `public` visibility, image types, 2 MB); verify `php -l` and PHPStan.
