@@ -33,9 +33,9 @@ Run tests via Sail (`vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit â
 
 ## 4. Form layout and actions
 
-- [ ] 4.1 Restructure `PostForm`/`PageForm` per design D4 (editor first, SEO section with `Textarea('description')` + counter, "Publishing"/"Placement" section outside the tabs, read-only slug under the name) keeping all field names and `translations.*` paths; verify create/edit of a post and a page in all three tabs saves the same data shape (`tests` from 1.2 still green) and PHPStan is clean.
-- [ ] 4.2 Add the "View on site" header action to `EditPost` and `EditPage` (design D5; disabled for drafts / pages without a menu item); verify the link on a published post with the panel in `pl` is `/pl/blog/{slug}` and opens in a new tab.
-- [ ] 4.3 Posts table: cover thumbnail, status badge, category, updated-since, search on name, status filter + published/draft shortcut, bulk publish/unpublish, default sort `updated_at desc`; Pages table: name, slug, page category, menu item, updated (design D6); verify in the browser and with `tests/Feature/Filament/PostsTableTest.php` (bulk publish of two drafts sets `status=published`).
+- [x] 4.1 Restructure `PostForm`/`PageForm` per design D4 (editor first, SEO section with `Textarea('description')` + counter, "Publishing"/"Placement" section outside the tabs, read-only slug under the name) keeping all field names and `translations.*` paths; verify create/edit of a post and a page in all three tabs saves the same data shape (`tests` from 1.2 still green) and PHPStan is clean.
+- [x] 4.2 Add the "View on site" header action to `EditPost` and `EditPage` (design D5; disabled for drafts / pages without a menu item); verify the link on a published post with the panel in `pl` is `/pl/blog/{slug}` and opens in a new tab.
+- [x] 4.3 Posts table: cover thumbnail, status badge, category, updated-since, search on name, status filter + published/draft shortcut, bulk publish/unpublish, default sort `updated_at desc`; Pages table: name, slug, page category, menu item, updated (design D6); verify in the browser and with `tests/Feature/Filament/PostsTableTest.php` (bulk publish of two drafts sets `status=published`).
 
 ## 5. Verification and rollout
 
