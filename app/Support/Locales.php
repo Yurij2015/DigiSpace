@@ -75,9 +75,13 @@ final class Locales
                 continue;
             }
 
-            return in_array($route->getName(), $localizedRouteNames, true)
-                ? rtrim($candidate, '/').($query !== null ? '?'.$query : '')
-                : null;
+            if (! in_array($route->getName(), $localizedRouteNames, true)) {
+                return null;
+            }
+
+            $queryString = $query !== null ? '?'.$query : '';
+
+            return rtrim($candidate, '/').$queryString;
         }
 
         return null;
