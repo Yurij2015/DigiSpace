@@ -12,7 +12,7 @@
                     <div class="quote-creative__header">
                         <div class="quote-creative__media"><img
                                 src="{{ asset($widget->widget_image) }}"
-                                alt=""
+                                alt="{{ $widget->title }}"
                                 width="112" height="99"/>
                         </div>
                         <div class="quote-creative__info">

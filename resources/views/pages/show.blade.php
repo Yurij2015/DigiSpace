@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', "DigiSpace | $page->name")
+@section('title', __('site.page_title', ['name' => $page->name]))
 @section('content')
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">
@@ -12,8 +12,8 @@
         <div class="breadcrumbs-custom__main bg-gray-light">
             <div class="container">
                 <ul class="breadcrumbs-custom__path">
-                    <li><a href="{{ route('home.index')}}">Home</a></li>
-                    <li>Pages</li>
+                    <li><a href="{{ route('home.index') }}">{{ __('site.home') }}</a></li>
+                    <li>{{ __('site.pages') }}</li>
                     <li class="active">{{ $page->name }}</li>
                 </ul>
             </div>

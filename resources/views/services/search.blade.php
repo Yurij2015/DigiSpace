@@ -6,15 +6,15 @@
         <div class="breadcrumbs-custom__aside bg-image context-dark"
              style="background-image: url({{ asset("images/services-page-title-bg.jpg") }});">
             <div class="container">
-                <h2 class="breadcrumbs-custom__title">Services Search</h2>
+                <h2 class="breadcrumbs-custom__title">{{ __('site.services_search') }}</h2>
             </div>
         </div>
         <div class="breadcrumbs-custom__main bg-gray-light">
             <div class="container">
                 <ul class="breadcrumbs-custom__path">
-                    <li><a href="{{ route('home.index')}}">Home</a></li>
+                    <li><a href="{{ route('home.index') }}">{{ __('site.home') }}</a></li>
                     @if(isset($serviceCategory))
-                        <li><a href="{{ route('services') }}">Category Services</a></li>
+                        <li><a href="{{ route('services') }}">{{ __('site.services') }}</a></li>
                         <li class="active">{{ $serviceCategory->seo_title }}</li>
                     @endif
                 </ul>
@@ -41,13 +41,13 @@
                                 </li>
                                 <li>
                                     <span class="icon mdi mdi-format-list-bulleted"></span>
-                                    Service Category: {{ $item->serviceCategory->name }}
+                                    {{ __('site.service_category') }}: {{ $item->serviceCategory->name }}
                                 </li>
                             </ul>
                             <p>{{ $item->seo_description }}</p>
                             <div class="post-classic__media">
                                 <img class="post-classic__image" src="{{ asset($item->image) }}"
-                                     alt="" width="715"
+                                     alt="{{ $item->image_alt ?: $item->title }}" width="715"
                                      height="417"/>
                             </div>
                             {!! $item->description !!}

@@ -25,6 +25,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FooterPagesController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LegacyUrlRedirectController;
 use App\Http\Controllers\NotFoundController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController as PublicPostController;
@@ -250,3 +251,10 @@ Route::prefix('{locale?}')
     });
 
 require __DIR__.'/auth.php';
+
+// Legacy unprefixed public URLs → localized URL (302) or branded 404. Keep last.
+// Route::fallback() is GET-only, which would turn every unknown POST into a 405; register for any verb.
+Route::any('{fallbackPlaceholder}', LegacyUrlRedirectController::class)
+    ->where('fallbackPlaceholder', '.*')
+    ->fallback()
+    ->name('legacy-url.redirect');

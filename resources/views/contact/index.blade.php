@@ -12,7 +12,7 @@
         <div class="breadcrumbs-custom__main bg-gray-light">
             <div class="container">
                 <ul class="breadcrumbs-custom__path">
-                    <li><a href="{{ route('home.index') }}">Home</a></li>
+                    <li><a href="{{ route('home.index') }}">{{ __('site.home') }}</a></li>
                     <li class="active">{{ $page->name }}</li>
                 </ul>
             </div>

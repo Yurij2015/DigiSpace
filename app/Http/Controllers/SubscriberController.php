@@ -10,11 +10,12 @@ class SubscriberController extends Controller
 {
     public function save(Request $request): RedirectResponse
     {
-        $this->validate($request, [
+        $validated = $request->validateWithBag('subscribe', [
             'email' => 'required|email|unique:subscribers',
         ]);
-        Subscriber::create($request->all());
 
-        return back()->with('success', 'You are successfully subscribed!');
+        Subscriber::create($validated);
+
+        return back()->with('subscribe_success', __('site.subscribe_success'));
     }
 }

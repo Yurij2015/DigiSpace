@@ -299,7 +299,10 @@
 				classOut:          'fadeOut',
 				classActive:       'animated',
 				conditions:        function (event, link) {
-					return !/(\#|callto:|tel:|mailto:|:\/\/)/.test(link)
+					// Anchors without href (menu labels, debugbar tabs) have link === null;
+					// letting them through sets window.location = "" and reloads the page.
+					return !!link
+							&& !/(#|callto:|tel:|mailto:|:\/\/)/.test(link)
 							&& !event.currentTarget.hasAttribute('data-lightgallery');
 				},
 				onTransitionStart: function (options) {
@@ -1818,5 +1821,4 @@
 	});
 
 }());
-
 

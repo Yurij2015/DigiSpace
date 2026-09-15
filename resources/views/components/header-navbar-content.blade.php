@@ -1,8 +1,8 @@
 <div class="rd-navbar-content-outer">
-    <div class="rd-navbar-content__toggle rd-navbar-static--hidden"
-         data-rd-navbar-toggle=".rd-navbar-content">
+    <button type="button" class="rd-navbar-content__toggle rd-navbar-static--hidden"
+         data-rd-navbar-toggle=".rd-navbar-content" aria-label="{{ __('site.toggle_contacts') }}">
         <span></span>
-    </div>
+    </button>
     <div class="rd-navbar-content">
         <ul class="list-bordered list-inline">
             <li>
@@ -28,24 +28,20 @@
             <li>
                 <ul class="list-inline list-inline-xs">
                     <li>
-                        <a class="icon icon-gray-dark icon-style-brand fa
-                        {{ $headerNavBarContent->first_soc_button_style }}"
-                           href="https://{{ $headerNavBarContent->first_soc_button_href }}" target="_blank"></a>
+                        <x-social-link :href="'https://'.$headerNavBarContent->first_soc_button_href"
+                                       :icon="$headerNavBarContent->first_soc_button_style"/>
                     </li>
                     <li>
-                        <a class="icon icon-gray-dark icon-style-brand fa
-                        {{ $headerNavBarContent->second_soc_button_style }}"
-                           href="https://{{ $headerNavBarContent->second_soc_button_href }}" target="_blank"></a>
+                        <x-social-link :href="'https://'.$headerNavBarContent->second_soc_button_href"
+                                       :icon="$headerNavBarContent->second_soc_button_style"/>
                     </li>
                     <li>
-                        <a class="icon icon-gray-dark icon-style-brand fa
-                        {{ $headerNavBarContent->third_soc_button_style }}"
-                           href="https://{{ $headerNavBarContent->third_soc_button_href }}" target="_blank"></a>
+                        <x-social-link :href="'https://'.$headerNavBarContent->third_soc_button_href"
+                                       :icon="$headerNavBarContent->third_soc_button_style"/>
                     </li>
                     <li>
-                        <a class="icon icon-gray-dark icon-style-brand fa
-                        {{ $headerNavBarContent->fourth_soc_button_style }}"
-                           href="https://{{ $headerNavBarContent->fourth_soc_button_href }}" target="_blank"></a>
+                        <x-social-link :href="'https://'.$headerNavBarContent->fourth_soc_button_href"
+                                       :icon="$headerNavBarContent->fourth_soc_button_style"/>
                     </li>
                 </ul>
             </li>

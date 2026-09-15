@@ -16,8 +16,8 @@ defineProps({
         },
     },
     statPercent: {
-        type: String,
-        default: "3.48",
+        type: [String, Number],
+        default: null,
     },
     // can be any of the text color utilities
     // from tailwindcss
@@ -64,16 +64,11 @@ defineProps({
                     </div>
                 </div>
             </div>
-            <p class="text-sm text-blueGray-400 mt-4">
-        <span class="mr-2" :class="[statPercentColor]">
-          <i
-              :class="[
-              statArrow === 'up' ? `fas fa-arrow-up` : `fas fa-arrow-down`,
-            ]"
-          ></i>
-          {{ statPercent }}%
+            <p v-if="statPercent !== null || statDescripiron" class="text-sm text-blueGray-400 mt-4">
+        <span v-if="statPercent !== null" class="mr-2" :class="[statPercentColor]">
+          {{ statPercent }}
         </span>
-                <span class="whitespace-nowrap">{{ statDescripiron }}</span>
+                <span v-if="statDescripiron" class="whitespace-nowrap">{{ statDescripiron }}</span>
             </p>
         </div>
     </div>

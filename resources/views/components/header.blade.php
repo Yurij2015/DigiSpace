@@ -11,7 +11,7 @@
                 <div class="rd-navbar-inner">
                     <!-- RD Navbar Panel-->
                     <div class="rd-navbar-panel">
-                        <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span>
+                        <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap" aria-label="{{ __('site.toggle_navigation') }}"><span></span>
                         </button>
                         <!-- RD Navbar Brand-->
                         <div class="rd-navbar-brand">
@@ -19,11 +19,11 @@
                                 <div class="brand__name">
                                     <img class="brand__logo-dark"
                                          src="{{ asset('images/DigiSpaceLogo2.svg') }}"
-                                         alt="" width="170"
+                                         alt="{{ config('app.name') }}" width="170"
                                          height="80"/>
                                     <img class="brand__logo-mobile"
                                          src="{{ asset('images/DigiSpaceLogo2.svg') }}"
-                                         alt="" width="170" height="50"/>
+                                         alt="{{ config('app.name') }}" width="170" height="50"/>
                                 </div>
                             </a>
                         </div>
@@ -39,17 +39,16 @@
                                 <!-- RD Navbar Search-->
                                 <div class="rd-navbar-search rd-navbar-search-toggled">
                                     <button class="rd-navbar-search-toggle"
-                                            data-rd-navbar-toggle=".rd-navbar-search"></button>
-                                    <form class="rd-search" action="search-results.html"
-                                          data-search-live="rd-search-results-live" method="GET">
+                                            data-rd-navbar-toggle=".rd-navbar-search" aria-label="{{ __('site.toggle_search') }}"></button>
+                                    {{-- No data-search-live: the theme's live search posts to a PHP handler this app does not ship. --}}
+                                    <form class="rd-search" action="{{ route('service-search') }}" method="GET" role="search">
                                         <div class="form-wrap">
-                                            <input class="form-input" id="rd-navbar-search-form-input" type="text"
-                                                   name="s" autocomplete="off">
+                                            <input class="form-input" id="rd-navbar-search-form-input" type="search"
+                                                   name="search" autocomplete="off" value="{{ request()->routeIs('service-search') ? request('search') : '' }}">
                                         </div>
-                                        <button class="rd-navbar-search-submit" type="submit"></button>
+                                        <button class="rd-navbar-search-submit" type="submit" aria-label="{{ __('site.submit_search') }}"></button>
                                         <label class="form-label"
-                                               for="rd-navbar-search-form-input">Search...</label>
-                                        <div class="rd-search-results-live" id="rd-search-results-live"></div>
+                                               for="rd-navbar-search-form-input">{{ __('site.search') }}</label>
                                     </form>
                                 </div>
                             </div>
@@ -61,7 +60,6 @@
                                 <li class="{{ Route::is('services') ? 'active' : '' }}">
                                     <a href="{{ route('services') }}">{{ __('site.services') }}</a>
                                     @if(isset($serviceCategories) && count($serviceCategories))
-                                        ;
                                         <ul class="rd-navbar-dropdown">
                                             @foreach($serviceCategories as $serviceCategory)
                                                 <li>
@@ -96,7 +94,8 @@
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li><a href="#">{{ __('site.pages') }}</a>
+                                {{-- No href: the theme opens the megamenu on hover/touch; a "#" href would trigger its anchor handler. --}}
+                                <li><button type="button" class="rd-navbar-link" aria-haspopup="true">{{ __('site.pages') }}</button>
                                     <!-- RD Navbar Megamenu-->
                                     <ul class="rd-navbar-megamenu">
                                         <li>
