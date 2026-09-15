@@ -35,10 +35,11 @@ return [
         'client_id' => env('ZOHO_CLIENT_ID'),
         'client_secret' => env('ZOHO_CLIENT_SECRET'),
         'grant_token' => env('ZOHO_GRANT_TOKEN'),
+        'refresh_token' => env('ZOHO_REFRESH_TOKEN'),
     ],
 
     'recaptcha' => [
         'site_key' => env('RECAPTCHA_SITE_KEY'),
         'secret_key' => env('RECAPTCHA_SECRET_KEY'),
-    ]
+    ],
 ];
