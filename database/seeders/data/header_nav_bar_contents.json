@@ -1,0 +1,45 @@
+{
+  "table": "header_nav_bar_contents",
+  "identity": [
+    "singleton"
+  ],
+  "translatable": [
+    "first_col_name",
+    "second_col_name",
+    "first_col_href_content"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "first_col_href": "contact-us",
+      "second_col_href": "mailto:admin@globaldigispace.com",
+      "second_col_href_content": "admin@globaldigispace.com",
+      "first_soc_button_style": "fa-facebook",
+      "first_soc_button_href": "facebook.com/digispacecompany",
+      "second_soc_button_style": "fa-twitter",
+      "second_soc_button_href": "twitter.com/globaldigispace",
+      "third_soc_button_style": "fa-telegram",
+      "third_soc_button_href": "t.me/digispacecompany",
+      "fourth_soc_button_style": "fa-linkedin",
+      "fourth_soc_button_href": "linkedin.com/groups/12675620",
+      "login_button_status": 1,
+      "i18n": {
+        "en": {
+          "first_col_name": "Contact us",
+          "second_col_name": "E-mail",
+          "first_col_href_content": "@globaldigispace"
+        },
+        "uk": {
+          "first_col_name": "Зв'язатися з нами",
+          "second_col_name": "E-mail",
+          "first_col_href_content": "@globaldigispace"
+        },
+        "pl": {
+          "first_col_name": "Kontakt",
+          "second_col_name": "E-mail",
+          "first_col_href_content": "@globaldigispace"
+        }
+      }
+    }
+  ]
+}

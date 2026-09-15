@@ -1,0 +1,1366 @@
+{
+  "table": "widgets",
+  "identity": [
+    "element_id",
+    "widget_category_id+title"
+  ],
+  "translatable": [
+    "title",
+    "subtitle",
+    "content"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "widget_category_id": 1,
+      "icon": "",
+      "widget_image": "",
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Your story starts with us.",
+          "subtitle": "Your story starts with us.",
+          "content": "This is a simple example of a Landing Page you can build using Vue Notus. It features multiple CSS components based on the Tailwind CSS design system."
+        },
+        "uk": {
+          "title": "Ваша історія починається з нами.",
+          "subtitle": "Ваша історія починається з нами.",
+          "content": "Це простий приклад лендінгу, який можна зібрати на Vue Notus. Він містить багато CSS-компонентів на основі дизайн-системи Tailwind CSS."
+        },
+        "pl": {
+          "title": "Twoja historia zaczyna się z nami.",
+          "subtitle": "Twoja historia zaczyna się z nami.",
+          "content": "To prosty przykład strony docelowej, którą można zbudować w Vue Notus. Zawiera wiele komponentów CSS opartych na systemie projektowym Tailwind CSS."
+        }
+      }
+    },
+    {
+      "id": 2,
+      "widget_category_id": 2,
+      "icon": "fas fa-award",
+      "widget_image": "",
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Awarded Agency",
+          "subtitle": "Awarded Agency",
+          "content": "Divide details about your product or agency work into parts. A paragraph describing a feature will be enough."
+        },
+        "uk": {
+          "title": "Відзначена агенція",
+          "subtitle": "Відзначена агенція",
+          "content": "Розділіть інформацію про продукт або роботу агенції на частини. Одного абзацу з описом функції буде достатньо."
+        },
+        "pl": {
+          "title": "Nagradzana agencja",
+          "subtitle": "Nagradzana agencja",
+          "content": "Podziel informacje o produkcie lub pracy agencji na części. Wystarczy jeden akapit opisujący daną funkcję."
+        }
+      }
+    },
+    {
+      "id": 3,
+      "widget_category_id": 2,
+      "icon": "fas fa-retweet",
+      "widget_image": "",
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Free Revisions",
+          "subtitle": "Free Revisions",
+          "content": "Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious."
+        },
+        "uk": {
+          "title": "Безкоштовні правки",
+          "subtitle": "Безкоштовні правки",
+          "content": "Утримуйте увагу користувача змістовною інформацією. Пам'ятайте: на цьому етапі йому вже цікаво."
+        },
+        "pl": {
+          "title": "Bezpłatne poprawki",
+          "subtitle": "Bezpłatne poprawki",
+          "content": "Utrzymuj zaangażowanie użytkownika, dostarczając wartościowe informacje. Pamiętaj, że na tym etapie użytkownik jest już zaciekawiony."
+        }
+      }
+    },
+    {
+      "id": 4,
+      "widget_category_id": 2,
+      "icon": "fas fa-fingerprint",
+      "widget_image": "",
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Verified Company",
+          "subtitle": "Verified Company",
+          "content": "Write a few lines about each one. A paragraph describing a feature will be enough. Keep you user engaged!"
+        },
+        "uk": {
+          "title": "Перевірена компанія",
+          "subtitle": "Перевірена компанія",
+          "content": "Напишіть кілька рядків про кожну. Одного абзацу з описом функції буде достатньо. Утримуйте увагу користувача!"
+        },
+        "pl": {
+          "title": "Zweryfikowana firma",
+          "subtitle": "Zweryfikowana firma",
+          "content": "Napisz kilka zdań o każdej z nich. Wystarczy jeden akapit opisujący funkcję. Utrzymuj zaangażowanie użytkownika!"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "widget_category_id": 3,
+      "icon": "fas fa-user-friends",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Working with us is a pleasure",
+          "subtitle": "Check free DigiSpace CMS!",
+          "content": "<p class='text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600'>Don't let your uses guess by attaching tooltips and popoves to any element. Just make sure you enable them first via JavaScript. </p><p class='text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600'>The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go. Just make sure you enable them first via JavaScript.</p>"
+        },
+        "uk": {
+          "title": "Працювати з нами — приємно",
+          "subtitle": "Спробуйте безкоштовну DigiSpace CMS!",
+          "content": "<p class='text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600'>Не змушуйте користувачів здогадуватися — додавайте підказки та поповери до будь-якого елемента. Лише спершу увімкніть їх через JavaScript. </p><p class='text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600'>Набір містить три готові сторінки, щоб ви стартували швидше. Змініть текст і зображення — і можна запускати. Лише спершу увімкніть їх через JavaScript.</p>"
+        },
+        "pl": {
+          "title": "Współpraca z nami to przyjemność",
+          "subtitle": "Wypróbuj bezpłatny DigiSpace CMS!",
+          "content": "<p class='text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600'>Nie każ użytkownikom zgadywać — dodawaj podpowiedzi i popovery do dowolnego elementu. Pamiętaj tylko, aby najpierw włączyć je w JavaScript. </p><p class='text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600'>Zestaw zawiera trzy gotowe strony, dzięki którym szybciej zaczniesz. Zmień tekst i obrazy i gotowe. Pamiętaj tylko, aby najpierw włączyć je w JavaScript.</p>"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "widget_category_id": 3,
+      "icon": null,
+      "widget_image": "1671983508.avif",
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Top Notch Services",
+          "subtitle": "Top Notch Services",
+          "content": "The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever happens."
+        },
+        "uk": {
+          "title": "Першокласні послуги",
+          "subtitle": "Першокласні послуги",
+          "content": "Північний Льодовитий океан замерзає щозими, а більша частина морського льоду тане щоліта — і цей процес триватиме, що б не сталося."
+        },
+        "pl": {
+          "title": "Usługi najwyższej klasy",
+          "subtitle": "Usługi najwyższej klasy",
+          "content": "Ocean Arktyczny zamarza każdej zimy, a większość lodu morskiego topnieje każdego lata — i ten proces będzie trwał niezależnie od wszystkiego."
+        }
+      }
+    },
+    {
+      "id": 7,
+      "widget_category_id": 3,
+      "icon": null,
+      "widget_image": "1671983566.avif",
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Left img",
+          "subtitle": "Left img",
+          "content": "Left img"
+        },
+        "uk": {
+          "title": "Left img",
+          "subtitle": "Left img",
+          "content": "Left img"
+        },
+        "pl": {
+          "title": "Left img",
+          "subtitle": "Left img",
+          "content": "Left img"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "widget_category_id": 3,
+      "icon": "fas fa-rocket",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "A growing company",
+          "subtitle": "A growing company",
+          "content": "The extension comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go.\n\nCarefully crafted components\nAmazing page examples\nDynamic components"
+        },
+        "uk": {
+          "title": "Компанія, що зростає",
+          "subtitle": "Компанія, що зростає",
+          "content": "Розширення містить три готові сторінки, щоб ви стартували швидше. Змініть текст і зображення — і можна запускати.\n\nРетельно опрацьовані компоненти\nЧудові приклади сторінок\nДинамічні компоненти"
+        },
+        "pl": {
+          "title": "Rozwijająca się firma",
+          "subtitle": "Rozwijająca się firma",
+          "content": "Rozszerzenie zawiera trzy gotowe strony, dzięki którym szybciej zaczniesz. Zmień tekst i obrazy i gotowe.\n\nStarannie dopracowane komponenty\nŚwietne przykłady stron\nDynamiczne komponenty"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "widget_category_id": 4,
+      "icon": null,
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Here are our heroes",
+          "subtitle": "Here are our heroes",
+          "content": "According to the National Oceanic and Atmospheric Administration, Ted, Scambos, NSIDClead scentist, puts the potentially record maximum."
+        },
+        "uk": {
+          "title": "Ось наші герої",
+          "subtitle": "Ось наші герої",
+          "content": "За даними Національного управління океанічних і атмосферних досліджень, Тед Скамбос, провідний науковець NSIDC, оцінює потенційно рекордний максимум."
+        },
+        "pl": {
+          "title": "Oto nasi bohaterowie",
+          "subtitle": "Oto nasi bohaterowie",
+          "content": "Według Narodowej Administracji Oceanicznej i Atmosferycznej Ted Scambos, główny naukowiec NSIDC, wskazuje na potencjalnie rekordowe maksimum."
+        }
+      }
+    },
+    {
+      "id": 10,
+      "widget_category_id": 4,
+      "icon": null,
+      "widget_image": "1671994172.jpg",
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Ryan Tompson",
+          "subtitle": "Ryan Tompson",
+          "content": "<p>WEB DEVELOPER</p>"
+        },
+        "uk": {
+          "title": "Ryan Tompson",
+          "subtitle": "Ryan Tompson",
+          "content": "<p>ВЕБРОЗРОБНИК</p>"
+        },
+        "pl": {
+          "title": "Ryan Tompson",
+          "subtitle": "Ryan Tompson",
+          "content": "<p>WEB DEVELOPER</p>"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "widget_category_id": 4,
+      "icon": null,
+      "widget_image": "1671983841.jpg",
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Romina Hadid",
+          "subtitle": "Romina Hadid",
+          "content": "MARKETING SPECIALIST"
+        },
+        "uk": {
+          "title": "Romina Hadid",
+          "subtitle": "Romina Hadid",
+          "content": "МАРКЕТОЛОГ"
+        },
+        "pl": {
+          "title": "Romina Hadid",
+          "subtitle": "Romina Hadid",
+          "content": "SPECJALISTA DS. MARKETINGU"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "widget_category_id": 4,
+      "icon": null,
+      "widget_image": "1671983917.jpg",
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Alexa Smith",
+          "subtitle": "Alexa Smith",
+          "content": "UI/UX DESIGNER"
+        },
+        "uk": {
+          "title": "Alexa Smith",
+          "subtitle": "Alexa Smith",
+          "content": "UI/UX-ДИЗАЙНЕР"
+        },
+        "pl": {
+          "title": "Alexa Smith",
+          "subtitle": "Alexa Smith",
+          "content": "PROJEKTANT UI/UX"
+        }
+      }
+    },
+    {
+      "id": 13,
+      "widget_category_id": 4,
+      "icon": null,
+      "widget_image": "1671983965.png",
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Jenna Kardi",
+          "subtitle": "Jenna Kardi",
+          "content": "FOUNDER AND CEO"
+        },
+        "uk": {
+          "title": "Jenna Kardi",
+          "subtitle": "Jenna Kardi",
+          "content": "ЗАСНОВНИЦЯ ТА CEO"
+        },
+        "pl": {
+          "title": "Jenna Kardi",
+          "subtitle": "Jenna Kardi",
+          "content": "ZAŁOŻYCIELKA I CEO"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "widget_category_id": 5,
+      "icon": null,
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Build something",
+          "subtitle": "Build something",
+          "content": "Put the potentially record low maximum sea ice extent tihs year down to low ice. According to the National Oceanic and Atmospheric Administration, Ted, Scambos."
+        },
+        "uk": {
+          "title": "Створіть щось",
+          "subtitle": "Створіть щось",
+          "content": "Потенційно рекордно низький максимум площі морського льоду цього року пояснюють малою кількістю льоду. За даними Національного управління океанічних і атмосферних досліджень, Тед Скамбос."
+        },
+        "pl": {
+          "title": "Zbuduj coś",
+          "subtitle": "Zbuduj coś",
+          "content": "Potencjalnie rekordowo niski maksymalny zasięg lodu morskiego w tym roku tłumaczy się małą ilością lodu. Według Narodowej Administracji Oceanicznej i Atmosferycznej, Ted Scambos."
+        }
+      }
+    },
+    {
+      "id": 15,
+      "widget_category_id": 5,
+      "icon": "fas fa-medal",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Excelent Services",
+          "subtitle": "Excelent Services",
+          "content": "Some quick example text to build on the card title and make up the bulk of the card's content."
+        },
+        "uk": {
+          "title": "Чудові послуги",
+          "subtitle": "Чудові послуги",
+          "content": "Короткий приклад тексту, що доповнює заголовок картки та складає основну частину її вмісту."
+        },
+        "pl": {
+          "title": "Doskonałe usługi",
+          "subtitle": "Doskonałe usługi",
+          "content": "Krótki przykładowy tekst uzupełniający tytuł karty i stanowiący główną część jej treści."
+        }
+      }
+    },
+    {
+      "id": 16,
+      "widget_category_id": 5,
+      "icon": "fas fa-poll",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Grow your market",
+          "subtitle": "Grow your market",
+          "content": "Some quick example text to build on the card title and make up the bulk of the card's content."
+        },
+        "uk": {
+          "title": "Розширюйте ринок",
+          "subtitle": "Розширюйте ринок",
+          "content": "Короткий приклад тексту, що доповнює заголовок картки та складає основну частину її вмісту."
+        },
+        "pl": {
+          "title": "Rozwijaj swój rynek",
+          "subtitle": "Rozwijaj swój rynek",
+          "content": "Krótki przykładowy tekst uzupełniający tytuł karty i stanowiący główną część jej treści."
+        }
+      }
+    },
+    {
+      "id": 17,
+      "widget_category_id": 5,
+      "icon": "fas fa-lightbulb",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Launch time",
+          "subtitle": "Launch time",
+          "content": "Some quick example text to build on the card title and make up the bulk of the card's content."
+        },
+        "uk": {
+          "title": "Час запуску",
+          "subtitle": "Час запуску",
+          "content": "Короткий приклад тексту, що доповнює заголовок картки та складає основну частину її вмісту."
+        },
+        "pl": {
+          "title": "Czas na start",
+          "subtitle": "Czas na start",
+          "content": "Krótki przykładowy tekst uzupełniający tytuł karty i stanowiący główną część jej treści."
+        }
+      }
+    },
+    {
+      "id": 18,
+      "widget_category_id": 5,
+      "icon": null,
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Want to work with us?",
+          "subtitle": "Want to work with us?",
+          "content": "Complete this form and we will get back to you in 24 hours."
+        },
+        "uk": {
+          "title": "Хочете працювати з нами?",
+          "subtitle": "Хочете працювати з нами?",
+          "content": "Заповніть форму — і ми відповімо протягом 24 годин."
+        },
+        "pl": {
+          "title": "Chcesz z nami współpracować?",
+          "subtitle": "Chcesz z nami współpracować?",
+          "content": "Wypełnij formularz, a odpowiemy w ciągu 24 godzin."
+        }
+      }
+    },
+    {
+      "id": 19,
+      "widget_category_id": 6,
+      "icon": null,
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Let's keep in touch!",
+          "subtitle": "Let's keep in touch!",
+          "content": "Find us on any of these platforms, we respond 1-2 business days."
+        },
+        "uk": {
+          "title": "Будьмо на зв'язку!",
+          "subtitle": "Будьмо на зв'язку!",
+          "content": "Знайдіть нас на будь-якій із цих платформ — відповідаємо протягом 1–2 робочих днів."
+        },
+        "pl": {
+          "title": "Bądźmy w kontakcie!",
+          "subtitle": "Bądźmy w kontakcie!",
+          "content": "Znajdź nas na dowolnej z tych platform — odpowiadamy w ciągu 1–2 dni roboczych."
+        }
+      }
+    },
+    {
+      "id": 20,
+      "widget_category_id": 7,
+      "icon": null,
+      "widget_image": null,
+      "css_class": "active show",
+      "anchor": "#tabs-about-1",
+      "element_id": "tabs-about-1",
+      "i18n": {
+        "en": {
+          "title": "What we do",
+          "subtitle": "Developing High-quality Apps",
+          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+        },
+        "uk": {
+          "title": "Що ми робимо",
+          "subtitle": "Розробляємо якісні застосунки",
+          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+        },
+        "pl": {
+          "title": "Czym się zajmujemy",
+          "subtitle": "Tworzymy aplikacje wysokiej jakości",
+          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+        }
+      }
+    },
+    {
+      "id": 21,
+      "widget_category_id": 7,
+      "icon": null,
+      "widget_image": null,
+      "css_class": null,
+      "anchor": "#tabs-about-2",
+      "element_id": "tabs-about-2",
+      "i18n": {
+        "en": {
+          "title": "Our Mission",
+          "subtitle": "Providing Reliable Software",
+          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+        },
+        "uk": {
+          "title": "Наша місія",
+          "subtitle": "Надаємо надійне ПЗ",
+          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+        },
+        "pl": {
+          "title": "Nasza misja",
+          "subtitle": "Dostarczamy niezawodne oprogramowanie",
+          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+        }
+      }
+    },
+    {
+      "id": 22,
+      "widget_category_id": 7,
+      "icon": null,
+      "widget_image": null,
+      "css_class": null,
+      "anchor": "#tabs-about-3",
+      "element_id": "tabs-about-3",
+      "i18n": {
+        "en": {
+          "title": "Our Goal",
+          "subtitle": "Supporting Our Clients",
+          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+        },
+        "uk": {
+          "title": "Наша мета",
+          "subtitle": "Підтримуємо наших клієнтів",
+          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+        },
+        "pl": {
+          "title": "Nasz cel",
+          "subtitle": "Wspieramy naszych klientów",
+          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+        }
+      }
+    },
+    {
+      "id": 23,
+      "widget_category_id": 8,
+      "icon": null,
+      "widget_image": "1673141363.jpg",
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Ann Peterson",
+          "subtitle": "UI Designer",
+          "content": "UI Designer"
+        },
+        "uk": {
+          "title": "Ann Peterson",
+          "subtitle": "UI-дизайнерка",
+          "content": "UI-дизайнерка"
+        },
+        "pl": {
+          "title": "Ann Peterson",
+          "subtitle": "Projektantka UI",
+          "content": "Projektantka UI"
+        }
+      }
+    },
+    {
+      "id": 24,
+      "widget_category_id": 8,
+      "icon": null,
+      "widget_image": "1673141408.jpg",
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Sam Williams",
+          "subtitle": "Lead Developer",
+          "content": "Lead Developer"
+        },
+        "uk": {
+          "title": "Sam Williams",
+          "subtitle": "Провідний розробник",
+          "content": "Провідний розробник"
+        },
+        "pl": {
+          "title": "Sam Williams",
+          "subtitle": "Główny programista",
+          "content": "Główny programista"
+        }
+      }
+    },
+    {
+      "id": 25,
+      "widget_category_id": 8,
+      "icon": null,
+      "widget_image": "1673141448.jpg",
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Emily Smith",
+          "subtitle": "Marketing Manager",
+          "content": "Marketing Manager"
+        },
+        "uk": {
+          "title": "Emily Smith",
+          "subtitle": "Менеджерка з маркетингу",
+          "content": "Менеджерка з маркетингу"
+        },
+        "pl": {
+          "title": "Emily Smith",
+          "subtitle": "Menedżerka ds. marketingu",
+          "content": "Menedżerka ds. marketingu"
+        }
+      }
+    },
+    {
+      "id": 26,
+      "widget_category_id": 9,
+      "icon": "k",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Apps Installed",
+          "subtitle": "1.",
+          "content": "8"
+        },
+        "uk": {
+          "title": "Встановлених застосунків",
+          "subtitle": "1.",
+          "content": "8"
+        },
+        "pl": {
+          "title": "Zainstalowanych aplikacji",
+          "subtitle": "1.",
+          "content": "8"
+        }
+      }
+    },
+    {
+      "id": 27,
+      "widget_category_id": 9,
+      "icon": null,
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Awards Won",
+          "subtitle": null,
+          "content": "27"
+        },
+        "uk": {
+          "title": "Здобутих нагород",
+          "subtitle": null,
+          "content": "27"
+        },
+        "pl": {
+          "title": "Zdobytych nagród",
+          "subtitle": null,
+          "content": "27"
+        }
+      }
+    },
+    {
+      "id": 28,
+      "widget_category_id": 9,
+      "icon": "+",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Staff Members",
+          "subtitle": null,
+          "content": "45"
+        },
+        "uk": {
+          "title": "Співробітників",
+          "subtitle": null,
+          "content": "45"
+        },
+        "pl": {
+          "title": "Członków zespołu",
+          "subtitle": null,
+          "content": "45"
+        }
+      }
+    },
+    {
+      "id": 29,
+      "widget_category_id": 9,
+      "icon": "%",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Satisfied Customers",
+          "subtitle": null,
+          "content": "99"
+        },
+        "uk": {
+          "title": "Задоволених клієнтів",
+          "subtitle": null,
+          "content": "99"
+        },
+        "pl": {
+          "title": "Zadowolonych klientów",
+          "subtitle": null,
+          "content": "99"
+        }
+      }
+    },
+    {
+      "id": 30,
+      "widget_category_id": 10,
+      "icon": null,
+      "widget_image": "1673227358.jpg",
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Michael Johnson",
+          "subtitle": "Regular Client",
+          "content": "<p>TechSoft offers a high caliber of resources skilled in Microsoft Azure .NET mobile and Quality Assurance. They became our true business partners over the past three years of our cooperation.</p>"
+        },
+        "uk": {
+          "title": "Michael Johnson",
+          "subtitle": "Постійний клієнт",
+          "content": "<p>TechSoft надає висококваліфікованих фахівців із Microsoft Azure, .NET, мобільної розробки та забезпечення якості. За три роки співпраці вони стали нашими справжніми бізнес-партнерами.</p>"
+        },
+        "pl": {
+          "title": "Michael Johnson",
+          "subtitle": "Stały klient",
+          "content": "<p>TechSoft oferuje wysokiej klasy specjalistów z zakresu Microsoft Azure, .NET, aplikacji mobilnych i zapewnienia jakości. W ciągu trzech lat współpracy stali się naszymi prawdziwymi partnerami biznesowymi.</p>"
+        }
+      }
+    },
+    {
+      "id": 31,
+      "widget_category_id": 10,
+      "icon": null,
+      "widget_image": "1673227369.jpg",
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Rachel Adams",
+          "subtitle": "Regular Client",
+          "content": "<p>DigiSpace is a highly skilled and uniquely capable firm with multitudes of talent on-board. We have collaborated on a number of diverse projects that have been a great success.</p>"
+        },
+        "uk": {
+          "title": "Rachel Adams",
+          "subtitle": "Постійний клієнт",
+          "content": "<p>DigiSpace — висококваліфікована й по-справжньому здібна компанія з безліччю талантів у команді. Ми разом реалізували чимало різних проєктів, і всі вони стали великим успіхом.</p>"
+        },
+        "pl": {
+          "title": "Rachel Adams",
+          "subtitle": "Stały klient",
+          "content": "<p>DigiSpace to wysoce wykwalifikowana i wyjątkowo kompetentna firma z wieloma talentami na pokładzie. Zrealizowaliśmy wspólnie wiele różnorodnych projektów, które okazały się wielkim sukcesem.</p>"
+        }
+      }
+    },
+    {
+      "id": 32,
+      "widget_category_id": 11,
+      "icon": "fl-bigmug-line-headphones32",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": "footer-phone",
+      "i18n": {
+        "en": {
+          "title": "Phone",
+          "subtitle": "1-800-700-6200",
+          "content": "Our Support Service is always available 24 hours a day"
+        },
+        "uk": {
+          "title": "Телефон",
+          "subtitle": "1-800-700-6200",
+          "content": "Наша служба підтримки доступна цілодобово"
+        },
+        "pl": {
+          "title": "Telefon",
+          "subtitle": "1-800-700-6200",
+          "content": "Nasz dział wsparcia jest dostępny całą dobę"
+        }
+      }
+    },
+    {
+      "id": 33,
+      "widget_category_id": 11,
+      "icon": null,
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": "footer-subscribe",
+      "i18n": {
+        "en": {
+          "title": "Subscribe",
+          "subtitle": "Get the latest updates and offers",
+          "content": "Your E-mail"
+        },
+        "uk": {
+          "title": "Підписатися",
+          "subtitle": "Отримуйте останні новини та пропозиції",
+          "content": "Ваш e-mail"
+        },
+        "pl": {
+          "title": "Subskrybuj",
+          "subtitle": "Otrzymuj najnowsze aktualizacje i oferty",
+          "content": "Twój e-mail"
+        }
+      }
+    },
+    {
+      "id": 34,
+      "widget_category_id": 11,
+      "icon": null,
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": "footer-about",
+      "i18n": {
+        "en": {
+          "title": "About us",
+          "subtitle": "Our company has been developing high-quality and reliable software fof corporate needs since 2008.",
+          "content": "About us"
+        },
+        "uk": {
+          "title": "Про нас",
+          "subtitle": "Наша компанія розробляє якісне та надійне програмне забезпечення для корпоративних потреб із 2008 року.",
+          "content": "Про нас"
+        },
+        "pl": {
+          "title": "O nas",
+          "subtitle": "Nasza firma tworzy wysokiej jakości, niezawodne oprogramowanie dla firm od 2008 roku.",
+          "content": "O nas"
+        }
+      }
+    },
+    {
+      "id": 35,
+      "widget_category_id": 11,
+      "icon": null,
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": "footer-latest-news",
+      "i18n": {
+        "en": {
+          "title": "Latest news",
+          "subtitle": null,
+          "content": "Latest news"
+        },
+        "uk": {
+          "title": "Останні новини",
+          "subtitle": null,
+          "content": "Останні новини"
+        },
+        "pl": {
+          "title": "Najnowsze wiadomości",
+          "subtitle": null,
+          "content": "Najnowsze wiadomości"
+        }
+      }
+    },
+    {
+      "id": 36,
+      "widget_category_id": 11,
+      "icon": null,
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": "footer-useful-links",
+      "i18n": {
+        "en": {
+          "title": "Useful Links",
+          "subtitle": null,
+          "content": "Useful Links"
+        },
+        "uk": {
+          "title": "Корисні посилання",
+          "subtitle": null,
+          "content": "Корисні посилання"
+        },
+        "pl": {
+          "title": "Przydatne linki",
+          "subtitle": null,
+          "content": "Przydatne linki"
+        }
+      }
+    },
+    {
+      "id": 37,
+      "widget_category_id": 12,
+      "icon": "linearicons-cog",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "High Quality Hardware",
+          "subtitle": null,
+          "content": "We use top-notch hardware to develop the most efficient apps for our customers."
+        },
+        "uk": {
+          "title": "Якісне обладнання",
+          "subtitle": null,
+          "content": "Ми використовуємо найкраще обладнання, щоб створювати для клієнтів максимально ефективні застосунки."
+        },
+        "pl": {
+          "title": "Sprzęt wysokiej jakości",
+          "subtitle": null,
+          "content": "Korzystamy z najlepszego sprzętu, aby tworzyć dla klientów najbardziej wydajne aplikacje."
+        }
+      }
+    },
+    {
+      "id": 38,
+      "widget_category_id": 12,
+      "icon": "linearicons-headset",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Dedicated 24/7 Support",
+          "subtitle": null,
+          "content": "You can rely on our 24/7 tech support that will gladly solve any app issue you may have."
+        },
+        "uk": {
+          "title": "Підтримка 24/7",
+          "subtitle": null,
+          "content": "Розраховуйте на нашу цілодобову технічну підтримку — ми залюбки вирішимо будь-яку проблему із застосунком."
+        },
+        "pl": {
+          "title": "Wsparcie 24/7",
+          "subtitle": null,
+          "content": "Możesz polegać na naszym wsparciu technicznym 24/7, które chętnie rozwiąże każdy problem z aplikacją."
+        }
+      }
+    },
+    {
+      "id": 39,
+      "widget_category_id": 12,
+      "icon": "linearicons-wallet",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "30-Day Money-back Guarantee",
+          "subtitle": null,
+          "content": "If you are not satisfied with our apps, we will return your money in the first 30 days."
+        },
+        "uk": {
+          "title": "30-денна гарантія повернення коштів",
+          "subtitle": null,
+          "content": "Якщо наші застосунки вас не влаштують, ми повернемо кошти протягом перших 30 днів."
+        },
+        "pl": {
+          "title": "30-dniowa gwarancja zwrotu pieniędzy",
+          "subtitle": null,
+          "content": "Jeśli nasze aplikacje Cię nie zadowolą, zwrócimy pieniądze w ciągu pierwszych 30 dni."
+        }
+      }
+    },
+    {
+      "id": 40,
+      "widget_category_id": 12,
+      "icon": "linearicons-rocket",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Agile and Fast Working Style",
+          "subtitle": null,
+          "content": "This type of approach to our work helps our specialists to quickly develop better apps."
+        },
+        "uk": {
+          "title": "Гнучкий і швидкий стиль роботи",
+          "subtitle": null,
+          "content": "Такий підхід допомагає нашим фахівцям швидко створювати кращі застосунки."
+        },
+        "pl": {
+          "title": "Zwinny i szybki styl pracy",
+          "subtitle": null,
+          "content": "Takie podejście pomaga naszym specjalistom szybko tworzyć lepsze aplikacje."
+        }
+      }
+    },
+    {
+      "id": 41,
+      "widget_category_id": 12,
+      "icon": "linearicons-rocket",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Some Apps are Free",
+          "subtitle": null,
+          "content": "We also develop free apps that can be downloaded online without any payments."
+        },
+        "uk": {
+          "title": "Частина застосунків — безкоштовна",
+          "subtitle": null,
+          "content": "Ми також розробляємо безкоштовні застосунки, які можна завантажити онлайн без жодної оплати."
+        },
+        "pl": {
+          "title": "Niektóre aplikacje są bezpłatne",
+          "subtitle": null,
+          "content": "Tworzymy również bezpłatne aplikacje, które można pobrać online bez żadnych opłat."
+        }
+      }
+    },
+    {
+      "id": 42,
+      "widget_category_id": 12,
+      "icon": "linearicons-thumbs-up",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "High Level of Usability",
+          "subtitle": null,
+          "content": "All our products have high usability allowing users to easily operate the apps."
+        },
+        "uk": {
+          "title": "Висока зручність користування",
+          "subtitle": null,
+          "content": "Усі наші продукти мають високу зручність користування, тож працювати із застосунками легко."
+        },
+        "pl": {
+          "title": "Wysoka użyteczność",
+          "subtitle": null,
+          "content": "Wszystkie nasze produkty cechuje wysoka użyteczność, dzięki czemu obsługa aplikacji jest łatwa."
+        }
+      }
+    },
+    {
+      "id": 43,
+      "widget_category_id": 13,
+      "icon": null,
+      "widget_image": null,
+      "css_class": "show",
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Can I track my order?",
+          "subtitle": "left",
+          "content": "<p>Yes, you can! After placing your order you will receive an order confirmation via email. Each order starts production 24 hours after your order is placed. Within 72 hours of you placing your order, you will receive an expected delivery date. When the order ships, you will receive another email with the tracking number and a link.</p>"
+        },
+        "uk": {
+          "title": "Чи можу я відстежити замовлення?",
+          "subtitle": "left",
+          "content": "<p>Так! Після оформлення замовлення ви отримаєте підтвердження на e-mail. Виконання кожного замовлення починається через 24 години після оформлення. Протягом 72 годин ви отримаєте орієнтовну дату доставки. Коли замовлення буде відправлено, ви отримаєте ще один лист із номером для відстеження та посиланням.</p>"
+        },
+        "pl": {
+          "title": "Czy mogę śledzić zamówienie?",
+          "subtitle": "left",
+          "content": "<p>Tak! Po złożeniu zamówienia otrzymasz potwierdzenie e-mailem. Realizacja każdego zamówienia rozpoczyna się 24 godziny po jego złożeniu. W ciągu 72 godzin otrzymasz przewidywaną datę dostawy. Gdy zamówienie zostanie wysłane, otrzymasz kolejną wiadomość z numerem śledzenia i linkiem.</p>"
+        }
+      }
+    },
+    {
+      "id": 44,
+      "widget_category_id": 13,
+      "icon": null,
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "How can I change something in my order?",
+          "subtitle": "left",
+          "content": "<p>If you need to change something in your order, please contact us immediately. We usually process orders within 30 minutes, and once we have processed your order, we will be unable to make any changes.</p>"
+        },
+        "uk": {
+          "title": "Як змінити щось у замовленні?",
+          "subtitle": "left",
+          "content": "<p>Якщо потрібно щось змінити в замовленні, негайно зв'яжіться з нами. Зазвичай ми обробляємо замовлення протягом 30 хвилин, і після обробки внести зміни вже неможливо.</p>"
+        },
+        "pl": {
+          "title": "Jak zmienić coś w zamówieniu?",
+          "subtitle": "left",
+          "content": "<p>Jeśli musisz coś zmienić w zamówieniu, skontaktuj się z nami natychmiast. Zwykle przetwarzamy zamówienia w ciągu 30 minut, a po przetworzeniu nie będziemy mogli wprowadzić żadnych zmian.</p>"
+        }
+      }
+    },
+    {
+      "id": 45,
+      "widget_category_id": 13,
+      "icon": null,
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "How can I pay for my order?",
+          "subtitle": "left",
+          "content": "<p>We accept Visa, MasterCard, and American Express credit and debit cards for your convenience.</p>"
+        },
+        "uk": {
+          "title": "Як оплатити замовлення?",
+          "subtitle": "left",
+          "content": "<p>Для вашої зручності ми приймаємо кредитні та дебетові картки Visa, MasterCard і American Express.</p>"
+        },
+        "pl": {
+          "title": "Jak zapłacić za zamówienie?",
+          "subtitle": "left",
+          "content": "<p>Dla Twojej wygody akceptujemy karty kredytowe i debetowe Visa, MasterCard i American Express.</p>"
+        }
+      }
+    },
+    {
+      "id": 46,
+      "widget_category_id": 13,
+      "icon": null,
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "How long will my order be delivered?",
+          "subtitle": "right",
+          "content": "<p>Delivery times will depend on your location. Once payment is confirmed your order will be packaged. Delivery can be expected within a day.</p>"
+        },
+        "uk": {
+          "title": "Скільки триватиме доставка?",
+          "subtitle": "right",
+          "content": "<p>Термін доставки залежить від вашого місцезнаходження. Після підтвердження оплати замовлення буде запаковано. Доставку можна очікувати протягом дня.</p>"
+        },
+        "pl": {
+          "title": "Jak długo potrwa dostawa?",
+          "subtitle": "right",
+          "content": "<p>Czas dostawy zależy od Twojej lokalizacji. Po potwierdzeniu płatności zamówienie zostanie zapakowane. Dostawy można spodziewać się w ciągu jednego dnia.</p>"
+        }
+      }
+    },
+    {
+      "id": 47,
+      "widget_category_id": 13,
+      "icon": null,
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Can I return an item?",
+          "subtitle": "right",
+          "content": "<p>Please contact our administrators for more information on returning products purchased on our website.</p>"
+        },
+        "uk": {
+          "title": "Чи можу я повернути товар?",
+          "subtitle": "right",
+          "content": "<p>Щоб дізнатися більше про повернення товарів, придбаних на нашому сайті, зверніться до наших адміністраторів.</p>"
+        },
+        "pl": {
+          "title": "Czy mogę zwrócić produkt?",
+          "subtitle": "right",
+          "content": "<p>Aby uzyskać więcej informacji o zwrocie produktów zakupionych na naszej stronie, skontaktuj się z naszymi administratorami.</p>"
+        }
+      }
+    },
+    {
+      "id": 48,
+      "widget_category_id": 13,
+      "icon": null,
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "What is a unique/non-unique purchase?",
+          "subtitle": "right",
+          "content": " <p>Non-exclusive purchase means that other people can buy the template you have chosen some time later. Exclusive or unique purchase guarantees that you are the last person to buy this template. After an exclusive purchase occurs the template is being permanently removed from the sales directory and will never be available to other customers again. Only you and people who bought the template before you will own it.</p>"
+        },
+        "uk": {
+          "title": "Що таке унікальна / неунікальна покупка?",
+          "subtitle": "right",
+          "content": " <p>Неексклюзивна покупка означає, що інші люди зможуть придбати обраний вами шаблон пізніше. Ексклюзивна, або унікальна, покупка гарантує, що ви — останній покупець цього шаблону. Після ексклюзивної покупки шаблон назавжди видаляється з каталогу й більше не буде доступний іншим клієнтам. Володітимете ним лише ви та ті, хто придбав шаблон раніше.</p>"
+        },
+        "pl": {
+          "title": "Co to jest zakup unikalny / nieunikalny?",
+          "subtitle": "right",
+          "content": " <p>Zakup nieekskluzywny oznacza, że inne osoby będą mogły później kupić wybrany przez Ciebie szablon. Zakup ekskluzywny (unikalny) gwarantuje, że jesteś ostatnią osobą, która kupuje ten szablon. Po zakupie ekskluzywnym szablon zostaje na stałe usunięty z katalogu i nigdy nie będzie już dostępny dla innych klientów. Będziesz go posiadać tylko Ty i osoby, które kupiły go wcześniej.</p>"
+        }
+      }
+    },
+    {
+      "id": 49,
+      "widget_category_id": 14,
+      "icon": "fl-bigmug-line-file69",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Windows Applications",
+          "subtitle": "Windows Applications",
+          "content": "{\"discount\":\"-25%\", \"currency\":\"$\", \"price_value\":\"126\", \"price_aside\":\"99\", \"period\":\"year\", \"price_old\":\"Old Price $200.00\"}"
+        },
+        "uk": {
+          "title": "Застосунки для Windows",
+          "subtitle": "Застосунки для Windows",
+          "content": "{\"discount\":\"-25%\", \"currency\":\"$\", \"price_value\":\"126\", \"price_aside\":\"99\", \"period\":\"рік\", \"price_old\":\"Стара ціна $200.00\"}"
+        },
+        "pl": {
+          "title": "Aplikacje Windows",
+          "subtitle": "Aplikacje Windows",
+          "content": "{\"discount\":\"-25%\", \"currency\":\"$\", \"price_value\":\"126\", \"price_aside\":\"99\", \"period\":\"rok\", \"price_old\":\"Stara cena $200.00\"}"
+        }
+      }
+    },
+    {
+      "id": 50,
+      "widget_category_id": 14,
+      "icon": "fl-bigmug-line-hot67",
+      "widget_image": null,
+      "css_class": "promo-classic__label-sm",
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "iOS & Android Apps",
+          "subtitle": "iOS & Android Apps",
+          "content": "{\"discount\":\"Free Trial\", \"currency\":\"$\", \"price_value\":\"0\", \"price_aside\":\"99\",  \"period\":\"mon\", \"price_old\":\"Old Price $100.00\"}"
+        },
+        "uk": {
+          "title": "Застосунки для iOS та Android",
+          "subtitle": "Застосунки для iOS та Android",
+          "content": "{\"discount\":\"Безкоштовний пробний період\", \"currency\":\"$\", \"price_value\":\"0\", \"price_aside\":\"99\",  \"period\":\"міс\", \"price_old\":\"Стара ціна $100.00\"}"
+        },
+        "pl": {
+          "title": "Aplikacje iOS i Android",
+          "subtitle": "Aplikacje iOS i Android",
+          "content": "{\"discount\":\"Bezpłatny okres próbny\", \"currency\":\"$\", \"price_value\":\"0\", \"price_aside\":\"99\",  \"period\":\"mies.\", \"price_old\":\"Stara cena $100.00\"}"
+        }
+      }
+    },
+    {
+      "id": 51,
+      "widget_category_id": 14,
+      "icon": "fl-bigmug-line-email64",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "QA & Testing Services",
+          "subtitle": "QA & Testing Services",
+          "content": "{\"discount\":\"-50%\", \"currency\":\"$\", \"price_value\":\"45\", \"price_aside\":\"99\", \"period\":\"mon\", \"price_old\":\"Old Price $150.00\"}"
+        },
+        "uk": {
+          "title": "QA та тестування",
+          "subtitle": "QA та тестування",
+          "content": "{\"discount\":\"-50%\", \"currency\":\"$\", \"price_value\":\"45\", \"price_aside\":\"99\", \"period\":\"міс\", \"price_old\":\"Стара ціна $150.00\"}"
+        },
+        "pl": {
+          "title": "Usługi QA i testowania",
+          "subtitle": "Usługi QA i testowania",
+          "content": "{\"discount\":\"-50%\", \"currency\":\"$\", \"price_value\":\"45\", \"price_aside\":\"99\", \"period\":\"mies.\", \"price_old\":\"Stara cena $150.00\"}"
+        }
+      }
+    },
+    {
+      "id": 52,
+      "widget_category_id": 15,
+      "icon": "",
+      "widget_image": null,
+      "css_class": null,
+      "anchor": null,
+      "element_id": null,
+      "i18n": {
+        "en": {
+          "title": "Get in Touch",
+          "subtitle": "Get in Touch",
+          "content": "{\"address\":{\"name\":\"Address\",\"value\":\"212 Moore Ave, Brooklyn, NY, United States\"}, \"phones\": {\"name\":\"Phones\",\"value\": {\"first\":\"+1-800-700-6200\", \"second\":\"+1-800-955-4567\"}}, \"emails\":{\"name\":\"E-mails\",\"value\":{\"first\":\"support@demolink.org\",\"second\":\"office@demolink.org\"}}}"
+        },
+        "uk": {
+          "title": "Зв'яжіться з нами",
+          "subtitle": "Зв'яжіться з нами",
+          "content": "{\"address\":{\"name\":\"Адреса\",\"value\":\"212 Moore Ave, Brooklyn, NY, United States\"}, \"phones\": {\"name\":\"Телефони\",\"value\": {\"first\":\"+1-800-700-6200\", \"second\":\"+1-800-955-4567\"}}, \"emails\":{\"name\":\"E-mail\",\"value\":{\"first\":\"support@demolink.org\",\"second\":\"office@demolink.org\"}}}"
+        },
+        "pl": {
+          "title": "Skontaktuj się z nami",
+          "subtitle": "Skontaktuj się z nami",
+          "content": "{\"address\":{\"name\":\"Adres\",\"value\":\"212 Moore Ave, Brooklyn, NY, United States\"}, \"phones\": {\"name\":\"Telefony\",\"value\": {\"first\":\"+1-800-700-6200\", \"second\":\"+1-800-955-4567\"}}, \"emails\":{\"name\":\"E-maile\",\"value\":{\"first\":\"support@demolink.org\",\"second\":\"office@demolink.org\"}}}"
+        }
+      }
+    }
+  ]
+}
