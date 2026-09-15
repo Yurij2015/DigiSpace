@@ -73,7 +73,7 @@ function toggleCollapseShow(classes) {
                 <hr class="my-2 md:min-w-full"/>
                 <!-- Heading -->
                 <h6
-                    class="md:min-w-full text-blueGray-500 text-[11px] tracking-wider uppercase font-bold block pt-2 pb-2 no-underline"
+                    class="legacy-sidebar-heading md:min-w-full text-blueGray-500 uppercase block pt-2 pb-1 no-underline"
                 >
                     Portfolio management
                 </h6>
@@ -110,7 +110,7 @@ function toggleCollapseShow(classes) {
                 <!-- Navigation -->
                 <!-- Heading -->
                 <h6
-                    class="md:min-w-full text-blueGray-500 text-[11px] tracking-wider uppercase font-bold block pt-2 pb-2 no-underline"
+                    class="legacy-sidebar-heading md:min-w-full text-blueGray-500 uppercase block pt-2 pb-1 no-underline"
                 >
                     Admin Layout Pages
                 </h6>
@@ -187,7 +187,7 @@ function toggleCollapseShow(classes) {
                 <!-- Divider -->
                 <hr class="my-3 md:min-w-full"/>
                 <h6
-                    class="md:min-w-full text-blueGray-500 text-[11px] tracking-wider uppercase font-bold block pt-2 pb-2 no-underline"
+                    class="legacy-sidebar-heading md:min-w-full text-blueGray-500 uppercase block pt-2 pb-1 no-underline"
                 >
                     HEADER
                 </h6>
@@ -211,7 +211,7 @@ function toggleCollapseShow(classes) {
                 <!-- Divider -->
                 <hr class="my-3 md:min-w-full"/>
                 <h6
-                    class="md:min-w-full text-blueGray-500 text-[11px] tracking-wider uppercase font-bold block pt-2 pb-2 no-underline"
+                    class="legacy-sidebar-heading md:min-w-full text-blueGray-500 uppercase block pt-2 pb-1 no-underline"
                 >
                     BLOG SIDEBAR
                 </h6>
@@ -228,7 +228,7 @@ function toggleCollapseShow(classes) {
                 <!-- Divider -->
                 <hr class="my-3 md:min-w-full"/>
                 <h6
-                    class="md:min-w-full text-blueGray-500 text-[11px] tracking-wider uppercase font-bold block pt-2 pb-2 no-underline"
+                    class="legacy-sidebar-heading md:min-w-full text-blueGray-500 uppercase block pt-2 pb-1 no-underline"
                 >
                     FOOTER
                 </h6>
@@ -260,4 +260,13 @@ function toggleCollapseShow(classes) {
         </div>
     </nav>
 </template>
-); }
+
+<style scoped>
+.legacy-sidebar-heading {
+    margin: 0;
+    font-size: 0.68rem !important;
+    line-height: 1rem !important;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+}
+</style>

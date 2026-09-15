@@ -9,6 +9,13 @@ const userInitial = computed(() => {
 
     return identity.charAt(0).toUpperCase();
 });
+const avatarColor = computed(() => {
+    const palette = ['#dbeafe', '#e0e7ff', '#fce7f3', '#fef3c7', '#ede9fe', '#ffedd5'];
+    const identity = page.props.auth?.user?.name || page.props.auth?.user?.email || 'U';
+    const index = identity.toUpperCase().charCodeAt(0) % palette.length;
+
+    return palette[index];
+});
 
 let toggleDropdown = function (event) {
     event.preventDefault();
@@ -29,9 +36,10 @@ let toggleDropdown = function (event) {
         >
             <div class="items-center flex">
                 <span
-                    class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"
+                    class="w-10 h-10 text-sm text-blueGray-700 bg-white inline-flex items-center justify-center rounded-full border-[0.5px] border-blueGray-200/70 shadow-sm"
                 >
-                    <span class="w-full h-full rounded-full bg-blueGray-500 inline-flex items-center justify-center font-semibold">
+                    <span :style="{backgroundColor: avatarColor}"
+                          class="w-9 h-9 rounded-full text-blueGray-700 inline-flex items-center justify-center font-semibold">
                         {{ userInitial }}
                     </span>
                 </span>
