@@ -7,6 +7,7 @@ use App\Filament\Resources\Menus\Pages\EditMenu;
 use App\Filament\Resources\Menus\Pages\ListMenus;
 use App\Filament\Resources\Menus\Schemas\MenuForm;
 use App\Filament\Resources\Menus\Tables\MenusTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\Menu;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class MenuResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Header';
+        return PanelNavigationGroup::Settings->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 19;
+        return 70;
     }
 
     public static function getPluralModelLabel(): string

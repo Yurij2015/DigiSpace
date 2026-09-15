@@ -7,6 +7,7 @@ use App\Filament\Resources\PfEducationItems\Pages\EditPfEducationItem;
 use App\Filament\Resources\PfEducationItems\Pages\ListPfEducationItems;
 use App\Filament\Resources\PfEducationItems\Schemas\PfEducationItemForm;
 use App\Filament\Resources\PfEducationItems\Tables\PfEducationItemsTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\Portfolio\PfEducationItem;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class PfEducationItemResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Portfolio management';
+        return PanelNavigationGroup::Portfolio->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 1;
+        return 10;
     }
 
     public static function getPluralModelLabel(): string

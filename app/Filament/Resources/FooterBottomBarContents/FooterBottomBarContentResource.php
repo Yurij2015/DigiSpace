@@ -7,6 +7,7 @@ use App\Filament\Resources\FooterBottomBarContents\Pages\EditFooterBottomBarCont
 use App\Filament\Resources\FooterBottomBarContents\Pages\ListFooterBottomBarContents;
 use App\Filament\Resources\FooterBottomBarContents\Schemas\FooterBottomBarContentForm;
 use App\Filament\Resources\FooterBottomBarContents\Tables\FooterBottomBarContentsTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\FooterBottomBarContent;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class FooterBottomBarContentResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Footer';
+        return PanelNavigationGroup::Settings->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 24;
+        return 100;
     }
 
     public static function getPluralModelLabel(): string

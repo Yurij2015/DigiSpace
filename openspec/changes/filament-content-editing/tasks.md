@@ -16,8 +16,8 @@ Run tests via Sail (`vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit �
 
 ## 1. Navigation
 
-- [ ] 1.1 `AdminPanelProvider::navigationGroups()` → Content / Settings (collapsed) / Portfolio (collapsed) with `NavigationGroup` objects and localized labels (`lang/{en,uk,pl}/admin.php`); verify the sidebar shows exactly three groups.
-- [ ] 1.2 Set `getNavigationGroup()`/`getNavigationSort()` on all 24 resources per design D7 (remove the old group strings and duplicate `$navigationSort` properties); verify `grep -rhoE "return '[^']+';" app/Filament/Resources/*/*Resource.php` (navigation group lines) yields only the three labels and `tests/Feature/Filament/NavigationTest.php` asserts group membership and Posts first in Content.
+- [x] 1.1 `AdminPanelProvider::navigationGroups()` → Content / Settings (collapsed) / Portfolio (collapsed) with `NavigationGroup` objects and localized labels (`lang/{en,uk,pl}/admin.php`); verify the sidebar shows exactly three groups.
+- [x] 1.2 Set `getNavigationGroup()`/`getNavigationSort()` on all 24 resources per design D7 (remove the old group strings and duplicate `$navigationSort` properties); verify `grep -rhoE "return '[^']+';" app/Filament/Resources/*/*Resource.php` (navigation group lines) yields only the three labels and `tests/Feature/Filament/NavigationTest.php` asserts group membership and Posts first in Content.
 
 ## 2. Translation safety (bug fix first — it protects everything after)
 

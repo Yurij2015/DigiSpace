@@ -7,6 +7,7 @@ use App\Filament\Resources\PfSkillTypes\Pages\EditPfSkillType;
 use App\Filament\Resources\PfSkillTypes\Pages\ListPfSkillTypes;
 use App\Filament\Resources\PfSkillTypes\Schemas\PfSkillTypeForm;
 use App\Filament\Resources\PfSkillTypes\Tables\PfSkillTypesTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\Portfolio\PfSkillType;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class PfSkillTypeResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Portfolio management';
+        return PanelNavigationGroup::Portfolio->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 3;
+        return 30;
     }
 
     public static function getPluralModelLabel(): string

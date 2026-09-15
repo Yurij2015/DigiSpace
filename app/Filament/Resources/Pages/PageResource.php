@@ -7,6 +7,7 @@ use App\Filament\Resources\Pages\Pages\EditPage;
 use App\Filament\Resources\Pages\Pages\ListPages;
 use App\Filament\Resources\Pages\Schemas\PageForm;
 use App\Filament\Resources\Pages\Tables\PagesTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\Page;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class PageResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Admin Layout Pages';
+        return PanelNavigationGroup::Content->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 13;
+        return 30;
     }
 
     public static function getPluralModelLabel(): string

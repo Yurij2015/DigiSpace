@@ -7,6 +7,7 @@ use App\Filament\Resources\PfSectionItems\Pages\EditPfSectionItem;
 use App\Filament\Resources\PfSectionItems\Pages\ListPfSectionItems;
 use App\Filament\Resources\PfSectionItems\Schemas\PfSectionItemForm;
 use App\Filament\Resources\PfSectionItems\Tables\PfSectionItemsTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\Portfolio\PfSectionItem;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class PfSectionItemResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Portfolio management';
+        return PanelNavigationGroup::Portfolio->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 9;
+        return 90;
     }
 
     public static function getPluralModelLabel(): string

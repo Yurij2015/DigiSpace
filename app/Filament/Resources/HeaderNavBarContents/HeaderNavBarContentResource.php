@@ -7,6 +7,7 @@ use App\Filament\Resources\HeaderNavBarContents\Pages\EditHeaderNavBarContent;
 use App\Filament\Resources\HeaderNavBarContents\Pages\ListHeaderNavBarContents;
 use App\Filament\Resources\HeaderNavBarContents\Schemas\HeaderNavBarContentForm;
 use App\Filament\Resources\HeaderNavBarContents\Tables\HeaderNavBarContentsTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\HeaderNavBarContent;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class HeaderNavBarContentResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Header';
+        return PanelNavigationGroup::Settings->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 18;
+        return 90;
     }
 
     public static function getPluralModelLabel(): string
