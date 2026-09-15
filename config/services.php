@@ -31,6 +31,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    // Zoho CRM configuration
+    // When generating a Grant Token in Zoho API Console, ensure you request the required scope:
+    // Scope: ZohoCRM.modules.leads.ALL (or ZohoCRM.modules.ALL for full access)
     'zoho' => [
         'client_id' => env('ZOHO_CLIENT_ID'),
         'client_secret' => env('ZOHO_CLIENT_SECRET'),
