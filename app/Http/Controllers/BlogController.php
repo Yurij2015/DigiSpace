@@ -38,8 +38,9 @@ class BlogController extends Controller
         ]);
     }
 
-    public function show(string $postSlug): View|Response
+    public function show(Request $request): View|Response
     {
+        $postSlug = (string) $request->route('postSlug');
         $post = Post::where('slug', $postSlug)
             ->where('status', 'published')
             ->with('blogPostBanner')
@@ -58,8 +59,9 @@ class BlogController extends Controller
         ]);
     }
 
-    public function category(string $categorySlug): View
+    public function category(Request $request): View
     {
+        $categorySlug = (string) $request->route('categorySlug');
         $category = Category::where('slug', $categorySlug)->firstOrFail();
         $posts = Post::where('category_id', $category->id)->where('status', 'published')
             ->paginate(config('constants.NUMBER_POSTS_IN_BLOG_PAGE'));
@@ -74,8 +76,9 @@ class BlogController extends Controller
         ]);
     }
 
-    public function archive(string $yearMonth): View
+    public function archive(Request $request): View
     {
+        $yearMonth = (string) $request->route('yearMonth');
         $explodedYearsMonth = explode('-', $yearMonth);
         [$year, $month] = $explodedYearsMonth;
         $posts = $this->blogRepository->getArchivedPosts($year, $month);
@@ -95,8 +98,8 @@ class BlogController extends Controller
         $posts = Post::query();
         if (request('search')) {
             $posts
-                ->where('name', 'like', '%' . request('search') . '%')
-                ->orWhere('content', 'like', '%' . request('search') . '%');
+                ->where('name', 'like', '%'.request('search').'%')
+                ->orWhere('content', 'like', '%'.request('search').'%');
         }
 
         $posts = $posts->paginate(config('constants.NUMBER_POSTS_IN_MENU'));
@@ -122,7 +125,7 @@ class BlogController extends Controller
     private function getCategories(): Collection
     {
         return Category::orderByDesc('created_at')
-            ->withWhereHas('post', fn($q) => $q->where('status', 'published'))
+            ->withWhereHas('post', fn ($q) => $q->where('status', 'published'))
             ->get();
     }
 

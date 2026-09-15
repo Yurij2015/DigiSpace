@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasLocalizedContent;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -49,9 +50,36 @@ use Illuminate\Support\Carbon;
  */
 class Post extends Model
 {
+    use HasLocalizedContent;
+
     protected $fillable = [
-        'name', 'slug', 'content', 'status', 'description', 'category_id', 'user_id', 'img_path',
+        'name', 'slug', 'content', 'status', 'description', 'category_id', 'user_id', 'img_path', 'translations',
     ];
+
+    protected function casts(): array
+    {
+        return ['translations' => 'array'];
+    }
+
+    protected function name(): Attribute
+    {
+        return $this->localizedAttribute('name');
+    }
+
+    protected function content(): Attribute
+    {
+        return $this->localizedAttribute('content');
+    }
+
+    protected function description(): Attribute
+    {
+        return $this->localizedAttribute('description');
+    }
+
+    protected function keywords(): Attribute
+    {
+        return $this->localizedAttribute('keywords');
+    }
 
     /**
      * Get the img_path correct path.

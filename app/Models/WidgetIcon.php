@@ -36,7 +36,7 @@ use Illuminate\Support\Carbon;
 class WidgetIcon extends Model
 {
     protected $fillable = [
-        'icon_class', 'description', 'url', 'css_class',
+        'icon_class', 'description', 'url', 'css_class', 'widget_id',
     ];
 
     public function widget(): BelongsTo

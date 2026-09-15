@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', "DigiSpace | Blog - $post->name")
+@section('title', __('site.blog_post_title', ['name' => $post->name]))
 @section('content')
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">
@@ -12,7 +12,7 @@
         <div class="breadcrumbs-custom__main bg-gray-light">
             <div class="container">
                 <ul class="breadcrumbs-custom__path">
-                    <li><a href="{{ route('home.index')}}">Home</a></li>
+                    <li><a href="{{ route('home.index') }}">{{ __('site.home') }}</a></li>
                     <li><a href="{{ route('blog') }}"> Blog</a></li>
                     <li><a href="{{ route('blog-category', $post->category->slug) }}">{{ $post->category->name }}</a>
                     </li>
@@ -57,8 +57,8 @@
                             </ul>
                             <ul class="post-single__meta">
                                 <li><span class="icon mdi icon mdi mdi-account"></span>
-                                    <span>by</span>
-                                    <a href="#">{{ $post->user->name }}</a>
+                                    <span>{{ __('site.by') }}</span>
+                                    <span>{{ $post->user->name }}</span>
                                 </li>
                             </ul>
                         </div>
@@ -74,7 +74,7 @@
                             </time>
                         </div>
                         <h4 class="post-single__title">{{ $post->name }}</h4>
-                        <img src="{{ asset($post->img_path) }}" alt="" width="715" height="417"/>
+                        <img src="{{ asset($post->img_path) }}" alt="{{ $post->name }}" width="715" height="417"/>
                         <article class="quote-classic quote-classic_secondary">
                             <p>{!! $post->content !!}</p>
                         </article>
@@ -110,7 +110,7 @@
                                         <a class="post-minimal__media"
                                            href="{{ route('blog.post', $recentPost->slug) }}">
                                             <img class="post-minimal__image"
-                                                 src="{{ asset($recentPost->img_path) }}" alt=""
+                                                 src="{{ asset($recentPost->img_path) }}" alt="{{ $recentPost->name }}"
                                                  width="368" height="293"/>
                                         </a>
                                         <h4 class="post-minimal__title">
@@ -127,10 +127,8 @@
                                             </li>
                                             <li>
                                                 <span class="icon mdi mdi-account"></span>
-                                                <span>by</span>
-                                                <a href="#">
-                                                    {{ $recentPost->user->name }}
-                                                </a>
+                                                <span>{{ __('site.by') }}</span>
+                                                <span>{{ $recentPost->user->name }}</span>
                                             </li>
                                         </ul>
                                     </article>

@@ -1,8 +1,26 @@
 <!DOCTYPE html>
-<html class="wide wow-animation" lang="en">
+<html class="wide wow-animation" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <!-- Site Title-->
-    <title>@yield('title', 'DigiSpace service')</title>
+    <title>@yield('title', __('site.default_title'))</title>
+    @if(! isset($post) && ! isset($page) && ! isset($serviceCategory))
+        <meta name="description" content="{{ __('site.meta_description') }}">
+    @endif
+    @php
+        $localizedRouteNames = config('locales.route_names', []);
+        $currentRouteName = Route::currentRouteName();
+        $currentRouteParameters = request()->route()?->parameters() ?? [];
+        unset($currentRouteParameters['locale']);
+    @endphp
+    @if(in_array($currentRouteName, $localizedRouteNames, true))
+        <link rel="canonical" href="{{ route($currentRouteName, array_merge(['locale' => app()->getLocale()], $currentRouteParameters), true) }}">
+        @foreach(config('locales.supported') as $alternateLocale)
+            <link rel="alternate" hreflang="{{ $alternateLocale }}"
+                  href="{{ route($currentRouteName, array_merge(['locale' => $alternateLocale], $currentRouteParameters), true) }}">
+        @endforeach
+        <link rel="alternate" hreflang="x-default"
+              href="{{ route($currentRouteName, array_merge(['locale' => config('locales.default')], $currentRouteParameters), true) }}">
+    @endif
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,6 +58,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/site.css') }}">
 
     <!-- Meta Pixel Code -->
     <script>
@@ -75,7 +94,7 @@
 <!-- Page Loader-->
 <div id="page-loader">
     <div class="page-loader-body">
-        <img src="{{ asset('images/DigiSpaceLogo2.svg') }}" alt="" width="170"
+        <img src="{{ asset('images/DigiSpaceLogo2.svg') }}" alt="{{ config('app.name') }}" width="170"
              height="80"/>
         <div class="cssload-wrapper">
             <div class="cssload-border">
@@ -113,5 +132,6 @@
 <script src="{{ asset('js/new-relic.js') }}"></script>
 <script src="{{ asset('js/core.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
+<script src="{{ asset('js/site.js') }}"></script>
 </body>
 </html>

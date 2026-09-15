@@ -1,11 +1,13 @@
 <script setup>
 import PagesDropdown from "@/Components/Dropdowns/PagesDropdown.vue";
-import {Link} from '@inertiajs/inertia-vue3';
+import LanguageSwitcher from "@/Components/LanguageSwitcher.vue";
+import {Link} from '@inertiajs/vue3';
+import {ref} from 'vue';
 
-const navbarOpen = false;
+const navbarOpen = ref(false);
 
 const setNavbarOpen = function () {
-    this.navbarOpen = !this.navbarOpen;
+    navbarOpen.value = !navbarOpen.value;
 }
 
 </script>
@@ -21,7 +23,7 @@ const setNavbarOpen = function () {
             >
                 <Link
                     class="text-white text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
-                    to="/"
+                    href="/"
                 >
                     DigiSpace CMS
                 </Link>
@@ -57,7 +59,7 @@ const setNavbarOpen = function () {
                     <li class="flex items-center">
                         <Link
                             class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            to="/"
+                            href="/"
                             target="_blank"
                         >
                             <i
@@ -70,7 +72,7 @@ const setNavbarOpen = function () {
                     <li class="flex items-center">
                         <Link
                             class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            to="/"
+                            href="/"
                             target="_blank"
                         >
                             <i
@@ -83,7 +85,7 @@ const setNavbarOpen = function () {
                     <li class="flex items-center">
                         <Link
                             class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                            to="/"
+                            href="/"
                             target="_blank"
                         >
                             <i
@@ -91,6 +93,9 @@ const setNavbarOpen = function () {
                             />
                             <span class="lg:hidden inline-block ml-2">GitHub</span>
                         </Link>
+                    </li>
+                    <li class="flex items-center ml-2">
+                        <LanguageSwitcher contrast />
                     </li>
                 </ul>
             </div>

@@ -1,0 +1,44 @@
+/* DigiSpace public-site overrides on top of the theme (style.css). Loaded after style.css. */
+
+/* Footer subscribe feedback */
+.subscribe-form-feedback { margin: 12px 0 0; font-size: 14px; line-height: 1.4; }
+.subscribe-form-feedback_error { color: #ff6b6b; }
+.subscribe-form-feedback_success { color: #b8f28b; }
+
+/* Header (desktop, static navbar) */
+.rd-navbar-static .rd-navbar-static--hidden { display: none !important; } /* theme ships the mobile contacts toggle without this rule */
+.rd-navbar-static.rd-navbar-classic .rd-navbar-aside > .site-header-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.rd-navbar-static.rd-navbar-classic .rd-navbar-aside { flex-wrap: nowrap; gap: 16px; }
+.rd-navbar-static .rd-navbar-content-outer { min-width: 0; }
+.rd-navbar-static .site-language-control--mobile { display: none; }
+.rd-navbar-static.rd-navbar-classic .rd-navbar-element .site-language-control { margin: 0 16px 5px 0; }
+.rd-navbar-nav > li > a.rd-navbar-nav__label { cursor: pointer; } /* bootstrap greys out href-less anchors without a class */
+
+/* Language switcher: <details> dropdown of links, current language shown on the toggle */
+.site-language-control__menu { position: relative; }
+.site-language-control__menu > summary { list-style: none; }
+.site-language-control__menu > summary::-webkit-details-marker { display: none; }
+.site-language-control__toggle { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 10px; border: 1px solid #eaeced; border-radius: 6px; background: #fff; color: #151515; font: 600 13px/1 Arial, sans-serif; white-space: nowrap; cursor: pointer; user-select: none; }
+.site-language-control__toggle:hover { border-color: #00a9ff; }
+.site-language-control__toggle:focus-visible { outline: 2px solid #00a9ff; outline-offset: 2px; }
+.site-language-control__menu[open] > .site-language-control__toggle { border-color: #00a9ff; }
+.site-language-control__menu[open] .site-language-control__caret { transform: rotate(180deg); }
+.site-language-control__caret { transition: transform .15s ease; }
+.site-language-control__code { display: none; }
+.site-language-control__list { position: absolute; top: calc(100% + 6px); right: 0; z-index: 1003; min-width: 160px; margin: 0; padding: 6px 0; list-style: none; background: #fff; border: 1px solid #eaeced; border-radius: 6px; box-shadow: 0 8px 24px rgba(0, 0, 0, .12); }
+.site-language-control__list a { display: block; padding: 8px 14px; font: 500 14px/1.3 Arial, sans-serif; color: #151515; text-decoration: none; white-space: nowrap; }
+.site-language-control__list a:hover, .site-language-control__list a:focus-visible { background: #f2f9ff; color: #006ea8; outline: none; }
+.site-language-control__list a[aria-current="true"] { font-weight: 700; color: #006ea8; }
+.site-language-control__list a[aria-current="true"]::after { content: " \2713"; }
+
+/* Header (mobile, fixed navbar): switcher in the fixed top bar between the logo and the contacts toggle */
+button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; background: transparent; border: 0; padding: 0; } /* it is a <button> now; drop the UA chrome */
+.rd-navbar-fixed .site-language-control--desktop { display: none; }
+.rd-navbar-fixed .rd-navbar-brand .brand img { width: 130px !important; max-width: 130px !important; height: auto; }
+.rd-navbar-fixed .site-language-control { position: fixed; top: 10px; right: 60px; z-index: 1002; }
+.rd-navbar-fixed .site-language-control__toggle { padding: 0 8px; gap: 5px; }
+.rd-navbar-fixed .site-language-control__icon { display: none; } /* the full language name is the label; the globe does not fit next to the logo */
+@media (max-width: 360px) {
+  .rd-navbar-fixed .rd-navbar-brand .brand img { width: 100px !important; max-width: 100px !important; }
+  .rd-navbar-fixed .site-language-control__toggle { padding: 0 6px; font-size: 12px; }
+}

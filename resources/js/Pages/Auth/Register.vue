@@ -2,7 +2,7 @@
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
-import {Link, useForm} from '@inertiajs/inertia-vue3';
+import {Link, useForm} from '@inertiajs/vue3';
 import Navbar from "@/Components/Navbars/AuthNavbar.vue";
 import FooterSmall from "@/Components/Footers/FooterSmall.vue";
 

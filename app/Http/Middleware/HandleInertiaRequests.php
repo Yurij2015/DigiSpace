@@ -2,9 +2,14 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Category;
+use App\Models\Page;
+use App\Models\Post;
+use App\Models\Product;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
-use Tightenco\Ziggy\Ziggy;
+use Tighten\Ziggy\Ziggy;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -36,6 +41,17 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'locale' => app()->getLocale(),
+            'locales' => config('locales.supported'),
+            'adminStats' => fn (): array => ($request->user() && ($request->is('admin*') || $request->is('portfolio*')))
+                ? [
+                    'categories' => Category::count(),
+                    'pages' => Page::count(),
+                    'posts' => Post::count(),
+                    'services' => Service::count(),
+                    'products' => Product::count(),
+                ]
+                : [],
             'ziggy' => function () use ($request) {
                 return array_merge((new Ziggy)->toArray(), [
                     'location' => $request->url(),

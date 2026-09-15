@@ -1,6 +1,6 @@
 <script setup>
 import InputError from "@/Components/InputError.vue";
-import {useForm} from "@inertiajs/inertia-vue3";
+import {useForm} from "@inertiajs/vue3";
 
 defineEmits(['close-modal']);
 

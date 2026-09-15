@@ -11,7 +11,7 @@
                 <div class="rd-navbar-inner">
                     <!-- RD Navbar Panel-->
                     <div class="rd-navbar-panel">
-                        <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span>
+                        <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap" aria-label="{{ __('site.toggle_navigation') }}"><span></span>
                         </button>
                         <!-- RD Navbar Brand-->
                         <div class="rd-navbar-brand">
@@ -19,14 +19,16 @@
                                 <div class="brand__name">
                                     <img class="brand__logo-dark"
                                          src="{{ asset('images/DigiSpaceLogo2.svg') }}"
-                                         alt="" width="170"
+                                         alt="{{ config('app.name') }}" width="170"
                                          height="80"/>
                                     <img class="brand__logo-mobile"
                                          src="{{ asset('images/DigiSpaceLogo2.svg') }}"
-                                         alt="" width="170" height="50"/>
+                                         alt="{{ config('app.name') }}" width="170" height="50"/>
                                 </div>
                             </a>
                         </div>
+                        {{-- Mobile (rd-navbar-fixed) switcher lives in the fixed top bar; hidden on the static layout. --}}
+                        <x-language-switcher class="site-language-control--mobile"/>
                     </div>
                     <div class="rd-navbar-body">
                         <!-- RD Navbar Top -->
@@ -36,32 +38,32 @@
                         <!-- RD Navbar Nav Wrap-->
                         <div class="rd-navbar-nav-wrap">
                             <div class="rd-navbar-element">
+                                {{-- Desktop switcher sits in the main nav row so it survives the stuck (scrolled) state. --}}
+                                <x-language-switcher class="site-language-control--desktop"/>
                                 <!-- RD Navbar Search-->
                                 <div class="rd-navbar-search rd-navbar-search-toggled">
                                     <button class="rd-navbar-search-toggle"
-                                            data-rd-navbar-toggle=".rd-navbar-search"></button>
-                                    <form class="rd-search" action="search-results.html"
-                                          data-search-live="rd-search-results-live" method="GET">
+                                            data-rd-navbar-toggle=".rd-navbar-search" aria-label="{{ __('site.toggle_search') }}"></button>
+                                    {{-- No data-search-live: the theme's live search posts to a PHP handler this app does not ship. --}}
+                                    <form class="rd-search" action="{{ route('service-search') }}" method="GET" role="search">
                                         <div class="form-wrap">
-                                            <input class="form-input" id="rd-navbar-search-form-input" type="text"
-                                                   name="s" autocomplete="off">
+                                            <input class="form-input" id="rd-navbar-search-form-input" type="search"
+                                                   name="search" autocomplete="off" value="{{ request()->routeIs('service-search') ? request('search') : '' }}">
                                         </div>
-                                        <button class="rd-navbar-search-submit" type="submit"></button>
+                                        <button class="rd-navbar-search-submit" type="submit" aria-label="{{ __('site.submit_search') }}"></button>
                                         <label class="form-label"
-                                               for="rd-navbar-search-form-input">Search...</label>
-                                        <div class="rd-search-results-live" id="rd-search-results-live"></div>
+                                               for="rd-navbar-search-form-input">{{ __('site.search') }}</label>
                                     </form>
                                 </div>
                             </div>
                             <!-- RD Navbar Nav-->
                             <ul class="rd-navbar-nav">
                                 <li class="{{ Route::is('about') ? 'active' : '' }}">
-                                    <a href="{{ route('about') }}">About</a>
+                                    <a href="{{ route('about') }}">{{ __('site.about') }}</a>
                                 </li>
                                 <li class="{{ Route::is('services') ? 'active' : '' }}">
-                                    <a href="{{ route('services') }}">Services</a>
+                                    <a href="{{ route('services') }}">{{ __('site.services') }}</a>
                                     @if(isset($serviceCategories) && count($serviceCategories))
-                                        ;
                                         <ul class="rd-navbar-dropdown">
                                             @foreach($serviceCategories as $serviceCategory)
                                                 <li>
@@ -74,18 +76,18 @@
                                     @endif
                                 </li>
                                 <li class="{{ Route::is('pricing') ? 'active' : '' }}">
-                                    <a href="{{ route('pricing') }}">Pricing</a>
+                                    <a href="{{ route('pricing') }}">{{ __('site.pricing') }}</a>
                                 </li>
                                 @php
                                     $isPromoTabActive = config('settings.is_promo_tab_active');
                                 @endphp
                                 @if($isPromoTabActive)
                                     <li class="{{ Route::is('promos') ? 'active' : '' }}">
-                                        <a href="{{ route('promos') }}">Promos</a>
+                                        <a href="{{ route('promos') }}">{{ __('site.promos') }}</a>
                                     </li>
                                 @endif
                                 <li class="{{ Route::is('blog') ? 'active' : '' }}">
-                                    <a href="{{ route('blog') }}">Blog</a>
+                                    <a href="{{ route('blog') }}">{{ __('site.blog') }}</a>
                                     <ul class="rd-navbar-dropdown">
                                         @foreach($postsForMenu as $post)
                                             <li>
@@ -96,7 +98,10 @@
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li><a href="#">Pages</a>
+                                {{-- Kept as an anchor element (not a button): the theme binds megamenu hover/touch to
+                                     "li > a" and styles only anchors. No href, since "#" would trigger its anchor handler;
+                                     the class stops bootstrap greying href-less anchors, and js/site.js adds keyboard toggling. --}}
+                                <li><a class="rd-navbar-nav__label" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">{{ __('site.pages') }}</a>
                                     <!-- RD Navbar Megamenu-->
                                     <ul class="rd-navbar-megamenu">
                                         <li>
@@ -144,7 +149,7 @@
                                     </ul>
                                 </li>
                                 <li class="{{ Route::is('contact-us') ? 'active' : '' }}">
-                                    <a href="{{ route('contact-us') }}">Contact Us</a>
+                                    <a href="{{ route('contact-us') }}">{{ __('site.contact_us') }}</a>
                                 </li>
                             </ul>
                         </div>

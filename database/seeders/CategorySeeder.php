@@ -15,6 +15,7 @@ class CategorySeeder extends Seeder
         $categories = [
             [
                 'name' => 'Category 1',
+                'slug' => 'category-1',
                 'description' => 'Category 1',
                 'created_at' => now(),
                 'updated_at' => now(),

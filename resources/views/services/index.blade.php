@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'DigiSpace | Services')
+@section('title', __('site.services_title'))
 @section('content')
     <!-- Get a Domain Name-->
     <!-- Breadcrumbs-->
@@ -7,14 +7,14 @@
         <div class="breadcrumbs-custom__aside bg-image context-dark"
              style="background-image: url({{ asset("images/services-page-title-bg.jpg") }});">
             <div class="container">
-                <h2 class="breadcrumbs-custom__title">Services</h2>
+                <h2 class="breadcrumbs-custom__title">{{ __('site.services') }}</h2>
             </div>
         </div>
         <div class="breadcrumbs-custom__main bg-gray-light">
             <div class="container">
                 <ul class="breadcrumbs-custom__path">
-                    <li><a href="{{ route('home.index') }}">Home</a></li>
-                    <li class="active">Services</li>
+                    <li><a href="{{ route('home.index') }}">{{ __('site.home') }}</a></li>
+                    <li class="active">{{ __('site.services') }}</li>
                 </ul>
             </div>
         </div>

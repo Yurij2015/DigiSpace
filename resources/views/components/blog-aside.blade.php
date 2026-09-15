@@ -4,7 +4,7 @@
         <form class="rd-search rd-search_inline form_lg form_outline" action="{{ route('blog-search') }}"
               method="get">
             <div class="form-wrap">
-                <label class="form-label" for="rd-search-blog-form-input">Search the blog...</label>
+                <label class="form-label" for="rd-search-blog-form-input">{{ __('site.search_the_blog') }}</label>
                 <input class="form-input" id="rd-search-blog-form-input" type="text" name="search"
                        autocomplete="off">
             </div>
@@ -12,7 +12,7 @@
         </form>
     </div>
     <div class="blog-layout__aside-item blog-layout__aside-item_bordered">
-        <p class="custom-heading-line heading-8">Categories</p>
+        <p class="custom-heading-line heading-8">{{ __('site.categories') }}</p>
         <ul class="list-categories">
             <li class="{{ Route::is('blog') ? 'active' : '' }}">
                 <a href="{{ route('blog') }}">All categories</a>
@@ -46,7 +46,7 @@
         </ul>
     </div>
     <div class="blog-layout__aside-item blog-layout__aside-item_bordered">
-        <p class="custom-heading-line heading-8">Archive</p>
+        <p class="custom-heading-line heading-8">{{ __('site.archive') }}</p>
         <!-- Select 2-->
         <select class="form-input select" data-placeholder="All" data-minimum-results-for-search="Infinity"
                 data-constraints="{!! '@' !!}Required"

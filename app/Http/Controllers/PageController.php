@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\MenuItem;
 use App\Models\Widget;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
 
 class PageController extends Controller
 {
-    public function show(string $slug): Response|View
+    public function show(Request $request): Response|View
     {
+        $slug = (string) $request->route('slug');
         $menuItemPage = MenuItem::with('pages')->where('slug', $slug)->firstOrFail();
         $pageImage = Widget::where('subtitle', $slug)
             ->where('widget_category_id', config('constants.PAGES_IMAGES'))

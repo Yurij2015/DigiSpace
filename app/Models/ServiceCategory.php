@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasLocalizedContent;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -38,9 +40,36 @@ use Str;
  */
 class ServiceCategory extends Model
 {
+    use HasLocalizedContent;
+
     protected $fillable = [
-        'name', 'seo_keywords', 'seo_description', 'seo_title', 'slug',
+        'name', 'seo_keywords', 'seo_description', 'seo_title', 'slug', 'translations',
     ];
+
+    protected function casts(): array
+    {
+        return ['translations' => 'array'];
+    }
+
+    protected function name(): Attribute
+    {
+        return $this->localizedAttribute('name');
+    }
+
+    protected function seoKeywords(): Attribute
+    {
+        return $this->localizedAttribute('seo_keywords');
+    }
+
+    protected function seoDescription(): Attribute
+    {
+        return $this->localizedAttribute('seo_description');
+    }
+
+    protected function seoTitle(): Attribute
+    {
+        return $this->localizedAttribute('seo_title');
+    }
 
     protected static function boot(): void
     {

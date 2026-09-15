@@ -1,65 +1,34 @@
 <script setup>
-import {createPopper} from "@popperjs/core";
 import {ref} from "vue";
 
 let dropdownPopoverShow = ref(false);
-let btnDropdownRef;
-let popoverDropdownRef;
-
 let toggleDropdown = function (event) {
     event.preventDefault();
     if (dropdownPopoverShow.value) {
         dropdownPopoverShow.value = false;
     } else {
         dropdownPopoverShow.value = true;
-        createPopper(btnDropdownRef, popoverDropdownRef, {
-            placement: "bottom-start",
-        });
     }
 }
 </script>
 <template>
-    <div>
+    <div class="relative">
         <a
             class="text-blueGray-500 block py-1 px-3"
-            ref="btnDropdownRef"
             v-on:click="toggleDropdown($event)"
+            href="#notifications"
+            aria-label="Open notifications"
         >
             <i class="fas fa-bell"></i>
         </a>
         <div
-            ref="popoverDropdownRef"
-            class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+            class="absolute right-0 mt-2 bg-white text-base z-50 py-2 list-none text-left rounded-lg shadow-lg min-w-48 border border-blueGray-100"
             v-bind:class="{
         hidden: !dropdownPopoverShow,
         block: dropdownPopoverShow,
       }"
         >
-            <a
-                href="javascript:void(0);"
-                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-            >
-                Action
-            </a>
-            <a
-                href="javascript:void(0);"
-                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-            >
-                Another action
-            </a>
-            <a
-                href="javascript:void(0);"
-                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-            >
-                Something else here
-            </a>
-            <div class="h-0 my-2 border border-solid border-blueGray-100"/>
-            <a
-                href="javascript:void(0);"
-                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-            >
-                Seprated link
-            </a>
+            <p class="text-sm py-2 px-4 text-blueGray-500 whitespace-nowrap">No notifications</p>
         </div>
     </div>
 </template>

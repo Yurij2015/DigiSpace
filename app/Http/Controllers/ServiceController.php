@@ -10,6 +10,7 @@ use App\Services\ServicesService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
@@ -39,8 +40,9 @@ class ServiceController extends Controller
         ]);
     }
 
-    public function categoryServices(ServiceCategory $serviceCategory): Application|Factory|View
+    public function categoryServices(Request $request): Application|Factory|View
     {
+        $serviceCategory = ServiceCategory::where('slug', (string) $request->route('serviceCategory'))->firstOrFail();
         $serviceCategories = ServiceCategory::with('service')->get();
         $services = Service::with('serviceCategory')
             ->whereRelation('serviceCategory', 'slug', '=', $serviceCategory->slug)
@@ -53,8 +55,12 @@ class ServiceController extends Controller
         ]);
     }
 
-    public function serviceShow(ServiceCategory $serviceCategory, Service $service): Application|Factory|View
+    public function serviceShow(Request $request): Application|Factory|View
     {
+        $serviceCategory = ServiceCategory::where('slug', (string) $request->route('serviceCategory'))->firstOrFail();
+        $service = Service::where('slug', (string) $request->route('service'))
+            ->where('service_category_id', $serviceCategory->id)
+            ->firstOrFail();
         $serviceCategories = ServiceCategory::all();
 
         return view('services.service', [
@@ -69,11 +75,14 @@ class ServiceController extends Controller
         $serviceCategories = ServiceCategory::with('service')->get();
         $services = Service::query();
         if (request('search')) {
+            $term = '%'.request('search').'%';
             $services
                 ->with('serviceCategory')
-                ->where('title', 'like', '%'.request('search').'%')
-                ->where('service_category_id', '!=', null)
-                ->orWhere('description', 'like', '%'.request('search').'%');
+                ->whereHas('serviceCategory')
+                ->where(function ($query) use ($term) {
+                    $query->where('title', 'like', $term)
+                        ->orWhere('description', 'like', $term);
+                });
         }
         if (! $services->count()) {
             return response()->view('errors.nothin-found')->setStatusCode(404);

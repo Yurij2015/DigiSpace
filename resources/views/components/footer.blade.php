@@ -28,22 +28,29 @@
                                 <h3>{{ $widget->title }}</h3>
                                 <p class="large">{{ $widget->subtitle }}</p>
                             </div>
-                            <!-- TODO - set up with RD Mailform or send with ajax -->
-                            <form class="rd-mailform form_inline form_lg" data-form-output="form-output-global"
-                                  data-form-type="subscribe" method="post" action="{{ route('subscriber-save') }}">
+                            {{-- Plain POST (no rd-mailform class): the theme's AJAX handler expects an RD Mailform JSON reply. --}}
+                            <form class="form_inline form_lg" method="post" action="{{ route('subscriber-save') }}">
                                 @csrf
                                 <div class="form-wrap">
-                                    <input class="form-input" id="subscribe-form-footer-form-email" type="email"
-                                           name="email">
+                                    <input class="form-input @error('email', 'subscribe') error @enderror"
+                                           id="subscribe-form-footer-form-email" type="email" name="email"
+                                           value="{{ old('email') }}" autocomplete="email" required
+                                           @error('email', 'subscribe') aria-invalid="true" aria-describedby="subscribe-form-footer-form-error" @enderror>
                                     <label class="form-label"
                                            for="subscribe-form-footer-form-email">{{ $widget->content }}</label>
                                 </div>
                                 <div class="form-button">
                                     <button class="button button-lg button-primary button-ujarak" type="submit">
-                                        Subscribe
+                                        {{ __('site.subscribe') }}
                                     </button>
                                 </div>
                             </form>
+                            @error('email', 'subscribe')
+                                <p class="subscribe-form-feedback subscribe-form-feedback_error" id="subscribe-form-footer-form-error" role="alert">{{ $message }}</p>
+                            @enderror
+                            @if(session('subscribe_success'))
+                                <output class="subscribe-form-feedback subscribe-form-feedback_success">{{ session('subscribe_success') }}</output>
+                            @endif
                         @endif
                     @endforeach
                 </div>
@@ -57,10 +64,12 @@
                             <p class="ls-05">{{ $widget->subtitle }}</p>
                             <ul class="list-inline list-inline-xs">
                                 @foreach($widget->widgetIcon as $icon)
-                                    <li>
-                                        <a class="icon icon-xxs icon-circle icon-filled icon-filled_brand {{ $icon->icon_class }}"
-                                           href="{{ $icon->url }}" target="_blank"></a>
-                                    </li>
+                                    @if($icon->url)
+                                        <li>
+                                            <x-social-link :href="$icon->url" :icon="$icon->icon_class"
+                                                           class="icon icon-xxs icon-circle icon-filled icon-filled_brand"/>
+                                        </li>
+                                    @endif
                                 @endforeach
                             </ul>
                         </div>

@@ -60,7 +60,7 @@
 				lightDynamicGalleryItem: $("[data-lightgallery='dynamic']"),
 				mailchimp:               $('.mailchimp-mailform'),
 				campaignMonitor:         $('.campaign-mailform'),
-				selectFilter:            $("select"),
+				selectFilter:            $("select").not(".site-language-control select"),
 				counter:                 document.querySelectorAll('.counter'),
 				progressLinear:          document.querySelectorAll('.progress-linear'),
 				progressCircle:          document.querySelectorAll('.progress-circle'),
@@ -299,7 +299,10 @@
 				classOut:          'fadeOut',
 				classActive:       'animated',
 				conditions:        function (event, link) {
-					return !/(\#|callto:|tel:|mailto:|:\/\/)/.test(link)
+					// Anchors without href (menu labels, debugbar tabs) have link === null;
+					// letting them through sets window.location = "" and reloads the page.
+					return !!link
+							&& !/(#|callto:|tel:|mailto:|:\/\/)/.test(link)
 							&& !event.currentTarget.hasAttribute('data-lightgallery');
 				},
 				onTransitionStart: function (options) {
@@ -1818,5 +1821,4 @@
 	});
 
 }());
-
 

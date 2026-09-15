@@ -3,7 +3,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import PostAdmin from '@/Components/Admin/PostAdmin.vue';
 
 
-import {Head} from '@inertiajs/inertia-vue3';
+import {Head} from '@inertiajs/vue3';
 
 defineProps(['posts']);
 </script>

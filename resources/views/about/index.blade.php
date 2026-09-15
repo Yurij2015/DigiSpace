@@ -1,19 +1,19 @@
 @extends('layouts.main')
-@section('title', 'DigiSpace | About')
+@section('title', __('site.about_title'))
 @section('content')
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">
         <div class="breadcrumbs-custom__aside bg-image context-dark"
              style="background-image: url({{ asset('images/bg-about-page.jpeg') }});">
             <div class="container">
-                <h2 class="breadcrumbs-custom__title">About</h2>
+                <h2 class="breadcrumbs-custom__title">{{ __('site.about') }}</h2>
             </div>
         </div>
         <div class="breadcrumbs-custom__main bg-gray-light">
             <div class="container">
                 <ul class="breadcrumbs-custom__path">
-                    <li><a href="{{ route('home.index') }}">Home</a></li>
-                    <li class="active">About</li>
+                    <li><a href="{{ route('home.index') }}">{{ __('site.home') }}</a></li>
+                    <li class="active">{{ __('site.about') }}</li>
                 </ul>
             </div>
         </div>
@@ -24,7 +24,7 @@
             <div class="row row-50 justify-content-md-center justify-content-lg-start">
                 <div class="col-md-10 col-lg-6">
                     <div class="image-custom-1">
-                        <img src="{{ asset('images/web-development.jpg') }}" alt="" width="602" height="359"/>
+                        <img src="{{ asset('images/web-development.jpg') }}" alt="{{ __('site.about') }}" width="602" height="359"/>
                     </div>
                 </div>
                 <div class="col-md-10 col-lg-6">
@@ -67,7 +67,7 @@
                             <article class="card-creative">
                                 <div class="card-creative__inner">
                                     <figure class="card-creative__media"><img src="{{ asset($widget->widget_image) }}"
-                                                                              alt="" width="230" height="211"/>
+                                                                              alt="{{ $widget->title }}" width="230" height="211"/>
                                     </figure>
                                     <p class="card-creative__title">{{ $widget->title }}</p>
                                     <p class="card-creative__subtitle">{{ $widget->subtitle }}</p>
@@ -75,11 +75,12 @@
                                     <div class="card-creative__aside">
                                         <ul class="list-inline list-inline-md">
                                             @foreach($widget->widgetIcon as $icon)
-                                                <li>
-                                                    <a class="icon icon-xs icon-darker icon-style-brand {{ $icon->icon_class }}"
-                                                       href="#">
-                                                    </a>
-                                                </li>
+                                                @if($icon->url)
+                                                    <li>
+                                                        <x-social-link :href="$icon->url" :icon="$icon->icon_class"
+                                                                       class="icon icon-xs icon-darker icon-style-brand"/>
+                                                    </li>
+                                                @endif
                                             @endforeach
                                         </ul>
                                     </div>

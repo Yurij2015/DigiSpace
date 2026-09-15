@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'DigiSpace | Services')
+@section('title', __('site.services_title'))
 @section('content')
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">
@@ -12,9 +12,9 @@
         <div class="breadcrumbs-custom__main bg-gray-light">
             <div class="container">
                 <ul class="breadcrumbs-custom__path">
-                    <li><a href="{{ route('home.index')}}">Home</a></li>
+                    <li><a href="{{ route('home.index') }}">{{ __('site.home') }}</a></li>
                     @if(isset($serviceCategory))
-                        <li><a href="{{ route('services') }}">Category Services</a></li>
+                        <li><a href="{{ route('services') }}">{{ __('site.services') }}</a></li>
                         <li><a href="{{ route('category-services', $serviceCategory->slug) }}">{{ $serviceCategory->name }}</a></li>
                         <li class="active">{{ $service->title }}</li>
                     @endif
@@ -47,7 +47,7 @@
                             <p>{{ $service->seo_description }}</p>
                             <div class="post-classic__media">
                                 <img class="post-classic__image" src="{{ asset($service->image) }}"
-                                     alt="" width="715"
+                                     alt="{{ $service->image_alt ?: $service->title }}" width="715"
                                      height="417"/>
                             </div>
                             {!! $service->description !!}

@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasLocalizedContent;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -47,9 +49,41 @@ use Str;
  */
 class Page extends Model
 {
+    use HasLocalizedContent;
+
     protected $fillable = [
-        'name', 'content', 'meta', 'description', 'slug', 'page_category_id', 'menu_item_id',
+        'name', 'content', 'meta', 'description', 'slug', 'page_category_id', 'menu_item_id', 'translations',
     ];
+
+    protected function casts(): array
+    {
+        return ['translations' => 'array'];
+    }
+
+    protected function name(): Attribute
+    {
+        return $this->localizedAttribute('name');
+    }
+
+    protected function content(): Attribute
+    {
+        return $this->localizedAttribute('content');
+    }
+
+    protected function meta(): Attribute
+    {
+        return $this->localizedAttribute('meta');
+    }
+
+    protected function description(): Attribute
+    {
+        return $this->localizedAttribute('description');
+    }
+
+    protected function keywords(): Attribute
+    {
+        return $this->localizedAttribute('keywords');
+    }
 
     public function widgets(): BelongsToMany
     {
@@ -71,11 +105,11 @@ class Page extends Model
         parent::boot();
 
         static::updating(static function ($page) {
-            $page->slug = Str::slug($page->name);
+            $page->slug = Str::slug((string) ($page->getAttributes()['name'] ?? $page->getRawOriginal('name')));
         });
 
         static::creating(static function ($page) {
-            $page->slug = Str::slug($page->name);
+            $page->slug = Str::slug((string) ($page->getRawOriginal('name') ?: $page->name));
         });
     }
 }

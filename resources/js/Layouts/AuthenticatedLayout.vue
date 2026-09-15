@@ -5,7 +5,8 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
-import {Link} from '@inertiajs/inertia-vue3';
+import LanguageSwitcher from '@/Components/LanguageSwitcher.vue';
+import {Link} from '@inertiajs/vue3';
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -45,6 +46,7 @@ const showingNavigationDropdown = ref(false);
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
+                            <LanguageSwitcher class="mr-3" />
                             <!-- Settings Dropdown -->
                             <div class="ml-3 relative">
                                 <a type="button" :href="route('login')"
@@ -101,6 +103,9 @@ const showingNavigationDropdown = ref(false);
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}"
                      class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
+                        <div class="px-4 py-2">
+                            <LanguageSwitcher />
+                        </div>
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </ResponsiveNavLink>

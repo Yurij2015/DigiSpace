@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasLocalizedContent;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -51,9 +52,51 @@ use Illuminate\Support\Carbon;
  */
 class Service extends Model
 {
+    use HasLocalizedContent;
+
     protected $fillable = [
-        'title', 'details', 'price', 'service_category_id', 'seo_keywords', 'seo_description', 'seo_title', 'image_alt', 'description', 'slug', 'image', 'status',
+        'title', 'details', 'price', 'service_category_id', 'seo_keywords', 'seo_description', 'seo_title', 'image_alt', 'description', 'slug', 'image', 'status', 'translations',
     ];
+
+    protected function casts(): array
+    {
+        return ['translations' => 'array'];
+    }
+
+    protected function title(): Attribute
+    {
+        return $this->localizedAttribute('title');
+    }
+
+    protected function details(): Attribute
+    {
+        return $this->localizedAttribute('details');
+    }
+
+    protected function description(): Attribute
+    {
+        return $this->localizedAttribute('description');
+    }
+
+    protected function seoKeywords(): Attribute
+    {
+        return $this->localizedAttribute('seo_keywords');
+    }
+
+    protected function seoDescription(): Attribute
+    {
+        return $this->localizedAttribute('seo_description');
+    }
+
+    protected function seoTitle(): Attribute
+    {
+        return $this->localizedAttribute('seo_title');
+    }
+
+    protected function imageAlt(): Attribute
+    {
+        return $this->localizedAttribute('image_alt');
+    }
 
     public function serviceCategory(): BelongsTo
     {

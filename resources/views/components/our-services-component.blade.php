@@ -1,4 +1,4 @@
-<h2>Our Services</h2>
+<h2>{{ __('site.our_services') }}</h2>
 <div class="row row-30 justify-content-md-center">
     <div class="col-md-6 col-lg-4">
         <!-- Box Chloe-->

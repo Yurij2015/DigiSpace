@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Database\Factories\UserFactory;
 use Eloquent;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -49,7 +51,7 @@ use Laravel\Sanctum\PersonalAccessToken;
  *
  * @mixin Eloquent
  */
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     use HasApiTokens;
     use HasFactory;
@@ -84,6 +86,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        if (app()->environment('local')) {
+            return true;
+        }
+
+        return in_array(
+            strtolower($this->email),
+            config('filament.admin_emails', []),
+            true,
+        );
+    }
 
     public function categories(): HasMany
     {

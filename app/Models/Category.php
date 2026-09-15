@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasLocalizedContent;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -39,9 +41,26 @@ use Illuminate\Support\Carbon;
  */
 class Category extends Model
 {
+    use HasLocalizedContent;
+
     protected $fillable = [
-        'name', 'description', 'slug',
+        'name', 'description', 'slug', 'user_id', 'translations',
     ];
+
+    protected function casts(): array
+    {
+        return ['translations' => 'array'];
+    }
+
+    protected function name(): Attribute
+    {
+        return $this->localizedAttribute('name');
+    }
+
+    protected function description(): Attribute
+    {
+        return $this->localizedAttribute('description');
+    }
 
     public function user(): BelongsTo
     {

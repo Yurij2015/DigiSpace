@@ -1,8 +1,12 @@
 /node_modules
 /public/build
+/public/css/filament
+/public/fonts/filament
+/public/vendor/livewire
 /public/hot
 /public/storage
 /public/img
+/public/js/filament
 /storage/*.key
 /vendor
 .env
@@ -19,6 +23,8 @@ yarn-error.log
 /public/images
 /.sonarlint/
 .env.testing
+/storage/debugbar/
 _ide_helper.php
 _ide_helper_models.php
 
+/deployment-config-with-prod.json

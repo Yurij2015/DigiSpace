@@ -39,7 +39,7 @@ use Illuminate\Support\Carbon;
 class MenuItem extends Model
 {
     protected $fillable = [
-        'name', 'slug', 'href',
+        'name', 'slug', 'href', 'menu_id',
     ];
 
     public function menus(): BelongsToMany

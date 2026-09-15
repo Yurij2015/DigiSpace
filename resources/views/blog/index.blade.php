@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'DigiSpace | Blog')
+@section('title', __('site.blog_title'))
 
 @php
     $p = (int) request('page', 1);
@@ -8,9 +8,6 @@
         : route('blog');
 @endphp
 
-@push('head')
-    <link rel="canonical" href="{{ $p <= 1 ? $base : $base.'?page='.$p }}">
-@endpush
 
 @section('content')
     <!-- Breadcrumbs-->
@@ -18,17 +15,17 @@
         <div class="breadcrumbs-custom__aside bg-image context-dark"
              style="background-image: url({{ asset('images/bg-blog-post.jpg')}});">
             <div class="container">
-                <h2 class="breadcrumbs-custom__title">Blog</h2>
+                <h2 class="breadcrumbs-custom__title">{{ __('site.blog') }}</h2>
             </div>
         </div>
         <div class="breadcrumbs-custom__main bg-gray-light">
             <div class="container">
                 <ul class="breadcrumbs-custom__path">
-                    <li><a href="{{ route('home.index')}}">Home</a></li>
+                    <li><a href="{{ route('home.index') }}">{{ __('site.home') }}</a></li>
                     @if(isset($category) || isset($archive))
                         <li><a href="{{ route('blog') }}"> Blog</a></li>
                     @else
-                        <li class="active">Blog</li>
+                        <li class="active">{{ __('site.blog') }}</li>
                     @endif
                     @if(isset($category))
                         <li class="active">{{ $category->name }}</li>
@@ -69,15 +66,15 @@
                                 @if(isset($post->user->name))
                                     <li>
                                         <span class="icon mdi mdi-account"></span>
-                                        <span>by</span>
-                                        <a href="#">{{ $post->user->name }}</a>
+                                        <span>{{ __('site.by') }}</span>
+                                        <span>{{ $post->user->name }}</span>
                                     </li>
                                 @endif
                             </ul>
                             <div class="post-classic__media">
                                 <a class="post-classic__figure" href="{{ route('blog.post', $post->slug) }}">
                                     <img class="post-classic__image" src="{{ asset($post->img_path) }}"
-                                         alt="" width="715"
+                                         alt="{{ $post->name }}" width="715"
                                          height="417"/>
                                 </a>
                             </div>

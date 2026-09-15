@@ -5,6 +5,7 @@ namespace App\Models\Portfolio;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 
 /**
@@ -34,4 +35,9 @@ use Illuminate\Support\Carbon;
 class PfPlace extends Model
 {
     protected $fillable = ['name', 'slug', 'logo_url', 'fa_icon'];
+
+    public function locales(): HasMany
+    {
+        return $this->hasMany(PfLocale::class, 'place_id');
+    }
 }
