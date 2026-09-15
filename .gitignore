@@ -27,4 +27,5 @@ yarn-error.log
 _ide_helper.php
 _ide_helper_models.php
 
+/deployment-config.json
 /deployment-config-with-prod.json

@@ -11,10 +11,11 @@ stale_after: 2027-03-13
 
 ## Branches
 
-`master` is the release branch. The current GitHub Actions workflow deploys every
-push to `master` to the servers listed in `deployment-config.json`.
+`master` is the release branch: every push deploys the **production** environment.
+`dev` is the integration branch: every push deploys the **testing** environment. Servers
+come from the `DEPLOYMENT_MATRIX` GitHub Variable (see the deployment runbook).
 
-`dev` is available as an integration branch. Feature and fix branches should be
+`dev` is therefore also where features are integrated. Feature and fix branches should be
 created from `dev` and use a ticket-oriented name, for example
 `DS-42-disable-admin-register` or `fix/homepage-fixtures`. Merge completed work
 back into `dev` first, then promote the reviewed result to `master` for release.
@@ -72,9 +73,9 @@ It does not automatically run PHPUnit, wait for an approval, health-check the
 application or roll back on failure. See the deployment runbook for the exact
 sequence and its limitations.
 
-Never commit `.env`, credentials or the contents of `deployment-config.json` to a
-new branch, pull request or chat message. The current repository still tracks
-`deployment-config.json`; treat that as sensitive and plan credential rotation
-separately if repository access changes.
+Never commit `.env`, credentials or server addresses/users/paths to a new branch, pull
+request or chat message. `deployment-config.json` is git-ignored; only
+`example.deployment-config.json` with placeholder values is tracked. Real values live in
+GitHub Variables/Secrets (`docs/deployment/github-setup-commands.md`).
 
 [Documentation index](../README.md)

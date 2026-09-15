@@ -1,0 +1,123 @@
+#!/usr/bin/env bash
+# Prints the server .env for one environment. Values arrive as environment variables set by the
+# workflow from GitHub Variables (non-secret) and Secrets; empty non-secret values fall back to the
+# defaults below. Required secrets abort the run when missing. Never echoes values to the log.
+set -euo pipefail
+
+default() { # default VAR fallback
+  local name="$1" fallback="$2"
+  if [ -z "${!name:-}" ]; then
+    printf -v "$name" '%s' "$fallback"
+  fi
+}
+
+require() { # require VAR
+  if [ -z "${!1:-}" ]; then
+    echo "::error::Secret/variable $1 is not set for the ${TARGET_ENVIRONMENT:-<unknown>} environment" >&2
+    exit 1
+  fi
+}
+
+require APP_KEY
+require DB_PASSWORD
+require APP_URL
+require DB_DATABASE
+require DB_USERNAME
+
+default APP_NAME "DigiSpace"
+default APP_ENV "production"
+default APP_DEBUG "false"
+default LOG_CHANNEL "stack"
+default LOG_LEVEL "error"
+default DB_HOST "127.0.0.1"
+default DB_PORT "3306"
+default CACHE_DRIVER "file"
+default QUEUE_CONNECTION "sync"
+default SESSION_DRIVER "file"
+default SESSION_LIFETIME "120"
+default FILESYSTEM_DISK "local"
+default MAIL_MAILER "smtp"
+default MAIL_HOST "127.0.0.1"
+default MAIL_PORT "587"
+default MAIL_USERNAME "null"
+default MAIL_PASSWORD "null"
+default MAIL_ENCRYPTION "tls"
+default MAIL_FROM_ADDRESS "noreply@digispace.pro"
+default AWS_ACCESS_KEY_ID ""
+default AWS_SECRET_ACCESS_KEY ""
+default AWS_DEFAULT_REGION "us-east-1"
+default AWS_URL ""
+default AWS_USE_PATH_STYLE_ENDPOINT "true"
+default MINIO_ENDPOINT ""
+default MINIO_BUCKET ""
+default RECAPTCHA_SITE_KEY ""
+default RECAPTCHA_SECRET_KEY ""
+default ZOHO_CLIENT_ID ""
+default ZOHO_CLIENT_SECRET ""
+default ZOHO_GRANT_TOKEN ""
+default TINY_MCE_API_KEY ""
+default SENTRY_LARAVEL_DSN ""
+default SENTRY_TRACES_SAMPLE_RATE "0.2"
+default FACEBOOK_PIXEL_ID ""
+default FILAMENT_ADMIN_EMAILS ""
+default IS_PROMO_TAB_ACTIVE "false"
+
+APP_URL="${APP_URL%/}"
+
+cat <<ENVEOF
+APP_NAME="${APP_NAME}"
+APP_ENV=${APP_ENV}
+APP_KEY=${APP_KEY}
+APP_DEBUG=${APP_DEBUG}
+APP_URL=${APP_URL}
+
+LOG_CHANNEL=${LOG_CHANNEL}
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=${LOG_LEVEL}
+
+DB_CONNECTION=mysql
+DB_HOST=${DB_HOST}
+DB_PORT=${DB_PORT}
+DB_DATABASE=${DB_DATABASE}
+DB_USERNAME=${DB_USERNAME}
+DB_PASSWORD="${DB_PASSWORD}"
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=${CACHE_DRIVER}
+FILESYSTEM_DISK=${FILESYSTEM_DISK}
+QUEUE_CONNECTION=${QUEUE_CONNECTION}
+SESSION_DRIVER=${SESSION_DRIVER}
+SESSION_LIFETIME=${SESSION_LIFETIME}
+
+MAIL_MAILER=${MAIL_MAILER}
+MAIL_HOST=${MAIL_HOST}
+MAIL_PORT=${MAIL_PORT}
+MAIL_USERNAME=${MAIL_USERNAME}
+MAIL_PASSWORD="${MAIL_PASSWORD}"
+MAIL_ENCRYPTION=${MAIL_ENCRYPTION}
+MAIL_FROM_ADDRESS="${MAIL_FROM_ADDRESS}"
+MAIL_FROM_NAME="${APP_NAME}"
+
+AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+AWS_URL=${AWS_URL}
+AWS_USE_PATH_STYLE_ENDPOINT=${AWS_USE_PATH_STYLE_ENDPOINT}
+MINIO_ENDPOINT=${MINIO_ENDPOINT}
+MINIO_BUCKET=${MINIO_BUCKET}
+
+RECAPTCHA_SITE_KEY=${RECAPTCHA_SITE_KEY}
+RECAPTCHA_SECRET_KEY=${RECAPTCHA_SECRET_KEY}
+
+ZOHO_CLIENT_ID=${ZOHO_CLIENT_ID}
+ZOHO_CLIENT_SECRET=${ZOHO_CLIENT_SECRET}
+ZOHO_GRANT_TOKEN=${ZOHO_GRANT_TOKEN}
+
+TINY_MCE_API_KEY=${TINY_MCE_API_KEY}
+FACEBOOK_PIXEL_ID=${FACEBOOK_PIXEL_ID}
+FILAMENT_ADMIN_EMAILS="${FILAMENT_ADMIN_EMAILS}"
+IS_PROMO_TAB_ACTIVE=${IS_PROMO_TAB_ACTIVE}
+
+SENTRY_LARAVEL_DSN=${SENTRY_LARAVEL_DSN}
+SENTRY_TRACES_SAMPLE_RATE=${SENTRY_TRACES_SAMPLE_RATE}
+ENVEOF
