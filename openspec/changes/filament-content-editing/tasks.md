@@ -27,9 +27,9 @@ Run tests via Sail (`vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit â
 
 ## 3. Editor
 
-- [ ] 3.1 Create `app/Filament/Support/ContentEditor.php` (design D1: toolbar groups, `s3` attachments, directory per resource, `public` visibility, image types, 2 MB); verify `php -l` and PHPStan.
-- [ ] 3.2 Replace the six `RichEditor::make(...)` calls in `PostForm`/`PageForm` with `ContentEditor::make(...)` (`posts/content`, `pages/content`); verify each language tab shows the full toolbar and inserting an image on `/control/posts/create` uploads to MinIO (local `MINIO_*` config) and renders on the public post.
-- [ ] 3.3 Write `tests/Feature/Filament/ContentEditorTest.php`: editor components on `CreatePost`/`EditPage` report disk `s3`, directories `posts/content`/`pages/content`, max size 2048, and the toolbar includes `h2`, `table`, `attachFiles`, `alignCenter`; with `Storage::fake('s3')`, `saveUploadedFileAttachment` of a 100 KB PNG stores under `posts/content/` and a 5 MB file is rejected; verify it passes.
+- [x] 3.1 Create `app/Filament/Support/ContentEditor.php` (design D1: toolbar groups, `s3` attachments, directory per resource, `public` visibility, image types, 2 MB); verify `php -l` and PHPStan.
+- [x] 3.2 Replace the six `RichEditor::make(...)` calls in `PostForm`/`PageForm` with `ContentEditor::make(...)` (`posts/content`, `pages/content`); verify each language tab shows the full toolbar and inserting an image on `/control/posts/create` uploads to MinIO (local `MINIO_*` config) and renders on the public post.
+- [x] 3.3 Write `tests/Feature/Filament/ContentEditorTest.php`: editor components on `CreatePost`/`EditPage` report disk `s3`, directories `posts/content`/`pages/content`, max size 2048, and the toolbar includes `h2`, `table`, `attachFiles`, `alignCenter`; with `Storage::fake('s3')`, `saveUploadedFileAttachment` of a 100 KB PNG stores under `posts/content/` and a 5 MB file is rejected; verify it passes.
 
 ## 4. Form layout and actions
 

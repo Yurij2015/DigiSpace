@@ -13,7 +13,8 @@ trait MakesFilamentAdmin
 {
     protected function actingAsFilamentAdmin(): User
     {
-        $user = User::factory()->create(['email' => 'admin@example.test', 'email_verified_at' => now()]);
+        $user = User::where('email', 'admin@example.test')->first()
+            ?? User::factory()->create(['email' => 'admin@example.test', 'email_verified_at' => now()]);
 
         config()->set('filament.admin_emails', array_merge(config('filament.admin_emails', []), [$user->email]));
 
