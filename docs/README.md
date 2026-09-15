@@ -60,5 +60,5 @@ Current `/control` resources, menu areas, storage behavior, authorization and ve
 ## Related
 
 - [Main README](../README.md)
-- [GitHub workflow](../.github/workflows/deploy.yml)
+- [GitHub workflow](../.github/workflows/deploy.yml) · [GitHub setup runbook](deployment/github-setup-commands.md)
 - [Tests](../tests/)

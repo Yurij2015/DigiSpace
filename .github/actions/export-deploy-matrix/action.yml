@@ -1,0 +1,39 @@
+name: Export deploy matrix from repository variables
+description: |
+  Filters DEPLOYMENT_MATRIX (JSON array of server objects) down to the server(s)
+  matching the triggering branch — dev→testing, master→production — and drops
+  disabled ones. On workflow_dispatch, environment_override (testing/production/all)
+  takes precedence over the branch mapping. Entry fields:
+  name, ip, port, username, path, environment, enabled (default true),
+  php_binary (optional, default "php"; CloudPanel hosts use e.g. /usr/bin/php8.3).
+  Setup: docs/deployment/github-setup-commands.md.
+
+inputs:
+  deployment_matrix:
+    description: DEPLOYMENT_MATRIX JSON array (name, ip, port, username, path, environment, enabled, php_binary)
+    required: true
+  ref_name:
+    description: Triggering branch (github.ref_name); master→production, dev→testing
+    required: false
+    default: ""
+  environment_override:
+    description: Explicit environment filter (testing/production), or "all" to skip filtering. Takes precedence over ref_name — for workflow_dispatch runs.
+    required: false
+    default: ""
+
+outputs:
+  DEPLOYMENT_MATRIX:
+    description: JSON array for strategy.matrix.server, php_binary defaulted
+    value: ${{ steps.export.outputs.DEPLOYMENT_MATRIX }}
+
+runs:
+  using: composite
+  steps:
+    - name: Validate and export matrix JSON
+      id: export
+      shell: bash
+      env:
+        DEPLOYMENT_MATRIX: ${{ inputs.deployment_matrix }}
+        REF_NAME: ${{ inputs.ref_name }}
+        ENV_OVERRIDE: ${{ inputs.environment_override }}
+      run: bash "${GITHUB_ACTION_PATH}/export.sh"

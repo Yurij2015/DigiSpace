@@ -112,9 +112,9 @@ Coverage of the domain (widgets/pages/blog/admin) is essentially zero; the exist
 
 ## Deployment
 
-`push` to `master` triggers `.github/workflows/deploy.yml`: build on CI (composer `--no-dev`, `npm run build`, tarball), then for each server in `deployment-config.json` (matrix; see `example.deployment-config.json` — test + prod on CloudPanel, PHP 8.3 CLI path hard-coded in `afterHooks`): upload → extract into `releases/<sha>` → backup `.env` + image dirs → write `.env` from the `LARAVEL_ENV` secret and immediately restore the previous one (so the server's `.env` wins) → symlink `storage` and `current` → restore images → `artisan migrate` → prune old releases. Details in [`docs/deployment/README.md`](docs/deployment/README.md).
+`push` to `dev` deploys the **testing** environment, `push` to `master` deploys **production** (`workflow_dispatch` can target `testing` / `production` / `all`). `.github/workflows/deploy.yml`: build on CI (composer `--no-dev`, `npm run build`, tarball) → PHPUnit suite on a MySQL 8 service (gates every deploy) → per server from the `DEPLOYMENT_MATRIX` GitHub Variable (filtered by branch through `.github/actions/export-deploy-matrix`): upload over SSH → extract into `releases/<sha>` → write `.env` from the environment's GitHub Variables/Secrets (`compose-env.sh`; previous file kept as `.env_prev`) → back up image dirs → symlink `storage`/`.env` and switch `current` → restore images → `after-deploy.sh` (`migrate --force`, `livewire:publish --assets`, `config:cache`, `view:cache`) → health check of `APP_URL` and `/control/login` → prune to five releases. Details in [`docs/deployment/README.md`](docs/deployment/README.md), GitHub setup in [`docs/deployment/github-setup-commands.md`](docs/deployment/github-setup-commands.md).
 
-`deployment-config.json` (real server IPs/users/paths) **is committed**; `.env` is git-ignored. Treat both as sensitive — never paste their contents into issues, PRs or chat.
+No server address, user, path or `.env` value is committed: `deployment-config.json` is git-ignored (only `example.deployment-config.json` with placeholders is tracked) and `.env` is git-ignored. Treat both as sensitive — never paste their contents into issues, PRs or chat.
 
 ## Documentation layout
 

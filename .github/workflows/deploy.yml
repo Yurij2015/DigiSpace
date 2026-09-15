@@ -1,8 +1,35 @@
 name: Deploy DigiSpace Website
 
+# dev → testing servers, master → production servers (see .github/actions/export-deploy-matrix).
+# Servers, .env values and hooks live in GitHub Variables/Secrets: docs/deployment/github-setup-commands.md.
+
 on:
   push:
-    branches: [ master ]
+    branches: [master, dev]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Environment to deploy
+        required: true
+        default: production
+        type: choice
+        options:
+          - production
+          - testing
+          - all
+
+permissions:
+  contents: read
+
+# One deploy per environment at a time. A newer dev push supersedes a queued testing run;
+# production runs queue and are never cancelled.
+concurrency:
+  group: deploy-${{ github.event_name == 'workflow_dispatch' && inputs.environment || github.ref_name }}
+  cancel-in-progress: ${{ github.event_name == 'push' && github.ref_name == 'dev' }}
+
+env:
+  PHP_VERSION: "8.3"
+  PHP_EXTENSIONS: mbstring, ctype, fileinfo, openssl, pdo_mysql, bcmath, json, tokenizer, xml, gd, zip, curl, intl
 
 jobs:
   create-deployment-artifacts:
@@ -11,254 +38,401 @@ jobs:
     outputs:
       DEPLOYMENT_MATRIX: ${{ steps.export-deployment-matrix.outputs.DEPLOYMENT_MATRIX }}
     steps:
-      - uses: actions/checkout@v5
-      - uses: nanasess/setup-php@v4
-      - name: Composer install
-        run: |
-          composer install --no-dev --no-interaction --prefer-dist
-      - name: Install project dependencies
-        run: npm install
-      - name: Build project
-        run: npm run build
-      - name: Configure PHP 8.3
+      - uses: actions/checkout@v4
+      - name: Configure PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.3
-          extensions: mbstring, ctype, fileinfo, openssl, PDO, bcmath, json, tokenizer, xml
+          php-version: ${{ env.PHP_VERSION }}
+          extensions: ${{ env.PHP_EXTENSIONS }}
+          coverage: none
+      - name: Cache Composer downloads
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/composer
+          key: composer-${{ runner.os }}-${{ hashFiles('composer.lock') }}
+          restore-keys: composer-${{ runner.os }}-
+      - name: Composer install (no dev)
+        env:
+          COMPOSER_AUTH: '{"github-oauth":{"github.com":"${{ github.token }}"}}'
+        run: composer install --no-dev --no-interaction --prefer-dist --no-progress --optimize-autoloader
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Build front-end assets
+        run: |
+          npm ci
+          npm run build
       - name: Create deployment artifact
         env:
           GITHUB_SHA: ${{ github.sha }}
-        run: tar -czf "${GITHUB_SHA}".tar.gz --exclude=*.git --exclude=node_modules *
-
+        run: |
+          set -euo pipefail
+          # Anchored excludes: only the top-level directories, not e.g. vendor/**/storage.
+          tar -czf "${GITHUB_SHA}.tar.gz" \
+            --exclude=./.git --exclude=./node_modules --exclude=./storage --exclude=./tests \
+            --exclude='./*.tar.gz' \
+            .
       - name: Store artifact for distribution
         uses: actions/upload-artifact@v4
         with:
           name: app-build
           path: ${{ github.sha }}.tar.gz
-
+          retention-days: 3
       - name: Export deployment matrix
         id: export-deployment-matrix
-        run: |
-          delimiter="$(openssl rand -hex 8)"
-          JSON="$(cat ./deployment-config.json)"
-          echo "DEPLOYMENT_MATRIX<<${delimiter}" >> "${GITHUB_OUTPUT}"
-          echo "$JSON" >> "${GITHUB_OUTPUT}"
-          echo "${delimiter}" >> "${GITHUB_OUTPUT}"
+        uses: ./.github/actions/export-deploy-matrix
+        with:
+          deployment_matrix: ${{ vars.DEPLOYMENT_MATRIX }}
+          ref_name: ${{ github.ref_name }}
+          environment_override: ${{ github.event_name == 'workflow_dispatch' && inputs.environment || '' }}
+
+  tests:
+    name: PHPUnit suite
+    # Gates every deploy (dev, master and manual dispatches alike).
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: ci-root-password
+          MYSQL_DATABASE: testing
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd "mysqladmin ping -h 127.0.0.1 -pci-root-password"
+          --health-interval 10s --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+          extensions: ${{ env.PHP_EXTENSIONS }}
+          coverage: none
+      - name: Cache Composer downloads
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/composer
+          key: composer-${{ runner.os }}-${{ hashFiles('composer.lock') }}
+          restore-keys: composer-${{ runner.os }}-
+      - name: Composer install (with dev)
+        env:
+          COMPOSER_AUTH: '{"github-oauth":{"github.com":"${{ github.token }}"}}'
+        run: composer install --no-interaction --prefer-dist --no-progress
+      - name: Write CI .env
+        env:
+          MYSQL_ROOT_PASSWORD: ci-root-password
+        run: bash .github/scripts/ci-env.sh
+      # RefreshDatabase migrates the `testing` database itself; tests/TestCase.php disables Vite.
+      - name: Run PHPUnit
+        run: vendor/bin/phpunit --no-progress
 
   prepare-release-on-servers:
     name: "${{ matrix.server.name }}: Prepare release"
     runs-on: ubuntu-latest
-    needs: create-deployment-artifacts
+    environment: ${{ matrix.server.environment }}
+    needs: [create-deployment-artifacts, tests]
+    if: ${{ !cancelled() && needs.create-deployment-artifacts.result == 'success' && needs.tests.result == 'success' }}
     strategy:
       matrix:
         server: ${{ fromJson(needs.create-deployment-artifacts.outputs.DEPLOYMENT_MATRIX) }}
     steps:
-      - uses: actions/download-artifact@v5
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/scripts
+      - uses: actions/download-artifact@v4
         with:
           name: app-build
-      - name: Upload
-        uses: appleboy/scp-action@master
+      - name: Upload artifact and after-deploy script
+        uses: appleboy/scp-action@v1
         with:
           host: ${{ matrix.server.ip }}
-          username: ${{ matrix.server.username }}
-          key: ${{ secrets.SSH_KEY_2 }}
           port: ${{ matrix.server.port }}
-          source: ${{ github.sha }}.tar.gz
+          username: ${{ matrix.server.username }}
+          key: ${{ secrets.SSH_KEY }}
+          source: ${{ github.sha }}.tar.gz,.github/scripts/after-deploy.sh
           target: ${{ matrix.server.path }}/artifacts
-      - name: Extract archive and create directories
-        uses: appleboy/ssh-action@master
+          strip_components: 0
+      - name: Extract archive and create shared directories
+        uses: appleboy/ssh-action@v1
         env:
           GITHUB_SHA: ${{ github.sha }}
+          BASE_PATH: ${{ matrix.server.path }}
         with:
           host: ${{ matrix.server.ip }}
-          username: ${{ matrix.server.username }}
-          key: ${{ secrets.SSH_KEY_2 }}
           port: ${{ matrix.server.port }}
-          envs: GITHUB_SHA
+          username: ${{ matrix.server.username }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: GITHUB_SHA,BASE_PATH
           script: |
-            mkdir -p "${{ matrix.server.path }}/releases/${GITHUB_SHA}"
-            tar xzf ${{ matrix.server.path }}/artifacts/${GITHUB_SHA}.tar.gz -C "${{ matrix.server.path }}/releases/${GITHUB_SHA}"
-            rm -rf ${{ matrix.server.path }}/releases/${GITHUB_SHA}/storage
+            set -euo pipefail
+            RELEASE_PATH="${BASE_PATH}/releases/${GITHUB_SHA}"
+            rm -rf "$RELEASE_PATH"
+            mkdir -p "$RELEASE_PATH"
+            tar xzf "${BASE_PATH}/artifacts/${GITHUB_SHA}.tar.gz" -C "$RELEASE_PATH"
+            rm -rf "${RELEASE_PATH}/storage"
+            # scp keeps the source tree: artifacts/.github/scripts/after-deploy.sh
+            mv -f "${BASE_PATH}/artifacts/.github/scripts/after-deploy.sh" "${BASE_PATH}/artifacts/after-deploy.sh"
+            rm -rf "${BASE_PATH}/artifacts/.github"
+            mkdir -p "${BASE_PATH}"/storage/{app,public,framework,logs}
+            mkdir -p "${BASE_PATH}"/storage/framework/{cache,sessions,testing,views}
+            chmod -R ug+rwX "${BASE_PATH}/storage" "${RELEASE_PATH}/bootstrap/cache"
 
-            mkdir -p ${{ matrix.server.path }}/storage/{app,public,framework,logs}
-            mkdir -p ${{ matrix.server.path }}/storage/framework/{cache,sessions,testing,views}
-            chmod -R 0777 ${{ matrix.server.path }}/storage
+  create-env-file:
+    name: "${{ matrix.server.name }}: Write .env"
+    runs-on: ubuntu-latest
+    environment: ${{ matrix.server.environment }}
+    needs: [create-deployment-artifacts, prepare-release-on-servers]
+    if: ${{ !cancelled() && needs.prepare-release-on-servers.result == 'success' }}
+    strategy:
+      matrix:
+        server: ${{ fromJson(needs.create-deployment-artifacts.outputs.DEPLOYMENT_MATRIX) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/scripts
+      # Non-secret values come from Environment Variables (with defaults), secrets from Environment Secrets.
+      # Everything is passed through `env:` so GitHub masks secrets in the log.
+      - name: Compose .env
+        id: compose
+        env:
+          APP_NAME: ${{ vars.APP_NAME }}
+          APP_ENV: ${{ vars.APP_ENV }}
+          APP_DEBUG: ${{ vars.APP_DEBUG }}
+          APP_URL: ${{ vars.APP_URL }}
+          APP_KEY: ${{ secrets.APP_KEY }}
+          LOG_CHANNEL: ${{ vars.LOG_CHANNEL }}
+          LOG_LEVEL: ${{ vars.LOG_LEVEL }}
+          DB_HOST: ${{ vars.DB_HOST }}
+          DB_PORT: ${{ vars.DB_PORT }}
+          DB_DATABASE: ${{ vars.DB_DATABASE }}
+          DB_USERNAME: ${{ vars.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          CACHE_DRIVER: ${{ vars.CACHE_DRIVER }}
+          QUEUE_CONNECTION: ${{ vars.QUEUE_CONNECTION }}
+          SESSION_DRIVER: ${{ vars.SESSION_DRIVER }}
+          SESSION_LIFETIME: ${{ vars.SESSION_LIFETIME }}
+          FILESYSTEM_DISK: ${{ vars.FILESYSTEM_DISK }}
+          MAIL_MAILER: ${{ vars.MAIL_MAILER }}
+          MAIL_HOST: ${{ vars.MAIL_HOST }}
+          MAIL_PORT: ${{ vars.MAIL_PORT }}
+          MAIL_USERNAME: ${{ vars.MAIL_USERNAME }}
+          MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+          MAIL_ENCRYPTION: ${{ vars.MAIL_ENCRYPTION }}
+          MAIL_FROM_ADDRESS: ${{ vars.MAIL_FROM_ADDRESS }}
+          AWS_ACCESS_KEY_ID: ${{ vars.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ vars.AWS_DEFAULT_REGION }}
+          AWS_URL: ${{ vars.AWS_URL }}
+          AWS_USE_PATH_STYLE_ENDPOINT: ${{ vars.AWS_USE_PATH_STYLE_ENDPOINT }}
+          MINIO_ENDPOINT: ${{ vars.MINIO_ENDPOINT }}
+          MINIO_BUCKET: ${{ vars.MINIO_BUCKET }}
+          RECAPTCHA_SITE_KEY: ${{ vars.RECAPTCHA_SITE_KEY }}
+          RECAPTCHA_SECRET_KEY: ${{ secrets.RECAPTCHA_SECRET_KEY }}
+          ZOHO_CLIENT_ID: ${{ vars.ZOHO_CLIENT_ID }}
+          ZOHO_CLIENT_SECRET: ${{ secrets.ZOHO_CLIENT_SECRET }}
+          ZOHO_GRANT_TOKEN: ${{ secrets.ZOHO_GRANT_TOKEN }}
+          TINY_MCE_API_KEY: ${{ secrets.TINY_MCE_API_KEY }}
+          SENTRY_LARAVEL_DSN: ${{ secrets.SENTRY_LARAVEL_DSN }}
+          SENTRY_TRACES_SAMPLE_RATE: ${{ vars.SENTRY_TRACES_SAMPLE_RATE }}
+          FACEBOOK_PIXEL_ID: ${{ vars.FACEBOOK_PIXEL_ID }}
+          FILAMENT_ADMIN_EMAILS: ${{ vars.FILAMENT_ADMIN_EMAILS }}
+          IS_PROMO_TAB_ACTIVE: ${{ vars.IS_PROMO_TAB_ACTIVE }}
+          TARGET_ENVIRONMENT: ${{ matrix.server.environment }}
+        run: |
+          set -euo pipefail
+          ENV_FILE="$(bash .github/scripts/compose-env.sh)"
+          delimiter="$(openssl rand -hex 8)"
+          {
+            echo "ENV_FILE<<${delimiter}"
+            echo "$ENV_FILE"
+            echo "${delimiter}"
+          } >> "$GITHUB_OUTPUT"
+      - name: Write .env to server
+        uses: appleboy/ssh-action@v1
+        env:
+          BASE_PATH: ${{ matrix.server.path }}
+          ENV_FILE: ${{ steps.compose.outputs.ENV_FILE }}
+        with:
+          host: ${{ matrix.server.ip }}
+          port: ${{ matrix.server.port }}
+          username: ${{ matrix.server.username }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: BASE_PATH,ENV_FILE
+          script: |
+            set -euo pipefail
+            if [ -f "${BASE_PATH}/.env" ]; then
+              cp -a "${BASE_PATH}/.env" "${BASE_PATH}/.env_prev"
+            fi
+            umask 077
+            printf '%s\n' "$ENV_FILE" > "${BASE_PATH}/.env"
+            echo ".env written ($(wc -l < "${BASE_PATH}/.env") lines); previous copy in .env_prev"
 
   run-before-hooks:
     name: "${{ matrix.server.name }}: Before hook"
     runs-on: ubuntu-latest
-    needs: [ create-deployment-artifacts, prepare-release-on-servers ]
+    environment: ${{ matrix.server.environment }}
+    needs: [create-deployment-artifacts, prepare-release-on-servers, create-env-file]
+    if: ${{ !cancelled() && needs.create-env-file.result == 'success' }}
     strategy:
       matrix:
         server: ${{ fromJson(needs.create-deployment-artifacts.outputs.DEPLOYMENT_MATRIX) }}
     steps:
-      - name: Run before hooks
-        uses: appleboy/ssh-action@master
+      # public/images, public/uploads and public/banners are written at runtime and are not in git:
+      # copy them out of the active release so they can be restored into the new one after activation.
+      - name: Back up runtime image directories and run before hooks
+        uses: appleboy/ssh-action@v1
         env:
           GITHUB_SHA: ${{ github.sha }}
+          BASE_PATH: ${{ matrix.server.path }}
           RELEASE_PATH: ${{ matrix.server.path }}/releases/${{ github.sha }}
           ACTIVE_RELEASE_PATH: ${{ matrix.server.path }}/current
           STORAGE_PATH: ${{ matrix.server.path }}/storage
-          BASE_PATH: ${{ matrix.server.path }}
-          IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/images
-          UPLD_IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/uploads
-          BANNERS_IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/banners
+          DEPLOY_BEFORE_HOOKS: ${{ vars.DEPLOY_BEFORE_HOOKS }}
         with:
           host: ${{ matrix.server.ip }}
-          username: ${{ matrix.server.username }}
-          key: ${{ secrets.SSH_KEY_2 }}
           port: ${{ matrix.server.port }}
-          envs: GITHUB_SHA,RELEASE_PATH,ACTIVE_RELEASE_PATH,STORAGE_PATH,BASE_PATH,IMG_DIR_PATH,UPLD_IMG_DIR_PATH,BANNERS_IMG_DIR_PATH
+          username: ${{ matrix.server.username }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: GITHUB_SHA,BASE_PATH,RELEASE_PATH,ACTIVE_RELEASE_PATH,STORAGE_PATH,DEPLOY_BEFORE_HOOKS
           script: |
-            if [ -e "${BASE_PATH}/.env" ]; then
-              cp "${BASE_PATH}/.env" "${BASE_PATH}/.env_prev"
-              echo "Previous .env file saved."
-            else
-              echo "No .env file found for backup."
+            set -euo pipefail
+            for dir in images uploads banners; do
+              src="${ACTIVE_RELEASE_PATH}/public/${dir}"
+              dst="${BASE_PATH}/backup_${dir}"
+              rm -rf "$dst"
+              if [ -d "$src" ]; then
+                mkdir -p "$dst"
+                cp -a "${src}/." "${dst}/"
+                echo "Backed up public/${dir} ($(find "$dst" -type f | wc -l) files)"
+              else
+                echo "No public/${dir} in the active release; nothing to back up"
+              fi
+            done
+            if [ -n "${DEPLOY_BEFORE_HOOKS:-}" ]; then
+              echo "Running DEPLOY_BEFORE_HOOKS"
+              eval "$DEPLOY_BEFORE_HOOKS"
             fi
-
-            mkdir -p "${BASE_PATH}/backup_images"
-
-            if [ -d "${IMG_DIR_PATH}" ]; then
-              cp -a "${IMG_DIR_PATH}/." "${BASE_PATH}/backup_images/"
-              echo "Previous files in public/images saved."
-            else
-              echo "No files found in public/images for backup."
-            fi
-
-            mkdir -p "${BASE_PATH}/backup_upld_images"
-
-            if [ -d "${UPLD_IMG_DIR_PATH}" ]; then
-              cp -a "${UPLD_IMG_DIR_PATH}/." "${BASE_PATH}/backup_upld_images/"
-              echo "Previous files in public/uploads saved."
-            else
-              echo "No files found in public/uploads for backup."
-            fi
-
-            mkdir -p "${BASE_PATH}/backup_banners_images"
-
-            if [ -d "${BANNERS_IMG_DIR_PATH}" ]; then
-              cp -a "${BANNERS_IMG_DIR_PATH}/." "${BASE_PATH}/backup_banners_images/"
-              echo "Previous files in public/banners saved."
-            else
-              echo "No files found in public/banners for backup."
-            fi
-
-            ${{ matrix.server.beforeHooks }}
 
   activate-release:
     name: "${{ matrix.server.name }}: Activate release"
     runs-on: ubuntu-latest
-    needs: [ create-deployment-artifacts, prepare-release-on-servers, run-before-hooks ]
+    environment: ${{ matrix.server.environment }}
+    needs: [create-deployment-artifacts, prepare-release-on-servers, run-before-hooks]
+    if: ${{ !cancelled() && needs.run-before-hooks.result == 'success' }}
     strategy:
       matrix:
         server: ${{ fromJson(needs.create-deployment-artifacts.outputs.DEPLOYMENT_MATRIX) }}
     steps:
-      - name: Activate release
-        uses: appleboy/ssh-action@master
+      - name: Link .env and storage, switch current
+        uses: appleboy/ssh-action@v1
         env:
-          GITHUB_SHA: ${{ github.sha }}
+          BASE_PATH: ${{ matrix.server.path }}
           RELEASE_PATH: ${{ matrix.server.path }}/releases/${{ github.sha }}
           ACTIVE_RELEASE_PATH: ${{ matrix.server.path }}/current
           STORAGE_PATH: ${{ matrix.server.path }}/storage
-          BASE_PATH: ${{ matrix.server.path }}
-          LARAVEL_ENV: ${{ secrets.LARAVEL_ENV }}
         with:
           host: ${{ matrix.server.ip }}
-          username: ${{ matrix.server.username }}
-          key: ${{ secrets.SSH_KEY_2 }}
           port: ${{ matrix.server.port }}
-          envs: GITHUB_SHA,RELEASE_PATH,ACTIVE_RELEASE_PATH,STORAGE_PATH,BASE_PATH,ENV_PATH,LARAVEL_ENV
+          username: ${{ matrix.server.username }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: BASE_PATH,RELEASE_PATH,ACTIVE_RELEASE_PATH,STORAGE_PATH
           script: |
-            printf "%s" "$LARAVEL_ENV" > "${BASE_PATH}/.env"
-            ln -s -f ${BASE_PATH}/.env $RELEASE_PATH
-            # Restore the previous .env file
-            if [ -e "${BASE_PATH}/.env_prev" ]; then
-              cp "${BASE_PATH}/.env_prev" "${BASE_PATH}/.env"
-              echo "Restored .env file from backup."
-            else
-              echo "No .env backup found."
-            fi
-            ln -s -f $STORAGE_PATH $RELEASE_PATH
-            ln -s -n -f $RELEASE_PATH $ACTIVE_RELEASE_PATH
+            set -euo pipefail
+            ln -s -f "${BASE_PATH}/.env" "${RELEASE_PATH}/.env"
+            ln -s -n -f "$STORAGE_PATH" "${RELEASE_PATH}/storage"
+            ln -s -n -f "$RELEASE_PATH" "$ACTIVE_RELEASE_PATH"
+            echo "current -> $(readlink "$ACTIVE_RELEASE_PATH")"
 
   run-after-hooks:
     name: "${{ matrix.server.name }}: After hook"
     runs-on: ubuntu-latest
-    needs: [ create-deployment-artifacts, prepare-release-on-servers, run-before-hooks, activate-release ]
+    environment: ${{ matrix.server.environment }}
+    needs: [create-deployment-artifacts, prepare-release-on-servers, run-before-hooks, activate-release]
+    if: ${{ !cancelled() && needs.activate-release.result == 'success' }}
     strategy:
       matrix:
         server: ${{ fromJson(needs.create-deployment-artifacts.outputs.DEPLOYMENT_MATRIX) }}
     steps:
-      - name: Run after hooks
-        uses: appleboy/ssh-action@master
+      - name: Restore runtime images, migrate, cache, run after hooks
+        uses: appleboy/ssh-action@v1
         env:
-          GITHUB_SHA: ${{ github.sha }}
-          RELEASE_PATH: ${{ matrix.server.path }}/releases/${{ github.sha }}
-          ACTIVE_RELEASE_PATH: ${{ matrix.server.path }}/current
-          STORAGE_PATH: ${{ matrix.server.path }}/storage
           BASE_PATH: ${{ matrix.server.path }}
-          IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/images
-          UPLD_IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/uploads
-          BACKUP_IMG_DIR_PATH: ${{ matrix.server.path }}/backup_images
-          BACKUP_UPLD_IMG_DIR_PATH: ${{ matrix.server.path }}/backup_upld_images
-          BANNERS_IMG_DIR_PATH: ${{ matrix.server.path }}/current/public/banners
-          BACKUP_BANNERS_IMG_DIR_PATH: ${{ matrix.server.path }}/backup_banners_images
+          ACTIVE_RELEASE_PATH: ${{ matrix.server.path }}/current
+          PHP_BINARY: ${{ matrix.server.php_binary }}
+          DEPLOY_AFTER_HOOKS: ${{ vars.DEPLOY_AFTER_HOOKS }}
         with:
           host: ${{ matrix.server.ip }}
-          username: ${{ matrix.server.username }}
-          key: ${{ secrets.SSH_KEY_2}}
           port: ${{ matrix.server.port }}
-          envs: GITHUB_SHA,RELEASE_PATH,ACTIVE_RELEASE_PATH,STORAGE_PATH,BASE_PATH,IMG_DIR_PATH,UPLD_IMG_DIR_PATH,BACKUP_IMG_DIR_PATH,BACKUP_UPLD_IMG_DIR_PATH,BANNERS_IMG_DIR_PATH,BACKUP_BANNERS_IMG_DIR_PATH
+          username: ${{ matrix.server.username }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: BASE_PATH,ACTIVE_RELEASE_PATH,PHP_BINARY,DEPLOY_AFTER_HOOKS
           script: |
-            if [ -e "${BACKUP_IMG_DIR_PATH}" ]; then
-              cp -a "${BACKUP_IMG_DIR_PATH}/." "${IMG_DIR_PATH}/"
-              echo "Restored images from backup."
-              rm -rf "${BACKUP_IMG_DIR_PATH}"
-              echo "Removed backup img dir."
-            else
-              echo "No images dir backup found."
+            set -euo pipefail
+            for dir in images uploads banners; do
+              src="${BASE_PATH}/backup_${dir}"
+              dst="${ACTIVE_RELEASE_PATH}/public/${dir}"
+              if [ -d "$src" ]; then
+                mkdir -p "$dst"
+                cp -a "${src}/." "${dst}/"
+                rm -rf "$src"
+                echo "Restored public/${dir}"
+              fi
+            done
+            bash "${BASE_PATH}/artifacts/after-deploy.sh"
+            if [ -n "${DEPLOY_AFTER_HOOKS:-}" ]; then
+              echo "Running DEPLOY_AFTER_HOOKS"
+              eval "$DEPLOY_AFTER_HOOKS"
             fi
-
-            if [ -e "${BACKUP_UPLD_IMG_DIR_PATH}" ]; then
-              cp -a "${BACKUP_UPLD_IMG_DIR_PATH}/." "${UPLD_IMG_DIR_PATH}/"
-              echo "Restored upload images from backup."
-              rm -rf "${BACKUP_UPLD_IMG_DIR_PATH}"
-              echo "Removed backup upld img dir."
-            else
-              echo "No upload images dir backup found."
-            fi
-
-            if [ -e "${BACKUP_BANNERS_IMG_DIR_PATH}" ]; then
-              cp -a "${BACKUP_BANNERS_IMG_DIR_PATH}/." "${BANNERS_IMG_DIR_PATH}/"
-              echo "Restored banners images from backup."
-              rm -rf "${BACKUP_BANNERS_IMG_DIR_PATH}"
-              echo "Removed banners img dir."
-            else
-              echo "No banners images dir backup found."
-            fi
-
-            ${{ matrix.server.afterHooks }}
+      - name: Verify deployed application health
+        env:
+          APP_URL: ${{ vars.APP_URL }}
+        run: |
+          set -euo pipefail
+          if [ -z "${APP_URL:-}" ]; then
+            echo "::error::APP_URL is not configured for the ${{ matrix.server.environment }} environment"
+            exit 1
+          fi
+          APP_URL="${APP_URL%/}"
+          for url in "$APP_URL/" "$APP_URL/control/login"; do
+            for attempt in 1 2 3; do
+              status="$(curl -sS -o /dev/null -w '%{http_code}' --max-time 15 -L "$url" || echo unreachable)"
+              echo "Health check ${attempt}/3: ${url} -> ${status}"
+              if [ "$status" = "200" ]; then
+                break
+              fi
+              if [ "$attempt" -eq 3 ]; then
+                echo "::error::${url} did not return 200 after activation"
+                exit 1
+              fi
+              sleep 5
+            done
+          done
 
   clean-up:
     name: "${{ matrix.server.name }}: Clean up"
     runs-on: ubuntu-latest
-    needs: [ create-deployment-artifacts, prepare-release-on-servers, run-before-hooks, activate-release, run-after-hooks ]
+    environment: ${{ matrix.server.environment }}
+    needs: [create-deployment-artifacts, prepare-release-on-servers, run-before-hooks, activate-release, run-after-hooks]
+    # Prune even when the deploy failed so a full disk cannot wedge the next run.
+    if: ${{ !cancelled() && needs.prepare-release-on-servers.result == 'success' }}
     strategy:
       matrix:
         server: ${{ fromJson(needs.create-deployment-artifacts.outputs.DEPLOYMENT_MATRIX) }}
     steps:
-      - name: Run after hooks
-        uses: appleboy/ssh-action@master
+      - name: Keep the five newest releases and artifacts
+        uses: appleboy/ssh-action@v1
         env:
           RELEASES_PATH: ${{ matrix.server.path }}/releases
           ARTIFACTS_PATH: ${{ matrix.server.path }}/artifacts
         with:
           host: ${{ matrix.server.ip }}
-          username: ${{ matrix.server.username }}
-          key: ${{ secrets.SSH_KEY_2 }}
           port: ${{ matrix.server.port }}
-          envs: RELEASES_PATH
+          username: ${{ matrix.server.username }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: RELEASES_PATH,ARTIFACTS_PATH
           script: |
-            cd $RELEASES_PATH && ls -t -1 | tail -n +6 | xargs rm -rf
-            cd $ARTIFACTS_PATH && ls -t -1 | tail -n +6 | xargs rm -rf
+            set -euo pipefail
+            cd "$RELEASES_PATH" && ls -t -1 | tail -n +6 | xargs -r rm -rf
+            cd "$ARTIFACTS_PATH" && ls -t -1 *.tar.gz 2>/dev/null | tail -n +6 | xargs -r rm -f
