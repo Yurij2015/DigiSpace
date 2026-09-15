@@ -63,6 +63,7 @@ class ZohoLeadService
             ->token($token)
             ->store($tokenStore)
             ->logger($logger)
+            ->resourcePath(storage_path('app'))
             ->initialize();
     }
 
