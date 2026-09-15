@@ -59,8 +59,8 @@ the server as `.env_prev`.
    `tests/TestCase.php`): gates *every* deploy — `dev`, `master` and manual dispatches.
 3. **Prepare release** (per server, SSH): upload the tarball and `after-deploy.sh` to `<base>/artifacts`,
    extract into `<base>/releases/<sha>`, drop its `storage`, create the shared `storage` tree.
-4. **Write `.env`**: compose from Variables/Secrets on the runner, `cp .env .env_prev`, write `<base>/.env`
-   (`umask 077`).
+4. **Write `.env`**: compose from Variables/Secrets on the runner, keep the current file as `.env_prev`
+   and as a dated copy in `<base>/env-backups/` (ten newest), write `<base>/.env` (`umask 077`).
 5. **Before hook**: copy `current/public/{images,uploads,banners}` to `<base>/backup_*`, then
    `DEPLOY_BEFORE_HOOKS`.
 6. **Activate**: link `<base>/.env` and `<base>/storage` into the release, switch `<base>/current`.
@@ -78,6 +78,7 @@ the server as `.env_prev`.
 <base>/
   .env            ← generated each deploy from GitHub
   .env_prev       ← previous .env (manual rollback of configuration)
+  env-backups/    ← dated copies of .env from the last ten deploys
   storage/        ← shared
   artifacts/      ← <sha>.tar.gz (last 5) + after-deploy.sh
   releases/<sha>/

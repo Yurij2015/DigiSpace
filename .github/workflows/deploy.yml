@@ -268,6 +268,10 @@ jobs:
             if [ -f "${BASE_PATH}/.env" ]; then
               rm -f "${BASE_PATH}/.env_prev"
               cp "${BASE_PATH}/.env" "${BASE_PATH}/.env_prev"
+              # Dated copies survive more than one deploy; keep the ten newest.
+              mkdir -p "${BASE_PATH}/env-backups"
+              cp "${BASE_PATH}/.env" "${BASE_PATH}/env-backups/.env.$(date +%Y%m%d-%H%M%S)"
+              (cd "${BASE_PATH}/env-backups" && ls -t -1 | tail -n +11 | xargs -r rm -f)
             fi
             printf '%s\n' "$ENV_FILE" > "${BASE_PATH}/.env.next"
             mv -f "${BASE_PATH}/.env.next" "${BASE_PATH}/.env"

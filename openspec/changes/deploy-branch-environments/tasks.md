@@ -24,7 +24,7 @@ Workflow YAML is validated locally with `actionlint` (`brew install actionlint`)
 ## 2. Matrix and branch routing
 
 - [x] 2.1 Create `.github/actions/export-deploy-matrix/action.yml` (copy of the core-api composite action with `master → production`, `dev → testing`, `php_binary` documented in the input description); verify with `actionlint` and by running its script body locally with sample JSON for `master`, `dev`, `environment_override=all`, an empty matrix and `enabled:false` entries (expected outputs per spec `deployment/environment-routing`).
-- [ ] 2.2 Update `example.deployment-config.json` to the new entry shape (`environment`, `enabled`, `php_binary`, placeholder `203.0.113.x` IPs, no hooks); `git rm --cached deployment-config.json` and add `/deployment-config.json` to `.gitignore`; verify `git ls-files | grep deployment-config` lists only the example file and `git status` shows the real file untracked-but-ignored.
+- [x] 2.2 Update `example.deployment-config.json` to the new entry shape (`environment`, `enabled`, `php_binary`, placeholder `203.0.113.x` IPs, no hooks); `git rm --cached deployment-config.json` and add `/deployment-config.json` to `.gitignore`; verify `git ls-files | grep deployment-config` lists only the example file and `git status` shows the real file untracked-but-ignored.
 
 ## 3. Workflow rewrite (`.github/workflows/deploy.yml`)
 
@@ -45,7 +45,7 @@ Workflow YAML is validated locally with `actionlint` (`brew install actionlint`)
 
 ## 5. Rollout (operator steps, recorded here so the change is complete)
 
-- [ ] 5.1 In GitHub: create `testing` and `production` environments, set `DEPLOYMENT_MATRIX` (testing enabled, production `enabled:false`), set Variables/Secrets for `testing` from the live server `.env`, set `SSH_KEY_2`; verify `gh variable list --env testing` and `gh secret list --env testing` show every key from the runbook.
-- [ ] 5.2 Push the change to `dev`; verify the run: tests green, testing server deployed, `diff <base>/.env_prev <base>/.env` shows only intended differences, health check green, `/control/login` and `/vendor/livewire/*` return 200, an uploaded service image still loads.
+- [x] 5.1 In GitHub: create `testing` and `production` environments, set `DEPLOYMENT_MATRIX` (testing enabled, production `enabled:false`), set Variables/Secrets for `testing` from the live server `.env`, set `SSH_KEY_2`; verify `gh variable list --env testing` and `gh secret list --env testing` show every key from the runbook.
+- [x] 5.2 Push the change to `dev`; verify the run: tests green, testing server deployed, `diff <base>/.env_prev <base>/.env` shows only intended differences, health check green, `/control/login` and `/vendor/livewire/*` return 200, an uploaded service image still loads.
 - [ ] 5.3 Set production Variables/Secrets, set the production matrix entry `enabled:true`, run `workflow_dispatch environment=production` from `master` (or merge `dev → master`); verify the same checklist on production and that a `dev` push afterwards does not touch production.
 - [ ] 5.4 Remove the `LARAVEL_ENV` secret from GitHub once both environments have deployed successfully; verify the next `dev` run is still green.
