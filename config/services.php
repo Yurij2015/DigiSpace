@@ -33,7 +33,10 @@ return [
 
     // Zoho CRM configuration
     // When generating a Grant Token in Zoho API Console, ensure you request the required scope:
-    // Scope: ZohoCRM.modules.leads.ALL (or ZohoCRM.modules.ALL for full access)
+    // Scope: ZohoCRM.modules.leads.ALL,ZohoCRM.settings.ALL (or ZohoCRM.modules.ALL,ZohoCRM.settings.ALL)
+    //
+    // To verify your loaded configuration (cache issues), run:
+    // php artisan tinker --execute="dump(config('services.zoho'));"
     'zoho' => [
         'client_id' => env('ZOHO_CLIENT_ID'),
         'client_secret' => env('ZOHO_CLIENT_SECRET'),
