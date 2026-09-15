@@ -13,7 +13,8 @@ function toggleCollapseShow(classes) {
 </script>
 <template>
     <nav
-        class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6"
+        aria-label="Legacy admin navigation"
+        class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-3 px-5"
     >
         <div
             class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto"
@@ -28,7 +29,7 @@ function toggleCollapseShow(classes) {
             </button>
             <!-- Brand -->
             <Link :href="route('admin')"
-                  class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0">
+                  class="md:block text-left md:pb-3 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0 tracking-wide">
                 CMS Admin
             </Link>
             <!-- User -->
@@ -42,7 +43,7 @@ function toggleCollapseShow(classes) {
             </ul>
             <!-- Collapse -->
             <div
-                class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded"
+                class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-3 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto min-h-full items-center flex-1 rounded"
                 v-bind:class="collapseShow"
             >
                 <!-- Collapse header -->
@@ -68,26 +69,16 @@ function toggleCollapseShow(classes) {
                     </div>
                 </div>
                 <!-- Form -->
-                <form class="mt-6 mb-4 md:hidden">
-                    <div class="mb-3 pt-0">
-                        <input
-                            type="text"
-                            placeholder="Search"
-                            class="border-0 px-3 py-2 h-12 border border-solid border-blueGray-500 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal"
-                        />
-                    </div>
-                </form>
-
                 <!-- Divider -->
-                <hr class="my-3 md:min-w-full"/>
+                <hr class="my-2 md:min-w-full"/>
                 <!-- Heading -->
                 <h6
-                    class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+                    class="md:min-w-full text-blueGray-500 text-[11px] tracking-wider uppercase font-bold block pt-2 pb-2 no-underline"
                 >
                     Portfolio management
                 </h6>
 
-                <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+                <ul class="md:flex-col md:min-w-full flex flex-col list-none space-y-1">
                     <li class="items-center">
                         <SidebarNavLink :href="route('portfolio.education')"
                                         :active="route().current('portfolio.education')"
@@ -119,13 +110,13 @@ function toggleCollapseShow(classes) {
                 <!-- Navigation -->
                 <!-- Heading -->
                 <h6
-                    class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+                    class="md:min-w-full text-blueGray-500 text-[11px] tracking-wider uppercase font-bold block pt-2 pb-2 no-underline"
                 >
                     Admin Layout Pages
                 </h6>
                 <!-- Navigation -->
 
-                <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+                <ul class="md:flex-col md:min-w-full flex flex-col list-none space-y-1">
                     <li class="items-center">
                         <SidebarNavLink :href="route('admin')" :active="route().current('admin')"
                                         icon="fas fa-tv mr-2 text-sm">
@@ -165,27 +156,43 @@ function toggleCollapseShow(classes) {
                         </SidebarNavLink>
                     </li>
                     <li class="items-center">
-                        <SidebarNavLink :href="route('admin.services')" :active="route().current('admin.services')"
+                        <SidebarNavLink :href="route('admin.services')"
+                                        :active="route().current('admin.services') || route().current('admin.service-*')"
                                         icon="fa fa-cube mr-2 text-sm">
                             Services
                         </SidebarNavLink>
                     </li>
                     <li class="items-center">
-                        <SidebarNavLink :href="route('admin.products')" :active="route().current('admin.products')"
+                        <SidebarNavLink :href="route('admin.service-categories')"
+                                        :active="route().current('admin.service-categories')"
+                                        icon="fa fa-folder mr-2 text-sm">
+                            Service categories
+                        </SidebarNavLink>
+                    </li>
+                    <li class="items-center">
+                        <SidebarNavLink :href="route('admin.products')"
+                                        :active="route().current('admin.products') || route().current('admin.product-*')"
                                         icon="fa fa-globe mr-2 text-sm">
                             Products
                         </SidebarNavLink>
                     </li>
+                    <li class="items-center">
+                        <SidebarNavLink :href="route('admin.profile')"
+                                        :active="route().current('admin.profile')"
+                                        icon="fa fa-user mr-2 text-sm">
+                            Profile
+                        </SidebarNavLink>
+                    </li>
                 </ul>
                 <!-- Divider -->
-                <hr class="my-4 md:min-w-full"/>
+                <hr class="my-3 md:min-w-full"/>
                 <h6
-                    class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+                    class="md:min-w-full text-blueGray-500 text-[11px] tracking-wider uppercase font-bold block pt-2 pb-2 no-underline"
                 >
                     HEADER
                 </h6>
                 <!-- Navigation -->
-                <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
+                <ul class="md:flex-col md:min-w-full flex flex-col list-none space-y-1 md:mb-4">
                     <li class="items-center">
                         <SidebarNavLink :href="route('admin.top-bar-settings')"
                                         :active="route().current('admin.top-bar-settings')"
@@ -202,14 +209,14 @@ function toggleCollapseShow(classes) {
                     </li>
                 </ul>
                 <!-- Divider -->
-                <hr class="my-4 md:min-w-full"/>
+                <hr class="my-3 md:min-w-full"/>
                 <h6
-                    class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+                    class="md:min-w-full text-blueGray-500 text-[11px] tracking-wider uppercase font-bold block pt-2 pb-2 no-underline"
                 >
                     BLOG SIDEBAR
                 </h6>
                 <!-- Navigation -->
-                <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
+                <ul class="md:flex-col md:min-w-full flex flex-col list-none space-y-1 md:mb-4">
                     <li class="items-center">
                         <SidebarNavLink :href="route('admin.posts-banners')"
                                         :active="route().current('admin.posts-banners')"
@@ -219,14 +226,14 @@ function toggleCollapseShow(classes) {
                     </li>
                 </ul>
                 <!-- Divider -->
-                <hr class="my-4 md:min-w-full"/>
+                <hr class="my-3 md:min-w-full"/>
                 <h6
-                    class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+                    class="md:min-w-full text-blueGray-500 text-[11px] tracking-wider uppercase font-bold block pt-2 pb-2 no-underline"
                 >
                     FOOTER
                 </h6>
                 <!-- Navigation -->
-                <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
+                <ul class="md:flex-col md:min-w-full flex flex-col list-none space-y-1 md:mb-4">
                     <li class="items-center">
                         <SidebarNavLink :href="route('admin.useful-link-list')"
                                         :active="route().current('admin.useful-link-list')"

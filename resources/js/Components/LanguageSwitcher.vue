@@ -3,7 +3,7 @@ import {usePage} from '@inertiajs/vue3';
 
 defineProps({contrast: {type: Boolean, default: false}});
 const page = usePage();
-const locales = [{code: 'en', label: 'EN'}, {code: 'uk', label: 'UA'}, {code: 'pl', label: 'PL'}];
+const locales = [{code: 'en', label: 'EN'}, {code: 'uk', label: 'UK'}, {code: 'pl', label: 'PL'}];
 
 function switchLocale(event) {
     window.location.assign(event.target.value);
