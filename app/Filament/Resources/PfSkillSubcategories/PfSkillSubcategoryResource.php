@@ -7,6 +7,7 @@ use App\Filament\Resources\PfSkillSubcategories\Pages\EditPfSkillSubcategory;
 use App\Filament\Resources\PfSkillSubcategories\Pages\ListPfSkillSubcategories;
 use App\Filament\Resources\PfSkillSubcategories\Schemas\PfSkillSubcategoryForm;
 use App\Filament\Resources\PfSkillSubcategories\Tables\PfSkillSubcategoriesTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\Portfolio\PfSkillSubcategory;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class PfSkillSubcategoryResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Portfolio management';
+        return PanelNavigationGroup::Portfolio->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 4;
+        return 40;
     }
 
     public static function getPluralModelLabel(): string

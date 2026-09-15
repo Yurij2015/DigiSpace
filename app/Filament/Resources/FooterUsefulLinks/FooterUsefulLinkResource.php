@@ -7,6 +7,7 @@ use App\Filament\Resources\FooterUsefulLinks\Pages\EditFooterUsefulLink;
 use App\Filament\Resources\FooterUsefulLinks\Pages\ListFooterUsefulLinks;
 use App\Filament\Resources\FooterUsefulLinks\Schemas\FooterUsefulLinkForm;
 use App\Filament\Resources\FooterUsefulLinks\Tables\FooterUsefulLinksTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\FooterUsefulLink;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class FooterUsefulLinkResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Footer';
+        return PanelNavigationGroup::Settings->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 22;
+        return 110;
     }
 
     public static function getPluralModelLabel(): string

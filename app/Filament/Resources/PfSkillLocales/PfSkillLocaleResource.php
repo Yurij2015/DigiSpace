@@ -7,6 +7,7 @@ use App\Filament\Resources\PfSkillLocales\Pages\EditPfSkillLocale;
 use App\Filament\Resources\PfSkillLocales\Pages\ListPfSkillLocales;
 use App\Filament\Resources\PfSkillLocales\Schemas\PfSkillLocaleForm;
 use App\Filament\Resources\PfSkillLocales\Tables\PfSkillLocalesTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\Portfolio\PfSkillLocale;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class PfSkillLocaleResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Portfolio management';
+        return PanelNavigationGroup::Portfolio->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 5;
+        return 50;
     }
 
     public static function getPluralModelLabel(): string

@@ -7,6 +7,7 @@ use App\Filament\Resources\ServiceCategories\Pages\EditServiceCategory;
 use App\Filament\Resources\ServiceCategories\Pages\ListServiceCategories;
 use App\Filament\Resources\ServiceCategories\Schemas\ServiceCategoryForm;
 use App\Filament\Resources\ServiceCategories\Tables\ServiceCategoriesTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\ServiceCategory;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class ServiceCategoryResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Admin Layout Pages';
+        return PanelNavigationGroup::Settings->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 17;
+        return 40;
     }
 
     public static function getPluralModelLabel(): string

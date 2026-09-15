@@ -7,6 +7,7 @@ use App\Filament\Resources\Services\Pages\EditService;
 use App\Filament\Resources\Services\Pages\ListServices;
 use App\Filament\Resources\Services\Schemas\ServiceForm;
 use App\Filament\Resources\Services\Tables\ServicesTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\Service;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class ServiceResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Admin Layout Pages';
+        return PanelNavigationGroup::Settings->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 14;
+        return 30;
     }
 
     public static function getPluralModelLabel(): string

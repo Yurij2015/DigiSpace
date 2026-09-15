@@ -7,6 +7,7 @@ use App\Filament\Resources\BlogPostBanners\Pages\EditBlogPostBanner;
 use App\Filament\Resources\BlogPostBanners\Pages\ListBlogPostBanners;
 use App\Filament\Resources\BlogPostBanners\Schemas\BlogPostBannerForm;
 use App\Filament\Resources\BlogPostBanners\Tables\BlogPostBannersTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\BlogPostBanner;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class BlogPostBannerResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Blog sidebar';
+        return PanelNavigationGroup::Content->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 21;
+        return 40;
     }
 
     public static function getPluralModelLabel(): string

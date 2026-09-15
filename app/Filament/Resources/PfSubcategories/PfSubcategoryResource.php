@@ -7,6 +7,7 @@ use App\Filament\Resources\PfSubcategories\Pages\EditPfSubcategory;
 use App\Filament\Resources\PfSubcategories\Pages\ListPfSubcategories;
 use App\Filament\Resources\PfSubcategories\Schemas\PfSubcategoryForm;
 use App\Filament\Resources\PfSubcategories\Tables\PfSubcategoriesTable;
+use App\Filament\Support\PanelNavigationGroup;
 use App\Models\Portfolio\PfSubcategory;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -23,12 +24,12 @@ class PfSubcategoryResource extends Resource
 
     public static function getNavigationGroup(): ?string
     {
-        return 'Portfolio management';
+        return PanelNavigationGroup::Portfolio->label();
     }
 
     public static function getNavigationSort(): ?int
     {
-        return 7;
+        return 70;
     }
 
     public static function getPluralModelLabel(): string

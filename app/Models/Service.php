@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Concerns\HasLocalizedContent;
+use App\Models\Concerns\HasTranslatableColumns;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -50,9 +51,22 @@ use Illuminate\Support\Carbon;
  *
  * @mixin Eloquent
  */
-class Service extends Model
+class Service extends Model implements HasTranslatableColumns
 {
     use HasLocalizedContent;
+
+    /**
+     * Base-language columns that also live under translations.{locale}; read by the
+     * control-panel edit pages so forms are filled from raw values (see FillsRawTranslatableFields).
+     *
+     * @var list<string>
+     */
+    public const TRANSLATABLE = ['title', 'details', 'description', 'seo_keywords', 'seo_description', 'seo_title', 'image_alt'];
+
+    public static function translatableColumns(): array
+    {
+        return self::TRANSLATABLE;
+    }
 
     protected $fillable = [
         'title', 'details', 'price', 'service_category_id', 'seo_keywords', 'seo_description', 'seo_title', 'image_alt', 'description', 'slug', 'image', 'status', 'translations',
@@ -60,7 +74,7 @@ class Service extends Model
 
     protected function casts(): array
     {
-        return ['translations' => 'array'];
+        return [];
     }
 
     protected function title(): Attribute
