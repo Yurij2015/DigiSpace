@@ -18,7 +18,7 @@ Depends on `filament-content-editing` helpers (`FillsRawTranslatableFields`, `Co
 
 - [x] 1.1 Create the migration adding nullable `translations` JSON to `menus`, `menu_items`, `widgets`, `widget_categories`, `footer_useful_links`, `header_nav_bar_contents`, `footer_bottom_bar_contents` (design D1) with a `down()`; verify `migrate` and `migrate:rollback` on the local DB.
 - [ ] 1.2 Add `HasLocalizedContent`, `translations` cast/fillable and `localizedAttribute()` accessors to the seven models for the columns listed in design Context; add `Widget::slot()` (design D2); verify PHPStan and that `/uk` still renders identically before any translation exists (fallback).
-- [ ] 1.3 Switch `components/footer.blade.php` slot matching to `$widget->slot` with the raw-title fallback; verify the footer renders on `/`, `/uk`, `/pl` locally with the current (un-keyed) rows and `tests/Feature/SubscribeFormFeedbackTest` still passes.
+- [x] 1.3 Switch `components/footer.blade.php` slot matching to `$widget->slot` with the raw-title fallback; verify the footer renders on `/`, `/uk`, `/pl` locally with the current (un-keyed) rows and `tests/Feature/SubscribeFormFeedbackTest` still passes.
 
 ## 2. Seed data as JSON
 
