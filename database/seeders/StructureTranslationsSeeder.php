@@ -6,7 +6,6 @@ use App\Support\Translations;
 use Database\Seeders\Support\SeedData;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 /**
  * Adds uk/pl translations from database/seeders/data/*.json to an already populated database

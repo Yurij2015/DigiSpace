@@ -2,15 +2,19 @@
 
 namespace App\Filament\Resources\Posts\Schemas;
 
+use App\Filament\Support\AiGenerationAction;
+use App\Filament\Support\AiTranslationAction;
 use App\Filament\Support\ContentEditor;
 use App\Filament\Support\ContentImage;
 use App\Filament\Support\SeoFields;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Actions;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Schema;
+use Filament\Support\Enums\Alignment;
 
 class PostForm
 {
@@ -23,17 +27,28 @@ class PostForm
                 Tabs::make('translations')
                     ->tabs([
                         Tab::make('English')->schema([
+                            Actions::make([
+                                AiGenerationAction::make('post', 'en'),
+                            ])->alignment(Alignment::End),
                             TextInput::make('name')->required()->maxLength(255),
                             TextInput::make('slug')->disabled()->dehydrated(false)->helperText('Generated from the English name.'),
                             ContentEditor::make('content', self::ATTACHMENTS)->required(),
                             SeoFields::section('description', 'keywords'),
                         ]),
                         Tab::make('Українська')->schema([
+                            Actions::make([
+                                AiTranslationAction::make('post', 'uk'),
+                                AiGenerationAction::make('post', 'uk'),
+                            ])->alignment(Alignment::End),
                             TextInput::make('translations.uk.name')->label('Назва')->maxLength(255),
                             ContentEditor::make('translations.uk.content', self::ATTACHMENTS)->label('Контент'),
                             SeoFields::section('translations.uk.description', 'translations.uk.keywords', 'Опис', 'Ключові слова'),
                         ]),
                         Tab::make('Polski')->schema([
+                            Actions::make([
+                                AiTranslationAction::make('post', 'pl'),
+                                AiGenerationAction::make('post', 'pl'),
+                            ])->alignment(Alignment::End),
                             TextInput::make('translations.pl.name')->label('Nazwa')->maxLength(255),
                             ContentEditor::make('translations.pl.content', self::ATTACHMENTS)->label('Treść'),
                             SeoFields::section('translations.pl.description', 'translations.pl.keywords', 'Opis', 'Słowa kluczowe'),

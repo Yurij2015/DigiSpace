@@ -7,6 +7,9 @@ use App\Filament\Resources\Posts\Pages\EditPost;
 use App\Models\Category;
 use App\Models\Page;
 use App\Models\Post;
+use App\Models\Product;
+use App\Models\Service;
+use App\Models\ServiceCategory;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
@@ -112,7 +115,7 @@ class TranslationSafetyTest extends TestCase
 
     public function test_translatable_lists_cover_every_localized_accessor(): void
     {
-        foreach ([Post::class, Page::class, Category::class, \App\Models\Service::class, \App\Models\ServiceCategory::class, \App\Models\Product::class] as $model) {
+        foreach ([Post::class, Page::class, Category::class, Service::class, ServiceCategory::class, Product::class] as $model) {
             $source = file_get_contents((new \ReflectionClass($model))->getFileName());
             preg_match_all("/localizedAttribute\\('([a-z_]+)'\\)/", $source, $m);
 

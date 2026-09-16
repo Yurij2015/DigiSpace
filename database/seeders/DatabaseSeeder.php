@@ -24,5 +24,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ProductServiceSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(PostSeeder::class);
+        $this->call(GenerationConfigSeeder::class);
     }
 }

@@ -3,8 +3,8 @@
 namespace Tests\Feature;
 
 use App\Support\Translations;
-use Database\Seeders\Support\SeedData;
 use Database\Seeders\StructureTranslationsSeeder;
+use Database\Seeders\Support\SeedData;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
 use Tests\TestCase;

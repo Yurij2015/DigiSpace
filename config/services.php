@@ -44,6 +44,11 @@ return [
         'refresh_token' => env('ZOHO_REFRESH_TOKEN'),
     ],
 
+    'netpostpanel' => [
+        'url' => env('NETPOSTPANEL_API_URL', 'https://net-post-panel.digispace.pro'),
+        'key' => env('NETPOSTPANEL_API_KEY'),
+    ],
+
     'recaptcha' => [
         'site_key' => env('RECAPTCHA_SITE_KEY'),
         'secret_key' => env('RECAPTCHA_SECRET_KEY'),
