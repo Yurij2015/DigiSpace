@@ -32,7 +32,7 @@ class NetPostPanelClient
         $apiKey = config('services.netpostpanel.key');
 
         if (empty($apiKey)) {
-            throw new RuntimeException('NetPostPanel API key is not configured.');
+            throw new RuntimeException('NetPostPanel API key is not configured. Set NETPOSTPANEL_API_KEY in the .env file, then run `php artisan config:clear`.');
         }
 
         $response = Http::withHeaders(['X-API-KEY' => $apiKey])

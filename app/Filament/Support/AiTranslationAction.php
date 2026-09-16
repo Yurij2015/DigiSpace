@@ -5,6 +5,7 @@ namespace App\Filament\Support;
 use App\Services\AI\ContentGeneratorService;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Radio;
+use Filament\Forms\Components\Section;
 use Filament\Notifications\Notification;
 use Filament\Support\Icons\Heroicon;
 use Illuminate\Database\Eloquent\Model;
@@ -12,6 +13,16 @@ use Throwable;
 
 class AiTranslationAction
 {
+    private static function configurationMessage(): string
+    {
+        return 'AI is not configured. Set NETPOSTPANEL_API_KEY and NETPOSTPANEL_API_URL in the .env file, then run `php artisan config:clear`.';
+    }
+
+    private static function isConfigured(): bool
+    {
+        return ! empty(config('services.netpostpanel.key'));
+    }
+
     public static function make(string $entityType, string $targetLocale): Action
     {
         $actionName = 'translateWithAi_'.$targetLocale;
@@ -21,16 +32,18 @@ class AiTranslationAction
             default => 'Translate from English',
         };
 
+        $configured = self::isConfigured();
+
         return Action::make($actionName)
             ->label($label)
             ->icon(Heroicon::OutlinedLanguage)
             ->color('gray')
             ->disabled(fn (?Model $record): bool => ! $record || empty($record->name) || empty($record->content))
             ->tooltip(fn (?Model $record): ?string => (! $record || empty($record->name) || empty($record->content)) ? 'Save English content first' : null)
-            ->modalHeading("Translate to {$targetLocale} from English")
-            ->modalDescription('Translate the saved English content into this language. Choose between an adapted natural rewrite or a faithful literal translation.')
-            ->modalSubmitActionLabel('Translate')
-            ->form([
+            ->modalHeading($configured ? "Translate to {$targetLocale} from English" : 'AI not configured')
+            ->modalDescription($configured ? 'Translate the saved English content into this language. Choose between an adapted natural rewrite or a faithful literal translation.' : self::configurationMessage())
+            ->modalSubmitActionLabel($configured ? 'Translate' : 'Close')
+            ->form($configured ? [
                 Radio::make('translation_mode')
                     ->label('Translation Mode')
                     ->options([
@@ -39,8 +52,22 @@ class AiTranslationAction
                     ])
                     ->default('adapted')
                     ->required(),
+            ] : [
+                Section::make('AI not configured')
+                    ->description(self::configurationMessage())
+                    ->columnSpanFull(),
             ])
             ->action(function (array $data, $set, ?Model $record, ContentGeneratorService $generator) use ($entityType, $targetLocale): void {
+                if (! self::isConfigured()) {
+                    Notification::make()
+                        ->title('AI not configured')
+                        ->body(self::configurationMessage())
+                        ->danger()
+                        ->send();
+
+                    return;
+                }
+
                 if (! $record || empty($record->name) || empty($record->content)) {
                     Notification::make()
                         ->title('Cannot translate')

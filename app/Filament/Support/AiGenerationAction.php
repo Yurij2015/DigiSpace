@@ -4,6 +4,7 @@ namespace App\Filament\Support;
 
 use App\Services\AI\ContentGeneratorService;
 use Filament\Actions\Action;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -14,6 +15,16 @@ use Throwable;
 
 class AiGenerationAction
 {
+    private static function configurationMessage(): string
+    {
+        return 'AI is not configured. Set NETPOSTPANEL_API_KEY and NETPOSTPANEL_API_URL in the .env file, then run `php artisan config:clear`.';
+    }
+
+    private static function isConfigured(): bool
+    {
+        return ! empty(config('services.netpostpanel.key'));
+    }
+
     public static function make(string $entityType, string $locale = 'en'): Action
     {
         $actionName = 'generateWithAi_'.$locale;
@@ -23,14 +34,16 @@ class AiGenerationAction
             default => 'Generate with AI',
         };
 
+        $configured = self::isConfigured();
+
         return Action::make($actionName)
             ->label($label)
             ->icon(Heroicon::OutlinedSparkles)
             ->color('primary')
-            ->modalHeading("Generate {$entityType} content ({$locale})")
-            ->modalDescription('Enter your topic instructions or outline. The AI will generate drafts and fill the fields in this tab without auto-saving.')
-            ->modalSubmitActionLabel('Generate')
-            ->form([
+            ->modalHeading($configured ? "Generate {$entityType} content ({$locale})" : 'AI not configured')
+            ->modalDescription($configured ? 'Enter your topic instructions or outline. The AI will generate drafts and fill the fields in this tab without auto-saving.' : self::configurationMessage())
+            ->modalSubmitActionLabel($configured ? 'Generate' : 'Close')
+            ->form($configured ? [
                 Textarea::make('prompt')
                     ->label('Topic / Instructions')
                     ->placeholder('e.g. Write an in-depth article about microservices best practices...')
@@ -59,8 +72,22 @@ class AiGenerationAction
                 TextInput::make('keywords')
                     ->label('Target SEO Keywords (Optional)')
                     ->placeholder('e.g. architecture, devops, microservices'),
+            ] : [
+                Section::make('AI not configured')
+                    ->description(self::configurationMessage())
+                    ->columnSpanFull(),
             ])
             ->action(function (array $data, $set, ?Model $record, ContentGeneratorService $generator) use ($entityType, $locale): void {
+                if (! self::isConfigured()) {
+                    Notification::make()
+                        ->title('AI not configured')
+                        ->body(self::configurationMessage())
+                        ->danger()
+                        ->send();
+
+                    return;
+                }
+
                 try {
                     $targetLocale = $data['locale'] ?? $locale;
                     $payload = $generator->generate(
