@@ -9,6 +9,7 @@ use App\Models\Post;
 use App\Models\User;
 use App\Services\AI\ContentGeneratorService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
 class ContentGeneratorServiceTest extends TestCase
@@ -21,6 +22,8 @@ class ContentGeneratorServiceTest extends TestCase
     {
         parent::setUp();
 
+        config()->set('services.netpostpanel.key', 'test-api-key');
+
         // Seed default generation configs
         GenerationConfig::create([
             'entity_type' => 'post',
@@ -32,13 +35,30 @@ class ContentGeneratorServiceTest extends TestCase
             'system_prompt' => 'You are an expert copywriter.',
         ]);
 
+        Http::fake([
+            'net-post-panel.digispace.pro/api/v1/generate' => Http::response([
+                'payload' => [
+                    'name' => 'Mock Generated Title: AI & Future of Cloud Computing',
+                    'content' => '<p>Mock Generated Content</p>',
+                    'description' => 'A comprehensive overview of cloud computing architectures.',
+                    'keywords' => 'cloud, ai',
+                ],
+            ], 200),
+            'net-post-panel.digispace.pro/api/v1/translate' => Http::response([
+                'payload' => [
+                    'name' => 'Перекладений заголовок',
+                    'content' => '<p>Перекладений контент</p>',
+                    'description' => 'Опис українською',
+                    'keywords' => 'laravel, php',
+                ],
+            ], 200),
+        ]);
+
         $this->service = app(ContentGeneratorService::class);
     }
 
     public function test_generate_logs_generation_attempt_for_new_unpersisted_post(): void
     {
-        config()->set('ai.default', 'mock');
-
         $user = User::factory()->create();
 
         $payload = $this->service->generate(
@@ -49,7 +69,6 @@ class ContentGeneratorServiceTest extends TestCase
             keywords: 'docker, containers',
             record: null,
             userId: $user->id,
-            driver: 'mock',
         );
 
         $this->assertIsArray($payload);
@@ -70,8 +89,6 @@ class ContentGeneratorServiceTest extends TestCase
 
     public function test_generate_increments_attempt_number_for_existing_post(): void
     {
-        config()->set('ai.default', 'mock');
-
         $user = User::factory()->create();
         $category = Category::create([
             'name' => 'Tech',
@@ -95,7 +112,6 @@ class ContentGeneratorServiceTest extends TestCase
             locale: 'en',
             record: $post,
             userId: $user->id,
-            driver: 'mock',
         );
 
         // Second generation
@@ -105,7 +121,6 @@ class ContentGeneratorServiceTest extends TestCase
             locale: 'en',
             record: $post,
             userId: $user->id,
-            driver: 'mock',
         );
 
         $this->assertDatabaseHas('generation_attempts', [
@@ -127,8 +142,6 @@ class ContentGeneratorServiceTest extends TestCase
 
     public function test_translate_logs_translation_attempt_with_mode_and_source_content(): void
     {
-        config()->set('ai.default', 'mock');
-
         $user = User::factory()->create();
         $category = Category::create([
             'name' => 'Tech',
@@ -161,7 +174,6 @@ class ContentGeneratorServiceTest extends TestCase
             translationMode: 'adapted',
             record: $post,
             userId: $user->id,
-            driver: 'mock',
         );
 
         $this->assertIsArray($payload);

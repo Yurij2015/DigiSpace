@@ -35,7 +35,7 @@ class NetPostPanelClient
             throw new RuntimeException('NetPostPanel API key is not configured.');
         }
 
-        $response = Http::withToken($apiKey)
+        $response = Http::withHeaders(['X-API-KEY' => $apiKey])
             ->timeout(120) // RAG can take a while
             ->post($url.$endpoint, $payload);
 
