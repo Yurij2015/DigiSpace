@@ -25,10 +25,13 @@ class AiTranslationActionTest extends TestCase
         parent::setUp();
         $this->seed(GenerationConfigSeeder::class);
 
+        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         Http::fake([
-            'net-post-panel.digispace.pro/api/v1/translate' => Http::response([
+            'net-post-panel.test/api/v1/translate' => Http::response([
+                'request_id' => 'req-uuid-tr',
+                'status' => 'succeeded',
                 'payload' => [
                     'name' => 'Mock Generated Title: AI & Future of Cloud Computing',
                     'description' => 'A comprehensive overview of cloud computing architectures and modern engineering patterns.',

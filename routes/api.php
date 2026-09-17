@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\NetPostPanelWebhookController;
 use App\Http\Controllers\Api\PfEducationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,3 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('education', [PfEducationController::class, 'index'])->name('education');
+
+Route::post('hooks/netpostpanel', NetPostPanelWebhookController::class)
+    ->name('hooks.netpostpanel');

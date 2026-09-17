@@ -8,6 +8,7 @@ use App\Models\GenerationConfig;
 use App\Models\Post;
 use App\Models\User;
 use App\Services\AI\ContentGeneratorService;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
@@ -22,6 +23,7 @@ class ContentGeneratorServiceTest extends TestCase
     {
         parent::setUp();
 
+        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         // Seed default generation configs
@@ -35,33 +37,123 @@ class ContentGeneratorServiceTest extends TestCase
             'system_prompt' => 'You are an expert copywriter.',
         ]);
 
-        Http::fake([
-            'net-post-panel.digispace.pro/api/v1/generate' => Http::response([
-                'payload' => [
-                    'name' => 'Mock Generated Title: AI & Future of Cloud Computing',
-                    'content' => '<p>Mock Generated Content</p>',
-                    'description' => 'A comprehensive overview of cloud computing architectures.',
-                    'keywords' => 'cloud, ai',
-                ],
-            ], 200),
-            'net-post-panel.digispace.pro/api/v1/translate' => Http::response([
-                'payload' => [
-                    'name' => 'Перекладений заголовок',
-                    'content' => '<p>Перекладений контент</p>',
-                    'description' => 'Опис українською',
-                    'keywords' => 'laravel, php',
-                ],
-            ], 200),
-        ]);
-
         $this->service = app(ContentGeneratorService::class);
+    }
+
+    private function fakeGenerateResponse(array $response): void
+    {
+        Http::fake([
+            'net-post-panel.test/api/v1/generate' => Http::response($response, 200),
+        ]);
+    }
+
+    private function fakeTranslateResponse(array $response): void
+    {
+        Http::fake([
+            'net-post-panel.test/api/v1/translate' => Http::response($response, 200),
+        ]);
+    }
+
+    private function fakeSuccessfulGenerate(): void
+    {
+        $this->fakeGenerateResponse([
+            'request_id' => 'req-uuid-gen',
+            'status' => 'succeeded',
+            'payload' => [
+                'name' => 'Mock Generated Title: AI & Future of Cloud Computing',
+                'content' => '<p>Mock Generated Content</p>',
+                'description' => 'A comprehensive overview of cloud computing architectures.',
+                'keywords' => 'cloud, ai',
+            ],
+            'rag_sources_used' => 3,
+            'rag_sources' => ['https://a.test', 'https://b.test', 'https://c.test'],
+        ]);
+    }
+
+    private function fakeSuccessfulTranslate(): void
+    {
+        $this->fakeTranslateResponse([
+            'request_id' => 'req-uuid-tr',
+            'status' => 'succeeded',
+            'payload' => [
+                'name' => 'Перекладений заголовок',
+                'content' => '<p>Перекладений контент</p>',
+                'description' => 'Опис українською',
+                'keywords' => 'laravel, php',
+            ],
+        ]);
+    }
+
+    public function test_generate_throws_when_generation_config_is_missing(): void
+    {
+        $this->expectException(ModelNotFoundException::class);
+
+        $this->service->generate(
+            entityType: 'unknown-entity',
+            userPrompt: 'Test prompt',
+        );
+    }
+
+    public function test_generate_sends_entity_configuration_to_api(): void
+    {
+        $this->fakeSuccessfulGenerate();
+        $user = User::factory()->create();
+
+        $this->service->generate(
+            entityType: 'post',
+            userPrompt: 'Write an article on Docker containerization',
+            locale: 'en',
+            writingStyle: 'Professional',
+            keywords: 'docker, containers',
+            userId: $user->id,
+        );
+
+        Http::assertSent(function ($request) {
+            $payload = $request->data();
+
+            return $request->url() === 'https://net-post-panel.test/api/v1/generate'
+                && $payload['entity_type'] === 'post'
+                && $payload['entity_description'] === 'Technical blog posts and articles'
+                && $payload['fields'] === ['name', 'content']
+                && $payload['seo_fields'] === ['description', 'keywords']
+                && $payload['system_prompt'] === 'You are an expert copywriter.'
+                && $payload['user_prompt'] === 'Write an article on Docker containerization'
+                && $payload['locale'] === 'en'
+                && $payload['writing_style'] === 'Professional'
+                && $payload['keywords'] === 'docker, containers';
+        });
+    }
+
+    public function test_translate_sends_translation_payload_to_api(): void
+    {
+        $this->fakeSuccessfulTranslate();
+        $user = User::factory()->create();
+
+        $this->service->translate(
+            entityType: 'post',
+            sourceContent: ['name' => 'Test title', 'content' => 'Test content'],
+            targetLocale: 'uk',
+            translationMode: 'adapted',
+            userId: $user->id,
+        );
+
+        Http::assertSent(function ($request) {
+            $payload = $request->data();
+
+            return $request->url() === 'https://net-post-panel.test/api/v1/translate'
+                && $payload['entity_type'] === 'post'
+                && $payload['source_content'] === ['name' => 'Test title', 'content' => 'Test content']
+                && $payload['target_locale'] === 'uk'
+                && $payload['translation_mode'] === 'adapted';
+        });
     }
 
     public function test_generate_logs_generation_attempt_for_new_unpersisted_post(): void
     {
+        $this->fakeSuccessfulGenerate();
         $user = User::factory()->create();
 
-        $payload = $this->service->generate(
+        $response = $this->service->generate(
             entityType: 'post',
             userPrompt: 'Write an article on Docker containerization',
             locale: 'en',
@@ -71,11 +163,15 @@ class ContentGeneratorServiceTest extends TestCase
             userId: $user->id,
         );
 
-        $this->assertIsArray($payload);
-        $this->assertArrayHasKey('name', $payload);
-        $this->assertArrayHasKey('content', $payload);
+        $this->assertIsArray($response);
+        $this->assertEquals('req-uuid-gen', $response['request_id']);
+        $this->assertEquals('succeeded', $response['status']);
+        $this->assertArrayHasKey('name', $response['payload']);
+        $this->assertArrayHasKey('content', $response['payload']);
 
         $this->assertDatabaseHas('generation_attempts', [
+            'request_id' => 'req-uuid-gen',
+            'status' => 'succeeded',
             'type' => 'generation',
             'entity_type' => 'post',
             'generatable_type' => null,
@@ -87,8 +183,89 @@ class ContentGeneratorServiceTest extends TestCase
         ]);
     }
 
+    public function test_generate_async_stores_request_id_and_pending_status(): void
+    {
+        Http::fake([
+            'net-post-panel.test/api/v1/generate' => Http::response([
+                'request_id' => 'req-async-uuid',
+                'status' => 'pending',
+            ], 202),
+        ]);
+
+        $user = User::factory()->create();
+
+        $response = $this->service->generate(
+            entityType: 'post',
+            userPrompt: 'Write an article',
+            async: true,
+            callbackUrl: 'https://client.test/hooks/netpostpanel',
+            userId: $user->id,
+        );
+
+        $this->assertEquals('req-async-uuid', $response['request_id']);
+        $this->assertEquals('pending', $response['status']);
+
+        $this->assertDatabaseHas('generation_attempts', [
+            'request_id' => 'req-async-uuid',
+            'status' => 'pending',
+            'type' => 'generation',
+        ]);
+
+        $attempt = GenerationAttempt::where('request_id', 'req-async-uuid')->first();
+        $this->assertEquals([], $attempt->generated_payload);
+    }
+
+    public function test_generate_stores_rag_sources(): void
+    {
+        $this->fakeSuccessfulGenerate();
+        $user = User::factory()->create();
+
+        $this->service->generate(
+            entityType: 'post',
+            userPrompt: 'Test',
+            userId: $user->id,
+        );
+
+        $attempt = GenerationAttempt::where('type', 'generation')->first();
+        $this->assertNotNull($attempt);
+        $this->assertEquals(
+            ['https://a.test', 'https://b.test', 'https://c.test'],
+            $attempt->rag_sources
+        );
+    }
+
+    public function test_generate_sends_rag_parameters_to_api(): void
+    {
+        $this->fakeSuccessfulGenerate();
+        $user = User::factory()->create();
+
+        $this->service->generate(
+            entityType: 'post',
+            userPrompt: 'Test',
+            provider: 'gemini',
+            model: 'gemini-3.5-flash-lite',
+            rag: true,
+            searchResults: 8,
+            sources: 4,
+            minUsefulnessScore: 7,
+            userId: $user->id,
+        );
+
+        Http::assertSent(function ($request) {
+            $payload = $request->data();
+
+            return $payload['provider'] === 'gemini'
+                && $payload['model'] === 'gemini-3.5-flash-lite'
+                && $payload['rag'] === true
+                && $payload['search_results'] === 8
+                && $payload['sources'] === 4
+                && $payload['min_usefulness_score'] === 7;
+        });
+    }
+
     public function test_generate_increments_attempt_number_for_existing_post(): void
     {
+        $this->fakeSuccessfulGenerate();
         $user = User::factory()->create();
         $category = Category::create([
             'name' => 'Tech',
@@ -142,6 +319,7 @@ class ContentGeneratorServiceTest extends TestCase
 
     public function test_translate_logs_translation_attempt_with_mode_and_source_content(): void
     {
+        $this->fakeSuccessfulTranslate();
         $user = User::factory()->create();
         $category = Category::create([
             'name' => 'Tech',
@@ -167,7 +345,7 @@ class ContentGeneratorServiceTest extends TestCase
             'keywords' => $post->keywords,
         ];
 
-        $payload = $this->service->translate(
+        $response = $this->service->translate(
             entityType: 'post',
             sourceContent: $sourceContent,
             targetLocale: 'uk',
@@ -176,10 +354,14 @@ class ContentGeneratorServiceTest extends TestCase
             userId: $user->id,
         );
 
-        $this->assertIsArray($payload);
+        $this->assertIsArray($response);
+        $this->assertEquals('req-uuid-tr', $response['request_id']);
+        $this->assertEquals('succeeded', $response['status']);
 
         $attempt = GenerationAttempt::where('type', 'translation')->first();
         $this->assertNotNull($attempt);
+        $this->assertSame('req-uuid-tr', $attempt->request_id);
+        $this->assertSame('succeeded', $attempt->status);
         $this->assertSame('post', $attempt->entity_type);
         $this->assertSame(Post::class, $attempt->generatable_type);
         $this->assertSame($post->id, $attempt->generatable_id);

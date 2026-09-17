@@ -11,6 +11,8 @@ use Illuminate\Support\Carbon;
 
 /**
  * @property int $id
+ * @property string|null $request_id
+ * @property string|null $status
  * @property string $type
  * @property string $entity_type
  * @property string|null $generatable_type
@@ -21,7 +23,8 @@ use Illuminate\Support\Carbon;
  * @property string $user_prompt
  * @property string $resolved_prompt
  * @property array<string, mixed>|null $source_content
- * @property array<string, mixed> $generated_payload
+ * @property array<string, mixed>|null $generated_payload
+ * @property array<string, mixed>|null $rag_sources
  * @property int|null $created_by
  * @property Carbon|null $created_at
  * @property-read Model|null $generatable
@@ -40,6 +43,8 @@ class GenerationAttempt extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'request_id',
+        'status',
         'type',
         'entity_type',
         'generatable_type',
@@ -51,6 +56,7 @@ class GenerationAttempt extends Model
         'resolved_prompt',
         'source_content',
         'generated_payload',
+        'rag_sources',
         'created_by',
     ];
 
@@ -59,6 +65,7 @@ class GenerationAttempt extends Model
         return [
             'source_content' => 'array',
             'generated_payload' => 'array',
+            'rag_sources' => 'array',
             'created_at' => 'datetime',
         ];
     }
