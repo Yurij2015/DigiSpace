@@ -47,6 +47,14 @@ return [
     'netpostpanel' => [
         'url' => env('NETPOSTPANEL_API_URL', 'https://net-post-panel.digispace.pro'),
         'key' => env('NETPOSTPANEL_API_KEY'),
+
+        /*
+         * Both apps share a server whose public IP is unreachable from inside
+         * (no hairpin NAT). Point `url` at the panel's internal HTTP backend
+         * (http://127.0.0.1:8080) and set this to the public hostname: that
+         * backend is selected by `server_name`, so the Host header is required.
+         */
+        'api_host' => env('NETPOSTPANEL_API_HOST'),
     ],
 
     'recaptcha' => [
