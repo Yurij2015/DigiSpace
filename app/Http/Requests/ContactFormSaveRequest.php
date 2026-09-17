@@ -29,11 +29,11 @@ class ContactFormSaveRequest extends FormRequest
             'email' => 'required|email',
             'phone' => 'required|phone:INTERNATIONAL',
             'message' => 'required',
-            'g-recaptcha-response' => ['required', new RecaptchaRule()],
+            'g-recaptcha-response' => ['required', new RecaptchaRule],
         ];
     }
 
-    //messge for recaptcha
+    // messge for recaptcha
 
     public function messages(): array
     {
@@ -41,5 +41,4 @@ class ContactFormSaveRequest extends FormRequest
             'g-recaptcha-response.required' => 'Please complete the reCAPTCHA to verify you are not a robot.',
         ];
     }
-
 }

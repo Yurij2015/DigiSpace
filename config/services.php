@@ -31,11 +31,22 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    // Zoho CRM configuration
+    // When generating a Grant Token in Zoho API Console, ensure you request the required scope:
+    // Scope: ZohoCRM.modules.leads.ALL,ZohoCRM.settings.ALL (or ZohoCRM.modules.ALL,ZohoCRM.settings.ALL)
+    //
+    // To verify your loaded configuration (cache issues), run:
+    // php artisan tinker --execute="dump(config('services.zoho'));"
     'zoho' => [
         'client_id' => env('ZOHO_CLIENT_ID'),
         'client_secret' => env('ZOHO_CLIENT_SECRET'),
         'grant_token' => env('ZOHO_GRANT_TOKEN'),
         'refresh_token' => env('ZOHO_REFRESH_TOKEN'),
+    ],
+
+    'netpostpanel' => [
+        'url' => env('NETPOSTPANEL_API_URL', 'https://net-post-panel.digispace.pro'),
+        'key' => env('NETPOSTPANEL_API_KEY'),
     ],
 
     'recaptcha' => [

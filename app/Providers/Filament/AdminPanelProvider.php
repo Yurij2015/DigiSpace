@@ -31,7 +31,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('control')
             ->path('control')
-            ->favicon(asset('favicons/control.svg'))
+            ->favicon(asset('favicons/control.svg?v=2'))
             ->renderHook(PanelsRenderHook::TOPBAR_END, fn (): View => view('components.filament-language-switcher'))
             ->login()
             ->colors([

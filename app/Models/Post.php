@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasGenerationAttempts;
 use App\Models\Concerns\HasLocalizedContent;
 use App\Models\Concerns\HasTranslatableColumns;
 use Eloquent;
@@ -51,6 +52,7 @@ use Illuminate\Support\Carbon;
  */
 class Post extends Model implements HasTranslatableColumns
 {
+    use HasGenerationAttempts;
     use HasLocalizedContent;
 
     /**

@@ -25,6 +25,9 @@ use Illuminate\Support\Facades\Log;
 /**
  * Pushes contact form submissions to Zoho CRM as Leads. Extracted from
  * ContactController so tests can bind a fake instead of hitting the SDK.
+ *
+ * NOTE: Generating a new grant token requires the following scope:
+ * ZohoCRM.modules.leads.ALL (or ZohoCRM.modules.ALL)
  */
 class ZohoLeadService
 {
@@ -60,6 +63,7 @@ class ZohoLeadService
             ->token($token)
             ->store($tokenStore)
             ->logger($logger)
+            ->resourcePath(storage_path('app'))
             ->initialize();
     }
 

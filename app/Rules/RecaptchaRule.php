@@ -30,7 +30,7 @@ class RecaptchaRule implements Rule
 
     public function message(): string
     {
-        if (!empty($this->errorCodes)) {
+        if (! empty($this->errorCodes)) {
             $errorMessages = [
                 'missing-input-secret' => 'The secret parameter is missing.',
                 'invalid-input-secret' => 'The secret parameter is invalid or malformed.',
@@ -40,11 +40,11 @@ class RecaptchaRule implements Rule
                 'timeout-or-duplicate' => 'The response is no longer valid: either is too old or has been used previously.',
             ];
 
-            $messages = array_map(function($code) use ($errorMessages) {
+            $messages = array_map(function ($code) use ($errorMessages) {
                 return $errorMessages[$code] ?? $code;
             }, $this->errorCodes);
 
-            return 'The reCAPTCHA verification failed: ' . implode(', ', $messages);
+            return 'The reCAPTCHA verification failed: '.implode(', ', $messages);
         }
 
         return 'The reCAPTCHA verification failed.';

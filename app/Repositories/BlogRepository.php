@@ -25,7 +25,7 @@ class BlogRepository
 
     public function getArchivedPosts(int $year, int $month): LengthAwarePaginator
     {
-        return Post::where('status', "published")
+        return Post::where('status', 'published')
             ->whereRaw("YEAR(`posts`.`created_at`) = $year AND MONTH(`posts`.`created_at`) = $month")
             ->with('category')
             ->paginate(config('constants.NUMBER_POSTS_IN_BLOG_PAGE'));

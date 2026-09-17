@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasGenerationAttempts;
 use App\Models\Concerns\HasLocalizedContent;
 use App\Models\Concerns\HasTranslatableColumns;
 use Eloquent;
@@ -50,6 +51,7 @@ use Str;
  */
 class Page extends Model implements HasTranslatableColumns
 {
+    use HasGenerationAttempts;
     use HasLocalizedContent;
 
     /**

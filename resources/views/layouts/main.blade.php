@@ -52,7 +52,8 @@
 {{--        <meta property="og:image" content="{{ $serviceCategory->img_path }}"/>--}}
         <meta name="keywords" content="{{ $serviceCategory->seo_keywords }}"/>
     @endif
-    <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
+    <link rel="alternate icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('favicons/site.svg') }}" type="image/svg+xml">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700%7CSpace+Mono">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">

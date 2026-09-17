@@ -69,7 +69,7 @@ class ServiceController extends Controller
         $service->slug = Str::slug($saveRequest->title);
         $data['slug'] = $service->slug;
 
-        if ($service->image && !$saveRequest->file) {
+        if ($service->image && ! $saveRequest->file) {
             $data['image'] = str_replace('/uploads/', '', $service->image);
         }
 
@@ -91,7 +91,7 @@ class ServiceController extends Controller
 
     private function uploadImage($request, $service): string
     {
-        $fileName = "service_$service->slug" . '_' . time() . '.' . $request->file->extension();
+        $fileName = "service_$service->slug".'_'.time().'.'.$request->file->extension();
         $request->file->move(public_path('uploads'), $fileName);
 
         return $fileName;
