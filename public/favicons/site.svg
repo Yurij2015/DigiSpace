@@ -4,7 +4,7 @@
 	 viewBox="0 0 491.519 491.519" style="enable-background:new 0 0 491.519 491.519;" xml:space="preserve">
 <g id="Layer_x5F_1">
 	<g id="_336539624">
-		<path id="_336539768" style="fill-rule:evenodd;clip-rule:evenodd;fill:#4ade80;" d="M331.276,398.024c6.279,0,12.558,0,18.837,0
+		<path id="_336539768" style="fill-rule:evenodd;clip-rule:evenodd;fill:#2F4953;" d="M331.276,398.024c6.279,0,12.558,0,18.837,0
 			c8.073,0,14.64,6.555,14.64,14.63v23.479c0,8.079-6.561,14.639-14.64,14.639l-208.71,0c-8.079,0-14.639-6.561-14.639-14.639
 			l-0.001-23.479c0-8.075,6.567-14.63,14.641-14.63c6.278,0,12.556,0,18.834,0l2.881-4.88
 			c10.231-17.331,16.753-36.896,20.783-56.567c-46.118,0-92.237,0-138.355,0c-10.828,0-19.628-8.801-19.628-19.629L25.918,60.379
@@ -13,8 +13,8 @@
 			L331.276,398.024z"/>
 		
 			<linearGradient id="_336539648_00000076595519659005820640000005184063072641622438_" gradientUnits="userSpaceOnUse" x1="115.2174" y1="477.7081" x2="8.413" y2="576.9787" gradientTransform="matrix(2.8346 0 0 -2.8346 93.2053 1716.1804)">
-			<stop  offset="0" style="stop-color:#4ade80"/>
-			<stop  offset="1" style="stop-color:#4ade80"/>
+			<stop  offset="0" style="stop-color:#F71119"/>
+			<stop  offset="1" style="stop-color:#FFF305"/>
 		</linearGradient>
 		
 			<path id="_336539648" style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#_336539648_00000076595519659005820640000005184063072641622438_);" d="
