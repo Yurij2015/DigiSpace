@@ -23,7 +23,7 @@ class ContentEditor
         ['bold', 'italic', 'underline', 'strike'],
         ['bulletList', 'orderedList', 'blockquote', 'codeBlock'],
         ['link', 'attachFiles', 'table', 'horizontalRule'],
-        ['alignStart', 'alignCenter', 'alignEnd'],
+        ['alignStart', 'alignCenter', 'alignEnd', 'alignJustify'],
         ['undo', 'redo'],
     ];
 
