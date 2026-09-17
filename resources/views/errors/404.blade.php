@@ -9,7 +9,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ __('site.not_found_title') }}</title>
-        <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('favicons/site.svg') }}" type="image/svg+xml">
         <style>
             body { margin: 0; font: 16px/1.5 Arial, sans-serif; color: #151515; background: #fff; text-align: center; padding: 64px 16px; }
             h1 { font-size: 28px; margin: 0 0 12px; }
