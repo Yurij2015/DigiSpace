@@ -87,7 +87,7 @@ class AiTranslationAction
                         'meta' => $record->meta ?? null,
                     ], fn ($val) => $val !== null);
 
-                    $payload = $generator->translate(
+                    $response = $generator->translate(
                         entityType: $entityType,
                         sourceContent: $sourceContent,
                         targetLocale: $targetLocale,
@@ -95,7 +95,17 @@ class AiTranslationAction
                         record: $record,
                     );
 
-                    AiGenerationAction::populateFields($set, $targetLocale, $payload);
+                    if (($response['status'] ?? 'succeeded') === 'pending') {
+                        Notification::make()
+                            ->title('Translation started')
+                            ->body('Content is being translated asynchronously. It will be available shortly.')
+                            ->info()
+                            ->send();
+
+                        return;
+                    }
+
+                    AiGenerationAction::populateFields($set, $targetLocale, $response['payload'] ?? []);
 
                     Notification::make()
                         ->title('Translation completed')

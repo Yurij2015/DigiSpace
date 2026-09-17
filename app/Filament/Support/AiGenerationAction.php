@@ -90,7 +90,7 @@ class AiGenerationAction
 
                 try {
                     $targetLocale = $data['locale'] ?? $locale;
-                    $payload = $generator->generate(
+                    $response = $generator->generate(
                         entityType: $entityType,
                         userPrompt: $data['prompt'],
                         locale: $targetLocale,
@@ -99,7 +99,17 @@ class AiGenerationAction
                         record: $record,
                     );
 
-                    self::populateFields($set, $targetLocale, $payload);
+                    if (($response['status'] ?? 'succeeded') === 'pending') {
+                        Notification::make()
+                            ->title('Generation started')
+                            ->body('Content is being generated asynchronously. It will be available shortly.')
+                            ->info()
+                            ->send();
+
+                        return;
+                    }
+
+                    self::populateFields($set, $targetLocale, $response['payload'] ?? []);
 
                     Notification::make()
                         ->title('Content generated successfully')
