@@ -29,3 +29,6 @@ _ide_helper_models.php
 
 /deployment-config.json
 /deployment-config-with-prod.json
+
+# macOS
+.DS_Store
