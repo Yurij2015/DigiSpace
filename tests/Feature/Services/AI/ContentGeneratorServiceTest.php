@@ -26,8 +26,9 @@ class ContentGeneratorServiceTest extends TestCase
         config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
         config()->set('services.netpostpanel.key', 'test-api-key');
 
-        // Seed default generation configs
-        GenerationConfig::create([
+        // Seed default generation configs (migrations already insert post/page
+        // rows, so update them rather than collide with the unique entity_type)
+        GenerationConfig::updateOrCreate(['entity_type' => 'post'], [
             'entity_type' => 'post',
             'entity_name' => 'Blog Post',
             'entity_description' => 'Technical blog posts and articles',
