@@ -248,6 +248,7 @@ jobs:
           IS_PROMO_TAB_ACTIVE: ${{ vars.IS_PROMO_TAB_ACTIVE }}
           NETPOSTPANEL_API_URL: ${{ vars.NETPOSTPANEL_API_URL }}
           NETPOSTPANEL_API_KEY: ${{ secrets.NETPOSTPANEL_API_KEY }}
+          NETPOSTPANEL_API_HOST: ${{ vars.NETPOSTPANEL_API_HOST }}
           TARGET_ENVIRONMENT: ${{ matrix.server.environment }}
         run: |
           set -euo pipefail

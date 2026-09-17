@@ -54,9 +54,16 @@ class NetPostPanelClient
             throw new RuntimeException('NetPostPanel API key is not configured. Set NETPOSTPANEL_API_KEY in the .env file, then run `php artisan config:clear`.');
         }
 
-        $request = Http::withHeaders(['X-API-KEY' => $apiKey])
+        $headers = ['X-API-KEY' => $apiKey];
+
+        if ($apiHost = config('services.netpostpanel.api_host')) {
+            $headers['Host'] = $apiHost;
+        }
+
+        $request = Http::withHeaders($headers)
             ->acceptJson()
             ->asJson()
+            ->connectTimeout(10)
             ->timeout(120); // RAG can take a while
 
         $response = $method === 'GET'
