@@ -29,6 +29,8 @@ class AiGenerationActionTest extends TestCase
 
         Http::fake([
             'net-post-panel.test/api/v1/generate' => Http::response([
+                'request_id' => 'req-uuid-gen',
+                'status' => 'succeeded',
                 'payload' => [
                     'name' => 'Mock Generated Title: AI & Future of Cloud Computing',
                     'description' => 'A comprehensive overview of cloud computing architectures and modern engineering patterns.',

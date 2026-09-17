@@ -30,6 +30,8 @@ class AiTranslationActionTest extends TestCase
 
         Http::fake([
             'net-post-panel.test/api/v1/translate' => Http::response([
+                'request_id' => 'req-uuid-tr',
+                'status' => 'succeeded',
                 'payload' => [
                     'name' => 'Mock Generated Title: AI & Future of Cloud Computing',
                     'description' => 'A comprehensive overview of cloud computing architectures and modern engineering patterns.',

@@ -246,6 +246,8 @@ jobs:
           FACEBOOK_PIXEL_ID: ${{ vars.FACEBOOK_PIXEL_ID }}
           FILAMENT_ADMIN_EMAILS: ${{ vars.FILAMENT_ADMIN_EMAILS }}
           IS_PROMO_TAB_ACTIVE: ${{ vars.IS_PROMO_TAB_ACTIVE }}
+          NETPOSTPANEL_API_URL: ${{ vars.NETPOSTPANEL_API_URL }}
+          NETPOSTPANEL_API_KEY: ${{ secrets.NETPOSTPANEL_API_KEY }}
           TARGET_ENVIRONMENT: ${{ matrix.server.environment }}
         run: |
           set -euo pipefail

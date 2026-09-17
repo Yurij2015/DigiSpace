@@ -25,11 +25,19 @@ class ContentGeneratorService
         string $writingStyle = 'Professional',
         ?string $keywords = null,
         ?Model $record = null,
-        ?int $userId = null
+        ?int $userId = null,
+        ?string $provider = null,
+        ?string $model = null,
+        bool $async = false,
+        ?string $callbackUrl = null,
+        ?bool $rag = null,
+        ?int $searchResults = null,
+        ?int $sources = null,
+        ?int $minUsefulnessScore = null,
     ): array {
         $config = GenerationConfig::where('entity_type', $entityType)->firstOrFail();
 
-        $payloadToApi = [
+        $payloadToApi = array_filter([
             'entity_type' => $entityType,
             'entity_description' => $config->entity_description,
             'fields' => $config->fields ?? [],
@@ -39,10 +47,17 @@ class ContentGeneratorService
             'locale' => $locale,
             'writing_style' => $writingStyle,
             'keywords' => $keywords,
-        ];
+            'provider' => $provider,
+            'model' => $model,
+            'async' => $async,
+            'callback_url' => $callbackUrl,
+            'rag' => $rag,
+            'search_results' => $searchResults,
+            'sources' => $sources,
+            'min_usefulness_score' => $minUsefulnessScore,
+        ], fn ($value) => $value !== null);
 
-        // Send to centralized AI RAG service
-        $payload = $this->apiClient->generateContent($payloadToApi);
+        $response = $this->apiClient->generateContent($payloadToApi);
 
         $attemptNumber = 1;
         if ($record && $record->getKey()) {
@@ -52,6 +67,8 @@ class ContentGeneratorService
         }
 
         GenerationAttempt::create([
+            'request_id' => $response['request_id'] ?? null,
+            'status' => $response['status'] ?? null,
             'type' => 'generation',
             'entity_type' => $entityType,
             'generatable_type' => $record ? $record->getMorphClass() : null,
@@ -62,12 +79,13 @@ class ContentGeneratorService
             'user_prompt' => $userPrompt,
             'resolved_prompt' => 'Sent to NetPostPanel RAG API',
             'source_content' => null,
-            'generated_payload' => $payload,
+            'generated_payload' => $response['payload'] ?? [],
+            'rag_sources' => $response['rag_sources'] ?? null,
             'created_by' => $userId ?? Auth::id(),
             'created_at' => now(),
         ]);
 
-        return $payload;
+        return $response;
     }
 
     /**
@@ -82,11 +100,15 @@ class ContentGeneratorService
         string $targetLocale,
         string $translationMode = 'adapted',
         ?Model $record = null,
-        ?int $userId = null
+        ?int $userId = null,
+        ?string $provider = null,
+        ?string $model = null,
+        bool $async = false,
+        ?string $callbackUrl = null,
     ): array {
         $config = GenerationConfig::where('entity_type', $entityType)->firstOrFail();
 
-        $payloadToApi = [
+        $payloadToApi = array_filter([
             'entity_type' => $entityType,
             'entity_description' => $config->entity_description,
             'fields' => $config->fields ?? [],
@@ -95,9 +117,13 @@ class ContentGeneratorService
             'source_content' => $sourceContent,
             'target_locale' => $targetLocale,
             'translation_mode' => $translationMode,
-        ];
+            'provider' => $provider,
+            'model' => $model,
+            'async' => $async,
+            'callback_url' => $callbackUrl,
+        ], fn ($value) => $value !== null);
 
-        $payload = $this->apiClient->translateContent($payloadToApi);
+        $response = $this->apiClient->translateContent($payloadToApi);
 
         $attemptNumber = 1;
         if ($record && $record->getKey()) {
@@ -107,6 +133,8 @@ class ContentGeneratorService
         }
 
         GenerationAttempt::create([
+            'request_id' => $response['request_id'] ?? null,
+            'status' => $response['status'] ?? null,
             'type' => 'translation',
             'entity_type' => $entityType,
             'generatable_type' => $record ? $record->getMorphClass() : null,
@@ -117,11 +145,11 @@ class ContentGeneratorService
             'user_prompt' => "Translate from English ({$translationMode}) to {$targetLocale}",
             'resolved_prompt' => 'Sent to NetPostPanel Translation API',
             'source_content' => $sourceContent,
-            'generated_payload' => $payload,
+            'generated_payload' => $response['payload'] ?? [],
             'created_by' => $userId ?? Auth::id(),
             'created_at' => now(),
         ]);
 
-        return $payload;
+        return $response;
     }
 }
