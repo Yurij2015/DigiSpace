@@ -5,8 +5,8 @@ namespace App\Filament\Support;
 use App\Services\AI\ContentGeneratorService;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Radio;
-use Filament\Forms\Components\Section;
 use Filament\Notifications\Notification;
+use Filament\Schemas\Components\Section;
 use Filament\Support\Icons\Heroicon;
 use Illuminate\Database\Eloquent\Model;
 use Throwable;
@@ -41,9 +41,9 @@ class AiTranslationAction
             ->disabled(fn (?Model $record): bool => ! $record || empty($record->name) || empty($record->content))
             ->tooltip(fn (?Model $record): ?string => (! $record || empty($record->name) || empty($record->content)) ? 'Save English content first' : null)
             ->modalHeading($configured ? "Translate to {$targetLocale} from English" : 'AI not configured')
-            ->modalDescription($configured ? 'Translate the saved English content into this language. Choose between an adapted natural rewrite or a faithful literal translation.' : self::configurationMessage())
+            ->modalDescription($configured ? 'Translate the saved English content into this language. Choose between an adapted natural rewrite or a faithful literal translation.' : null)
             ->modalSubmitActionLabel($configured ? 'Translate' : 'Close')
-            ->form($configured ? [
+            ->schema($configured ? [
                 Radio::make('translation_mode')
                     ->label('Translation Mode')
                     ->options([
@@ -53,9 +53,9 @@ class AiTranslationAction
                     ->default('adapted')
                     ->required(),
             ] : [
-                Section::make('AI not configured')
+                Section::make('Configuration required')
                     ->description(self::configurationMessage())
-                    ->columnSpanFull(),
+                    ->icon(Heroicon::OutlinedExclamationTriangle),
             ])
             ->action(function (array $data, $set, ?Model $record, ContentGeneratorService $generator) use ($entityType, $targetLocale): void {
                 if (! self::isConfigured()) {

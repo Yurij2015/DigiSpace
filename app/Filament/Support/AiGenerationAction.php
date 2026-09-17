@@ -4,11 +4,11 @@ namespace App\Filament\Support;
 
 use App\Services\AI\ContentGeneratorService;
 use Filament\Actions\Action;
-use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
+use Filament\Schemas\Components\Section;
 use Filament\Support\Icons\Heroicon;
 use Illuminate\Database\Eloquent\Model;
 use Throwable;
@@ -41,9 +41,9 @@ class AiGenerationAction
             ->icon(Heroicon::OutlinedSparkles)
             ->color('primary')
             ->modalHeading($configured ? "Generate {$entityType} content ({$locale})" : 'AI not configured')
-            ->modalDescription($configured ? 'Enter your topic instructions or outline. The AI will generate drafts and fill the fields in this tab without auto-saving.' : self::configurationMessage())
+            ->modalDescription($configured ? 'Enter your topic instructions or outline. The AI will generate drafts and fill the fields in this tab without auto-saving.' : null)
             ->modalSubmitActionLabel($configured ? 'Generate' : 'Close')
-            ->form($configured ? [
+            ->schema($configured ? [
                 Textarea::make('prompt')
                     ->label('Topic / Instructions')
                     ->placeholder('e.g. Write an in-depth article about microservices best practices...')
@@ -73,9 +73,9 @@ class AiGenerationAction
                     ->label('Target SEO Keywords (Optional)')
                     ->placeholder('e.g. architecture, devops, microservices'),
             ] : [
-                Section::make('AI not configured')
+                Section::make('Configuration required')
                     ->description(self::configurationMessage())
-                    ->columnSpanFull(),
+                    ->icon(Heroicon::OutlinedExclamationTriangle),
             ])
             ->action(function (array $data, $set, ?Model $record, ContentGeneratorService $generator) use ($entityType, $locale): void {
                 if (! self::isConfigured()) {
