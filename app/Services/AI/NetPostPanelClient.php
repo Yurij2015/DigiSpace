@@ -36,6 +36,7 @@ class NetPostPanelClient
         }
 
         $response = Http::withHeaders(['X-API-KEY' => $apiKey])
+            ->acceptJson()
             ->timeout(120) // RAG can take a while
             ->post($url.$endpoint, $payload);
 

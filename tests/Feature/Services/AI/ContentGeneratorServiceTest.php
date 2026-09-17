@@ -8,6 +8,7 @@ use App\Models\GenerationConfig;
 use App\Models\Post;
 use App\Models\User;
 use App\Services\AI\ContentGeneratorService;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
@@ -22,6 +23,7 @@ class ContentGeneratorServiceTest extends TestCase
     {
         parent::setUp();
 
+        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         // Seed default generation configs
@@ -36,7 +38,7 @@ class ContentGeneratorServiceTest extends TestCase
         ]);
 
         Http::fake([
-            'net-post-panel.digispace.pro/api/v1/generate' => Http::response([
+            'net-post-panel.test/api/v1/generate' => Http::response([
                 'payload' => [
                     'name' => 'Mock Generated Title: AI & Future of Cloud Computing',
                     'content' => '<p>Mock Generated Content</p>',
@@ -44,7 +46,7 @@ class ContentGeneratorServiceTest extends TestCase
                     'keywords' => 'cloud, ai',
                 ],
             ], 200),
-            'net-post-panel.digispace.pro/api/v1/translate' => Http::response([
+            'net-post-panel.test/api/v1/translate' => Http::response([
                 'payload' => [
                     'name' => 'Перекладений заголовок',
                     'content' => '<p>Перекладений контент</p>',
@@ -55,6 +57,68 @@ class ContentGeneratorServiceTest extends TestCase
         ]);
 
         $this->service = app(ContentGeneratorService::class);
+    }
+
+    public function test_generate_throws_when_generation_config_is_missing(): void
+    {
+        $this->expectException(ModelNotFoundException::class);
+
+        $this->service->generate(
+            entityType: 'unknown-entity',
+            userPrompt: 'Test prompt',
+        );
+    }
+
+    public function test_generate_sends_entity_configuration_to_api(): void
+    {
+        $user = User::factory()->create();
+
+        $this->service->generate(
+            entityType: 'post',
+            userPrompt: 'Write an article on Docker containerization',
+            locale: 'en',
+            writingStyle: 'Professional',
+            keywords: 'docker, containers',
+            userId: $user->id,
+        );
+
+        Http::assertSent(function ($request) {
+            $payload = $request->data();
+
+            return $request->url() === 'https://net-post-panel.test/api/v1/generate'
+                && $payload['entity_type'] === 'post'
+                && $payload['entity_description'] === 'Technical blog posts and articles'
+                && $payload['fields'] === ['name', 'content']
+                && $payload['seo_fields'] === ['description', 'keywords']
+                && $payload['system_prompt'] === 'You are an expert copywriter.'
+                && $payload['user_prompt'] === 'Write an article on Docker containerization'
+                && $payload['locale'] === 'en'
+                && $payload['writing_style'] === 'Professional'
+                && $payload['keywords'] === 'docker, containers';
+        });
+    }
+
+    public function test_translate_sends_translation_payload_to_api(): void
+    {
+        $user = User::factory()->create();
+
+        $this->service->translate(
+            entityType: 'post',
+            sourceContent: ['name' => 'Test title', 'content' => 'Test content'],
+            targetLocale: 'uk',
+            translationMode: 'adapted',
+            userId: $user->id,
+        );
+
+        Http::assertSent(function ($request) {
+            $payload = $request->data();
+
+            return $request->url() === 'https://net-post-panel.test/api/v1/translate'
+                && $payload['entity_type'] === 'post'
+                && $payload['source_content'] === ['name' => 'Test title', 'content' => 'Test content']
+                && $payload['target_locale'] === 'uk'
+                && $payload['translation_mode'] === 'adapted';
+        });
     }
 
     public function test_generate_logs_generation_attempt_for_new_unpersisted_post(): void

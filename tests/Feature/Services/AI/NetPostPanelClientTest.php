@@ -18,11 +18,11 @@ class NetPostPanelClientTest extends TestCase
 
     public function test_generate_content_sends_correct_request_to_generate_endpoint(): void
     {
-        config()->set('services.netpostpanel.url', 'https://net-post-panel.digispace.pro');
+        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         Http::fake([
-            'net-post-panel.digispace.pro/api/v1/generate' => Http::response([
+            'net-post-panel.test/api/v1/generate' => Http::response([
                 'payload' => ['name' => 'Generated Title', 'content' => 'Generated content'],
             ], 200),
         ]);
@@ -31,7 +31,7 @@ class NetPostPanelClientTest extends TestCase
         $result = $this->client->generateContent($payload);
 
         Http::assertSent(function ($request) {
-            return $request->url() === 'https://net-post-panel.digispace.pro/api/v1/generate'
+            return $request->url() === 'https://net-post-panel.test/api/v1/generate'
                 && $request->hasHeader('X-API-KEY', 'test-api-key')
                 && $request->method() === 'POST';
         });
@@ -41,11 +41,11 @@ class NetPostPanelClientTest extends TestCase
 
     public function test_translate_content_sends_correct_request_to_translate_endpoint(): void
     {
-        config()->set('services.netpostpanel.url', 'https://net-post-panel.digispace.pro');
+        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         Http::fake([
-            'net-post-panel.digispace.pro/api/v1/translate' => Http::response([
+            'net-post-panel.test/api/v1/translate' => Http::response([
                 'payload' => ['name' => 'Translated Title', 'content' => 'Translated content'],
             ], 200),
         ]);
@@ -54,7 +54,7 @@ class NetPostPanelClientTest extends TestCase
         $result = $this->client->translateContent($payload);
 
         Http::assertSent(function ($request) {
-            return $request->url() === 'https://net-post-panel.digispace.pro/api/v1/translate'
+            return $request->url() === 'https://net-post-panel.test/api/v1/translate'
                 && $request->hasHeader('X-API-KEY', 'test-api-key')
                 && $request->method() === 'POST';
         });
@@ -72,13 +72,52 @@ class NetPostPanelClientTest extends TestCase
         $this->client->generateContent(['test' => 'data']);
     }
 
-    public function test_throws_exception_when_api_request_fails(): void
+    public function test_generate_content_sends_accept_json_header(): void
     {
-        config()->set('services.netpostpanel.url', 'https://net-post-panel.digispace.pro');
+        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         Http::fake([
-            'net-post-panel.digispace.pro/*' => Http::response(null, 500),
+            'net-post-panel.test/api/v1/generate' => Http::response([
+                'payload' => ['name' => 'Generated Title'],
+            ], 200),
+        ]);
+
+        $this->client->generateContent(['entity_type' => 'post', 'user_prompt' => 'Test']);
+
+        Http::assertSent(function ($request) {
+            return $request->hasHeader('Accept', 'application/json')
+                && $request->hasHeader('X-API-KEY', 'test-api-key');
+        });
+    }
+
+    public function test_handles_trailing_slash_in_base_url(): void
+    {
+        config()->set('services.netpostpanel.url', 'https://net-post-panel.test/');
+        config()->set('services.netpostpanel.key', 'test-api-key');
+
+        Http::fake([
+            'net-post-panel.test/api/v1/generate' => Http::response([
+                'payload' => ['name' => 'Generated Title'],
+            ], 200),
+        ]);
+
+        $result = $this->client->generateContent(['entity_type' => 'post', 'user_prompt' => 'Test']);
+
+        Http::assertSent(function ($request) {
+            return $request->url() === 'https://net-post-panel.test/api/v1/generate';
+        });
+
+        $this->assertEquals(['name' => 'Generated Title'], $result);
+    }
+
+    public function test_throws_exception_when_api_request_fails(): void
+    {
+        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
+        config()->set('services.netpostpanel.key', 'test-api-key');
+
+        Http::fake([
+            'net-post-panel.test/*' => Http::response(null, 500),
         ]);
 
         $this->expectException(\RuntimeException::class);
@@ -89,11 +128,11 @@ class NetPostPanelClientTest extends TestCase
 
     public function test_throws_exception_when_response_missing_payload_envelope(): void
     {
-        config()->set('services.netpostpanel.url', 'https://net-post-panel.digispace.pro');
+        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         Http::fake([
-            'net-post-panel.digispace.pro/*' => Http::response(['data' => 'without payload'], 200),
+            'net-post-panel.test/*' => Http::response(['data' => 'without payload'], 200),
         ]);
 
         $this->expectException(\RuntimeException::class);
@@ -104,11 +143,11 @@ class NetPostPanelClientTest extends TestCase
 
     public function test_throws_exception_when_payload_is_not_array(): void
     {
-        config()->set('services.netpostpanel.url', 'https://net-post-panel.digispace.pro');
+        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         Http::fake([
-            'net-post-panel.digispace.pro/*' => Http::response(['payload' => 'string instead of array'], 200),
+            'net-post-panel.test/*' => Http::response(['payload' => 'string instead of array'], 200),
         ]);
 
         $this->expectException(\RuntimeException::class);
@@ -116,5 +155,4 @@ class NetPostPanelClientTest extends TestCase
 
         $this->client->generateContent(['test' => 'data']);
     }
-
 }
