@@ -101,7 +101,7 @@
                                 {{-- Kept as an anchor element (not a button): the theme binds megamenu hover/touch to
                                      "li > a" and styles only anchors. No href, since "#" would trigger its anchor handler;
                                      the class stops bootstrap greying href-less anchors, and js/site.js adds keyboard toggling. --}}
-                                <li><a class="rd-navbar-nav__label" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">{{ __('site.pages') }}</a>
+                                <li><a class="rd-navbar-nav__label" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">{{ __('site.pages') }}</a>{{-- NOSONAR: keyboard handling (Enter/Space/Escape) is bound in js/site.js --}}
                                     <!-- RD Navbar Megamenu-->
                                     <ul class="rd-navbar-megamenu">
                                         <li>

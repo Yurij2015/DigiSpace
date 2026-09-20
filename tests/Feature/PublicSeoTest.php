@@ -20,6 +20,17 @@ use Tests\TestCase;
 class PublicSeoTest extends TestCase
 {
     use RefreshDatabase;
+
+    private const BLOG_TITLE = 'DigiSpace | Blog';
+
+    private const CATEGORY_DESCRIPTION = 'Category description';
+
+    private const CATEGORY_SEO = 'Category SEO';
+
+    private const WIDGET_IMAGE_URL = 'http://localhost:8100/uploads/widgets/photo.jpg';
+
+    private const PAGE_NAME = 'CMS page';
+
     use SeedsPublicSite;
 
     #[TestWith(['/en/blog'])]
@@ -35,12 +46,12 @@ class PublicSeoTest extends TestCase
 
         $response->assertOk();
         $document = $this->document($response->getContent());
-        $this->assertSame('DigiSpace | Blog', $this->meta($document, 'og:title'));
-        $this->assertSame('DigiSpace | Blog', $this->meta($document, 'twitter:title'));
+        $this->assertSame(self::BLOG_TITLE, $this->meta($document, 'og:title'));
+        $this->assertSame(self::BLOG_TITLE, $this->meta($document, 'twitter:title'));
         $this->assertSame('website', $this->meta($document, 'og:type'));
         $this->assertSame(asset('images/bg-3-1920x480.jpg'), $this->meta($document, 'og:image'));
         $this->assertSame(__('site.meta_description'), $this->meta($document, 'og:description'));
-        $this->assertSame('DigiSpace | Blog', $this->schemaNode($document, 'WebPage')['name']);
+        $this->assertSame(self::BLOG_TITLE, $this->schemaNode($document, 'WebPage')['name']);
         $this->assertSame('', $this->meta($document, 'keywords'));
     }
 
@@ -69,7 +80,7 @@ class PublicSeoTest extends TestCase
     public function test_service_uses_its_localized_metadata(string $locale, string $title, string $description): void
     {
         $this->seedPublicSite();
-        $category = ServiceCategory::create(['name' => 'Web', 'seo_title' => 'Category SEO', 'seo_description' => 'Category description']);
+        $category = ServiceCategory::create(['name' => 'Web', 'seo_title' => self::CATEGORY_SEO, 'seo_description' => self::CATEGORY_DESCRIPTION]);
         Service::create([
             'title' => 'Development', 'slug' => 'development', 'service_category_id' => $category->id,
             'seo_title' => 'Service SEO', 'seo_description' => 'Service description', 'image' => 'development.jpg',
@@ -92,7 +103,7 @@ class PublicSeoTest extends TestCase
     public function test_service_without_seo_fields_uses_its_title_and_site_description(): void
     {
         $this->seedPublicSite();
-        $category = ServiceCategory::create(['name' => 'Web', 'seo_title' => 'Category SEO', 'seo_description' => 'Category description']);
+        $category = ServiceCategory::create(['name' => 'Web', 'seo_title' => self::CATEGORY_SEO, 'seo_description' => self::CATEGORY_DESCRIPTION]);
         Service::create(['title' => 'Development', 'slug' => 'development', 'service_category_id' => $category->id]);
 
         $response = $this->get('/en/service-category/web/development');
@@ -104,26 +115,26 @@ class PublicSeoTest extends TestCase
         $this->assertSame(asset('uploads/no_image.png'), $this->meta($document, 'og:image'));
     }
 
-    #[TestWith(['Category SEO', 'Category SEO'])]
+    #[TestWith([self::CATEGORY_SEO, self::CATEGORY_SEO])]
     #[TestWith([null, 'Web'])]
     public function test_category_keeps_its_own_metadata_and_collection_schema(?string $seoTitle, string $expectedTitle): void
     {
         $this->seedPublicSite();
-        ServiceCategory::create(['name' => 'Web', 'seo_title' => $seoTitle, 'seo_description' => 'Category description']);
+        ServiceCategory::create(['name' => 'Web', 'seo_title' => $seoTitle, 'seo_description' => self::CATEGORY_DESCRIPTION]);
 
         $response = $this->get('/en/service-category/web');
 
         $response->assertOk();
         $document = $this->document($response->getContent());
         $this->assertSame($expectedTitle, $this->meta($document, 'og:title'));
-        $this->assertSame('Category description', $this->meta($document, 'description'));
+        $this->assertSame(self::CATEGORY_DESCRIPTION, $this->meta($document, 'description'));
         $this->assertSame('website', $this->meta($document, 'og:type'));
         $this->assertSame($expectedTitle, $this->schemaNode($document, 'CollectionPage')['name']);
     }
 
-    #[TestWith(['photo.jpg', 'http://localhost:8100/uploads/widgets/photo.jpg'])]
-    #[TestWith(['/uploads/widgets/photo.jpg', 'http://localhost:8100/uploads/widgets/photo.jpg'])]
-    #[TestWith(['uploads/widgets/photo.jpg', 'http://localhost:8100/uploads/widgets/photo.jpg'])]
+    #[TestWith(['photo.jpg', self::WIDGET_IMAGE_URL])]
+    #[TestWith(['/uploads/widgets/photo.jpg', self::WIDGET_IMAGE_URL])]
+    #[TestWith(['uploads/widgets/photo.jpg', self::WIDGET_IMAGE_URL])]
     #[TestWith(['https://cdn.example.com/photo.jpg', 'https://cdn.example.com/photo.jpg'])]
     #[TestWith(['//cdn.example.com/photo.jpg', 'http://cdn.example.com/photo.jpg'])]
     #[TestWith([null, 'http://localhost:8100/images/bg-3-1920x480.jpg'])]
@@ -131,7 +142,7 @@ class PublicSeoTest extends TestCase
     {
         $this->seedPublicSite();
         $item = MenuItem::create(['name' => 'CMS', 'slug' => 'cms']);
-        Page::create(['name' => 'CMS page', 'description' => 'CMS description', 'content' => '<p>Page</p>', 'menu_item_id' => $item->id]);
+        Page::create(['name' => self::PAGE_NAME, 'description' => 'CMS description', 'content' => '<p>Page</p>', 'menu_item_id' => $item->id]);
         if ($image !== null) {
             Widget::create(['title' => 'Image', 'subtitle' => 'cms', 'content' => '', 'widget_category_id' => config('constants.PAGES_IMAGES'), 'widget_image' => $image]);
         }
@@ -142,9 +153,9 @@ class PublicSeoTest extends TestCase
         $document = $this->document($response->getContent());
         $this->assertSame($expected, $this->meta($document, 'og:image'));
         $this->assertSame($expected, $this->meta($document, 'twitter:image'));
-        $this->assertSame('CMS page', $this->meta($document, 'og:title'));
+        $this->assertSame(self::PAGE_NAME, $this->meta($document, 'og:title'));
         $this->assertSame('CMS description', $this->meta($document, 'description'));
-        $this->assertSame('CMS page', $this->schemaNode($document, 'WebPage')['name']);
+        $this->assertSame(self::PAGE_NAME, $this->schemaNode($document, 'WebPage')['name']);
     }
 
     #[TestWith(['/uk/unknown'])]

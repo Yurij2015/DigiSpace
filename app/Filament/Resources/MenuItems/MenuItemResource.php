@@ -34,7 +34,7 @@ class MenuItemResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Submenu items';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = MenuItem::class;

@@ -34,7 +34,7 @@ class PfSkillsResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Skills';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = PfSkills::class;

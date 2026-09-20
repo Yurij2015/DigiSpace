@@ -34,7 +34,7 @@ class PfSubcategoryResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Section subcategories';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = PfSubcategory::class;

@@ -34,7 +34,7 @@ class ProductServiceResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Product service styles';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = ProductService::class;

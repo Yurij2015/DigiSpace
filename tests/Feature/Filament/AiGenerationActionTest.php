@@ -19,6 +19,8 @@ class AiGenerationActionTest extends TestCase
     use MakesFilamentAdmin;
     use RefreshDatabase;
 
+    private const MOCK_TITLE = 'Mock Generated Title: AI & Future of Cloud Computing';
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -32,7 +34,7 @@ class AiGenerationActionTest extends TestCase
                 'request_id' => 'req-uuid-gen',
                 'status' => 'succeeded',
                 'payload' => [
-                    'name' => 'Mock Generated Title: AI & Future of Cloud Computing',
+                    'name' => self::MOCK_TITLE,
                     'description' => 'A comprehensive overview of cloud computing architectures and modern engineering patterns.',
                     'meta' => 'Cloud Computing Architecture | DigiSpace',
                     'content' => '<p>Mock Content</p>',
@@ -55,7 +57,7 @@ class AiGenerationActionTest extends TestCase
             ->callMountedAction()
             ->assertHasNoActionErrors()
             ->assertSchemaStateSet([
-                'name' => 'Mock Generated Title: AI & Future of Cloud Computing',
+                'name' => self::MOCK_TITLE,
                 'description' => 'A comprehensive overview of cloud computing architectures and modern engineering patterns.',
             ]);
 
@@ -97,7 +99,7 @@ class AiGenerationActionTest extends TestCase
             ->callMountedAction()
             ->assertHasNoActionErrors()
             ->assertSchemaStateSet([
-                'translations.uk.name' => 'Mock Generated Title: AI & Future of Cloud Computing',
+                'translations.uk.name' => self::MOCK_TITLE,
             ]);
     }
 
@@ -115,7 +117,7 @@ class AiGenerationActionTest extends TestCase
             ->callMountedAction()
             ->assertHasNoActionErrors()
             ->assertSchemaStateSet([
-                'name' => 'Mock Generated Title: AI & Future of Cloud Computing',
+                'name' => self::MOCK_TITLE,
                 'meta' => 'Cloud Computing Architecture | DigiSpace',
             ]);
 

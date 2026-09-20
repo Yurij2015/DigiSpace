@@ -34,7 +34,7 @@ class FooterBottomBarContentResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Bottom bar settings';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = FooterBottomBarContent::class;

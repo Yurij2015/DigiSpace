@@ -9,6 +9,10 @@ use Tests\TestCase;
 
 class NetPostPanelClientTest extends TestCase
 {
+    private const API_URL = 'https://net-post-panel.test';
+
+    private const GENERATED_TITLE = 'Generated Title';
+
     private NetPostPanelClient $client;
 
     protected function setUp(): void
@@ -19,14 +23,14 @@ class NetPostPanelClientTest extends TestCase
 
     public function test_generate_content_sends_correct_request_to_generate_endpoint(): void
     {
-        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
+        config()->set('services.netpostpanel.url', self::API_URL);
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         Http::fake([
             'net-post-panel.test/api/v1/generate' => Http::response([
                 'request_id' => 'req-uuid-1',
                 'status' => 'succeeded',
-                'payload' => ['name' => 'Generated Title', 'content' => 'Generated content'],
+                'payload' => ['name' => self::GENERATED_TITLE, 'content' => 'Generated content'],
                 'rag_sources_used' => 4,
                 'rag_sources' => ['https://a.test', 'https://b.test'],
             ], 200),
@@ -43,13 +47,13 @@ class NetPostPanelClientTest extends TestCase
 
         $this->assertEquals('req-uuid-1', $result['request_id']);
         $this->assertEquals('succeeded', $result['status']);
-        $this->assertEquals(['name' => 'Generated Title', 'content' => 'Generated content'], $result['payload']);
+        $this->assertEquals(['name' => self::GENERATED_TITLE, 'content' => 'Generated content'], $result['payload']);
         $this->assertEquals(4, $result['rag_sources_used']);
     }
 
     public function test_translate_content_sends_correct_request_to_translate_endpoint(): void
     {
-        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
+        config()->set('services.netpostpanel.url', self::API_URL);
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         Http::fake([
@@ -85,12 +89,12 @@ class NetPostPanelClientTest extends TestCase
 
     public function test_generate_content_sends_accept_json_header(): void
     {
-        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
+        config()->set('services.netpostpanel.url', self::API_URL);
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         Http::fake([
             'net-post-panel.test/api/v1/generate' => Http::response([
-                'payload' => ['name' => 'Generated Title'],
+                'payload' => ['name' => self::GENERATED_TITLE],
             ], 200),
         ]);
 
@@ -109,7 +113,7 @@ class NetPostPanelClientTest extends TestCase
 
         Http::fake([
             'net-post-panel.test/api/v1/generate' => Http::response([
-                'payload' => ['name' => 'Generated Title'],
+                'payload' => ['name' => self::GENERATED_TITLE],
             ], 200),
         ]);
 
@@ -119,12 +123,12 @@ class NetPostPanelClientTest extends TestCase
             return $request->url() === 'https://net-post-panel.test/api/v1/generate';
         });
 
-        $this->assertEquals(['name' => 'Generated Title'], $result['payload']);
+        $this->assertEquals(['name' => self::GENERATED_TITLE], $result['payload']);
     }
 
     public function test_throws_exception_when_api_request_fails(): void
     {
-        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
+        config()->set('services.netpostpanel.url', self::API_URL);
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         Http::fake([
@@ -139,7 +143,7 @@ class NetPostPanelClientTest extends TestCase
 
     public function test_throws_exception_when_response_missing_payload_envelope(): void
     {
-        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
+        config()->set('services.netpostpanel.url', self::API_URL);
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         Http::fake([
@@ -154,7 +158,7 @@ class NetPostPanelClientTest extends TestCase
 
     public function test_throws_exception_when_payload_is_not_array(): void
     {
-        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
+        config()->set('services.netpostpanel.url', self::API_URL);
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         Http::fake([
@@ -169,7 +173,7 @@ class NetPostPanelClientTest extends TestCase
 
     public function test_async_generate_returns_pending_status(): void
     {
-        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
+        config()->set('services.netpostpanel.url', self::API_URL);
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         Http::fake([
@@ -192,7 +196,7 @@ class NetPostPanelClientTest extends TestCase
 
     public function test_get_generation_result_polls_status(): void
     {
-        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
+        config()->set('services.netpostpanel.url', self::API_URL);
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         Http::fake([
@@ -217,7 +221,7 @@ class NetPostPanelClientTest extends TestCase
 
     public function test_throws_rate_limited_exception_on_429(): void
     {
-        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
+        config()->set('services.netpostpanel.url', self::API_URL);
         config()->set('services.netpostpanel.key', 'test-api-key');
 
         Http::fake([

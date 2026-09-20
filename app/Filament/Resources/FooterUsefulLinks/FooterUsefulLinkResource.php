@@ -34,7 +34,7 @@ class FooterUsefulLinkResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Useful Links';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = FooterUsefulLink::class;

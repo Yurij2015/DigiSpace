@@ -110,17 +110,23 @@ final class SeedData
                 throw new RuntimeException("{$data['table']}.json row #{$index} has no i18n block");
             }
             foreach (self::LOCALES as $locale) {
-                foreach ($data['translatable'] as $field) {
-                    $value = $i18n[$locale][$field] ?? null;
-                    $base = $i18n[self::BASE_LOCALE][$field] ?? null;
-                    // A field that is empty in the base language is allowed to be empty everywhere.
-                    if (self::isBlank($base)) {
-                        continue;
-                    }
-                    if (self::isBlank($value)) {
-                        throw new RuntimeException("{$data['table']}.json row #{$index}: missing {$locale}.{$field}");
-                    }
-                }
+                self::validateLocale($data, $i18n, $locale, $index);
+            }
+        }
+    }
+
+    /**
+     * @param  array{table: string, identity: list<string>, translatable: list<string>, rows: list<array<string, mixed>>}  $data
+     */
+    private static function validateLocale(array $data, array $i18n, string $locale, int $index): void
+    {
+        foreach ($data['translatable'] as $field) {
+            // A field that is empty in the base language is allowed to be empty everywhere.
+            if (self::isBlank($i18n[self::BASE_LOCALE][$field] ?? null)) {
+                continue;
+            }
+            if (self::isBlank($i18n[$locale][$field] ?? null)) {
+                throw new RuntimeException("{$data['table']}.json row #{$index}: missing {$locale}.{$field}");
             }
         }
     }

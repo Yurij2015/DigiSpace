@@ -8,6 +8,8 @@ use Tests\TestCase;
 
 class NetPostPanelClientTest extends TestCase
 {
+    private const UK_GREETING = 'Привіт';
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -26,7 +28,7 @@ class NetPostPanelClientTest extends TestCase
             '*/api/v1/translate' => Http::response([
                 'request_id' => 'uuid-1',
                 'status' => 'succeeded',
-                'payload' => ['name' => 'Привіт'],
+                'payload' => ['name' => self::UK_GREETING],
             ]),
         ]);
 
@@ -36,7 +38,7 @@ class NetPostPanelClientTest extends TestCase
             'translation_mode' => 'literal',
         ]);
 
-        $this->assertSame('Привіт', $response['payload']['name']);
+        $this->assertSame(self::UK_GREETING, $response['payload']['name']);
         $this->assertSame('uuid-1', $response['request_id']);
     }
 
@@ -72,7 +74,7 @@ class NetPostPanelClientTest extends TestCase
         Http::fake([
             '127.0.0.1:8080/api/v1/translate' => Http::response([
                 'status' => 'succeeded',
-                'payload' => ['name' => 'Привіт'],
+                'payload' => ['name' => self::UK_GREETING],
             ]),
         ]);
 

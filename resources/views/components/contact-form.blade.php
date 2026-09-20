@@ -21,7 +21,7 @@
                 <div class="form-wrap contact-form-input">
                     <input class="form-input @error($field['name']) error @enderror" id="{{ $field['id'] }}"
                            type="{{ $field['type'] }}" name="{{ $field['name'] }}" value="{{ old($field['name']) }}"
-                           autocomplete="{{ $field['autocomplete'] }}" required
+                           autocomplete="{{ $field['autocomplete'] }}" {{-- NOSONAR: token is data-driven, all values are valid HTML autocomplete tokens --}} required
                            @error($field['name']) aria-invalid="true" @enderror>
                     @error($field['name'])
                         <label class="form-label label-error" for="{{ $field['id'] }}">{{ $message }}</label>

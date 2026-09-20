@@ -20,6 +20,8 @@ class AiTranslationActionTest extends TestCase
     use MakesFilamentAdmin;
     use RefreshDatabase;
 
+    private const MOCK_TITLE = 'Mock Generated Title: AI & Future of Cloud Computing';
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -33,7 +35,7 @@ class AiTranslationActionTest extends TestCase
                 'request_id' => 'req-uuid-tr',
                 'status' => 'succeeded',
                 'payload' => [
-                    'name' => 'Mock Generated Title: AI & Future of Cloud Computing',
+                    'name' => self::MOCK_TITLE,
                     'description' => 'A comprehensive overview of cloud computing architectures and modern engineering patterns.',
                     'meta' => 'Cloud Computing Architecture | DigiSpace',
                     'content' => '<p>Mock Content</p>',
@@ -70,7 +72,7 @@ class AiTranslationActionTest extends TestCase
             ->callMountedAction()
             ->assertHasNoActionErrors()
             ->assertSchemaStateSet([
-                'translations.uk.name' => 'Mock Generated Title: AI & Future of Cloud Computing',
+                'translations.uk.name' => self::MOCK_TITLE,
             ]);
 
         $this->assertDatabaseHas('generation_attempts', [
@@ -103,7 +105,7 @@ class AiTranslationActionTest extends TestCase
             ->callMountedAction()
             ->assertHasNoActionErrors()
             ->assertSchemaStateSet([
-                'translations.pl.name' => 'Mock Generated Title: AI & Future of Cloud Computing',
+                'translations.pl.name' => self::MOCK_TITLE,
             ]);
 
         $this->assertDatabaseHas('generation_attempts', [

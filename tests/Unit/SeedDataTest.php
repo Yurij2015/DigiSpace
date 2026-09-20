@@ -49,7 +49,7 @@ class SeedDataTest extends TestCase
 
     public function test_widget_category_ids_match_the_template_constants(): void
     {
-        $constants = require dirname(__DIR__, 2).'/config/constants.php';
+        $constants = require dirname(__DIR__, 2).'/config/constants.php'; // NOSONAR: return value needed on every call, require_once returns true when already loaded
         $rows = collect(SeedData::load('widget_categories')['rows'])->keyBy('id');
 
         self::assertSame(range(1, 15), $rows->keys()->sort()->values()->all(), 'categories 1–15 are seeded with fixed IDs');

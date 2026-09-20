@@ -34,7 +34,7 @@ class HeaderNavBarContentResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Top bar settings';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = HeaderNavBarContent::class;

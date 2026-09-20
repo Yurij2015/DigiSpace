@@ -34,7 +34,7 @@ class PageResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Pages';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = Page::class;

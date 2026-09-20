@@ -34,7 +34,7 @@ class PfPlaceResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Places';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = PfPlace::class;

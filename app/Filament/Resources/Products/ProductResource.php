@@ -34,7 +34,7 @@ class ProductResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Products';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = Product::class;

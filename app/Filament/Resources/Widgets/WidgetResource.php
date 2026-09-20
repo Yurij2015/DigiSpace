@@ -34,7 +34,7 @@ class WidgetResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Widgets';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = Widget::class;

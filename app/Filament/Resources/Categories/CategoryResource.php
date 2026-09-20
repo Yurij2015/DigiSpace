@@ -34,7 +34,7 @@ class CategoryResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Categories';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = Category::class;
