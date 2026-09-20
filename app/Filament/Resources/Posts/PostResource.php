@@ -34,7 +34,7 @@ class PostResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Posts';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = Post::class;

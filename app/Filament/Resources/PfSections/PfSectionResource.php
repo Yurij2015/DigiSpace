@@ -34,7 +34,7 @@ class PfSectionResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Section Management';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = PfSection::class;

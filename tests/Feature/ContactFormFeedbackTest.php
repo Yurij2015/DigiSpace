@@ -64,8 +64,8 @@ class ContactFormFeedbackTest extends TestCase
 
     public function test_missing_first_name_error_label_targets_its_input(): void
     {
-        $this->followingRedirects()->from('/en/contact-us')
-            ->post('/en/contact-us', ['first_name' => ''] + self::VALID)
+        $this->followingRedirects()->from(self::EN_CONTACT)
+            ->post(self::EN_CONTACT, ['first_name' => ''] + self::VALID)
             ->assertOk()
             ->assertSee('<label class="form-label label-error" for="first-name">', false)
             ->assertDontSee('for="contact-name"', false);
@@ -73,7 +73,7 @@ class ContactFormFeedbackTest extends TestCase
 
     public function test_inputs_declare_their_purpose(): void
     {
-        $this->get('/en/contact-us')
+        $this->get(self::EN_CONTACT)
             ->assertOk()
             ->assertSee('type="tel" name="phone"', false)
             ->assertSee('autocomplete="tel"', false)
@@ -106,7 +106,7 @@ class ContactFormFeedbackTest extends TestCase
 
         $this->assertDatabaseHas('contact_forms', ['email' => 'yurii@example.com', 'name' => 'Yurii Mokryi']);
 
-        $this->get('/uk/contact-us')
+        $this->get(self::UK_CONTACT)
             ->assertOk()
             ->assertSee('Ми отримали ваше повідомлення')
             ->assertDontSee('value="Yurii"', false);

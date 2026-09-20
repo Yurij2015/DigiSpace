@@ -34,7 +34,7 @@ class PfSkillLocaleResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Skill locales';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = PfSkillLocale::class;

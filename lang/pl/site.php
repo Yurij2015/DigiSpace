@@ -19,6 +19,7 @@ return [
     'language' => 'Język',
     'search' => 'Szukaj...',
     'read_more' => 'Czytaj więcej',
+    'show_less' => 'Zwiń',
     'list_of_services' => 'Lista usług',
     'service_packages' => 'Pakiety usług',
     'pricing_plans' => 'Plany cenowe',

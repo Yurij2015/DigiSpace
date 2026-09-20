@@ -34,7 +34,7 @@ class ServiceResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Services';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = Service::class;

@@ -32,7 +32,17 @@
                             </svg>
                         </div>
                         <div class="quote-creative__main-text">
-                            {!! $widget->content !!}
+                            <div class="quote-creative__clamp is-clamped">
+                                {!! $widget->content !!}
+                            </div>
+                            <button type="button" class="quote-creative__toggle" hidden
+                                    data-more="{{ __('site.read_more') }}" data-less="{{ __('site.show_less') }}">
+                                <span>{{ __('site.read_more') }}</span>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                                    <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2"
+                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </article>
@@ -41,3 +51,31 @@
     </div>
     <div class="owl-outer-navigation" id="owl-carousel-nav"></div>
 </div>
+@once
+    <script>
+        window.addEventListener('load', function () {
+            document.querySelectorAll('.quote-creative__clamp.is-clamped').forEach(function (el) {
+                var btn = el.parentElement.querySelector('.quote-creative__toggle');
+                if (!btn) {
+                    return;
+                }
+                el.classList.remove('is-clamped');
+                var full = el.scrollHeight;
+                el.classList.add('is-clamped');
+                if (full > el.clientHeight + 1) {
+                    btn.hidden = false;
+                }
+            });
+        });
+        document.addEventListener('click', function (e) {
+            var btn = e.target.closest('.quote-creative__toggle');
+            if (!btn) {
+                return;
+            }
+            var text = btn.closest('.quote-creative__main-text').querySelector('.quote-creative__clamp');
+            var collapsed = text.classList.toggle('is-clamped');
+            btn.classList.toggle('is-open', !collapsed);
+            btn.querySelector('span').textContent = collapsed ? btn.dataset.more : btn.dataset.less;
+        });
+    </script>
+@endonce

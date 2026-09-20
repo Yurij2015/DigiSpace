@@ -34,7 +34,7 @@ class ServiceCategoryResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Service Categories';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = ServiceCategory::class;

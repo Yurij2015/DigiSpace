@@ -34,7 +34,7 @@ class PfEducationItemResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Education';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = PfEducationItem::class;

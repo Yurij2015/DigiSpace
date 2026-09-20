@@ -25,6 +25,10 @@ class TranslationSafetyTest extends TestCase
     use MakesFilamentAdmin;
     use RefreshDatabase;
 
+    private const UK_NAME = 'Українська назва';
+
+    private const PL_NAME = 'O nas';
+
     /** PostPolicy::update allows only the author, so the post belongs to the acting admin. */
     private function makePost(User $author): Post
     {
@@ -39,7 +43,7 @@ class TranslationSafetyTest extends TestCase
             'status' => 'published',
             'category_id' => $category->id,
             'user_id' => $author->id,
-            'translations' => ['uk' => ['name' => 'Українська назва', 'content' => '<p>Український текст</p>']],
+            'translations' => ['uk' => ['name' => self::UK_NAME, 'content' => '<p>Український текст</p>']],
         ]);
     }
 
@@ -48,13 +52,13 @@ class TranslationSafetyTest extends TestCase
         $post = $this->makePost($this->actingAsFilamentAdmin());
         app()->setLocale('uk');
 
-        self::assertSame('Українська назва', $post->fresh()->name, 'accessor sanity: public reads see the translation');
+        self::assertSame(self::UK_NAME, $post->fresh()->name, 'accessor sanity: public reads see the translation');
 
         Livewire::test(EditPost::class, ['record' => $post->getRouteKey()])
             ->assertSchemaStateSet([
                 'name' => 'English title',
                 'content' => '<p>English body</p>',
-                'translations.uk.name' => 'Українська назва',
+                'translations.uk.name' => self::UK_NAME,
                 'translations.uk.content' => '<p>Український текст</p>',
             ]);
     }
@@ -83,13 +87,13 @@ class TranslationSafetyTest extends TestCase
         $this->actingAsFilamentAdmin();
         $page = Page::create([
             'name' => 'About', 'slug' => 'about', 'meta' => 'meta', 'description' => 'desc', 'content' => '<p>About us</p>',
-            'translations' => ['pl' => ['name' => 'O nas', 'content' => '<p>O nas treść</p>']],
+            'translations' => ['pl' => ['name' => self::PL_NAME, 'content' => '<p>O nas treść</p>']],
         ]);
         $before = $page->fresh()->getRawOriginal();
         app()->setLocale('pl');
 
         Livewire::test(EditPage::class, ['record' => $page->getRouteKey()])
-            ->assertSchemaStateSet(['name' => 'About', 'content' => '<p>About us</p>', 'translations.pl.name' => 'O nas'])
+            ->assertSchemaStateSet(['name' => 'About', 'content' => '<p>About us</p>', 'translations.pl.name' => self::PL_NAME])
             ->call('save')
             ->assertHasNoFormErrors();
 
@@ -104,10 +108,10 @@ class TranslationSafetyTest extends TestCase
     {
         $page = Page::create([
             'name' => 'About', 'slug' => 'about-2', 'meta' => 'meta', 'description' => 'desc', 'content' => '<p>About us</p>',
-            'translations' => ['uk' => ['name' => null, 'content' => '<p></p>', 'meta' => ''], 'pl' => ['name' => 'O nas']],
+            'translations' => ['uk' => ['name' => null, 'content' => '<p></p>', 'meta' => ''], 'pl' => ['name' => self::PL_NAME]],
         ]);
 
-        self::assertSame(['pl' => ['name' => 'O nas']], $page->fresh()->translations);
+        self::assertSame(['pl' => ['name' => self::PL_NAME]], $page->fresh()->translations);
 
         app()->setLocale('uk');
         self::assertSame('<p>About us</p>', $page->fresh()->content, 'blank uk content must fall back to the base value');

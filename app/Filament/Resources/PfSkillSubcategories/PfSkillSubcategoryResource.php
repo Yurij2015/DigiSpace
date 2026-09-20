@@ -34,7 +34,7 @@ class PfSkillSubcategoryResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Skill subcategories';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = PfSkillSubcategory::class;

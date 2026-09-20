@@ -34,7 +34,7 @@ class WidgetIconResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Widget icons';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = WidgetIcon::class;

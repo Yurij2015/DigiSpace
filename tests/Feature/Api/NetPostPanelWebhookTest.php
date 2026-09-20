@@ -10,6 +10,8 @@ class NetPostPanelWebhookTest extends TestCase
 {
     use RefreshDatabase;
 
+    private const WEBHOOK_URL = '/api/hooks/netpostpanel';
+
     public function test_webhook_updates_attempt_on_completion(): void
     {
         $attempt = GenerationAttempt::create([
@@ -24,7 +26,7 @@ class NetPostPanelWebhookTest extends TestCase
             'generated_payload' => [],
         ]);
 
-        $response = $this->postJson('/api/hooks/netpostpanel', [
+        $response = $this->postJson(self::WEBHOOK_URL, [
             'request_id' => 'req-uuid-1',
             'status' => 'succeeded',
             'result' => ['name' => 'Done', 'content' => 'Content'],
@@ -52,7 +54,7 @@ class NetPostPanelWebhookTest extends TestCase
             'generated_payload' => [],
         ]);
 
-        $response = $this->postJson('/api/hooks/netpostpanel', [
+        $response = $this->postJson(self::WEBHOOK_URL, [
             'request_id' => 'req-uuid-2',
             'status' => 'failed',
             'result' => null,
@@ -67,7 +69,7 @@ class NetPostPanelWebhookTest extends TestCase
 
     public function test_webhook_returns_404_for_unknown_request_id(): void
     {
-        $response = $this->postJson('/api/hooks/netpostpanel', [
+        $response = $this->postJson(self::WEBHOOK_URL, [
             'request_id' => 'unknown-uuid',
             'status' => 'succeeded',
             'result' => ['name' => 'Done'],
@@ -78,7 +80,7 @@ class NetPostPanelWebhookTest extends TestCase
 
     public function test_webhook_returns_422_without_request_id(): void
     {
-        $response = $this->postJson('/api/hooks/netpostpanel', [
+        $response = $this->postJson(self::WEBHOOK_URL, [
             'status' => 'succeeded',
         ]);
 

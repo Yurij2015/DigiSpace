@@ -41,7 +41,7 @@ class SiteDictionaryParityTest extends TestCase
         $dictionaries = [];
 
         foreach (self::LOCALES as $locale) {
-            $dictionaries[$locale] = require dirname(__DIR__, 2)."/lang/{$locale}/site.php";
+            $dictionaries[$locale] = require dirname(__DIR__, 2)."/lang/{$locale}/site.php"; // NOSONAR: same — need the array on every call
         }
 
         return $dictionaries;

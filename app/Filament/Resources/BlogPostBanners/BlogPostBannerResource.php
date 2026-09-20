@@ -34,7 +34,7 @@ class BlogPostBannerResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Banners';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = BlogPostBanner::class;

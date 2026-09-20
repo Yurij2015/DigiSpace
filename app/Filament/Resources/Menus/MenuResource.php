@@ -34,7 +34,7 @@ class MenuResource extends Resource
 
     public static function getPluralModelLabel(): string
     {
-        return 'Top menu settings';
+        return static::getNavigationLabel();
     }
 
     protected static ?string $model = Menu::class;

@@ -17,6 +17,10 @@ class ContentGeneratorServiceTest extends TestCase
 {
     use RefreshDatabase;
 
+    private const USER_PROMPT = 'Write an article on Docker containerization';
+
+    private const KEYWORDS = 'docker, containers';
+
     private ContentGeneratorService $service;
 
     protected function setUp(): void
@@ -102,10 +106,10 @@ class ContentGeneratorServiceTest extends TestCase
 
         $this->service->generate(
             entityType: 'post',
-            userPrompt: 'Write an article on Docker containerization',
+            userPrompt: self::USER_PROMPT,
             locale: 'en',
             writingStyle: 'Professional',
-            keywords: 'docker, containers',
+            keywords: self::KEYWORDS,
             userId: $user->id,
         );
 
@@ -118,10 +122,10 @@ class ContentGeneratorServiceTest extends TestCase
                 && $payload['fields'] === ['name', 'content']
                 && $payload['seo_fields'] === ['description', 'keywords']
                 && $payload['system_prompt'] === 'You are an expert copywriter.'
-                && $payload['user_prompt'] === 'Write an article on Docker containerization'
+                && $payload['user_prompt'] === self::USER_PROMPT
                 && $payload['locale'] === 'en'
                 && $payload['writing_style'] === 'Professional'
-                && $payload['keywords'] === 'docker, containers';
+                && $payload['keywords'] === self::KEYWORDS;
         });
     }
 
@@ -156,10 +160,10 @@ class ContentGeneratorServiceTest extends TestCase
 
         $response = $this->service->generate(
             entityType: 'post',
-            userPrompt: 'Write an article on Docker containerization',
+            userPrompt: self::USER_PROMPT,
             locale: 'en',
             writingStyle: 'Professional',
-            keywords: 'docker, containers',
+            keywords: self::KEYWORDS,
             record: null,
             userId: $user->id,
         );
@@ -179,7 +183,7 @@ class ContentGeneratorServiceTest extends TestCase
             'generatable_id' => null,
             'attempt_number' => 1,
             'locale' => 'en',
-            'user_prompt' => 'Write an article on Docker containerization',
+            'user_prompt' => self::USER_PROMPT,
             'created_by' => $user->id,
         ]);
     }

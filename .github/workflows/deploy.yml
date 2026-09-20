@@ -42,7 +42,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Configure PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # v2.37.2
         with:
           php-version: ${{ env.PHP_VERSION }}
           extensions: ${{ env.PHP_EXTENSIONS }}
@@ -63,7 +63,7 @@ jobs:
           cache: npm
       - name: Build front-end assets
         run: |
-          npm ci
+          npm ci --ignore-scripts
           npm run build
       - name: Create deployment artifact
         env:
@@ -107,7 +107,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Configure PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # v2.37.2
         with:
           php-version: ${{ env.PHP_VERSION }}
           extensions: ${{ env.PHP_EXTENSIONS }}
@@ -147,7 +147,7 @@ jobs:
         with:
           name: app-build
       - name: Upload artifact and after-deploy script
-        uses: appleboy/scp-action@v1
+        uses: appleboy/scp-action@ff85246acaad7bdce478db94a363cd2bf7c90345 # v1.0.0
         with:
           host: ${{ matrix.server.ip }}
           port: ${{ matrix.server.port }}
@@ -157,7 +157,7 @@ jobs:
           target: ${{ matrix.server.path }}/artifacts
           strip_components: 0
       - name: Extract archive and create shared directories
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1.2.5
         env:
           GITHUB_SHA: ${{ github.sha }}
           RELEASE_NAME: ${{ env.RELEASE_NAME }}
@@ -260,7 +260,7 @@ jobs:
             echo "${delimiter}"
           } >> "$GITHUB_OUTPUT"
       - name: Write .env to server
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1.2.5
         env:
           BASE_PATH: ${{ matrix.server.path }}
           ENV_FILE: ${{ steps.compose.outputs.ENV_FILE }}
@@ -300,7 +300,7 @@ jobs:
       # public/images, public/uploads and public/banners are written at runtime and are not in git:
       # copy them out of the active release so they can be restored into the new one after activation.
       - name: Back up runtime image directories and run before hooks
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1.2.5
         env:
           GITHUB_SHA: ${{ github.sha }}
           BASE_PATH: ${{ matrix.server.path }}
@@ -344,7 +344,7 @@ jobs:
         server: ${{ fromJson(needs.create-deployment-artifacts.outputs.DEPLOYMENT_MATRIX) }}
     steps:
       - name: Link .env and storage, switch current
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1.2.5
         env:
           BASE_PATH: ${{ matrix.server.path }}
           RELEASE_PATH: ${{ matrix.server.path }}/releases/${{ env.RELEASE_NAME }}
@@ -374,7 +374,7 @@ jobs:
         server: ${{ fromJson(needs.create-deployment-artifacts.outputs.DEPLOYMENT_MATRIX) }}
     steps:
       - name: Restore runtime images, migrate, cache, run after hooks
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1.2.5
         env:
           BASE_PATH: ${{ matrix.server.path }}
           ACTIVE_RELEASE_PATH: ${{ matrix.server.path }}/current
@@ -440,7 +440,7 @@ jobs:
         server: ${{ fromJson(needs.create-deployment-artifacts.outputs.DEPLOYMENT_MATRIX) }}
     steps:
       - name: Keep the five newest releases and artifacts
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1.2.5
         env:
           RELEASES_PATH: ${{ matrix.server.path }}/releases
           ARTIFACTS_PATH: ${{ matrix.server.path }}/artifacts
