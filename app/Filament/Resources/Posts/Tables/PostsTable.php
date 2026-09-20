@@ -57,7 +57,7 @@ class PostsTable
                     ->trueLabel('Published only')
                     ->falseLabel('Drafts and archived')
                     ->queries(
-                        true: fn (Builder $query) => $query->where('status', 'published'),
+                        true: fn (Builder $query) => $query->published(),
                         false: fn (Builder $query) => $query->where('status', '!=', 'published'),
                     ),
                 SelectFilter::make('status')

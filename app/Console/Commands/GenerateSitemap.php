@@ -35,11 +35,11 @@ class GenerateSitemap extends Command
             $sitemap->add($this->localizedUrls('pages.page', ['slug' => $slug]));
         }
 
-        foreach (Post::where('status', 'published')->pluck('slug') as $slug) {
+        foreach (Post::published()->pluck('slug') as $slug) {
             $sitemap->add($this->localizedUrls('blog.post', ['postSlug' => $slug], Url::CHANGE_FREQUENCY_MONTHLY));
         }
 
-        foreach (Category::whereHas('post', fn ($query) => $query->where('status', 'published'))->pluck('slug') as $slug) {
+        foreach (Category::whereHas('post', fn ($query) => $query->published())->pluck('slug') as $slug) {
             $sitemap->add($this->localizedUrls('blog-category', ['categorySlug' => $slug]));
         }
 

@@ -42,6 +42,14 @@ class StructureTranslationsSeederTest extends TestCase
         return $seeder;
     }
 
+    /** Rows under data/prod/ exist only on production — on this base-seeded DB they all report unmatched. */
+    private function prodRowCount(string $table): int
+    {
+        $path = SeedData::path('prod/'.$table);
+
+        return is_file($path) ? count(SeedData::rows('prod/'.$table)) : 0;
+    }
+
     public function test_missing_translations_are_filled_and_base_columns_untouched(): void
     {
         $this->populateWithoutTranslations('widget_categories', 'widgets', 'menus', 'menu_items');
@@ -51,7 +59,7 @@ class StructureTranslationsSeederTest extends TestCase
 
         self::assertSame(15, $seeder->summary['widget_categories']['updated']);
         self::assertSame(52, $seeder->summary['widgets']['updated']);
-        self::assertSame(0, $seeder->summary['widgets']['unmatched']);
+        self::assertSame($this->prodRowCount('widgets'), $seeder->summary['widgets']['unmatched']);
         self::assertEquals($before, DB::table('widgets')->orderBy('id')->get(['id', 'title', 'subtitle', 'content'])->toArray(), 'base columns changed');
 
         $about = json_decode(DB::table('menu_items')->where('slug', 'about')->value('translations'), true);
@@ -91,7 +99,7 @@ class StructureTranslationsSeederTest extends TestCase
         $seeder = $this->runSeeder();
 
         self::assertNull(DB::table('menu_items')->where('slug', 'custom')->value('translations'));
-        self::assertSame(1, $seeder->summary['menu_items']['unmatched']);
+        self::assertSame(1 + $this->prodRowCount('menu_items'), $seeder->summary['menu_items']['unmatched']);
     }
 
     public function test_running_twice_changes_nothing_the_second_time(): void

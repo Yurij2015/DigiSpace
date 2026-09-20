@@ -31,6 +31,16 @@ class StructureTranslationsSeeder extends Seeder
     {
         foreach (self::TABLES as $table) {
             $this->summary[$table] = $this->seedTable($table);
+
+            // Rows captured from the production database that are absent from the
+            // fresh-install data live under data/prod/ — same format, same merge rules.
+            $prodData = 'prod/'.$table;
+            if (is_file(SeedData::path($prodData))) {
+                $extra = $this->seedTable($prodData);
+                foreach (['updated', 'unchanged', 'unmatched'] as $key) {
+                    $this->summary[$table][$key] += $extra[$key];
+                }
+            }
         }
 
         if (! isset($this->command)) {
@@ -49,10 +59,11 @@ class StructureTranslationsSeeder extends Seeder
     private function seedTable(string $table): array
     {
         $data = SeedData::load($table);
+        $dbTable = basename($table);
         $stats = ['updated' => 0, 'unchanged' => 0, 'unmatched' => 0];
 
         foreach ($data['rows'] as $row) {
-            $record = $this->match($table, $data['identity'][0], $row);
+            $record = $this->match($dbTable, $data['identity'][0], $row);
 
             if ($record === null) {
                 $stats['unmatched']++;
@@ -70,7 +81,7 @@ class StructureTranslationsSeeder extends Seeder
             if ($merged != $existing) {
                 $changes['translations'] = Translations::encode($merged);
             }
-            if ($table === 'widgets' && filled($row['element_id'] ?? null) && blank($record->element_id ?? null)) {
+            if ($dbTable === 'widgets' && filled($row['element_id'] ?? null) && blank($record->element_id ?? null)) {
                 $changes['element_id'] = $row['element_id'];
             }
 
@@ -80,7 +91,7 @@ class StructureTranslationsSeeder extends Seeder
                 continue;
             }
 
-            DB::table($table)->where('id', $record->id)->update($changes + ['updated_at' => now()]);
+            DB::table($dbTable)->where('id', $record->id)->update($changes + ['updated_at' => now()]);
             $stats['updated']++;
         }
 

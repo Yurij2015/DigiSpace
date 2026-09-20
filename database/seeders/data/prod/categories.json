@@ -1,0 +1,112 @@
+{
+  "table": "categories",
+  "identity": [
+    "slug"
+  ],
+  "translatable": [
+    "name",
+    "description"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "deleted_at": null,
+      "user_id": 4,
+      "slug": "web-development",
+      "i18n": {
+        "en": {
+          "name": "Web development",
+          "description": "Web development"
+        },
+        "uk": {
+          "name": "Веброзробка",
+          "description": "Веброзробка"
+        },
+        "pl": {
+          "name": "Tworzenie stron internetowych",
+          "description": "Tworzenie stron internetowych"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "deleted_at": null,
+      "user_id": 4,
+      "slug": "content-development",
+      "i18n": {
+        "en": {
+          "name": "Content development",
+          "description": "Website content development"
+        },
+        "uk": {
+          "name": "Розробка контенту",
+          "description": "Розробка контенту для вебсайтів"
+        },
+        "pl": {
+          "name": "Tworzenie treści",
+          "description": "Tworzenie treści dla stron internetowych"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "deleted_at": null,
+      "user_id": 4,
+      "slug": "e-commerce-websites",
+      "i18n": {
+        "en": {
+          "name": "E-commerce websites",
+          "description": "E-commerce websites are online platforms that facilitate the buying and selling of goods and services over the Internet."
+        },
+        "uk": {
+          "name": "Сайти електронної комерції",
+          "description": "Сайти електронної комерції — це онлайн-платформи, які полегшують купівлю та продаж товарів і послуг через Інтернет."
+        },
+        "pl": {
+          "name": "Strony e-commerce",
+          "description": "Strony e-commerce to platformy internetowe, które ułatwiają kupowanie i sprzedawanie towarów oraz usług przez Internet."
+        }
+      }
+    },
+    {
+      "id": 4,
+      "deleted_at": null,
+      "user_id": 4,
+      "slug": "web-development-trends",
+      "i18n": {
+        "en": {
+          "name": "Web development trends",
+          "description": "web development trends"
+        },
+        "uk": {
+          "name": "Тенденції веброзробки",
+          "description": "тенденції веброзробки"
+        },
+        "pl": {
+          "name": "Trendy w tworzeniu stron internetowych",
+          "description": "trendy w tworzeniu stron internetowych"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "deleted_at": null,
+      "user_id": 4,
+      "slug": "digipulse",
+      "i18n": {
+        "en": {
+          "name": "DigiPulse",
+          "description": "Articles about DigiPulse"
+        },
+        "uk": {
+          "name": "DigiPulse",
+          "description": "Статті про DigiPulse"
+        },
+        "pl": {
+          "name": "DigiPulse",
+          "description": "Artykuły o DigiPulse"
+        }
+      }
+    }
+  ]
+}

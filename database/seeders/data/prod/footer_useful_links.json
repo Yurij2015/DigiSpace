@@ -1,0 +1,96 @@
+{
+  "table": "footer_useful_links",
+  "identity": [
+    "name"
+  ],
+  "translatable": [
+    "name"
+  ],
+  "rows": [
+    {
+      "id": 6,
+      "url": "https://www.freepik.com/",
+      "status": 1,
+      "position": 2,
+      "i18n": {
+        "en": {
+          "name": "Freepik"
+        },
+        "uk": {
+          "name": "Freepik"
+        },
+        "pl": {
+          "name": "Freepik"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "url": "https://www.docker.com/",
+      "status": 1,
+      "position": 2,
+      "i18n": {
+        "en": {
+          "name": "Docker"
+        },
+        "uk": {
+          "name": "Docker"
+        },
+        "pl": {
+          "name": "Docker"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "url": "https://pptr.dev/",
+      "status": 1,
+      "position": 2,
+      "i18n": {
+        "en": {
+          "name": "Puppeteer"
+        },
+        "uk": {
+          "name": "Puppeteer"
+        },
+        "pl": {
+          "name": "Puppeteer"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "url": "https://www.php.net/",
+      "status": 1,
+      "position": 2,
+      "i18n": {
+        "en": {
+          "name": "PHP"
+        },
+        "uk": {
+          "name": "PHP"
+        },
+        "pl": {
+          "name": "PHP"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "url": "https://www.mysql.com/",
+      "status": 1,
+      "position": 2,
+      "i18n": {
+        "en": {
+          "name": "MySQL"
+        },
+        "uk": {
+          "name": "MySQL"
+        },
+        "pl": {
+          "name": "MySQL"
+        }
+      }
+    }
+  ]
+}

@@ -10,7 +10,7 @@ class BlogRepository
 {
     public function getGroupedPosts(): Collection
     {
-        return Post::where('status', 'published')
+        return Post::published()
             ->selectRaw(
                 'YEAR(created_at) as year,
                             MONTH(created_at) as month,
@@ -25,7 +25,7 @@ class BlogRepository
 
     public function getArchivedPosts(int $year, int $month): LengthAwarePaginator
     {
-        return Post::where('status', 'published')
+        return Post::published()
             ->whereRaw("YEAR(`posts`.`created_at`) = $year AND MONTH(`posts`.`created_at`) = $month")
             ->with('category')
             ->paginate(config('constants.NUMBER_POSTS_IN_BLOG_PAGE'));

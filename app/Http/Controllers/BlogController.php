@@ -23,7 +23,8 @@ class BlogController extends Controller
     public function index(): Response|View
     {
         $posts = Post::with('category')
-            ->where('status', 'published')
+            ->published()
+            ->latest()
             ->paginate(config('constants.NUMBER_POSTS_IN_BLOG_PAGE'));
         if ($posts->count() === 0) {
             return response()->view('errors.page-not-found')->setStatusCode(404);
@@ -42,7 +43,7 @@ class BlogController extends Controller
     {
         $postSlug = (string) $request->route('postSlug');
         $post = Post::where('slug', $postSlug)
-            ->where('status', 'published')
+            ->published()
             ->with('blogPostBanner')
             ->with('category')
             ->first();
@@ -63,7 +64,8 @@ class BlogController extends Controller
     {
         $categorySlug = (string) $request->route('categorySlug');
         $category = Category::where('slug', $categorySlug)->firstOrFail();
-        $posts = Post::where('category_id', $category->id)->where('status', 'published')
+        $posts = Post::whereBelongsTo($category)->published()
+            ->latest()
             ->paginate(config('constants.NUMBER_POSTS_IN_BLOG_PAGE'));
         $banner = BlogPostBanner::where('blog_page_type', 'category')->first();
 
@@ -79,9 +81,9 @@ class BlogController extends Controller
     public function archive(Request $request): View
     {
         $yearMonth = (string) $request->route('yearMonth');
-        $explodedYearsMonth = explode('-', $yearMonth);
-        [$year, $month] = $explodedYearsMonth;
-        $posts = $this->blogRepository->getArchivedPosts($year, $month);
+        abort_unless(preg_match('/^\d{4}-\d{1,2}$/', $yearMonth) === 1, 404);
+        [$year, $month] = explode('-', $yearMonth);
+        $posts = $this->blogRepository->getArchivedPosts((int) $year, (int) $month);
         $banner = BlogPostBanner::where('blog_page_type', 'archive')->first();
 
         return view('blog.index', [
@@ -95,11 +97,11 @@ class BlogController extends Controller
 
     public function search(Request $request): View
     {
-        $posts = Post::query();
-        if (request('search')) {
-            $posts
-                ->where('name', 'like', '%'.request('search').'%')
-                ->orWhere('content', 'like', '%'.request('search').'%');
+        $posts = Post::published()->latest();
+        if ($term = request('search')) {
+            $posts->where(fn ($query) => $query
+                ->where('name', 'like', '%'.$term.'%')
+                ->orWhere('content', 'like', '%'.$term.'%'));
         }
 
         $posts = $posts->paginate(config('constants.NUMBER_POSTS_IN_MENU'));
@@ -125,21 +127,21 @@ class BlogController extends Controller
     private function getCategories(): Collection
     {
         return Category::orderByDesc('created_at')
-            ->withWhereHas('post', fn ($q) => $q->where('status', 'published'))
+            ->withWhereHas('post', fn ($q) => $q->published())
             ->get();
     }
 
     private function getPostsNumber(): int
     {
-        return Post::where('status', 'published')->count();
+        return Post::published()->count();
     }
 
     private function getLatestPosts(int $count): Collection
     {
-        return Post::orderBy('created_at', 'DESC')
-            ->where('status', 'published')
+        return Post::published()
+            ->latest()
             ->with('category')
-            ->get()
-            ->take($count);
+            ->take($count)
+            ->get();
     }
 }
