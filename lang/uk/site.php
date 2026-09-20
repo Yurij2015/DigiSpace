@@ -20,6 +20,7 @@ return [
     'search' => 'Пошук...',
     'read_more' => 'Детальніше',
     'list_of_services' => 'Список послуг',
+    'service_packages' => 'Пакети послуг',
     'pricing_plans' => 'Тарифні плани',
     'not_found_title' => 'DigiSpace | Сторінку не знайдено',
     'not_found_breadcrumb' => 'Сторінку не знайдено',

@@ -1,0 +1,28 @@
+{
+    "table": "widget_categories",
+    "identity": ["id"],
+    "translatable": ["name", "title", "description"],
+    "rows": [
+        {
+            "id": 10,
+            "image": null,
+            "i18n": {
+                "en": {
+                    "name": "Our Projects",
+                    "title": "DigiSpace | Our Projects",
+                    "description": "Our Projects"
+                },
+                "uk": {
+                    "name": "Наші проєкти",
+                    "title": "DigiSpace | Наші проєкти",
+                    "description": "Наші проєкти"
+                },
+                "pl": {
+                    "name": "Nasze projekty",
+                    "title": "DigiSpace | Nasze projekty",
+                    "description": "Nasze projekty"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,151 @@
+{
+  "table": "products",
+  "identity": ["product_code"],
+  "translatable": ["title", "details", "product_name", "description"],
+  "rows": [
+    {
+      "id": 1,
+      "product_code": "starter-website",
+      "i18n": {
+        "en": {
+          "title": "Starter Website",
+          "details": "starting at",
+          "product_name": "Starter Website",
+          "description": "Perfect for startups and individuals who need a quick online presence."
+        },
+        "uk": {
+          "title": "Стартовий вебсайт",
+          "details": "від",
+          "product_name": "Стартовий вебсайт",
+          "description": "Ідеально для стартапів і приватних осіб, яким потрібна швидка присутність в інтернеті."
+        },
+        "pl": {
+          "title": "Podstawowa strona internetowa",
+          "details": "od",
+          "product_name": "Podstawowa strona internetowa",
+          "description": "Idealna dla startupów i osób prywatnych, które potrzebują szybkiej obecności w internecie."
+        }
+      }
+    },
+    {
+      "id": 2,
+      "product_code": "bussiness_website",
+      "i18n": {
+        "en": {
+          "title": "Business Website",
+          "details": "starting at",
+          "product_name": "Business Website",
+          "description": "Designed for small and medium businesses ready to expand online."
+        },
+        "uk": {
+          "title": "Бізнес-сайт",
+          "details": "від",
+          "product_name": "Бізнес-сайт",
+          "description": "Створено для малого та середнього бізнесу, готового розширюватися онлайн."
+        },
+        "pl": {
+          "title": "Strona biznesowa",
+          "details": "od",
+          "product_name": "Strona biznesowa",
+          "description": "Zaprojektowana dla małych i średnich firm gotowych do rozwoju w internecie."
+        }
+      }
+    },
+    {
+      "id": 3,
+      "product_code": "saas_custom",
+      "i18n": {
+        "en": {
+          "title": "SaaS / Custom Platform",
+          "details": "starting at",
+          "product_name": "SaaS / Custom Platform",
+          "description": "For companies building SaaS products or enterprise-level platforms"
+        },
+        "uk": {
+          "title": "SaaS / Платформа на замовлення",
+          "details": "від",
+          "product_name": "SaaS / Платформа на замовлення",
+          "description": "Для компаній, що створюють SaaS-продукти або платформи корпоративного рівня"
+        },
+        "pl": {
+          "title": "SaaS / Platforma niestandardowa",
+          "details": "od",
+          "product_name": "SaaS / Platforma niestandardowa",
+          "description": "Dla firm tworzących produkty SaaS lub platformy klasy enterprise"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "product_code": "support_maintenance",
+      "i18n": {
+        "en": {
+          "title": "Support & Maintenance",
+          "details": "starting at",
+          "product_name": "Support & Maintenance",
+          "description": "Keep your website secure, updated, and running smoothly."
+        },
+        "uk": {
+          "title": "Підтримка та обслуговування",
+          "details": "від",
+          "product_name": "Підтримка та обслуговування",
+          "description": "Ваш сайт буде захищеним, оновленим і працюватиме безперебійно."
+        },
+        "pl": {
+          "title": "Wsparcie i utrzymanie",
+          "details": "od",
+          "product_name": "Wsparcie i utrzymanie",
+          "description": "Twoja strona będzie bezpieczna, aktualna i będzie działać płynnie."
+        }
+      }
+    },
+    {
+      "id": 5,
+      "product_code": "hosting_deployment",
+      "i18n": {
+        "en": {
+          "title": "Hosting & Deployment (Coming soon)",
+          "details": "starting at",
+          "product_name": "Hosting & Deployment (Coming soon)",
+          "description": "Hosting & Deployment (Coming soon)"
+        },
+        "uk": {
+          "title": "Хостинг і розгортання (незабаром)",
+          "details": "від",
+          "product_name": "Хостинг і розгортання (незабаром)",
+          "description": "Хостинг і розгортання (незабаром)"
+        },
+        "pl": {
+          "title": "Hosting i wdrożenie (wkrótce)",
+          "details": "od",
+          "product_name": "Hosting i wdrożenie (wkrótce)",
+          "description": "Hosting i wdrożenie (wkrótce)"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "product_code": "ai_automation",
+      "i18n": {
+        "en": {
+          "title": "AI & API Integrations",
+          "details": "starting at",
+          "product_name": "AI & API Integrations",
+          "description": "Enhance your business with AI-powered tools and API integrations"
+        },
+        "uk": {
+          "title": "Інтеграції AI та API",
+          "details": "від",
+          "product_name": "Інтеграції AI та API",
+          "description": "Підсильте свій бізнес інструментами на базі ШІ та API-інтеграціями"
+        },
+        "pl": {
+          "title": "Integracje AI i API",
+          "details": "od",
+          "product_name": "Integracje AI i API",
+          "description": "Wzmocnij swój biznes narzędziami opartymi na AI i integracjami API"
+        }
+      }
+    }
+  ]
+}
