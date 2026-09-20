@@ -23,6 +23,6 @@ class LegacyUrlRedirectController extends Controller
 
         abort_if($localizedPath === null, 404);
 
-        return redirect()->to($localizedPath);
+        return redirect()->to($localizedPath, 301)->header('Vary', 'Accept-Language');
     }
 }

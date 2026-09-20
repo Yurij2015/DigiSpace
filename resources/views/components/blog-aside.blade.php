@@ -50,7 +50,7 @@
         <!-- Select 2-->
         <select class="form-input select" data-placeholder="All" data-minimum-results-for-search="Infinity"
                 data-constraints="{!! '@' !!}Required"
-                onchange="this.value !== 'All' ? window.location.assign('/blog-archive/'+this.value) : window.location.assign('/blog')">
+                onchange="this.value !== 'All' ? window.location.assign('/{{ app()->getLocale() }}/blog-archive/'+this.value) : window.location.assign('{{ route('blog', ['locale' => app()->getLocale()]) }}')">
             <option {{ !$sideBarData['archive'] ? 'selected' : '' }}>All</option>
             @foreach($sideBarData['archive'] as $archiveItem)
                 <option

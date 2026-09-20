@@ -3,15 +3,37 @@
 <head>
     <!-- Site Title-->
     <title>@yield('title', __('site.default_title'))</title>
-    @if(! isset($post) && ! isset($page) && ! isset($serviceCategory))
-        <meta name="description" content="{{ __('site.meta_description') }}">
-    @endif
     @php
         $localizedRouteNames = config('locales.route_names', []);
         $currentRouteName = Route::currentRouteName();
         $currentRouteParameters = request()->route()?->parameters() ?? [];
         unset($currentRouteParameters['locale']);
+
+        $metaDescription = match (true) {
+            isset($post) => $post->description,
+            isset($page) => $page->description,
+            isset($serviceCategory) => $serviceCategory->seo_description,
+            default => null,
+        } ?: __('site.meta_description');
+        $ogTitle = match (true) {
+            isset($post) => $post->name,
+            isset($page) => $page->name,
+            isset($serviceCategory) => $serviceCategory->seo_title,
+            default => null,
+        } ?: $__env->yieldContent('title', __('site.default_title'));
+        $pageImageUrl = isset($pageImage) && $pageImage
+            ? (Str::startsWith($pageImage, ['http', '/']) ? $pageImage : asset('uploads/widgets/'.$pageImage))
+            : null;
+        $ogImage = match (true) {
+            isset($post) => $post->img_path,
+            isset($page) => $pageImageUrl,
+            default => null,
+        } ?: asset('images/bg-3-1920x480.jpg');
     @endphp
+    <meta name="description" content="{{ Str::limit($metaDescription, 157) }}">
+    @if(request()->routeIs('blog-search', 'service-search', 'error-404'))
+        <meta name="robots" content="noindex">
+    @endif
     @if(in_array($currentRouteName, $localizedRouteNames, true))
         <link rel="canonical" href="{{ route($currentRouteName, array_merge(['locale' => app()->getLocale()], $currentRouteParameters), true) }}">
         @foreach(config('locales.supported') as $alternateLocale)
@@ -26,30 +48,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <!--  Facebook Open Graph-->
-    @if(isset($post) && $post->slug && url()->current() === route('blog.post', $post->slug))
-        <meta property="og:url" content="{{ route('blog.post', $post->slug) }}"/>
-        <meta property="og:type" content="article"/>
-        <meta property="og:title" content="{{ $post->name }}"/>
-        <meta property="og:description" content="{{ $post->description }}"/>
-        <meta property="og:image" content="{{ $post->img_path }}"/>
-        <meta name="description" content="{{ $post->description }}"/>
+    <meta property="og:url" content="{{ url()->current() }}"/>
+    <meta property="og:type" content="{{ isset($post) || isset($page) || isset($serviceCategory) ? 'article' : 'website' }}"/>
+    <meta property="og:title" content="{{ $ogTitle }}"/>
+    <meta property="og:description" content="{{ Str::limit($metaDescription, 200) }}"/>
+    <meta property="og:image" content="{{ $ogImage }}"/>
+    <meta property="og:site_name" content="{{ config('app.name') }}"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="{{ $ogTitle }}"/>
+    <meta name="twitter:description" content="{{ Str::limit($metaDescription, 200) }}"/>
+    <meta name="twitter:image" content="{{ $ogImage }}"/>
+    @if(isset($post))
         <meta name="keywords" content="{{ $post->name }}"/>
-    @endif
-    @if(isset($page) && url()->current() === route('pages.page', $page->slug))
-        <meta property="og:url" content="{{ route('pages.page', $page->slug) }}"/>
-        <meta property="og:type" content="article"/>
-        <meta property="og:title" content="{{ $page->name }}"/>
-        <meta property="og:description" content="{{ $page->description }}"/>
-        <meta property="og:image" content="{{ $pageImage }}"/>
-        <meta name="description" content="{{ $page->description }}"/>
+    @elseif(isset($page))
         <meta name="keywords" content="{{ $page->meta }}"/>
-    @endif
-    @if(isset($serviceCategory) && $serviceCategory->slug && url()->current() === route('category-services', $serviceCategory->slug))
-        <meta property="og:url" content="{{ route('category-services', $serviceCategory->slug) }}"/>
-        <meta property="og:type" content="article"/>
-        <meta property="og:title" content="{{ $serviceCategory->seo_title }}"/>
-        <meta property="og:description" content="{{ $serviceCategory->seo_description }}"/>
-{{--        <meta property="og:image" content="{{ $serviceCategory->img_path }}"/>--}}
+    @elseif(isset($serviceCategory))
         <meta name="keywords" content="{{ $serviceCategory->seo_keywords }}"/>
     @endif
     <link rel="alternate icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">

@@ -26,7 +26,7 @@ Laravel Sail stack, environment variables that actually matter, seeding a workin
 PHPUnit 10 setup, the `testing` database and why `RefreshDatabase` is dangerous here, how to run a subset, what is (not) covered and where to start adding tests.
 
 ### [Deployment](./deployment/README.md)
-GitHub Actions release flow to CloudPanel servers: artifact build, `releases/<sha>` + `current` symlink, `.env` and upload-directory preservation, migrations, cleanup, and how to roll back.
+GitHub Actions release flow to CloudPanel servers: artifact build, `releases/<sha>` + `current` symlink, `.env` and upload-directory preservation, migrations, cleanup, and how to roll back. Manual ops: [copying the production DB / restoring upload dirs](deployment/db-copy.md).
 
 ### [Git flow](./development/git-flow.md)
 Branch naming, pull-request sequence, commit messages, release promotion and the actual `master` deployment trigger.

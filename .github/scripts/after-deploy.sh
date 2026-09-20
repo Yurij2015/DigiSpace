@@ -16,6 +16,7 @@ echo "PHP: $("$PHP_BINARY" -r 'echo PHP_VERSION;')"
 # No route:cache: routes/web.php registers a closure route (locale.switch).
 "$PHP_BINARY" artisan config:cache --no-interaction
 "$PHP_BINARY" artisan view:cache --no-interaction
+"$PHP_BINARY" artisan sitemap:generate --no-interaction
 
 # Opcache: reload PHP-FPM when the site user is allowed to; otherwise CloudPanel's
 # timestamp validation picks the new release up on its own.
