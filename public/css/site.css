@@ -42,3 +42,9 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
   .rd-navbar-fixed .rd-navbar-brand .brand img { width: 100px !important; max-width: 100px !important; }
   .rd-navbar-fixed .site-language-control__toggle { padding: 0 6px; font-size: 12px; }
 }
+
+/* Our Projects / reviews carousel: equal-height cards regardless of text length */
+.quote-creative-carousel .owl-stage { display: flex; }
+.quote-creative-carousel .owl-item { display: flex; }
+.quote-creative-carousel .owl-item .item { display: flex; flex: 1 1 auto; min-width: 0; }
+.quote-creative-carousel .owl-item .quote-creative { flex: 1 1 auto; }
