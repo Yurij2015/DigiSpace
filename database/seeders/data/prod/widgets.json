@@ -1,1028 +1,898 @@
 {
-  "table": "widgets",
-  "identity": [
-    "element_id",
-    "widget_category_id+title"
-  ],
-  "translatable": [
-    "title",
-    "subtitle",
-    "content"
-  ],
-  "rows": [
-    {
-      "id": 23,
-      "widget_category_id": 8,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/23/1754101252.jpg",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Sofia Mokra",
-          "subtitle": "Project Manager, QA Lead",
-          "content": "<p class=\"MsoNormal\"><span lang=\"EN-US\" style=\"font-size: 14.0pt; line-height: 107%; font-family: 'Times New Roman',serif; mso-ansi-language: EN-US;\">Project Manager, QA Lead</span></p>"
+    "table": "widgets",
+    "identity": [
+        "element_id",
+        "widget_category_id+title"
+    ],
+    "translatable": [
+        "title",
+        "subtitle",
+        "content"
+    ],
+    "rows": [
+        {
+            "id": 23,
+            "widget_category_id": 8,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/23/1754101252.jpg",
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Sofia Mokra",
+                    "subtitle": "Project Manager, QA Lead",
+                    "content": "<p class=\"MsoNormal\"><span lang=\"EN-US\" style=\"font-size: 14.0pt; line-height: 107%; font-family: 'Times New Roman',serif; mso-ansi-language: EN-US;\">Project Manager, QA Lead</span></p>"
+                },
+                "uk": {
+                    "title": "Софія Мокра",
+                    "subtitle": "Проєктна менеджерка, керівниця QA",
+                    "content": "<p class=\"MsoNormal\"><span lang=\"EN-US\" style=\"font-size: 14.0pt; line-height: 107%; font-family: 'Times New Roman',serif; mso-ansi-language: EN-US;\">Проєктна менеджерка, керівниця QA</span></p>"
+                },
+                "pl": {
+                    "title": "Sofia Mokra",
+                    "subtitle": "Kierowniczka projektów, liderka QA",
+                    "content": "<p class=\"MsoNormal\"><span lang=\"EN-US\" style=\"font-size: 14.0pt; line-height: 107%; font-family: 'Times New Roman',serif; mso-ansi-language: EN-US;\">Kierowniczka projektów, liderka QA</span></p>"
+                }
+            }
         },
-        "uk": {
-          "title": "Софія Мокра",
-          "subtitle": "Проєктна менеджерка, керівниця QA",
-          "content": "<p class=\"MsoNormal\"><span lang=\"EN-US\" style=\"font-size: 14.0pt; line-height: 107%; font-family: 'Times New Roman',serif; mso-ansi-language: EN-US;\">Проєктна менеджерка, керівниця QA</span></p>"
+        {
+            "id": 24,
+            "widget_category_id": 8,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/24/1754101229.jpg",
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Yurii Mokryi",
+                    "subtitle": "Lead Developer",
+                    "content": "<p>CEO, FullStack PHP Developer</p>"
+                },
+                "uk": {
+                    "title": "Юрій Мокрий",
+                    "subtitle": "Провідний розробник",
+                    "content": "<p>CEO, FullStack PHP-розробник</p>"
+                },
+                "pl": {
+                    "title": "Yurii Mokryi",
+                    "subtitle": "Główny programista",
+                    "content": "<p>CEO, programista FullStack PHP</p>"
+                }
+            }
         },
-        "pl": {
-          "title": "Sofia Mokra",
-          "subtitle": "Kierowniczka projektów, liderka QA",
-          "content": "<p class=\"MsoNormal\"><span lang=\"EN-US\" style=\"font-size: 14.0pt; line-height: 107%; font-family: 'Times New Roman',serif; mso-ansi-language: EN-US;\">Kierowniczka projektów, liderka QA</span></p>"
+        {
+            "id": 25,
+            "widget_category_id": 8,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/25/1754101198.jpg",
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Anna Goncharova",
+                    "subtitle": "QA, Project Manger",
+                    "content": "<p>QA, Project Manger</p>"
+                },
+                "uk": {
+                    "title": "Анна Гончарова",
+                    "subtitle": "QA, проєктна менеджерка",
+                    "content": "<p>QA, проєктна менеджерка</p>"
+                },
+                "pl": {
+                    "title": "Anna Goncharova",
+                    "subtitle": "QA, kierowniczka projektów",
+                    "content": "<p>QA, kierowniczka projektów</p>"
+                }
+            }
+        },
+        {
+            "id": 26,
+            "widget_category_id": 9,
+            "icon": "+",
+            "widget_image": null,
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Years on the market",
+                    "subtitle": "",
+                    "content": "6"
+                },
+                "uk": {
+                    "title": "Років на ринку",
+                    "subtitle": "",
+                    "content": "6"
+                },
+                "pl": {
+                    "title": "Lat na rynku",
+                    "subtitle": "",
+                    "content": "6"
+                }
+            }
+        },
+        {
+            "id": 27,
+            "widget_category_id": 9,
+            "icon": "+",
+            "widget_image": null,
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Technologies",
+                    "subtitle": "",
+                    "content": "15"
+                },
+                "uk": {
+                    "title": "Технологій",
+                    "subtitle": "",
+                    "content": "15"
+                },
+                "pl": {
+                    "title": "Technologii",
+                    "subtitle": "",
+                    "content": "15"
+                }
+            }
+        },
+        {
+            "id": 28,
+            "widget_category_id": 9,
+            "icon": "+",
+            "widget_image": null,
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Projects",
+                    "subtitle": "",
+                    "content": "25"
+                },
+                "uk": {
+                    "title": "Проєктів",
+                    "subtitle": "",
+                    "content": "25"
+                },
+                "pl": {
+                    "title": "Projektów",
+                    "subtitle": "",
+                    "content": "25"
+                }
+            }
+        },
+        {
+            "id": 29,
+            "widget_category_id": 9,
+            "icon": "k+",
+            "widget_image": null,
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Lines of code",
+                    "subtitle": "",
+                    "content": "285"
+                },
+                "uk": {
+                    "title": "Рядків коду",
+                    "subtitle": "",
+                    "content": "285"
+                },
+                "pl": {
+                    "title": "Wierszy kodu",
+                    "subtitle": "",
+                    "content": "285"
+                }
+            }
+        },
+        {
+            "id": 37,
+            "widget_category_id": 12,
+            "icon": "linearicons-cog",
+            "widget_image": null,
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Customization",
+                    "subtitle": "Customization",
+                    "content": "<p>Customized web development solutions for businesses. We work with our clients to understand their business needs and create a website that meets the needs of their business.</p>"
+                },
+                "uk": {
+                    "title": "Індивідуальний підхід",
+                    "subtitle": "Індивідуальний підхід",
+                    "content": "<p>Індивідуальні рішення у веброзробці для бізнесу. Ми працюємо з нашими клієнтами, щоб зрозуміти потреби їхнього бізнесу та створити сайт, який відповідає цим потребам.</p>"
+                },
+                "pl": {
+                    "title": "Indywidualne podejście",
+                    "subtitle": "Indywidualne podejście",
+                    "content": "<p>Indywidualne rozwiązania w zakresie tworzenia stron internetowych dla firm. Współpracujemy z naszymi klientami, aby zrozumieć potrzeby ich biznesu i stworzyć stronę, która im odpowiada.</p>"
+                }
+            }
+        },
+        {
+            "id": 38,
+            "widget_category_id": 12,
+            "icon": "linearicons-keyboard",
+            "widget_image": null,
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Experience",
+                    "subtitle": "Experience",
+                    "content": "<p>Many years of web development experience, analysis of business processes in various industries. Expertise to make the site visually attractive and effective.</p>"
+                },
+                "uk": {
+                    "title": "Досвід",
+                    "subtitle": "Досвід",
+                    "content": "<p>Багаторічний досвід у веброзробці, аналіз бізнес-процесів у різних галузях. Експертиза, що дає змогу зробити сайт візуально привабливим і ефективним.</p>"
+                },
+                "pl": {
+                    "title": "Doświadczenie",
+                    "subtitle": "Doświadczenie",
+                    "content": "<p>Wieloletnie doświadczenie w tworzeniu stron internetowych, analiza procesów biznesowych w różnych branżach. Wiedza, która pozwala uczynić stronę atrakcyjną wizualnie i skuteczną.</p>"
+                }
+            }
+        },
+        {
+            "id": 39,
+            "widget_category_id": 12,
+            "icon": "linearicons-checkmark-circle",
+            "widget_image": null,
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Results-oriented",
+                    "subtitle": "Results-oriented",
+                    "content": "<p>Our main task is to create a website to attract traffic and generate leads. We take into account business goals to achieve success.</p>"
+                },
+                "uk": {
+                    "title": "Орієнтація на результат",
+                    "subtitle": "Орієнтація на результат",
+                    "content": "<p>Наше головне завдання — створити сайт, який приваблює трафік і генерує ліди. Ми враховуємо бізнес-цілі, щоб досягти успіху.</p>"
+                },
+                "pl": {
+                    "title": "Orientacja na rezultat",
+                    "subtitle": "Orientacja na rezultat",
+                    "content": "<p>Naszym głównym zadaniem jest stworzenie strony internetowej, która przyciąga ruch i generuje leady. Uwzględniamy cele biznesowe, aby osiągnąć sukces.</p>"
+                }
+            }
+        },
+        {
+            "id": 40,
+            "widget_category_id": 12,
+            "icon": "linearicons-headset",
+            "widget_image": null,
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Support",
+                    "subtitle": "Support",
+                    "content": "<p>We work closely with our clients to understand their goals and provide frequent status updates to ensure that progress is in line with their needs.</p>"
+                },
+                "uk": {
+                    "title": "Підтримка",
+                    "subtitle": "Підтримка",
+                    "content": "<p>Ми тісно співпрацюємо з нашими клієнтами, щоб зрозуміти їхні цілі, і регулярно повідомляємо про статус робіт, щоб прогрес відповідав їхнім потребам.</p>"
+                },
+                "pl": {
+                    "title": "Wsparcie",
+                    "subtitle": "Wsparcie",
+                    "content": "<p>Ściśle współpracujemy z naszymi klientami, aby zrozumieć ich cele, i regularnie informujemy ich o postępach, aby upewnić się, że realizacja odpowiada ich potrzebom.</p>"
+                }
+            }
+        },
+        {
+            "id": 41,
+            "widget_category_id": 12,
+            "icon": "linearicons-users",
+            "widget_image": null,
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Collaboration",
+                    "subtitle": "Collaboration",
+                    "content": "<p>We work closely with clients to share a common understanding and report on progress at all stages of development to ensure a quality experience.</p>"
+                },
+                "uk": {
+                    "title": "Співпраця",
+                    "subtitle": "Співпраця",
+                    "content": "<p>Ми тісно співпрацюємо з клієнтами, щоб досягти спільного розуміння, і звітуємо про прогрес на всіх етапах розробки, щоб забезпечити якісний результат.</p>"
+                },
+                "pl": {
+                    "title": "Współpraca",
+                    "subtitle": "Współpraca",
+                    "content": "<p>Ściśle współpracujemy z klientami, aby mieć wspólne rozumienie celów, i raportujemy postępy na wszystkich etapach prac, aby zapewnić wysoką jakość współpracy.</p>"
+                }
+            }
+        },
+        {
+            "id": 42,
+            "widget_category_id": 12,
+            "icon": "linearicons-magic-wand",
+            "widget_image": null,
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Technology",
+                    "subtitle": "Technology",
+                    "content": "<p>New technologies and frameworks allow us to create fast, secure, search engine optimized and easy-to-use and maintain websites.</p>"
+                },
+                "uk": {
+                    "title": "Технології",
+                    "subtitle": "Технології",
+                    "content": "<p>Нові технології та фреймворки дозволяють нам створювати швидкі, безпечні, оптимізовані для пошукових систем та прості у використанні й підтримці сайти.</p>"
+                },
+                "pl": {
+                    "title": "Technologie",
+                    "subtitle": "Technologie",
+                    "content": "<p>Nowe technologie i frameworki pozwalają nam tworzyć szybkie, bezpieczne, zoptymalizowane pod kątem wyszukiwarek oraz łatwe w użytkowaniu i utrzymaniu strony internetowe.</p>"
+                }
+            }
+        },
+        {
+            "id": 49,
+            "widget_category_id": 14,
+            "icon": "fl-bigmug-line-file69",
+            "widget_image": null,
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Landing Page (Laravel)",
+                    "subtitle": "Landing Page",
+                    "content": "{\"discount\":\"-15%\", \"currency\":\"$\", \"price_value\":\"509\", \"price_aside\":\"99\", \"period\":\"\", \"price_old\":\"Old Price $600.00\"}"
+                },
+                "uk": {
+                    "title": "Лендінг (Laravel)",
+                    "subtitle": "Лендінг",
+                    "content": "{\"discount\":\"-15%\", \"currency\":\"$\", \"price_value\":\"509\", \"price_aside\":\"99\", \"period\":\"\", \"price_old\":\"Стара ціна $600.00\"}"
+                },
+                "pl": {
+                    "title": "Strona docelowa (Laravel)",
+                    "subtitle": "Strona docelowa",
+                    "content": "{\"discount\":\"-15%\", \"currency\":\"$\", \"price_value\":\"509\", \"price_aside\":\"99\", \"period\":\"\", \"price_old\":\"Stara cena $600.00\"}"
+                }
+            }
+        },
+        {
+            "id": 50,
+            "widget_category_id": 14,
+            "icon": "fl-bigmug-line-hot67",
+            "widget_image": null,
+            "css_class": "promo-classic__label-sm",
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "CMS Website (WordPress)",
+                    "subtitle": "CMS Website",
+                    "content": "{\"discount\":\"-30\", \"currency\":\"$\", \"price_value\":\"629\", \"price_aside\":\"99\",  \"period\":\"\", \"price_old\":\"Old Price $900\"}"
+                },
+                "uk": {
+                    "title": "Сайт на CMS (WordPress)",
+                    "subtitle": "Сайт на CMS",
+                    "content": "{\"discount\":\"-30\", \"currency\":\"$\", \"price_value\":\"629\", \"price_aside\":\"99\",  \"period\":\"\", \"price_old\":\"Стара ціна $900\"}"
+                },
+                "pl": {
+                    "title": "Strona CMS (WordPress)",
+                    "subtitle": "Strona CMS",
+                    "content": "{\"discount\":\"-30\", \"currency\":\"$\", \"price_value\":\"629\", \"price_aside\":\"99\",  \"period\":\"\", \"price_old\":\"Stara cena $900\"}"
+                }
+            }
+        },
+        {
+            "id": 51,
+            "widget_category_id": 14,
+            "icon": "fl-bigmug-line-email64",
+            "widget_image": null,
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Custom web apps",
+                    "subtitle": "Custom web apps",
+                    "content": "{\"discount\":\"-15%\", \"currency\":\"$\", \"price_value\":\"1274\", \"price_aside\":\"99\", \"period\":\"\", \"price_old\":\"Old Price $1500.00\"}"
+                },
+                "uk": {
+                    "title": "Вебзастосунки на замовлення",
+                    "subtitle": "Вебзастосунки на замовлення",
+                    "content": "{\"discount\":\"-15%\", \"currency\":\"$\", \"price_value\":\"1274\", \"price_aside\":\"99\", \"period\":\"\", \"price_old\":\"Стара ціна $1500.00\"}"
+                },
+                "pl": {
+                    "title": "Aplikacje webowe na zamówienie",
+                    "subtitle": "Aplikacje webowe na zamówienie",
+                    "content": "{\"discount\":\"-15%\", \"currency\":\"$\", \"price_value\":\"1274\", \"price_aside\":\"99\", \"period\":\"\", \"price_old\":\"Stara cena $1500.00\"}"
+                }
+            }
+        },
+        {
+            "id": 54,
+            "widget_category_id": 16,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/54/1754100589.jpg",
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Image for page - pages/opening-the-space-of-high-technologies",
+                    "subtitle": "opening-the-space-of-high-technologies",
+                    "content": "<p>image-for-page</p>"
+                },
+                "uk": {
+                    "title": "Зображення для сторінки - pages/opening-the-space-of-high-technologies",
+                    "subtitle": "opening-the-space-of-high-technologies",
+                    "content": "<p>зображення-для-сторінки</p>"
+                },
+                "pl": {
+                    "title": "Obraz strony - pages/opening-the-space-of-high-technologies",
+                    "subtitle": "opening-the-space-of-high-technologies",
+                    "content": "<p>obraz-strony</p>"
+                }
+            }
+        },
+        {
+            "id": 55,
+            "widget_category_id": 16,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/55/1754100564.jpg",
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Image for page - top-notch-analytics-and-consulting-on-web-development-technologies",
+                    "subtitle": "top-notch-analytics-and-consulting-on-web-development-technologies",
+                    "content": "image-for-page"
+                },
+                "uk": {
+                    "title": "Зображення для сторінки - top-notch-analytics-and-consulting-on-web-development-technologies",
+                    "subtitle": "top-notch-analytics-and-consulting-on-web-development-technologies",
+                    "content": "зображення-для-сторінки"
+                },
+                "pl": {
+                    "title": "Obraz strony - top-notch-analytics-and-consulting-on-web-development-technologies",
+                    "subtitle": "top-notch-analytics-and-consulting-on-web-development-technologies",
+                    "content": "obraz-strony"
+                }
+            }
+        },
+        {
+            "id": 56,
+            "widget_category_id": 16,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/56/1754100540.jpg",
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Image for page - template-implementation",
+                    "subtitle": "template-implementation",
+                    "content": "image for page"
+                },
+                "uk": {
+                    "title": "Зображення для сторінки - template-implementation",
+                    "subtitle": "template-implementation",
+                    "content": "зображення для сторінки"
+                },
+                "pl": {
+                    "title": "Obraz strony - template-implementation",
+                    "subtitle": "template-implementation",
+                    "content": "obraz strony"
+                }
+            }
+        },
+        {
+            "id": 57,
+            "widget_category_id": 16,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/57/1754100510.jpg",
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Image for page - Legacy Code Refactoring",
+                    "subtitle": "legacy-code-refactoring",
+                    "content": "Image for page"
+                },
+                "uk": {
+                    "title": "Зображення для сторінки - Legacy Code Refactoring",
+                    "subtitle": "legacy-code-refactoring",
+                    "content": "Зображення для сторінки"
+                },
+                "pl": {
+                    "title": "Obraz strony - Legacy Code Refactoring",
+                    "subtitle": "legacy-code-refactoring",
+                    "content": "Obraz strony"
+                }
+            }
+        },
+        {
+            "id": 58,
+            "widget_category_id": 16,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/58/1754097536.jpg",
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Image for page - CRM and CMS Systems",
+                    "subtitle": "crm-and-cms-systems",
+                    "content": "Image for page"
+                },
+                "uk": {
+                    "title": "Зображення для сторінки - CRM and CMS Systems",
+                    "subtitle": "crm-and-cms-systems",
+                    "content": "Зображення для сторінки"
+                },
+                "pl": {
+                    "title": "Obraz strony - CRM and CMS Systems",
+                    "subtitle": "crm-and-cms-systems",
+                    "content": "Obraz strony"
+                }
+            }
+        },
+        {
+            "id": 59,
+            "widget_category_id": 16,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/59/1754097497.jpg",
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Image for page - Web Applications",
+                    "subtitle": "web-applications",
+                    "content": "Image for page"
+                },
+                "uk": {
+                    "title": "Зображення для сторінки - Web Applications",
+                    "subtitle": "web-applications",
+                    "content": "Зображення для сторінки"
+                },
+                "pl": {
+                    "title": "Obraz strony - Web Applications",
+                    "subtitle": "web-applications",
+                    "content": "Obraz strony"
+                }
+            }
+        },
+        {
+            "id": 60,
+            "widget_category_id": 16,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/60/1754097423.jpg",
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Image for page - What Are QA & Testing Benefits",
+                    "subtitle": "qa-testing",
+                    "content": "image for page"
+                },
+                "uk": {
+                    "title": "Зображення для сторінки - What Are QA & Testing Benefits",
+                    "subtitle": "qa-testing",
+                    "content": "зображення для сторінки"
+                },
+                "pl": {
+                    "title": "Obraz strony - What Are QA & Testing Benefits",
+                    "subtitle": "qa-testing",
+                    "content": "obraz strony"
+                }
+            }
+        },
+        {
+            "id": 61,
+            "widget_category_id": 16,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/61/1754097391.jpg",
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Image for page - Responsive Web Apps",
+                    "subtitle": "responsive-web-apps",
+                    "content": "Image for page"
+                },
+                "uk": {
+                    "title": "Зображення для сторінки - Responsive Web Apps",
+                    "subtitle": "responsive-web-apps",
+                    "content": "Зображення для сторінки"
+                },
+                "pl": {
+                    "title": "Obraz strony - Responsive Web Apps",
+                    "subtitle": "responsive-web-apps",
+                    "content": "Obraz strony"
+                }
+            }
+        },
+        {
+            "id": 62,
+            "widget_category_id": 16,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/62/1754097348.jpg",
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Image for page - Opening Incredible Opportunities: PHP Is Our #1 Choice for Website Development",
+                    "subtitle": "opening-incredible-opportunities-php-is-our-1-choice-for-website-development",
+                    "content": "Image for page"
+                },
+                "uk": {
+                    "title": "Зображення для сторінки - Opening Incredible Opportunities: PHP Is Our #1 Choice for Website Development",
+                    "subtitle": "opening-incredible-opportunities-php-is-our-1-choice-for-website-development",
+                    "content": "Зображення для сторінки"
+                },
+                "pl": {
+                    "title": "Obraz strony - Opening Incredible Opportunities: PHP Is Our #1 Choice for Website Development",
+                    "subtitle": "opening-incredible-opportunities-php-is-our-1-choice-for-website-development",
+                    "content": "Obraz strony"
+                }
+            }
+        },
+        {
+            "id": 63,
+            "widget_category_id": 16,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/63/1754097270.jpg",
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Image for page - MySQL Website Development—the Technology Which Became Legendary",
+                    "subtitle": "mysql-website-development-the-technology-which-became-legendary",
+                    "content": "<p>Image for page</p>"
+                },
+                "uk": {
+                    "title": "Зображення для сторінки - MySQL Website Development—the Technology Which Became Legendary",
+                    "subtitle": "mysql-website-development-the-technology-which-became-legendary",
+                    "content": "<p>Зображення для сторінки</p>"
+                },
+                "pl": {
+                    "title": "Obraz strony - MySQL Website Development—the Technology Which Became Legendary",
+                    "subtitle": "mysql-website-development-the-technology-which-became-legendary",
+                    "content": "<p>Obraz strony</p>"
+                }
+            }
+        },
+        {
+            "id": 64,
+            "widget_category_id": 16,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/64/1754097230.jpg",
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Image for page - Websites and Apps Developed Using JavaScript Frameworks",
+                    "subtitle": "websites-and-apps-developed-using-javascript-frameworks",
+                    "content": "Image for page"
+                },
+                "uk": {
+                    "title": "Зображення для сторінки - Websites and Apps Developed Using JavaScript Frameworks",
+                    "subtitle": "websites-and-apps-developed-using-javascript-frameworks",
+                    "content": "Зображення для сторінки"
+                },
+                "pl": {
+                    "title": "Obraz strony - Websites and Apps Developed Using JavaScript Frameworks",
+                    "subtitle": "websites-and-apps-developed-using-javascript-frameworks",
+                    "content": "Obraz strony"
+                }
+            }
+        },
+        {
+            "id": 65,
+            "widget_category_id": 16,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/65/1754097203.jpg",
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Image for page - Host Your Website on Ubuntu Servers with DigiSpace!",
+                    "subtitle": "host-your-website-on-ubuntu-servers-with-digispace",
+                    "content": "Image for page"
+                },
+                "uk": {
+                    "title": "Зображення для сторінки - Host Your Website on Ubuntu Servers with DigiSpace!",
+                    "subtitle": "host-your-website-on-ubuntu-servers-with-digispace",
+                    "content": "Зображення для сторінки"
+                },
+                "pl": {
+                    "title": "Obraz strony - Host Your Website on Ubuntu Servers with DigiSpace!",
+                    "subtitle": "host-your-website-on-ubuntu-servers-with-digispace",
+                    "content": "Obraz strony"
+                }
+            }
+        },
+        {
+            "id": 66,
+            "widget_category_id": 16,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/66/1754097168.jpg",
+            "css_class": null,
+            "anchor": null,
+            "element_id": null,
+            "i18n": {
+                "en": {
+                    "title": "Image for page - Meet DigiSpace, the Company Which Opens a New Era in the Web Development Industry!",
+                    "subtitle": "meet-digispace-the-company-which-opens-a-new-era-in-the-web-development-industry",
+                    "content": "Image for page"
+                },
+                "uk": {
+                    "title": "Зображення для сторінки - Meet DigiSpace, the Company Which Opens a New Era in the Web Development Industry!",
+                    "subtitle": "meet-digispace-the-company-which-opens-a-new-era-in-the-web-development-industry",
+                    "content": "Зображення для сторінки"
+                },
+                "pl": {
+                    "title": "Obraz strony - Meet DigiSpace, the Company Which Opens a New Era in the Web Development Industry!",
+                    "subtitle": "meet-digispace-the-company-which-opens-a-new-era-in-the-web-development-industry",
+                    "content": "Obraz strony"
+                }
+            }
+        },
+        {
+            "id": 106,
+            "widget_category_id": 10,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/digipulse.png",
+            "css_class": null,
+            "anchor": null,
+            "element_id": "project-digipulse",
+            "i18n": {
+                "en": {
+                    "title": "DigiPulse",
+                    "subtitle": "Uptime monitoring SaaS",
+                    "content": "<p>Uptime monitoring SaaS — 60-second availability checks, SSL expiry tracking, and Telegram/email alerts. The backend and admin panel run on Laravel (Octane, Reverb) with Filament, while a dedicated Go engine handles constant polling without slowing the app down. An MCP server exposes monitors and incidents directly to AI assistants, and the whole stack is self-hosted on Proxmox.</p><p><a href=\"https://digipulse.cloud\" target=\"_blank\" rel=\"noopener\">digipulse.cloud</a></p>"
+                },
+                "uk": {
+                    "title": "DigiPulse",
+                    "subtitle": "SaaS · Laravel · Go",
+                    "content": "<p>SaaS моніторингу аптайму — перевірки доступності кожні 60 секунд, відстеження SSL і сповіщення в Telegram/email. Бекенд і адмінка на Laravel (Octane, Reverb) з Filament, а окремий рушій на Go виконує постійні опитування, не сповільнюючи застосунок. MCP-сервер віддає дані моніторів AI-асистентам, увесь стек — self-hosted на Proxmox.</p><p><a href=\"https://digipulse.cloud\" target=\"_blank\" rel=\"noopener\">digipulse.cloud</a></p>"
+                },
+                "pl": {
+                    "title": "DigiPulse",
+                    "subtitle": "SaaS · Laravel · Go",
+                    "content": "<p>SaaS monitorowania uptime — sprawdzanie dostępności co 60 sekund, śledzenie wygasania SSL i powiadomienia Telegram/email. Backend i panel admina na Laravel (Octane, Reverb) z Filament, a osobny silnik w Go obsługuje ciągłe odpytywanie nie spowalniając aplikacji. Serwer MCP udostępnia dane monitorów asystentom AI, cały stack self-hosted na Proxmox.</p><p><a href=\"https://digipulse.cloud\" target=\"_blank\" rel=\"noopener\">digipulse.cloud</a></p>"
+                }
+            }
+        },
+        {
+            "id": 107,
+            "widget_category_id": 10,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/netpostpanel.png",
+            "css_class": null,
+            "anchor": null,
+            "element_id": "project-netpostpanel",
+            "i18n": {
+                "en": {
+                    "title": "NetPostPanel",
+                    "subtitle": "AI content-operations platform",
+                    "content": "<p>AI content-operations platform — a full RAG pipeline: topic research via Google Custom Search and RSS, page scraping, multi-provider generation (Gemini/OpenAI), and Qdrant vectorization that deduplicates stories before writing. A versioned external API powers content workflows in other apps, and Auto Pilot runs scheduled generation fully unattended.</p>"
+                },
+                "uk": {
+                    "title": "NetPostPanel",
+                    "subtitle": "AI · Laravel · RAG",
+                    "content": "<p>AI-платформа контент-операцій — повний RAG-пайплайн: дослідження тем через Google Custom Search і RSS, скрапінг сторінок, мультипровайдерна генерація (Gemini/OpenAI) і векторизація в Qdrant, що дедуплікує матеріали ще до написання. Версійований зовнішній API живить контентні процеси інших застосунків, а Auto Pilot запускає генерацію за розкладом повністю автономно.</p>"
+                },
+                "pl": {
+                    "title": "NetPostPanel",
+                    "subtitle": "AI · Laravel · RAG",
+                    "content": "<p>Platforma AI do operacji na treściach — pełny pipeline RAG: research tematów przez Google Custom Search i RSS, scraping stron, generowanie multi-provider (Gemini/OpenAI) i wektoryzacja w Qdrant, która deduplikuje materiały przed napisaniem. Wersjonowane zewnętrzne API zasila procesy treściowe innych aplikacji, a Auto Pilot uruchamia generowanie według harmonogramu w pełni autonomicznie.</p>"
+                }
+            }
+        },
+        {
+            "id": 108,
+            "widget_category_id": 10,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/vetspace.png",
+            "css_class": null,
+            "anchor": null,
+            "element_id": "project-vetspace",
+            "i18n": {
+                "en": {
+                    "title": "VetSpace",
+                    "subtitle": "Veterinary platform",
+                    "content": "<p>A two-sided veterinary platform: an SEO-first public clinic catalog plus a subscription CRM with appointments and patient records. Separate Vue/Nuxt apps sit on a single Laravel API with GraphQL + REST, database-per-tenant isolation, Stripe subscriptions via Cashier, and AI-assisted visit analysis in a dedicated Go microservice.</p><p><a href=\"https://vetspace.pro\" target=\"_blank\" rel=\"noopener\">vetspace.pro</a></p>"
+                },
+                "uk": {
+                    "title": "VetSpace",
+                    "subtitle": "SaaS · Laravel · Vue",
+                    "content": "<p>Двостороння ветеринарна платформа: SEO-каталог клінік плюс CRM за підпискою із записами й картками пацієнтів. Окремі застосунки на Vue/Nuxt працюють на єдиному Laravel API з GraphQL + REST, ізоляцією database-per-tenant, підписками Stripe через Cashier та AI-аналізом візитів в окремому мікросервісі на Go.</p><p><a href=\"https://vetspace.pro\" target=\"_blank\" rel=\"noopener\">vetspace.pro</a></p>"
+                },
+                "pl": {
+                    "title": "VetSpace",
+                    "subtitle": "SaaS · Laravel · Vue",
+                    "content": "<p>Dwustronna platforma weterynaryjna: katalog klinik zorientowany na SEO oraz CRM w subskrypcji z wizytami i kartami pacjentów. Osobne aplikacje Vue/Nuxt działają na jednym Laravel API z GraphQL + REST, izolacją database-per-tenant, subskrypcjami Stripe przez Cashier i analizą wizyt wspomaganą AI w dedykowanym mikroserwisie Go.</p><p><a href=\"https://vetspace.pro\" target=\"_blank\" rel=\"noopener\">vetspace.pro</a></p>"
+                }
+            }
+        },
+        {
+            "id": 109,
+            "widget_category_id": 10,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/vetcard.png",
+            "css_class": null,
+            "anchor": null,
+            "element_id": "project-vetcard",
+            "i18n": {
+                "en": {
+                    "title": "VetCard",
+                    "subtitle": "Multi-tenant clinic catalog",
+                    "content": "<p>A multi-tenant catalog of veterinary clinics — a single Nuxt SSR deployment serves every one of 590+ clinics: SEO clinic pages with structured data, online appointment booking proxied to each clinic's own tenant backend, per-clinic branding, multi-branch support, and full EN/UK/PL localization.</p><p><a href=\"https://vetcard.pro\" target=\"_blank\" rel=\"noopener\">vetcard.pro</a></p>"
+                },
+                "uk": {
+                    "title": "VetCard",
+                    "subtitle": "Nuxt · Multi-tenant",
+                    "content": "<p>Мультитенантний каталог ветеринарних клінік — один Nuxt SSR-застосунок обслуговує всі 590+ клінік: SEO-сторінки зі структурованими даними, онлайн-запис, проксований до власного тенантного бекенду кожної клініки, індивідуальне брендування, підтримка кількох філій і повна локалізація EN/UK/PL.</p><p><a href=\"https://vetcard.pro\" target=\"_blank\" rel=\"noopener\">vetcard.pro</a></p>"
+                },
+                "pl": {
+                    "title": "VetCard",
+                    "subtitle": "Nuxt · Multi-tenant",
+                    "content": "<p>Multi-tenant katalog klinik weterynaryjnych — jedno wdrożenie Nuxt SSR obsługuje wszystkie 590+ klinik: strony SEO z danymi strukturalnymi, rezerwacje online proxyfowane do tenantowego backendu każdej kliniki, branding per klinika, obsługa wielu oddziałów i pełna lokalizacja EN/UK/PL.</p><p><a href=\"https://vetcard.pro\" target=\"_blank\" rel=\"noopener\">vetcard.pro</a></p>"
+                }
+            }
+        },
+        {
+            "id": 111,
+            "widget_category_id": 10,
+            "icon": "",
+            "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/digispace-studio.png",
+            "css_class": null,
+            "anchor": null,
+            "element_id": "project-digispace-studio",
+            "i18n": {
+                "en": {
+                    "title": "DigiSpace Studio",
+                    "subtitle": "Marketing site for vet clinics",
+                    "content": "<p>Marketing site for a niche IT studio focused on veterinary clinics and pet brands. Built on WordPress with the Blocksy theme and Stackable/Gutenberg blocks, a child theme that keeps customizations safe through updates, a blog for content marketing, and lead capture through contact forms.</p><p><a href=\"https://digispace.studio\" target=\"_blank\" rel=\"noopener\">digispace.studio</a></p>"
+                },
+                "uk": {
+                    "title": "DigiSpace Studio",
+                    "subtitle": "WordPress · SEO",
+                    "content": "<p>Маркетинговий сайт нішевої IT-студії, сфокусованої на ветеринарних клініках і pet-брендах. Побудований на WordPress із темою Blocksy та блоками Stackable/Gutenberg, дочірня тема зберігає кастомізації під час оновлень, блог для контент-маркетингу та збір лідів через контактні форми.</p><p><a href=\"https://digispace.studio\" target=\"_blank\" rel=\"noopener\">digispace.studio</a></p>"
+                },
+                "pl": {
+                    "title": "DigiSpace Studio",
+                    "subtitle": "WordPress · SEO",
+                    "content": "<p>Strona marketingowa niszowego studia IT dla klinik weterynaryjnych i marek pet. Zbudowana na WordPress z motywem Blocksy i blokami Stackable/Gutenberg, motyw potomny chroni dostosowania przy aktualizacjach, blog dla content marketingu i pozyskiwanie leadów przez formularze kontaktowe.</p><p><a href=\"https://digispace.studio\" target=\"_blank\" rel=\"noopener\">digispace.studio</a></p>"
+                }
+            }
         }
-      }
-    },
-    {
-      "id": 24,
-      "widget_category_id": 8,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/24/1754101229.jpg",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Yurii Mokryi",
-          "subtitle": "Lead Developer",
-          "content": "<p>CEO, FullStack PHP Developer</p>"
-        },
-        "uk": {
-          "title": "Юрій Мокрий",
-          "subtitle": "Провідний розробник",
-          "content": "<p>CEO, FullStack PHP-розробник</p>"
-        },
-        "pl": {
-          "title": "Yurii Mokryi",
-          "subtitle": "Główny programista",
-          "content": "<p>CEO, programista FullStack PHP</p>"
-        }
-      }
-    },
-    {
-      "id": 25,
-      "widget_category_id": 8,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/25/1754101198.jpg",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Anna Goncharova",
-          "subtitle": "QA, Project Manger",
-          "content": "<p>QA, Project Manger</p>"
-        },
-        "uk": {
-          "title": "Анна Гончарова",
-          "subtitle": "QA, проєктна менеджерка",
-          "content": "<p>QA, проєктна менеджерка</p>"
-        },
-        "pl": {
-          "title": "Anna Goncharova",
-          "subtitle": "QA, kierowniczka projektów",
-          "content": "<p>QA, kierowniczka projektów</p>"
-        }
-      }
-    },
-    {
-      "id": 26,
-      "widget_category_id": 9,
-      "icon": "+",
-      "widget_image": null,
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Years on the market",
-          "subtitle": "",
-          "content": "6"
-        },
-        "uk": {
-          "title": "Років на ринку",
-          "subtitle": "",
-          "content": "6"
-        },
-        "pl": {
-          "title": "Lat na rynku",
-          "subtitle": "",
-          "content": "6"
-        }
-      }
-    },
-    {
-      "id": 27,
-      "widget_category_id": 9,
-      "icon": "+",
-      "widget_image": null,
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Technologies",
-          "subtitle": "",
-          "content": "15"
-        },
-        "uk": {
-          "title": "Технологій",
-          "subtitle": "",
-          "content": "15"
-        },
-        "pl": {
-          "title": "Technologii",
-          "subtitle": "",
-          "content": "15"
-        }
-      }
-    },
-    {
-      "id": 28,
-      "widget_category_id": 9,
-      "icon": "+",
-      "widget_image": null,
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Projects",
-          "subtitle": "",
-          "content": "25"
-        },
-        "uk": {
-          "title": "Проєктів",
-          "subtitle": "",
-          "content": "25"
-        },
-        "pl": {
-          "title": "Projektów",
-          "subtitle": "",
-          "content": "25"
-        }
-      }
-    },
-    {
-      "id": 29,
-      "widget_category_id": 9,
-      "icon": "k+",
-      "widget_image": null,
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Lines of code",
-          "subtitle": "",
-          "content": "285"
-        },
-        "uk": {
-          "title": "Рядків коду",
-          "subtitle": "",
-          "content": "285"
-        },
-        "pl": {
-          "title": "Wierszy kodu",
-          "subtitle": "",
-          "content": "285"
-        }
-      }
-    },
-    {
-      "id": 30,
-      "widget_category_id": 10,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/30/1754101149.png",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Optimizing Business with CRM",
-          "subtitle": "CRM Systems",
-          "content": "<p>The CRM (Customer Relationship Management) system is a comprehensive and user-friendly solution designed to optimize operations for small, medium, and large businesses, enhancing customer engagement and overall satisfaction. This system empowers companies to effectively manage customer interactions, offering a personalized experience and superior service.</p>"
-        },
-        "uk": {
-          "title": "Оптимізація бізнесу за допомогою CRM",
-          "subtitle": "CRM-системи",
-          "content": "<p>Система CRM (управління взаємовідносинами з клієнтами) — це комплексне та зручне у використанні рішення, розроблене для оптимізації роботи малого, середнього та великого бізнесу, що підвищує залученість клієнтів і їхню загальну задоволеність. Ця система дає компаніям змогу ефективно керувати взаємодією з клієнтами, пропонуючи персоналізований підхід і високий рівень обслуговування.</p>"
-        },
-        "pl": {
-          "title": "Optymalizacja biznesu z CRM",
-          "subtitle": "Systemy CRM",
-          "content": "<p>System CRM (zarządzanie relacjami z klientami) to kompleksowe i przyjazne użytkownikowi rozwiązanie, zaprojektowane w celu optymalizacji działań małych, średnich i dużych firm, zwiększające zaangażowanie klientów i ich ogólną satysfakcję. System ten pozwala firmom skutecznie zarządzać interakcjami z klientami, oferując spersonalizowane doświadczenia i obsługę na najwyższym poziomie.</p>"
-        }
-      }
-    },
-    {
-      "id": 31,
-      "widget_category_id": 10,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/31/1754101126.png",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "CMS System for a website",
-          "subtitle": "CMS Systems",
-          "content": "<p>A CMS (Content Management System) is a software application that allows users to create, manage, and publish digital content on a website without the need for advanced technical skills. When it comes to choosing a CMS system for a business site, there are several options available that can be a good fit depending on the specific needs and requirements of the business.&nbsp;</p>"
-        },
-        "uk": {
-          "title": "CMS-система для сайту",
-          "subtitle": "CMS-системи",
-          "content": "<p>CMS (система керування контентом) — це програмний застосунок, який дає змогу користувачам створювати, керувати та публікувати цифровий контент на сайті без потреби в глибоких технічних навичках. Коли йдеться про вибір CMS-системи для бізнес-сайту, існує кілька варіантів, які можуть підійти залежно від конкретних потреб і вимог бізнесу.&nbsp;</p>"
-        },
-        "pl": {
-          "title": "System CMS dla strony internetowej",
-          "subtitle": "Systemy CMS",
-          "content": "<p>CMS (system zarządzania treścią) to aplikacja, która pozwala użytkownikom tworzyć, zarządzać i publikować treści cyfrowe na stronie internetowej bez konieczności posiadania zaawansowanych umiejętności technicznych. Jeśli chodzi o wybór systemu CMS dla strony firmowej, dostępnych jest kilka opcji, które mogą być dobrym rozwiązaniem w zależności od konkretnych potrzeb i wymagań firmy.&nbsp;</p>"
-        }
-      }
-    },
-    {
-      "id": 37,
-      "widget_category_id": 12,
-      "icon": "linearicons-cog",
-      "widget_image": null,
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Customization",
-          "subtitle": "Customization",
-          "content": "<p>Customized web development solutions for businesses. We work with our clients to understand their business needs and create a website that meets the needs of their business.</p>"
-        },
-        "uk": {
-          "title": "Індивідуальний підхід",
-          "subtitle": "Індивідуальний підхід",
-          "content": "<p>Індивідуальні рішення у веброзробці для бізнесу. Ми працюємо з нашими клієнтами, щоб зрозуміти потреби їхнього бізнесу та створити сайт, який відповідає цим потребам.</p>"
-        },
-        "pl": {
-          "title": "Indywidualne podejście",
-          "subtitle": "Indywidualne podejście",
-          "content": "<p>Indywidualne rozwiązania w zakresie tworzenia stron internetowych dla firm. Współpracujemy z naszymi klientami, aby zrozumieć potrzeby ich biznesu i stworzyć stronę, która im odpowiada.</p>"
-        }
-      }
-    },
-    {
-      "id": 38,
-      "widget_category_id": 12,
-      "icon": "linearicons-keyboard",
-      "widget_image": null,
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Experience",
-          "subtitle": "Experience",
-          "content": "<p>Many years of web development experience, analysis of business processes in various industries. Expertise to make the site visually attractive and effective.</p>"
-        },
-        "uk": {
-          "title": "Досвід",
-          "subtitle": "Досвід",
-          "content": "<p>Багаторічний досвід у веброзробці, аналіз бізнес-процесів у різних галузях. Експертиза, що дає змогу зробити сайт візуально привабливим і ефективним.</p>"
-        },
-        "pl": {
-          "title": "Doświadczenie",
-          "subtitle": "Doświadczenie",
-          "content": "<p>Wieloletnie doświadczenie w tworzeniu stron internetowych, analiza procesów biznesowych w różnych branżach. Wiedza, która pozwala uczynić stronę atrakcyjną wizualnie i skuteczną.</p>"
-        }
-      }
-    },
-    {
-      "id": 39,
-      "widget_category_id": 12,
-      "icon": "linearicons-checkmark-circle",
-      "widget_image": null,
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Results-oriented",
-          "subtitle": "Results-oriented",
-          "content": "<p>Our main task is to create a website to attract traffic and generate leads. We take into account business goals to achieve success.</p>"
-        },
-        "uk": {
-          "title": "Орієнтація на результат",
-          "subtitle": "Орієнтація на результат",
-          "content": "<p>Наше головне завдання — створити сайт, який приваблює трафік і генерує ліди. Ми враховуємо бізнес-цілі, щоб досягти успіху.</p>"
-        },
-        "pl": {
-          "title": "Orientacja na rezultat",
-          "subtitle": "Orientacja na rezultat",
-          "content": "<p>Naszym głównym zadaniem jest stworzenie strony internetowej, która przyciąga ruch i generuje leady. Uwzględniamy cele biznesowe, aby osiągnąć sukces.</p>"
-        }
-      }
-    },
-    {
-      "id": 40,
-      "widget_category_id": 12,
-      "icon": "linearicons-headset",
-      "widget_image": null,
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Support",
-          "subtitle": "Support",
-          "content": "<p>We work closely with our clients to understand their goals and provide frequent status updates to ensure that progress is in line with their needs.</p>"
-        },
-        "uk": {
-          "title": "Підтримка",
-          "subtitle": "Підтримка",
-          "content": "<p>Ми тісно співпрацюємо з нашими клієнтами, щоб зрозуміти їхні цілі, і регулярно повідомляємо про статус робіт, щоб прогрес відповідав їхнім потребам.</p>"
-        },
-        "pl": {
-          "title": "Wsparcie",
-          "subtitle": "Wsparcie",
-          "content": "<p>Ściśle współpracujemy z naszymi klientami, aby zrozumieć ich cele, i regularnie informujemy ich o postępach, aby upewnić się, że realizacja odpowiada ich potrzebom.</p>"
-        }
-      }
-    },
-    {
-      "id": 41,
-      "widget_category_id": 12,
-      "icon": "linearicons-users",
-      "widget_image": null,
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Collaboration",
-          "subtitle": "Collaboration",
-          "content": "<p>We work closely with clients to share a common understanding and report on progress at all stages of development to ensure a quality experience.</p>"
-        },
-        "uk": {
-          "title": "Співпраця",
-          "subtitle": "Співпраця",
-          "content": "<p>Ми тісно співпрацюємо з клієнтами, щоб досягти спільного розуміння, і звітуємо про прогрес на всіх етапах розробки, щоб забезпечити якісний результат.</p>"
-        },
-        "pl": {
-          "title": "Współpraca",
-          "subtitle": "Współpraca",
-          "content": "<p>Ściśle współpracujemy z klientami, aby mieć wspólne rozumienie celów, i raportujemy postępy na wszystkich etapach prac, aby zapewnić wysoką jakość współpracy.</p>"
-        }
-      }
-    },
-    {
-      "id": 42,
-      "widget_category_id": 12,
-      "icon": "linearicons-magic-wand",
-      "widget_image": null,
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Technology",
-          "subtitle": "Technology",
-          "content": "<p>New technologies and frameworks allow us to create fast, secure, search engine optimized and easy-to-use and maintain websites.</p>"
-        },
-        "uk": {
-          "title": "Технології",
-          "subtitle": "Технології",
-          "content": "<p>Нові технології та фреймворки дозволяють нам створювати швидкі, безпечні, оптимізовані для пошукових систем та прості у використанні й підтримці сайти.</p>"
-        },
-        "pl": {
-          "title": "Technologie",
-          "subtitle": "Technologie",
-          "content": "<p>Nowe technologie i frameworki pozwalają nam tworzyć szybkie, bezpieczne, zoptymalizowane pod kątem wyszukiwarek oraz łatwe w użytkowaniu i utrzymaniu strony internetowe.</p>"
-        }
-      }
-    },
-    {
-      "id": 49,
-      "widget_category_id": 14,
-      "icon": "fl-bigmug-line-file69",
-      "widget_image": null,
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Landing Page (Laravel)",
-          "subtitle": "Landing Page",
-          "content": "{\"discount\":\"-15%\", \"currency\":\"$\", \"price_value\":\"509\", \"price_aside\":\"99\", \"period\":\"\", \"price_old\":\"Old Price $600.00\"}"
-        },
-        "uk": {
-          "title": "Лендінг (Laravel)",
-          "subtitle": "Лендінг",
-          "content": "{\"discount\":\"-15%\", \"currency\":\"$\", \"price_value\":\"509\", \"price_aside\":\"99\", \"period\":\"\", \"price_old\":\"Стара ціна $600.00\"}"
-        },
-        "pl": {
-          "title": "Strona docelowa (Laravel)",
-          "subtitle": "Strona docelowa",
-          "content": "{\"discount\":\"-15%\", \"currency\":\"$\", \"price_value\":\"509\", \"price_aside\":\"99\", \"period\":\"\", \"price_old\":\"Stara cena $600.00\"}"
-        }
-      }
-    },
-    {
-      "id": 50,
-      "widget_category_id": 14,
-      "icon": "fl-bigmug-line-hot67",
-      "widget_image": null,
-      "css_class": "promo-classic__label-sm",
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "CMS Website (WordPress)",
-          "subtitle": "CMS Website",
-          "content": "{\"discount\":\"-30\", \"currency\":\"$\", \"price_value\":\"629\", \"price_aside\":\"99\",  \"period\":\"\", \"price_old\":\"Old Price $900\"}"
-        },
-        "uk": {
-          "title": "Сайт на CMS (WordPress)",
-          "subtitle": "Сайт на CMS",
-          "content": "{\"discount\":\"-30\", \"currency\":\"$\", \"price_value\":\"629\", \"price_aside\":\"99\",  \"period\":\"\", \"price_old\":\"Стара ціна $900\"}"
-        },
-        "pl": {
-          "title": "Strona CMS (WordPress)",
-          "subtitle": "Strona CMS",
-          "content": "{\"discount\":\"-30\", \"currency\":\"$\", \"price_value\":\"629\", \"price_aside\":\"99\",  \"period\":\"\", \"price_old\":\"Stara cena $900\"}"
-        }
-      }
-    },
-    {
-      "id": 51,
-      "widget_category_id": 14,
-      "icon": "fl-bigmug-line-email64",
-      "widget_image": null,
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Custom web apps",
-          "subtitle": "Custom web apps",
-          "content": "{\"discount\":\"-15%\", \"currency\":\"$\", \"price_value\":\"1274\", \"price_aside\":\"99\", \"period\":\"\", \"price_old\":\"Old Price $1500.00\"}"
-        },
-        "uk": {
-          "title": "Вебзастосунки на замовлення",
-          "subtitle": "Вебзастосунки на замовлення",
-          "content": "{\"discount\":\"-15%\", \"currency\":\"$\", \"price_value\":\"1274\", \"price_aside\":\"99\", \"period\":\"\", \"price_old\":\"Стара ціна $1500.00\"}"
-        },
-        "pl": {
-          "title": "Aplikacje webowe na zamówienie",
-          "subtitle": "Aplikacje webowe na zamówienie",
-          "content": "{\"discount\":\"-15%\", \"currency\":\"$\", \"price_value\":\"1274\", \"price_aside\":\"99\", \"period\":\"\", \"price_old\":\"Stara cena $1500.00\"}"
-        }
-      }
-    },
-    {
-      "id": 53,
-      "widget_category_id": 10,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/53/1754100645.png",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Landing Pages for Business",
-          "subtitle": "Creating Landing Pages",
-          "content": "<p>Landing pages strategically drive targeted traffic, effectively capturing valuable customer leads. Each uniquely crafted page significantly enhances conversion rates by concentrating on specific products or services. These pages provide vital, actionable insights for meticulously tracking campaign effectiveness, establishing them as an essential tool in successful, modern digital marketing.</p>"
-        },
-        "uk": {
-          "title": "Лендінги для бізнесу",
-          "subtitle": "Створення лендінгів",
-          "content": "<p>Лендінги стратегічно спрямовують цільовий трафік, ефективно залучаючи цінні клієнтські ліди. Кожна унікально створена сторінка суттєво підвищує коефіцієнт конверсії, концентруючись на конкретних продуктах або послугах. Ці сторінки надають важливі практичні дані для ретельного відстеження ефективності кампаній, що робить їх незамінним інструментом успішного сучасного цифрового маркетингу.</p>"
-        },
-        "pl": {
-          "title": "Strony docelowe dla firm",
-          "subtitle": "Tworzenie stron docelowych",
-          "content": "<p>Strony docelowe strategicznie kierują ukierunkowany ruch, skutecznie pozyskując cenne leady klientów. Każda unikalnie zaprojektowana strona znacząco zwiększa współczynnik konwersji, koncentrując się na konkretnych produktach lub usługach. Strony te dostarczają istotnych, praktycznych informacji do precyzyjnego śledzenia skuteczności kampanii, co czyni je niezbędnym narzędziem skutecznego, nowoczesnego marketingu cyfrowego.</p>"
-        }
-      }
-    },
-    {
-      "id": 54,
-      "widget_category_id": 16,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/54/1754100589.jpg",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Image for page - pages/opening-the-space-of-high-technologies",
-          "subtitle": "opening-the-space-of-high-technologies",
-          "content": "<p>image-for-page</p>"
-        },
-        "uk": {
-          "title": "Зображення для сторінки - pages/opening-the-space-of-high-technologies",
-          "subtitle": "opening-the-space-of-high-technologies",
-          "content": "<p>зображення-для-сторінки</p>"
-        },
-        "pl": {
-          "title": "Obraz strony - pages/opening-the-space-of-high-technologies",
-          "subtitle": "opening-the-space-of-high-technologies",
-          "content": "<p>obraz-strony</p>"
-        }
-      }
-    },
-    {
-      "id": 55,
-      "widget_category_id": 16,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/55/1754100564.jpg",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Image for page - top-notch-analytics-and-consulting-on-web-development-technologies",
-          "subtitle": "top-notch-analytics-and-consulting-on-web-development-technologies",
-          "content": "image-for-page"
-        },
-        "uk": {
-          "title": "Зображення для сторінки - top-notch-analytics-and-consulting-on-web-development-technologies",
-          "subtitle": "top-notch-analytics-and-consulting-on-web-development-technologies",
-          "content": "зображення-для-сторінки"
-        },
-        "pl": {
-          "title": "Obraz strony - top-notch-analytics-and-consulting-on-web-development-technologies",
-          "subtitle": "top-notch-analytics-and-consulting-on-web-development-technologies",
-          "content": "obraz-strony"
-        }
-      }
-    },
-    {
-      "id": 56,
-      "widget_category_id": 16,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/56/1754100540.jpg",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Image for page - template-implementation",
-          "subtitle": "template-implementation",
-          "content": "image for page"
-        },
-        "uk": {
-          "title": "Зображення для сторінки - template-implementation",
-          "subtitle": "template-implementation",
-          "content": "зображення для сторінки"
-        },
-        "pl": {
-          "title": "Obraz strony - template-implementation",
-          "subtitle": "template-implementation",
-          "content": "obraz strony"
-        }
-      }
-    },
-    {
-      "id": 57,
-      "widget_category_id": 16,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/57/1754100510.jpg",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Image for page - Legacy Code Refactoring",
-          "subtitle": "legacy-code-refactoring",
-          "content": "Image for page"
-        },
-        "uk": {
-          "title": "Зображення для сторінки - Legacy Code Refactoring",
-          "subtitle": "legacy-code-refactoring",
-          "content": "Зображення для сторінки"
-        },
-        "pl": {
-          "title": "Obraz strony - Legacy Code Refactoring",
-          "subtitle": "legacy-code-refactoring",
-          "content": "Obraz strony"
-        }
-      }
-    },
-    {
-      "id": 58,
-      "widget_category_id": 16,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/58/1754097536.jpg",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Image for page - CRM and CMS Systems",
-          "subtitle": "crm-and-cms-systems",
-          "content": "Image for page"
-        },
-        "uk": {
-          "title": "Зображення для сторінки - CRM and CMS Systems",
-          "subtitle": "crm-and-cms-systems",
-          "content": "Зображення для сторінки"
-        },
-        "pl": {
-          "title": "Obraz strony - CRM and CMS Systems",
-          "subtitle": "crm-and-cms-systems",
-          "content": "Obraz strony"
-        }
-      }
-    },
-    {
-      "id": 59,
-      "widget_category_id": 16,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/59/1754097497.jpg",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Image for page - Web Applications",
-          "subtitle": "web-applications",
-          "content": "Image for page"
-        },
-        "uk": {
-          "title": "Зображення для сторінки - Web Applications",
-          "subtitle": "web-applications",
-          "content": "Зображення для сторінки"
-        },
-        "pl": {
-          "title": "Obraz strony - Web Applications",
-          "subtitle": "web-applications",
-          "content": "Obraz strony"
-        }
-      }
-    },
-    {
-      "id": 60,
-      "widget_category_id": 16,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/60/1754097423.jpg",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Image for page - What Are QA & Testing Benefits",
-          "subtitle": "qa-testing",
-          "content": "image for page"
-        },
-        "uk": {
-          "title": "Зображення для сторінки - What Are QA & Testing Benefits",
-          "subtitle": "qa-testing",
-          "content": "зображення для сторінки"
-        },
-        "pl": {
-          "title": "Obraz strony - What Are QA & Testing Benefits",
-          "subtitle": "qa-testing",
-          "content": "obraz strony"
-        }
-      }
-    },
-    {
-      "id": 61,
-      "widget_category_id": 16,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/61/1754097391.jpg",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Image for page - Responsive Web Apps",
-          "subtitle": "responsive-web-apps",
-          "content": "Image for page"
-        },
-        "uk": {
-          "title": "Зображення для сторінки - Responsive Web Apps",
-          "subtitle": "responsive-web-apps",
-          "content": "Зображення для сторінки"
-        },
-        "pl": {
-          "title": "Obraz strony - Responsive Web Apps",
-          "subtitle": "responsive-web-apps",
-          "content": "Obraz strony"
-        }
-      }
-    },
-    {
-      "id": 62,
-      "widget_category_id": 16,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/62/1754097348.jpg",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Image for page - Opening Incredible Opportunities: PHP Is Our #1 Choice for Website Development",
-          "subtitle": "opening-incredible-opportunities-php-is-our-1-choice-for-website-development",
-          "content": "Image for page"
-        },
-        "uk": {
-          "title": "Зображення для сторінки - Opening Incredible Opportunities: PHP Is Our #1 Choice for Website Development",
-          "subtitle": "opening-incredible-opportunities-php-is-our-1-choice-for-website-development",
-          "content": "Зображення для сторінки"
-        },
-        "pl": {
-          "title": "Obraz strony - Opening Incredible Opportunities: PHP Is Our #1 Choice for Website Development",
-          "subtitle": "opening-incredible-opportunities-php-is-our-1-choice-for-website-development",
-          "content": "Obraz strony"
-        }
-      }
-    },
-    {
-      "id": 63,
-      "widget_category_id": 16,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/63/1754097270.jpg",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Image for page - MySQL Website Development—the Technology Which Became Legendary",
-          "subtitle": "mysql-website-development-the-technology-which-became-legendary",
-          "content": "<p>Image for page</p>"
-        },
-        "uk": {
-          "title": "Зображення для сторінки - MySQL Website Development—the Technology Which Became Legendary",
-          "subtitle": "mysql-website-development-the-technology-which-became-legendary",
-          "content": "<p>Зображення для сторінки</p>"
-        },
-        "pl": {
-          "title": "Obraz strony - MySQL Website Development—the Technology Which Became Legendary",
-          "subtitle": "mysql-website-development-the-technology-which-became-legendary",
-          "content": "<p>Obraz strony</p>"
-        }
-      }
-    },
-    {
-      "id": 64,
-      "widget_category_id": 16,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/64/1754097230.jpg",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Image for page - Websites and Apps Developed Using JavaScript Frameworks",
-          "subtitle": "websites-and-apps-developed-using-javascript-frameworks",
-          "content": "Image for page"
-        },
-        "uk": {
-          "title": "Зображення для сторінки - Websites and Apps Developed Using JavaScript Frameworks",
-          "subtitle": "websites-and-apps-developed-using-javascript-frameworks",
-          "content": "Зображення для сторінки"
-        },
-        "pl": {
-          "title": "Obraz strony - Websites and Apps Developed Using JavaScript Frameworks",
-          "subtitle": "websites-and-apps-developed-using-javascript-frameworks",
-          "content": "Obraz strony"
-        }
-      }
-    },
-    {
-      "id": 65,
-      "widget_category_id": 16,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/65/1754097203.jpg",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Image for page - Host Your Website on Ubuntu Servers with DigiSpace!",
-          "subtitle": "host-your-website-on-ubuntu-servers-with-digispace",
-          "content": "Image for page"
-        },
-        "uk": {
-          "title": "Зображення для сторінки - Host Your Website on Ubuntu Servers with DigiSpace!",
-          "subtitle": "host-your-website-on-ubuntu-servers-with-digispace",
-          "content": "Зображення для сторінки"
-        },
-        "pl": {
-          "title": "Obraz strony - Host Your Website on Ubuntu Servers with DigiSpace!",
-          "subtitle": "host-your-website-on-ubuntu-servers-with-digispace",
-          "content": "Obraz strony"
-        }
-      }
-    },
-    {
-      "id": 66,
-      "widget_category_id": 16,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/66/1754097168.jpg",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Image for page - Meet DigiSpace, the Company Which Opens a New Era in the Web Development Industry!",
-          "subtitle": "meet-digispace-the-company-which-opens-a-new-era-in-the-web-development-industry",
-          "content": "Image for page"
-        },
-        "uk": {
-          "title": "Зображення для сторінки - Meet DigiSpace, the Company Which Opens a New Era in the Web Development Industry!",
-          "subtitle": "meet-digispace-the-company-which-opens-a-new-era-in-the-web-development-industry",
-          "content": "Зображення для сторінки"
-        },
-        "pl": {
-          "title": "Obraz strony - Meet DigiSpace, the Company Which Opens a New Era in the Web Development Industry!",
-          "subtitle": "meet-digispace-the-company-which-opens-a-new-era-in-the-web-development-industry",
-          "content": "Obraz strony"
-        }
-      }
-    },
-    {
-      "id": 105,
-      "widget_category_id": 10,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/105/1754095311.png",
-      "css_class": null,
-      "anchor": null,
-      "element_id": null,
-      "i18n": {
-        "en": {
-          "title": "Websites with WordPress",
-          "subtitle": "Creating Dynamic Websites with WordPress",
-          "content": "<p>WordPress is a widely-used content management system (CMS) that enables users to build and maintain websites without the need for extensive coding or technical knowledge. With thousands of themes and plugins available, WordPress allows for the creation of visually appealing and highly functional websites across various industries and purposes, including blogs, portfolios, e-commerce, news sites, and more.</p>"
-        },
-        "uk": {
-          "title": "Сайти на WordPress",
-          "subtitle": "Створення динамічних сайтів на WordPress",
-          "content": "<p>WordPress — це широко використовувана система керування контентом (CMS), яка дає змогу користувачам створювати та підтримувати сайти без потреби в глибоких знаннях програмування чи технічних навичках. З тисячами доступних тем і плагінів WordPress дозволяє створювати візуально привабливі та високофункціональні сайти для різних галузей і цілей, включно з блогами, портфоліо, електронною комерцією, новинними сайтами тощо.</p>"
-        },
-        "pl": {
-          "title": "Strony na WordPress",
-          "subtitle": "Tworzenie dynamicznych stron w WordPress",
-          "content": "<p>WordPress to szeroko stosowany system zarządzania treścią (CMS), który umożliwia użytkownikom tworzenie i utrzymywanie stron internetowych bez potrzeby posiadania rozległej wiedzy z zakresu kodowania lub techniki. Dzięki tysiącom dostępnych motywów i wtyczek WordPress pozwala tworzyć atrakcyjne wizualnie i wysoce funkcjonalne strony internetowe dla różnych branż i celów, w tym blogi, portfolio, e-commerce, serwisy informacyjne i inne.</p>"
-        }
-      }
-    },
-    {
-      "id": 106,
-      "widget_category_id": 10,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/digipulse.png",
-      "css_class": null,
-      "anchor": null,
-      "element_id": "project-digipulse",
-      "i18n": {
-        "en": {
-          "title": "DigiPulse",
-          "subtitle": "Uptime monitoring SaaS",
-          "content": "<p>Uptime monitoring SaaS — 60-second availability checks, SSL expiry tracking, and Telegram/email alerts. The backend and admin panel run on Laravel (Octane, Reverb) with Filament, while a dedicated Go engine handles constant polling without slowing the app down. An MCP server exposes monitors and incidents directly to AI assistants, and the whole stack is self-hosted on Proxmox.</p><p><a href=\"https://digipulse.cloud\" target=\"_blank\" rel=\"noopener\">digipulse.cloud</a></p>"
-        },
-        "uk": {
-          "title": "DigiPulse",
-          "subtitle": "SaaS · Laravel · Go",
-          "content": "<p>SaaS моніторингу аптайму — перевірки доступності кожні 60 секунд, відстеження SSL і сповіщення в Telegram/email. Бекенд і адмінка на Laravel (Octane, Reverb) з Filament, а окремий рушій на Go виконує постійні опитування, не сповільнюючи застосунок. MCP-сервер віддає дані моніторів AI-асистентам, увесь стек — self-hosted на Proxmox.</p><p><a href=\"https://digipulse.cloud\" target=\"_blank\" rel=\"noopener\">digipulse.cloud</a></p>"
-        },
-        "pl": {
-          "title": "DigiPulse",
-          "subtitle": "SaaS · Laravel · Go",
-          "content": "<p>SaaS monitorowania uptime — sprawdzanie dostępności co 60 sekund, śledzenie wygasania SSL i powiadomienia Telegram/email. Backend i panel admina na Laravel (Octane, Reverb) z Filament, a osobny silnik w Go obsługuje ciągłe odpytywanie nie spowalniając aplikacji. Serwer MCP udostępnia dane monitorów asystentom AI, cały stack self-hosted na Proxmox.</p><p><a href=\"https://digipulse.cloud\" target=\"_blank\" rel=\"noopener\">digipulse.cloud</a></p>"
-        }
-      }
-    },
-    {
-      "id": 107,
-      "widget_category_id": 10,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/netpostpanel.png",
-      "css_class": null,
-      "anchor": null,
-      "element_id": "project-netpostpanel",
-      "i18n": {
-        "en": {
-          "title": "NetPostPanel",
-          "subtitle": "AI content-operations platform",
-          "content": "<p>AI content-operations platform — a full RAG pipeline: topic research via Google Custom Search and RSS, page scraping, multi-provider generation (Gemini/OpenAI), and Qdrant vectorization that deduplicates stories before writing. A versioned external API powers content workflows in other apps, and Auto Pilot runs scheduled generation fully unattended.</p><p><a href=\"https://net-post-panel.digispace.pro\" target=\"_blank\" rel=\"noopener\">net-post-panel.digispace.pro</a></p>"
-        },
-        "uk": {
-          "title": "NetPostPanel",
-          "subtitle": "AI · Laravel · RAG",
-          "content": "<p>AI-платформа контент-операцій — повний RAG-пайплайн: дослідження тем через Google Custom Search і RSS, скрапінг сторінок, мультипровайдерна генерація (Gemini/OpenAI) і векторизація в Qdrant, що дедуплікує матеріали ще до написання. Версійований зовнішній API живить контентні процеси інших застосунків, а Auto Pilot запускає генерацію за розкладом повністю автономно.</p><p><a href=\"https://net-post-panel.digispace.pro\" target=\"_blank\" rel=\"noopener\">net-post-panel.digispace.pro</a></p>"
-        },
-        "pl": {
-          "title": "NetPostPanel",
-          "subtitle": "AI · Laravel · RAG",
-          "content": "<p>Platforma AI do operacji na treściach — pełny pipeline RAG: research tematów przez Google Custom Search i RSS, scraping stron, generowanie multi-provider (Gemini/OpenAI) i wektoryzacja w Qdrant, która deduplikuje materiały przed napisaniem. Wersjonowane zewnętrzne API zasila procesy treściowe innych aplikacji, a Auto Pilot uruchamia generowanie według harmonogramu w pełni autonomicznie.</p><p><a href=\"https://net-post-panel.digispace.pro\" target=\"_blank\" rel=\"noopener\">net-post-panel.digispace.pro</a></p>"
-        }
-      }
-    },
-    {
-      "id": 108,
-      "widget_category_id": 10,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/vetspace.png",
-      "css_class": null,
-      "anchor": null,
-      "element_id": "project-vetspace",
-      "i18n": {
-        "en": {
-          "title": "VetSpace",
-          "subtitle": "Veterinary platform",
-          "content": "<p>A two-sided veterinary platform: an SEO-first public clinic catalog plus a subscription CRM with appointments and patient records. Separate Vue/Nuxt apps sit on a single Laravel API with GraphQL + REST, database-per-tenant isolation, Stripe subscriptions via Cashier, and AI-assisted visit analysis in a dedicated Go microservice.</p><p><a href=\"https://vetspace.pro\" target=\"_blank\" rel=\"noopener\">vetspace.pro</a></p>"
-        },
-        "uk": {
-          "title": "VetSpace",
-          "subtitle": "SaaS · Laravel · Vue",
-          "content": "<p>Двостороння ветеринарна платформа: SEO-каталог клінік плюс CRM за підпискою із записами й картками пацієнтів. Окремі застосунки на Vue/Nuxt працюють на єдиному Laravel API з GraphQL + REST, ізоляцією database-per-tenant, підписками Stripe через Cashier та AI-аналізом візитів в окремому мікросервісі на Go.</p><p><a href=\"https://vetspace.pro\" target=\"_blank\" rel=\"noopener\">vetspace.pro</a></p>"
-        },
-        "pl": {
-          "title": "VetSpace",
-          "subtitle": "SaaS · Laravel · Vue",
-          "content": "<p>Dwustronna platforma weterynaryjna: katalog klinik zorientowany na SEO oraz CRM w subskrypcji z wizytami i kartami pacjentów. Osobne aplikacje Vue/Nuxt działają na jednym Laravel API z GraphQL + REST, izolacją database-per-tenant, subskrypcjami Stripe przez Cashier i analizą wizyt wspomaganą AI w dedykowanym mikroserwisie Go.</p><p><a href=\"https://vetspace.pro\" target=\"_blank\" rel=\"noopener\">vetspace.pro</a></p>"
-        }
-      }
-    },
-    {
-      "id": 109,
-      "widget_category_id": 10,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/vetcard.png",
-      "css_class": null,
-      "anchor": null,
-      "element_id": "project-vetcard",
-      "i18n": {
-        "en": {
-          "title": "VetCard",
-          "subtitle": "Multi-tenant clinic catalog",
-          "content": "<p>A multi-tenant catalog of veterinary clinics — a single Nuxt SSR deployment serves every one of 590+ clinics: SEO clinic pages with structured data, online appointment booking proxied to each clinic's own tenant backend, per-clinic branding, multi-branch support, and full EN/UK/PL localization.</p><p><a href=\"https://vetcard.pro\" target=\"_blank\" rel=\"noopener\">vetcard.pro</a></p>"
-        },
-        "uk": {
-          "title": "VetCard",
-          "subtitle": "Nuxt · Multi-tenant",
-          "content": "<p>Мультитенантний каталог ветеринарних клінік — один Nuxt SSR-застосунок обслуговує всі 590+ клінік: SEO-сторінки зі структурованими даними, онлайн-запис, проксований до власного тенантного бекенду кожної клініки, індивідуальне брендування, підтримка кількох філій і повна локалізація EN/UK/PL.</p><p><a href=\"https://vetcard.pro\" target=\"_blank\" rel=\"noopener\">vetcard.pro</a></p>"
-        },
-        "pl": {
-          "title": "VetCard",
-          "subtitle": "Nuxt · Multi-tenant",
-          "content": "<p>Multi-tenant katalog klinik weterynaryjnych — jedno wdrożenie Nuxt SSR obsługuje wszystkie 590+ klinik: strony SEO z danymi strukturalnymi, rezerwacje online proxyfowane do tenantowego backendu każdej kliniki, branding per klinika, obsługa wielu oddziałów i pełna lokalizacja EN/UK/PL.</p><p><a href=\"https://vetcard.pro\" target=\"_blank\" rel=\"noopener\">vetcard.pro</a></p>"
-        }
-      }
-    },
-    {
-      "id": 110,
-      "widget_category_id": 10,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/digispace.png",
-      "css_class": null,
-      "anchor": null,
-      "element_id": "project-digispace",
-      "i18n": {
-        "en": {
-          "title": "DigiSpace",
-          "subtitle": "Company site + custom CMS",
-          "content": "<p>The agency's multilingual production site and custom CMS in one Laravel app. Public pages, a Filament admin panel running alongside the legacy Inertia + Vue admin, EN/UK/PL content translations, JSON-LD structured data, localized sitemaps and hreflang-aware routing — and the same code that serves digispace.pro is open on GitHub.</p><p><a href=\"https://digispace.pro\" target=\"_blank\" rel=\"noopener\">digispace.pro</a></p>"
-        },
-        "uk": {
-          "title": "DigiSpace",
-          "subtitle": "Laravel · Filament · CMS",
-          "content": "<p>Багатомовний продакшн-сайт агенції та власна CMS в одному Laravel-застосунку. Публічні сторінки, адмін-панель Filament поруч із колишньою Inertia + Vue адмінкою, переклади контенту EN/UK/PL, розмітка JSON-LD, локалізовані sitemap і hreflang-роутинг — і той самий код, що обслуговує digispace.pro, відкритий на GitHub.</p><p><a href=\"https://digispace.pro\" target=\"_blank\" rel=\"noopener\">digispace.pro</a></p>"
-        },
-        "pl": {
-          "title": "DigiSpace",
-          "subtitle": "Laravel · Filament · CMS",
-          "content": "<p>Wielojęzyczna produkcyjna strona agencji i autorski CMS w jednej aplikacji Laravel. Strony publiczne, panel admina Filament obok starszego panelu Inertia + Vue, tłumaczenia treści EN/UK/PL, dane strukturalne JSON-LD, zlokalizowane sitemap i routing hreflang — a ten sam kod, który obsługuje digispace.pro, jest otwarty na GitHub.</p><p><a href=\"https://digispace.pro\" target=\"_blank\" rel=\"noopener\">digispace.pro</a></p>"
-        }
-      }
-    },
-    {
-      "id": 111,
-      "widget_category_id": 10,
-      "icon": "",
-      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/digispace-studio.png",
-      "css_class": null,
-      "anchor": null,
-      "element_id": "project-digispace-studio",
-      "i18n": {
-        "en": {
-          "title": "DigiSpace Studio",
-          "subtitle": "Marketing site for vet clinics",
-          "content": "<p>Marketing site for a niche IT studio focused on veterinary clinics and pet brands. Built on WordPress with the Blocksy theme and Stackable/Gutenberg blocks, a child theme that keeps customizations safe through updates, a blog for content marketing, and lead capture through contact forms.</p><p><a href=\"https://digispace.studio\" target=\"_blank\" rel=\"noopener\">digispace.studio</a></p>"
-        },
-        "uk": {
-          "title": "DigiSpace Studio",
-          "subtitle": "WordPress · SEO",
-          "content": "<p>Маркетинговий сайт нішевої IT-студії, сфокусованої на ветеринарних клініках і pet-брендах. Побудований на WordPress із темою Blocksy та блоками Stackable/Gutenberg, дочірня тема зберігає кастомізації під час оновлень, блог для контент-маркетингу та збір лідів через контактні форми.</p><p><a href=\"https://digispace.studio\" target=\"_blank\" rel=\"noopener\">digispace.studio</a></p>"
-        },
-        "pl": {
-          "title": "DigiSpace Studio",
-          "subtitle": "WordPress · SEO",
-          "content": "<p>Strona marketingowa niszowego studia IT dla klinik weterynaryjnych i marek pet. Zbudowana na WordPress z motywem Blocksy i blokami Stackable/Gutenberg, motyw potomny chroni dostosowania przy aktualizacjach, blog dla content marketingu i pozyskiwanie leadów przez formularze kontaktowe.</p><p><a href=\"https://digispace.studio\" target=\"_blank\" rel=\"noopener\">digispace.studio</a></p>"
-        }
-      }
-    }
-  ]
+    ]
 }
