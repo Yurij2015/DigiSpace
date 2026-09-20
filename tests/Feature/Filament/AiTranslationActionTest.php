@@ -5,63 +5,32 @@ namespace Tests\Feature\Filament;
 use App\Filament\Resources\Pages\Pages\EditPage;
 use App\Filament\Resources\Posts\Pages\CreatePost;
 use App\Filament\Resources\Posts\Pages\EditPost;
-use App\Models\Category;
 use App\Models\Page;
-use App\Models\Post;
 use Database\Seeders\GenerationConfigSeeder;
 use Filament\Actions\Testing\TestAction;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Http;
 use Livewire\Livewire;
 use Tests\TestCase;
 
 class AiTranslationActionTest extends TestCase
 {
+    use FakesNetPostPanel;
     use MakesFilamentAdmin;
     use RefreshDatabase;
-
-    private const MOCK_TITLE = 'Mock Generated Title: AI & Future of Cloud Computing';
 
     protected function setUp(): void
     {
         parent::setUp();
         $this->seed(GenerationConfigSeeder::class);
-
-        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
-        config()->set('services.netpostpanel.key', 'test-api-key');
-
-        Http::fake([
-            'net-post-panel.test/api/v1/translate' => Http::response([
-                'request_id' => 'req-uuid-tr',
-                'status' => 'succeeded',
-                'payload' => [
-                    'name' => self::MOCK_TITLE,
-                    'description' => 'A comprehensive overview of cloud computing architectures and modern engineering patterns.',
-                    'meta' => 'Cloud Computing Architecture | DigiSpace',
-                    'content' => '<p>Mock Content</p>',
-                ],
-            ], 200),
-        ]);
+        $this->fakeNetPostPanel('translate');
     }
 
     public function test_ai_translation_populates_ukrainian_fields_from_english_post(): void
     {
         $admin = $this->actingAsFilamentAdmin();
-        $category = Category::create([
-            'name' => 'Technology',
-            'slug' => 'technology',
-            'description' => 'Technology',
-            'user_id' => $admin->id,
-        ]);
-
-        $post = Post::create([
-            'name' => 'Deep Dive into Cloud Computing',
-            'slug' => 'deep-dive-into-cloud-computing',
-            'content' => '<p>Cloud computing provides scalable infrastructure.</p>',
+        $post = $this->createPostInCategory($admin, [
             'description' => 'A detailed look at cloud systems',
             'keywords' => 'cloud, devops',
-            'category_id' => $category->id,
-            'user_id' => $admin->id,
         ]);
 
         $action = TestAction::make('translateWithAi_uk')->schemaComponent(true, 'form');

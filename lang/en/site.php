@@ -19,6 +19,7 @@ return [
     'language' => 'Language',
     'search' => 'Search...',
     'read_more' => 'Read More',
+    'show_less' => 'Show Less',
     'list_of_services' => 'List of services',
     'service_packages' => 'Service packages',
     'pricing_plans' => 'Pricing Plans',

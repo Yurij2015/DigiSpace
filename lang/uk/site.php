@@ -19,6 +19,7 @@ return [
     'language' => 'Мова',
     'search' => 'Пошук...',
     'read_more' => 'Детальніше',
+    'show_less' => 'Згорнути',
     'list_of_services' => 'Список послуг',
     'service_packages' => 'Пакети послуг',
     'pricing_plans' => 'Тарифні плани',

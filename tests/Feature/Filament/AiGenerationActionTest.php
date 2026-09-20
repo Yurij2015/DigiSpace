@@ -5,42 +5,23 @@ namespace Tests\Feature\Filament;
 use App\Filament\Resources\Pages\Pages\CreatePage;
 use App\Filament\Resources\Posts\Pages\CreatePost;
 use App\Filament\Resources\Posts\Pages\EditPost;
-use App\Models\Category;
-use App\Models\Post;
 use Database\Seeders\GenerationConfigSeeder;
 use Filament\Actions\Testing\TestAction;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Http;
 use Livewire\Livewire;
 use Tests\TestCase;
 
 class AiGenerationActionTest extends TestCase
 {
+    use FakesNetPostPanel;
     use MakesFilamentAdmin;
     use RefreshDatabase;
-
-    private const MOCK_TITLE = 'Mock Generated Title: AI & Future of Cloud Computing';
 
     protected function setUp(): void
     {
         parent::setUp();
         $this->seed(GenerationConfigSeeder::class);
-
-        config()->set('services.netpostpanel.url', 'https://net-post-panel.test');
-        config()->set('services.netpostpanel.key', 'test-api-key');
-
-        Http::fake([
-            'net-post-panel.test/api/v1/generate' => Http::response([
-                'request_id' => 'req-uuid-gen',
-                'status' => 'succeeded',
-                'payload' => [
-                    'name' => self::MOCK_TITLE,
-                    'description' => 'A comprehensive overview of cloud computing architectures and modern engineering patterns.',
-                    'meta' => 'Cloud Computing Architecture | DigiSpace',
-                    'content' => '<p>Mock Content</p>',
-                ],
-            ], 200),
-        ]);
+        $this->fakeNetPostPanel('generate');
     }
 
     public function test_ai_generation_populates_english_post_form_non_destructively(): void
@@ -58,7 +39,7 @@ class AiGenerationActionTest extends TestCase
             ->assertHasNoActionErrors()
             ->assertSchemaStateSet([
                 'name' => self::MOCK_TITLE,
-                'description' => 'A comprehensive overview of cloud computing architectures and modern engineering patterns.',
+                'description' => self::MOCK_DESCRIPTION,
             ]);
 
         $this->assertDatabaseCount('posts', 0);
@@ -74,19 +55,10 @@ class AiGenerationActionTest extends TestCase
     public function test_ai_generation_populates_ukrainian_tab_on_post(): void
     {
         $admin = $this->actingAsFilamentAdmin();
-        $category = Category::create([
-            'name' => 'Tech',
-            'slug' => 'tech',
-            'description' => 'Tech',
-            'user_id' => $admin->id,
-        ]);
-
-        $post = Post::create([
+        $post = $this->createPostInCategory($admin, [
             'name' => 'Existing Post',
             'slug' => 'existing-post',
             'content' => '<p>English body</p>',
-            'category_id' => $category->id,
-            'user_id' => $admin->id,
         ]);
 
         $action = TestAction::make('generateWithAi_uk')->schemaComponent(true, 'form');

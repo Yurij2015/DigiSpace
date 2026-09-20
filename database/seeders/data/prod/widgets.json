@@ -802,17 +802,17 @@
                 "en": {
                     "title": "NetPostPanel",
                     "subtitle": "AI content-operations platform",
-                    "content": "<p>AI content-operations platform — a full RAG pipeline: topic research via Google Custom Search and RSS, page scraping, multi-provider generation (Gemini/OpenAI), and Qdrant vectorization that deduplicates stories before writing. A versioned external API powers content workflows in other apps, and Auto Pilot runs scheduled generation fully unattended.</p>"
+                    "content": "<p>AI content-operations platform — a full RAG pipeline: topic research via Google Custom Search and RSS, page scraping, multi-provider generation (Gemini/OpenAI), and Qdrant vectorization that deduplicates stories before writing. A versioned external API powers content workflows in other apps, and Auto Pilot runs scheduled generation fully unattended.</p><p><a href=\"https://tinyurl.com/net-post-panel\" target=\"_blank\" rel=\"noopener\">tinyurl.com/net-post-panel</a></p>"
                 },
                 "uk": {
                     "title": "NetPostPanel",
                     "subtitle": "AI · Laravel · RAG",
-                    "content": "<p>AI-платформа контент-операцій — повний RAG-пайплайн: дослідження тем через Google Custom Search і RSS, скрапінг сторінок, мультипровайдерна генерація (Gemini/OpenAI) і векторизація в Qdrant, що дедуплікує матеріали ще до написання. Версійований зовнішній API живить контентні процеси інших застосунків, а Auto Pilot запускає генерацію за розкладом повністю автономно.</p>"
+                    "content": "<p>AI-платформа контент-операцій — повний RAG-пайплайн: дослідження тем через Google Custom Search і RSS, скрапінг сторінок, мультипровайдерна генерація (Gemini/OpenAI) і векторизація в Qdrant, що дедуплікує матеріали ще до написання. Версійований зовнішній API живить контентні процеси інших застосунків, а Auto Pilot запускає генерацію за розкладом повністю автономно.</p><p><a href=\"https://tinyurl.com/net-post-panel\" target=\"_blank\" rel=\"noopener\">tinyurl.com/net-post-panel</a></p>"
                 },
                 "pl": {
                     "title": "NetPostPanel",
                     "subtitle": "AI · Laravel · RAG",
-                    "content": "<p>Platforma AI do operacji na treściach — pełny pipeline RAG: research tematów przez Google Custom Search i RSS, scraping stron, generowanie multi-provider (Gemini/OpenAI) i wektoryzacja w Qdrant, która deduplikuje materiały przed napisaniem. Wersjonowane zewnętrzne API zasila procesy treściowe innych aplikacji, a Auto Pilot uruchamia generowanie według harmonogramu w pełni autonomicznie.</p>"
+                    "content": "<p>Platforma AI do operacji na treściach — pełny pipeline RAG: research tematów przez Google Custom Search i RSS, scraping stron, generowanie multi-provider (Gemini/OpenAI) i wektoryzacja w Qdrant, która deduplikuje materiały przed napisaniem. Wersjonowane zewnętrzne API zasila procesy treściowe innych aplikacji, a Auto Pilot uruchamia generowanie według harmonogramu w pełni autonomicznie.</p><p><a href=\"https://tinyurl.com/net-post-panel\" target=\"_blank\" rel=\"noopener\">tinyurl.com/net-post-panel</a></p>"
                 }
             }
         },

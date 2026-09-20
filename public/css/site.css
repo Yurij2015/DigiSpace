@@ -48,3 +48,27 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
 .quote-creative-carousel .owl-item { display: flex; }
 .quote-creative-carousel .owl-item .item { display: flex; flex: 1 1 auto; min-width: 0; }
 .quote-creative-carousel .owl-item .quote-creative { flex: 1 1 auto; }
+
+/* Our Projects: clamp card text to 6 lines with a "read more" toggle */
+.quote-creative__clamp.is-clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.quote-creative__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #00a9ff;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.quote-creative__toggle:hover { text-decoration: underline; }
+.quote-creative__toggle svg { transition: transform .2s ease; }
+.quote-creative__toggle.is-open svg { transform: rotate(180deg); }
