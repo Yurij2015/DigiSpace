@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('title', __('site.service_not_found_title'))
+@section('robots', 'noindex')
 @section('content')
     @include('errors.partials.not-found', [
         'breadcrumb' => __('site.services'),

@@ -28,23 +28,23 @@ class GenerateSitemap extends Command
         $sitemap = Sitemap::create();
 
         foreach (self::STATIC_ROUTES as $routeName) {
-            $sitemap->add($this->localizedUrl($routeName));
+            $sitemap->add($this->localizedUrls($routeName));
         }
 
         foreach (MenuItem::whereHas('pages')->whereNotNull('slug')->pluck('slug') as $slug) {
-            $sitemap->add($this->localizedUrl('pages.page', ['slug' => $slug]));
+            $sitemap->add($this->localizedUrls('pages.page', ['slug' => $slug]));
         }
 
         foreach (Post::where('status', 'published')->pluck('slug') as $slug) {
-            $sitemap->add($this->localizedUrl('blog.post', ['postSlug' => $slug], Url::CHANGE_FREQUENCY_MONTHLY));
+            $sitemap->add($this->localizedUrls('blog.post', ['postSlug' => $slug], Url::CHANGE_FREQUENCY_MONTHLY));
         }
 
         foreach (Category::whereHas('post', fn ($query) => $query->where('status', 'published'))->pluck('slug') as $slug) {
-            $sitemap->add($this->localizedUrl('blog-category', ['categorySlug' => $slug]));
+            $sitemap->add($this->localizedUrls('blog-category', ['categorySlug' => $slug]));
         }
 
         foreach ($blogRepository->getGroupedPosts() as $archiveItem) {
-            $sitemap->add($this->localizedUrl(
+            $sitemap->add($this->localizedUrls(
                 'blog-archive',
                 ['yearMonth' => $archiveItem->year.'-'.$archiveItem->month],
                 Url::CHANGE_FREQUENCY_MONTHLY,
@@ -52,7 +52,7 @@ class GenerateSitemap extends Command
         }
 
         foreach (ServiceCategory::whereNotNull('slug')->pluck('slug') as $slug) {
-            $sitemap->add($this->localizedUrl('category-services', ['serviceCategory' => $slug]));
+            $sitemap->add($this->localizedUrls('category-services', ['serviceCategory' => $slug]));
         }
 
         foreach (Service::where('status', 'active')->with('serviceCategory:id,slug')->get(['slug', 'service_category_id']) as $service) {
@@ -60,7 +60,7 @@ class GenerateSitemap extends Command
                 continue;
             }
 
-            $sitemap->add($this->localizedUrl('category-service', [
+            $sitemap->add($this->localizedUrls('category-service', [
                 'serviceCategory' => $service->serviceCategory->slug,
                 'service' => $service->slug,
             ]));
@@ -74,24 +74,36 @@ class GenerateSitemap extends Command
     }
 
     /**
-     * A localized sitemap entry: <loc> is the default-locale URL, every
-     * supported locale (plus x-default) is listed as an alternate.
+     * Each locale gets an entry with the same complete set of alternates.
      *
      * @param  array<string, string>  $parameters
+     * @return list<Url>
      */
-    private function localizedUrl(string $routeName, array $parameters = [], string $changeFrequency = Url::CHANGE_FREQUENCY_NEVER): Url
+    private function localizedUrls(string $routeName, array $parameters = [], string $changeFrequency = Url::CHANGE_FREQUENCY_NEVER): array
     {
         $locales = config('locales.supported', []);
         $defaultLocale = config('locales.default', $locales[0] ?? 'en');
 
-        $url = Url::create(route($routeName, ['locale' => $defaultLocale] + $parameters))
-            ->setPriority(0.8)
-            ->setChangeFrequency($changeFrequency);
-
+        $alternates = [];
         foreach ($locales as $locale) {
-            $url->addAlternate(route($routeName, ['locale' => $locale] + $parameters), $locale);
+            $alternates[$locale] = route($routeName, ['locale' => $locale] + $parameters);
         }
 
-        return $url->addAlternate(route($routeName, ['locale' => $defaultLocale] + $parameters), 'x-default');
+        $defaultUrl = route($routeName, ['locale' => $defaultLocale] + $parameters);
+        $urls = [];
+
+        foreach ($alternates as $localizedUrl) {
+            $url = Url::create($localizedUrl)
+                ->setPriority(0.8)
+                ->setChangeFrequency($changeFrequency);
+
+            foreach ($alternates as $locale => $alternateUrl) {
+                $url->addAlternate($alternateUrl, $locale);
+            }
+
+            $urls[] = $url->addAlternate($defaultUrl, 'x-default');
+        }
+
+        return $urls;
     }
 }
