@@ -83,9 +83,12 @@ Route::prefix('{locale?}')
     });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth']);
-Route::resource('categories', CategoryController::class)->only(['index', 'show']);
+Route::controller(CategoryController::class)->middleware('auth')->group(function () {
+    Route::get('categories', 'categories')->name('categories.index');
+    Route::get('categories/{category}', 'categoryShow')->name('categories.show');
+});
 
-Route::resource('posts', PublicPostController::class)->only(['index', 'show']);
+Route::resource('posts', PublicPostController::class)->only(['index', 'show'])->middleware('auth');
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware(['auth', 'verified']);
 

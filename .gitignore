@@ -21,6 +21,7 @@ yarn-error.log
 /.vscode
 /public/uploads
 /public/images
+/public/sitemap.xml
 /.sonarlint/
 .env.testing
 /storage/debugbar/

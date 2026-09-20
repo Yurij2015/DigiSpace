@@ -19,7 +19,7 @@
     <body>
         <h1>{{ __('site.not_found_heading') }}</h1>
         <p>{{ __('site.not_found_text') }}</p>
-        <p><a href="{{ url('/') }}">{{ __('site.go_home') }}</a></p>
+        <p><a href="{{ route('home.index', ['locale' => app()->getLocale()]) }}">{{ __('site.go_home') }}</a></p>
     </body>
     </html>
 @endif
