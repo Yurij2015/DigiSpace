@@ -516,17 +516,17 @@
         "en": {
           "title": "What we do",
           "subtitle": "Developing High-quality Apps",
-          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+          "content": "<p>Developing high-quality business applications requires the creation of a product that meets a company's specific requirements and goals. This involves analyzing business processes, identifying key user needs, and carefully planning functionality.</p>\n<p>To achieve success, factors such as design adaptability, intuitiveness of the user interface, speed, scalability, and data security should be considered. High-quality applications contribute to increasing productivity and efficiency in the modern business market.</p>"
         },
         "uk": {
           "title": "Що ми робимо",
           "subtitle": "Розробляємо якісні застосунки",
-          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+          "content": "<p>Розробка якісних бізнес-застосунків вимагає створення продукту, що відповідає конкретним вимогам і цілям компанії. Це передбачає аналіз бізнес-процесів, визначення ключових потреб користувачів та ретельне планування функціональності.</p>\n<p>Для досягнення успіху варто враховувати такі чинники, як адаптивність дизайну, інтуїтивність інтерфейсу користувача, швидкість, масштабованість та безпека даних. Якісні застосунки сприяють підвищенню продуктивності й ефективності на сучасному бізнес-ринку.</p>"
         },
         "pl": {
           "title": "Czym się zajmujemy",
           "subtitle": "Tworzymy aplikacje wysokiej jakości",
-          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+          "content": "<p>Opracowanie wysokiej jakości aplikacji biznesowych wymaga stworzenia produktu, który spełnia konkretne wymagania i cele firmy. Obejmuje to analizę procesów biznesowych, identyfikację kluczowych potrzeb użytkowników oraz staranne planowanie funkcjonalności.</p>\n<p>Aby odnieść sukces, należy wziąć pod uwagę takie czynniki, jak adaptacyjność projektu, intuicyjność interfejsu użytkownika, szybkość, skalowalność i bezpieczeństwo danych. Wysokiej jakości aplikacje przyczyniają się do wzrostu produktywności i efektywności na współczesnym rynku biznesowym.</p>"
         }
       }
     },
@@ -540,19 +540,19 @@
       "element_id": "tabs-about-2",
       "i18n": {
         "en": {
-          "title": "Our Mission",
-          "subtitle": "Providing Reliable Software",
-          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+          "title": "Our mission",
+          "subtitle": "Building Impactful Software Products",
+          "content": "<p>DigiSpace's mission is to create innovative web applications that contribute to the success and competitiveness of our clients' businesses in the market.</p>\n<p>We strive to provide the highest quality service, offering customized solutions and continuously improving our products in response to changes in technology and market needs. Our priorities include providing users with intuitive, reliable, and secure applications, as well as strengthening partnerships and fostering long-term customer relationships.</p>"
         },
         "uk": {
           "title": "Наша місія",
           "subtitle": "Надаємо надійне ПЗ",
-          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+          "content": "<p>Місія DigiSpace — створювати інноваційні вебзастосунки, що сприяють успіху та конкурентоспроможності бізнесу наших клієнтів на ринку.</p>\n<p>Ми прагнемо надавати послуги найвищої якості, пропонуючи індивідуальні рішення та постійно вдосконалюючи наші продукти у відповідь на зміни в технологіях і потребах ринку. Наші пріоритети — надавати користувачам інтуїтивні, надійні та безпечні застосунки, а також зміцнювати партнерські стосунки й розвивати довгострокові відносини з клієнтами.</p>"
         },
         "pl": {
           "title": "Nasza misja",
           "subtitle": "Dostarczamy niezawodne oprogramowanie",
-          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+          "content": "<p>Misją DigiSpace jest tworzenie innowacyjnych aplikacji internetowych, które przyczyniają się do sukcesu i konkurencyjności biznesu naszych klientów na rynku.</p>\n<p>Dążymy do świadczenia usług najwyższej jakości, oferując rozwiązania dostosowane do potrzeb oraz stale ulepszając nasze produkty w odpowiedzi na zmiany w technologii i potrzebach rynku. Naszymi priorytetami są dostarczanie użytkownikom intuicyjnych, niezawodnych i bezpiecznych aplikacji, a także wzmacnianie partnerstw i budowanie długoterminowych relacji z klientami.</p>"
         }
       }
     },
@@ -566,19 +566,19 @@
       "element_id": "tabs-about-3",
       "i18n": {
         "en": {
-          "title": "Our Goal",
-          "subtitle": "Supporting Our Clients",
-          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+          "title": "Our goal",
+          "subtitle": "DigiSpace: Boosting Business Success",
+          "content": "<p>Our aim at DigiSpace is to develop innovative, useful, and reliable web applications that fulfill our customers' needs, support their business growth, and reinforce their market leadership.</p>\n<p>We continually strive to improve our technologies and development methods, collaborate with partners, and train our specialist team. This ensures that we create web applications that not only meet the demands of the modern market, but also exceed user expectations.</p>"
         },
         "uk": {
           "title": "Наша мета",
           "subtitle": "Підтримуємо наших клієнтів",
-          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+          "content": "<p>Наша мета в DigiSpace — розробляти інноваційні, корисні та надійні вебзастосунки, які задовольняють потреби наших клієнтів, підтримують зростання їхнього бізнесу та зміцнюють їхні лідерські позиції на ринку.</p>\n<p>Ми постійно прагнемо вдосконалювати наші технології та методи розробки, співпрацюємо з партнерами та навчаємо нашу команду спеціалістів. Це гарантує, що ми створюємо вебзастосунки, які не лише відповідають вимогам сучасного ринку, а й перевершують очікування користувачів.</p>"
         },
         "pl": {
           "title": "Nasz cel",
           "subtitle": "Wspieramy naszych klientów",
-          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+          "content": "<p>Naszym celem w DigiSpace jest tworzenie innowacyjnych, użytecznych i niezawodnych aplikacji internetowych, które spełniają potrzeby naszych klientów, wspierają rozwój ich biznesu i umacniają ich pozycję lidera na rynku.</p>\n<p>Nieustannie dążymy do doskonalenia naszych technologii i metod tworzenia, współpracujemy z partnerami i szkolimy nasz zespół specjalistów. Dzięki temu tworzymy aplikacje internetowe, które nie tylko odpowiadają wymagom współczesnego rynku, ale także przekraczają oczekiwania użytkowników.</p>"
         }
       }
     },
