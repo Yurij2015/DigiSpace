@@ -6,6 +6,7 @@ use App\Models\Concerns\HasGenerationAttempts;
 use App\Models\Concerns\HasLocalizedContent;
 use App\Models\Concerns\HasTranslatableColumns;
 use Eloquent;
+use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
@@ -105,6 +106,12 @@ class Post extends Model implements HasTranslatableColumns
         return Attribute::make(
             get: static fn ($value) => $value,
         );
+    }
+
+    #[Scope]
+    protected function published(Builder $query): Builder
+    {
+        return $query->where('status', 'published');
     }
 
     public function category(): BelongsTo

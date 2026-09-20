@@ -9,60 +9,14 @@
         $currentRouteParameters = request()->route()?->parameters() ?? [];
         unset($currentRouteParameters['locale']);
 
-        $seoPost = $currentRouteName === 'blog.post' && ($post ?? null) instanceof \App\Models\Post ? $post : null;
-        $seoPage = in_array($currentRouteName, ['pages.page', 'privacy-policy', 'faq', 'support'], true)
-            && ($page ?? null) instanceof \App\Models\Page ? $page : null;
-        $seoService = $currentRouteName === 'category-service' && ($service ?? null) instanceof \App\Models\Service ? $service : null;
-        $seoCategory = in_array($currentRouteName, ['category-service', 'category-services'], true)
-            && ($serviceCategory ?? null) instanceof \App\Models\ServiceCategory ? $serviceCategory : null;
-
-        $metaDescription = match (true) {
-            $seoPost !== null => $seoPost->description,
-            $seoPage !== null => $seoPage->description,
-            $seoService !== null => $seoService->seo_description,
-            $seoCategory !== null => $seoCategory->seo_description,
-            default => null,
-        } ?: __('site.meta_description');
-        $ogTitle = match (true) {
-            $seoPost !== null => $seoPost->name,
-            $seoPage !== null => $seoPage->name,
-            $seoService !== null => $seoService->seo_title ?: $seoService->title,
-            $seoCategory !== null => $seoCategory->seo_title ?: $seoCategory->name,
-            default => null,
-        } ?: $__env->yieldContent('title', __('site.default_title'));
-        $pageImageUrl = null;
-        if ($seoPage !== null && filled($pageImage ?? null)) {
-            $pageImageUrl = match (true) {
-                Str::startsWith($pageImage, ['http://', 'https://']) => $pageImage,
-                Str::startsWith($pageImage, '//') => request()->getScheme().':'.$pageImage,
-                Str::startsWith($pageImage, ['/', 'uploads/']) => asset($pageImage),
-                default => asset('uploads/widgets/'.$pageImage),
-            };
-        }
-        $ogImage = match (true) {
-            $seoPost !== null => $seoPost->img_path ? asset($seoPost->img_path) : null,
-            $seoPage !== null => $pageImageUrl,
-            $seoService !== null => asset($seoService->image),
-            default => null,
-        } ?: asset('images/bg-3-1920x480.jpg');
-        $jsonLd = \App\Support\SchemaMarkup::graph([
-            'route' => $currentRouteName,
-            'url' => url()->current(),
-            'title' => $ogTitle,
-            'description' => $metaDescription,
-            'image' => $ogImage,
-            'locale' => app()->getLocale(),
-            'post' => $seoPost,
-            'page' => $seoPage,
-            'service' => $seoService,
-            'serviceCategory' => $seoCategory,
-            'socials' => isset($headerNavBarContent) ? [
-                $headerNavBarContent->first_soc_button_href,
-                $headerNavBarContent->second_soc_button_href,
-                $headerNavBarContent->third_soc_button_href,
-                $headerNavBarContent->fourth_soc_button_href,
-            ] : [],
-        ]);
+        extract(\App\Support\SeoMeta::resolve([
+            'post' => $post ?? null,
+            'page' => $page ?? null,
+            'service' => $service ?? null,
+            'serviceCategory' => $serviceCategory ?? null,
+            'pageImage' => $pageImage ?? null,
+            'headerNavBarContent' => $headerNavBarContent ?? null,
+        ], $currentRouteName, $__env->yieldContent('title', __('site.default_title'))));
     @endphp
     <meta name="description" content="{{ Str::limit($metaDescription, 157) }}">
     @if($__env->yieldContent('robots') === 'noindex' || request()->routeIs('blog-search', 'service-search', 'error-404'))
