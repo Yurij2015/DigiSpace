@@ -9,6 +9,7 @@ return [
     'PAGE_SUBMENU_THIRD' => 4,
     'NUMBER_POSTS_IN_MENU' => 6, // TODO - add to settings number of posts in menu
     'NUMBER_POSTS_IN_BLOG_PAGE' => 3, // TODO - add to settings number of posts in blog page
+    'FACTS_WIDGET_CATEGORY' => 9,
     'CHOOSE_US_WIDGET_CATEGORY' => 12,
     'ANSWERS_QUESTIONS_WIDGET_CATEGORY' => 13,
     'WIDGET_CATEGORY_PROJECTS' => 10,
