@@ -1,8 +1,47 @@
 # DigiSpace
 
-Company website, blog and service catalogue for [digispace.pro](https://digispace.pro), with a built-in admin panel.
+Company website, blog and service catalogue for [digispace.pro](https://digispace.pro), with a built-in admin panel — a full custom CMS, not a themed template.
 
 **Stack:** Laravel 13 · PHP ^8.3 · MySQL 8 · Blade (public site) · Inertia.js + Vue 3 (admin) · Vite · Tailwind · Sanctum
+
+**Live:** [digispace.pro](https://digispace.pro) — production, multilingual (EN / UK / PL)
+
+## Screenshots
+
+| Home (EN) | Services | Pricing |
+|---|---|---|
+| ![Home](docs/screenshots/home.png) | ![Services](docs/screenshots/services.png) | ![Pricing](docs/screenshots/pricing.png) |
+
+| Blog | Contact form | Home (UK) |
+|---|---|---|
+| ![Blog](docs/screenshots/blog.png) | ![Contact](docs/screenshots/contact.png) | ![Home UK](docs/screenshots/home-uk.png) |
+
+## Architecture
+
+```mermaid
+flowchart LR
+    subgraph Public["Public site — Blade SSR"]
+        PAGES[Pages · blog · services · pricing]
+        FORMS[Lead forms · reCAPTCHA]
+        SEO[JSON-LD · hreflang · sitemap]
+    end
+
+    subgraph Admin["Admin panel — Inertia + Vue 3"]
+        CMS[Posts · pages · widgets · menus · banners · portfolio]
+        MEDIA[Media library — MinIO/S3]
+        CRM[Zoho CRM lead sync]
+    end
+
+    DB[(MySQL 8)]
+    EXT[Zoho CRM · Google reCAPTCHA · Sentry · MinIO]
+
+    Public --> DB
+    Admin --> DB
+    FORMS --> CRM
+    Admin --> EXT
+```
+
+Domain behaviour is specified in [`openspec/specs/`](openspec/specs/) — public-site UX, admin content editing, localization and content generation, verified against the code.
 
 ## Quick start
 
@@ -56,6 +95,16 @@ npm run build                             # production assets
 - [Testing](docs/testing.md)
 - [Deployment](docs/deployment/README.md)
 - [Integrations (Zoho CRM, reCAPTCHA, MinIO, Sentry, TinyMCE)](docs/integrations.md)
+
+## Explore & contact
+
+- **[Live site](https://digispace.pro)** — production (EN / UK / PL)
+- **[Domain specs](openspec/specs/)** — behavioural contracts in the project's OpenSpec format
+- **[Docs](docs/README.md)** — architecture, content model, integrations, deployment
+
+Built and maintained by **[Yurii Mokryi](https://yuriimokryi.vercel.app/)** — product owner & lead developer.
+
+[Portfolio](https://yuriimokryi.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/yurii-mokryi/) · [Telegram](https://t.me/YuriiMokryi) · [GitHub](https://github.com/Yurij2015)
 
 ## License
 
