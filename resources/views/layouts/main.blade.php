@@ -25,10 +25,28 @@
             ? (Str::startsWith($pageImage, ['http', '/']) ? $pageImage : asset('uploads/widgets/'.$pageImage))
             : null;
         $ogImage = match (true) {
-            isset($post) => $post->img_path,
+            isset($post) => $post->img_path ? asset($post->img_path) : null,
             isset($page) => $pageImageUrl,
             default => null,
         } ?: asset('images/bg-3-1920x480.jpg');
+        $jsonLd = \App\Support\SchemaMarkup::graph([
+            'route' => $currentRouteName,
+            'url' => url()->current(),
+            'title' => $ogTitle,
+            'description' => $metaDescription,
+            'image' => $ogImage,
+            'locale' => app()->getLocale(),
+            'post' => $post ?? null,
+            'page' => $page ?? null,
+            'service' => $service ?? null,
+            'serviceCategory' => $serviceCategory ?? null,
+            'socials' => isset($headerNavBarContent) ? [
+                $headerNavBarContent->first_soc_button_href,
+                $headerNavBarContent->second_soc_button_href,
+                $headerNavBarContent->third_soc_button_href,
+                $headerNavBarContent->fourth_soc_button_href,
+            ] : [],
+        ]);
     @endphp
     <meta name="description" content="{{ Str::limit($metaDescription, 157) }}">
     @if(request()->routeIs('blog-search', 'service-search', 'error-404'))
@@ -58,6 +76,7 @@
     <meta name="twitter:title" content="{{ $ogTitle }}"/>
     <meta name="twitter:description" content="{{ Str::limit($metaDescription, 200) }}"/>
     <meta name="twitter:image" content="{{ $ogImage }}"/>
+    <script type="application/ld+json">{!! json_encode($jsonLd, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) !!}</script>
     @if(isset($post))
         <meta name="keywords" content="{{ $post->name }}"/>
     @elseif(isset($page))
