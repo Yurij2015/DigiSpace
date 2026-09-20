@@ -867,6 +867,162 @@
           "content": "<p>WordPress to szeroko stosowany system zarządzania treścią (CMS), który umożliwia użytkownikom tworzenie i utrzymywanie stron internetowych bez potrzeby posiadania rozległej wiedzy z zakresu kodowania lub techniki. Dzięki tysiącom dostępnych motywów i wtyczek WordPress pozwala tworzyć atrakcyjne wizualnie i wysoce funkcjonalne strony internetowe dla różnych branż i celów, w tym blogi, portfolio, e-commerce, serwisy informacyjne i inne.</p>"
         }
       }
+    },
+    {
+      "id": 106,
+      "widget_category_id": 10,
+      "icon": "",
+      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/digipulse.png",
+      "css_class": null,
+      "anchor": null,
+      "element_id": "project-digipulse",
+      "i18n": {
+        "en": {
+          "title": "DigiPulse",
+          "subtitle": "Uptime monitoring SaaS",
+          "content": "<p>Uptime monitoring SaaS — 60-second availability checks, SSL expiry tracking, and Telegram/email alerts. The backend and admin panel run on Laravel (Octane, Reverb) with Filament, while a dedicated Go engine handles constant polling without slowing the app down. An MCP server exposes monitors and incidents directly to AI assistants, and the whole stack is self-hosted on Proxmox.</p><p><a href=\"https://digipulse.cloud\" target=\"_blank\" rel=\"noopener\">digipulse.cloud</a></p>"
+        },
+        "uk": {
+          "title": "DigiPulse",
+          "subtitle": "SaaS · Laravel · Go",
+          "content": "<p>SaaS моніторингу аптайму — перевірки доступності кожні 60 секунд, відстеження SSL і сповіщення в Telegram/email. Бекенд і адмінка на Laravel (Octane, Reverb) з Filament, а окремий рушій на Go виконує постійні опитування, не сповільнюючи застосунок. MCP-сервер віддає дані моніторів AI-асистентам, увесь стек — self-hosted на Proxmox.</p><p><a href=\"https://digipulse.cloud\" target=\"_blank\" rel=\"noopener\">digipulse.cloud</a></p>"
+        },
+        "pl": {
+          "title": "DigiPulse",
+          "subtitle": "SaaS · Laravel · Go",
+          "content": "<p>SaaS monitorowania uptime — sprawdzanie dostępności co 60 sekund, śledzenie wygasania SSL i powiadomienia Telegram/email. Backend i panel admina na Laravel (Octane, Reverb) z Filament, a osobny silnik w Go obsługuje ciągłe odpytywanie nie spowalniając aplikacji. Serwer MCP udostępnia dane monitorów asystentom AI, cały stack self-hosted na Proxmox.</p><p><a href=\"https://digipulse.cloud\" target=\"_blank\" rel=\"noopener\">digipulse.cloud</a></p>"
+        }
+      }
+    },
+    {
+      "id": 107,
+      "widget_category_id": 10,
+      "icon": "",
+      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/netpostpanel.png",
+      "css_class": null,
+      "anchor": null,
+      "element_id": "project-netpostpanel",
+      "i18n": {
+        "en": {
+          "title": "NetPostPanel",
+          "subtitle": "AI content-operations platform",
+          "content": "<p>AI content-operations platform — a full RAG pipeline: topic research via Google Custom Search and RSS, page scraping, multi-provider generation (Gemini/OpenAI), and Qdrant vectorization that deduplicates stories before writing. A versioned external API powers content workflows in other apps, and Auto Pilot runs scheduled generation fully unattended.</p><p><a href=\"https://net-post-panel.digispace.pro\" target=\"_blank\" rel=\"noopener\">net-post-panel.digispace.pro</a></p>"
+        },
+        "uk": {
+          "title": "NetPostPanel",
+          "subtitle": "AI · Laravel · RAG",
+          "content": "<p>AI-платформа контент-операцій — повний RAG-пайплайн: дослідження тем через Google Custom Search і RSS, скрапінг сторінок, мультипровайдерна генерація (Gemini/OpenAI) і векторизація в Qdrant, що дедуплікує матеріали ще до написання. Версійований зовнішній API живить контентні процеси інших застосунків, а Auto Pilot запускає генерацію за розкладом повністю автономно.</p><p><a href=\"https://net-post-panel.digispace.pro\" target=\"_blank\" rel=\"noopener\">net-post-panel.digispace.pro</a></p>"
+        },
+        "pl": {
+          "title": "NetPostPanel",
+          "subtitle": "AI · Laravel · RAG",
+          "content": "<p>Platforma AI do operacji na treściach — pełny pipeline RAG: research tematów przez Google Custom Search i RSS, scraping stron, generowanie multi-provider (Gemini/OpenAI) i wektoryzacja w Qdrant, która deduplikuje materiały przed napisaniem. Wersjonowane zewnętrzne API zasila procesy treściowe innych aplikacji, a Auto Pilot uruchamia generowanie według harmonogramu w pełni autonomicznie.</p><p><a href=\"https://net-post-panel.digispace.pro\" target=\"_blank\" rel=\"noopener\">net-post-panel.digispace.pro</a></p>"
+        }
+      }
+    },
+    {
+      "id": 108,
+      "widget_category_id": 10,
+      "icon": "",
+      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/vetspace.png",
+      "css_class": null,
+      "anchor": null,
+      "element_id": "project-vetspace",
+      "i18n": {
+        "en": {
+          "title": "VetSpace",
+          "subtitle": "Veterinary platform",
+          "content": "<p>A two-sided veterinary platform: an SEO-first public clinic catalog plus a subscription CRM with appointments and patient records. Separate Vue/Nuxt apps sit on a single Laravel API with GraphQL + REST, database-per-tenant isolation, Stripe subscriptions via Cashier, and AI-assisted visit analysis in a dedicated Go microservice.</p><p><a href=\"https://vetspace.pro\" target=\"_blank\" rel=\"noopener\">vetspace.pro</a></p>"
+        },
+        "uk": {
+          "title": "VetSpace",
+          "subtitle": "SaaS · Laravel · Vue",
+          "content": "<p>Двостороння ветеринарна платформа: SEO-каталог клінік плюс CRM за підпискою із записами й картками пацієнтів. Окремі застосунки на Vue/Nuxt працюють на єдиному Laravel API з GraphQL + REST, ізоляцією database-per-tenant, підписками Stripe через Cashier та AI-аналізом візитів в окремому мікросервісі на Go.</p><p><a href=\"https://vetspace.pro\" target=\"_blank\" rel=\"noopener\">vetspace.pro</a></p>"
+        },
+        "pl": {
+          "title": "VetSpace",
+          "subtitle": "SaaS · Laravel · Vue",
+          "content": "<p>Dwustronna platforma weterynaryjna: katalog klinik zorientowany na SEO oraz CRM w subskrypcji z wizytami i kartami pacjentów. Osobne aplikacje Vue/Nuxt działają na jednym Laravel API z GraphQL + REST, izolacją database-per-tenant, subskrypcjami Stripe przez Cashier i analizą wizyt wspomaganą AI w dedykowanym mikroserwisie Go.</p><p><a href=\"https://vetspace.pro\" target=\"_blank\" rel=\"noopener\">vetspace.pro</a></p>"
+        }
+      }
+    },
+    {
+      "id": 109,
+      "widget_category_id": 10,
+      "icon": "",
+      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/vetcard.png",
+      "css_class": null,
+      "anchor": null,
+      "element_id": "project-vetcard",
+      "i18n": {
+        "en": {
+          "title": "VetCard",
+          "subtitle": "Multi-tenant clinic catalog",
+          "content": "<p>A multi-tenant catalog of veterinary clinics — a single Nuxt SSR deployment serves every one of 590+ clinics: SEO clinic pages with structured data, online appointment booking proxied to each clinic's own tenant backend, per-clinic branding, multi-branch support, and full EN/UK/PL localization.</p><p><a href=\"https://vetcard.pro\" target=\"_blank\" rel=\"noopener\">vetcard.pro</a></p>"
+        },
+        "uk": {
+          "title": "VetCard",
+          "subtitle": "Nuxt · Multi-tenant",
+          "content": "<p>Мультитенантний каталог ветеринарних клінік — один Nuxt SSR-застосунок обслуговує всі 590+ клінік: SEO-сторінки зі структурованими даними, онлайн-запис, проксований до власного тенантного бекенду кожної клініки, індивідуальне брендування, підтримка кількох філій і повна локалізація EN/UK/PL.</p><p><a href=\"https://vetcard.pro\" target=\"_blank\" rel=\"noopener\">vetcard.pro</a></p>"
+        },
+        "pl": {
+          "title": "VetCard",
+          "subtitle": "Nuxt · Multi-tenant",
+          "content": "<p>Multi-tenant katalog klinik weterynaryjnych — jedno wdrożenie Nuxt SSR obsługuje wszystkie 590+ klinik: strony SEO z danymi strukturalnymi, rezerwacje online proxyfowane do tenantowego backendu każdej kliniki, branding per klinika, obsługa wielu oddziałów i pełna lokalizacja EN/UK/PL.</p><p><a href=\"https://vetcard.pro\" target=\"_blank\" rel=\"noopener\">vetcard.pro</a></p>"
+        }
+      }
+    },
+    {
+      "id": 110,
+      "widget_category_id": 10,
+      "icon": "",
+      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/digispace.png",
+      "css_class": null,
+      "anchor": null,
+      "element_id": "project-digispace",
+      "i18n": {
+        "en": {
+          "title": "DigiSpace",
+          "subtitle": "Company site + custom CMS",
+          "content": "<p>The agency's multilingual production site and custom CMS in one Laravel app. Public pages, a Filament admin panel running alongside the legacy Inertia + Vue admin, EN/UK/PL content translations, JSON-LD structured data, localized sitemaps and hreflang-aware routing — and the same code that serves digispace.pro is open on GitHub.</p><p><a href=\"https://digispace.pro\" target=\"_blank\" rel=\"noopener\">digispace.pro</a></p>"
+        },
+        "uk": {
+          "title": "DigiSpace",
+          "subtitle": "Laravel · Filament · CMS",
+          "content": "<p>Багатомовний продакшн-сайт агенції та власна CMS в одному Laravel-застосунку. Публічні сторінки, адмін-панель Filament поруч із колишньою Inertia + Vue адмінкою, переклади контенту EN/UK/PL, розмітка JSON-LD, локалізовані sitemap і hreflang-роутинг — і той самий код, що обслуговує digispace.pro, відкритий на GitHub.</p><p><a href=\"https://digispace.pro\" target=\"_blank\" rel=\"noopener\">digispace.pro</a></p>"
+        },
+        "pl": {
+          "title": "DigiSpace",
+          "subtitle": "Laravel · Filament · CMS",
+          "content": "<p>Wielojęzyczna produkcyjna strona agencji i autorski CMS w jednej aplikacji Laravel. Strony publiczne, panel admina Filament obok starszego panelu Inertia + Vue, tłumaczenia treści EN/UK/PL, dane strukturalne JSON-LD, zlokalizowane sitemap i routing hreflang — a ten sam kod, który obsługuje digispace.pro, jest otwarty na GitHub.</p><p><a href=\"https://digispace.pro\" target=\"_blank\" rel=\"noopener\">digispace.pro</a></p>"
+        }
+      }
+    },
+    {
+      "id": 111,
+      "widget_category_id": 10,
+      "icon": "",
+      "widget_image": "https://api.minio-storage.digispace.pro/digispace-prod/widgets/projects/digispace-studio.png",
+      "css_class": null,
+      "anchor": null,
+      "element_id": "project-digispace-studio",
+      "i18n": {
+        "en": {
+          "title": "DigiSpace Studio",
+          "subtitle": "Marketing site for vet clinics",
+          "content": "<p>Marketing site for a niche IT studio focused on veterinary clinics and pet brands. Built on WordPress with the Blocksy theme and Stackable/Gutenberg blocks, a child theme that keeps customizations safe through updates, a blog for content marketing, and lead capture through contact forms.</p><p><a href=\"https://digispace.studio\" target=\"_blank\" rel=\"noopener\">digispace.studio</a></p>"
+        },
+        "uk": {
+          "title": "DigiSpace Studio",
+          "subtitle": "WordPress · SEO",
+          "content": "<p>Маркетинговий сайт нішевої IT-студії, сфокусованої на ветеринарних клініках і pet-брендах. Побудований на WordPress із темою Blocksy та блоками Stackable/Gutenberg, дочірня тема зберігає кастомізації під час оновлень, блог для контент-маркетингу та збір лідів через контактні форми.</p><p><a href=\"https://digispace.studio\" target=\"_blank\" rel=\"noopener\">digispace.studio</a></p>"
+        },
+        "pl": {
+          "title": "DigiSpace Studio",
+          "subtitle": "WordPress · SEO",
+          "content": "<p>Strona marketingowa niszowego studia IT dla klinik weterynaryjnych i marek pet. Zbudowana na WordPress z motywem Blocksy i blokami Stackable/Gutenberg, motyw potomny chroni dostosowania przy aktualizacjach, blog dla content marketingu i pozyskiwanie leadów przez formularze kontaktowe.</p><p><a href=\"https://digispace.studio\" target=\"_blank\" rel=\"noopener\">digispace.studio</a></p>"
+        }
+      }
     }
   ]
 }
