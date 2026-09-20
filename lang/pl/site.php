@@ -20,6 +20,7 @@ return [
     'search' => 'Szukaj...',
     'read_more' => 'Czytaj więcej',
     'list_of_services' => 'Lista usług',
+    'service_packages' => 'Pakiety usług',
     'pricing_plans' => 'Plany cenowe',
     'not_found_title' => 'DigiSpace | Nie znaleziono strony',
     'not_found_breadcrumb' => 'Nie znaleziono strony',

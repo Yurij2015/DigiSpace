@@ -98,19 +98,19 @@
       "element_id": null,
       "i18n": {
         "en": {
-          "title": "Customers",
+          "title": "Years on the market",
           "subtitle": "",
-          "content": "50"
+          "content": "6"
         },
         "uk": {
-          "title": "Клієнти",
+          "title": "Років на ринку",
           "subtitle": "",
-          "content": "50"
+          "content": "6"
         },
         "pl": {
-          "title": "Klienci",
+          "title": "Lat na rynku",
           "subtitle": "",
-          "content": "50"
+          "content": "6"
         }
       }
     },
@@ -125,18 +125,18 @@
       "i18n": {
         "en": {
           "title": "Technologies",
-          "subtitle": null,
-          "content": "25"
+          "subtitle": "",
+          "content": "15"
         },
         "uk": {
-          "title": "Технології",
-          "subtitle": null,
-          "content": "25"
+          "title": "Технологій",
+          "subtitle": "",
+          "content": "15"
         },
         "pl": {
-          "title": "Technologie",
-          "subtitle": null,
-          "content": "25"
+          "title": "Technologii",
+          "subtitle": "",
+          "content": "15"
         }
       }
     },
@@ -152,17 +152,17 @@
         "en": {
           "title": "Projects",
           "subtitle": "",
-          "content": "99"
+          "content": "25"
         },
         "uk": {
-          "title": "Проєкти",
+          "title": "Проєктів",
           "subtitle": "",
-          "content": "99"
+          "content": "25"
         },
         "pl": {
-          "title": "Projekty",
+          "title": "Projektów",
           "subtitle": "",
-          "content": "99"
+          "content": "25"
         }
       }
     },
@@ -176,19 +176,19 @@
       "element_id": null,
       "i18n": {
         "en": {
-          "title": "Code rows",
+          "title": "Lines of code",
           "subtitle": "",
-          "content": "99"
+          "content": "285"
         },
         "uk": {
-          "title": "Рядки коду",
+          "title": "Рядків коду",
           "subtitle": "",
-          "content": "99"
+          "content": "285"
         },
         "pl": {
-          "title": "Wiersze kodu",
+          "title": "Wierszy kodu",
           "subtitle": "",
-          "content": "99"
+          "content": "285"
         }
       }
     },

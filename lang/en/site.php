@@ -20,6 +20,7 @@ return [
     'search' => 'Search...',
     'read_more' => 'Read More',
     'list_of_services' => 'List of services',
+    'service_packages' => 'Service packages',
     'pricing_plans' => 'Pricing Plans',
     'not_found_title' => 'DigiSpace | Page not found',
     'not_found_breadcrumb' => 'Page not found',

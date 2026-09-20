@@ -63,6 +63,10 @@ class ContentServiceProvider extends ServiceProvider
                     ->latest()
                     ->limit(config('constants.NUMBER_POSTS_IN_MENU'))
                     ->get(),
+                'factsWidgets' => Widget::where('widget_category_id', config('constants.FACTS_WIDGET_CATEGORY'))
+                    ->orderBy('id')
+                    ->take(4)
+                    ->get(),
                 'footerUsefulLinks' => FooterUsefulLink::query()->where('status', true)->take(20)->get(),
                 'footerLatestNews' => Post::published()->latest()->take(2)->get(),
                 'headerNavBarContent' => HeaderNavBarContent::query()->first(),
