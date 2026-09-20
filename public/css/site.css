@@ -72,3 +72,9 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
 .quote-creative__toggle:hover { text-decoration: underline; }
 .quote-creative__toggle svg { transition: transform .2s ease; }
 .quote-creative__toggle.is-open svg { transform: rotate(180deg); }
+
+/* Contact form: reCAPTCHA widget is fixed 304px — keep it inside its column, centered */
+.g-recaptcha { max-width: 100%; display: flex; justify-content: center; }
+@media (max-width: 360px) {
+  .g-recaptcha { transform: scale(.92); transform-origin: center top; }
+}

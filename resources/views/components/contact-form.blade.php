@@ -59,13 +59,13 @@
                 <span class="m-0 recaptchaStyle" role="alert">{{ $message }}</span>
             </div>
         @enderror
-        <div class="col-md-6">
+        <div class="col-12">
             <div class="g-recaptcha"
                  data-size="normal"
                  data-sitekey="{{ config('services.recaptcha.site_key') }}"
             ></div>
         </div>
-        <div class="col-md-6 send-message-button">
+        <div class="col-12 send-message-button">
             <button class="button button-block button-primary button-ujarak" type="submit">{{ __('site.send_message') }}</button>
         </div>
     </div>
