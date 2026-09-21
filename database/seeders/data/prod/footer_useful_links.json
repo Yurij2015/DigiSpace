@@ -1,96 +1,164 @@
 {
-  "table": "footer_useful_links",
-  "identity": [
-    "name"
-  ],
-  "translatable": [
-    "name"
-  ],
-  "rows": [
-    {
-      "id": 6,
-      "url": "https://www.freepik.com/",
-      "status": 1,
-      "position": 2,
-      "i18n": {
-        "en": {
-          "name": "Freepik"
+    "table": "footer_useful_links",
+    "identity": [
+        "name"
+    ],
+    "translatable": [
+        "name"
+    ],
+    "rows": [
+        {
+            "id": 1,
+            "url": "about",
+            "status": 1,
+            "position": 1,
+            "i18n": {
+                "en": {
+                    "name": "About"
+                },
+                "uk": {
+                    "name": "Про нас"
+                },
+                "pl": {
+                    "name": "O nas"
+                }
+            }
         },
-        "uk": {
-          "name": "Freepik"
+        {
+            "id": 2,
+            "url": "services",
+            "status": 1,
+            "position": 1,
+            "i18n": {
+                "en": {
+                    "name": "Services"
+                },
+                "uk": {
+                    "name": "Послуги"
+                },
+                "pl": {
+                    "name": "Usługi"
+                }
+            }
         },
-        "pl": {
-          "name": "Freepik"
+        {
+            "id": 3,
+            "url": "pricing",
+            "status": 1,
+            "position": 1,
+            "i18n": {
+                "en": {
+                    "name": "Pricing"
+                },
+                "uk": {
+                    "name": "Ціни"
+                },
+                "pl": {
+                    "name": "Cennik"
+                }
+            }
+        },
+        {
+            "id": 4,
+            "url": "blog",
+            "status": 1,
+            "position": 1,
+            "i18n": {
+                "en": {
+                    "name": "Blog"
+                },
+                "uk": {
+                    "name": "Блог"
+                },
+                "pl": {
+                    "name": "Blog"
+                }
+            }
+        },
+        {
+            "id": 5,
+            "url": "contact-us",
+            "status": 1,
+            "position": 1,
+            "i18n": {
+                "en": {
+                    "name": "Contact us"
+                },
+                "uk": {
+                    "name": "Зв'язатися з нами"
+                },
+                "pl": {
+                    "name": "Kontakt"
+                }
+            }
+        },
+        {
+            "id": 6,
+            "url": "pages/faq",
+            "status": 1,
+            "position": 2,
+            "i18n": {
+                "en": {
+                    "name": "FAQ"
+                },
+                "uk": {
+                    "name": "FAQ"
+                },
+                "pl": {
+                    "name": "FAQ"
+                }
+            }
+        },
+        {
+            "id": 7,
+            "url": "pages/support",
+            "status": 1,
+            "position": 2,
+            "i18n": {
+                "en": {
+                    "name": "Support"
+                },
+                "uk": {
+                    "name": "Підтримка"
+                },
+                "pl": {
+                    "name": "Wsparcie"
+                }
+            }
+        },
+        {
+            "id": 8,
+            "url": "pages/privacy-policy",
+            "status": 1,
+            "position": 2,
+            "i18n": {
+                "en": {
+                    "name": "Privacy Policy"
+                },
+                "uk": {
+                    "name": "Політика конфіденційності"
+                },
+                "pl": {
+                    "name": "Polityka prywatności"
+                }
+            }
+        },
+        {
+            "id": 9,
+            "url": "https://www.freepik.com/",
+            "status": 1,
+            "position": 2,
+            "i18n": {
+                "en": {
+                    "name": "Freepik"
+                },
+                "uk": {
+                    "name": "Freepik"
+                },
+                "pl": {
+                    "name": "Freepik"
+                }
+            }
         }
-      }
-    },
-    {
-      "id": 7,
-      "url": "https://www.docker.com/",
-      "status": 1,
-      "position": 2,
-      "i18n": {
-        "en": {
-          "name": "Docker"
-        },
-        "uk": {
-          "name": "Docker"
-        },
-        "pl": {
-          "name": "Docker"
-        }
-      }
-    },
-    {
-      "id": 8,
-      "url": "https://pptr.dev/",
-      "status": 1,
-      "position": 2,
-      "i18n": {
-        "en": {
-          "name": "Puppeteer"
-        },
-        "uk": {
-          "name": "Puppeteer"
-        },
-        "pl": {
-          "name": "Puppeteer"
-        }
-      }
-    },
-    {
-      "id": 9,
-      "url": "https://www.php.net/",
-      "status": 1,
-      "position": 2,
-      "i18n": {
-        "en": {
-          "name": "PHP"
-        },
-        "uk": {
-          "name": "PHP"
-        },
-        "pl": {
-          "name": "PHP"
-        }
-      }
-    },
-    {
-      "id": 10,
-      "url": "https://www.mysql.com/",
-      "status": 1,
-      "position": 2,
-      "i18n": {
-        "en": {
-          "name": "MySQL"
-        },
-        "uk": {
-          "name": "MySQL"
-        },
-        "pl": {
-          "name": "MySQL"
-        }
-      }
-    }
-  ]
+    ]
 }

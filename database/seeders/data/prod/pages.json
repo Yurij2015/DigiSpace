@@ -427,7 +427,7 @@
             "id": 19,
             "page_category_id": 1,
             "slug": "privacy-policy",
-            "menu_item_id": null,
+            "menu_item_id": 26,
             "i18n": {
                 "en": {
                     "name": "Privacy Policy",
@@ -456,7 +456,7 @@
             "id": 20,
             "page_category_id": 1,
             "slug": "faq",
-            "menu_item_id": null,
+            "menu_item_id": 24,
             "i18n": {
                 "en": {
                     "name": "FAQ",
@@ -485,7 +485,7 @@
             "id": 21,
             "page_category_id": 1,
             "slug": "support",
-            "menu_item_id": null,
+            "menu_item_id": 25,
             "i18n": {
                 "en": {
                     "name": "Support",

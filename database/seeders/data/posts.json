@@ -1,304 +1,217 @@
 {
-  "table": "posts",
-  "identity": [
-    "slug"
-  ],
-  "translatable": [
-    "name",
-    "content",
-    "description",
-    "keywords"
-  ],
-  "rows": [
-    {
-      "id": 1,
-      "category_id": 1,
-      "slug": "post-1",
-      "status": "published",
-      "img_path": "img_path",
-      "user_id": 1,
-      "menu_item_id": null,
-      "i18n": {
-        "en": {
-          "name": "Post 1",
-          "content": "Post 1",
-          "description": null,
-          "keywords": null
+    "table": "posts",
+    "identity": [
+        "slug"
+    ],
+    "translatable": [
+        "name",
+        "content",
+        "description",
+        "keywords"
+    ],
+    "rows": [
+        {
+            "id": 1,
+            "category_id": 1,
+            "slug": "post-1",
+            "status": "published",
+            "img_path": "img_path",
+            "user_id": 1,
+            "menu_item_id": null,
+            "i18n": {
+                "en": {
+                    "name": "Post 1",
+                    "content": "Post 1",
+                    "description": null,
+                    "keywords": null
+                },
+                "uk": {
+                    "name": "Пост 1",
+                    "content": "Пост 1",
+                    "description": null,
+                    "keywords": null
+                },
+                "pl": {
+                    "name": "Wpis 1",
+                    "content": "Wpis 1",
+                    "description": null,
+                    "keywords": null
+                }
+            }
         },
-        "uk": {
-          "name": "Пост 1",
-          "content": "Пост 1",
-          "description": null,
-          "keywords": null
+        {
+            "id": 2,
+            "category_id": 1,
+            "slug": "post-2",
+            "status": "published",
+            "img_path": "img_path",
+            "user_id": 1,
+            "menu_item_id": null,
+            "i18n": {
+                "en": {
+                    "name": "Post 2",
+                    "content": "Content 2",
+                    "description": null,
+                    "keywords": null
+                },
+                "uk": {
+                    "name": "Пост 2",
+                    "content": "Вміст 2",
+                    "description": null,
+                    "keywords": null
+                },
+                "pl": {
+                    "name": "Wpis 2",
+                    "content": "Treść 2",
+                    "description": null,
+                    "keywords": null
+                }
+            }
         },
-        "pl": {
-          "name": "Wpis 1",
-          "content": "Wpis 1",
-          "description": null,
-          "keywords": null
+        {
+            "id": 3,
+            "category_id": 1,
+            "slug": "post-3",
+            "status": "published",
+            "img_path": "img_path",
+            "user_id": 1,
+            "menu_item_id": null,
+            "i18n": {
+                "en": {
+                    "name": "Post 3",
+                    "content": "Content 3",
+                    "description": null,
+                    "keywords": null
+                },
+                "uk": {
+                    "name": "Пост 3",
+                    "content": "Вміст 3",
+                    "description": null,
+                    "keywords": null
+                },
+                "pl": {
+                    "name": "Wpis 3",
+                    "content": "Treść 3",
+                    "description": null,
+                    "keywords": null
+                }
+            }
+        },
+        {
+            "id": 4,
+            "category_id": 1,
+            "slug": "post-4",
+            "status": "published",
+            "img_path": "img_path",
+            "user_id": 1,
+            "menu_item_id": null,
+            "i18n": {
+                "en": {
+                    "name": "Post 4",
+                    "content": "Content 4",
+                    "description": null,
+                    "keywords": null
+                },
+                "uk": {
+                    "name": "Пост 4",
+                    "content": "Вміст 4",
+                    "description": null,
+                    "keywords": null
+                },
+                "pl": {
+                    "name": "Wpis 4",
+                    "content": "Treść 4",
+                    "description": null,
+                    "keywords": null
+                }
+            }
+        },
+        {
+            "id": 5,
+            "category_id": 1,
+            "slug": "post-5",
+            "status": "published",
+            "img_path": "img_path",
+            "user_id": 1,
+            "menu_item_id": null,
+            "i18n": {
+                "en": {
+                    "name": "Post 5",
+                    "content": "Content 5",
+                    "description": null,
+                    "keywords": null
+                },
+                "uk": {
+                    "name": "Пост 5",
+                    "content": "Вміст 5",
+                    "description": null,
+                    "keywords": null
+                },
+                "pl": {
+                    "name": "Wpis 5",
+                    "content": "Treść 5",
+                    "description": null,
+                    "keywords": null
+                }
+            }
+        },
+        {
+            "id": 6,
+            "category_id": 1,
+            "slug": "post-6",
+            "status": "published",
+            "img_path": "img_path",
+            "user_id": 1,
+            "menu_item_id": null,
+            "i18n": {
+                "en": {
+                    "name": "Post 6",
+                    "content": "Content 6",
+                    "description": null,
+                    "keywords": null
+                },
+                "uk": {
+                    "name": "Пост 6",
+                    "content": "Вміст 6",
+                    "description": null,
+                    "keywords": null
+                },
+                "pl": {
+                    "name": "Wpis 6",
+                    "content": "Treść 6",
+                    "description": null,
+                    "keywords": null
+                }
+            }
+        },
+        {
+            "id": 7,
+            "category_id": 1,
+            "slug": "post-7",
+            "status": "published",
+            "img_path": "img_path",
+            "user_id": 1,
+            "menu_item_id": null,
+            "i18n": {
+                "en": {
+                    "name": "Post 7",
+                    "content": "Content 7",
+                    "description": null,
+                    "keywords": null
+                },
+                "uk": {
+                    "name": "Пост 7",
+                    "content": "Вміст 7",
+                    "description": null,
+                    "keywords": null
+                },
+                "pl": {
+                    "name": "Wpis 7",
+                    "content": "Treść 7",
+                    "description": null,
+                    "keywords": null
+                }
+            }
         }
-      }
-    },
-    {
-      "id": 2,
-      "category_id": 1,
-      "slug": "post-2",
-      "status": "published",
-      "img_path": "img_path",
-      "user_id": 1,
-      "menu_item_id": null,
-      "i18n": {
-        "en": {
-          "name": "Post 2",
-          "content": "Content 2",
-          "description": null,
-          "keywords": null
-        },
-        "uk": {
-          "name": "Пост 2",
-          "content": "Вміст 2",
-          "description": null,
-          "keywords": null
-        },
-        "pl": {
-          "name": "Wpis 2",
-          "content": "Treść 2",
-          "description": null,
-          "keywords": null
-        }
-      }
-    },
-    {
-      "id": 3,
-      "category_id": 1,
-      "slug": "post-3",
-      "status": "published",
-      "img_path": "img_path",
-      "user_id": 1,
-      "menu_item_id": null,
-      "i18n": {
-        "en": {
-          "name": "Post 3",
-          "content": "Content 3",
-          "description": null,
-          "keywords": null
-        },
-        "uk": {
-          "name": "Пост 3",
-          "content": "Вміст 3",
-          "description": null,
-          "keywords": null
-        },
-        "pl": {
-          "name": "Wpis 3",
-          "content": "Treść 3",
-          "description": null,
-          "keywords": null
-        }
-      }
-    },
-    {
-      "id": 4,
-      "category_id": 1,
-      "slug": "post-4",
-      "status": "published",
-      "img_path": "img_path",
-      "user_id": 1,
-      "menu_item_id": null,
-      "i18n": {
-        "en": {
-          "name": "Post 4",
-          "content": "Content 4",
-          "description": null,
-          "keywords": null
-        },
-        "uk": {
-          "name": "Пост 4",
-          "content": "Вміст 4",
-          "description": null,
-          "keywords": null
-        },
-        "pl": {
-          "name": "Wpis 4",
-          "content": "Treść 4",
-          "description": null,
-          "keywords": null
-        }
-      }
-    },
-    {
-      "id": 5,
-      "category_id": 1,
-      "slug": "post-5",
-      "status": "published",
-      "img_path": "img_path",
-      "user_id": 1,
-      "menu_item_id": null,
-      "i18n": {
-        "en": {
-          "name": "Post 5",
-          "content": "Content 5",
-          "description": null,
-          "keywords": null
-        },
-        "uk": {
-          "name": "Пост 5",
-          "content": "Вміст 5",
-          "description": null,
-          "keywords": null
-        },
-        "pl": {
-          "name": "Wpis 5",
-          "content": "Treść 5",
-          "description": null,
-          "keywords": null
-        }
-      }
-    },
-    {
-      "id": 6,
-      "category_id": 1,
-      "slug": "post-6",
-      "status": "published",
-      "img_path": "img_path",
-      "user_id": 1,
-      "menu_item_id": null,
-      "i18n": {
-        "en": {
-          "name": "Post 6",
-          "content": "Content 6",
-          "description": null,
-          "keywords": null
-        },
-        "uk": {
-          "name": "Пост 6",
-          "content": "Вміст 6",
-          "description": null,
-          "keywords": null
-        },
-        "pl": {
-          "name": "Wpis 6",
-          "content": "Treść 6",
-          "description": null,
-          "keywords": null
-        }
-      }
-    },
-    {
-      "id": 7,
-      "category_id": 1,
-      "slug": "post-7",
-      "status": "published",
-      "img_path": "img_path",
-      "user_id": 1,
-      "menu_item_id": null,
-      "i18n": {
-        "en": {
-          "name": "Post 7",
-          "content": "Content 7",
-          "description": null,
-          "keywords": null
-        },
-        "uk": {
-          "name": "Пост 7",
-          "content": "Вміст 7",
-          "description": null,
-          "keywords": null
-        },
-        "pl": {
-          "name": "Wpis 7",
-          "content": "Treść 7",
-          "description": null,
-          "keywords": null
-        }
-      }
-    },
-    {
-      "id": 8,
-      "category_id": 1,
-      "slug": "post-8",
-      "status": "published",
-      "img_path": "img_path",
-      "user_id": 1,
-      "menu_item_id": null,
-      "i18n": {
-        "en": {
-          "name": "Post 8",
-          "content": "Content 8",
-          "description": null,
-          "keywords": null
-        },
-        "uk": {
-          "name": "Пост 8",
-          "content": "Вміст 8",
-          "description": null,
-          "keywords": null
-        },
-        "pl": {
-          "name": "Wpis 8",
-          "content": "Treść 8",
-          "description": null,
-          "keywords": null
-        }
-      }
-    },
-    {
-      "id": 9,
-      "category_id": 1,
-      "slug": "post-9",
-      "status": "published",
-      "img_path": "img_path",
-      "user_id": 1,
-      "menu_item_id": null,
-      "i18n": {
-        "en": {
-          "name": "Post 9",
-          "content": "Content 9",
-          "description": null,
-          "keywords": null
-        },
-        "uk": {
-          "name": "Пост 9",
-          "content": "Вміст 9",
-          "description": null,
-          "keywords": null
-        },
-        "pl": {
-          "name": "Wpis 9",
-          "content": "Treść 9",
-          "description": null,
-          "keywords": null
-        }
-      }
-    },
-    {
-      "id": 10,
-      "category_id": 1,
-      "slug": "post-10",
-      "status": "published",
-      "img_path": "img_path",
-      "user_id": 1,
-      "menu_item_id": null,
-      "i18n": {
-        "en": {
-          "name": "Post 10",
-          "content": "Content 10",
-          "description": null,
-          "keywords": null
-        },
-        "uk": {
-          "name": "Пост 10",
-          "content": "Вміст 10",
-          "description": null,
-          "keywords": null
-        },
-        "pl": {
-          "name": "Wpis 10",
-          "content": "Treść 10",
-          "description": null,
-          "keywords": null
-        }
-      }
-    }
-  ]
+    ]
 }
