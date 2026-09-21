@@ -80,6 +80,51 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
 }
 
 /* Service pages: code samples and process diagrams inside article body */
+.service-article__body {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: left;
+}
+.service-article__body > p:first-child {
+  font-size: 18px;
+  line-height: 1.65;
+  color: #3d4655;
+}
+.service-article__body h2 {
+  margin-top: 38px;
+  margin-bottom: 16px;
+  color: #202838;
+}
+.service-article__body ul {
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+.service-article__body li + li { margin-top: 8px; }
+.service-diagram {
+  margin: 24px 0 30px;
+  padding: 16px;
+  border: 1px solid #e1e7ef;
+  border-radius: 10px;
+  background: #fbfcfe;
+  text-align: center;
+  overflow-x: auto;
+}
+.service-diagram img {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  margin: 0 auto;
+}
+.post-classic__image {
+  height: auto;
+  aspect-ratio: auto;
+}
+@media (max-width: 767px) {
+  .service-article__body > p:first-child { font-size: 17px; }
+  .service-article__body h2 { margin-top: 30px; }
+  .service-diagram { margin-right: -8px; margin-left: -8px; padding: 10px; }
+}
 /* Bare <pre> inside service articles: the rich editor strips the class on save */
 .post-single pre.code-block,
 .service-article__body pre {

@@ -33,6 +33,7 @@ final class SeoMeta
      *     seoService: ?Service,
      *     seoCategory: ?ServiceCategory,
      *     metaDescription: string,
+     *     pageTitle: string,
      *     ogTitle: string,
      *     ogImage: string,
      *     jsonLd: array<string, mixed>,
@@ -100,6 +101,7 @@ final class SeoMeta
             'seoService' => $service,
             'seoCategory' => $category,
             'metaDescription' => $description,
+            'pageTitle' => $fallbackTitle,
             'ogTitle' => $title,
             'ogImage' => $image,
             'jsonLd' => SchemaMarkup::graph([

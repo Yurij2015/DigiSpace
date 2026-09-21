@@ -2,8 +2,6 @@
     <!DOCTYPE html>
 <html class="wide wow-animation" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <!-- Site Title-->
-    <title>@yield('title', __('site.default_title'))</title>
     @php
         $localizedRouteNames = config('locales.route_names', []);
         $currentRouteName = Route::currentRouteName();
@@ -21,6 +19,8 @@
             'headerNavBarContent' => $headerNavBarContent ?? null,
         ], $currentRouteName, $__env->yieldContent('title', __('site.default_title'))));
     @endphp
+    <!-- Site Title-->
+    <title>{{ $pageTitle }}</title>
     <meta name="description" content="{{ Str::limit($metaDescription, 157) }}">
     @if($__env->yieldContent('robots') === 'noindex' || request()->routeIs('blog-search', 'service-search', 'error-404'))
         <meta name="robots" content="noindex">

@@ -20,6 +20,23 @@ yarn-error.log
 /.idea
 /.vscode
 /public/uploads
+# Service hero assets generated for the reviewed service articles.
+!/public/uploads/
+/public/uploads/*
+!/public/uploads/1753723705.jpg
+!/public/uploads/1710095217.jpg
+!/public/uploads/1685400803.jpg
+!/public/uploads/1685401626.jpg
+!/public/uploads/1687124726.jpg
+!/public/uploads/1685401435.png
+!/public/uploads/1685395904.png
+!/public/uploads/1687820770.jpg
+!/public/uploads/1687906564.jpg
+!/public/uploads/1685401742.jpg
+!/public/uploads/1685401583.jpg
+!/public/uploads/1685401781.jpg
+!/public/uploads/1685401526.jpg
+!/public/uploads/1687125226.jpg
 /public/images
 /public/sitemap.xml
 /.sonarlint/
