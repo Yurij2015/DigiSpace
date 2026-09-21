@@ -41,7 +41,7 @@
                     @foreach($serviceCategories as $serviceCategory)
                         <div class="col-md-6 col-lg-4">
                             <article class="box-chloe box-chloe_secondary">
-                                <div class="box-chloe__icon linearicons-code"></div>
+                                <div class="box-chloe__icon {{ $serviceCategory->icon ?? 'linearicons-code' }}"></div>
                                 <div class="box-chloe__main">
                                     <h4 class="box-chloe__title">{{ $serviceCategory->name }}</h4>
                                     <p>{{ $serviceCategory->seo_description }}</p>

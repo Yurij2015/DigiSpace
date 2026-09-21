@@ -32,7 +32,8 @@
      "seo_description": "Usługi backend development: PHP, Laravel, Symfony i Go. Bezpieczne, skalowalne rozwiązania serwerowe, API i logika biznesowa dla Twojego produktu.",
      "seo_title": "Backend Development — PHP, Laravel, Symfony, Go"
     }
-   }
+   },
+   "icon": "linearicons-server"
   },
   {
    "id": 2,
@@ -56,7 +57,8 @@
      "seo_description": "Usługi frontend development: Vue.js, Nuxt i responsywne aplikacje webowe. Szybkie, dostępne interfejsy działające na każdym urządzeniu.",
      "seo_title": "Frontend Development — Vue.js, Nuxt, responsywne aplikacje"
     }
-   }
+   },
+   "icon": "linearicons-laptop-phone"
   },
   {
    "id": 3,
@@ -80,7 +82,8 @@
      "seo_description": "Tworzenie e-commerce i CMS: sklepy internetowe, strony WordPress oraz dedykowane systemy CRM/CMS dopasowane do Twoich procesów.",
      "seo_title": "E-commerce i CMS — WordPress, dedykowane CRM/CMS"
     }
-   }
+   },
+   "icon": "linearicons-cart"
   },
   {
    "id": 4,
@@ -104,7 +107,8 @@
      "seo_description": "Usługi integracji AI i API: funkcje oparte na LLM, pipeline'y RAG, systemy płatności, łączność CRM/ERP i zewnętrzne API.",
      "seo_title": "Integracje AI i API — LLM, RAG, CRM, płatności"
     }
-   }
+   },
+   "icon": "linearicons-brain"
   },
   {
    "id": 5,
@@ -128,7 +132,8 @@
      "seo_description": "Usługi wsparcia i DevOps: utrzymanie stron, refaktoryzacja legacy code, konfiguracja serwerów Linux, hosting i automatyzacja wdrożeń.",
      "seo_title": "Wsparcie i DevOps — utrzymanie, refaktoryzacja, hosting Linux"
     }
-   }
+   },
+   "icon": "linearicons-hammer-wrench"
   }
  ]
 }
