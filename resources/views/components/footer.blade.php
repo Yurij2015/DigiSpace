@@ -1,6 +1,6 @@
 {{-- Footer widgets are picked by slot key (widgets.element_id: footer-phone, footer-subscribe, footer-about,
      footer-latest-news, footer-useful-links); the raw English title is the fallback for rows without a key. --}}
-<footer class="section footer-classic context-dark">
+<footer id="footer" class="section footer-classic context-dark">
     <div class="footer-classic__main bg-gray-3">
         <div class="container">
             <div class="row row-50 align-items-sm-end justify-content-sm-center justify-content-lg-start">
@@ -31,8 +31,12 @@
                                 <p class="large">{{ $widget->subtitle }}</p>
                             </div>
                             {{-- Plain POST (no rd-mailform class): the theme's AJAX handler expects an RD Mailform JSON reply. --}}
-                            <form class="form_inline form_lg" method="post" action="{{ route('subscriber-save') }}">
+                            <form class="form_inline form_lg" method="post" action="{{ route('subscriber-save') }}#footer">
                                 @csrf
+                                <div style="display:none;" aria-hidden="true">
+                                    <label for="subscribe-nickname">Leave this field blank if you are human</label>
+                                    <input type="text" name="nickname" id="subscribe-nickname" tabindex="-1" autocomplete="off">
+                                </div>
                                 <div class="form-wrap">
                                     <input class="form-input @error('email', 'subscribe') error @enderror"
                                            id="subscribe-form-footer-form-email" type="email" name="email"

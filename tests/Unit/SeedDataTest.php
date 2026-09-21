@@ -15,7 +15,7 @@ class SeedDataTest extends TestCase
     private const TABLES = [
         'widget_categories', 'widgets', 'menus', 'menu_items', 'footer_useful_links',
         'header_nav_bar_contents', 'footer_bottom_bar_contents',
-        'pages', 'categories', 'services', 'products', 'posts',
+        'pages', 'categories', 'services', 'service_categories', 'products', 'posts',
     ];
 
     public function test_every_seed_file_loads_and_is_complete_in_all_locales(): void

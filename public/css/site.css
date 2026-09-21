@@ -78,3 +78,40 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
 @media (max-width: 360px) {
   .g-recaptcha { transform: scale(.92); transform-origin: center top; }
 }
+
+/* Service pages: code samples and process diagrams inside article body */
+.post-single pre.code-block {
+  background: #1e2430;
+  color: #d7dce6;
+  padding: 18px 20px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  overflow-x: auto;
+  text-align: left;
+  margin: 18px 0 26px;
+}
+.post-single pre.code-block code {
+  color: inherit;
+  font-family: SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  white-space: pre;
+}
+.post-single pre.code-diagram {
+  background: #f4f6fa;
+  border: 1px solid #dde3ec;
+  color: #2c3550;
+  padding: 18px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-x: auto;
+  text-align: left;
+  font-family: SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  white-space: pre;
+  margin: 18px 0 26px;
+}
+.post-single .code-caption {
+  font-size: 13px;
+  color: #6a7386;
+  margin: -16px 0 26px;
+}

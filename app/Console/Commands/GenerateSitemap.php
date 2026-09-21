@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Http\Controllers\PageController;
 use App\Models\Category;
 use App\Models\MenuItem;
 use App\Models\Post;
@@ -20,7 +21,7 @@ class GenerateSitemap extends Command
     protected $description = 'Generate the sitemap.';
 
     private const STATIC_ROUTES = [
-        'home.index', 'about', 'services', 'pricing', 'promos', 'blog',
+        'home.index', 'about', 'services', 'pricing', 'blog',
         'contact-us', 'privacy-policy', 'faq', 'support',
     ];
 
@@ -32,7 +33,15 @@ class GenerateSitemap extends Command
             $sitemap->add($this->localizedUrls($routeName));
         }
 
-        foreach (MenuItem::whereHas('pages')->whereNotNull('slug')->with('pages:id,updated_at')->get(['slug', 'id']) as $menuItem) {
+        if (config('settings.is_promo_tab_active')) {
+            $sitemap->add($this->localizedUrls('promos'));
+        }
+
+        foreach (MenuItem::whereHas('pages')
+            ->whereNotNull('slug')
+            ->whereNotIn('slug', array_keys(PageController::REDIRECTED_PAGES))
+            ->with('pages:id,updated_at')
+            ->get(['slug', 'id']) as $menuItem) {
             $sitemap->add($this->localizedUrls(
                 'pages.page',
                 ['slug' => $menuItem->slug],

@@ -62,6 +62,7 @@ class LocalDevelopmentSeeder extends Seeder
                 MenuSeeder::class,
                 MenuItemSeeder::class,
                 ProductSeeder::class,
+                ServiceCategorySeeder::class,
                 ServiceSeeder::class,
                 ProductServiceSeeder::class,
                 CategorySeeder::class,

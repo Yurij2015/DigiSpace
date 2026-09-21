@@ -1,402 +1,402 @@
 {
-    "table": "menu_items",
-    "identity": [
-        "slug"
-    ],
-    "translatable": [
-        "name"
-    ],
-    "rows": [
-        {
-            "id": 1,
-            "menu_id": 1,
-            "slug": "about",
-            "href": "about",
-            "i18n": {
-                "en": {
-                    "name": "About"
-                },
-                "uk": {
-                    "name": "Про нас"
-                },
-                "pl": {
-                    "name": "O nas"
-                }
-            }
-        },
-        {
-            "id": 2,
-            "menu_id": 1,
-            "slug": "services",
-            "href": "services",
-            "i18n": {
-                "en": {
-                    "name": "Services"
-                },
-                "uk": {
-                    "name": "Послуги"
-                },
-                "pl": {
-                    "name": "Usługi"
-                }
-            }
-        },
-        {
-            "id": 3,
-            "menu_id": 1,
-            "slug": "pricing",
-            "href": "pricing",
-            "i18n": {
-                "en": {
-                    "name": "Pricing"
-                },
-                "uk": {
-                    "name": "Ціни"
-                },
-                "pl": {
-                    "name": "Cennik"
-                }
-            }
-        },
-        {
-            "id": 4,
-            "menu_id": 1,
-            "slug": "promos",
-            "href": "promos",
-            "i18n": {
-                "en": {
-                    "name": "Promos"
-                },
-                "uk": {
-                    "name": "Акції"
-                },
-                "pl": {
-                    "name": "Promocje"
-                }
-            }
-        },
-        {
-            "id": 5,
-            "menu_id": 1,
-            "slug": "blog",
-            "href": "blog",
-            "i18n": {
-                "en": {
-                    "name": "Blog"
-                },
-                "uk": {
-                    "name": "Блог"
-                },
-                "pl": {
-                    "name": "Blog"
-                }
-            }
-        },
-        {
-            "id": 6,
-            "menu_id": 1,
-            "slug": "pages",
-            "href": "pages",
-            "i18n": {
-                "en": {
-                    "name": "Pages"
-                },
-                "uk": {
-                    "name": "Сторінки"
-                },
-                "pl": {
-                    "name": "Strony"
-                }
-            }
-        },
-        {
-            "id": 7,
-            "menu_id": 1,
-            "slug": "contact-us",
-            "href": "contact-us",
-            "i18n": {
-                "en": {
-                    "name": "Contact us"
-                },
-                "uk": {
-                    "name": "Зв'язатися з нами"
-                },
-                "pl": {
-                    "name": "Kontakt"
-                }
-            }
-        },
-        {
-            "id": 8,
-            "menu_id": 2,
-            "slug": "page-1",
-            "href": "pages/page1.html",
-            "i18n": {
-                "en": {
-                    "name": "Page 1"
-                },
-                "uk": {
-                    "name": "Сторінка 1"
-                },
-                "pl": {
-                    "name": "Strona 1"
-                }
-            }
-        },
-        {
-            "id": 9,
-            "menu_id": 2,
-            "slug": "page-2",
-            "href": "pages/page2.html",
-            "i18n": {
-                "en": {
-                    "name": "Page 2"
-                },
-                "uk": {
-                    "name": "Сторінка 2"
-                },
-                "pl": {
-                    "name": "Strona 2"
-                }
-            }
-        },
-        {
-            "id": 10,
-            "menu_id": 2,
-            "slug": "page-3",
-            "href": "pages/page3.html",
-            "i18n": {
-                "en": {
-                    "name": "Page 3"
-                },
-                "uk": {
-                    "name": "Сторінка 3"
-                },
-                "pl": {
-                    "name": "Strona 3"
-                }
-            }
-        },
-        {
-            "id": 11,
-            "menu_id": 3,
-            "slug": "page-4",
-            "href": "pages/page4.html",
-            "i18n": {
-                "en": {
-                    "name": "Page 4"
-                },
-                "uk": {
-                    "name": "Сторінка 4"
-                },
-                "pl": {
-                    "name": "Strona 4"
-                }
-            }
-        },
-        {
-            "id": 12,
-            "menu_id": 3,
-            "slug": "page-5",
-            "href": "pages/page5.html",
-            "i18n": {
-                "en": {
-                    "name": "Page 5"
-                },
-                "uk": {
-                    "name": "Сторінка 5"
-                },
-                "pl": {
-                    "name": "Strona 5"
-                }
-            }
-        },
-        {
-            "id": 13,
-            "menu_id": 3,
-            "slug": "page-6",
-            "href": "pages/page6.html",
-            "i18n": {
-                "en": {
-                    "name": "Page 6"
-                },
-                "uk": {
-                    "name": "Сторінка 6"
-                },
-                "pl": {
-                    "name": "Strona 6"
-                }
-            }
-        },
-        {
-            "id": 14,
-            "menu_id": 4,
-            "slug": "page-7",
-            "href": "pages/page7.html",
-            "i18n": {
-                "en": {
-                    "name": "Page 7"
-                },
-                "uk": {
-                    "name": "Сторінка 7"
-                },
-                "pl": {
-                    "name": "Strona 7"
-                }
-            }
-        },
-        {
-            "id": 15,
-            "menu_id": 5,
-            "slug": "useful-link-1",
-            "href": "pages/useful-link-1.html",
-            "i18n": {
-                "en": {
-                    "name": "Useful link 1"
-                },
-                "uk": {
-                    "name": "Корисне посилання 1"
-                },
-                "pl": {
-                    "name": "Przydatny link 1"
-                }
-            }
-        },
-        {
-            "id": 16,
-            "menu_id": 5,
-            "slug": "useful-link-2",
-            "href": "pages/useful-link-2.html",
-            "i18n": {
-                "en": {
-                    "name": "Useful link 2"
-                },
-                "uk": {
-                    "name": "Корисне посилання 2"
-                },
-                "pl": {
-                    "name": "Przydatny link 2"
-                }
-            }
-        },
-        {
-            "id": 17,
-            "menu_id": 5,
-            "slug": "useful-link-3",
-            "href": "pages/useful-link-3.html",
-            "i18n": {
-                "en": {
-                    "name": "Useful link 3"
-                },
-                "uk": {
-                    "name": "Корисне посилання 3"
-                },
-                "pl": {
-                    "name": "Przydatny link 3"
-                }
-            }
-        },
-        {
-            "id": 18,
-            "menu_id": 5,
-            "slug": "useful-link-4",
-            "href": "pages/useful-link-4.html",
-            "i18n": {
-                "en": {
-                    "name": "Useful link 4"
-                },
-                "uk": {
-                    "name": "Корисне посилання 4"
-                },
-                "pl": {
-                    "name": "Przydatny link 4"
-                }
-            }
-        },
-        {
-            "id": 19,
-            "menu_id": 5,
-            "slug": "useful-link-5",
-            "href": "pages/useful-link-5.html",
-            "i18n": {
-                "en": {
-                    "name": "Useful link 5"
-                },
-                "uk": {
-                    "name": "Корисне посилання 5"
-                },
-                "pl": {
-                    "name": "Przydatny link 5"
-                }
-            }
-        },
-        {
-            "id": 20,
-            "menu_id": 5,
-            "slug": "useful-link-6",
-            "href": "pages/useful-link-6.html",
-            "i18n": {
-                "en": {
-                    "name": "Useful link 6"
-                },
-                "uk": {
-                    "name": "Корисне посилання 6"
-                },
-                "pl": {
-                    "name": "Przydatny link 6"
-                }
-            }
-        },
-        {
-            "id": 21,
-            "menu_id": 5,
-            "slug": "useful-link-7",
-            "href": "pages/useful-link-7.html",
-            "i18n": {
-                "en": {
-                    "name": "Useful link 7"
-                },
-                "uk": {
-                    "name": "Корисне посилання 7"
-                },
-                "pl": {
-                    "name": "Przydatny link 7"
-                }
-            }
-        },
-        {
-            "id": 22,
-            "menu_id": 5,
-            "slug": "useful-link-8",
-            "href": "pages/useful-link-8.html",
-            "i18n": {
-                "en": {
-                    "name": "Useful link 8"
-                },
-                "uk": {
-                    "name": "Корисне посилання 8"
-                },
-                "pl": {
-                    "name": "Przydatny link 8"
-                }
-            }
-        },
-        {
-            "id": 23,
-            "menu_id": 5,
-            "slug": "useful-link-9",
-            "href": "pages/useful-link-9.html",
-            "i18n": {
-                "en": {
-                    "name": "Useful link 9"
-                },
-                "uk": {
-                    "name": "Корисне посилання 9"
-                },
-                "pl": {
-                    "name": "Przydatny link 9"
-                }
-            }
-        }
-    ]
+ "table": "menu_items",
+ "identity": [
+  "slug"
+ ],
+ "translatable": [
+  "name"
+ ],
+ "rows": [
+  {
+   "id": 1,
+   "menu_id": 1,
+   "slug": "about",
+   "href": "about",
+   "i18n": {
+    "en": {
+     "name": "About"
+    },
+    "uk": {
+     "name": "Про нас"
+    },
+    "pl": {
+     "name": "O nas"
+    }
+   }
+  },
+  {
+   "id": 2,
+   "menu_id": 1,
+   "slug": "services",
+   "href": "services",
+   "i18n": {
+    "en": {
+     "name": "Services"
+    },
+    "uk": {
+     "name": "Послуги"
+    },
+    "pl": {
+     "name": "Usługi"
+    }
+   }
+  },
+  {
+   "id": 3,
+   "menu_id": 1,
+   "slug": "pricing",
+   "href": "pricing",
+   "i18n": {
+    "en": {
+     "name": "Pricing"
+    },
+    "uk": {
+     "name": "Ціни"
+    },
+    "pl": {
+     "name": "Cennik"
+    }
+   }
+  },
+  {
+   "id": 4,
+   "menu_id": 1,
+   "slug": "promos",
+   "href": "promos",
+   "i18n": {
+    "en": {
+     "name": "Promos"
+    },
+    "uk": {
+     "name": "Акції"
+    },
+    "pl": {
+     "name": "Promocje"
+    }
+   }
+  },
+  {
+   "id": 5,
+   "menu_id": 1,
+   "slug": "blog",
+   "href": "blog",
+   "i18n": {
+    "en": {
+     "name": "Blog"
+    },
+    "uk": {
+     "name": "Блог"
+    },
+    "pl": {
+     "name": "Blog"
+    }
+   }
+  },
+  {
+   "id": 6,
+   "menu_id": 1,
+   "slug": "pages",
+   "href": "pages",
+   "i18n": {
+    "en": {
+     "name": "Pages"
+    },
+    "uk": {
+     "name": "Сторінки"
+    },
+    "pl": {
+     "name": "Strony"
+    }
+   }
+  },
+  {
+   "id": 7,
+   "menu_id": 1,
+   "slug": "contact-us",
+   "href": "contact-us",
+   "i18n": {
+    "en": {
+     "name": "Contact us"
+    },
+    "uk": {
+     "name": "Зв'язатися з нами"
+    },
+    "pl": {
+     "name": "Kontakt"
+    }
+   }
+  },
+  {
+   "id": 8,
+   "menu_id": 2,
+   "slug": "page-1",
+   "href": "pages/page1.html",
+   "i18n": {
+    "en": {
+     "name": "Page 1"
+    },
+    "uk": {
+     "name": "Сторінка 1"
+    },
+    "pl": {
+     "name": "Strona 1"
+    }
+   }
+  },
+  {
+   "id": 9,
+   "menu_id": 2,
+   "slug": "page-2",
+   "href": "pages/page2.html",
+   "i18n": {
+    "en": {
+     "name": "Page 2"
+    },
+    "uk": {
+     "name": "Сторінка 2"
+    },
+    "pl": {
+     "name": "Strona 2"
+    }
+   }
+  },
+  {
+   "id": 10,
+   "menu_id": 2,
+   "slug": "page-3",
+   "href": "pages/page3.html",
+   "i18n": {
+    "en": {
+     "name": "Page 3"
+    },
+    "uk": {
+     "name": "Сторінка 3"
+    },
+    "pl": {
+     "name": "Strona 3"
+    }
+   }
+  },
+  {
+   "id": 11,
+   "menu_id": 3,
+   "slug": "page-4",
+   "href": "pages/page4.html",
+   "i18n": {
+    "en": {
+     "name": "Page 4"
+    },
+    "uk": {
+     "name": "Сторінка 4"
+    },
+    "pl": {
+     "name": "Strona 4"
+    }
+   }
+  },
+  {
+   "id": 12,
+   "menu_id": 3,
+   "slug": "page-5",
+   "href": "pages/page5.html",
+   "i18n": {
+    "en": {
+     "name": "Page 5"
+    },
+    "uk": {
+     "name": "Сторінка 5"
+    },
+    "pl": {
+     "name": "Strona 5"
+    }
+   }
+  },
+  {
+   "id": 13,
+   "menu_id": 3,
+   "slug": "page-6",
+   "href": "pages/page6.html",
+   "i18n": {
+    "en": {
+     "name": "Page 6"
+    },
+    "uk": {
+     "name": "Сторінка 6"
+    },
+    "pl": {
+     "name": "Strona 6"
+    }
+   }
+  },
+  {
+   "id": 14,
+   "menu_id": 4,
+   "slug": "page-7",
+   "href": "pages/page7.html",
+   "i18n": {
+    "en": {
+     "name": "Page 7"
+    },
+    "uk": {
+     "name": "Сторінка 7"
+    },
+    "pl": {
+     "name": "Strona 7"
+    }
+   }
+  },
+  {
+   "id": 15,
+   "menu_id": 5,
+   "slug": "useful-link-1",
+   "href": "pages/useful-link-1.html",
+   "i18n": {
+    "en": {
+     "name": "Useful link 1"
+    },
+    "uk": {
+     "name": "Корисне посилання 1"
+    },
+    "pl": {
+     "name": "Przydatny link 1"
+    }
+   }
+  },
+  {
+   "id": 16,
+   "menu_id": 5,
+   "slug": "useful-link-2",
+   "href": "pages/useful-link-2.html",
+   "i18n": {
+    "en": {
+     "name": "Useful link 2"
+    },
+    "uk": {
+     "name": "Корисне посилання 2"
+    },
+    "pl": {
+     "name": "Przydatny link 2"
+    }
+   }
+  },
+  {
+   "id": 17,
+   "menu_id": 5,
+   "slug": "useful-link-3",
+   "href": "pages/useful-link-3.html",
+   "i18n": {
+    "en": {
+     "name": "Useful link 3"
+    },
+    "uk": {
+     "name": "Корисне посилання 3"
+    },
+    "pl": {
+     "name": "Przydatny link 3"
+    }
+   }
+  },
+  {
+   "id": 18,
+   "menu_id": 5,
+   "slug": "useful-link-4",
+   "href": "pages/useful-link-4.html",
+   "i18n": {
+    "en": {
+     "name": "Useful link 4"
+    },
+    "uk": {
+     "name": "Корисне посилання 4"
+    },
+    "pl": {
+     "name": "Przydatny link 4"
+    }
+   }
+  },
+  {
+   "id": 19,
+   "menu_id": 5,
+   "slug": "useful-link-5",
+   "href": "pages/useful-link-5.html",
+   "i18n": {
+    "en": {
+     "name": "Useful link 5"
+    },
+    "uk": {
+     "name": "Корисне посилання 5"
+    },
+    "pl": {
+     "name": "Przydatny link 5"
+    }
+   }
+  },
+  {
+   "id": 20,
+   "menu_id": 5,
+   "slug": "useful-link-6",
+   "href": "pages/useful-link-6.html",
+   "i18n": {
+    "en": {
+     "name": "Useful link 6"
+    },
+    "uk": {
+     "name": "Корисне посилання 6"
+    },
+    "pl": {
+     "name": "Przydatny link 6"
+    }
+   }
+  },
+  {
+   "id": 21,
+   "menu_id": 5,
+   "slug": "useful-link-7",
+   "href": "pages/useful-link-7.html",
+   "i18n": {
+    "en": {
+     "name": "Useful link 7"
+    },
+    "uk": {
+     "name": "Корисне посилання 7"
+    },
+    "pl": {
+     "name": "Przydatny link 7"
+    }
+   }
+  },
+  {
+   "id": 22,
+   "menu_id": 5,
+   "slug": "useful-link-8",
+   "href": "pages/useful-link-8.html",
+   "i18n": {
+    "en": {
+     "name": "Useful link 8"
+    },
+    "uk": {
+     "name": "Корисне посилання 8"
+    },
+    "pl": {
+     "name": "Przydatny link 8"
+    }
+   }
+  },
+  {
+   "id": 23,
+   "menu_id": 5,
+   "slug": "useful-link-9",
+   "href": "pages/useful-link-9.html",
+   "i18n": {
+    "en": {
+     "name": "Useful link 9"
+    },
+    "uk": {
+     "name": "Корисне посилання 9"
+    },
+    "pl": {
+     "name": "Przydatny link 9"
+    }
+   }
+  }
+ ]
 }

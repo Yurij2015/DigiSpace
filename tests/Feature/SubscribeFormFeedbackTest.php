@@ -34,7 +34,7 @@ class SubscribeFormFeedbackTest extends TestCase
     {
         $this->get('/uk')
             ->assertOk()
-            ->assertSee('action="http://localhost:8100/uk/subscriber-save"', false)
+            ->assertSee('action="http://localhost:8100/uk/subscriber-save#footer"', false)
             ->assertDontSee('rd-mailform')
             ->assertSee('Підписатися');
     }

@@ -10,6 +10,10 @@ class SubscriberController extends Controller
 {
     public function save(Request $request): RedirectResponse
     {
+        if ($request->filled('nickname')) {
+            return back()->with('subscribe_success', __('site.subscribe_success'));
+        }
+
         $validated = $request->validateWithBag('subscribe', [
             'email' => 'required|email|unique:subscribers',
         ]);

@@ -21,7 +21,7 @@ class StructureTranslationsSeeder extends Seeder
     public const TABLES = [
         'widget_categories', 'widgets', 'menus', 'menu_items', 'footer_useful_links',
         'header_nav_bar_contents', 'footer_bottom_bar_contents',
-        'pages', 'categories', 'services', 'products', 'posts',
+        'pages', 'categories', 'services', 'service_categories', 'products', 'posts',
     ];
 
     /** @var array<string, array{updated: int, unchanged: int, unmatched: int}> */

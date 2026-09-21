@@ -21,7 +21,7 @@ class ServiceController extends Controller
             ->orderBy('position')->get();
 
         $productServices = ProductService::all();
-        $listOfServices = Service::paginate(20);
+        $listOfServices = Service::where('status', 'active')->whereHas('serviceCategory')->paginate(20);
         $servicesService->addStyleToService($products, $productServices);
 
         return view('services.index', [
@@ -45,6 +45,7 @@ class ServiceController extends Controller
         $serviceCategory = ServiceCategory::where('slug', (string) $request->route('serviceCategory'))->firstOrFail();
         $serviceCategories = ServiceCategory::with('service')->get();
         $services = Service::with('serviceCategory')
+            ->where('status', 'active')
             ->whereRelation('serviceCategory', 'slug', '=', $serviceCategory->slug)
             ->paginate(5);
 
@@ -60,6 +61,7 @@ class ServiceController extends Controller
         $serviceCategory = ServiceCategory::where('slug', (string) $request->route('serviceCategory'))->firstOrFail();
         $service = Service::where('slug', (string) $request->route('service'))
             ->where('service_category_id', $serviceCategory->id)
+            ->where('status', 'active')
             ->firstOrFail();
         $serviceCategories = ServiceCategory::all();
 
@@ -73,18 +75,19 @@ class ServiceController extends Controller
     public function search()
     {
         $serviceCategories = ServiceCategory::with('service')->get();
-        $services = Service::query();
+        $services = Service::query()
+            ->with('serviceCategory')
+            ->where('status', 'active')
+            ->whereHas('serviceCategory');
         if (request('search')) {
             $term = '%'.request('search').'%';
-            $services
-                ->with('serviceCategory')
-                ->whereHas('serviceCategory')
-                ->where(function ($query) use ($term) {
-                    $query->where('title', 'like', $term)
-                        ->orWhere('description', 'like', $term);
-                });
+            $services->where(function ($query) use ($term) {
+                $query->where('title', 'like', $term)
+                    ->orWhere('description', 'like', $term)
+                    ->orWhere('translations', 'like', $term);
+            });
         }
-        if (! $services->count()) {
+        if (! request('search') || ! $services->count()) {
             return response()->view('errors.nothin-found')->setStatusCode(404);
         }
 

@@ -1,165 +1,683 @@
 {
-  "table": "services",
-  "identity": [
-    "slug"
-  ],
-  "translatable": [
-    "title",
-    "details",
-    "description",
-    "seo_keywords",
-    "seo_description",
-    "seo_title",
-    "image_alt"
-  ],
-  "rows": [
-    {
-      "id": 1,
-      "price": null,
-      "service_category_id": null,
-      "image": null,
-      "slug": "concept-development",
-      "status": "inactive",
-      "i18n": {
-        "en": {
-          "title": "Concept development",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Розробка концепції",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Opracowanie koncepcji",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
+ "table": "services",
+ "identity": [
+  "slug"
+ ],
+ "translatable": [
+  "title",
+  "details",
+  "description",
+  "seo_keywords",
+  "seo_description",
+  "seo_title",
+  "image_alt"
+ ],
+ "rows": [
+  {
+   "id": 1,
+   "price": 44,
+   "service_category_id": null,
+   "image": "no_image.png",
+   "slug": "ready-made-modern-design",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Ready-made modern design",
+     "details": "Ready-made modern design",
+     "description": "<p>Ready-made modern design</p>",
+     "seo_keywords": null,
+     "seo_description": "Ready-made modern design (template/auto-generated)",
+     "seo_title": null,
+     "image_alt": null
     },
-    {
-      "id": 2,
-      "price": null,
-      "service_category_id": null,
-      "image": null,
-      "slug": "ui-design",
-      "status": "inactive",
-      "i18n": {
-        "en": {
-          "title": "UI design",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "UI-дизайн",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Projektowanie UI",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
+    "uk": {
+     "title": "Готовий сучасний дизайн",
+     "details": "Готовий сучасний дизайн",
+     "description": "<p>Готовий сучасний дизайн</p>",
+     "seo_keywords": null,
+     "seo_description": "Готовий сучасний дизайн (шаблонний/автоматично згенерований)",
+     "seo_title": null,
+     "image_alt": null
     },
-    {
-      "id": 3,
-      "price": null,
-      "service_category_id": null,
-      "image": null,
-      "slug": "configuration-management",
-      "status": "inactive",
-      "i18n": {
-        "en": {
-          "title": "Configuration management",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Керування конфігурацією",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Zarządzanie konfiguracją",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 4,
-      "price": null,
-      "service_category_id": null,
-      "image": null,
-      "slug": "software-quality-assurance",
-      "status": "inactive",
-      "i18n": {
-        "en": {
-          "title": "Software quality assurance",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Забезпечення якості ПЗ",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Zapewnienie jakości oprogramowania",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
+    "pl": {
+     "title": "Gotowy nowoczesny design",
+     "details": "Gotowy nowoczesny design",
+     "description": "<p>Gotowy nowoczesny design</p>",
+     "seo_keywords": null,
+     "seo_description": "Gotowy nowoczesny design (szablonowy/generowany automatycznie)",
+     "seo_title": null,
+     "image_alt": null
     }
-  ]
+   }
+  },
+  {
+   "id": 2,
+   "price": 44,
+   "service_category_id": null,
+   "image": "no_image.png",
+   "slug": "setup-of-core-pages",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Setup of core pages",
+     "details": "Setup of core pages (Home, About, Contact, Services",
+     "description": "<p>Setup of core pages (Home, About, Contact, Services</p>",
+     "seo_keywords": null,
+     "seo_description": "Setup of core pages (Home, About, Contact, Services",
+     "seo_title": null,
+     "image_alt": null
+    },
+    "uk": {
+     "title": "Налаштування основних сторінок",
+     "details": "Налаштування основних сторінок (Головна, Про нас, Контакти, Послуги",
+     "description": "<p>Налаштування основних сторінок (Головна, Про нас, Контакти, Послуги</p>",
+     "seo_keywords": null,
+     "seo_description": "Налаштування основних сторінок (Головна, Про нас, Контакти, Послуги",
+     "seo_title": null,
+     "image_alt": null
+    },
+    "pl": {
+     "title": "Konfiguracja podstawowych stron",
+     "details": "Konfiguracja podstawowych stron (Strona główna, O nas, Kontakt, Usługi",
+     "description": "<p>Konfiguracja podstawowych stron (Strona główna, O nas, Kontakt, Usługi</p>",
+     "seo_keywords": null,
+     "seo_description": "Konfiguracja podstawowych stron (Strona główna, O nas, Kontakt, Usługi",
+     "seo_title": null,
+     "image_alt": null
+    }
+   }
+  },
+  {
+   "id": 3,
+   "price": 44,
+   "service_category_id": null,
+   "image": "no_image.png",
+   "slug": "backend-setup-secure-hosting-configuration",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Backend setup & secure hosting configuration",
+     "details": "Backend setup & secure hosting configuration",
+     "description": null,
+     "seo_keywords": null,
+     "seo_description": "Backend setup & secure hosting configuration",
+     "seo_title": null,
+     "image_alt": null
+    },
+    "uk": {
+     "title": "Налаштування бекенду та безпечна конфігурація хостингу",
+     "details": "Налаштування бекенду та безпечна конфігурація хостингу",
+     "description": null,
+     "seo_keywords": null,
+     "seo_description": "Налаштування бекенду та безпечна конфігурація хостингу",
+     "seo_title": null,
+     "image_alt": null
+    },
+    "pl": {
+     "title": "Konfiguracja backendu i bezpiecznego hostingu",
+     "details": "Konfiguracja backendu i bezpiecznego hostingu",
+     "description": null,
+     "seo_keywords": null,
+     "seo_description": "Konfiguracja backendu i bezpiecznego hostingu",
+     "seo_title": null,
+     "image_alt": null
+    }
+   }
+  },
+  {
+   "id": 4,
+   "price": 44,
+   "service_category_id": null,
+   "image": "no_image.png",
+   "slug": "basic-seo-analytics-integration",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Basic SEO & analytics integration",
+     "details": "Basic SEO & analytics integration",
+     "description": "<p>Basic SEO &amp; analytics integration</p>",
+     "seo_keywords": null,
+     "seo_description": null,
+     "seo_title": null,
+     "image_alt": null
+    },
+    "uk": {
+     "title": "Базове SEO та інтеграція аналітики",
+     "details": "Базове SEO та інтеграція аналітики",
+     "description": "<p>Базове SEO та інтеграція аналітики</p>",
+     "seo_keywords": null,
+     "seo_description": null,
+     "seo_title": null,
+     "image_alt": null
+    },
+    "pl": {
+     "title": "Podstawowe SEO i integracja analityki",
+     "details": "Podstawowe SEO i integracja analityki",
+     "description": "<p>Podstawowe SEO i integracja analityki</p>",
+     "seo_keywords": null,
+     "seo_description": null,
+     "seo_title": null,
+     "image_alt": null
+    }
+   }
+  },
+  {
+   "id": 21,
+   "price": null,
+   "service_category_id": 1,
+   "image": "1753723705.jpg",
+   "slug": "laravel-development",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Laravel Development",
+     "details": null,
+     "description": "<p>If you need a custom web application, an API, or a SaaS product built on Laravel — or an existing Laravel codebase that needs a responsible owner — this page describes how we work and what you can expect.</p>\n<p>Laravel 12/13 on PHP 8.3 is our primary backend stack. Most of what we ship runs on it: this website's CMS, the VetSpace API, and the DigiPulse marketing platform among them.</p>\n<h2>What we build with Laravel</h2>\n<ul>\n<li>SaaS platforms and subscription products — DigiPulse is a Laravel application with multi-channel publishing, scheduling and analytics.</li>\n<li>REST and GraphQL APIs for SPAs and mobile clients — VetSpace's backend serves a Nuxt frontend and mobile apps from one Laravel API.</li>\n<li>Admin panels and internal tools — we use Filament for back-office UI, as in this site's own CMS.</li>\n<li>E-commerce backends, booking systems and business tools that don't fit off-the-shelf software.</li>\n</ul>\n<h2>How a typical request is handled</h2>\n<p>The request cycle stays fast because heavy work is queued — emails, imports, AI calls, publishing:</p>\n<p><img src=\"/uploads/services/laravel-pipeline.svg\" alt=\"Laravel request flow: HTTP request, app, queue, worker\" loading=\"lazy\"/></p>\n<h2>How we work</h2>\n<p>We follow Laravel conventions instead of fighting them: Eloquent where it helps, the query builder where it's measurably faster, queues for anything slow, events and listeners to keep controllers thin. Code is covered by PHPUnit tests, formatted with Pint, analysed with Larastan and reviewed before merge.</p>\n<pre class=\"code-block\"><code>class PublishScheduledPost implements ShouldQueue\n{\n    public int $tries = 3;\n    public array $backoff = [30, 120, 600];\n\n    public function handle(ChannelPublisher $publisher): void\n    {\n        $result = $publisher-&gt;publish($this-&gt;post);\n\n        $this-&gt;post-&gt;update([\n            'status'       =&gt; PostStatus::Published,\n            'published_at' =&gt; now(),\n        ]);\n    }\n}</code></pre>\n<p class=\"code-caption\">A real pattern from DigiPulse: publishing is a queued job with retries, so a slow provider never blocks a user.</p>\n<h2>Taking over existing Laravel projects</h2>\n<p>A large part of our work is inheriting codebases built by other teams. We start with an audit — dependency freshness, test coverage, N+1 queries, security issues — then stabilize and extend incrementally, without stopping production.</p>\n<p>Tell us about your project and we'll give you an honest assessment of scope, stack and timeline.</p>",
+     "seo_keywords": "laravel development, hire laravel developers, laravel development company, laravel api development",
+     "seo_description": "Custom Laravel development: web applications, APIs, SaaS and admin panels. Hire Laravel developers for new builds or legacy codebases.",
+     "seo_title": "Laravel Development Services",
+     "image_alt": "Laravel development services — PHP application code on a laptop"
+    },
+    "uk": {
+     "title": "Розробка на Laravel",
+     "details": null,
+     "description": "<p>Якщо вам потрібен кастомний вебзастосунок, API чи SaaS-продукт на Laravel — або наявний Laravel-проєкт, якому потрібен відповідальний власник, — тут описано, як ми працюємо і що від нас очікувати.</p>\n<p>Laravel 12/13 на PHP 8.3 — наш основний backend-стек. Більшість того, що ми здаємо, працює на ньому: CMS цього сайту, API VetSpace і маркетингова платформа DigiPulse.</p>\n<h2>Що ми створюємо на Laravel</h2>\n<ul>\n<li>SaaS-платформи та продукти з підпискою — DigiPulse це Laravel-застосунок із мультиканальною публікацією, плануванням і аналітикою.</li>\n<li>REST та GraphQL API для SPA і мобільних клієнтів — бекенд VetSpace обслуговує Nuxt-фронтенд і мобільні застосунки з одного Laravel API.</li>\n<li>Адмін-панелі та внутрішні інструменти — для back-office UI ми використовуємо Filament, як у CMS цього сайту.</li>\n<li>E-commerce бекенди, системи бронювання та бізнес-інструменти, які не вкладаються в коробкові рішення.</li>\n</ul>\n<h2>Як обробляється типовий запит</h2>\n<p>Цикл запиту лишається швидким, бо важка робота йде в чергу — листи, імпорти, AI-виклики, публікації:</p>\n<p><img src=\"/uploads/services/laravel-pipeline.svg\" alt=\"Потік запиту в Laravel: HTTP-запит, застосунок, черга, воркер\" loading=\"lazy\"/></p>\n<h2>Як ми працюємо</h2>\n<p>Ми дотримуємось конвенцій Laravel, а не боремося з ними: Eloquent там, де він допомагає, query builder — де вимірювано швидше, черги для всього повільного, події та слухачі, щоб контролери лишались тонкими. Код покритий PHPUnit-тестами, форматується Pint, аналізується Larastan і проходить рев'ю перед мерджем.</p>\n<pre class=\"code-block\"><code>class PublishScheduledPost implements ShouldQueue\n{\n    public int $tries = 3;\n    public array $backoff = [30, 120, 600];\n\n    public function handle(ChannelPublisher $publisher): void\n    {\n        $result = $publisher-&gt;publish($this-&gt;post);\n\n        $this-&gt;post-&gt;update([\n            'status'       =&gt; PostStatus::Published,\n            'published_at' =&gt; now(),\n        ]);\n    }\n}</code></pre>\n<p class=\"code-caption\">Реальний патерн із DigiPulse: публікація — це queued job з ретраями, тож повільний провайдер ніколи не блокує користувача.</p>\n<h2>Переймаємо наявні Laravel-проєкти</h2>\n<p>Чимала частина нашої роботи — успадковані codebase'и від інших команд. Починаємо з аудиту: свіжість залежностей, покриття тестами, N+1-запити, безпека — далі стабілізуємо й розвиваємо інкрементально, без зупинки продакшену.</p>\n<p>Розкажіть про свій проєкт — дамо чесну оцінку обсягу, стека й термінів.</p>",
+     "seo_keywords": "laravel розробка, найняти laravel розробника, laravel api розробка",
+     "seo_description": "Кастомна розробка на Laravel: вебзастосунки, API, SaaS та адмін-панелі. Laravel-розробники для нових продуктів і наявних кодбаз.",
+     "seo_title": "Послуги розробки на Laravel",
+     "image_alt": "Послуги розробки на Laravel — код PHP-застосунку на ноутбуці"
+    },
+    "pl": {
+     "title": "Tworzenie aplikacji w Laravel",
+     "details": null,
+     "description": "<p>Jeśli potrzebujesz dedykowanej aplikacji webowej, API lub produktu SaaS na Laravel — albo istniejącego codebase'u Laravel, który potrzebuje odpowiedzialnego właściciela — ta strona opisuje, jak pracujemy i czego oczekiwać.</p>\n<p>Laravel 12/13 na PHP 8.3 to nasz główny stos backendowy. Większość tego, co dostarczamy, działa na nim: CMS tej strony, API VetSpace i platforma marketingowa DigiPulse.</p>\n<h2>Co budujemy w Laravel</h2>\n<ul>\n<li>Platformy SaaS i produkty subskrypcyjne — DigiPulse to aplikacja Laravel z publikacją wielokanałową, planowaniem i analityką.</li>\n<li>REST i GraphQL API dla SPA i klientów mobilnych — backend VetSpace obsługuje frontend Nuxt i aplikacje mobilne z jednego API Laravel.</li>\n<li>Panele administracyjne i narzędzia wewnętrzne — do back-office używamy Filament, jak w CMS tej strony.</li>\n<li>Backendy e-commerce, systemy rezerwacji i narzędzia biznesowe, które nie mieszczą się w gotowych rozwiązaniach.</li>\n</ul>\n<h2>Jak obsługiwane jest typowe żądanie</h2>\n<p>Cykl żądania pozostaje szybki, bo ciężka praca trafia do kolejki — e-maile, importy, wywołania AI, publikacje:</p>\n<p><img src=\"/uploads/services/laravel-pipeline.svg\" alt=\"Przepływ żądania w Laravel: żądanie HTTP, aplikacja, kolejka, worker\" loading=\"lazy\"/></p>\n<h2>Jak pracujemy</h2>\n<p>Stosujemy się do konwencji Laravel zamiast z nimi walczyć: Eloquent tam, gdzie pomaga, query builder tam, gdzie jest wymiernie szybszy, kolejki dla wszystkiego wolnego, eventy i listenery, by kontrolery pozostały lekkie. Kod pokrywają testy PHPUnit, formatuje Pint, analizuje Larastan, a przed merge przechodzi review.</p>\n<pre class=\"code-block\"><code>class PublishScheduledPost implements ShouldQueue\n{\n    public int $tries = 3;\n    public array $backoff = [30, 120, 600];\n\n    public function handle(ChannelPublisher $publisher): void\n    {\n        $result = $publisher-&gt;publish($this-&gt;post);\n\n        $this-&gt;post-&gt;update([\n            'status'       =&gt; PostStatus::Published,\n            'published_at' =&gt; now(),\n        ]);\n    }\n}</code></pre>\n<p class=\"code-caption\">Realny wzorzec z DigiPulse: publikacja to zadanie kolejkowe z retry, więc wolny provider nigdy nie blokuje użytkownika.</p>\n<h2>Przejęcie istniejących projektów Laravel</h2>\n<p>Znaczna część naszej pracy to codebase'y odziedziczone po innych zespołach. Zaczynamy od audytu — świeżość zależności, pokrycie testami, zapytania N+1, bezpieczeństwo — potem stabilizujemy i rozwijamy inkrementalnie, bez zatrzymywania produkcji.</p>\n<p>Opowiedz nam o swoim projekcie — damy uczciwą ocenę zakresu, stosu i terminów.</p>",
+     "seo_keywords": "laravel development, programista laravel, laravel api development",
+     "seo_description": "Dedykowany Laravel development: aplikacje webowe, API, SaaS i panele admina. Programiści Laravel do nowych produktów i istniejącego kodu.",
+     "seo_title": "Usługi Laravel Development",
+     "image_alt": "Usługi Laravel development — kod aplikacji PHP na laptopie"
+    }
+   }
+  },
+  {
+   "id": 22,
+   "price": null,
+   "service_category_id": 1,
+   "image": "1710095217.jpg",
+   "slug": "symfony-development",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Symfony Development",
+     "details": null,
+     "description": "<p>Symfony is our choice when a project needs enterprise-grade structure: strict architecture, a predictable upgrade path and components that integrate cleanly with the wider PHP ecosystem. We reach for it for complex backends, API-first applications and domains too rich for a lighter framework.</p>\n<h2>Where Symfony fits best</h2>\n<ul>\n<li>API-first backends — API Platform or hand-built REST/GraphQL endpoints with explicit serialization and versioning.</li>\n<li>Complex business systems — invoicing, logistics, multi-organization platforms — where Symfony's Form, Validator and Workflow components earn their keep.</li>\n<li>Long-lived codebases where Symfony's LTS releases and BC promise matter more than the newest features.</li>\n<li>Standalone components — Console, HttpClient, Messenger and EventDispatcher work well inside non-Symfony projects too.</li>\n</ul>\n<h2>What a request looks like</h2>\n<p><img src=\"/uploads/services/symfony-lifecycle.svg\" alt=\"Symfony request lifecycle with Messenger async transport\" loading=\"lazy\"/></p>\n<p>Everything is explicit: routing, validation and serialization are framework concerns; the handler holds the domain logic. Async work goes through Messenger to a Doctrine or RabbitMQ transport.</p>\n<h2>How we structure the code</h2>\n<p>Applications are organized around the domain, not the framework: thin controllers, explicit services, honest Doctrine entities, business logic testable without booting the kernel.</p>\n<pre class=\"code-block\"><code>#[AsMessageHandler]\nfinal class GenerateInvoiceHandler\n{\n    public function __construct(\n        private InvoiceRepository $invoices,\n        private PdfRenderer $pdf,\n    ) {}\n\n    public function __invoke(GenerateInvoice $command): void\n    {\n        $invoice = $this-&gt;invoices-&gt;get($command-&gt;invoiceId);\n        $this-&gt;pdf-&gt;render($invoice);\n        $invoice-&gt;markGenerated();\n    }\n}</code></pre>\n<h2>Migration and modernization</h2>\n<p>For legacy PHP — Zend, Symfony 2/3/4 or framework-less code — we migrate incrementally: old and new run side by side, modules move one at a time, and the business keeps running. Share your requirements and we'll tell you honestly whether Symfony, Laravel or something else fits better.</p>",
+     "seo_keywords": "symfony development, symfony developers, api platform, symfony migration",
+     "seo_description": "Custom Symfony development for complex business applications: modular architecture, API Platform, Doctrine, legacy modernization.",
+     "seo_title": "Symfony Development Services",
+     "image_alt": "Symfony development — developer workspace with code and architecture"
+    },
+    "uk": {
+     "title": "Розробка на Symfony",
+     "details": null,
+     "description": "<p>Symfony — наш вибір, коли проєкту потрібна enterprise-структура: чітка архітектура, передбачуваний шлях оновлень і компоненти, що чисто інтегруються з PHP-екосистемою. Ми беремо його для складних бекендів, API-first застосунків і доменів, занадто насичених для легшого фреймворку.</p>\n<h2>Де Symfony підходить найкраще</h2>\n<ul>\n<li>API-first бекенди — API Platform або власні REST/GraphQL-ендпоінти з явною серіалізацією та версіонуванням.</li>\n<li>Складні бізнес-системи — інвойси, логістика, мультиорганізаційні платформи — де компоненти Form, Validator і Workflow окупають себе.</li>\n<li>Довгоживучі codebase'и, де LTS-релізи Symfony й обіцянка зворотної сумісності важливіші за нові фічі.</li>\n<li>Окремі компоненти — Console, HttpClient, Messenger та EventDispatcher чудово працюють і в не-Symfony проєктах.</li>\n</ul>\n<h2>Як виглядає запит</h2>\n<p><img src=\"/uploads/services/symfony-lifecycle.svg\" alt=\"Життєвий цикл запиту Symfony з асинхронним транспортом Messenger\" loading=\"lazy\"/></p>\n<p>Все явно: роутинг, валідація й серіалізація — зона фреймворку; хендлер тримає доменну логіку. Асинхронна робота йде через Messenger у транспорт Doctrine або RabbitMQ.</p>\n<h2>Як ми структуруємо код</h2>\n<p>Застосунки організовані навколо домену, а не фреймворку: тонкі контролери, явні сервіси, чесні Doctrine-сутності, бізнес-логіка, що тестується без підняття kernel.</p>\n<pre class=\"code-block\"><code>#[AsMessageHandler]\nfinal class GenerateInvoiceHandler\n{\n    public function __construct(\n        private InvoiceRepository $invoices,\n        private PdfRenderer $pdf,\n    ) {}\n\n    public function __invoke(GenerateInvoice $command): void\n    {\n        $invoice = $this-&gt;invoices-&gt;get($command-&gt;invoiceId);\n        $this-&gt;pdf-&gt;render($invoice);\n        $invoice-&gt;markGenerated();\n    }\n}</code></pre>\n<h2>Міграція та модернізація</h2>\n<p>Для legacy PHP — Zend, Symfony 2/3/4 або код без фреймворку — ми мігруємо інкрементально: старе й нове працюють поруч, модулі переносяться по одному, бізнес працює без зупинок. Поділіться вимогами — чесно скажемо, що підійде краще: Symfony, Laravel чи щось інше.</p>",
+     "seo_keywords": "symfony розробка, symfony розробники, api platform, міграція symfony",
+     "seo_description": "Кастомна розробка на Symfony для складних бізнес-застосунків: модульна архітектура, API Platform, Doctrine, модернізація legacy.",
+     "seo_title": "Послуги розробки на Symfony",
+     "image_alt": "Розробка на Symfony — робоче місце розробника з кодом"
+    },
+    "pl": {
+     "title": "Tworzenie aplikacji w Symfony",
+     "details": null,
+     "description": "<p>Symfony to nasz wybór, gdy projekt potrzebuje struktury klasy enterprise: ścisłej architektury, przewidywalnej ścieżki aktualizacji i komponentów czysto integrujących się z ekosystemem PHP. Sięgamy po niego do złożonych backendów, aplikacji API-first i domen zbyt bogatych dla lżejszego frameworka.</p>\n<h2>Gdzie Symfony sprawdza się najlepiej</h2>\n<ul>\n<li>Backendy API-first — API Platform lub własne endpointy REST/GraphQL z jawną serializacją i wersjonowaniem.</li>\n<li>Złożone systemy biznesowe — fakturowanie, logistyka, platformy wieloorganizacyjne — gdzie komponenty Form, Validator i Workflow zwracają się z nawiązką.</li>\n<li>Długowieczne codebase'y, w których wydania LTS Symfony i obietnica kompatybilności znaczą więcej niż najnowsze funkcje.</li>\n<li>Samodzielne komponenty — Console, HttpClient, Messenger i EventDispatcher działają świetnie także w projektach bez Symfony.</li>\n</ul>\n<h2>Jak wygląda żądanie</h2>\n<p><img src=\"/uploads/services/symfony-lifecycle.svg\" alt=\"Cykl żądania Symfony z asynchronicznym transportem Messenger\" loading=\"lazy\"/></p>\n<p>Wszystko jest jawne: routing, walidacja i serializacja to obszar frameworka; handler trzyma logikę domeny. Praca asynchroniczna idzie przez Messenger do transportu Doctrine lub RabbitMQ.</p>\n<h2>Jak strukturyzujemy kod</h2>\n<p>Aplikacje organizujemy wokół domeny, a nie frameworka: lekkie kontrolery, jawne serwisy, uczciwe encje Doctrine, logika biznesowa testowalna bez uruchamiania kernela.</p>\n<pre class=\"code-block\"><code>#[AsMessageHandler]\nfinal class GenerateInvoiceHandler\n{\n    public function __construct(\n        private InvoiceRepository $invoices,\n        private PdfRenderer $pdf,\n    ) {}\n\n    public function __invoke(GenerateInvoice $command): void\n    {\n        $invoice = $this-&gt;invoices-&gt;get($command-&gt;invoiceId);\n        $this-&gt;pdf-&gt;render($invoice);\n        $invoice-&gt;markGenerated();\n    }\n}</code></pre>\n<h2>Migracja i modernizacja</h2>\n<p>Dla legacy PHP — Zend, Symfony 2/3/4 lub kod bez frameworka — migrujemy inkrementalnie: stare i nowe działają obok siebie, moduły przenosimy po jednym, biznes działa bez przerw. Opowiedz o wymaganiach — szczerze powiemy, czy lepszy będzie Symfony, Laravel czy coś innego.</p>",
+     "seo_keywords": "symfony development, programista symfony, api platform, migracja symfony",
+     "seo_description": "Dedykowany Symfony development dla złożonych aplikacji biznesowych: architektura modułowa, API Platform, Doctrine, modernizacja legacy.",
+     "seo_title": "Usługi Symfony Development",
+     "image_alt": "Symfony development — stanowisko dewelopera z kodem"
+    }
+   }
+  },
+  {
+   "id": 23,
+   "price": null,
+   "service_category_id": 1,
+   "image": "1685400803.jpg",
+   "slug": "php-development",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "PHP Development",
+     "details": null,
+     "description": "<p>PHP powers roughly three quarters of server-rendered websites — and modern PHP 8.3 is a different language than the one its reputation comes from: strict types, enums, readonly classes, a JIT compiler and a mature package ecosystem. It is the language we know best and the one most of our production systems run on.</p>\n<h2>What we build in PHP</h2>\n<ul>\n<li>Custom web applications and APIs on Laravel and Symfony.</li>\n<li>CMS-driven websites, admin panels and internal tools — including this site.</li>\n<li>E-commerce backends and integrations with payment, CRM and shipping systems.</li>\n<li>Maintenance and modernization of existing PHP applications, from PHP 5.x-era codebases upward.</li>\n</ul>\n<h2>The stack underneath</h2>\n<p><img src=\"/uploads/services/php-stack.svg\" alt=\"PHP production stack: Nginx, PHP-FPM, MySQL, Redis\" loading=\"lazy\"/></p>\n<p>A typical deployment: Nginx terminating TLS, PHP-FPM 8.3 with OPcache, MySQL for storage, Redis for cache and queues. Nothing exotic — a stack that any competent team can operate, which is exactly the point.</p>\n<h2>Modern PHP in practice</h2>\n<pre class=\"code-block\"><code>enum PostStatus: string\n{\n    case Draft     = 'draft';\n    case Scheduled = 'scheduled';\n    case Published = 'published';\n}\n\nfinal readonly class ChannelConfig\n{\n    public function __construct(\n        public string $provider,\n        public array $credentials,\n        public ?int $rateLimit = null,\n    ) {}\n}</code></pre>\n<p class=\"code-caption\">Typed, immutable and boring on purpose — production PHP in 2025 has little in common with the scripts of the 2000s.</p>\n<p>We back the code with PHPUnit tests, Larastan static analysis and Pint formatting. If your PHP application is slow, fragile or stuck on an old version, we can audit it and plan a path forward.</p>",
+     "seo_keywords": "php development, hire php developers, php development company, php 8 development",
+     "seo_description": "Custom PHP development: web applications, APIs and integrations on modern PHP 8.x. Laravel, Symfony or plain PHP — new builds and legacy rescue.",
+     "seo_title": "PHP Development Services",
+     "image_alt": "PHP development — developer reviewing PHP, HTML and CSS code"
+    },
+    "uk": {
+     "title": "Розробка на PHP",
+     "details": null,
+     "description": "<p>PHP живить приблизно три чверті серверних сайтів — і сучасний PHP 8.3 це інша мова, ніж та, з якої пішла його репутація: строгі типи, enum'и, readonly-класи, JIT-компілятор і зріла екосистема пакетів. Це мова, яку ми знаємо найкраще, і на якій працює більшість наших продакшен-систем.</p>\n<h2>Що ми створюємо на PHP</h2>\n<ul>\n<li>Кастомні вебзастосунки та API на Laravel і Symfony.</li>\n<li>Сайти на CMS, адмін-панелі та внутрішні інструменти — включно з цим сайтом.</li>\n<li>E-commerce бекенди та інтеграції з платіжними, CRM і логістичними системами.</li>\n<li>Підтримку й модернізацію наявних PHP-застосунків — від codebase'ів епохи PHP 5.x і вище.</li>\n</ul>\n<h2>Стек під капотом</h2>\n<p><img src=\"/uploads/services/php-stack.svg\" alt=\"Продакшен-стек PHP: Nginx, PHP-FPM, MySQL, Redis\" loading=\"lazy\"/></p>\n<p>Типовий деплой: Nginx завершує TLS, PHP-FPM 8.3 з OPcache, MySQL для даних, Redis для кешу й черг. Нічого екзотичного — стек, який може обслуговувати будь-яка компетентна команда, і саме в цьому сенс.</p>\n<h2>Сучасний PHP на практиці</h2>\n<pre class=\"code-block\"><code>enum PostStatus: string\n{\n    case Draft     = 'draft';\n    case Scheduled = 'scheduled';\n    case Published = 'published';\n}\n\nfinal readonly class ChannelConfig\n{\n    public function __construct(\n        public string $provider,\n        public array $credentials,\n        public ?int $rateLimit = null,\n    ) {}\n}</code></pre>\n<p class=\"code-caption\">Типізований, імутабельний, навмисно нудний — продакшен-PHP у 2025 має мало спільного зі скриптами 2000-х.</p>\n<p>Код ми підкріплюємо PHPUnit-тестами, статичним аналізом Larastan і форматуванням Pint. Якщо ваш PHP-застосунок повільний, крихкий або застряг на старій версії — можемо провести аудит і запланувати шлях вперед.</p>",
+     "seo_keywords": "php розробка, найняти php розробника, php 8 розробка",
+     "seo_description": "Кастомна розробка на PHP: вебзастосунки, API та інтеграції на сучасному PHP 8.x. Laravel, Symfony або чистий PHP — нові продукти й legacy.",
+     "seo_title": "Послуги розробки на PHP",
+     "image_alt": "Розробка на PHP — розробник переглядає код PHP, HTML і CSS"
+    },
+    "pl": {
+     "title": "Tworzenie aplikacji w PHP",
+     "details": null,
+     "description": "<p>PHP napędza mniej więcej trzy czwarte stron renderowanych po stronie serwera — a nowoczesny PHP 8.3 to inny język niż ten, z którego wzięła się jego reputacja: ścisłe typy, enumy, klasy readonly, kompilator JIT i dojrzały ekosystem pakietów. To język, który znamy najlepiej i na którym działa większość naszych systemów produkcyjnych.</p>\n<h2>Co budujemy w PHP</h2>\n<ul>\n<li>Dedykowane aplikacje webowe i API na Laravel i Symfony.</li>\n<li>Strony na CMS, panele administracyjne i narzędzia wewnętrzne — w tym ta strona.</li>\n<li>Backendy e-commerce i integracje z systemami płatności, CRM i wysyłki.</li>\n<li>Utrzymanie i modernizację istniejących aplikacji PHP — od codebase'ów ery PHP 5.x wzwyż.</li>\n</ul>\n<h2>Stos pod spodem</h2>\n<p><img src=\"/uploads/services/php-stack.svg\" alt=\"Produkcyjny stos PHP: Nginx, PHP-FPM, MySQL, Redis\" loading=\"lazy\"/></p>\n<p>Typowy deployment: Nginx kończący TLS, PHP-FPM 8.3 z OPcache, MySQL na dane, Redis na cache i kolejki. Nic egzotycznego — stos, który obsłuży każdy kompetentny zespół, i dokładnie o to chodzi.</p>\n<h2>Nowoczesny PHP w praktyce</h2>\n<pre class=\"code-block\"><code>enum PostStatus: string\n{\n    case Draft     = 'draft';\n    case Scheduled = 'scheduled';\n    case Published = 'published';\n}\n\nfinal readonly class ChannelConfig\n{\n    public function __construct(\n        public string $provider,\n        public array $credentials,\n        public ?int $rateLimit = null,\n    ) {}\n}</code></pre>\n<p class=\"code-caption\">Typowany, niemutowalny, celowo nudny — produkcyjny PHP w 2025 ma niewiele wspólnego ze skryptami z lat 2000.</p>\n<p>Kod wspieramy testami PHPUnit, analizą statyczną Larastan i formatowaniem Pint. Jeśli Twoja aplikacja PHP jest wolna, krucha albo utknęła na starej wersji — możemy ją zaudytować i zaplanować drogę dalej.</p>",
+     "seo_keywords": "php development, programista php, php 8 development",
+     "seo_description": "Dedykowany PHP development: aplikacje webowe, API i integracje na nowoczesnym PHP 8.x. Laravel, Symfony lub czysty PHP — nowe i legacy.",
+     "seo_title": "Usługi PHP Development",
+     "image_alt": "PHP development — deweloper przeglądający kod PHP, HTML i CSS"
+    }
+   }
+  },
+  {
+   "id": 24,
+   "price": null,
+   "service_category_id": 1,
+   "image": "1685401626.jpg",
+   "slug": "golang-development",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Golang Development",
+     "details": null,
+     "description": "<p>We use Go where PHP stops being the right tool: high-throughput services, background workers, network-intensive processing and software that should run lean. Go compiles to a single binary and its goroutines make concurrent work cheap — which is why NetPostPanel's heavy lifting is written in it.</p>\n<h2>What we build in Go</h2>\n<ul>\n<li>AI-processing microservices — NetPostPanel runs provider orchestration, RAG retrieval and semantic filtering as Go services that fan out concurrent LLM calls.</li>\n<li>Scrapers and data pipelines — crawlers that fetch, parse and normalize content at rates PHP workers can't match.</li>\n<li>Internal APIs and webhook processors — small services beside a Laravel monolith that take the load it shouldn't carry.</li>\n<li>CLI tools — importers, deployment helpers and maintenance utilities that compile to one binary.</li>\n</ul>\n<h2>How it sits next to PHP</h2>\n<p><img src=\"/uploads/services/golang-architecture.svg\" alt=\"Laravel application with Go services and concurrent LLM calls\" loading=\"lazy\"/></p>\n<p>The Laravel app handles what it's good at — HTTP, auth, admin, billing. Go services handle fan-out concurrency and CPU-heavy work. They talk over HTTP, queues and webhooks.</p>\n<h2>Fan-out in a dozen lines</h2>\n<pre class=\"code-block\"><code>func fetchAll(ctx context.Context, urls []string) []Result {\n    results := make(chan Result, len(urls))\n    var wg sync.WaitGroup\n\n    for _, u := range urls {\n        wg.Add(1)\n        go func(url string) {\n            defer wg.Done()\n            results &lt;- fetch(ctx, url)\n        }(u)\n    }\n\n    wg.Wait()\n    close(results)\n    return slices.Collect(results)\n}</code></pre>\n<p class=\"code-caption\">The actual concurrency pattern behind NetPostPanel's provider calls — no framework, just the standard library.</p>\n<p>Our Go code is intentionally boring: standard library first, minimal dependencies, structured logging, graceful shutdown, Dockerfile included. If you have a PHP bottleneck that keeps growing, or a service that should live outside the monolith — that's a good reason to talk.</p>",
+     "seo_keywords": "golang development, hire go developers, golang microservices, golang api development",
+     "seo_description": "Go development for high-load APIs, microservices, workers and data pipelines. Hire Golang developers for performance-critical components.",
+     "seo_title": "Golang Development Services",
+     "image_alt": "Golang development — code editor on a laptop"
+    },
+    "uk": {
+     "title": "Розробка на Golang",
+     "details": null,
+     "description": "<p>Ми використовуємо Go там, де PHP перестає бути правильним інструментом: високонавантажені сервіси, фонові воркери, мережева обробка та софт, що має працювати легко. Go компілюється в один бінарник, а горутини роблять конкурентну роботу дешевою — саме тому важка частина NetPostPanel написана на ньому.</p>\n<h2>Що ми створюємо на Go</h2>\n<ul>\n<li>AI-мікросервіси — NetPostPanel виконує оркестрацію провайдерів, RAG-ретривал і семантичну фільтрацію як Go-сервіси, що паралельно викликають LLM.</li>\n<li>Скрапери й пайплайни даних — краулери, які завантажують, парсять і нормалізують контент у темпі, недоступному PHP-воркерам.</li>\n<li>Внутрішні API та обробники вебхуків — маленькі сервіси поруч із Laravel-монолітом, що знімають з нього зайве навантаження.</li>\n<li>CLI-інструменти — імпортери, деплой-хелпери й утиліти, що компілюються в один бінарник.</li>\n</ul>\n<h2>Як це живе поруч із PHP</h2>\n<p><img src=\"/uploads/services/golang-architecture.svg\" alt=\"Laravel-застосунок із Go-сервісами та паралельними LLM-викликами\" loading=\"lazy\"/></p>\n<p>Laravel-застосунок робить те, у чому він сильний — HTTP, авторизація, адмінка, білінг. Go-сервіси беруть fan-out конкурентність і важкі обчислення. Спілкуються через HTTP, черги й вебхуки.</p>\n<h2>Fan-out у дюжину рядків</h2>\n<pre class=\"code-block\"><code>func fetchAll(ctx context.Context, urls []string) []Result {\n    results := make(chan Result, len(urls))\n    var wg sync.WaitGroup\n\n    for _, u := range urls {\n        wg.Add(1)\n        go func(url string) {\n            defer wg.Done()\n            results &lt;- fetch(ctx, url)\n        }(u)\n    }\n\n    wg.Wait()\n    close(results)\n    return slices.Collect(results)\n}</code></pre>\n<p class=\"code-caption\">Реальний патерн конкурентності за викликами провайдерів у NetPostPanel — без фреймворку, лише стандартна бібліотека.</p>\n<p>Наш Go-код навмисно нудний: стандартна бібліотека насамперед, мінімум залежностей, структуроване логування, graceful shutdown, Dockerfile у комплекті. Якщо у вас є вузьке місце в PHP, що росте, або сервіс, який має жити поза монолітом — це добрий привід поговорити.</p>",
+     "seo_keywords": "golang розробка, найняти go розробника, golang мікросервіси",
+     "seo_description": "Розробка на Go: високонавантажені API, мікросервіси, воркери та пайплайни даних. Golang-розробники для performance-критичних компонентів.",
+     "seo_title": "Послуги розробки на Golang",
+     "image_alt": "Розробка на Golang — редактор коду на ноутбуці"
+    },
+    "pl": {
+     "title": "Tworzenie aplikacji w Golang",
+     "details": null,
+     "description": "<p>Używamy Go tam, gdzie PHP przestaje być właściwym narzędziem: usługi o wysokiej przepustowości, workery w tle, przetwarzanie sieciowe i oprogramowanie, które ma działać lekko. Go kompiluje się do pojedynczego binarka, a gorutyny czynią pracę współbieżną tanią — dlatego ciężka część NetPostPanel jest w nim napisana.</p>\n<h2>Co budujemy w Go</h2>\n<ul>\n<li>Mikroserwisy AI — NetPostPanel realizuje orkiestrację providerów, retrieval RAG i filtrowanie semantyczne jako usługi Go, równolegle wywołujące LLM.</li>\n<li>Scrapery i pipeline'y danych — crawlery pobierające, parsujące i normalizujące treści w tempie niedostępnym dla workerów PHP.</li>\n<li>Wewnętrzne API i procesory webhooków — małe usługi obok monolitu Laravel, zdejmujące z niego zbędne obciążenie.</li>\n<li>Narzędzia CLI — importery, pomocniki deploymentu i narzędzia kompilowane do jednego binarka.</li>\n</ul>\n<h2>Jak to żyje obok PHP</h2>\n<p><img src=\"/uploads/services/golang-architecture.svg\" alt=\"Aplikacja Laravel z usługami Go i równoległymi wywołaniami LLM\" loading=\"lazy\"/></p>\n<p>Aplikacja Laravel robi to, w czym jest dobra — HTTP, autoryzacja, panel admina, billing. Usługi Go biorą współbieżność fan-out i ciężkie obliczenia. Komunikują się przez HTTP, kolejki i webhooki.</p>\n<h2>Fan-out w kilkunastu liniach</h2>\n<pre class=\"code-block\"><code>func fetchAll(ctx context.Context, urls []string) []Result {\n    results := make(chan Result, len(urls))\n    var wg sync.WaitGroup\n\n    for _, u := range urls {\n        wg.Add(1)\n        go func(url string) {\n            defer wg.Done()\n            results &lt;- fetch(ctx, url)\n        }(u)\n    }\n\n    wg.Wait()\n    close(results)\n    return slices.Collect(results)\n}</code></pre>\n<p class=\"code-caption\">Rzeczywisty wzorzec współbieżności za wywołaniami providerów w NetPostPanel — bez frameworka, tylko biblioteka standardowa.</p>\n<p>Nasz kod Go jest celowo nudny: najpierw biblioteka standardowa, minimalne zależności, strukturalne logowanie, graceful shutdown, Dockerfile w zestawie. Jeśli masz rosnące wąskie gardło w PHP albo usługę, która powinna żyć poza monolitem — to dobry powód, żeby porozmawiać.</p>",
+     "seo_keywords": "golang development, programista go, golang microservices",
+     "seo_description": "Go development: API o dużym obciążeniu, mikroserwisy, workery i pipeline'y danych. Programiści Golang do komponentów krytycznych wydajnościowo.",
+     "seo_title": "Usługi Golang Development",
+     "image_alt": "Golang development — edytor kodu na laptopie"
+    }
+   }
+  },
+  {
+   "id": 25,
+   "price": null,
+   "service_category_id": 2,
+   "image": "1687124726.jpg",
+   "slug": "vue-js-nuxt-development",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Vue.js & Nuxt Development",
+     "details": null,
+     "description": "<p>Vue 3 and Nuxt are our frontend stack for applications that need to be both interactive and visible to search engines. VetSpace and VetCard are built this way: a Nuxt server-rendered frontend on top of a Laravel API.</p>\n<h2>What we build with Vue and Nuxt</h2>\n<ul>\n<li>Server-rendered (SSR) and statically generated (SSG) sites — fast first paint, crawlable content, hydrated interactivity after load.</li>\n<li>Single-page applications — dashboards, portals and tools where SEO doesn't matter but responsiveness does.</li>\n<li>Headless storefronts and frontends decoupled from a PHP or Go backend.</li>\n<li>Component libraries and design systems that keep a growing product consistent.</li>\n</ul>\n<h2>How SSR and hydration fit together</h2>\n<p><img src=\"/uploads/services/nuxt-ssr.svg\" alt=\"Nuxt SSR: server render, hydration, Laravel API\" loading=\"lazy\"/></p>\n<p>Nuxt renders the page on the server so users and crawlers see real HTML immediately; Vue then hydrates it into a fully interactive app. Data comes from the Laravel API — one backend serving web and mobile clients alike.</p>\n<h2>What the code looks like</h2>\n<pre class=\"code-block\"><code>&lt;script setup lang=\"ts\"&gt;\nconst props = defineProps&lt;{ petId: number }&gt;()\n\nconst { data: pet, pending, refresh } =\n    await useFetch(`/api/pets/${props.petId}`)\n&lt;/script&gt;\n\n&lt;template&gt;\n  &lt;PetCard v-if=\"pet\" :pet=\"pet\" @updated=\"refresh\" /&gt;\n  &lt;SkeletonCard v-else-if=\"pending\" /&gt;\n&lt;/template&gt;</code></pre>\n<p class=\"code-caption\">Vue 3 Composition API with TypeScript — typed props, async data fetching, and a loading state instead of a blank screen.</p>\n<p>Whether it's a marketing site that must rank, or an application UI that must feel instant — tell us what you're building and we'll recommend SSR, SSG or SPA honestly, including when plain server-rendered HTML would do the job cheaper.</p>",
+     "seo_keywords": "vue.js development, nuxt development, hire vue developer, nuxt ssr",
+     "seo_description": "Vue 3 and Nuxt development: SPAs, SSR websites, admin dashboards. Modern frontend with TypeScript, Pinia and SEO-friendly rendering.",
+     "seo_title": "Vue.js & Nuxt Development Services",
+     "image_alt": "Vue.js and Nuxt development — JavaScript, HTML and CSS code"
+    },
+    "uk": {
+     "title": "Розробка на Vue.js та Nuxt",
+     "details": null,
+     "description": "<p>Vue 3 і Nuxt — наш фронтенд-стек для застосунків, які мають бути і інтерактивними, і видимими для пошуковиків. VetSpace і VetCard побудовані саме так: серверно-рендерений Nuxt-фронтенд поверх Laravel API.</p>\n<h2>Що ми створюємо на Vue і Nuxt</h2>\n<ul>\n<li>Сайти з серверним рендерингом (SSR) і статичною генерацією (SSG) — швидкий перший рендер, індексований контент, гідратація інтерактивності після завантаження.</li>\n<li>Single-page застосунки — дашборди, портали й інструменти, де SEO неважливе, а швидкість реакції важлива.</li>\n<li>Headless-вітрини та фронтенди, відділені від PHP чи Go бекенда.</li>\n<li>Бібліотеки компонентів і дизайн-системи, що тримають продукт консистентним у міру росту.</li>\n</ul>\n<h2>Як SSR і гідратація працюють разом</h2>\n<p><img src=\"/uploads/services/nuxt-ssr.svg\" alt=\"Nuxt SSR: серверний рендер, гідратація, Laravel API\" loading=\"lazy\"/></p>\n<p>Nuxt рендерить сторінку на сервері, тож користувачі й краулери одразу бачать реальний HTML; потім Vue гідратує його в повноцінний інтерактивний застосунок. Дані йдуть із Laravel API — один бекенд для вебу й мобільних клієнтів.</p>\n<h2>Як виглядає код</h2>\n<pre class=\"code-block\"><code>&lt;script setup lang=\"ts\"&gt;\nconst props = defineProps&lt;{ petId: number }&gt;()\n\nconst { data: pet, pending, refresh } =\n    await useFetch(`/api/pets/${props.petId}`)\n&lt;/script&gt;\n\n&lt;template&gt;\n  &lt;PetCard v-if=\"pet\" :pet=\"pet\" @updated=\"refresh\" /&gt;\n  &lt;SkeletonCard v-else-if=\"pending\" /&gt;\n&lt;/template&gt;</code></pre>\n<p class=\"code-caption\">Vue 3 Composition API з TypeScript — типізовані пропси, асинхронне завантаження даних і стан очікування замість порожнього екрану.</p>\n<p>Чи то маркетинговий сайт, який має ранжуватись, чи інтерфейс застосунку, що має бути миттєвим — розкажіть, що будуєте, і ми чесно порадимо SSR, SSG чи SPA, включно з випадками, коли звичайний серверний рендер зробить роботу дешевше.</p>",
+     "seo_keywords": "vue.js розробка, nuxt розробка, найняти vue розробника, nuxt ssr",
+     "seo_description": "Розробка на Vue 3 і Nuxt: SPA, SSR-сайти, адмін-дашборди. Сучасний фронтенд з TypeScript, Pinia та SEO-дружнім рендерингом.",
+     "seo_title": "Послуги розробки на Vue.js та Nuxt",
+     "image_alt": "Розробка на Vue.js і Nuxt — код JavaScript, HTML і CSS"
+    },
+    "pl": {
+     "title": "Tworzenie aplikacji w Vue.js i Nuxt",
+     "details": null,
+     "description": "<p>Vue 3 i Nuxt to nasz stos frontendowy dla aplikacji, które mają być zarówno interaktywne, jak i widoczne dla wyszukiwarek. VetSpace i VetCard są zbudowane właśnie tak: renderowany serwerowo frontend Nuxt na API Laravel.</p>\n<h2>Co budujemy w Vue i Nuxt</h2>\n<ul>\n<li>Strony renderowane serwerowo (SSR) i generowane statycznie (SSG) — szybki pierwszy render, treść dla crawlerów, hydratacja interaktywności po załadowaniu.</li>\n<li>Aplikacje single-page — dashboardy, portale i narzędzia, gdzie SEO jest nieważne, a liczy się responsywność.</li>\n<li>Headless storefronty i frontendy oddzielone od backendu PHP lub Go.</li>\n<li>Biblioteki komponentów i design systemy utrzymujące spójność rosnącego produktu.</li>\n</ul>\n<h2>Jak SSR i hydratacja działają razem</h2>\n<p><img src=\"/uploads/services/nuxt-ssr.svg\" alt=\"Nuxt SSR: render serwerowy, hydratacja, Laravel API\" loading=\"lazy\"/></p>\n<p>Nuxt renderuje stronę na serwerze, więc użytkownicy i crawlery od razu widzą prawdziwy HTML; potem Vue hydratuje go w pełni interaktywną aplikację. Dane płyną z API Laravel — jeden backend dla webu i klientów mobilnych.</p>\n<h2>Jak wygląda kod</h2>\n<pre class=\"code-block\"><code>&lt;script setup lang=\"ts\"&gt;\nconst props = defineProps&lt;{ petId: number }&gt;()\n\nconst { data: pet, pending, refresh } =\n    await useFetch(`/api/pets/${props.petId}`)\n&lt;/script&gt;\n\n&lt;template&gt;\n  &lt;PetCard v-if=\"pet\" :pet=\"pet\" @updated=\"refresh\" /&gt;\n  &lt;SkeletonCard v-else-if=\"pending\" /&gt;\n&lt;/template&gt;</code></pre>\n<p class=\"code-caption\">Vue 3 Composition API z TypeScript — typowane propsy, asynchroniczne pobieranie danych i stan ładowania zamiast pustego ekranu.</p>\n<p>Niezależnie od tego, czy to strona marketingowa, która ma się pozycjonować, czy interfejs aplikacji, który ma działać natychmiast — opowiedz, co budujesz, a szczerze doradzimy SSR, SSG lub SPA, włącznie z przypadkami, gdy zwykły render serwerowy zrobi robotę taniej.</p>",
+     "seo_keywords": "vue.js development, nuxt development, programista vue, nuxt ssr",
+     "seo_description": "Tworzenie w Vue 3 i Nuxt: SPA, strony SSR, panele admina. Nowoczesny frontend z TypeScript, Pinia i renderowaniem przyjaznym SEO.",
+     "seo_title": "Usługi Vue.js i Nuxt Development",
+     "image_alt": "Vue.js i Nuxt development — kod JavaScript, HTML i CSS"
+    }
+   }
+  },
+  {
+   "id": 26,
+   "price": null,
+   "service_category_id": 2,
+   "image": "1685401435.png",
+   "slug": "responsive-web-apps",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Responsive Web Applications",
+     "details": null,
+     "description": "<p>Responsive design today means layouts that adapt fluidly to any viewport — not a separate \"mobile version\" and not a fixed set of breakpoints copied from a framework demo. We build interfaces that work from a 320 px phone to a wide desktop without a separate codebase.</p>\n<h2>What responsive means in our work</h2>\n<ul>\n<li>Fluid layouts — CSS Grid and Flexbox with intrinsic sizing instead of dozens of breakpoints.</li>\n<li>Fluid typography — type scales smoothly with the viewport via <code>clamp()</code> rather than jumping at fixed widths.</li>\n<li>Touch-first interactions — tap targets sized for fingers, gestures where they help, hover-only features with fallbacks.</li>\n<li>Performance as part of the layout — images sized per device, lazy loading, and CSS that doesn't block rendering.</li>\n<li>Accessibility built in — contrast, focus states and <code>prefers-reduced-motion</code> respected.</li>\n</ul>\n<h2>One codebase, every screen</h2>\n<p><img src=\"/uploads/services/responsive-grid.svg\" alt=\"Fluid grid: one layout adapting from desktop to mobile\" loading=\"lazy\"/></p>\n<h2>What the CSS looks like</h2>\n<pre class=\"code-block\"><code>.cards {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n  gap: clamp(16px, 3vw, 32px);\n}\n\nh1 { font-size: clamp(1.75rem, 1.2rem + 2.5vw, 3rem); }\n\n@media (prefers-reduced-motion: reduce) {\n  * { animation: none; transition: none; }\n}</code></pre>\n<p class=\"code-caption\">A grid that reflows itself, type that scales continuously, and respect for users who ask for less motion — no JavaScript required.</p>\n<p>We test on real viewports, not just the browser's device toolbar. If your site loses customers on phones — and for most sites that's half the traffic — that's the first thing we fix.</p>",
+     "seo_keywords": "responsive web development, mobile-first web apps, pwa development, responsive design",
+     "seo_description": "Responsive web applications that work on every device: mobile-first design, fast load times, accessible UI and Core Web Vitals optimization.",
+     "seo_title": "Responsive Web Application Development",
+     "image_alt": "Responsive web application development — CSS code and developer"
+    },
+    "uk": {
+     "title": "Адаптивні вебзастосунки",
+     "details": null,
+     "description": "<p>Адаптивний дизайн сьогодні — це макети, що плинно підлаштовуються під будь-який вьюпорт, а не окрема \"мобільна версія\" і не фіксований набір брейкпоінтів із демки фреймворку. Ми будуємо інтерфейси, що працюють від телефона 320 px до широкого десктопу без окремого codebase.</p>\n<h2>Що адаптивність означає в нашій роботі</h2>\n<ul>\n<li>Плинні макети — CSS Grid і Flexbox з інтринзик-розмірами замість десятків брейкпоінтів.</li>\n<li>Плинна типографіка — текст масштабується разом із вьюпортом через <code>clamp()</code>, а не скаче на фіксованих ширинах.</li>\n<li>Взаємодія touch-first — цілі дотиків розміром під пальці, жести там, де вони допомагають, фолбеки для hover-фіч.</li>\n<li>Продуктивність як частина макета — зображення під пристрій, lazy loading, CSS, що не блокує рендер.</li>\n<li>Доступність у базі — контраст, стани фокусу й повага до <code>prefers-reduced-motion</code>.</li>\n</ul>\n<h2>Один codebase, будь-який екран</h2>\n<p><img src=\"/uploads/services/responsive-grid.svg\" alt=\"Плинна сітка: один макет від десктопу до мобільного\" loading=\"lazy\"/></p>\n<h2>Як виглядає CSS</h2>\n<pre class=\"code-block\"><code>.cards {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n  gap: clamp(16px, 3vw, 32px);\n}\n\nh1 { font-size: clamp(1.75rem, 1.2rem + 2.5vw, 3rem); }\n\n@media (prefers-reduced-motion: reduce) {\n  * { animation: none; transition: none; }\n}</code></pre>\n<p class=\"code-caption\">Сітка, що сама перебудовується, текст, що масштабується безперервно, і повага до користувачів, які просять менше руху — без JavaScript.</p>\n<p>Ми тестуємо на реальних вьюпортах, а не лише в тулбарі браузера. Якщо ваш сайт втрачає клієнтів на телефонах — а для більшості сайтів це половина трафіку — це перше, що ми виправляємо.</p>",
+     "seo_keywords": "адаптивна веброзробка, mobile-first застосунки, pwa розробка, адаптивний дизайн",
+     "seo_description": "Адаптивні вебзастосунки для будь-якого пристрою: mobile-first дизайн, швидке завантаження, доступний UI та оптимізація Core Web Vitals.",
+     "seo_title": "Розробка адаптивних вебзастосунків",
+     "image_alt": "Розробка адаптивних вебзастосунків — CSS-код і розробник"
+    },
+    "pl": {
+     "title": "Responsywne aplikacje webowe",
+     "details": null,
+     "description": "<p>Responsywny design dziś to layouty dopasowujące się płynnie do każdego viewportu — nie osobna \"wersja mobilna\" i nie sztywny zestaw breakpointów skopiowany z dema frameworka. Budujemy interfejsy działające od telefonu 320 px po szeroki desktop bez osobnego codebase.</p>\n<h2>Co responsywność znaczy w naszej pracy</h2>\n<ul>\n<li>Płynne layouty — CSS Grid i Flexbox z rozmiarami intrinsic zamiast dziesiątek breakpointów.</li>\n<li>Płynna typografia — tekst skaluje się z viewportem przez <code>clamp()</code> zamiast skakać przy stałych szerokościach.</li>\n<li>Interakcje touch-first — cele dotyku wielkości palca, gesty tam, gdzie pomagają, fallbacki dla funkcji hover.</li>\n<li>Wydajność jako część layoutu — obrazy dopasowane do urządzenia, lazy loading, CSS nieblokujący renderu.</li>\n<li>Dostępność w standardzie — kontrast, stany fokusu i szacunek dla <code>prefers-reduced-motion</code>.</li>\n</ul>\n<h2>Jeden codebase, każdy ekran</h2>\n<p><img src=\"/uploads/services/responsive-grid.svg\" alt=\"Płynna siatka: jeden layout od desktopu do mobile\" loading=\"lazy\"/></p>\n<h2>Jak wygląda CSS</h2>\n<pre class=\"code-block\"><code>.cards {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n  gap: clamp(16px, 3vw, 32px);\n}\n\nh1 { font-size: clamp(1.75rem, 1.2rem + 2.5vw, 3rem); }\n\n@media (prefers-reduced-motion: reduce) {\n  * { animation: none; transition: none; }\n}</code></pre>\n<p class=\"code-caption\">Siatka, która sama się przebudowuje, tekst skalujący się płynnie i szacunek dla użytkowników proszących o mniej ruchu — bez JavaScriptu.</p>\n<p>Testujemy na prawdziwych viewportach, nie tylko w pasku narzędzi przeglądarki. Jeśli Twoja strona traci klientów na telefonach — a dla większości stron to połowa ruchu — to pierwsza rzecz, którą naprawiamy.</p>",
+     "seo_keywords": "responsywne aplikacje webowe, mobile-first, pwa development, responsive design",
+     "seo_description": "Responsywne aplikacje webowe działające na każdym urządzeniu: mobile-first, szybkie ładowanie, dostępny UI i optymalizacja Core Web Vitals.",
+     "seo_title": "Responsywne aplikacje webowe",
+     "image_alt": "Rozwój responsywnych aplikacji webowych — kod CSS i deweloper"
+    }
+   }
+  },
+  {
+   "id": 27,
+   "price": null,
+   "service_category_id": 3,
+   "image": "1685395904.png",
+   "slug": "wordpress-development",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "WordPress Development",
+     "details": null,
+     "description": "<p>WordPress powers about a third of the web because for content sites, marketing pages and small-to-medium stores it's still the fastest route from idea to launch. We build WordPress sites that stay fast and maintainable — not a pile of forty plugins held together by hope. Our DigiSpace Studio project is built on exactly this approach.</p>\n<h2>What we do with WordPress</h2>\n<ul>\n<li>Corporate and marketing websites — professional sites delivered quickly on a sane budget.</li>\n<li>Custom themes built on your design — clean HTML and proper asset loading, no page-builder bloat.</li>\n<li>Custom plugins and integrations — when no existing plugin does what you need, we write the missing piece instead of stacking three more.</li>\n<li>WooCommerce stores — catalogues, checkout customization, payment and shipping integrations.</li>\n<li>Migrations and rescues — moving hosts, fixing hacked installs, updating sites nobody dared touch for years.</li>\n</ul>\n<h2>What a healthy install looks like</h2>\n<p><img src=\"/uploads/services/wordpress-stack.svg\" alt=\"WordPress stack: Nginx, PHP-FPM, custom theme, minimal plugins, MySQL, Redis\" loading=\"lazy\"/></p>\n<h2>Custom features as real code</h2>\n<pre class=\"code-block\"><code>add_action('rest_api_init', function () {\n    register_rest_route('studio/v1', '/portfolio', [\n        'methods'  =&gt; 'GET',\n        'callback' =&gt; fn() =&gt; get_posts([\n            'post_type'   =&gt; 'portfolio',\n            'numberposts' =&gt; 12,\n        ]),\n        'permission_callback' =&gt; '__return_true',\n    ]);\n});</code></pre>\n<p class=\"code-caption\">A custom REST endpoint in a plugin — functionality that survives theme changes and stays testable.</p>\n<p>WordPress's reputation problems — slowness and hacks — come from poor setup, not the platform. We configure caching, image optimization, a minimal plugin set, hardening and automated backups. And we build custom Laravel applications too, so we'll tell you honestly when a project has outgrown WordPress.</p>",
+     "seo_keywords": "wordpress development, woocommerce development, wordpress developers, custom wordpress theme",
+     "seo_description": "WordPress development: custom themes, WooCommerce stores, performance optimization and multilingual sites without page-builder bloat.",
+     "seo_title": "WordPress Development Services",
+     "image_alt": "WordPress development services — WordPress logo"
+    },
+    "uk": {
+     "title": "Розробка на WordPress",
+     "details": null,
+     "description": "<p>WordPress живить близько третини вебу, бо для контентних сайтів, маркетингових сторінок і малих-середніх магазинів це досі найшвидший шлях від ідеї до запуску. Ми будуємо WordPress-сайти, які лишаються швидкими й підтримуваними — а не купу з сорока плагінів, що тримається на надії. Наш проєкт DigiSpace Studio побудований саме за цим підходом.</p>\n<h2>Що ми робимо на WordPress</h2>\n<ul>\n<li>Корпоративні та маркетингові сайти — професійні сайти швидко й за адекватний бюджет.</li>\n<li>Кастомні теми за вашим дизайном — чистий HTML і правильне підключення ресурсів, без bloated page-builder'ів.</li>\n<li>Кастомні плагіни та інтеграції — коли жоден наявний плагін не робить потрібного, ми пишемо бракуючу частину замість того, щоб ставити ще три.</li>\n<li>Магазини на WooCommerce — каталоги, кастомізація чекауту, інтеграції оплати й доставки.</li>\n<li>Міграції та порятунок — переїзд між хостингами, лікування зламаних інсталяцій, оновлення сайтів, яких ніхто не наважувався чіпати роками.</li>\n</ul>\n<h2>Як виглядає здорова інсталяція</h2>\n<p><img src=\"/uploads/services/wordpress-stack.svg\" alt=\"Стек WordPress: Nginx, PHP-FPM, кастомна тема, мінімум плагінів, MySQL, Redis\" loading=\"lazy\"/></p>\n<h2>Кастомні фічі як справжній код</h2>\n<pre class=\"code-block\"><code>add_action('rest_api_init', function () {\n    register_rest_route('studio/v1', '/portfolio', [\n        'methods'  =&gt; 'GET',\n        'callback' =&gt; fn() =&gt; get_posts([\n            'post_type'   =&gt; 'portfolio',\n            'numberposts' =&gt; 12,\n        ]),\n        'permission_callback' =&gt; '__return_true',\n    ]);\n});</code></pre>\n<p class=\"code-caption\">Кастомний REST-ендпоінт у плагіні — функціональність, що переживає зміну теми й лишається тестованою.</p>\n<p>Проблеми репутації WordPress — повільність і злами — йдуть від поганого налаштування, а не від платформи. Ми налаштовуємо кешування, оптимізацію зображень, мінімальний набір плагінів, захист і автоматичні бекапи. І ми також будуємо кастомні застосунки на Laravel — тож чесно скажемо, коли проєкт переріс WordPress.</p>",
+     "seo_keywords": "wordpress розробка, woocommerce розробка, wordpress розробники, кастомна тема wordpress",
+     "seo_description": "Розробка на WordPress: кастомні теми, магазини WooCommerce, оптимізація швидкості та багатомовні сайти без пейдж-білдерів.",
+     "seo_title": "Послуги розробки на WordPress",
+     "image_alt": "Послуги розробки на WordPress — логотип WordPress"
+    },
+    "pl": {
+     "title": "Tworzenie stron na WordPress",
+     "details": null,
+     "description": "<p>WordPress napędza około trzecią część sieci, bo dla stron z treścią, stron marketingowych i małych-średnich sklepów to wciąż najszybsza droga od pomysłu do uruchomienia. Budujemy strony WordPress, które pozostają szybkie i utrzymywalne — a nie stos czterdziestu wtyczek trzymanych nadzieją. Nasz projekt DigiSpace Studio jest zbudowany dokładnie w tym podejściu.</p>\n<h2>Co robimy na WordPress</h2>\n<ul>\n<li>Strony korporacyjne i marketingowe — profesjonalne strony szybko i w rozsądnym budżecie.</li>\n<li>Dedykowane motywy na podstawie Twojego projektu — czysty HTML i prawidłowe ładowanie zasobów, bez balastu page-builderów.</li>\n<li>Dedykowane wtyczki i integracje — gdy żadna istniejąca wtyczka nie robi tego, czego potrzebujesz, piszemy brakujący element zamiast instalować kolejne trzy.</li>\n<li>Sklepy WooCommerce — katalogi, dostosowanie checkoutu, integracje płatności i dostawy.</li>\n<li>Migracje i ratowanie — przeprowadzki między hostingami, naprawa zhakowanych instalacji, aktualizacja stron nietkniętych latami.</li>\n</ul>\n<h2>Jak wygląda zdrowa instalacja</h2>\n<p><img src=\"/uploads/services/wordpress-stack.svg\" alt=\"Stos WordPress: Nginx, PHP-FPM, dedykowany motyw, minimum wtyczek, MySQL, Redis\" loading=\"lazy\"/></p>\n<h2>Dedykowane funkcje jako prawdziwy kod</h2>\n<pre class=\"code-block\"><code>add_action('rest_api_init', function () {\n    register_rest_route('studio/v1', '/portfolio', [\n        'methods'  =&gt; 'GET',\n        'callback' =&gt; fn() =&gt; get_posts([\n            'post_type'   =&gt; 'portfolio',\n            'numberposts' =&gt; 12,\n        ]),\n        'permission_callback' =&gt; '__return_true',\n    ]);\n});</code></pre>\n<p class=\"code-caption\">Dedykowany endpoint REST we wtyczce — funkcjonalność, która przeżywa zmianę motywu i pozostaje testowalna.</p>\n<p>Problemy reputacji WordPressa — wolność i włamania — wynikają ze złej konfiguracji, a nie z platformy. Konfigurujemy cache'owanie, optymalizację obrazów, minimalny zestaw wtyczek, hardening i automatyczne kopie zapasowe. Budujemy też dedykowane aplikacje Laravel — więc szczerze powiemy, gdy projekt przerósł WordPress.</p>",
+     "seo_keywords": "wordpress development, woocommerce development, programista wordpress, motyw wordpress",
+     "seo_description": "WordPress development: dedykowane motywy, sklepy WooCommerce, optymalizacja i strony wielojęzyczne bez nadmiarowych builderów.",
+     "seo_title": "Usługi WordPress Development",
+     "image_alt": "Usługi WordPress development — logo WordPress"
+    }
+   }
+  },
+  {
+   "id": 28,
+   "price": null,
+   "service_category_id": 3,
+   "image": "1687820770.jpg",
+   "slug": "custom-crm-cms",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Custom CRM & CMS Development",
+     "details": null,
+     "description": "<p>Off-the-shelf CRMs and CMSs are built for the average company — and the moment your process is even slightly unusual, you start working for the software instead of the other way around. We build content and customer-management systems modeled on your actual workflow.</p>\n<h2>What we build</h2>\n<ul>\n<li>Custom CMS platforms — this site runs on ours: a Laravel application with a Filament admin panel, three-language content model and AI tools built in.</li>\n<li>CRM systems — clients, deals, documents and pipelines structured around your sales process, not a generic template.</li>\n<li>Internal tools — booking flows, inventory, reporting dashboards, anything that currently lives in spreadsheets.</li>\n</ul>\n<h2>How our own CMS is wired</h2>\n<p><img src=\"/uploads/services/cms-flow.svg\" alt=\"Custom CMS flow: Filament admin, localized content, Blade render, AI actions\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>public static function form(Schema $schema): Schema\n{\n    return $schema-&gt;components([\n        TextInput::make('title')-&gt;required(),\n        Textarea::make('seo_description')-&gt;maxLength(160),\n        FileUpload::make('image')-&gt;image()-&gt;disk('s3'),\n    ]);\n}</code></pre>\n<p class=\"code-caption\">An admin resource in our own CMS is a small declarative class — Filament builds the CRUD UI, validation and file uploads from this schema.</p>\n<p>Every entity — page, widget, service, menu item — carries its translations in a single JSON column, so adding a locale never requires a migration. The same modeling approach applies to CRM data: entities shaped around your process, with the flexibility to add fields and relationships without fighting the platform.</p>\n<h2>When custom makes sense</h2>\n<p>Custom development costs more upfront than a subscription — that's honest. It pays off when per-seat pricing grows faster than your team, when integrations keep breaking, or when you need features no vendor will build for you. If a configured off-the-shelf tool genuinely covers your process, we'll say so — we've set up WordPress and off-the-shelf CRMs for clients where that was the right answer.</p>",
+     "seo_keywords": "custom crm development, custom cms development, crm system development, laravel crm",
+     "seo_description": "Custom CRM and CMS development on Laravel: client management, sales pipelines, content workflows and admin panels tailored to your processes.",
+     "seo_title": "Custom CRM & CMS Development",
+     "image_alt": "Custom CRM and CMS development — team workflow board"
+    },
+    "uk": {
+     "title": "Розробка кастомних CRM та CMS",
+     "details": null,
+     "description": "<p>Коробкові CRM і CMS будуються під середньостатистичну компанію — і щойно ваш процес хоч трохи нестандартний, ви починаєте працювати на софт замість навпаки. Ми створюємо системи керування контентом і клієнтами, змодельовані навколо вашого реального workflow.</p>\n<h2>Що ми створюємо</h2>\n<ul>\n<li>Кастомні CMS-платформи — цей сайт працює на нашій: Laravel-застосунок з адмінкою на Filament, тримовною моделлю контенту й вбудованими AI-інструментами.</li>\n<li>CRM-системи — клієнти, угоди, документи й пайплайни, структуровані навколо вашого процесу продажів, а не генеричного шаблону.</li>\n<li>Внутрішні інструменти — бронювання, склад, аналітичні дашборди, все, що зараз живе в електронних таблицях.</li>\n</ul>\n<h2>Як влаштована наша CMS</h2>\n<p><img src=\"/uploads/services/cms-flow.svg\" alt=\"Потік кастомної CMS: адмінка Filament, локалізований контент, рендер Blade, AI-дії\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>public static function form(Schema $schema): Schema\n{\n    return $schema-&gt;components([\n        TextInput::make('title')-&gt;required(),\n        Textarea::make('seo_description')-&gt;maxLength(160),\n        FileUpload::make('image')-&gt;image()-&gt;disk('s3'),\n    ]);\n}</code></pre>\n<p class=\"code-caption\">Адмін-ресурс у нашій CMS — невеликий декларативний клас: Filament збирає CRUD-інтерфейс, валідацію й завантаження файлів із цієї схеми.</p>\n<p>Кожна сутність — сторінка, віджет, сервіс, пункт меню — несе свої переклади в одній JSON-колонці, тож додавання локалі ніколи не вимагає міграції. Той самий підхід до моделювання працює для CRM-даних: сутності навколо вашого процесу з гнучкістю додавати поля й зв'язки без боротьби з платформою.</p>\n<h2>Коли кастом має сенс</h2>\n<p>Кастомна розробка коштує на старті більше за підписку — це чесно. Вона окупається, коли ціна за місце росте швидше за команду, коли інтеграції постійно ламаються, або коли потрібні фічі, яких вендор ніколи не зробить. Якщо налаштований коробковий інструмент справді покриває ваш процес — ми скажемо це; ми налаштовували WordPress і готові CRM там, де це була правильна відповідь.</p>",
+     "seo_keywords": "розробка crm, розробка cms, кастомна crm система, laravel crm",
+     "seo_description": "Кастомні CRM та CMS на Laravel: керування клієнтами, воронки продажів, контент-воркфлоу та адмін-панелі під ваші процеси.",
+     "seo_title": "Розробка кастомних CRM та CMS",
+     "image_alt": "Розробка кастомних CRM і CMS — робочий процес команди"
+    },
+    "pl": {
+     "title": "Dedykowane systemy CRM i CMS",
+     "details": null,
+     "description": "<p>Gotowe CRM-y i CMS-y buduje się dla przeciętnej firmy — i gdy tylko Twój proces jest choć trochę nietypowy, zaczynasz pracować dla oprogramowania zamiast odwrotnie. Budujemy systemy zarządzania treścią i klientami modelowane wokół Twojego rzeczywistego workflow.</p>\n<h2>Co budujemy</h2>\n<ul>\n<li>Dedykowane platformy CMS — ta strona działa na naszej: aplikacja Laravel z panelem Filament, trzyjęzycznym modelem treści i wbudowanymi narzędziami AI.</li>\n<li>Systemy CRM — klienci, transakcje, dokumenty i pipeline'y ustrukturyzowane wokół Twojego procesu sprzedaży, a nie generycznego szablonu.</li>\n<li>Narzędzia wewnętrzne — rezerwacje, magazyn, dashboardy raportowe, wszystko, co obecnie żyje w arkuszach kalkulacyjnych.</li>\n</ul>\n<h2>Jak działa nasz CMS</h2>\n<p><img src=\"/uploads/services/cms-flow.svg\" alt=\"Przepływ dedykowanego CMS: panel Filament, zlokalizowane treści, render Blade, akcje AI\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>public static function form(Schema $schema): Schema\n{\n    return $schema-&gt;components([\n        TextInput::make('title')-&gt;required(),\n        Textarea::make('seo_description')-&gt;maxLength(160),\n        FileUpload::make('image')-&gt;image()-&gt;disk('s3'),\n    ]);\n}</code></pre>\n<p class=\"code-caption\">Zasób administracyjny w naszym CMS to niewielka deklaratywna klasa — Filament buduje z tego schematu interfejs CRUD, walidację i uploady.</p>\n<p>Każda encja — strona, widget, usługa, pozycja menu — niesie swoje tłumaczenia w jednej kolumnie JSON, więc dodanie lokalizacji nigdy nie wymaga migracji. To samo podejście do modelowania działa dla danych CRM: encje wokół Twojego procesu, z elastycznością dodawania pól i relacji bez walki z platformą.</p>\n<h2>Kiedy dedykowane rozwiązanie ma sens</h2>\n<p>Dedykowany rozwój kosztuje na starcie więcej niż subskrypcja — to uczciwe. Zwraca się, gdy cena za stanowisko rośnie szybciej niż zespół, gdy integracje ciągle się psują, albo gdy potrzebujesz funkcji, których vendor nigdy nie zbuduje. Jeśli skonfigurowane gotowe narzędzie faktycznie pokrywa Twój proces — powiemy to wprost; wdrażaliśmy WordPress i gotowe CRM-y tam, gdzie to była właściwa odpowiedź.</p>",
+     "seo_keywords": "dedykowany crm, dedykowany cms, system crm, laravel crm",
+     "seo_description": "Dedykowane CRM i CMS na Laravel: zarządzanie klientami, lejki sprzedaży, workflow treści i panele admina dopasowane do procesów.",
+     "seo_title": "Dedykowane systemy CRM i CMS",
+     "image_alt": "Dedykowane CRM i CMS — tablica pracy zespołu"
+    }
+   }
+  },
+  {
+   "id": 29,
+   "price": null,
+   "service_category_id": 3,
+   "image": "1687906564.jpg",
+   "slug": "ecommerce-development",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "E-commerce Development",
+     "details": null,
+     "description": "<p>We build e-commerce that fits the business instead of forcing the business into a platform. Sometimes that's a properly configured WooCommerce store; sometimes it's a custom Laravel application when the catalogue, pricing rules or integrations outgrow off-the-shelf software.</p>\n<h2>What we build</h2>\n<ul>\n<li>WooCommerce stores for straightforward catalogues — fast to launch, easy to manage, cheap to run.</li>\n<li>Custom e-commerce backends on Laravel — complex pricing, B2B flows, subscriptions, multi-warehouse stock.</li>\n<li>Headless storefronts — a Vue/Nuxt frontend on top of your backend when page speed is the competitive edge.</li>\n<li>Marketplace features — seller accounts, commission logic, payout flows.</li>\n</ul>\n<h2>The order flow we design around</h2>\n<p><img src=\"/uploads/services/ecommerce-flow.svg\" alt=\"E-commerce order flow: cart, checkout, payment gateway, webhooks\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>public function handle(StripeWebhook $event): void\n{\n    DB::transaction(function () use ($event) {\n        $order = Order::where('checkout_id', $event-&gt;checkoutId)\n            -&gt;lockForUpdate()\n            -&gt;firstOrFail();\n\n        if ($order-&gt;status === OrderStatus::Paid) {\n            return; // already processed — safe to replay\n        }\n\n        $order-&gt;markPaid($event-&gt;paymentId);\n        FulfillOrder::dispatch($order);\n    });\n}</code></pre>\n<p class=\"code-caption\">Payment webhooks arrive more than once. The handler is idempotent: inside a transaction with a row lock, an already-paid order is a no-op.</p>\n<p>A checkout is a state machine, not a form. Every arrow in that diagram is a place where money can be lost — which is why we insist on webhook-driven order state, idempotent payment handling and a queue for post-purchase work like invoices, emails and stock sync.</p>\n<h2>The plumbing that makes a store work</h2>\n<p>Payment gateways (Stripe, PayPal, local providers), shipping and tax calculation, accounting and CRM sync, transactional email, analytics. The storefront is the visible part; making everything talk reliably is where experience counts.</p>\n<p>We start from your catalogue and order flow, not from a theme demo. Bring us your product and current setup — we'll sketch the shortest path to a store that works.</p>",
+     "seo_keywords": "ecommerce development, online store development, woocommerce, custom ecommerce",
+     "seo_description": "E-commerce development: online stores on WooCommerce or custom Laravel, payment gateways, order management and SEO-ready catalogues.",
+     "seo_title": "E-commerce Development Services",
+     "image_alt": "E-commerce development — online store, payments and integrations"
+    },
+    "uk": {
+     "title": "Розробка e-commerce",
+     "details": null,
+     "description": "<p>Ми створюємо e-commerce, який підлаштовується під бізнес, а не змушує бізнес вкластись у платформу. Іноді це правильно налаштований WooCommerce; іноді — кастомний застосунок на Laravel, коли каталог, правила цін або інтеграції переростають коробковий софт.</p>\n<h2>Що ми створюємо</h2>\n<ul>\n<li>Магазини на WooCommerce для прямолінійних каталогів — швидкий запуск, легке керування, дешева підтримка.</li>\n<li>Кастомні e-commerce бекенди на Laravel — складні ціни, B2B-процеси, підписки, мультискладські залишки.</li>\n<li>Headless-вітрини — фронтенд на Vue/Nuxt поверх вашого бекенда, коли швидкість сторінок є конкурентною перевагою.</li>\n<li>Маркетплейс-функції — акаунти продавців, логіка комісій, виплати.</li>\n</ul>\n<h2>Потік замовлення, під який ми проєктуємо</h2>\n<p><img src=\"/uploads/services/ecommerce-flow.svg\" alt=\"Потік замовлення e-commerce: кошик, чекаут, платіжний шлюз, вебхуки\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>public function handle(StripeWebhook $event): void\n{\n    DB::transaction(function () use ($event) {\n        $order = Order::where('checkout_id', $event-&gt;checkoutId)\n            -&gt;lockForUpdate()\n            -&gt;firstOrFail();\n\n        if ($order-&gt;status === OrderStatus::Paid) {\n            return; // already processed — safe to replay\n        }\n\n        $order-&gt;markPaid($event-&gt;paymentId);\n        FulfillOrder::dispatch($order);\n    });\n}</code></pre>\n<p class=\"code-caption\">Платіжні вебхуки приходять не один раз. Хендлер ідемпотентний: у транзакції з блокуванням рядка вже оплачене замовлення — no-op.</p>\n<p>Чекаут — це state machine, а не форма. Кожна стрілка на діаграмі — місце, де можна втратити гроші; тому ми наполягаємо на webhook-керованому стані замовлення, ідемпотентній обробці платежів і черзі для post-purchase роботи — інвойсів, листів, синхронізації залишків.</p>\n<h2>Сантехніка, на якій тримається магазин</h2>\n<p>Платіжні шлюзи (Stripe, PayPal, локальні провайдери), розрахунок доставки й податків, синхронізація з бухгалтерією та CRM, транзакційні листи, аналітика. Вітрина — видима частина; змусити все надійно спілкуватись — ось де рахується досвід.</p>\n<p>Починаємо з вашого каталогу й потоку замовлень, а не з демки теми. Приходьте з продуктом і поточним сетапом — накидаємо найкоротший шлях до магазину, який працює.</p>",
+     "seo_keywords": "ecommerce розробка, розробка інтернет-магазину, woocommerce, кастомний ecommerce",
+     "seo_description": "Розробка e-commerce: інтернет-магазини на WooCommerce або кастомний Laravel, платіжні шлюзи, керування замовленнями, SEO-каталоги.",
+     "seo_title": "Послуги розробки e-commerce",
+     "image_alt": "Розробка e-commerce — інтернет-магазин, платежі та інтеграції"
+    },
+    "pl": {
+     "title": "Tworzenie sklepów e-commerce",
+     "details": null,
+     "description": "<p>Budujemy e-commerce dopasowany do biznesu, zamiast wciskać biznes w platformę. Czasem to dobrze skonfigurowany WooCommerce; czasem dedykowana aplikacja Laravel, gdy katalog, zasady cenowe czy integracje przerastają gotowe oprogramowanie.</p>\n<h2>Co budujemy</h2>\n<ul>\n<li>Sklepy WooCommerce dla prostych katalogów — szybkie uruchomienie, łatwe zarządzanie, tanie utrzymanie.</li>\n<li>Dedykowane backendy e-commerce na Laravel — złożone ceny, procesy B2B, subskrypcje, stany wielomagazynowe.</li>\n<li>Headless storefronty — frontend Vue/Nuxt na Twoim backendzie, gdy szybkość strony jest przewagą konkurencyjną.</li>\n<li>Funkcje marketplace — konta sprzedawców, logika prowizji, wypłaty.</li>\n</ul>\n<h2>Przepływ zamówienia, pod który projektujemy</h2>\n<p><img src=\"/uploads/services/ecommerce-flow.svg\" alt=\"Przepływ zamówienia e-commerce: koszyk, checkout, bramka płatności, webhooki\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>public function handle(StripeWebhook $event): void\n{\n    DB::transaction(function () use ($event) {\n        $order = Order::where('checkout_id', $event-&gt;checkoutId)\n            -&gt;lockForUpdate()\n            -&gt;firstOrFail();\n\n        if ($order-&gt;status === OrderStatus::Paid) {\n            return; // already processed — safe to replay\n        }\n\n        $order-&gt;markPaid($event-&gt;paymentId);\n        FulfillOrder::dispatch($order);\n    });\n}</code></pre>\n<p class=\"code-caption\">Webhooki płatności docierają więcej niż raz. Handler jest idempotentny: w transakcji z blokadą wiersza opłacone zamówienie to no-op.</p>\n<p>Checkout to maszyna stanów, a nie formularz. Każda strzałka na diagramie to miejsce, gdzie można stracić pieniądze — dlatego nalegamy na stan zamówienia sterowany webhookami, idempotentną obsługę płatności i kolejkę dla pracy po zakupie: faktur, e-maili, synchronizacji stanów.</p>\n<h2>Instalacja, na której stoi sklep</h2>\n<p>Bramki płatności (Stripe, PayPal, lokalni dostawcy), naliczanie dostawy i podatków, synchronizacja z księgowością i CRM, e-maile transakcyjne, analityka. Witryna to widoczna część; sprawienie, by wszystko niezawodnie rozmawiało — to miejsce, gdzie liczy się doświadczenie.</p>\n<p>Zaczynamy od Twojego katalogu i przepływu zamówień, a nie od dema motywu. Przynieś produkt i obecny setup — naszkicujemy najkrótszą drogę do działającego sklepu.</p>",
+     "seo_keywords": "ecommerce development, sklep internetowy, woocommerce, dedykowany ecommerce",
+     "seo_description": "E-commerce development: sklepy internetowe na WooCommerce lub dedykowany Laravel, bramki płatności, zarządzanie zamówieniami, SEO.",
+     "seo_title": "Usługi E-commerce Development",
+     "image_alt": "E-commerce development — sklep internetowy, płatności i integracje"
+    }
+   }
+  },
+  {
+   "id": 30,
+   "price": null,
+   "service_category_id": 4,
+   "image": "1685401742.jpg",
+   "slug": "ai-powered-integrations",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "AI-Powered Integrations",
+     "details": null,
+     "description": "<p>We integrate AI where it measurably earns its place: generating and filtering content, automating repetitive decisions, extracting structure from unstructured text. Our own product NetPostPanel is a complete AI content pipeline — we built its retrieval layer, provider orchestration and semantic filtering ourselves.</p>\n<h2>What we can build into your product</h2>\n<ul>\n<li>Content generation and translation pipelines — draft, review, translate, publish, with human checkpoints where they matter. This site's CMS has exactly that built into its admin panel.</li>\n<li>RAG (retrieval-augmented generation) — embedding your documents into a vector index so the model answers from your data instead of guessing.</li>\n<li>Chatbots and assistants — API-driven, wired into your domain, with tool use and guardrails.</li>\n<li>Semantic filtering — triaging content, leads or tickets by meaning, not keywords; NetPostPanel filters scraped sources by relevance before generation.</li>\n<li>Data extraction — turning PDFs, emails and messy inputs into structured records.</li>\n</ul>\n<h2>How the pipeline works</h2>\n<p><img src=\"/uploads/services/ai-pipeline.svg\" alt=\"AI content pipeline: prompt synthesis, RAG retrieval, LLM, semantic filter, publish\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>$response = Http::timeout(30)\n    -&gt;retry(3, 250, throw: false)\n    -&gt;withToken($provider-&gt;key)\n    -&gt;post(\"{$provider-&gt;endpoint}/chat/completions\", $payload);\n\nif ($response-&gt;failed()) {\n    return $this-&gt;fallback-&gt;complete($payload);\n}</code></pre>\n<p class=\"code-caption\">Provider calls get timeouts, bounded retries and a fallback provider — an LLM outage degrades the feature, it does not take the product down.</p>\n<p>Every step is a discrete, testable unit orchestrated asynchronously with retries. If a provider times out, the job retries; if the filter rejects a draft, it regenerates. Nothing reaches a public page unchecked.</p>\n<h2>Pragmatic about providers — and about AI itself</h2>\n<p>OpenAI, Anthropic, Google, local models — we pick per task and budget, with fallbacks so an outage or price hike doesn't take your feature down. And just as important: we'll tell you when a rules engine or a plain script solves your problem cheaper than a model.</p>",
+     "seo_keywords": "ai integration services, llm integration, rag pipeline, ai chatbot development, openai integration",
+     "seo_description": "AI integrations for real products: LLM features, RAG pipelines, chatbots, content generation and semantic search with cost control built in.",
+     "seo_title": "AI Integration Services",
+     "image_alt": "AI-powered integrations — LLM, RAG and automation components"
+    },
+    "uk": {
+     "title": "AI-інтеграції",
+     "details": null,
+     "description": "<p>Ми інтегруємо AI там, де він вимірювано окупається: генерація й фільтрація контенту, автоматизація рутинних рішень, структурування неструктурованого тексту. Наш власний продукт NetPostPanel — це повний AI-пайплайн контенту: ретривал-шар, оркестрацію провайдерів і семантичну фільтрацію ми будували самі.</p>\n<h2>Що ми можемо вбудувати у ваш продукт</h2>\n<ul>\n<li>Пайплайни генерації та перекладу контенту — чернетка, рев'ю, переклад, публікація — з людськими контрольними точками там, де вони потрібні. CMS цього сайту має саме таке в адмінці.</li>\n<li>RAG (retrieval-augmented generation) — ембедінги ваших документів у векторний індекс, щоб модель відповідала з ваших даних, а не вигадувала.</li>\n<li>Чат-боти й асистенти — API-рушійні, підключені до вашого домену, з інструментами й обмеженнями.</li>\n<li>Семантична фільтрація — сортування контенту, лідів чи тікетів за змістом, а не ключовими словами; NetPostPanel фільтрує наскреплені джерела за релевантністю перед генерацією.</li>\n<li>Екстракція даних — перетворення PDF, листів і неохайних вводів у структуровані записи.</li>\n</ul>\n<h2>Як працює пайплайн</h2>\n<p><img src=\"/uploads/services/ai-pipeline.svg\" alt=\"AI-пайплайн контенту: синтез промпту, RAG-ретривал, LLM, семантичний фільтр, публікація\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>$response = Http::timeout(30)\n    -&gt;retry(3, 250, throw: false)\n    -&gt;withToken($provider-&gt;key)\n    -&gt;post(\"{$provider-&gt;endpoint}/chat/completions\", $payload);\n\nif ($response-&gt;failed()) {\n    return $this-&gt;fallback-&gt;complete($payload);\n}</code></pre>\n<p class=\"code-caption\">Виклики провайдера мають таймаути, обмежені ретраї та запасного провайдера — збій LLM деградує фічу, а не валить продукт.</p>\n<p>Кожен крок — окремий тестований юніт, оркестрований асинхронно з ретраями. Якщо провайдер таймаутить — job повторюється; якщо фільтр відхиляє чернетку — вона перегенеровується. Нічого не потрапляє на публічну сторінку без перевірки.</p>\n<h2>Прагматично про провайдерів — і про сам AI</h2>\n<p>OpenAI, Anthropic, Google, локальні моделі — обираємо під задачу й бюджет, з фолбеками, щоб збій чи подорожчання не вбило фічу. І не менш важливо: ми скажемо, коли рушій правил або простий скрипт вирішить задачу дешевше за модель.</p>",
+     "seo_keywords": "ai інтеграція, llm інтеграція, rag пайплайн, розробка чатботів, openai інтеграція",
+     "seo_description": "AI-інтеграції для реальних продуктів: LLM-функції, RAG-пайплайни, чатботи, генерація контенту та семантичний пошук з контролем витрат.",
+     "seo_title": "Послуги AI-інтеграцій",
+     "image_alt": "AI-інтеграції — LLM, RAG і компоненти автоматизації"
+    },
+    "pl": {
+     "title": "Integracje AI",
+     "details": null,
+     "description": "<p>Integrujemy AI tam, gdzie wymiernie się zwraca: generowanie i filtrowanie treści, automatyzacja powtarzalnych decyzji, wydobywanie struktury z nieustrukturyzowanego tekstu. Nasz własny produkt NetPostPanel to kompletny pipeline AI dla treści — warstwę retrieval, orkiestrację providerów i filtrowanie semantyczne zbudowaliśmy sami.</p>\n<h2>Co możemy wbudować w Twój produkt</h2>\n<ul>\n<li>Pipeline'y generowania i tłumaczenia treści — szkic, przegląd, tłumaczenie, publikacja — z ludzkimi punktami kontrolnymi tam, gdzie mają sens. CMS tej strony ma dokładnie to w panelu administracyjnym.</li>\n<li>RAG (retrieval-augmented generation) — embeddingi Twoich dokumentów w indeksie wektorowym, by model odpowiadał z Twoich danych zamiast zgadywać.</li>\n<li>Chatboty i asystenci — oparte na API, podpięci do Twojej domeny, z narzędziami i zabezpieczeniami.</li>\n<li>Filtrowanie semantyczne — triaż treści, leadów czy zgłoszeń po sensie, nie słowach kluczowych; NetPostPanel filtruje zescrapowane źródła po relevancji przed generacją.</li>\n<li>Ekstrakcja danych — zamiana PDF-ów, maili i nieuporządkowanych wejść w ustrukturyzowane rekordy.</li>\n</ul>\n<h2>Jak działa pipeline</h2>\n<p><img src=\"/uploads/services/ai-pipeline.svg\" alt=\"Pipeline AI dla treści: synteza prompta, retrieval RAG, LLM, filtr semantyczny, publikacja\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>$response = Http::timeout(30)\n    -&gt;retry(3, 250, throw: false)\n    -&gt;withToken($provider-&gt;key)\n    -&gt;post(\"{$provider-&gt;endpoint}/chat/completions\", $payload);\n\nif ($response-&gt;failed()) {\n    return $this-&gt;fallback-&gt;complete($payload);\n}</code></pre>\n<p class=\"code-caption\">Wywołania dostawcy mają timeouty, ograniczone retry i dostawcę zapasowego — awaria LLM degraduje funkcję, nie wywraca produktu.</p>\n<p>Każdy krok to dyskretna, testowalna jednostka orkiestrowana asynchronicznie z retry. Jeśli provider timeoutuje — zadanie się ponawia; jeśli filtr odrzuca szkic — regeneruje się. Nic nie trafia na publiczną stronę bez kontroli.</p>\n<h2>Pragmatycznie o providerach — i o samym AI</h2>\n<p>OpenAI, Anthropic, Google, modele lokalne — wybieramy pod zadanie i budżet, z fallbackami, by awaria czy podwyżka nie wyłączyła funkcji. I równie ważne: powiemy, kiedy silnik reguł lub zwykły skrypt rozwiąże problem taniej niż model.</p>",
+     "seo_keywords": "integracja ai, integracja llm, rag pipeline, chatbot ai, integracja openai",
+     "seo_description": "Integracje AI dla realnych produktów: funkcje LLM, pipeline'y RAG, chatboty, generowanie treści i wyszukiwanie semantyczne z kontrolą kosztów.",
+     "seo_title": "Usługi integracji AI",
+     "image_alt": "Integracje AI — LLM, RAG i komponenty automatyzacji"
+    }
+   }
+  },
+  {
+   "id": 31,
+   "price": null,
+   "service_category_id": 4,
+   "image": "1685401583.jpg",
+   "slug": "api-integrations",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "API Integrations",
+     "details": null,
+     "description": "<p>Every serious product ends up talking to other systems: payment gateways, CRMs, shipping providers, analytics, AI services. We build those integrations to survive real-world conditions — rate limits, timeouts, flaky third-party APIs and data arriving in whatever shape the other side sends.</p>\n<h2>Integrations we've shipped</h2>\n<ul>\n<li>CRM and sales — this site's contact forms push leads into Zoho CRM with error handling, so a Zoho outage never loses an inquiry.</li>\n<li>Payments — Stripe and other gateways: checkout, subscriptions, webhooks, reconciliation.</li>\n<li>AI providers — NetPostPanel orchestrates multiple LLM APIs behind one internal interface with retries and fallbacks.</li>\n<li>REST and GraphQL APIs — we consume external APIs and build documented endpoints for your partners and mobile apps.</li>\n<li>Webhooks — inbound and outbound, with signature verification and replay-safe processing.</li>\n</ul>\n<h2>Built to fail gracefully</h2>\n<p><img src=\"/uploads/services/webhook-flow.svg\" alt=\"Webhook handling: verify signature, queue, process, retry\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>public function handle(Request $request): JsonResponse\n{\n    abort_unless(\n        hash_equals($expected, $request-&gt;header('X-Signature')),\n        401\n    );\n\n    ProcessWebhook::dispatch($request-&gt;all())-&gt;onQueue('webhooks');\n\n    return response()-&gt;json(['status' =&gt; 'accepted'], 202);\n}</code></pre>\n<p class=\"code-caption\">Verify, queue, acknowledge. The sender gets its 202 in milliseconds; the actual work retries safely in the background.</p>\n<p>Queues instead of synchronous calls, retries with backoff, idempotent processing (a delivered-twice webhook changes nothing), dead-letter visibility and audit trails — when a third party is down at 3 AM, your users don't notice and nothing is silently lost.</p>\n<h2>How an integration project runs</h2>\n<p>We start from the contracts, not the code: read the provider's API docs, map your data flows, agree who owns each field. Then a thin integration layer — one dedicated service class per provider — keeps third-party quirks out of your domain code. Sandbox first, monitoring after launch, documentation for the next team.</p>\n<p>If your systems live in silos and people copy data between them by hand — that's fixable. Tell us what should be talking to what.</p>",
+     "seo_keywords": "api integration services, api development, third-party api integration, stripe integration, crm integration",
+     "seo_description": "API integrations and development: payments, CRM/ERP connectivity, webhooks, third-party services. Custom REST and GraphQL APIs for your product.",
+     "seo_title": "API Integration & Development Services",
+     "image_alt": "API integration services — connecting systems and services"
+    },
+    "uk": {
+     "title": "API-інтеграції",
+     "details": null,
+     "description": "<p>Кожен серйозний продукт рано чи пізно починає спілкуватися з іншими системами: платіжні шлюзи, CRM, служби доставки, аналітика, AI-сервіси. Ми будуємо ці інтеграції так, щоб вони переживали реальні умови — rate limits, таймаути, нестабільні сторонні API й дані в тому вигляді, у якому їх надішле інша сторона.</p>\n<h2>Інтеграції, які ми зробили</h2>\n<ul>\n<li>CRM та продажі — контактні форми цього сайту відправляють ліди в Zoho CRM з обробкою помилок, тож збій Zoho ніколи не втратить запит.</li><li>Платежі — Stripe та інші шлюзи: чекаут, підписки, вебхуки, звірка.</li>\n<li>AI-провайдери — NetPostPanel оркеструє кілька LLM API за єдиним внутрішнім інтерфейсом із ретраями та фолбеками.</li>\n<li>REST та GraphQL API — ми споживаємо зовнішні API і будуємо задокументовані ендпоінти для ваших партнерів і мобільних застосунків.</li>\n<li>Вебхуки — вхідні та вихідні, з верифікацією підписів і безпечною до повторів обробкою.</li>\n</ul>\n<h2>Побудовано для graceful failure</h2>\n<p><img src=\"/uploads/services/webhook-flow.svg\" alt=\"Обробка вебхуків: верифікація підпису, черга, обробка, ретрай\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>public function handle(Request $request): JsonResponse\n{\n    abort_unless(\n        hash_equals($expected, $request-&gt;header('X-Signature')),\n        401\n    );\n\n    ProcessWebhook::dispatch($request-&gt;all())-&gt;onQueue('webhooks');\n\n    return response()-&gt;json(['status' =&gt; 'accepted'], 202);\n}</code></pre>\n<p class=\"code-caption\">Верифікувати, поставити в чергу, підтвердити. Відправник отримує 202 за мілісекунди; реальна робота безпечно ретраїться у фоні.</p>\n<p>Черги замість синхронних викликів, ретраї з backoff, ідемпотентна обробка (двічі доставлений вебхук нічого не змінює), видимість dead-letter і аудит — коли сторонній сервіс лежить о третій ночі, ваші користувачі не помічають і нічого не губиться.</p>\n<h2>Як проходить інтеграційний проєкт</h2>\n<p>Починаємо з контрактів, а не з коду: читаємо API-документацію провайдера, мапимо потоки даних, домовляємось хто володіє кожним полем. Далі тонкий інтеграційний шар — окремий service-клас на провайдера — тримає чужі капризи поза вашим доменним кодом. Спершу sandbox, після запуску — моніторинг і документація для наступної команди.</p>\n<p>Якщо ваші системи живуть у сілосах і люди переносять дані між ними руками — це лікується. Розкажіть, хто з ким має спілкуватися.</p>",
+     "seo_keywords": "api інтеграція, розробка api, інтеграція сторонніх api, stripe інтеграція, crm інтеграція",
+     "seo_description": "API-інтеграції та розробка: платежі, підключення CRM/ERP, вебхуки, сторонні сервіси. Кастомні REST та GraphQL API для вашого продукту.",
+     "seo_title": "Послуги API-інтеграцій та розробки",
+     "image_alt": "Інтеграції API — з'єднання систем і сервісів"
+    },
+    "pl": {
+     "title": "Integracje API",
+     "details": null,
+     "description": "<p>Każdy poważny produkt prędzej czy później zaczyna rozmawiać z innymi systemami: bramki płatności, CRM, dostawcy wysyłki, analityka, usługi AI. Budujemy te integracje tak, by przetrwały realne warunki — rate limity, timeouty, niestabilne API stron trzecich i dane w takim kształcie, w jakim druga strona je wyśle.</p>\n<h2>Integracje, które dostarczyliśmy</h2>\n<ul>\n<li>CRM i sprzedaż — formularze tej strony wysyłają leady do Zoho CRM z obsługą błędów, więc awaria Zoho nigdy nie gubi zapytania.</li>\n<li>Płatności — Stripe i inne bramki: checkout, subskrypcje, webhooki, rekonsyliacja.</li>\n<li>Providerzy AI — NetPostPanel orkiestruje wiele API LLM za jednym wewnętrznym interfejsem z retry i fallbackami.</li>\n<li>REST i GraphQL API — konsumujemy zewnętrzne API i budujemy udokumentowane endpointy dla partnerów i aplikacji mobilnych.</li>\n<li>Webhooki — przychodzące i wychodzące, z weryfikacją podpisów i przetwarzaniem odpornym na powtórki.</li>\n</ul>\n<h2>Zbudowane na graceful failure</h2>\n<p><img src=\"/uploads/services/webhook-flow.svg\" alt=\"Obsługa webhooków: weryfikacja podpisu, kolejka, przetwarzanie, retry\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>public function handle(Request $request): JsonResponse\n{\n    abort_unless(\n        hash_equals($expected, $request-&gt;header('X-Signature')),\n        401\n    );\n\n    ProcessWebhook::dispatch($request-&gt;all())-&gt;onQueue('webhooks');\n\n    return response()-&gt;json(['status' =&gt; 'accepted'], 202);\n}</code></pre>\n<p class=\"code-caption\">Zweryfikuj, dodaj do kolejki, potwierdź. Nadawca dostaje 202 w milisekundach; właściwa praca bezpiecznie ponawia się w tle.</p>\n<p>Kolejki zamiast synchronicznych wywołań, retry z backoff, przetwarzanie idempotentne (dwukrotnie dostarczony webhook niczego nie zmienia), widoczność dead-letter i ślady audytu — gdy strona trzecia leży o trzeciej w nocy, Twoi użytkownicy tego nie zauważają i nic nie ginie.</p>\n<h2>Jak przebiega projekt integracji</h2>\n<p>Zaczynamy od kontraktów, a nie kodu: czytamy dokumentację API dostawcy, mapujemy przepływy danych, ustalamy właściciela każdego pola. Potem cienka warstwa integracyjna — osobna klasa serwisowa na dostawcę — trzyma cudze kaprysy poza kodem domeny. Najpierw sandbox, po starcie monitoring i dokumentacja dla kolejnego zespołu.</p>\n<p>Jeśli Twoje systemy żyją w silosach, a ludzie przeklejają dane między nimi ręcznie — da się to naprawić. Powiedz, co ma z czym rozmawiać.</p>",
+     "seo_keywords": "integracja api, tworzenie api, integracja zewnętrznych api, integracja stripe, integracja crm",
+     "seo_description": "Integracje i tworzenie API: płatności, łączność CRM/ERP, webhooki, usługi zewnętrzne. Dedykowane API REST i GraphQL dla Twojego produktu.",
+     "seo_title": "Usługi integracji i tworzenia API",
+     "image_alt": "Integracje API — łączenie systemów i usług"
+    }
+   }
+  },
+  {
+   "id": 32,
+   "price": null,
+   "service_category_id": 5,
+   "image": "1685401781.jpg",
+   "slug": "website-maintenance",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Website Maintenance & Support",
+     "details": null,
+     "description": "<p>A website isn't finished at launch — it stays healthy only while someone updates it, watches it and restores backups before they're needed. We take over maintenance of Laravel, Symfony and WordPress sites: the routine work that prevents the 3 AM incident.</p>\n<h2>What's included</h2>\n<ul>\n<li>Core and dependency updates — applied on a staging copy first, tested, then deployed.</li>\n<li>Security patching — we track disclosures for your stack and patch before they become incidents.</li>\n<li>Monitoring — uptime checks, error tracking, slow-query and page-time watch. We usually know about a problem before you do.</li>\n<li>Backups with tested restores — a backup never restored is a hope, not a backup.</li>\n<li>Small improvements — copy changes, new sections, bug fixes; maintenance isn't only about not breaking things.</li>\n</ul>\n<h2>The maintenance loop</h2>\n<p><img src=\"/uploads/services/maintenance-loop.svg\" alt=\"Maintenance loop: monitor, alert, triage, fix on staging, deploy, verify\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>Schedule::command('uptime:check')-&gt;everyFiveMinutes();\nSchedule::command('security:scan')-&gt;daily();\nSchedule::command('backup:run')-&gt;dailyAt('02:00');\nSchedule::job(new SendHealthReport)-&gt;weeklyOn(1, '08:00');</code></pre>\n<p class=\"code-caption\">The scheduler is the heartbeat: uptime checks every five minutes, nightly security scans and backups, weekly reports — all logged and alerted.</p>\n<p>Monitoring feeds alerts; alerts go through triage, a fix on staging, a test and a verified deploy. On top of that runs the weekly routine: updates, backup checks and a report you can actually read.</p>\n<h2>For sites we didn't build</h2>\n<p>Most maintenance clients arrive with sites built by someone else — freelancers who moved on or code untouched for years. We start with a technical audit, stabilize, document and take over. No judgment — we've seen worse.</p>\n<p>Maintenance isn't a retainer for unlimited work, and we'll be upfront about what's covered. What it does mean: your site has an owner again.</p>",
+     "seo_keywords": "website maintenance services, website support, laravel support, wordpress maintenance",
+     "seo_description": "Website maintenance and support: updates, security patches, monitoring, backups and fixes for Laravel, WordPress and custom web applications.",
+     "seo_title": "Website Maintenance & Support Services",
+     "image_alt": "Website maintenance and support — monitoring dashboard"
+    },
+    "uk": {
+     "title": "Підтримка та обслуговування сайтів",
+     "details": null,
+     "description": "<p>Сайт не завершується запуском — він залишається здоровим, лише доки хтось його оновлює, спостерігає за ним і відновлює бекапи до того, як вони знадобляться. Ми беремо на підтримку сайти на Laravel, Symfony і WordPress: рутинну роботу, що запобігає інциденту о третій ночі.</p>\n<h2>Що входить</h2>\n<ul>\n<li>Оновлення ядра й залежностей — спочатку на staging-копії, тестуємо, потім деплоїмо.</li>\n<li>Патчі безпеки — відстежуємо розкриття вразливостей у вашому стеку й патчимо до інцидентів.</li>\n<li>Моніторинг — аптайм, трекінг помилок, повільні запити й час сторінок. Зазвичай ми дізнаємось про проблему раніше за вас.</li>\n<li>Бекапи з перевіреним відновленням — бекап, який ніколи не відновлювали, це надія, а не бекап.</li>\n<li>Дрібні покращення — правки текстів, нові секції, фікс багів; підтримка це не лише \"нічого не зламати\".</li>\n</ul>\n<h2>Цикл підтримки</h2>\n<p><img src=\"/uploads/services/maintenance-loop.svg\" alt=\"Цикл підтримки: моніторинг, алерт, тріаж, фікс на staging, деплой, перевірка\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>Schedule::command('uptime:check')-&gt;everyFiveMinutes();\nSchedule::command('security:scan')-&gt;daily();\nSchedule::command('backup:run')-&gt;dailyAt('02:00');\nSchedule::job(new SendHealthReport)-&gt;weeklyOn(1, '08:00');</code></pre>\n<p class=\"code-caption\">Планувальник — це пульс: перевірки аптайму кожні п'ять хвилин, нічні сканування безпеки й бекапи, тижневі звіти — усе з логуванням і алертами.</p>\n<p>Моніторинг годує алерти; алерти проходять тріаж, фікс на staging, тест і перевірений деплой. Поверх цього — щотижнева рутина: оновлення, перевірка бекапів і звіт, який реально читається.</p>\n<h2>Для сайтів, які будували не ми</h2>\n<p>Більшість клієнтів на підтримку приходять із сайтами від інших команд — фрілансерів, що зникли, або коду, якого ніхто не чіпав роками. Починаємо з технічного аудиту, стабілізуємо, документуємо й переймаємо. Без осуду — ми бачили гірше.</p>\n<p>Підтримка — це не ретейнер на безлімітні роботи, і ми прямо скажемо, що покривається. Але це означає: у вашого сайту знову є власник.</p>",
+     "seo_keywords": "підтримка сайту, обслуговування сайту, laravel підтримка, wordpress обслуговування",
+     "seo_description": "Підтримка сайтів: оновлення, патчі безпеки, моніторинг, бекапи та виправлення для Laravel, WordPress і кастомних вебзастосунків.",
+     "seo_title": "Послуги підтримки та обслуговування сайтів",
+     "image_alt": "Підтримка й обслуговування сайтів — дашборд моніторингу"
+    },
+    "pl": {
+     "title": "Utrzymanie i wsparcie stron",
+     "details": null,
+     "description": "<p>Strona nie kończy się na starcie — pozostaje zdrowa tylko wtedy, gdy ktoś ją aktualizuje, obserwuje i odtwarza kopie zapasowe zanim będą potrzebne. Przejmuujemy utrzymanie stron na Laravel, Symfony i WordPress: rutynową pracę, która zapobiega incydentowi o trzeciej w nocy.</p>\n<h2>Co obejmuje</h2>\n<ul>\n<li>Aktualizacje rdzenia i zależności — najpierw na kopii stagingowej, przetestowane, potem wdrożone.</li>\n<li>Łatki bezpieczeństwa — śledzimy ujawnienia podatności dla Twojego stosu i łatamy zanim staną się incydentami.</li>\n<li>Monitoring — uptime, śledzenie błędów, powolne zapytania i czasy stron. Zwykle dowiadujemy się o problemie przed Tobą.</li>\n<li>Kopie zapasowe z testowanym przywracaniem — backup, którego nigdy nie przywrócono, to nadzieja, nie backup.</li>\n<li>Drobne ulepszenia — zmiany tekstów, nowe sekcje, poprawki błędów; utrzymanie to nie tylko \"niczego nie zepsuć\".</li>\n</ul>\n<h2>Cykl utrzymania</h2>\n<p><img src=\"/uploads/services/maintenance-loop.svg\" alt=\"Cykl utrzymania: monitoring, alert, triaż, poprawka na stagingu, wdrożenie, weryfikacja\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>Schedule::command('uptime:check')-&gt;everyFiveMinutes();\nSchedule::command('security:scan')-&gt;daily();\nSchedule::command('backup:run')-&gt;dailyAt('02:00');\nSchedule::job(new SendHealthReport)-&gt;weeklyOn(1, '08:00');</code></pre>\n<p class=\"code-caption\">Scheduler to puls: checki uptime co pięć minut, nocne skany bezpieczeństwa i backupy, cotygodniowe raporty — wszystko logowane i z alertami.</p>\n<p>Monitoring zasila alerty; alerty przechodzą triaż, poprawkę na stagingu, test i zweryfikowane wdrożenie. Ponad tym — cotygodniowa rutyna: aktualizacje, kontrola kopii i raport, który faktycznie się czyta.</p>\n<h2>Dla stron, których nie my budowaliśmy</h2>\n<p>Większość klientów utrzymania przychodzi ze stronami od innych zespołów — freelancerów, którzy zniknęli, albo kodu nietkanego latami. Zaczynamy od audytu technicznego, stabilizujemy, dokumentujemy i przejmujemy. Bez oceniania — widzieliśmy gorzej.</p>\n<p>Utrzymanie to nie abonament na nieograniczoną pracę — powiemy wprost, co obejmuje. Ale oznacza to: Twoja strona znów ma właściciela.</p>",
+     "seo_keywords": "utrzymanie strony, wsparcie strony, wsparcie laravel, utrzymanie wordpress",
+     "seo_description": "Utrzymanie stron: aktualizacje, łatki bezpieczeństwa, monitoring, backupy i poprawki dla Laravel, WordPress i dedykowanych aplikacji.",
+     "seo_title": "Usługi utrzymania i wsparcia stron",
+     "image_alt": "Utrzymanie stron www — panel monitorowania"
+    }
+   }
+  },
+  {
+   "id": 33,
+   "price": null,
+   "service_category_id": 5,
+   "image": "1685401526.jpg",
+   "slug": "legacy-code-refactoring",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Legacy Code Refactoring",
+     "details": null,
+     "description": "<p>Legacy code isn't bad code — it's code that outlived the context it was written for. The business runs on it, nobody fully understands it, and every change is a small act of courage. We refactor and modernize such systems without the big-bang rewrite that takes a year and delivers nothing.</p>\n<h2>How we approach it</h2>\n<ul>\n<li>Audit first — we map what's actually there: dependencies, dead code, security issues, the parts everyone is afraid to touch.</li>\n<li>Characterization tests — before changing anything, we write tests that capture what the code does today, bugs included. Behavior is pinned down before it's changed.</li>\n<li>Incremental replacement — the strangler pattern: new features go to new code, hot paths migrate module by module, the old system shrinks until it can be retired.</li>\n</ul>\n<h2>The strangler approach</h2>\n<p><img src=\"/uploads/services/strangler-pattern.svg\" alt=\"Strangler pattern: legacy app and new modules sharing a database\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>public function test_invoice_rounding_is_pinned(): void\n{\n    $legacy = new LegacyInvoiceCalculator();\n\n    // Characterization test: pins current behaviour, quirks included.\n    $this-&gt;assertSame(1049.99, $legacy-&gt;total($this-&gt;fixtureOrder()));\n}</code></pre>\n<p class=\"code-caption\">Before touching legacy code we pin its behaviour with characterization tests — even the quirks. Refactoring may change the inside, never the observed output.</p>\n<p>Old and new run side by side against the same database. Routing decides which feature goes where. There's never a point where the business waits for a rewrite to finish — value ships continuously.</p>\n<h2>What we typically find</h2>\n<p>PHP 5-era codebases, framework-less spaghetti, abandoned Symfony 2/3 apps, WordPress sites held together by sixty plugins. Common wins: upgrading to a supported PHP version, extracting a framework around existing code, replacing the worst queries, and putting deployments on rails so changes stop being scary.</p>\n<p>If you have a system that works but nobody dares change — that's exactly the project shape we handle. Show us the code and we'll tell you what's worth keeping.</p>",
+     "seo_keywords": "legacy code refactoring, php code audit, legacy modernization, code rescue",
+     "seo_description": "Legacy code refactoring and rescue: PHP codebase audits, framework upgrades, incremental modernization without rewriting from scratch.",
+     "seo_title": "Legacy Code Refactoring Services",
+     "image_alt": "Legacy code refactoring — code review with gears and magnifier"
+    },
+    "uk": {
+     "title": "Рефакторинг legacy-коду",
+     "details": null,
+     "description": "<p>Legacy-код — це не поганий код, це код, що пережив контекст, для якого його писали. Бізнес працює на ньому, ніхто повністю його не розуміє, і кожна зміна — маленький акт мужності. Ми рефакторимо й модернізуємо такі системи без переписування \"з нуля\", яке триває рік і нічого не дає.</p>\n<h2>Як ми підходимо</h2>\n<ul>\n<li>Спершу аудит — мапимо, що там насправді: залежності, мертвий код, проблеми безпеки, частини, яких всі бояться торкатись.</li>\n<li>Characterization tests — перед будь-якою зміною пишемо тести, що фіксують, що код робить сьогодні, включно з багами. Поведінку закріплено до того, як її змінено.</li>\n<li>Інкрементальна заміна — патерн strangler: нові фічі йдуть у новий код, гарячі шляхи мігрують модуль за модулем, стара система скорочується, доки її можна вимкнути.</li>\n</ul>\n<h2>Підхід strangler</h2>\n<p><img src=\"/uploads/services/strangler-pattern.svg\" alt=\"Патерн strangler: legacy-застосунок і нові модулі на спільній базі\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>public function test_invoice_rounding_is_pinned(): void\n{\n    $legacy = new LegacyInvoiceCalculator();\n\n    // Characterization test: pins current behaviour, quirks included.\n    $this-&gt;assertSame(1049.99, $legacy-&gt;total($this-&gt;fixtureOrder()));\n}</code></pre>\n<p class=\"code-caption\">Перед змінами legacy-коду ми фіксуємо його поведінку характеризаційними тестами — навіть дивацтва. Рефакторинг може змінити код, але не спостережуваний результат.</p>\n<p>Старе й нове працюють поруч на одній базі. Роутинг вирішує, яка фіча куди йде. Ніколи не буває моменту, коли бізнес чекає на завершення переписування — цінність відвантажується безперервно.</p>\n<h2>Що ми зазвичай знаходимо</h2>\n<p>Codebase'и епохи PHP 5, spaghetti без фреймворку, покинуті застосунки на Symfony 2/3, WordPress-сайти на шістдесятьох плагінах. Типові перемоги: апгрейд на підтримувану версію PHP, обгортка фреймворком навколо наявного коду, заміна найгірших запитів і деплої на рейках, щоб зміни перестали лякати.</p>\n<p>Якщо у вас система, що працює, але ніхто не наважується її змінювати — це саме та форма проєкту, з якою ми працюємо. Покажіть код — скажемо, що варто лишити.</p>",
+     "seo_keywords": "рефакторинг legacy коду, аудит php коду, модернізація legacy, порятунок коду",
+     "seo_description": "Рефакторинг і порятунок legacy-коду: аудит PHP-кодбази, оновлення фреймворків, інкрементальна модернізація без переписування з нуля.",
+     "seo_title": "Послуги рефакторингу legacy-коду",
+     "image_alt": "Рефакторинг legacy-коду — рев'ю коду з шестернями"
+    },
+    "pl": {
+     "title": "Refaktoryzacja legacy code",
+     "details": null,
+     "description": "<p>Legacy kod to nie zły kod — to kod, który przeżył kontekst, dla którego został napisany. Biznes na nim działa, nikt go w pełni nie rozumie, a każda zmiana to mały akt odwagi. Refaktoryzujemy i modernizujemy takie systemy bez przepisywania od zera, które trwa rok i nic nie daje.</p>\n<h2>Jak podchodzimy</h2>\n<ul>\n<li>Najpierw audyt — mapujemy, co tam faktycznie jest: zależności, martwy kod, problemy bezpieczeństwa, części, których wszyscy się boją dotknąć.</li>\n<li>Testy charakteryzujące — zanim cokolwiek zmienimy, piszemy testy utrwalające, co kod robi dziś, włącznie z bugami. Zachowanie jest przypięte zanim zostanie zmienione.</li>\n<li>Inkrementalna wymiana — wzorzec strangler: nowe funkcje trafiają do nowego kodu, gorące ścieżki migrują moduł po module, stary system kurczy się, aż można go wyłączyć.</li>\n</ul>\n<h2>Podejście strangler</h2>\n<p><img src=\"/uploads/services/strangler-pattern.svg\" alt=\"Wzorzec strangler: aplikacja legacy i nowe moduły na wspólnej bazie\" loading=\"lazy\"/></p>\n<pre class=\"code-block\"><code>public function test_invoice_rounding_is_pinned(): void\n{\n    $legacy = new LegacyInvoiceCalculator();\n\n    // Characterization test: pins current behaviour, quirks included.\n    $this-&gt;assertSame(1049.99, $legacy-&gt;total($this-&gt;fixtureOrder()));\n}</code></pre>\n<p class=\"code-caption\">Zanim dotkniemy legacy code, przypinamy jego zachowanie testami charakteryzującymi — nawet dziwactwa. Refaktoring może zmienić kod, ale nie obserwowany wynik.</p>\n<p>Stare i nowe działają obok siebie na tej samej bazie. Routing decyduje, która funkcja gdzie trafia. Nigdy nie ma momentu, w którym biznes czeka na koniec przepisywania — wartość jest dostarczana ciągle.</p>\n<h2>Co zazwyczaj znajdujemy</h2>\n<p>Codebase'y ery PHP 5, spaghetti bez frameworka, porzucone aplikacje Symfony 2/3, strony WordPress trzymane sześćdziesięcioma wtyczkami. Typowe zwycięstwa: aktualizacja do wspieranej wersji PHP, opakowanie istniejącego kodu frameworkiem, wymiana najgorszych zapytań i wdrożenia na szynach, by zmiany przestały straszyć.</p>\n<p>Jeśli masz system, który działa, ale nikt nie odważy się go zmieniać — to dokładnie taki kształt projektu obsługujemy. Pokaż nam kod — powiemy, co warto zostawić.</p>",
+     "seo_keywords": "refaktoryzacja legacy code, audyt kodu php, modernizacja legacy, ratowanie kodu",
+     "seo_description": "Refaktoryzacja i ratowanie legacy code: audyt codebase PHP, aktualizacje frameworków, stopniowa modernizacja bez przepisywania od zera.",
+     "seo_title": "Usługi refaktoryzacji legacy code",
+     "image_alt": "Refaktoryzacja legacy kodu — przegląd kodu z lupą"
+    }
+   }
+  },
+  {
+   "id": 34,
+   "price": null,
+   "service_category_id": 5,
+   "image": "1687125226.jpg",
+   "slug": "linux-hosting-deployment",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Linux Hosting & Deployment",
+     "details": null,
+     "description": "<p>We host and deploy the applications we build on our own Linux servers — and we can do the same for yours. The pipeline running this site is the same pattern we set up for clients: automated builds, atomic releases and a rollback that's one symlink away.</p>\n<h2>What we set up</h2>\n<ul>\n<li>Server provisioning — Ubuntu/Debian, Nginx + PHP-FPM, per-site PHP versions, MySQL, Redis.</li>\n<li>Deployment pipelines — GitHub Actions building, testing and shipping releases; a failed deploy rolls back instead of leaving the site half-updated.</li>\n<li>TLS and security — Let's Encrypt with auto-renewal, firewall, fail2ban, isolated site users.</li>\n<li>Operations — logrotate, monitored cron, uptime and error alerts, automated off-site backups.</li>\n</ul>\n<h2>What a deploy looks like</h2>\n<p><img src=\"/uploads/services/deploy-pipeline.svg\" alt=\"Deployment pipeline: CI build and test, release upload, atomic symlink swap, health check\" loading=\"lazy\"/></p>\n<p>Every release lands in its own directory; switching to it is an atomic symlink swap. If the health check fails, the symlink points back — the site never serves a half-deployed state. The last five releases stay on the server.</p>\n<h2>A typical site config</h2>\n<pre class=\"code-block\"><code>server {\n    listen 443 ssl http2;\n    root /var/www/app/current/public;\n\n    location / {\n        try_files $uri /index.php?$query_string;\n    }\n    location ~ \\.php$ {\n        fastcgi_pass unix:/run/php/php8.3-fpm.sock;\n        include fastcgi_params;\n    }\n}</code></pre>\n<p class=\"code-caption\">Nginx + PHP-FPM 8.3 — the boring, well-understood foundation under everything we run.</p>\n<p>If your site lives on a server nobody has logged into for a year, or deployments mean \"upload files and pray\" — we can put it on solid ground.</p>",
+     "seo_keywords": "linux hosting, server setup, deployment automation, ci/cd, vps configuration",
+     "seo_description": "Linux hosting and deployment: VPS setup, Nginx, PHP-FPM, SSL, CI/CD pipelines and zero-downtime releases for web applications.",
+     "seo_title": "Linux Hosting & Deployment Services",
+     "image_alt": "Linux hosting and deployment — servers, APIs and infrastructure"
+    },
+    "uk": {
+     "title": "Linux-хостинг та деплой",
+     "details": null,
+     "description": "<p>Ми хостимо й деплоїмо застосунки, які будуємо, на власних Linux-серверах — і можемо зробити те саме для ваших. Пайплайн, на якому працює цей сайт — той самий патерн, що ми налаштовуємо клієнтам: автоматичні білди, атомарні релізи й відкат у один symlink.</p>\n<h2>Що ми налаштовуємо</h2>\n<ul>\n<li>Провізіонування серверів — Ubuntu/Debian, Nginx + PHP-FPM, окремі версії PHP під сайт, MySQL, Redis.</li>\n<li>Деплой-пайплайни — GitHub Actions білдить, тестує й відвантажує релізи; невдалий деплой відкочується замість напівоновленого сайту.</li>\n<li>TLS і безпека — Let's Encrypt з автооновленням, файрвол, fail2ban, ізольовані користувачі сайтів.</li>\n<li>Операційна рутина — logrotate, крон під моніторингом, алерти аптайму й помилок, автоматичні зовнішні бекапи.</li>\n</ul>\n<h2>Як виглядає деплой</h2>\n<p><img src=\"/uploads/services/deploy-pipeline.svg\" alt=\"Пайплайн деплою: CI-білд і тести, завантаження релізу, атомарна заміна symlink, health check\" loading=\"lazy\"/></p>\n<p>Кожен реліз потрапляє у власну директорію; перемикання — атомарна заміна symlink. Якщо health-check падає — symlink вказує назад, сайт ніколи не віддає напівзадеплоєний стан. Останні п'ять релізів лишаються на сервері.</p>\n<h2>Типовий конфіг сайту</h2>\n<pre class=\"code-block\"><code>server {\n    listen 443 ssl http2;\n    root /var/www/app/current/public;\n\n    location / {\n        try_files $uri /index.php?$query_string;\n    }\n    location ~ \\.php$ {\n        fastcgi_pass unix:/run/php/php8.3-fpm.sock;\n        include fastcgi_params;\n    }\n}</code></pre>\n<p class=\"code-caption\">Nginx + PHP-FPM 8.3 — нудний, добре зрозумілий фундамент під усім, що ми запускаємо.</p>\n<p>Якщо ваш сайт живе на сервері, в який ніхто не заходив рік, або деплой означає \"залити файли й помолитись\" — ми поставимо це на твердий ґрунт.</p>",
+     "seo_keywords": "linux хостинг, налаштування сервера, автоматизація деплою, ci/cd, конфігурація vps",
+     "seo_description": "Linux-хостинг і деплой: налаштування VPS, Nginx, PHP-FPM, SSL, CI/CD-пайплайни та релізи без простою для вебзастосунків.",
+     "seo_title": "Послуги Linux-хостингу та деплою",
+     "image_alt": "Linux-хостинг і деплой — сервери, API та інфраструктура"
+    },
+    "pl": {
+     "title": "Hosting Linux i wdrożenia",
+     "details": null,
+     "description": "<p>Hostujemy i wdrażamy budowane przez siebie aplikacje na własnych serwerach Linux — i możemy zrobić to samo dla Twoich. Pipeline, na którym działa ta strona, to ten sam wzorzec, który konfigurujemy klientom: automatyczne buildy, atomowe wydania i rollback na jeden symlink.</p>\n<h2>Co konfigurujemy</h2>\n<ul>\n<li>Provisioning serwerów — Ubuntu/Debian, Nginx + PHP-FPM, osobne wersje PHP dla stron, MySQL, Redis.</li>\n<li>Pipeline'y wdrożeniowe — GitHub Actions buduje, testuje i dostarcza wydania; nieudane wdrożenie cofa się zamiast zostawiać stronę w połowie aktualizacji.</li>\n<li>TLS i bezpieczeństwo — Let's Encrypt z auto-odnawianiem, firewall, fail2ban, izolowani użytkownicy stron.</li>\n<li>Rutyna operacyjna — logrotate, monitorowany cron, alerty uptime i błędów, automatyczne zewnętrzne kopie zapasowe.</li>\n</ul>\n<h2>Jak wygląda wdrożenie</h2>\n<p><img src=\"/uploads/services/deploy-pipeline.svg\" alt=\"Pipeline wdrożeniowy: build i testy CI, upload wydania, atomowa podmiana symlinka, health check\" loading=\"lazy\"/></p>\n<p>Każde wydanie trafia do własnego katalogu; przełączenie to atomowa podmiana symlinka. Jeśli health check nie przechodzi — symlink wraca, strona nigdy nie serwuje stanu w połowie wdrożonego. Ostatnich pięć wydań zostaje na serwerze.</p>\n<h2>Typowa konfiguracja strony</h2>\n<pre class=\"code-block\"><code>server {\n    listen 443 ssl http2;\n    root /var/www/app/current/public;\n\n    location / {\n        try_files $uri /index.php?$query_string;\n    }\n    location ~ \\.php$ {\n        fastcgi_pass unix:/run/php/php8.3-fpm.sock;\n        include fastcgi_params;\n    }\n}</code></pre>\n<p class=\"code-caption\">Nginx + PHP-FPM 8.3 — nudny, dobrze zrozumiały fundament pod wszystkim, co uruchamiamy.</p>\n<p>Jeśli Twoja strona żyje na serwerze, na który nikt nie logował się od roku, albo deployment oznacza \"wgraj pliki i módl się\" — postawimy to na solidnym gruncie.</p>",
+     "seo_keywords": "hosting linux, konfiguracja serwera, automatyzacja wdrożeń, ci/cd, konfiguracja vps",
+     "seo_description": "Hosting Linux i wdrożenia: konfiguracja VPS, Nginx, PHP-FPM, SSL, pipeline'y CI/CD i wydania zero-downtime dla aplikacji webowych.",
+     "seo_title": "Usługi hostingu Linux i wdrożeń",
+     "image_alt": "Hosting i deployment na Linux — serwery, API i infrastruktura"
+    }
+   }
+  }
+ ]
 }

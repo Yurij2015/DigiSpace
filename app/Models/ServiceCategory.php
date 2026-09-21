@@ -17,6 +17,7 @@ use Str;
  * @property int $id
  * @property string $name
  * @property string|null $slug
+ * @property string|null $icon
  * @property string|null $seo_keywords
  * @property string|null $seo_description
  * @property string|null $seo_title
@@ -57,7 +58,7 @@ class ServiceCategory extends Model implements HasTranslatableColumns
     }
 
     protected $fillable = [
-        'name', 'seo_keywords', 'seo_description', 'seo_title', 'slug', 'translations',
+        'name', 'seo_keywords', 'seo_description', 'seo_title', 'slug', 'icon', 'translations',
     ];
 
     protected function casts(): array
@@ -90,7 +91,9 @@ class ServiceCategory extends Model implements HasTranslatableColumns
         parent::boot();
 
         static::updating(static function ($serviceCategory) {
-            $serviceCategory->slug = Str::slug($serviceCategory->name);
+            if (blank($serviceCategory->slug)) {
+                $serviceCategory->slug = Str::slug((string) $serviceCategory->name);
+            }
         });
 
         static::creating(static function ($serviceCategory) {

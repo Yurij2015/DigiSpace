@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Http\Controllers\PageController;
 use App\Models\Category;
 use App\Models\MenuItem;
 use App\Models\Page;
@@ -25,6 +26,7 @@ class GenerateSitemapTest extends TestCase
     #[TestWith(['pl'])]
     public function test_every_resource_has_all_locale_entries_and_reciprocal_alternates(string $defaultLocale): void
     {
+        config(['settings.is_promo_tab_active' => true]);
         config(['locales.default' => $defaultLocale]);
         $author = User::factory()->create();
         $category = Category::create(['name' => 'News', 'slug' => 'news', 'description' => 'News', 'user_id' => $author->id]);
@@ -38,6 +40,8 @@ class GenerateSitemapTest extends TestCase
         ]);
         $item = MenuItem::create(['name' => 'CMS', 'slug' => 'cms']);
         Page::create(['name' => 'CMS', 'menu_item_id' => $item->id]);
+        $redirectedItem = MenuItem::create(['name' => 'Legacy', 'slug' => array_key_first(PageController::REDIRECTED_PAGES)]);
+        Page::create(['name' => 'Legacy', 'menu_item_id' => $redirectedItem->id]);
         $serviceCategory = ServiceCategory::create(['name' => 'Web']);
         Service::create(['title' => 'Active', 'slug' => 'active', 'status' => 'active', 'service_category_id' => $serviceCategory->id]);
         Service::create(['title' => 'Inactive', 'slug' => 'inactive', 'status' => 'inactive', 'service_category_id' => $serviceCategory->id]);
@@ -88,5 +92,22 @@ class GenerateSitemapTest extends TestCase
 
         $this->assertStringNotContainsString('/blog/draft', $output->get('sitemap.xml'));
         $this->assertStringNotContainsString('/web/inactive', $output->get('sitemap.xml'));
+        $this->assertStringNotContainsString('/pages/'.array_key_first(PageController::REDIRECTED_PAGES), $output->get('sitemap.xml'));
+    }
+
+    public function test_disabled_promos_are_not_published_in_sitemap(): void
+    {
+        config(['settings.is_promo_tab_active' => false]);
+        $output = Storage::fake('sitemap-test');
+        $originalPublicPath = public_path();
+        $this->app->usePublicPath($output->path(''));
+
+        try {
+            $this->artisan('sitemap:generate')->assertExitCode(0);
+        } finally {
+            $this->app->usePublicPath($originalPublicPath);
+        }
+
+        $this->assertStringNotContainsString('/promos', $output->get('sitemap.xml'));
     }
 }

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Technical Artist"
+  short_description: "Bridge art, tools, rendering, and performance"
+  default_prompt: "Use $technical-artist to plan or solve this technical art problem."

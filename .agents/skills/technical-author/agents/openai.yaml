@@ -1,0 +1,6 @@
+interface:
+  display_name: "Technical Author"
+  short_description: "Evidence-based technical writing in a practical voice"
+  default_prompt: "Use $technical-author to write or improve this technical content."
+policy:
+  allow_implicit_invocation: true

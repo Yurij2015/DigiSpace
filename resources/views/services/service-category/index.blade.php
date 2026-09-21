@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', __('site.services_title'))
+@section('title', __('site.page_title', ['name' => $serviceCategory->seo_title ?: $serviceCategory->name]))
 @section('content')
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">
@@ -15,7 +15,7 @@
                     <li><a href="{{ route('home.index') }}">{{ __('site.home') }}</a></li>
                     @if(isset($serviceCategory))
                         <li><a href="{{ route('services') }}">{{ __('site.services') }}</a></li>
-                        <li class="active">{{ $serviceCategory->seo_title }}</li>
+                        <li class="active">{{ $serviceCategory->name }}</li>
                     @endif
                 </ul>
             </div>
@@ -34,23 +34,20 @@
                             </h4>
                             <ul class="post-classic__meta">
                                 <li>
-                                    <span class="icon mdi mdi-calendar-blank"></span>
-                                    <time datetime="{{ Carbon\Carbon::parse($item->created_at)->format('Y') }}">
-                                        {{ Carbon\Carbon::parse($item->created_at)->toFormattedDateString()  }}
-                                    </time>
-                                </li>
-                                <li>
                                     <span class="icon mdi mdi-format-list-bulleted"></span>
-                                    Service Category: {{ $serviceCategory->name }}
+                                    {{ __('site.service_category') }}: {{ $serviceCategory->name }}
                                 </li>
                             </ul>
-                            <p>{{ $item->seo_description }}</p>
                             <div class="post-classic__media">
-                                <img class="post-classic__image" src="{{ asset($item->image) }}"
-                                     alt="{{ $item->image_alt ?: $item->title }}" width="715"
-                                     height="417"/>
+                                <a href="{{ route('category-service', [$serviceCategory->slug, $item->slug]) }}">
+                                    <img class="post-classic__image" src="{{ asset($item->image) }}"
+                                         alt="{{ $item->image_alt ?: $item->title }}" width="715"
+                                         height="417"/>
+                                </a>
                             </div>
-                            {!! $item->description !!}
+                            <p>{{ $item->seo_description }}</p>
+                            <a class="button button-sm button-default button-ujarak"
+                               href="{{ route('category-service', [$serviceCategory->slug, $item->slug]) }}">{{ __('site.read_more') }}</a>
                         </article>
                     @endforeach
                     <div class="pagination">

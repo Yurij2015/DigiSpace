@@ -34,6 +34,8 @@ class ServiceCategoryForm
                     ]),
                 ])->columnSpanFull(),
                 TextInput::make('slug'),
+                TextInput::make('icon')
+                    ->helperText('Linearicons class, e.g. linearicons-server, linearicons-brain, linearicons-cart'),
             ]);
     }
 }
