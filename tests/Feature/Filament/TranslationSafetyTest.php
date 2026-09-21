@@ -4,6 +4,7 @@ namespace Tests\Feature\Filament;
 
 use App\Filament\Resources\Pages\Pages\EditPage;
 use App\Filament\Resources\Posts\Pages\EditPost;
+use App\Filament\Resources\Services\Pages\EditService;
 use App\Models\Category;
 use App\Models\Page;
 use App\Models\Post;
@@ -115,6 +116,39 @@ class TranslationSafetyTest extends TestCase
 
         app()->setLocale('uk');
         self::assertSame('<p>About us</p>', $page->fresh()->content, 'blank uk content must fall back to the base value');
+    }
+
+    public function test_service_edit_form_hydrates_the_rich_description_and_saving_is_safe(): void
+    {
+        $this->actingAsFilamentAdmin();
+        $category = ServiceCategory::create(['name' => 'Backend', 'slug' => 'backend', 'status' => 'active']);
+        // The rich editor normalizes HTML on hydration: element classes are stripped,
+        // code blocks and <img> diagrams survive. Fixture is already in normalized form.
+        $html = '<h2>Intro</h2><p>Text</p><pre><code>$job-&gt;run();</code></pre><p>Caption</p><p><img src="/uploads/services/diagram.svg" alt="Diagram"></p>';
+        $service = Service::create([
+            'title' => 'Laravel Development',
+            'slug' => 'laravel-development',
+            'description' => $html,
+            'status' => 'active',
+            'service_category_id' => $category->id,
+            'translations' => ['uk' => ['description' => '<p>Опис</p>'], 'pl' => ['description' => '<p>Opis</p>']],
+        ]);
+        $before = $service->fresh()->getRawOriginal();
+
+        Livewire::test(EditService::class, ['record' => $service->getRouteKey()])
+            ->assertSchemaStateSet([
+                'description' => $html,
+                'translations.uk.description' => '<p>Опис</p>',
+                'translations.pl.description' => '<p>Opis</p>',
+            ])
+            ->call('save')
+            ->assertHasNoFormErrors();
+
+        $after = $service->fresh()->getRawOriginal();
+        foreach (['title', 'description', 'slug', 'status', 'service_category_id'] as $column) {
+            self::assertSame($before[$column], $after[$column], "$column changed on save");
+        }
+        self::assertSame(json_decode($before['translations'], true), json_decode($after['translations'], true), 'translations changed on save');
     }
 
     public function test_translatable_lists_cover_every_localized_accessor(): void

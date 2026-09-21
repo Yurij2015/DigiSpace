@@ -104,11 +104,17 @@ class PublicSeoTest extends TestCase
         $document = $this->document($response->getContent());
         $this->assertSame($title, $this->meta($document, 'og:title'));
         $this->assertSame($title, $this->meta($document, 'twitter:title'));
+        $this->assertSame(__('site.page_title', ['name' => $title]), $this->title($document));
         $this->assertSame($description, $this->meta($document, 'description'));
         $this->assertSame($description, $this->meta($document, 'twitter:description'));
         $this->assertSame(asset('uploads/development.jpg'), $this->meta($document, 'og:image'));
         $this->assertSame('website', $this->meta($document, 'og:type'));
         $this->assertSame($description, $this->schemaNode($document, 'Service')['description']);
+    }
+
+    private function title(DOMXPath $document): string
+    {
+        return trim((string) $document->evaluate('string(//title)'));
     }
 
     public function test_service_without_seo_fields_uses_its_title_and_site_description(): void

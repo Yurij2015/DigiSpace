@@ -4,6 +4,7 @@ namespace Tests\Feature\Filament;
 
 use App\Filament\Resources\Pages\Pages\CreatePage;
 use App\Filament\Resources\Posts\Pages\CreatePost;
+use App\Filament\Resources\Services\Pages\CreateService;
 use App\Filament\Support\ContentEditor;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -35,12 +36,13 @@ class ContentEditorTest extends TestCase
         return $editors;
     }
 
-    public function test_post_and_page_forms_use_the_shared_editor_in_every_language_tab(): void
+    public function test_post_page_and_service_forms_use_the_shared_editor_in_every_language_tab(): void
     {
-        foreach ([CreatePost::class => 'posts/content', CreatePage::class => 'pages/content'] as $pageClass => $directory) {
+        foreach ([CreatePost::class => 'posts/content', CreatePage::class => 'pages/content', CreateService::class => 'services/content'] as $pageClass => $directory) {
             $editors = $this->editorsOf($pageClass);
 
-            self::assertSame(['content', 'translations.uk.content', 'translations.pl.content'], array_keys($editors), $pageClass);
+            $field = $pageClass === CreateService::class ? 'description' : 'content';
+            self::assertSame([$field, "translations.uk.$field", "translations.pl.$field"], array_keys($editors), $pageClass);
 
             foreach ($editors as $path => $editor) {
                 self::assertSame('s3', $editor->getFileAttachmentsDiskName(), "$pageClass $path disk");

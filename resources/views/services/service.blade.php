@@ -29,9 +29,9 @@
                 <div class="blog-layout__main">
                         <!-- Post Classic-->
                         <article class="post-single">
-                            <h4 class="post-single__title">
+                            <h2 class="post-single__title">
                                 {{ $service->title }}
-                            </h4>
+                            </h2>
                             <ul class="post-classic__meta">
                                 <li>
                                     <span class="icon mdi mdi-format-list-bulleted"></span>
@@ -42,9 +42,11 @@
                             <div class="post-classic__media">
                                 <img class="post-classic__image" src="{{ asset($service->image) }}"
                                      alt="{{ $service->image_alt ?: $service->title }}" width="715"
-                                     height="417"/>
+                                     loading="eager" fetchpriority="high" decoding="async"/>
                             </div>
-                            {!! $service->description !!}
+                            <div class="service-article__body">
+                                {!! preg_replace('/<p>(\s*<img[^>]+src=["\']\/uploads\/services\/[^>]+\/?>(?:\s*)<\/p>)/i', '<figure class="service-diagram">$1</figure>', $service->description) !!}
+                            </div>
                         </article>
                 </div>
                 <x-service-aside :$serviceCategories></x-service-aside>
