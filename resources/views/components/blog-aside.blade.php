@@ -33,9 +33,9 @@
                 <li>
                     <!-- Post Line-->
                     <article class="post-line">
-                        <time class="post-line__time" datetime="{{ $post['created_at']->format('Y') }}">
+                        <time class="post-line__time" datetime="{{ $post['created_at']->format('Y-m-d') }}">
                             <span class="post-line__time-day">{{ $post['created_at']->format('d') }}</span>
-                            <span class="post-line__time-month">{{ $post['created_at']->format('M') }}</span>
+                            <span class="post-line__time-month">{{ $post['created_at']->locale(app()->getLocale())->translatedFormat('M') }}</span>
                         </time>
                         <div class="post-line__title">
                             <a href="{{ route('blog.post', $post->slug) }}">{{ $post['name'] }}</a>
@@ -56,16 +56,16 @@
                 <option
                     {{ url()->current() === route('blog-archive', $archiveItem->year .'-'. $archiveItem->month) ? 'selected' : '' }}
                     value="{{ $archiveItem->year .'-'. $archiveItem->month }}">
-                    {{ $archiveItem->month_name }} ({{ $archiveItem->post_count }})
+                    {{ Carbon\Carbon::createFromDate($archiveItem->year, $archiveItem->month, 1)->locale(app()->getLocale())->translatedFormat('F Y') }} ({{ $archiveItem->post_count }})
                 </option>
             @endforeach
         </select>
     </div>
-    <div class="blog-layout__aside-item">
-        @if($banner)
+    @if($banner)
+        <div class="blog-layout__aside-item">
             <a class="link-banner" href="{{ $banner->url }}">
                 <img src="{{ $banner->img_path }}" alt="{{ $banner->alt }}" width="305" height="302"/>
             </a>
-        @endif
-    </div>
+        </div>
+    @endif
 </div>

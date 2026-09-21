@@ -4,7 +4,7 @@
         <form class="rd-search rd-search_inline form_lg form_outline" action="{{ route('service-search') }}"
               method="get">
             <div class="form-wrap">
-                <label class="form-label" for="rd-search-blog-form-input">Search the service...</label>
+                <label class="form-label" for="rd-search-blog-form-input">{{ __('site.search') }}</label>
                 <input class="form-input" id="rd-search-blog-form-input" type="text" name="search"
                        autocomplete="off" required>
             </div>

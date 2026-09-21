@@ -34,14 +34,8 @@
                             </h4>
                             <ul class="post-classic__meta">
                                 <li>
-                                    <span class="icon mdi mdi-calendar-blank"></span>
-                                    <time datetime="{{ Carbon\Carbon::parse($service->created_at)->format('Y') }}">
-                                        {{ Carbon\Carbon::parse($service->created_at)->toFormattedDateString()  }}
-                                    </time>
-                                </li>
-                                <li>
                                     <span class="icon mdi mdi-format-list-bulleted"></span>
-                                    <a href="{{ route('category-services', $serviceCategory->slug) }}">Service Category: {{ $serviceCategory->name }}</a>
+                                    <a href="{{ route('category-services', $serviceCategory->slug) }}">{{ __('site.service_category') }}: {{ $serviceCategory->name }}</a>
                                 </li>
                             </ul>
                             <p>{{ $service->seo_description }}</p>
