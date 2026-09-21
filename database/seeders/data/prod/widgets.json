@@ -47,17 +47,17 @@
             "i18n": {
                 "en": {
                     "title": "Yurii Mokryi",
-                    "subtitle": "Lead Developer",
+                    "subtitle": "CEO, FullStack PHP Developer",
                     "content": "<p>CEO, FullStack PHP Developer</p>"
                 },
                 "uk": {
                     "title": "Юрій Мокрий",
-                    "subtitle": "Провідний розробник",
+                    "subtitle": "CEO, FullStack PHP-розробник",
                     "content": "<p>CEO, FullStack PHP-розробник</p>"
                 },
                 "pl": {
                     "title": "Yurii Mokryi",
-                    "subtitle": "Główny programista",
+                    "subtitle": "CEO, programista FullStack PHP",
                     "content": "<p>CEO, programista FullStack PHP</p>"
                 }
             }
@@ -73,8 +73,8 @@
             "i18n": {
                 "en": {
                     "title": "Anna Goncharova",
-                    "subtitle": "QA, Project Manger",
-                    "content": "<p>QA, Project Manger</p>"
+                    "subtitle": "QA, Project Manager",
+                    "content": "<p>QA, Project Manager</p>"
                 },
                 "uk": {
                     "title": "Анна Гончарова",

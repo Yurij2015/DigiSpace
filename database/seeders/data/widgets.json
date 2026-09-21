@@ -490,7 +490,7 @@
                 "en": {
                     "title": "Let's keep in touch!",
                     "subtitle": "Let's keep in touch!",
-                    "content": "Find us on any of these platforms, we respond 1-2 business days."
+                    "content": "Find us on any of these platforms, we respond within 1-2 business days."
                 },
                 "uk": {
                     "title": "Будьмо на зв'язку!",
@@ -619,17 +619,17 @@
             "i18n": {
                 "en": {
                     "title": "Sam Williams",
-                    "subtitle": "Lead Developer",
+                    "subtitle": "CEO, FullStack PHP Developer",
                     "content": "Lead Developer"
                 },
                 "uk": {
                     "title": "Sam Williams",
-                    "subtitle": "Провідний розробник",
+                    "subtitle": "CEO, FullStack PHP-розробник",
                     "content": "Провідний розробник"
                 },
                 "pl": {
                     "title": "Sam Williams",
-                    "subtitle": "Główny programista",
+                    "subtitle": "CEO, programista FullStack PHP",
                     "content": "Główny programista"
                 }
             }
@@ -670,19 +670,19 @@
             "element_id": null,
             "i18n": {
                 "en": {
-                    "title": "Apps Installed",
+                    "title": "Years on the market",
                     "subtitle": "1.",
-                    "content": "8"
+                    "content": "6"
                 },
                 "uk": {
                     "title": "Років на ринку",
                     "subtitle": "1.",
-                    "content": "8"
+                    "content": "6"
                 },
                 "pl": {
-                    "title": "Zainstalowanych aplikacji",
+                    "title": "Lat na rynku",
                     "subtitle": "1.",
-                    "content": "8"
+                    "content": "6"
                 }
             }
         },
@@ -696,19 +696,19 @@
             "element_id": null,
             "i18n": {
                 "en": {
-                    "title": "Awards Won",
+                    "title": "Technologies",
                     "subtitle": null,
-                    "content": "27"
+                    "content": "15"
                 },
                 "uk": {
                     "title": "Технологій",
                     "subtitle": null,
-                    "content": "27"
+                    "content": "15"
                 },
                 "pl": {
-                    "title": "Zdobytych nagród",
+                    "title": "Technologii",
                     "subtitle": null,
-                    "content": "27"
+                    "content": "15"
                 }
             }
         },
@@ -722,19 +722,19 @@
             "element_id": null,
             "i18n": {
                 "en": {
-                    "title": "Staff Members",
+                    "title": "Projects",
                     "subtitle": null,
-                    "content": "45"
+                    "content": "25"
                 },
                 "uk": {
                     "title": "Проєктів",
                     "subtitle": null,
-                    "content": "45"
+                    "content": "25"
                 },
                 "pl": {
-                    "title": "Członków zespołu",
+                    "title": "Projektów",
                     "subtitle": null,
-                    "content": "45"
+                    "content": "25"
                 }
             }
         },
@@ -748,19 +748,19 @@
             "element_id": null,
             "i18n": {
                 "en": {
-                    "title": "Satisfied Customers",
+                    "title": "Lines of code",
                     "subtitle": null,
-                    "content": "99"
+                    "content": "285"
                 },
                 "uk": {
                     "title": "Рядків коду",
                     "subtitle": null,
-                    "content": "99"
+                    "content": "285"
                 },
                 "pl": {
-                    "title": "Zadowolonych klientów",
+                    "title": "Wierszy kodu",
                     "subtitle": null,
-                    "content": "99"
+                    "content": "285"
                 }
             }
         },
@@ -826,17 +826,17 @@
             "element_id": "footer-phone",
             "i18n": {
                 "en": {
-                    "title": "Phone",
+                    "title": "E-mail",
                     "subtitle": "Write to us",
                     "content": "<p>If you have any questions, please contact our support team</p>"
                 },
                 "uk": {
-                    "title": "Телефон",
+                    "title": "E-mail",
                     "subtitle": "Написати нам",
                     "content": "<p>Якщо у вас є запитання, звертайтесь до нашої служби підтримки</p>"
                 },
                 "pl": {
-                    "title": "Telefon",
+                    "title": "E-mail",
                     "subtitle": "Napisz do nas",
                     "content": "<p>W razie pytań skontaktuj się z naszym zespołem wsparcia</p>"
                 }
@@ -1112,19 +1112,19 @@
             "element_id": null,
             "i18n": {
                 "en": {
-                    "title": "Can I track my order?",
+                    "title": "What is web application development for business?",
                     "subtitle": "left",
-                    "content": "<p>Yes, you can! After placing your order you will receive an order confirmation via email. Each order starts production 24 hours after your order is placed. Within 72 hours of you placing your order, you will receive an expected delivery date. When the order ships, you will receive another email with the tracking number and a link.</p>"
+                    "content": "<p>Web application development for businesses involves creating customized software solutions that use web technologies to increase the productivity, efficiency, and effectiveness of your business. This process includes analyzing business processes and creating individual requirements for software development.</p>"
                 },
                 "uk": {
-                    "title": "Чи можу я відстежити замовлення?",
+                    "title": "Що таке розробка вебзастосунків для бізнесу?",
                     "subtitle": "left",
-                    "content": "<p>Так! Після оформлення замовлення ви отримаєте підтвердження на e-mail. Виконання кожного замовлення починається через 24 години після оформлення. Протягом 72 годин ви отримаєте орієнтовну дату доставки. Коли замовлення буде відправлено, ви отримаєте ще один лист із номером для відстеження та посиланням.</p>"
+                    "content": "<p>Розробка вебзастосунків для бізнесу передбачає створення індивідуальних програмних рішень, які використовують вебтехнології для підвищення продуктивності, ефективності та результативності вашого бізнесу. Цей процес включає аналіз бізнес-процесів і створення індивідуальних вимог до розробки програмного забезпечення.</p>"
                 },
                 "pl": {
-                    "title": "Czy mogę śledzić zamówienie?",
+                    "title": "Czym jest tworzenie aplikacji internetowych dla biznesu?",
                     "subtitle": "left",
-                    "content": "<p>Tak! Po złożeniu zamówienia otrzymasz potwierdzenie e-mailem. Realizacja każdego zamówienia rozpoczyna się 24 godziny po jego złożeniu. W ciągu 72 godzin otrzymasz przewidywaną datę dostawy. Gdy zamówienie zostanie wysłane, otrzymasz kolejną wiadomość z numerem śledzenia i linkiem.</p>"
+                    "content": "<p>Tworzenie aplikacji internetowych dla firm polega na tworzeniu dedykowanych rozwiązań programowych, które wykorzystują technologie internetowe do zwiększania produktywności, wydajności i skuteczności Twojego biznesu. Proces ten obejmuje analizę procesów biznesowych i tworzenie indywidualnych wymagań dla rozwoju oprogramowania.</p>"
                 }
             }
         },
@@ -1138,19 +1138,19 @@
             "element_id": null,
             "i18n": {
                 "en": {
-                    "title": "How can I change something in my order?",
+                    "title": "Why is it worth investing in custom business application development?",
                     "subtitle": "left",
-                    "content": "<p>If you need to change something in your order, please contact us immediately. We usually process orders within 30 minutes, and once we have processed your order, we will be unable to make any changes.</p>"
+                    "content": "<p>Customized applications provide specific functionality, scalability, improved integration with existing systems, enhanced security, and consider your unique business processes, offering significant advantages over typical off-the-shelf solutions.</p>"
                 },
                 "uk": {
-                    "title": "Як змінити щось у замовленні?",
+                    "title": "Чому варто інвестувати в розробку індивідуальних бізнес-застосунків?",
                     "subtitle": "left",
-                    "content": "<p>Якщо потрібно щось змінити в замовленні, негайно зв'яжіться з нами. Зазвичай ми обробляємо замовлення протягом 30 хвилин, і після обробки внести зміни вже неможливо.</p>"
+                    "content": "<p>Індивідуальні застосунки забезпечують специфічну функціональність, масштабованість, кращу інтеграцію з наявними системами, підвищену безпеку та враховують ваші унікальні бізнес-процеси, пропонуючи значні переваги над типовими готовими рішеннями.</p>"
                 },
                 "pl": {
-                    "title": "Jak zmienić coś w zamówieniu?",
+                    "title": "Dlaczego warto inwestować w tworzenie dedykowanych aplikacji biznesowych?",
                     "subtitle": "left",
-                    "content": "<p>Jeśli musisz coś zmienić w zamówieniu, skontaktuj się z nami natychmiast. Zwykle przetwarzamy zamówienia w ciągu 30 minut, a po przetworzeniu nie będziemy mogli wprowadzić żadnych zmian.</p>"
+                    "content": "<p>Dedykowane aplikacje zapewniają specyficzną funkcjonalność, skalowalność, lepszą integrację z istniejącymi systemami, podwyższone bezpieczeństwo i uwzględniają Twoje unikalne procesy biznesowe, oferując znaczące przewagi nad typowymi rozwiązaniami gotowymi.</p>"
                 }
             }
         },
@@ -1164,19 +1164,19 @@
             "element_id": null,
             "i18n": {
                 "en": {
-                    "title": "How can I pay for my order?",
+                    "title": "What technologies are commonly used in development?",
                     "subtitle": "left",
-                    "content": "<p>We accept Visa, MasterCard, and American Express credit and debit cards for your convenience.</p>"
+                    "content": "<p>The most common technologies include HTML, CSS, and JavaScript for client-side components; PHP, Node.js, Python (using Django or Flask), Ruby on Rails, and Java (with Spring) for server-side components; and databases such as MySQL, PostgreSQL, MongoDB, and SQL Server.</p>"
                 },
                 "uk": {
-                    "title": "Як оплатити замовлення?",
+                    "title": "Які технології зазвичай використовуються в розробці?",
                     "subtitle": "left",
-                    "content": "<p>Для вашої зручності ми приймаємо кредитні та дебетові картки Visa, MasterCard і American Express.</p>"
+                    "content": "<p>Найпоширеніші технології включають HTML, CSS і JavaScript для клієнтських компонентів; PHP, Node.js, Python (з використанням Django або Flask), Ruby on Rails і Java (зі Spring) для серверних компонентів; а також бази даних, такі як MySQL, PostgreSQL, MongoDB і SQL Server.</p>"
                 },
                 "pl": {
-                    "title": "Jak zapłacić za zamówienie?",
+                    "title": "Jakie technologie są powszechnie stosowane w tworzeniu aplikacji?",
                     "subtitle": "left",
-                    "content": "<p>Dla Twojej wygody akceptujemy karty kredytowe i debetowe Visa, MasterCard i American Express.</p>"
+                    "content": "<p>Najpopularniejsze technologie to HTML, CSS i JavaScript dla komponentów po stronie klienta; PHP, Node.js, Python (z użyciem Django lub Flask), Ruby on Rails i Java (ze Spring) dla komponentów po stronie serwera; oraz bazy danych takie jak MySQL, PostgreSQL, MongoDB i SQL Server.</p>"
                 }
             }
         },
@@ -1190,19 +1190,19 @@
             "element_id": null,
             "i18n": {
                 "en": {
-                    "title": "How long will my order be delivered?",
+                    "title": "How long does it take to develop a business application?",
                     "subtitle": "right",
-                    "content": "<p>Delivery times will depend on your location. Once payment is confirmed your order will be packaged. Delivery can be expected within a day.</p>"
+                    "content": "<p>Development times vary depending on complexity, scope, and features. Simple applications can take a few weeks to complete, while more complex projects can take months or even years.</p>"
                 },
                 "uk": {
-                    "title": "Скільки триватиме доставка?",
+                    "title": "Скільки часу потрібно для розробки бізнес-застосунку?",
                     "subtitle": "right",
-                    "content": "<p>Термін доставки залежить від вашого місцезнаходження. Після підтвердження оплати замовлення буде запаковано. Доставку можна очікувати протягом дня.</p>"
+                    "content": "<p>Терміни розробки залежать від складності, обсягу та функцій. Прості застосунки можуть зайняти кілька тижнів, тоді як складніші проєкти можуть тривати місяцями або навіть роками.</p>"
                 },
                 "pl": {
-                    "title": "Jak długo potrwa dostawa?",
+                    "title": "Ile czasu zajmuje stworzenie aplikacji biznesowej?",
                     "subtitle": "right",
-                    "content": "<p>Czas dostawy zależy od Twojej lokalizacji. Po potwierdzeniu płatności zamówienie zostanie zapakowane. Dostawy można spodziewać się w ciągu jednego dnia.</p>"
+                    "content": "<p>Czas tworzenia różni się w zależności od złożoności, zakresu i funkcji. Proste aplikacje mogą zająć kilka tygodni, a bardziej złożone projekty — miesiące, a nawet lata.</p>"
                 }
             }
         },
@@ -1216,19 +1216,19 @@
             "element_id": null,
             "i18n": {
                 "en": {
-                    "title": "Can I return an item?",
+                    "title": "What is the typical cost of business application development?",
                     "subtitle": "right",
-                    "content": "<p>Please contact our administrators for more information on returning products purchased on our website.</p>"
+                    "content": "<p>The cost depends on the scope of the project, its features, the technologies used, and the developers' rates. A detailed discussion of the project is required for an accurate estimate.</p>"
                 },
                 "uk": {
-                    "title": "Чи можу я повернути товар?",
+                    "title": "Яка типова вартість розробки бізнес-застосунку?",
                     "subtitle": "right",
-                    "content": "<p>Щоб дізнатися більше про повернення товарів, придбаних на нашому сайті, зверніться до наших адміністраторів.</p>"
+                    "content": "<p>Вартість залежить від обсягу проєкту, його функцій, використаних технологій і ставок розробників. Для точної оцінки необхідне детальне обговорення проєкту.</p>"
                 },
                 "pl": {
-                    "title": "Czy mogę zwrócić produkt?",
+                    "title": "Jaki jest typowy koszt stworzenia aplikacji biznesowej?",
                     "subtitle": "right",
-                    "content": "<p>Aby uzyskać więcej informacji o zwrocie produktów zakupionych na naszej stronie, skontaktuj się z naszymi administratorami.</p>"
+                    "content": "<p>Koszt zależy od zakresu projektu, jego funkcji, użytych technologii i stawek programistów. Dokładna wycena wymaga szczegółowego omówienia projektu.</p>"
                 }
             }
         },
@@ -1242,19 +1242,19 @@
             "element_id": null,
             "i18n": {
                 "en": {
-                    "title": "What is a unique/non-unique purchase?",
+                    "title": "Do you provide ongoing support and maintenance?",
                     "subtitle": "right",
-                    "content": " <p>Non-exclusive purchase means that other people can buy the template you have chosen some time later. Exclusive or unique purchase guarantees that you are the last person to buy this template. After an exclusive purchase occurs the template is being permanently removed from the sales directory and will never be available to other customers again. Only you and people who bought the template before you will own it.</p>"
+                    "content": "<p>Yes, we provide ongoing support and maintenance, including troubleshooting, bug fixes, updates, and feature extensions.</p>"
                 },
                 "uk": {
-                    "title": "Що таке унікальна / неунікальна покупка?",
+                    "title": "Чи надаєте ви постійну підтримку та обслуговування?",
                     "subtitle": "right",
-                    "content": " <p>Неексклюзивна покупка означає, що інші люди зможуть придбати обраний вами шаблон пізніше. Ексклюзивна, або унікальна, покупка гарантує, що ви — останній покупець цього шаблону. Після ексклюзивної покупки шаблон назавжди видаляється з каталогу й більше не буде доступний іншим клієнтам. Володітимете ним лише ви та ті, хто придбав шаблон раніше.</p>"
+                    "content": "<p>Так, ми надаємо постійну підтримку та обслуговування, включаючи усунення несправностей, виправлення помилок, оновлення та розширення функцій.</p>"
                 },
                 "pl": {
-                    "title": "Co to jest zakup unikalny / nieunikalny?",
+                    "title": "Czy zapewniacie stałe wsparcie i utrzymanie?",
                     "subtitle": "right",
-                    "content": " <p>Zakup nieekskluzywny oznacza, że inne osoby będą mogły później kupić wybrany przez Ciebie szablon. Zakup ekskluzywny (unikalny) gwarantuje, że jesteś ostatnią osobą, która kupuje ten szablon. Po zakupie ekskluzywnym szablon zostaje na stałe usunięty z katalogu i nigdy nie będzie już dostępny dla innych klientów. Będziesz go posiadać tylko Ty i osoby, które kupiły go wcześniej.</p>"
+                    "content": "<p>Tak, zapewniamy stałe wsparcie i utrzymanie, w tym rozwiązywanie problemów, poprawki błędów, aktualizacje i rozszerzanie funkcji.</p>"
                 }
             }
         },

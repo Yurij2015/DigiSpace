@@ -184,17 +184,17 @@
                 "en": {
                     "name": "Some Facts About Us",
                     "title": "DigiSpace | Some Facts About Us",
-                    "description": "More than 1000 apps developed"
+                    "description": "DigiSpace in facts and numbers"
                 },
                 "uk": {
                     "name": "Кілька фактів про нас",
                     "title": "DigiSpace | Кілька фактів про нас",
-                    "description": "Понад 1000 розроблених застосунків"
+                    "description": "DigiSpace у фактах і цифрах"
                 },
                 "pl": {
                     "name": "Kilka faktów o nas",
                     "title": "DigiSpace | Kilka faktów o nas",
-                    "description": "Ponad 1000 stworzonych aplikacji"
+                    "description": "DigiSpace w faktach i liczbach"
                 }
             }
         },
