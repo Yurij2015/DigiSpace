@@ -7,7 +7,6 @@ use App\Filament\Support\FillsRawTranslatableFields;
 use App\Filament\Support\ViewOnSiteAction;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
-use Illuminate\Support\Str;
 
 class EditPost extends EditRecord
 {
@@ -21,12 +20,5 @@ class EditPost extends EditRecord
             ViewOnSiteAction::make(),
             DeleteAction::make(),
         ];
-    }
-
-    protected function mutateFormDataBeforeSave(array $data): array
-    {
-        $data['slug'] = Str::slug($data['name']);
-
-        return $data;
     }
 }

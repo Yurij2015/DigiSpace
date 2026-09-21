@@ -20,7 +20,7 @@ class ServiceForm
                     ->tabs([
                         Tab::make('English')->schema([
                             TextInput::make('title')->required()->maxLength(255),
-                            TextInput::make('details')->required()->maxLength(255),
+                            TextInput::make('details')->maxLength(255),
                             TextInput::make('image_alt')->maxLength(255),
                             Textarea::make('description')->columnSpanFull(),
                             Textarea::make('seo_description')->columnSpanFull(),
@@ -47,7 +47,7 @@ class ServiceForm
                         ]),
                     ])
                     ->columnSpanFull(),
-                TextInput::make('price')->numeric()->prefix('$')->required(),
+                TextInput::make('price')->numeric()->prefix('$'),
                 Select::make('service_category_id')
                     ->relationship('serviceCategory', 'name')
                     ->searchable()

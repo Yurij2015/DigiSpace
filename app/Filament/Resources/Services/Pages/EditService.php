@@ -6,7 +6,6 @@ use App\Filament\Resources\Services\ServiceResource;
 use App\Filament\Support\FillsRawTranslatableFields;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
-use Illuminate\Support\Str;
 
 class EditService extends EditRecord
 {
@@ -19,12 +18,5 @@ class EditService extends EditRecord
         return [
             DeleteAction::make(),
         ];
-    }
-
-    protected function mutateFormDataBeforeSave(array $data): array
-    {
-        $data['slug'] = Str::slug($data['title']);
-
-        return $data;
     }
 }
