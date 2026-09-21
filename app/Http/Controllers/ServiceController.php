@@ -21,7 +21,7 @@ class ServiceController extends Controller
             ->orderBy('position')->get();
 
         $productServices = ProductService::all();
-        $listOfServices = Service::paginate(20);
+        $listOfServices = Service::where('status', 'active')->whereHas('serviceCategory')->paginate(20);
         $servicesService->addStyleToService($products, $productServices);
 
         return view('services.index', [
@@ -45,6 +45,7 @@ class ServiceController extends Controller
         $serviceCategory = ServiceCategory::where('slug', (string) $request->route('serviceCategory'))->firstOrFail();
         $serviceCategories = ServiceCategory::with('service')->get();
         $services = Service::with('serviceCategory')
+            ->where('status', 'active')
             ->whereRelation('serviceCategory', 'slug', '=', $serviceCategory->slug)
             ->paginate(5);
 
@@ -60,6 +61,7 @@ class ServiceController extends Controller
         $serviceCategory = ServiceCategory::where('slug', (string) $request->route('serviceCategory'))->firstOrFail();
         $service = Service::where('slug', (string) $request->route('service'))
             ->where('service_category_id', $serviceCategory->id)
+            ->where('status', 'active')
             ->firstOrFail();
         $serviceCategories = ServiceCategory::all();
 
@@ -78,6 +80,7 @@ class ServiceController extends Controller
             $term = '%'.request('search').'%';
             $services
                 ->with('serviceCategory')
+                ->where('status', 'active')
                 ->whereHas('serviceCategory')
                 ->where(function ($query) use ($term) {
                     $query->where('title', 'like', $term)

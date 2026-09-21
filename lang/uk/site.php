@@ -56,6 +56,7 @@ return [
     'archive' => 'Архів',
     'by' => 'автор',
     'our_services' => 'Наші послуги',
+    'service_categories' => 'Категорії послуг',
     'toggle_navigation' => 'Відкрити меню',
     'toggle_search' => 'Відкрити пошук',
     'submit_search' => 'Шукати',

@@ -56,6 +56,7 @@ return [
     'archive' => 'Archive',
     'by' => 'by',
     'our_services' => 'Our Services',
+    'service_categories' => 'Service Categories',
     'toggle_navigation' => 'Toggle navigation',
     'toggle_search' => 'Toggle search',
     'submit_search' => 'Search',

@@ -1,0 +1,134 @@
+{
+ "table": "service_categories",
+ "identity": [
+  "slug"
+ ],
+ "translatable": [
+  "name",
+  "seo_keywords",
+  "seo_description",
+  "seo_title"
+ ],
+ "rows": [
+  {
+   "id": 1,
+   "slug": "backend-development",
+   "i18n": {
+    "en": {
+     "name": "Backend Development",
+     "seo_keywords": "backend development, php development, laravel development, symfony development, golang development",
+     "seo_description": "Backend development services: PHP, Laravel, Symfony and Go. Secure, scalable server-side solutions, APIs and business logic for your product.",
+     "seo_title": "Backend Development Services — PHP, Laravel, Symfony, Go"
+    },
+    "uk": {
+     "name": "Backend-розробка",
+     "seo_keywords": "backend розробка, php розробка, laravel розробка, symfony розробка, golang розробка",
+     "seo_description": "Послуги backend-розробки: PHP, Laravel, Symfony та Go. Безпечні масштабовані серверні рішення, API та бізнес-логіка для вашого продукту.",
+     "seo_title": "Backend-розробка — PHP, Laravel, Symfony, Go"
+    },
+    "pl": {
+     "name": "Backend Development",
+     "seo_keywords": "backend development, php development, laravel development, symfony development, golang development",
+     "seo_description": "Usługi backend development: PHP, Laravel, Symfony i Go. Bezpieczne, skalowalne rozwiązania serwerowe, API i logika biznesowa dla Twojego produktu.",
+     "seo_title": "Backend Development — PHP, Laravel, Symfony, Go"
+    }
+   }
+  },
+  {
+   "id": 2,
+   "slug": "frontend-development",
+   "i18n": {
+    "en": {
+     "name": "Frontend Development",
+     "seo_keywords": "frontend development, vue.js development, nuxt development, responsive web apps",
+     "seo_description": "Frontend development services: Vue.js, Nuxt and responsive web applications. Fast, accessible interfaces that work on every device.",
+     "seo_title": "Frontend Development Services — Vue.js, Nuxt, Responsive Apps"
+    },
+    "uk": {
+     "name": "Frontend-розробка",
+     "seo_keywords": "frontend розробка, vue.js розробка, nuxt розробка, адаптивні вебзастосунки",
+     "seo_description": "Послуги frontend-розробки: Vue.js, Nuxt та адаптивні вебзастосунки. Швидкі, зручні інтерфейси, що працюють на будь-якому пристрої.",
+     "seo_title": "Frontend-розробка — Vue.js, Nuxt, адаптивні застосунки"
+    },
+    "pl": {
+     "name": "Frontend Development",
+     "seo_keywords": "frontend development, vue.js development, nuxt development, responsywne aplikacje webowe",
+     "seo_description": "Usługi frontend development: Vue.js, Nuxt i responsywne aplikacje webowe. Szybkie, dostępne interfejsy działające na każdym urządzeniu.",
+     "seo_title": "Frontend Development — Vue.js, Nuxt, responsywne aplikacje"
+    }
+   }
+  },
+  {
+   "id": 3,
+   "slug": "ecommerce-and-cms",
+   "i18n": {
+    "en": {
+     "name": "E-commerce & CMS",
+     "seo_keywords": "ecommerce development, wordpress development, custom cms, crm development",
+     "seo_description": "E-commerce and CMS development: online stores, WordPress sites and custom CRM/CMS systems tailored to your business processes.",
+     "seo_title": "E-commerce & CMS Development — WordPress, Custom CRM/CMS"
+    },
+    "uk": {
+     "name": "E-commerce та CMS",
+     "seo_keywords": "ecommerce розробка, wordpress розробка, кастомна cms, розробка crm",
+     "seo_description": "Розробка e-commerce та CMS: інтернет-магазини, сайти на WordPress і кастомні CRM/CMS-системи під ваші бізнес-процеси.",
+     "seo_title": "E-commerce та CMS — WordPress, кастомні CRM/CMS"
+    },
+    "pl": {
+     "name": "E-commerce i CMS",
+     "seo_keywords": "ecommerce development, wordpress development, custom cms, crm development",
+     "seo_description": "Tworzenie e-commerce i CMS: sklepy internetowe, strony WordPress oraz dedykowane systemy CRM/CMS dopasowane do Twoich procesów.",
+     "seo_title": "E-commerce i CMS — WordPress, dedykowane CRM/CMS"
+    }
+   }
+  },
+  {
+   "id": 4,
+   "slug": "ai-integrations",
+   "i18n": {
+    "en": {
+     "name": "AI & API Integrations",
+     "seo_keywords": "ai integration, api integration, llm integration, rag, third-party api",
+     "seo_description": "AI and API integration services: LLM-powered features, RAG pipelines, payment systems, CRM/ERP connectivity and third-party APIs.",
+     "seo_title": "AI & API Integration Services — LLM, RAG, CRM, Payments"
+    },
+    "uk": {
+     "name": "AI та API-інтеграції",
+     "seo_keywords": "ai інтеграція, api інтеграція, llm інтеграція, rag, сторонні api",
+     "seo_description": "Послуги AI та API-інтеграцій: функції на базі LLM, RAG-пайплайни, платіжні системи, підключення CRM/ERP та сторонні API.",
+     "seo_title": "AI та API-інтеграції — LLM, RAG, CRM, платежі"
+    },
+    "pl": {
+     "name": "Integracje AI i API",
+     "seo_keywords": "integracja ai, integracja api, integracja llm, rag, api zewnętrzne",
+     "seo_description": "Usługi integracji AI i API: funkcje oparte na LLM, pipeline'y RAG, systemy płatności, łączność CRM/ERP i zewnętrzne API.",
+     "seo_title": "Integracje AI i API — LLM, RAG, CRM, płatności"
+    }
+   }
+  },
+  {
+   "id": 5,
+   "slug": "support-and-devops",
+   "i18n": {
+    "en": {
+     "name": "Support & DevOps",
+     "seo_keywords": "website maintenance, legacy code refactoring, linux hosting, deployment, devops",
+     "seo_description": "Support and DevOps services: website maintenance, legacy code refactoring, Linux server setup, hosting and deployment automation.",
+     "seo_title": "Support & DevOps — Maintenance, Refactoring, Linux Hosting"
+    },
+    "uk": {
+     "name": "Підтримка та DevOps",
+     "seo_keywords": "підтримка сайту, рефакторинг legacy-коду, linux хостинг, деплой, devops",
+     "seo_description": "Послуги підтримки та DevOps: обслуговування сайтів, рефакторинг legacy-коду, налаштування Linux-серверів, хостинг і автоматизація деплою.",
+     "seo_title": "Підтримка та DevOps — обслуговування, рефакторинг, Linux-хостинг"
+    },
+    "pl": {
+     "name": "Wsparcie i DevOps",
+     "seo_keywords": "utrzymanie strony, refaktoryzacja legacy code, hosting linux, deployment, devops",
+     "seo_description": "Usługi wsparcia i DevOps: utrzymanie stron, refaktoryzacja legacy code, konfiguracja serwerów Linux, hosting i automatyzacja wdrożeń.",
+     "seo_title": "Wsparcie i DevOps — utrzymanie, refaktoryzacja, hosting Linux"
+    }
+   }
+  }
+ ]
+}

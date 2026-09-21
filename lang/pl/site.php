@@ -56,6 +56,7 @@ return [
     'archive' => 'Archiwum',
     'by' => 'autor',
     'our_services' => 'Nasze usługi',
+    'service_categories' => 'Kategorie usług',
     'toggle_navigation' => 'Otwórz menu',
     'toggle_search' => 'Otwórz wyszukiwanie',
     'submit_search' => 'Szukaj',

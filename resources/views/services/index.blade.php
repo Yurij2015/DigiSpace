@@ -33,6 +33,28 @@
             </div>
         </section>
     @endif
+    @if(isset($serviceCategories) && count($serviceCategories))
+        <section class="section section-lg bg-white text-center">
+            <div class="container">
+                <h2>{{ __('site.service_categories') }}</h2>
+                <div class="row row-30 justify-content-md-center">
+                    @foreach($serviceCategories as $serviceCategory)
+                        <div class="col-md-6 col-lg-4">
+                            <article class="box-chloe box-chloe_secondary">
+                                <div class="box-chloe__icon linearicons-code"></div>
+                                <div class="box-chloe__main">
+                                    <h4 class="box-chloe__title">{{ $serviceCategory->name }}</h4>
+                                    <p>{{ $serviceCategory->seo_description }}</p>
+                                    <a class="button button-sm button-default button-ujarak"
+                                       href="{{ route('category-services', $serviceCategory->slug) }}">{{ __('site.view_details') }}</a>
+                                </div>
+                            </article>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
     <section class="section section-sm bg-white text-center">
         <div class="container">
             <x-choose-us-component :$chooseUsCategory :$chooseUsWidgets/>

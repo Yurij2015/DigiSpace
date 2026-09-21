@@ -1,165 +1,683 @@
 {
-  "table": "services",
-  "identity": [
-    "slug"
-  ],
-  "translatable": [
-    "title",
-    "details",
-    "description",
-    "seo_keywords",
-    "seo_description",
-    "seo_title",
-    "image_alt"
-  ],
-  "rows": [
-    {
-      "id": 1,
-      "price": null,
-      "service_category_id": null,
-      "image": null,
-      "slug": "concept-development",
-      "status": "inactive",
-      "i18n": {
-        "en": {
-          "title": "Concept development",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Розробка концепції",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Opracowanie koncepcji",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
+ "table": "services",
+ "identity": [
+  "slug"
+ ],
+ "translatable": [
+  "title",
+  "details",
+  "description",
+  "seo_keywords",
+  "seo_description",
+  "seo_title",
+  "image_alt"
+ ],
+ "rows": [
+  {
+   "id": 1,
+   "price": null,
+   "service_category_id": null,
+   "image": null,
+   "slug": "concept-development",
+   "status": "inactive",
+   "i18n": {
+    "en": {
+     "title": "Concept development",
+     "details": null,
+     "description": null,
+     "seo_keywords": null,
+     "seo_description": null,
+     "seo_title": null,
+     "image_alt": null
     },
-    {
-      "id": 2,
-      "price": null,
-      "service_category_id": null,
-      "image": null,
-      "slug": "ui-design",
-      "status": "inactive",
-      "i18n": {
-        "en": {
-          "title": "UI design",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "UI-дизайн",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Projektowanie UI",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
+    "uk": {
+     "title": "Розробка концепції",
+     "details": null,
+     "description": null,
+     "seo_keywords": null,
+     "seo_description": null,
+     "seo_title": null,
+     "image_alt": null
     },
-    {
-      "id": 3,
-      "price": null,
-      "service_category_id": null,
-      "image": null,
-      "slug": "configuration-management",
-      "status": "inactive",
-      "i18n": {
-        "en": {
-          "title": "Configuration management",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Керування конфігурацією",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Zarządzanie konfiguracją",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 4,
-      "price": null,
-      "service_category_id": null,
-      "image": null,
-      "slug": "software-quality-assurance",
-      "status": "inactive",
-      "i18n": {
-        "en": {
-          "title": "Software quality assurance",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Забезпечення якості ПЗ",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Zapewnienie jakości oprogramowania",
-          "details": null,
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
+    "pl": {
+     "title": "Opracowanie koncepcji",
+     "details": null,
+     "description": null,
+     "seo_keywords": null,
+     "seo_description": null,
+     "seo_title": null,
+     "image_alt": null
     }
-  ]
+   }
+  },
+  {
+   "id": 2,
+   "price": null,
+   "service_category_id": null,
+   "image": null,
+   "slug": "ui-design",
+   "status": "inactive",
+   "i18n": {
+    "en": {
+     "title": "UI design",
+     "details": null,
+     "description": null,
+     "seo_keywords": null,
+     "seo_description": null,
+     "seo_title": null,
+     "image_alt": null
+    },
+    "uk": {
+     "title": "UI-дизайн",
+     "details": null,
+     "description": null,
+     "seo_keywords": null,
+     "seo_description": null,
+     "seo_title": null,
+     "image_alt": null
+    },
+    "pl": {
+     "title": "Projektowanie UI",
+     "details": null,
+     "description": null,
+     "seo_keywords": null,
+     "seo_description": null,
+     "seo_title": null,
+     "image_alt": null
+    }
+   }
+  },
+  {
+   "id": 3,
+   "price": null,
+   "service_category_id": null,
+   "image": null,
+   "slug": "configuration-management",
+   "status": "inactive",
+   "i18n": {
+    "en": {
+     "title": "Configuration management",
+     "details": null,
+     "description": null,
+     "seo_keywords": null,
+     "seo_description": null,
+     "seo_title": null,
+     "image_alt": null
+    },
+    "uk": {
+     "title": "Керування конфігурацією",
+     "details": null,
+     "description": null,
+     "seo_keywords": null,
+     "seo_description": null,
+     "seo_title": null,
+     "image_alt": null
+    },
+    "pl": {
+     "title": "Zarządzanie konfiguracją",
+     "details": null,
+     "description": null,
+     "seo_keywords": null,
+     "seo_description": null,
+     "seo_title": null,
+     "image_alt": null
+    }
+   }
+  },
+  {
+   "id": 4,
+   "price": null,
+   "service_category_id": null,
+   "image": null,
+   "slug": "software-quality-assurance",
+   "status": "inactive",
+   "i18n": {
+    "en": {
+     "title": "Software quality assurance",
+     "details": null,
+     "description": null,
+     "seo_keywords": null,
+     "seo_description": null,
+     "seo_title": null,
+     "image_alt": null
+    },
+    "uk": {
+     "title": "Забезпечення якості ПЗ",
+     "details": null,
+     "description": null,
+     "seo_keywords": null,
+     "seo_description": null,
+     "seo_title": null,
+     "image_alt": null
+    },
+    "pl": {
+     "title": "Zapewnienie jakości oprogramowania",
+     "details": null,
+     "description": null,
+     "seo_keywords": null,
+     "seo_description": null,
+     "seo_title": null,
+     "image_alt": null
+    }
+   }
+  },
+  {
+   "id": 21,
+   "price": null,
+   "service_category_id": 1,
+   "image": null,
+   "slug": "laravel-development",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Laravel Development",
+     "details": null,
+     "description": "<p>Laravel is our primary backend framework. We build custom web applications, REST APIs, admin panels and SaaS products on Laravel — from architecture and database design to queues, scheduling, caching and third-party integrations.</p><p>Our Laravel projects include multi-tenant SaaS platforms, CRM systems and content management tools. We write clean, tested, maintainable code following Laravel conventions, so your application stays easy to extend and cheap to support.</p><p>Need to hire Laravel developers? We take over existing Laravel codebases too — auditing, refactoring and extending them without breaking production.</p>",
+     "seo_keywords": "laravel development, hire laravel developers, laravel development company, laravel api development",
+     "seo_description": "Custom Laravel development: web applications, APIs, SaaS and admin panels. Hire Laravel developers for new builds or legacy codebases.",
+     "seo_title": "Laravel Development Services",
+     "image_alt": "Laravel development services"
+    },
+    "uk": {
+     "title": "Розробка на Laravel",
+     "details": null,
+     "description": "<p>Laravel — наш основний backend-фреймворк. Ми створюємо кастомні вебзастосунки, REST API, адмін-панелі та SaaS-продукти на Laravel: від архітектури та проєктування БД до черг, планувальника, кешування й інтеграцій.</p><p>Серед наших Laravel-проєктів — мультитенантні SaaS-платформи, CRM-системи та інструменти керування контентом. Ми пишемо чистий, покритий тестами код за конвенціями Laravel, тому застосунок легко розширювати й дешево підтримувати.</p><p>Шукаєте Laravel-розробників? Ми також підхоплюємо наявні Laravel-кодбази — аудит, рефакторинг і розвиток без зупинки продакшену.</p>",
+     "seo_keywords": "laravel розробка, найняти laravel розробника, laravel api розробка",
+     "seo_description": "Кастомна розробка на Laravel: вебзастосунки, API, SaaS та адмін-панелі. Laravel-розробники для нових продуктів і наявних кодбаз.",
+     "seo_title": "Послуги розробки на Laravel",
+     "image_alt": "Послуги розробки на Laravel"
+    },
+    "pl": {
+     "title": "Tworzenie aplikacji w Laravel",
+     "details": null,
+     "description": "<p>Laravel to nasz główny framework backendowy. Tworzymy dedykowane aplikacje webowe, REST API, panele administracyjne i produkty SaaS w Laravel — od architektury i projektowania bazy danych po kolejki, harmonogramy, cache i integracje.</p><p>Wśród naszych projektów Laravel są wielodostępowe platformy SaaS, systemy CRM i narzędzia do zarządzania treścią. Piszemy czysty, testowany kod zgodny z konwencjami Laravel, dzięki czemu aplikację łatwo rozwijać i tanio utrzymywać.</p><p>Przejmujemy też istniejące codebase'y Laravel — audyt, refaktoryzacja i rozwój bez przestojów produkcji.</p>",
+     "seo_keywords": "laravel development, programista laravel, laravel api development",
+     "seo_description": "Dedykowany Laravel development: aplikacje webowe, API, SaaS i panele admina. Programiści Laravel do nowych produktów i istniejącego kodu.",
+     "seo_title": "Usługi Laravel Development",
+     "image_alt": "Usługi Laravel development"
+    }
+   }
+  },
+  {
+   "id": 22,
+   "price": null,
+   "service_category_id": 1,
+   "image": null,
+   "slug": "symfony-development",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Symfony Development",
+     "details": null,
+     "description": "<p>Symfony is our choice for complex, long-lived business applications where strict architecture matters. We build modular systems with Symfony components, Doctrine ORM, API Platform and Messenger — designed for maintainability over years, not months.</p><p>We develop custom business logic, integrations and back-office systems on Symfony, and we modernize legacy Symfony applications: upgrades between major versions, migration away from deprecated bundles, test coverage.</p>",
+     "seo_keywords": "symfony development, symfony developers, api platform, symfony migration",
+     "seo_description": "Custom Symfony development for complex business applications: modular architecture, API Platform, Doctrine, legacy modernization.",
+     "seo_title": "Symfony Development Services",
+     "image_alt": "Symfony development services"
+    },
+    "uk": {
+     "title": "Розробка на Symfony",
+     "details": null,
+     "description": "<p>Symfony — наш вибір для складних бізнес-застосунків, які живитимуть роками й де важлива строга архітектура. Ми будуємо модульні системи на компонентах Symfony, Doctrine ORM, API Platform і Messenger — з розрахунку на підтримку протягом років.</p><p>Розробляємо кастомну бізнес-логіку, інтеграції та back-office системи на Symfony, а також модернізуємо legacy-застосунки: оновлення між мажорними версіями, міграція з застарілих бандлів, покриття тестами.</p>",
+     "seo_keywords": "symfony розробка, symfony розробники, api platform, міграція symfony",
+     "seo_description": "Кастомна розробка на Symfony для складних бізнес-застосунків: модульна архітектура, API Platform, Doctrine, модернізація legacy.",
+     "seo_title": "Послуги розробки на Symfony",
+     "image_alt": "Послуги розробки на Symfony"
+    },
+    "pl": {
+     "title": "Tworzenie aplikacji w Symfony",
+     "details": null,
+     "description": "<p>Symfony to nasz wybór do złożonych aplikacji biznesowych, które mają działać latami. Budujemy modularne systemy na komponentach Symfony, Doctrine ORM, API Platform i Messenger — z myślą o utrzymaniu na lata, nie miesiące.</p><p>Tworzymy dedykowaną logikę biznesową, integracje i systemy back-office na Symfony, a także modernizujemy starsze aplikacje: aktualizacje między wersjami, migracje z przestarzałych bundle'i, pokrycie testami.</p>",
+     "seo_keywords": "symfony development, programista symfony, api platform, migracja symfony",
+     "seo_description": "Dedykowany Symfony development dla złożonych aplikacji biznesowych: architektura modułowa, API Platform, Doctrine, modernizacja legacy.",
+     "seo_title": "Usługi Symfony Development",
+     "image_alt": "Usługi Symfony development"
+    }
+   }
+  },
+  {
+   "id": 23,
+   "price": null,
+   "service_category_id": 1,
+   "image": null,
+   "slug": "php-development",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "PHP Development",
+     "details": null,
+     "description": "<p>PHP powers most of what we build. With 6+ years of commercial PHP experience we deliver custom applications, APIs and integrations on modern PHP 8.x — typed code, Composer ecosystem, static analysis and PHPUnit testing as standard.</p><p>Whether it is a greenfield product or a legacy PHP codebase that needs rescuing, we work framework-agnostic: Laravel, Symfony or plain PHP. We audit existing code, fix security issues and bring old applications up to modern standards.</p>\n<p>Website development with PHP opens wide perspectives to developers, which results in a great performance of the website and its extended efficiency. That&rsquo;s why we chose this technology for the implementation of our projects.&nbsp;</p>\n<h4>The Main Benefits of Website Development With PHP</h4>\n<p><img src=\"/uploads/widgets/1687123468.jpg\" alt=\"Website Development With PHP\" /></p>\n<p>There are various PHP web frameworks which can be used for development goals. The most effective ones of them are selected by our team to provide customers with an agile web development process which is featured the following benefits.</p>\n<ul>\n<li>The fastest development process. There are lots of built-in functions and classes which allow us to speed up the process.</li>\n<li>Higher performance. Due to regular testing and updating, PHP frameworks acquire high efficiency and operational performance.</li>\n<li>Less code is required.</li>\n<li>Easier maintenance of the website.</li>\n<li>Implemented database protection, which prevents the project from cross-site scripting issues.</li>\n</ul>\n<p>Due to these features, PHP frameworks help us to develop back-end parts of the project successfully.</p>\n<p>As for the choice of frameworks, we offer web development services using the following ones:</p>\n<ul>\n<li>Laravel. The idea of web development with Laravel is the best for complex or corporate projects which require fast solutions for complex tasks.</li>\n<li>Symphony. That is one more PHP framework which is recognized all over the world for its flexibility and multi-functionality.&nbsp;</li>\n</ul>\n<h4>Enjoy the Most Brilliant Ideas of PHP Framework Implementation in DigiSpace</h4>\n<p>We provide the highest level of services by creating websites with PHP frameworks. Just give us your idea, and we&rsquo;ll develop it from A to Z using this great tool set. Let&rsquo;s discuss the details of your website right now! Please, contact us using our chatbot to make a great start for our partnership.</p>",
+     "seo_keywords": "php development, hire php developers, php development company, php 8 development",
+     "seo_description": "Custom PHP development: web applications, APIs and integrations on modern PHP 8.x. Laravel, Symfony or plain PHP — new builds and legacy rescue.",
+     "seo_title": "PHP Development Services",
+     "image_alt": "PHP development services"
+    },
+    "uk": {
+     "title": "Розробка на PHP",
+     "details": null,
+     "description": "<p>PHP — основа більшості наших рішень. Понад 6 років комерційного досвіду в PHP: створюємо кастомні застосунки, API та інтеграції на сучасному PHP 8.x — типізований код, екосистема Composer, статичний аналіз і PHPUnit-тести як стандарт.</p><p>Чи то новий продукт, чи legacy-кодбаза, яку треба рятувати — працюємо з Laravel, Symfony або чистим PHP. Аудит наявного коду, виправлення вразливостей і модернізація старих застосунків.</p>\n<p>Розробка вебсайтів на PHP відкриває розробникам широкі перспективи, що призводить до чудової продуктивності вебсайту та його підвищеної ефективності. Саме тому ми обрали цю технологію для реалізації наших проєктів.&nbsp;</p>\n<h4>Основні переваги розробки вебсайтів на PHP</h4>\n<p><img src=\"/uploads/widgets/1687123468.jpg\" alt=\"Website Development With PHP\" /></p>\n<p>Існують різні PHP-вебфреймворки, які можна використовувати для цілей розробки. Наша команда обирає найефективніші з них, щоб забезпечити клієнтам гнучкий процес веброзробки, який має такі переваги.</p>\n<ul>\n<li>Найшвидший процес розробки. Існує багато вбудованих функцій і класів, які дозволяють нам прискорити процес.</li>\n<li>Вища продуктивність. Завдяки регулярному тестуванню та оновленню PHP-фреймворки досягають високої ефективності та робочої продуктивності.</li>\n<li>Потрібно менше коду.</li>\n<li>Простіше обслуговування вебсайту.</li>\n<li>Реалізований захист бази даних, який запобігає проблемам міжсайтового скриптингу.</li>\n</ul>\n<p>Завдяки цим особливостям PHP-фреймворки допомагають нам успішно розробляти бекенд-частини проєкту.</p>\n<p>Що стосується вибору фреймворків, ми пропонуємо послуги веброзробки з використанням таких:</p>\n<ul>\n<li>Laravel. Ідея веброзробки з Laravel найкраще підходить для складних або корпоративних проєктів, які потребують швидких рішень для складних завдань.</li>\n<li>Symphony. Це ще один PHP-фреймворк, визнаний у всьому світі за свою гнучкість і багатофункціональність.&nbsp;</li>\n</ul>\n<h4>Скористайтеся найблискавішими ідеями впровадження PHP-фреймворків у DigiSpace</h4>\n<p>Ми надаємо послуги найвищого рівня, створюючи вебсайти на PHP-фреймворках. Просто поділіться з нами своєю ідеєю, і ми розробимо її від А до Я за допомогою цього чудового набору інструментів. Давайте обговоримо деталі вашого вебсайту вже зараз! Будь ласка, зв'яжіться з нами через наш чат-бот, щоб покласти чудовий початок нашому партнерству.</p>",
+     "seo_keywords": "php розробка, найняти php розробника, php 8 розробка",
+     "seo_description": "Кастомна розробка на PHP: вебзастосунки, API та інтеграції на сучасному PHP 8.x. Laravel, Symfony або чистий PHP — нові продукти й legacy.",
+     "seo_title": "Послуги розробки на PHP",
+     "image_alt": "Послуги розробки на PHP"
+    },
+    "pl": {
+     "title": "Tworzenie aplikacji w PHP",
+     "details": null,
+     "description": "<p>PHP napędza większość tego, co budujemy. Ponad 6 lat komercyjnego doświadczenia w PHP: tworzymy dedykowane aplikacje, API i integracje na nowoczesnym PHP 8.x — typowany kod, ekosystem Composer, analiza statyczna i testy PHPUnit w standardzie.</p><p>Niezależnie czy to nowy produkt, czy legacy codebase do uratowania — pracujemy z Laravel, Symfony lub czystym PHP. Audytujemy istniejący kod, naprawiamy luki bezpieczeństwa i modernizujemy stare aplikacje.</p>\n<p>Tworzenie stron internetowych w PHP otwiera przed programistami szerokie perspektywy, co przekłada się na świetną wydajność strony i jej rozszerzoną funkcjonalność. Dlatego wybraliśmy tę technologię do realizacji naszych projektów.&nbsp;</p>\n<h4>Główne zalety tworzenia stron internetowych w PHP</h4>\n<p><img src=\"/uploads/widgets/1687123468.jpg\" alt=\"Website Development With PHP\" /></p>\n<p>Istnieje wiele frameworków PHP, które można wykorzystać w celach deweloperskich. Nasz zespół wybiera te najskuteczniejsze, aby zapewnić klientom zwinny proces tworzenia stron, który charakteryzuje się następującymi zaletami.</p>\n<ul>\n<li>Najszybszy proces tworzenia. Istnieje wiele wbudowanych funkcji i klas, które pozwalają nam przyspieszyć prace.</li>\n<li>Wyższa wydajność. Dzięki regularnym testom i aktualizacjom frameworki PHP osiągają wysoką wydajność i sprawność działania.</li>\n<li>Wymagana jest mniejsza ilość kodu.</li>\n<li>Łatwiejsze utrzymanie strony internetowej.</li>\n<li>Wbudowana ochrona bazy danych, która zabezpiecza projekt przed atakami typu cross-site scripting.</li>\n</ul>\n<p>Dzięki tym cechom frameworki PHP pomagają nam skutecznie tworzyć części back-endowe projektu.</p>\n<p>Jeśli chodzi o wybór frameworków, oferujemy usługi web developmentu z wykorzystaniem następujących:</p>\n<ul>\n<li>Laravel. Tworzenie stron w Laravel to najlepsze rozwiązanie dla złożonych lub korporacyjnych projektów wymagających szybkich rozwiązań trudnych zadań.</li>\n<li>Symphony. To kolejny framework PHP uznawany na całym świecie za swoją elastyczność i wielofunkcyjność.&nbsp;</li>\n</ul>\n<h4>Poznaj najbardziej błyskotliwe pomysły na wdrożenie frameworków PHP w DigiSpace</h4>\n<p>Świadczymy usługi na najwyższym poziomie, tworząc strony internetowe na frameworkach PHP. Po prostu podziel się z nami swoim pomysłem, a my zrealizujemy go od A do Z przy użyciu tego świetnego zestawu narzędzi. Omówmy szczegóły Twojej strony już teraz! Skontaktuj się z nami za pomocą naszego chatbota, aby zrobić świetny początek naszej współpracy.</p>",
+     "seo_keywords": "php development, programista php, php 8 development",
+     "seo_description": "Dedykowany PHP development: aplikacje webowe, API i integracje na nowoczesnym PHP 8.x. Laravel, Symfony lub czysty PHP — nowe i legacy.",
+     "seo_title": "Usługi PHP Development",
+     "image_alt": "Usługi PHP development"
+    }
+   }
+  },
+  {
+   "id": 24,
+   "price": null,
+   "service_category_id": 1,
+   "image": null,
+   "slug": "golang-development",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Golang Development",
+     "details": null,
+     "description": "<p>We use Go where performance and concurrency matter: high-load APIs, background workers, scraping and data-processing pipelines, microservices that complement PHP monoliths. Our NetPostPanel platform runs Go services for content generation at scale.</p><p>Go services we deliver: REST/gRPC APIs, queue consumers, scheduled jobs, CLI tools and integration gateways — small, fast, easy to deploy as a single binary.</p>",
+     "seo_keywords": "golang development, hire go developers, golang microservices, golang api development",
+     "seo_description": "Go development for high-load APIs, microservices, workers and data pipelines. Hire Golang developers for performance-critical components.",
+     "seo_title": "Golang Development Services",
+     "image_alt": "Golang development services"
+    },
+    "uk": {
+     "title": "Розробка на Golang",
+     "details": null,
+     "description": "<p>Go ми використовуємо там, де важливі продуктивність і конкурентність: високонавантажені API, фонові воркери, скрапінг і пайплайни обробки даних, мікросервіси на додаток до PHP-монолітів. Наша платформа NetPostPanel працює на Go-сервісах для масштабної генерації контенту.</p><p>Що ми робимо на Go: REST/gRPC API, консюмери черг, планові задачі, CLI-інструменти та інтеграційні шлюзи — малі, швидкі сервіси, що розгортаються одним бінарником.</p>",
+     "seo_keywords": "golang розробка, найняти go розробника, golang мікросервіси",
+     "seo_description": "Розробка на Go: високонавантажені API, мікросервіси, воркери та пайплайни даних. Golang-розробники для performance-критичних компонентів.",
+     "seo_title": "Послуги розробки на Golang",
+     "image_alt": "Послуги розробки на Golang"
+    },
+    "pl": {
+     "title": "Tworzenie aplikacji w Golang",
+     "details": null,
+     "description": "<p>Go używamy tam, gdzie liczy się wydajność i współbieżność: API o dużym obciążeniu, workery, scraping i pipeline'y danych, mikroserwisy uzupełniające monolity PHP. Nasza platforma NetPostPanel działa na serwisach Go do generowania treści na skalę.</p><p>Tworzymy w Go: REST/gRPC API, konsumentów kolejek, zadania cykliczne, narzędzia CLI i bramy integracyjne — małe, szybkie serwisy wdrażane jako pojedynczy binarny plik.</p>",
+     "seo_keywords": "golang development, programista go, golang microservices",
+     "seo_description": "Go development: API o dużym obciążeniu, mikroserwisy, workery i pipeline'y danych. Programiści Golang do komponentów krytycznych wydajnościowo.",
+     "seo_title": "Usługi Golang Development",
+     "image_alt": "Usługi Golang development"
+    }
+   }
+  },
+  {
+   "id": 25,
+   "price": null,
+   "service_category_id": 2,
+   "image": null,
+   "slug": "vue-js-nuxt-development",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Vue.js & Nuxt Development",
+     "details": null,
+     "description": "<p>We build modern frontends on Vue 3 and Nuxt: SPAs, admin dashboards, SSR websites and hybrid applications. Composition API, TypeScript, Pinia, server-side rendering for SEO — the current Vue ecosystem, not legacy patterns.</p><p>Our Vue projects include a veterinary clinic platform and a pet ID card system — real products with real users. We integrate Vue frontends with Laravel/PHP backends via Inertia.js or REST APIs, depending on what fits your project best.</p>\n<p>If you ask every web developer to name the best technologies for website development goals, you can be sure that JavaScript frameworks will definitely place at the TOP-10. These frameworks gained popularity among professionals and provide website owners with incredible opportunities, including expressive dynamic elements and interactive parts.</p>\n<p><img src=\"/uploads/widgets/1687123774.jpg\" alt=\"website with javascript\" /></p>\n<h4>What Are JavaScript and Vue.js</h4>\n<p>JavaScript is a coding language with a prototyping nature. Its frameworks provide impressive efficiency in both back-end and front-end development, which is fast, cost-effective, and profitable for customers, who want to get truly interactive websites and web applications for their business goals.</p>\n<h4>Where Are JavaScript Frameworks Used the Best</h4>\n<p>JavaScript in website development can be used in a diverse range of cases. There are almost endless opportunities for its implementation!</p>\n<ul>\n<li>Dynamic web pages with pop-ups and dynamic elements are performing the best on JS.</li>\n<li>Web apps and browser games are one of the best ways of JavaScript implementation.</li>\n<li>Browser extensions are also great to develop using this framework.</li>\n<li>Server apps can be greatly developed using JS due to the opportunity to develop both back-end and front-end using the same code.</li>\n<li>Desktop apps for cross-platform projects are also developed on JavaScript.</li>\n</ul>\n<h4>Let&rsquo;s Make Your Website Interactive With JavaScript!</h4>\n<p>Do you feel intrigued by such a wide scope of opportunities? You won&rsquo;t be disappointed if you decide to get your JS-based website or web app developed by our team!</p>\n<p>We use top-notch JavaScript frameworks, including Vue.js, which is a progressive ecosystem for user interface development. You can appreciate our best projects by looking at our portfolio or simply by ordering a website with JavaScript origin in our company.&nbsp;</p>\n<p>We do guarantee our clients the following features for their projects:</p>\n<ul>\n<li>High efficiency and performance.</li>\n<li>Exceptional reliability.</li>\n<li>Immersive interactive elements implemented.</li>\n<li>A great user interface of a website with Vue.js.</li>\n</ul>\n<p>Make your website or web app interactive with JavaScript technologies offered by DigiSpace! Please, contact us via our chatbot to get more info and start your project with our team.</p>",
+     "seo_keywords": "vue.js development, nuxt development, hire vue developer, nuxt ssr",
+     "seo_description": "Vue 3 and Nuxt development: SPAs, SSR websites, admin dashboards. Modern frontend with TypeScript, Pinia and SEO-friendly rendering.",
+     "seo_title": "Vue.js & Nuxt Development Services",
+     "image_alt": "Vue.js and Nuxt development services"
+    },
+    "uk": {
+     "title": "Розробка на Vue.js та Nuxt",
+     "details": null,
+     "description": "<p>Ми створюємо сучасні фронтенди на Vue 3 і Nuxt: SPA, адмін-дашборди, SSR-сайти та гібридні застосунки. Composition API, TypeScript, Pinia, серверний рендеринг для SEO — актуальна екосистема Vue, а не застарілі патерни.</p><p>Серед наших Vue-проєктів — платформа ветеринарних клінік і система ID-карток для тварин: реальні продукти з реальними користувачами. Інтегруємо Vue-фронтенди з Laravel/PHP-бекендами через Inertia.js або REST API — залежно від потреб проєкту.</p>\n<p>Якщо ви запитаєте кожного веброзробника, які технології найкращі для розробки вебсайтів, можете бути впевнені, що JavaScript-фреймворки точно увійдуть до ТОП-10. Ці фреймворки здобули популярність серед професіоналів і надають власникам вебсайтів неймовірні можливості, зокрема виразні динамічні елементи та інтерактивні частини.</p>\n<p><img src=\"/uploads/widgets/1687123774.jpg\" alt=\"website with javascript\" /></p>\n<h4>Що таке JavaScript і Vue.js</h4>\n<p>JavaScript — це мова програмування з прототипною природою. Її фреймворки забезпечують вражаючу ефективність як у бекенд-, так і у фронтенд-розробці, що є швидким, економічно вигідним і прибутковим для клієнтів, які хочуть отримати по-справжньому інтерактивні вебсайти та вебзастосунки для своїх бізнес-цілей.</p>\n<h4>Де JavaScript-фреймворки використовуються найкраще</h4>\n<p>JavaScript у розробці вебсайтів можна застосовувати в найрізноманітніших випадках. Можливості його впровадження майже безмежні!</p>\n<ul>\n<li>Динамічні вебсторінки зі спливаючими вікнами та динамічними елементами найкраще працюють на JS.</li>\n<li>Вебзастосунки та браузерні ігри — один із найкращих способів застосування JavaScript.</li>\n<li>Розширення для браузерів також чудово розробляти за допомогою цього фреймворку.</li>\n<li>Серверні застосунки можна чудово розробляти на JS завдяки можливості створювати і бекенд, і фронтенд з використанням того самого коду.</li>\n<li>Десктопні застосунки для кросплатформних проєктів також розробляються на JavaScript.</li>\n</ul>\n<h4>Зробімо ваш вебсайт інтерактивним із JavaScript!</h4>\n<p>Вас заінтригував такий широкий спектр можливостей? Ви не розчаруєтеся, якщо вирішите доручити розробку свого вебсайту чи вебзастосунку на JS нашій команді!</p>\n<p>Ми використовуємо першокласні JavaScript-фреймворки, зокрема Vue.js — прогресивну екосистему для розробки інтерфейсів користувача. Ви можете оцінити наші найкращі проєкти, переглянувши портфоліо, або просто замовивши вебсайт на JavaScript у нашій компанії.&nbsp;</p>\n<p>Ми гарантуємо нашим клієнтам такі особливості для їхніх проєктів:</p>\n<ul>\n<li>Висока ефективність і продуктивність.</li>\n<li>Виняткова надійність.</li>\n<li>Впроваджені захопливі інтерактивні елементи.</li>\n<li>Чудовий інтерфейс користувача вебсайту на Vue.js.</li>\n</ul>\n<p>Зробіть свій вебсайт чи вебзастосунок інтерактивним за допомогою технологій JavaScript, які пропонує DigiSpace! Будь ласка, зв'яжіться з нами через чат-бот, щоб отримати більше інформації та розпочати свій проєкт із нашою командою.</p>",
+     "seo_keywords": "vue.js розробка, nuxt розробка, найняти vue розробника, nuxt ssr",
+     "seo_description": "Розробка на Vue 3 і Nuxt: SPA, SSR-сайти, адмін-дашборди. Сучасний фронтенд з TypeScript, Pinia та SEO-дружнім рендерингом.",
+     "seo_title": "Послуги розробки на Vue.js та Nuxt",
+     "image_alt": "Послуги розробки на Vue.js і Nuxt"
+    },
+    "pl": {
+     "title": "Tworzenie aplikacji w Vue.js i Nuxt",
+     "details": null,
+     "description": "<p>Budujemy nowoczesne frontendy w Vue 3 i Nuxt: SPA, panele administracyjne, strony SSR i aplikacje hybrydowe. Composition API, TypeScript, Pinia, renderowanie serwerowe dla SEO — aktualny ekosystem Vue.</p><p>Wśród naszych projektów Vue są platforma klinik weterynaryjnych i system kart identyfikacyjnych dla zwierząt — realne produkty z realnymi użytkownikami. Integrujemy frontendy Vue z backendami Laravel/PHP przez Inertia.js lub REST API.</p>\n<p>Jeśli zapytasz każdego web developera o najlepsze technologie do tworzenia stron internetowych, możesz mieć pewność, że frameworki JavaScript zdecydowanie znajdą się w TOP 10. Frameworki te zdobyły popularność wśród profesjonalistów i zapewniają właścicielom stron niesamowite możliwości, w tym wyraziste elementy dynamiczne i części interaktywne.</p>\n<p><img src=\"/uploads/widgets/1687123774.jpg\" alt=\"website with javascript\" /></p>\n<h4>Czym są JavaScript i Vue.js</h4>\n<p>JavaScript to język programowania o prototypowej naturze. Jego frameworki zapewniają imponującą wydajność zarówno w tworzeniu back-endu, jak i front-endu — są szybkie, ekonomiczne i opłacalne dla klientów, którzy chcą mieć naprawdę interaktywne strony i aplikacje internetowe dla swoich celów biznesowych.</p>\n<h4>Gdzie frameworki JavaScript sprawdzają się najlepiej</h4>\n<p>JavaScript w tworzeniu stron internetowych można wykorzystać w wielu różnych przypadkach. Możliwości jego wdrożenia są niemal nieograniczone!</p>\n<ul>\n<li>Dynamiczne strony internetowe z wyskakującymi okienkami i elementami dynamicznymi działają najlepiej na JS.</li>\n<li>Aplikacje internetowe i gry przeglądarkowe to jeden z najlepszych sposobów wykorzystania JavaScript.</li>\n<li>Rozszerzenia przeglądarek również świetnie tworzy się przy użyciu tego frameworka.</li>\n<li>Aplikacje serwerowe można doskonale rozwijać w JS dzięki możliwości tworzenia back-endu i front-endu przy użyciu tego samego kodu.</li>\n<li>Aplikacje desktopowe dla projektów cross-platformowych również powstają w JavaScript.</li>\n</ul>\n<h4>Uczyńmy Twoją stronę interaktywną z JavaScript!</h4>\n<p>Czy zaintrygował Cię tak szeroki zakres możliwości? Nie będziesz rozczarowany, jeśli zdecydujesz się powierzyć naszemu zespołowi stworzenie swojej strony lub aplikacji opartej na JS!</p>\n<p>Korzystamy z najwyższej klasy frameworków JavaScript, w tym Vue.js — progresywnego ekosystemu do tworzenia interfejsów użytkownika. Możesz ocenić nasze najlepsze projekty, przeglądając portfolio, lub po prostu zamówić stronę opartą na JavaScript w naszej firmie.&nbsp;</p>\n<p>Gwarantujemy naszym klientom następujące cechy ich projektów:</p>\n<ul>\n<li>Wysoka wydajność i sprawność.</li>\n<li>Wyjątkowa niezawodność.</li>\n<li>Wdrożone wciągające elementy interaktywne.</li>\n<li>Świetny interfejs użytkownika strony na Vue.js.</li>\n</ul>\n<p>Uczyń swoją stronę lub aplikację internetową interaktywną dzięki technologiom JavaScript oferowanym przez DigiSpace! Skontaktuj się z nami przez naszego chatbota, aby uzyskać więcej informacji i rozpocząć projekt z naszym zespołem.</p>",
+     "seo_keywords": "vue.js development, nuxt development, programista vue, nuxt ssr",
+     "seo_description": "Tworzenie w Vue 3 i Nuxt: SPA, strony SSR, panele admina. Nowoczesny frontend z TypeScript, Pinia i renderowaniem przyjaznym SEO.",
+     "seo_title": "Usługi Vue.js i Nuxt Development",
+     "image_alt": "Usługi Vue.js i Nuxt development"
+    }
+   }
+  },
+  {
+   "id": 26,
+   "price": null,
+   "service_category_id": 2,
+   "image": null,
+   "slug": "responsive-web-apps",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Responsive Web Applications",
+     "details": null,
+     "description": "<p>We build web applications that work flawlessly on every screen — phones, tablets, desktops. Mobile-first layouts, touch-friendly UI, fast load times and accessible markup as standard, not an afterthought.</p><p>From a marketing site to a complex web app, we ensure consistent behavior across browsers and devices: responsive grids, adaptive images, offline-tolerant forms and Core Web Vitals optimization.</p>\n<h4>What Are Responsive Web Apps</h4>\n<p>It can be truly upsetting when you try to get access to a web app and fail due to its incompatibility with your device. Besides, today users mostly prefer to use mobile devices for their working, entertainment, or shopping experiences. And a diverse range of these devices often becomes a pitfall for businesses that offer their apps to customers.&nbsp;<br />That all can be mitigated by using responsive web apps, which have no limits for accessing them from all types of devices regardless of their model, brand, OS types, screen dimensions, etc.&nbsp;</p>\n<p>Our team has provided responsive web app development services for businesses for several years already.&nbsp;</p>\n<p><img src=\"/uploads/widgets/1687123011.jpg\" alt=\"Responsive Web Apps\" /></p>\n<h4>Where Can Responsive Web Apps Come in Handy</h4>\n<p>By making your web app mobile responsive, you can achieve multiple goals:</p>\n<ul>\n<li>Provide your employees with an opportunity to use a single app from all devices while performing their working routines.</li>\n<li>Enhance your clientele by offering it an opportunity to get access to your products/services through an app from all devices.</li>\n</ul>\n<p>As these goals are commonly relevant, you can use mobile-responsive web apps for the following ideas:</p>\n<ul>\n<li>Effective corporate app development.</li>\n<li>E-commerce platform development.</li>\n<li>Game development for multiple platforms.</li>\n<li>Service apps for customers' access.</li>\n</ul>\n<p>And that is just the tip of the iceberg, as responsive web apps can be used almost everywhere!</p>\n<h4>Top-Notch Responsive App Development Services by DigiSpace</h4>\n<p>In our company, you can get high-class web development services, which also include responsive app development and maintenance. We use new-gen technologies and implement Bootstrap responsive web development methods to gain results which will please even the most sophisticated user. Our skills and readiness for non-standard tasks are at your service in DigiSpace!</p>",
+     "seo_keywords": "responsive web development, mobile-first web apps, pwa development, responsive design",
+     "seo_description": "Responsive web applications that work on every device: mobile-first design, fast load times, accessible UI and Core Web Vitals optimization.",
+     "seo_title": "Responsive Web Application Development",
+     "image_alt": "Responsive web application development"
+    },
+    "uk": {
+     "title": "Адаптивні вебзастосунки",
+     "details": null,
+     "description": "<p>Ми створюємо вебзастосунки, що бездоганно працюють на будь-якому екрані — телефони, планшети, десктопи. Mobile-first макети, зручний сенсорний UI, швидке завантаження й доступна розмітка — як стандарт, а не доповнення.</p><p>Від маркетингового сайту до складного вебзастосунку — забезпечуємо стабільну поведінку в усіх браузерах і на всіх пристроях: адаптивні сітки, оптимізовані зображення, форми, що не втрачають дані, і оптимізація Core Web Vitals.</p>\n<h4>Що таке адаптивні вебзастосунки</h4>\n<p>Буває справді прикро, коли ви намагаєтеся отримати доступ до вебзастосунку, але не можете через його несумісність із вашим пристроєм. Крім того, сьогодні користувачі здебільшого надають перевагу мобільним пристроям для роботи, розваг чи покупок. А різноманіття цих пристроїв часто стає каменем спотикання для бізнесів, які пропонують свої застосунки клієнтам.&nbsp;<br />Усього цього можна уникнути, використовуючи адаптивні вебзастосунки, які не мають обмежень щодо доступу з усіх типів пристроїв незалежно від їхньої моделі, бренду, типу ОС, розмірів екрана тощо.&nbsp;</p>\n<p>Наша команда вже кілька років надає бізнесам послуги з розробки адаптивних вебзастосунків.&nbsp;</p>\n<p><img src=\"/uploads/widgets/1687123011.jpg\" alt=\"Responsive Web Apps\" /></p>\n<h4>Де можуть знадобитися адаптивні вебзастосунки</h4>\n<p>Зробивши свій вебзастосунок адаптивним для мобільних пристроїв, ви можете досягти кількох цілей:</p>\n<ul>\n<li>Надайте своїм працівникам можливість використовувати єдиний застосунок на всіх пристроях під час виконання робочих завдань.</li>\n<li>Розширте свою клієнтську базу, запропонувавши їй доступ до ваших продуктів/послуг через застосунок із будь-яких пристроїв.</li>\n</ul>\n<p>Оскільки ці цілі є загальноактуальними, ви можете використовувати мобільно-адаптивні вебзастосунки для таких ідей:</p>\n<ul>\n<li>Ефективна розробка корпоративних застосунків.</li>\n<li>Розробка платформ електронної комерції.</li>\n<li>Розробка ігор для кількох платформ.</li>\n<li>Сервісні застосунки для доступу клієнтів.</li>\n</ul>\n<p>І це лише верхівка айсберга, адже адаптивні вебзастосунки можна використовувати майже всюди!</p>\n<h4>Першокласні послуги з розробки адаптивних застосунків від DigiSpace</h4>\n<p>У нашій компанії ви можете отримати висококласні послуги веброзробки, які також включають розробку та підтримку адаптивних застосунків. Ми використовуємо технології нового покоління та застосовуємо методи адаптивної веброзробки на Bootstrap, щоб досягти результатів, які сподобаються навіть найвимогливішому користувачеві. Наші навички та готовність до нестандартних завдань — до ваших послуг у DigiSpace!</p>",
+     "seo_keywords": "адаптивна веброзробка, mobile-first застосунки, pwa розробка, адаптивний дизайн",
+     "seo_description": "Адаптивні вебзастосунки для будь-якого пристрою: mobile-first дизайн, швидке завантаження, доступний UI та оптимізація Core Web Vitals.",
+     "seo_title": "Розробка адаптивних вебзастосунків",
+     "image_alt": "Розробка адаптивних вебзастосунків"
+    },
+    "pl": {
+     "title": "Responsywne aplikacje webowe",
+     "details": null,
+     "description": "<p>Tworzymy aplikacje webowe, które działają bezbłędnie na każdym ekranie — telefony, tablety, desktopy. Układy mobile-first, UI przyjazny dotykowi, szybkie ładowanie i dostępny markup jako standard.</p><p>Od strony marketingowej po złożoną aplikację — zapewniamy spójne działanie we wszystkich przeglądarkach: responsywne siatki, adaptacyjne obrazki, formularze odporne na utratę danych i optymalizację Core Web Vitals.</p>\n<h4>Czym są responsywne aplikacje internetowe</h4>\n<p>To naprawdę frustrujące, gdy próbujesz uzyskać dostęp do aplikacji internetowej i nie udaje się to z powodu jej niezgodności z Twoim urządzeniem. Poza tym dziś użytkownicy w większości wolą korzystać z urządzeń mobilnych do pracy, rozrywki czy zakupów. A różnorodność tych urządzeń często staje się przeszkodą dla firm, które oferują swoje aplikacje klientom.&nbsp;<br />Wszystko to można zniwelować, korzystając z responsywnych aplikacji internetowych, które nie mają ograniczeń w dostępie z dowolnego typu urządzenia, niezależnie od modelu, marki, systemu operacyjnego, wymiarów ekranu itp.&nbsp;</p>\n<p>Nasz zespół od kilku lat świadczy usługi w zakresie tworzenia responsywnych aplikacji internetowych dla firm.&nbsp;</p>\n<p><img src=\"/uploads/widgets/1687123011.jpg\" alt=\"Responsive Web Apps\" /></p>\n<h4>Gdzie responsywne aplikacje internetowe mogą się przydać</h4>\n<p>Czyniąc swoją aplikację internetową responsywną na urządzeniach mobilnych, możesz osiągnąć wiele celów:</p>\n<ul>\n<li>Zapewnij pracownikom możliwość korzystania z jednej aplikacji na wszystkich urządzeniach podczas wykonywania codziennych obowiązków.</li>\n<li>Poszerz grono klientów, oferując im dostęp do Twoich produktów/usług za pośrednictwem aplikacji z dowolnych urządzeń.</li>\n</ul>\n<p>Ponieważ cele te są powszechnie aktualne, responsywne aplikacje mobilne możesz wykorzystać do następujących pomysłów:</p>\n<ul>\n<li>Efektywny rozwój aplikacji korporacyjnych.</li>\n<li>Tworzenie platform e-commerce.</li>\n<li>Tworzenie gier na wiele platform.</li>\n<li>Aplikacje serwisowe zapewniające dostęp klientom.</li>\n</ul>\n<p>A to dopiero wierzchołek góry lodowej, ponieważ responsywne aplikacje internetowe można wykorzystać niemal wszędzie!</p>\n<h4>Najwyższej klasy usługi tworzenia responsywnych aplikacji od DigiSpace</h4>\n<p>W naszej firmie możesz uzyskać usługi web development najwyższej klasy, które obejmują również tworzenie i utrzymanie responsywnych aplikacji. Korzystamy z technologii nowej generacji i stosujemy metody responsywnego tworzenia stron z Bootstrap, aby osiągnąć rezultaty, które zadowolą nawet najbardziej wymagającego użytkownika. Nasze umiejętności i gotowość do niestandardowych zadań są do Twojej dyspozycji w DigiSpace!</p>",
+     "seo_keywords": "responsywne aplikacje webowe, mobile-first, pwa development, responsive design",
+     "seo_description": "Responsywne aplikacje webowe działające na każdym urządzeniu: mobile-first, szybkie ładowanie, dostępny UI i optymalizacja Core Web Vitals.",
+     "seo_title": "Responsywne aplikacje webowe",
+     "image_alt": "Responsywne aplikacje webowe"
+    }
+   }
+  },
+  {
+   "id": 27,
+   "price": null,
+   "service_category_id": 3,
+   "image": null,
+   "slug": "wordpress-development",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "WordPress Development",
+     "details": null,
+     "description": "<p>We build fast, maintainable WordPress sites: custom themes, plugin configuration, WooCommerce stores and content platforms. No bloated page-builders — clean themes that load fast and editors actually enjoy using.</p><p>Services: custom theme development, WooCommerce setup, performance optimization, security hardening, migrations and multilingual content with proper SEO structure.</p>",
+     "seo_keywords": "wordpress development, woocommerce development, wordpress developers, custom wordpress theme",
+     "seo_description": "WordPress development: custom themes, WooCommerce stores, performance optimization and multilingual sites without page-builder bloat.",
+     "seo_title": "WordPress Development Services",
+     "image_alt": "WordPress development services"
+    },
+    "uk": {
+     "title": "Розробка на WordPress",
+     "details": null,
+     "description": "<p>Ми створюємо швидкі й зручні сайти на WordPress: кастомні теми, налаштування плагінів, магазини WooCommerce та контент-платформи. Без роздутих пейдж-білдерів — чисті теми, що швидко вантажаться і якими редактори реально користуються.</p><p>Послуги: розробка кастомних тем, налаштування WooCommerce, оптимізація швидкості, захист, міграції та багатомовний контент з коректною SEO-структурою.</p>",
+     "seo_keywords": "wordpress розробка, woocommerce розробка, wordpress розробники, кастомна тема wordpress",
+     "seo_description": "Розробка на WordPress: кастомні теми, магазини WooCommerce, оптимізація швидкості та багатомовні сайти без пейдж-білдерів.",
+     "seo_title": "Послуги розробки на WordPress",
+     "image_alt": "Послуги розробки на WordPress"
+    },
+    "pl": {
+     "title": "Tworzenie stron na WordPress",
+     "details": null,
+     "description": "<p>Budujemy szybkie i łatwe w utrzymaniu strony WordPress: dedykowane motywy, konfiguracja wtyczek, sklepy WooCommerce i platformy treści. Bez przeładowanych page-builderów — czyste motywy, które szybko się ładują.</p><p>Usługi: tworzenie motywów, konfiguracja WooCommerce, optymalizacja wydajności, zabezpieczenia, migracje i treści wielojęzyczne z poprawną strukturą SEO.</p>",
+     "seo_keywords": "wordpress development, woocommerce development, programista wordpress, motyw wordpress",
+     "seo_description": "WordPress development: dedykowane motywy, sklepy WooCommerce, optymalizacja i strony wielojęzyczne bez nadmiarowych builderów.",
+     "seo_title": "Usługi WordPress Development",
+     "image_alt": "Usługi WordPress development"
+    }
+   }
+  },
+  {
+   "id": 28,
+   "price": null,
+   "service_category_id": 3,
+   "image": null,
+   "slug": "custom-crm-cms",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Custom CRM & CMS Development",
+     "details": null,
+     "description": "<p>Off-the-shelf CRMs force your team to adapt to their workflows. We build custom CRM and CMS systems that match your processes exactly — client management, sales pipelines, content workflows, reporting and role-based access.</p><p>Built on Laravel with admin panels your team will actually use: Filament-based interfaces, custom dashboards, integrations with mail, telephony, payment providers and your existing tools.</p>\n<p>The most popular business automation solutions are CMS and CRM systems, which ease the process of business administration and management. We offer our customers to get custom solutions for their businesses which are developed meeting the highest standards and using top-leveled technologies.</p>\n<p><img src=\"/uploads/widgets/1687122361.jpg\" alt=\"CRM and CMS systems\" /></p>\n<h4>Custom CRM and CMS Development for Your Highest Goals</h4>\n<p>Businesses require agile and effective automation means to operate successfully. CMS aka Content Management System and CRM aka Customer Relationship Management are among the most in-demand among them. They boost performance and help to control each process simultaneously.&nbsp;</p>\n<p>These two types of software are featured in multiple benefits:</p>\n<ul class=\"list-marked list_inset\">\n<li>Instant management of the website and providing its content updates with ease</li>\n<li>Analysis of customers' behavior and sales rates.</li>\n<li>Improving communication with clients.</li>\n</ul>\n<p>Both of these systems can work separately or create a synergized system which will help to create impactful content and measure its impact on customers.&nbsp;&nbsp;</p>\n<h4>The Most Significant Benefits of Our CMS/CRM Development Services</h4>\n<p>When you decide that you need CRM/CMS web development services, it can be a die-hard choice of whom to apply for them. In our company, we have a huge experience in how to build a CMS or CRM and how to make them work efficiently. We adhere to a couple of principles which make our CMS development service the best in the niche.</p>\n<ul class=\"list-marked list_inset\">\n<li>Individual approach to each project. We understand that each business is unique and thus, it requires custom solutions which encounter all the peculiarities.</li>\n<li>Strict adherence to client&rsquo;s requirements and needs. We investigate your needs in advance and follow them as a road map.</li>\n<li>Constant reporting on the results. We stay in touch with customers and do our best to provide them with regular reports and updates on our work.</li>\n<li>Making products which will be a step ahead of competitors is our rule. We apply our skills and creativity and use the best technologies while developing a CRM system or a CMS.</li>\n</ul>\n<p>With our CRM system development company, you can get top-notch automation tools for your business.</p>\n<p>&nbsp;</p>",
+     "seo_keywords": "custom crm development, custom cms development, crm system development, laravel crm",
+     "seo_description": "Custom CRM and CMS development on Laravel: client management, sales pipelines, content workflows and admin panels tailored to your processes.",
+     "seo_title": "Custom CRM & CMS Development",
+     "image_alt": "Custom CRM and CMS development"
+    },
+    "uk": {
+     "title": "Розробка кастомних CRM та CMS",
+     "details": null,
+     "description": "<p>Готові CRM змушують команду підлаштовуватись під їхні процеси. Ми створюємо кастомні CRM- і CMS-системи точно під ваші процеси — керування клієнтами, воронки продажів, контент-воркфлоу, звітність і рольовий доступ.</p><p>Розробка на Laravel з адмін-панелями, якими команда справді користуватиметься: інтерфейси на Filament, кастомні дашборди, інтеграції з поштою, телефонією, платіжними провайдерами та вашими інструментами.</p>\n<p>Найпопулярнішими рішеннями для автоматизації бізнесу є системи CMS і CRM, які полегшують процес адміністрування та управління бізнесом. Ми пропонуємо нашим клієнтам власні рішення для їхніх бізнесів, розроблені відповідно до найвищих стандартів і з використанням передових технологій.</p>\n<p><img src=\"/uploads/widgets/1687122361.jpg\" alt=\"Системи CRM і CMS\" /></p>\n<h4>Розробка власних CRM і CMS для ваших найамбітніших цілей</h4>\n<p>Для успішної роботи бізнеси потребують гнучких та ефективних засобів автоматизації. CMS, вона ж Content Management System, і CRM, вона ж Customer Relationship Management, є одними з найбільш затребуваних серед них. Вони підвищують продуктивність і допомагають контролювати кожен процес одночасно.&nbsp;</p>\n<p>Ці два типи програмного забезпечення мають низку переваг:</p>\n<ul class=\"list-marked list_inset\">\n<li>Миттєве управління веб-сайтом і легке оновлення його контенту</li>\n<li>Аналіз поведінки клієнтів і показників продажів.</li>\n<li>Покращення комунікації з клієнтами.</li>\n</ul>\n<p>Обидві ці системи можуть працювати окремо або створювати синергійну систему, яка допоможе створювати ефективний контент і вимірювати його вплив на клієнтів.&nbsp;&nbsp;</p>\n<h4>Найважливіші переваги наших послуг з розробки CMS/CRM</h4>\n<p>Коли ви вирішуєте, що вам потрібні послуги з веб-розробки CRM/CMS, вибір того, до кого звернутися, може бути непростим. У нашій компанії ми маємо величезний досвід у створенні CMS або CRM і в тому, як змусити їх працювати ефективно. Ми дотримуємося кількох принципів, які роблять нашу послугу з розробки CMS найкращою в ніші.</p>\n<ul class=\"list-marked list_inset\">\n<li>Індивідуальний підхід до кожного проєкту. Ми розуміємо, що кожен бізнес унікальний, а тому потребує власних рішень, які враховують усі особливості.</li>\n<li>Суворе дотримання вимог і потреб клієнта. Ми досліджуємо ваші потреби наперед і дотримуємося їх як дорожньої карти.</li>\n<li>Постійна звітність про результати. Ми залишаємося на зв&rsquo;язку з клієнтами та докладаємо всіх зусиль, щоб надавати їм регулярні звіти й оновлення про нашу роботу.</li>\n<li>Створення продуктів, які на крок попереду конкурентів, — наше правило. Ми застосовуємо наші навички та креативність і використовуємо найкращі технології під час розробки системи CRM або CMS.</li>\n</ul>\n<p>З нашою компанією з розробки CRM-систем ви можете отримати першокласні інструменти автоматизації для вашого бізнесу.</p>\n<p>&nbsp;</p>",
+     "seo_keywords": "розробка crm, розробка cms, кастомна crm система, laravel crm",
+     "seo_description": "Кастомні CRM та CMS на Laravel: керування клієнтами, воронки продажів, контент-воркфлоу та адмін-панелі під ваші процеси.",
+     "seo_title": "Розробка кастомних CRM та CMS",
+     "image_alt": "Розробка кастомних CRM та CMS"
+    },
+    "pl": {
+     "title": "Dedykowane systemy CRM i CMS",
+     "details": null,
+     "description": "<p>Gotowe CRM-y zmuszają zespół do dostosowania się do ich procesów. Tworzymy dedykowane systemy CRM i CMS dopasowane do Twoich procesów — zarządzanie klientami, lejki sprzedaży, workflow treści, raportowanie i dostęp oparty na rolach.</p><p>Budowane na Laravel z panelami administracyjnymi, z których zespół faktycznie korzysta: interfejsy Filament, niestandardowe dashboardy, integracje z pocztą, telefonią, płatnościami i istniejącymi narzędziami.</p>\n<p>Najpopularniejszymi rozwiązaniami do automatyzacji biznesu są systemy CMS i CRM, które ułatwiają proces administrowania i zarządzania firmą. Oferujemy naszym klientom dedykowane rozwiązania dla ich firm, opracowane zgodnie z najwyższymi standardami i z wykorzystaniem najnowocześniejszych technologii.</p>\n<p><img src=\"/uploads/widgets/1687122361.jpg\" alt=\"Systemy CRM i CMS\" /></p>\n<h4>Tworzenie dedykowanych CRM i CMS dla Twoich najwyższych celów</h4>\n<p>Firmy potrzebują elastycznych i skutecznych środków automatyzacji, aby działać z powodzeniem. CMS, czyli Content Management System, oraz CRM, czyli Customer Relationship Management, należą do najbardziej pożądanych z nich. Zwiększają wydajność i pomagają kontrolować każdy proces jednocześnie.&nbsp;</p>\n<p>Te dwa typy oprogramowania wyróżniają się licznymi zaletami:</p>\n<ul class=\"list-marked list_inset\">\n<li>Natychmiastowe zarządzanie stroną internetową i łatwe aktualizowanie jej treści</li>\n<li>Analiza zachowań klientów i wskaźników sprzedaży.</li>\n<li>Poprawa komunikacji z klientami.</li>\n</ul>\n<p>Oba te systemy mogą działać osobno lub tworzyć zintegrowany system, który pomoże tworzyć skuteczne treści i mierzyć ich wpływ na klientów.&nbsp;&nbsp;</p>\n<h4>Najważniejsze zalety naszych usług tworzenia CMS/CRM</h4>\n<p>Gdy zdecydujesz, że potrzebujesz usług web developmentu CRM/CMS, wybór tego, do kogo się zwrócić, może być trudny. W naszej firmie mamy ogromne doświadczenie w budowaniu CMS lub CRM oraz w tym, jak sprawić, by działały wydajnie. Stosujemy się do kilku zasad, które czynią naszą usługę tworzenia CMS najlepszą w tej niszy.</p>\n<ul class=\"list-marked list_inset\">\n<li>Indywidualne podejście do każdego projektu. Rozumiemy, że każda firma jest wyjątkowa, a zatem wymaga dedykowanych rozwiązań uwzględniających wszystkie jej specyfiki.</li>\n<li>Ścisłe przestrzeganie wymagań i potrzeb klienta. Badamy Twoje potrzeby z wyprzedzeniem i traktujemy je jak mapę drogową.</li>\n<li>Stałe raportowanie wyników. Pozostajemy w kontakcie z klientami i dokładamy wszelkich starań, aby zapewniać im regularne raporty i aktualizacje dotyczące naszej pracy.</li>\n<li>Tworzenie produktów, które są o krok przed konkurencją, to nasza zasada. Wykorzystujemy nasze umiejętności i kreatywność oraz najlepsze technologie podczas tworzenia systemu CRM lub CMS.</li>\n</ul>\n<p>Z naszą firmą zajmującą się tworzeniem systemów CRM możesz uzyskać najwyższej klasy narzędzia automatyzacji dla swojego biznesu.</p>\n<p>&nbsp;</p>",
+     "seo_keywords": "dedykowany crm, dedykowany cms, system crm, laravel crm",
+     "seo_description": "Dedykowane CRM i CMS na Laravel: zarządzanie klientami, lejki sprzedaży, workflow treści i panele admina dopasowane do procesów.",
+     "seo_title": "Dedykowane systemy CRM i CMS",
+     "image_alt": "Dedykowane systemy CRM i CMS"
+    }
+   }
+  },
+  {
+   "id": 29,
+   "price": null,
+   "service_category_id": 3,
+   "image": null,
+   "slug": "ecommerce-development",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "E-commerce Development",
+     "details": null,
+     "description": "<p>We develop online stores that sell: product catalogues, carts, checkout flows, payment gateways (Stripe, LiqPay, PayPal), delivery integrations, order management and customer accounts.</p><p>Depending on scale we build on WooCommerce for fast launches or custom Laravel solutions when your business logic outgrows plugins. Every store we ship is mobile-optimized, SEO-ready and integrated with your analytics.</p>",
+     "seo_keywords": "ecommerce development, online store development, woocommerce, custom ecommerce",
+     "seo_description": "E-commerce development: online stores on WooCommerce or custom Laravel, payment gateways, order management and SEO-ready catalogues.",
+     "seo_title": "E-commerce Development Services",
+     "image_alt": "E-commerce development services"
+    },
+    "uk": {
+     "title": "Розробка e-commerce",
+     "details": null,
+     "description": "<p>Ми створюємо інтернет-магазини, які продають: каталоги товарів, кошики, checkout-флоу, платіжні шлюзи (Stripe, LiqPay, PayPal), інтеграції доставки, керування замовленнями та особисті кабінети.</p><p>Залежно від масштабу — WooCommerce для швидкого запуску або кастомні рішення на Laravel, коли бізнес-логіка переростає плагіни. Кожен магазин — mobile-оптимізований, SEO-ready та інтегрований з аналітикою.</p>",
+     "seo_keywords": "ecommerce розробка, розробка інтернет-магазину, woocommerce, кастомний ecommerce",
+     "seo_description": "Розробка e-commerce: інтернет-магазини на WooCommerce або кастомний Laravel, платіжні шлюзи, керування замовленнями, SEO-каталоги.",
+     "seo_title": "Послуги розробки e-commerce",
+     "image_alt": "Послуги розробки e-commerce"
+    },
+    "pl": {
+     "title": "Tworzenie sklepów e-commerce",
+     "details": null,
+     "description": "<p>Tworzymy sklepy internetowe, które sprzedają: katalogi produktów, koszyki, procesy checkout, bramki płatności (Stripe, LiqPay, PayPal), integracje dostawy, zarządzanie zamówieniami i konta klientów.</p><p>W zależności od skali — WooCommerce dla szybkiego startu lub dedykowane rozwiązania Laravel, gdy logika biznesowa przerasta wtyczki. Każdy sklep jest zoptymalizowany mobilnie, gotowy pod SEO i zintegrowany z analityką.</p>",
+     "seo_keywords": "ecommerce development, sklep internetowy, woocommerce, dedykowany ecommerce",
+     "seo_description": "E-commerce development: sklepy internetowe na WooCommerce lub dedykowany Laravel, bramki płatności, zarządzanie zamówieniami, SEO.",
+     "seo_title": "Usługi E-commerce Development",
+     "image_alt": "Usługi e-commerce development"
+    }
+   }
+  },
+  {
+   "id": 30,
+   "price": null,
+   "service_category_id": 4,
+   "image": null,
+   "slug": "ai-powered-integrations",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "AI-Powered Integrations",
+     "details": null,
+     "description": "<p>We integrate AI into real products — not demos. LLM-powered features like content generation, semantic search, RAG pipelines, chatbots and automated moderation, built on OpenAI, Anthropic or self-hosted models.</p><p>Our own NetPostPanel platform is the proof: a production system doing AI content generation, semantic filtering and multi-language translation at scale. We bring the same engineering to your product — with cost control, rate limiting and fallbacks built in.</p>",
+     "seo_keywords": "ai integration services, llm integration, rag pipeline, ai chatbot development, openai integration",
+     "seo_description": "AI integrations for real products: LLM features, RAG pipelines, chatbots, content generation and semantic search with cost control built in.",
+     "seo_title": "AI Integration Services",
+     "image_alt": "AI-powered integration services"
+    },
+    "uk": {
+     "title": "AI-інтеграції",
+     "details": null,
+     "description": "<p>Ми інтегруємо AI в реальні продукти — не демки. Функції на базі LLM: генерація контенту, семантичний пошук, RAG-пайплайни, чатботи та автоматична модерація — на OpenAI, Anthropic або self-hosted моделях.</p><p>Наша власна платформа NetPostPanel — доказ: продакшен-система для AI-генерації контенту, семантичної фільтрації та багатомовного перекладу на масштабі. Таку ж інженерію ми привносимо у ваш продукт — з контролем витрат, rate limiting і fallback-механізмами.</p>",
+     "seo_keywords": "ai інтеграція, llm інтеграція, rag пайплайн, розробка чатботів, openai інтеграція",
+     "seo_description": "AI-інтеграції для реальних продуктів: LLM-функції, RAG-пайплайни, чатботи, генерація контенту та семантичний пошук з контролем витрат.",
+     "seo_title": "Послуги AI-інтеграцій",
+     "image_alt": "Послуги AI-інтеграцій"
+    },
+    "pl": {
+     "title": "Integracje AI",
+     "details": null,
+     "description": "<p>Integrujemy AI w realnych produktach — nie w demach. Funkcje oparte na LLM: generowanie treści, wyszukiwanie semantyczne, pipeline'y RAG, chatboty i automatyczna moderacja — na OpenAI, Anthropic lub modelach self-hosted.</p><p>Nasza platforma NetPostPanel to dowód: produkcyjny system generowania treści AI, filtrowania semantycznego i tłumaczeń wielojęzycznych na skalę. Taką samą inżynierię wnosimy do Twojego produktu — z kontrolą kosztów, rate limiting i mechanizmami fallback.</p>",
+     "seo_keywords": "integracja ai, integracja llm, rag pipeline, chatbot ai, integracja openai",
+     "seo_description": "Integracje AI dla realnych produktów: funkcje LLM, pipeline'y RAG, chatboty, generowanie treści i wyszukiwanie semantyczne z kontrolą kosztów.",
+     "seo_title": "Usługi integracji AI",
+     "image_alt": "Usługi integracji AI"
+    }
+   }
+  },
+  {
+   "id": 31,
+   "price": null,
+   "service_category_id": 4,
+   "image": null,
+   "slug": "api-integrations",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "API Integrations",
+     "details": null,
+     "description": "<p>We connect your systems: payment providers (Stripe, Revolut, LiqPay), CRM/ERP platforms (Zoho, HubSpot), marketing tools, logistics APIs and any third-party service with an API or a webhook.</p><p>We also design and build your own APIs — REST or GraphQL — with proper versioning, authentication, rate limiting and documentation, so partners and mobile apps can integrate cleanly.</p>",
+     "seo_keywords": "api integration services, api development, third-party api integration, stripe integration, crm integration",
+     "seo_description": "API integrations and development: payments, CRM/ERP connectivity, webhooks, third-party services. Custom REST and GraphQL APIs for your product.",
+     "seo_title": "API Integration & Development Services",
+     "image_alt": "API integration services"
+    },
+    "uk": {
+     "title": "API-інтеграції",
+     "details": null,
+     "description": "<p>Ми з'єднуємо ваші системи: платіжні провайдери (Stripe, Revolut, LiqPay), CRM/ERP-платформи (Zoho, HubSpot), маркетингові інструменти, логістичні API та будь-який сторонній сервіс з API чи вебхуками.</p><p>Також проєктуємо й розробляємо ваші власні API — REST або GraphQL — з версіонуванням, автентифікацією, rate limiting і документацією, щоб партнери й мобільні застосунки інтегрувалися чисто.</p>",
+     "seo_keywords": "api інтеграція, розробка api, інтеграція сторонніх api, stripe інтеграція, crm інтеграція",
+     "seo_description": "API-інтеграції та розробка: платежі, підключення CRM/ERP, вебхуки, сторонні сервіси. Кастомні REST та GraphQL API для вашого продукту.",
+     "seo_title": "Послуги API-інтеграцій та розробки",
+     "image_alt": "Послуги API-інтеграцій"
+    },
+    "pl": {
+     "title": "Integracje API",
+     "details": null,
+     "description": "<p>Łączymy Twoje systemy: dostawcy płatności (Stripe, Revolut, LiqPay), platformy CRM/ERP (Zoho, HubSpot), narzędzia marketingowe, API logistyczne i każdą zewnętrzną usługę z API lub webhookami.</p><p>Projektujemy i budujemy też własne API — REST lub GraphQL — z wersjonowaniem, uwierzytelnianiem, rate limiting i dokumentacją, aby partnerzy i aplikacje mobilne integrowały się czysto.</p>",
+     "seo_keywords": "integracja api, tworzenie api, integracja zewnętrznych api, integracja stripe, integracja crm",
+     "seo_description": "Integracje i tworzenie API: płatności, łączność CRM/ERP, webhooki, usługi zewnętrzne. Dedykowane API REST i GraphQL dla Twojego produktu.",
+     "seo_title": "Usługi integracji i tworzenia API",
+     "image_alt": "Usługi integracji API"
+    }
+   }
+  },
+  {
+   "id": 32,
+   "price": null,
+   "service_category_id": 5,
+   "image": null,
+   "slug": "website-maintenance",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Website Maintenance & Support",
+     "details": null,
+     "description": "<p>We keep your site healthy after launch: regular updates, security patches, uptime monitoring, backups, bug fixing and small improvements on a monthly plan or on demand.</p><p>Our support covers Laravel/PHP applications, WordPress sites and frontend apps — dependency upgrades, PHP version migrations, broken-feature fixes and performance checks. You get a team that already knows production realities, not just fresh builds.</p>",
+     "seo_keywords": "website maintenance services, website support, laravel support, wordpress maintenance",
+     "seo_description": "Website maintenance and support: updates, security patches, monitoring, backups and fixes for Laravel, WordPress and custom web applications.",
+     "seo_title": "Website Maintenance & Support Services",
+     "image_alt": "Website maintenance and support"
+    },
+    "uk": {
+     "title": "Підтримка та обслуговування сайтів",
+     "details": null,
+     "description": "<p>Ми підтримуємо ваш сайт після запуску: регулярні оновлення, патчі безпеки, моніторинг аптайму, бекапи, виправлення помилок і невеликі покращення — за місячним планом або на вимогу.</p><p>Підтримка охоплює Laravel/PHP-застосунки, сайти на WordPress і фронтенд-застосунки: оновлення залежностей, міграції версій PHP, виправлення поламаного функціоналу та перевірки продуктивності.</p>",
+     "seo_keywords": "підтримка сайту, обслуговування сайту, laravel підтримка, wordpress обслуговування",
+     "seo_description": "Підтримка сайтів: оновлення, патчі безпеки, моніторинг, бекапи та виправлення для Laravel, WordPress і кастомних вебзастосунків.",
+     "seo_title": "Послуги підтримки та обслуговування сайтів",
+     "image_alt": "Підтримка та обслуговування сайтів"
+    },
+    "pl": {
+     "title": "Utrzymanie i wsparcie stron",
+     "details": null,
+     "description": "<p>Utrzymujemy Twoją stronę po uruchomieniu: regularne aktualizacje, łatki bezpieczeństwa, monitoring uptime'u, kopie zapasowe, poprawki błędów i drobne ulepszenia — w planie miesięcznym lub na żądanie.</p><p>Wsparcie obejmuje aplikacje Laravel/PHP, strony WordPress i aplikacje frontendowe: aktualizacje zależności, migracje wersji PHP, naprawa funkcji i kontrole wydajności.</p>",
+     "seo_keywords": "utrzymanie strony, wsparcie strony, wsparcie laravel, utrzymanie wordpress",
+     "seo_description": "Utrzymanie stron: aktualizacje, łatki bezpieczeństwa, monitoring, backupy i poprawki dla Laravel, WordPress i dedykowanych aplikacji.",
+     "seo_title": "Usługi utrzymania i wsparcia stron",
+     "image_alt": "Utrzymanie i wsparcie stron"
+    }
+   }
+  },
+  {
+   "id": 33,
+   "price": null,
+   "service_category_id": 5,
+   "image": null,
+   "slug": "legacy-code-refactoring",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Legacy Code Refactoring",
+     "details": null,
+     "description": "<p>Inherited a codebase nobody wants to touch? We audit legacy PHP applications, map the risks, and refactor incrementally — without stopping your business or rewriting from scratch.</p><p>Typical work: framework upgrades, decoupling tangled code, adding tests to critical paths, fixing security issues and replacing abandoned dependencies. We modernize in small, safe steps that keep production stable.</p>\n<p>Times do not stand still, and even the most effective website with time can become outdated. This concerns not only its content but technologies too. That&rsquo;s why we offer businesses whose websites&rsquo; codes are outdated our help with legacy code refactoring.&nbsp; &nbsp;</p>\n<h4>What&rsquo;s the Essence of Legacy Code Refactoring Services</h4>\n<p>The main idea to refactor legacy code is to update its structure and architecture. That doesn&rsquo;t impact the functionality of the code, but it helps to improve outdated code and, sometimes, to integrate outdated software or websites with newer products used by businesses.&nbsp; &nbsp;</p>\n<h4>The Main Benefits of the Modernization of Legacy Applications and Sites &nbsp;</h4>\n<p><img src=\"/uploads/widgets/1687121246.jpg\" alt=\"Legacy Code Refactoring\" /></p>\n<p>There are multiple benefits which are essential for legacy code refactoring. &nbsp;</p>\n<ul class=\"list-marked list_inset\">\n<li>It is cost-saving. You reduce costs by implementing the modernization of legacy applications instead of rebuilding it from scratch or developing a new one instead of an existing one.</li>\n<li>It is referred to implementing newer and better practices without quitting previous ones.</li>\n<li>Improved protection. As usual, outdated sites and apps are prone to breakdowns and hacks. When the code is updated, it provides improved protection levels.</li>\n<li>The ability to scale the product up and provide more innovations in the future. That is bingo for growing businesses which have goals for further scaling up.</li>\n<li>Easier integration with other products. When the code is outdated, and it has low interoperability, it&rsquo;s a catastrophe. Legacy code refactoring helps to cope with this problem.</li>\n</ul>\n<p>In DigiSpace, we focus on refactoring PHP legacy code by using new-gen frameworks. You can get Laravel upgrades or Symfony upgrades in our company. We can improve your website, app, or product performance for low costs. With us, you can update the PHP version of your web tool and get its highest performance ever.&nbsp;</p>",
+     "seo_keywords": "legacy code refactoring, php code audit, legacy modernization, code rescue",
+     "seo_description": "Legacy code refactoring and rescue: PHP codebase audits, framework upgrades, incremental modernization without rewriting from scratch.",
+     "seo_title": "Legacy Code Refactoring Services",
+     "image_alt": "Legacy code refactoring services"
+    },
+    "uk": {
+     "title": "Рефакторинг legacy-коду",
+     "details": null,
+     "description": "<p>Успадкували кодбазу, до якої ніхто не хоче чіпати? Ми аудимо legacy PHP-застосунки, мапимо ризики й рефакторимо інкрементально — без зупинки бізнесу чи переписування з нуля.</p><p>Типові роботи: оновлення фреймворків, розплутування зв'язаного коду, покриття тестами критичних шляхів, виправлення вразливостей і заміна покинутих залежностей. Модернізуємо малими безпечними кроками, що тримають продакшен стабільним.</p>\n<p>Час не стоїть на місці, і навіть найефективніший веб-сайт з часом може застаріти. Це стосується не лише його контенту, а й технологій. Саме тому ми пропонуємо бізнесам, чий код веб-сайтів застарів, нашу допомогу з рефакторингу застарілого коду.&nbsp; &nbsp;</p>\n<h4>У чому суть послуг з рефакторингу застарілого коду</h4>\n<p>Головна ідея рефакторингу застарілого коду — оновити його структуру та архітектуру. Це не впливає на функціональність коду, але допомагає вдосконалити застарілий код і, іноді, інтегрувати застаріле програмне забезпечення чи веб-сайти з новішими продуктами, які використовує бізнес.&nbsp; &nbsp;</p>\n<h4>Основні переваги модернізації застарілих застосунків і сайтів &nbsp;</h4>\n<p><img src=\"/uploads/widgets/1687121246.jpg\" alt=\"Рефакторинг застарілого коду\" /></p>\n<p>Рефакторинг застарілого коду має низку вагомих переваг. &nbsp;</p>\n<ul class=\"list-marked list_inset\">\n<li>Це економить кошти. Ви зменшуєте витрати, впроваджуючи модернізацію застарілих застосунків замість того, щоб перебудовувати їх з нуля або розробляти нові замість наявних.</li>\n<li>Це передбачає впровадження новіших і кращих практик без відмови від попередніх.</li>\n<li>Покращений захист. Як правило, застарілі сайти та застосунки схильні до збоїв і зламів. Коли код оновлено, це забезпечує вищий рівень захисту.</li>\n<li>Можливість масштабувати продукт і впроваджувати більше інновацій у майбутньому. Це справжня знахідка для бізнесів, що ростуть і мають плани подальшого масштабування.</li>\n<li>Простіша інтеграція з іншими продуктами. Коли код застарілий і має низьку сумісність, це катастрофа. Рефакторинг застарілого коду допомагає впоратися з цією проблемою.</li>\n</ul>\n<p>У DigiSpace ми зосереджуємося на рефакторингу застарілого PHP-коду з використанням фреймворків нового покоління. У нашій компанії ви можете отримати оновлення Laravel або Symfony. Ми можемо покращити продуктивність вашого веб-сайту, застосунку чи продукту за невеликі кошти. З нами ви можете оновити версію PHP вашого веб-інструменту та отримати його найвищу продуктивність.&nbsp;</p>",
+     "seo_keywords": "рефакторинг legacy коду, аудит php коду, модернізація legacy, порятунок коду",
+     "seo_description": "Рефакторинг і порятунок legacy-коду: аудит PHP-кодбази, оновлення фреймворків, інкрементальна модернізація без переписування з нуля.",
+     "seo_title": "Послуги рефакторингу legacy-коду",
+     "image_alt": "Послуги рефакторингу legacy-коду"
+    },
+    "pl": {
+     "title": "Refaktoryzacja legacy code",
+     "details": null,
+     "description": "<p>Odziedziczyłeś codebase, którego nikt nie chce dotykać? Audytujemy starsze aplikacje PHP, mapujemy ryzyka i refaktoryzujemy stopniowo — bez zatrzymywania biznesu i przepisywania od zera.</p><p>Typowe prace: aktualizacje frameworków, rozplątywanie skomplikowanego kodu, testy dla krytycznych ścieżek, naprawa luk bezpieczeństwa i wymiana porzuconych zależności. Modernizujemy małymi, bezpiecznymi krokami.</p>\n<p>Czas nie stoi w miejscu i nawet najskuteczniejsza strona internetowa z czasem może stać się przestarzała. Dotyczy to nie tylko jej treści, ale także technologii. Dlatego oferujemy firmom, których kod stron internetowych jest przestarzały, naszą pomoc w refaktoryzacji kodu legacy.&nbsp; &nbsp;</p>\n<h4>W czym tkwi istota usług refaktoryzacji kodu legacy</h4>\n<p>Główną ideą refaktoryzacji kodu legacy jest aktualizacja jego struktury i architektury. Nie wpływa to na funkcjonalność kodu, ale pomaga ulepszyć przestarzały kod, a czasem zintegrować przestarzałe oprogramowanie lub strony internetowe z nowszymi produktami używanymi przez firmy.&nbsp; &nbsp;</p>\n<h4>Główne korzyści modernizacji starszych aplikacji i stron &nbsp;</h4>\n<p><img src=\"/uploads/widgets/1687121246.jpg\" alt=\"Refaktoryzacja kodu legacy\" /></p>\n<p>Istnieje wiele korzyści istotnych dla refaktoryzacji kodu legacy. &nbsp;</p>\n<ul class=\"list-marked list_inset\">\n<li>To oszczędność kosztów. Zmniejszasz wydatki, wdrażając modernizację starszych aplikacji zamiast budować je od zera lub tworzyć nowe zamiast istniejących.</li>\n<li>Oznacza to wdrażanie nowszych i lepszych praktyk bez porzucania poprzednich.</li>\n<li>Ulepszona ochrona. Zazwyczaj przestarzałe strony i aplikacje są podatne na awarie i włamania. Po aktualizacji kodu zapewnia on wyższy poziom ochrony.</li>\n<li>Możliwość skalowania produktu i wprowadzania większej liczby innowacji w przyszłości. To strzał w dziesiątkę dla rozwijających się firm, które mają plany dalszego skalowania.</li>\n<li>Łatwiejsza integracja z innymi produktami. Gdy kod jest przestarzały i ma niską interoperacyjność, to katastrofa. Refaktoryzacja kodu legacy pomaga poradzić sobie z tym problemem.</li>\n</ul>\n<p>W DigiSpace koncentrujemy się na refaktoryzacji starszego kodu PHP z użyciem frameworków nowej generacji. W naszej firmie możesz uzyskać aktualizacje Laravel lub Symfony. Możemy poprawić wydajność Twojej strony, aplikacji lub produktu za niewielkie koszty. Z nami możesz zaktualizować wersję PHP swojego narzędzia webowego i uzyskać jego najwyższą wydajność w historii.&nbsp;</p>",
+     "seo_keywords": "refaktoryzacja legacy code, audyt kodu php, modernizacja legacy, ratowanie kodu",
+     "seo_description": "Refaktoryzacja i ratowanie legacy code: audyt codebase PHP, aktualizacje frameworków, stopniowa modernizacja bez przepisywania od zera.",
+     "seo_title": "Usługi refaktoryzacji legacy code",
+     "image_alt": "Usługi refaktoryzacji legacy code"
+    }
+   }
+  },
+  {
+   "id": 34,
+   "price": null,
+   "service_category_id": 5,
+   "image": null,
+   "slug": "linux-hosting-deployment",
+   "status": "active",
+   "i18n": {
+    "en": {
+     "title": "Linux Hosting & Deployment",
+     "details": null,
+     "description": "<p>We set up and maintain Linux server infrastructure for web applications: VPS provisioning, Nginx/Apache, PHP-FPM, MySQL/PostgreSQL, SSL, firewalls and hardened SSH.</p><p>Deployment is automated where possible — CI/CD pipelines, zero-downtime releases, rollbacks and monitoring. Our own production runs this exact setup, so we know the operational side, not just theory.</p>\n<p>Even the most sophisticated website requires reliable hosting to operate tip-top. Do you know that 70% of websites around the world are hosted on Ubuntu servers? Since its inception in 1991, the Linux OS &mdash; and Ubuntu in particular &mdash; has been recognized as the #1 host for a website. That&rsquo;s true due to the following reasons:</p>\n<ul>\n<li>High reliability,</li>\n<li>The exceptional stability of operation,</li>\n<li>High performance and effectiveness.</li>\n</ul>\n<p>All of that makes Ubuntu terminals the best choice for websites, especially in the business segment. &nbsp;</p>\n<p><img src=\"/uploads/widgets/1687123945.jpg\" alt=\"Host Your Website on Ubuntu Server\" /></p>\n<h4>Some Facts in Favor of Choosing Ubuntu Servers for Hosting Your Website</h4>\n<ul>\n<li>Linux's terminals' number is twice higher than Windows-based servers' number.</li>\n<li>All big fishes in web hosting are working with Ubuntu servers to provide web hosting services.</li>\n<li>Ubuntu is cost-effective due to its open-source nature, yet reliable and effective.</li>\n<li>Ubuntu terminals are a perfect match for numerous ecosystems including Perl, MySQL, Python, PHP, and Ruby.</li>\n</ul>\n<h4>Getting Ubuntu Hosting Services for Your Website by DigiSpace</h4>\n<ul>\n<li>We host our client&rsquo;s websites on Ubuntu terminals of the most reliable hosting providers including real top-rated ones like Digitalocean, AWS and others. &nbsp;</li>\n<li>We thoroughly select the best option for each customer by evaluating specific features, technologies, performance rates, and operational peculiarities of a website we help to host on Ubuntu.</li>\n<li>It&rsquo;s easy to manage Ubuntu servers due to console-typed control. You can use the command Linux terminal to provide lots of processes and manage your website&rsquo;s operation on the server side with ease.</li>\n</ul>\n<p>Do you want to maintain your website&rsquo;s highest operation? Let&rsquo;s do this by hosting it on Ubuntu terminals!<br />Just apply for DigiSpace&rsquo;s pros consultation and help to decide which hosting provider and website hosting plan will meet your needs the most! You are welcome to use our chatbot to order website hosting services on a Linux terminal in DigiSpace.</p>",
+     "seo_keywords": "linux hosting, server setup, deployment automation, ci/cd, vps configuration",
+     "seo_description": "Linux hosting and deployment: VPS setup, Nginx, PHP-FPM, SSL, CI/CD pipelines and zero-downtime releases for web applications.",
+     "seo_title": "Linux Hosting & Deployment Services",
+     "image_alt": "Linux hosting and deployment services"
+    },
+    "uk": {
+     "title": "Linux-хостинг та деплой",
+     "details": null,
+     "description": "<p>Ми налаштовуємо й підтримуємо Linux-інфраструктуру для вебзастосунків: провізіонування VPS, Nginx/Apache, PHP-FPM, MySQL/PostgreSQL, SSL, фаєрволи та захищений SSH.</p><p>Деплой автоматизований де можливо — CI/CD-пайплайни, релізи без простою, відкати та моніторинг. Наш власний продакшен працює саме на такій конфігурації, тому ми знаємо операційну сторону, а не лише теорію.</p>\n<p>Навіть найскладніший вебсайт потребує надійного хостингу, щоб працювати бездоганно. Чи знали ви, що 70% вебсайтів у світі розміщені на серверах Ubuntu? З моменту свого створення в 1992 році ОС Linux і зокрема Ubuntu була визнана хостом №1 для вебсайтів. Це справді так з таких причин:</p>\n<ul>\n<li>Висока надійність,</li>\n<li>Виняткова стабільність роботи,</li>\n<li>Висока продуктивність і ефективність.</li>\n</ul>\n<p>Все це робить сервери Ubuntu найкращим вибором для вебсайтів, особливо в бізнес-сегменті. &nbsp;</p>\n<p><img src=\"/uploads/widgets/1687123945.jpg\" alt=\"Host Your Website on Ubuntu Server\" /></p>\n<h4>Декілька фактів на користь вибору серверів Ubuntu для хостингу вашого вебсайту</h4>\n<ul>\n<li>Кількість серверів на Linux удвічі перевищує кількість серверів на базі Windows.</li>\n<li>Усі великі гравці у сфері вебхостингу працюють із серверами Ubuntu для надання послуг вебхостингу.</li>\n<li>Ubuntu економічно вигідна завдяки своїй відкритій природі, але при цьому надійна й ефективна.</li>\n<li>Сервери Ubuntu ідеально поєднуються з численними екосистемами, зокрема Perl, MySQL, Python, PHP і Ruby.</li>\n</ul>\n<h4>Отримання послуг хостингу на Ubuntu для вашого вебсайту від DigiSpace</h4>\n<ul>\n<li>Ми розміщуємо вебсайти наших клієнтів на серверах Ubuntu найнадійніших хостинг-провайдерів, зокрема справжніх лідерів рейтингів, таких як Digitalocean, AWS та інші. &nbsp;</li>\n<li>Ми ретельно підбираємо найкращий варіант для кожного клієнта, оцінюючи специфічні особливості, технології, показники продуктивності та особливості роботи вебсайту, який ми допомагаємо розмістити на Ubuntu.</li>\n<li>Керувати серверами Ubuntu легко завдяки консольному типу керування. Ви можете використовувати командний термінал Linux для виконання багатьох процесів і легко керувати роботою вашого вебсайту на стороні сервера.</li>\n</ul>\n<p>Хочете підтримувати найвищу продуктивність вашого вебсайту? Давайте зробимо це, розмістивши його на серверах Ubuntu!<br />Просто подайте заявку на консультацію професіоналів DigiSpace, і вони допоможуть визначити, який хостинг-провайдер і тарифний план найкраще відповідатимуть вашим потребам! Ви можете скористатися нашим чат-ботом, щоб замовити послуги хостингу вебсайту на сервері Linux у DigiSpace.</p>",
+     "seo_keywords": "linux хостинг, налаштування сервера, автоматизація деплою, ci/cd, конфігурація vps",
+     "seo_description": "Linux-хостинг і деплой: налаштування VPS, Nginx, PHP-FPM, SSL, CI/CD-пайплайни та релізи без простою для вебзастосунків.",
+     "seo_title": "Послуги Linux-хостингу та деплою",
+     "image_alt": "Послуги Linux-хостингу та деплою"
+    },
+    "pl": {
+     "title": "Hosting Linux i wdrożenia",
+     "details": null,
+     "description": "<p>Konfigurujemy i utrzymujemy infrastrukturę Linux dla aplikacji webowych: provisioning VPS, Nginx/Apache, PHP-FPM, MySQL/PostgreSQL, SSL, firewalle i zabezpieczone SSH.</p><p>Wdrożenia automatyzujemy gdzie to możliwe — pipeline'y CI/CD, wydania bez przestojów, rollbacki i monitoring. Nasza własna produkcja działa na dokładnie takiej konfiguracji.</p>\n<p>Nawet najbardziej zaawansowana strona internetowa wymaga niezawodnego hostingu, aby działać bez zarzutu. Czy wiesz, że 70% stron na świecie jest hostowanych na serwerach Ubuntu? Od momentu powstania w 1992 roku system Linux, a w szczególności Ubuntu, został uznany za host nr 1 dla stron internetowych. To prawda z następujących powodów:</p>\n<ul>\n<li>Wysoka niezawodność,</li>\n<li>Wyjątkowa stabilność działania,</li>\n<li>Wysoka wydajność i efektywność.</li>\n</ul>\n<p>Wszystko to sprawia, że serwery Ubuntu są najlepszym wyborem dla stron internetowych, zwłaszcza w segmencie biznesowym. &nbsp;</p>\n<p><img src=\"/uploads/widgets/1687123945.jpg\" alt=\"Host Your Website on Ubuntu Server\" /></p>\n<h4>Kilka faktów przemawiających za wyborem serwerów Ubuntu do hostingu Twojej strony</h4>\n<ul>\n<li>Liczba serwerów Linux jest dwukrotnie wyższa niż liczba serwerów opartych na Windows.</li>\n<li>Wszyscy wielcy gracze w hostingu internetowym korzystają z serwerów Ubuntu do świadczenia usług hostingowych.</li>\n<li>Ubuntu jest ekonomiczna dzięki swojej otwartej naturze, a jednocześnie niezawodna i skuteczna.</li>\n<li>Serwery Ubuntu idealnie współpracują z wieloma ekosystemami, w tym Perl, MySQL, Python, PHP i Ruby.</li>\n</ul>\n<h4>Uzyskanie usług hostingu Ubuntu dla Twojej strony od DigiSpace</h4>\n<ul>\n<li>Hostujemy strony naszych klientów na serwerach Ubuntu najbardziej niezawodnych dostawców hostingu, w tym prawdziwych liderów rankingu, takich jak Digitalocean, AWS i inni. &nbsp;</li>\n<li>Starannie wybieramy najlepszą opcję dla każdego klienta, oceniając specyficzne cechy, technologie, wskaźniki wydajności i specyfikę działania strony, którą pomagamy hostować na Ubuntu.</li>\n<li>Serwerami Ubuntu łatwo zarządzać dzięki sterowaniu z konsoli. Możesz używać terminala poleceń Linux do wykonywania wielu procesów i z łatwością zarządzać działaniem swojej strony po stronie serwera.</li>\n</ul>\n<p>Chcesz utrzymać najwyższą wydajność swojej strony? Zróbmy to, hostując ją na serwerach Ubuntu!<br />Wystarczy, że zgłosisz się po konsultację profesjonalistów DigiSpace, którzy pomogą Ci zdecydować, który dostawca hostingu i plan najlepiej odpowiada Twoim potrzebom! Zapraszamy do korzystania z naszego chatbota, aby zamówić usługi hostingu strony na serwerze Linux w DigiSpace.</p>",
+     "seo_keywords": "hosting linux, konfiguracja serwera, automatyzacja wdrożeń, ci/cd, konfiguracja vps",
+     "seo_description": "Hosting Linux i wdrożenia: konfiguracja VPS, Nginx, PHP-FPM, SSL, pipeline'y CI/CD i wydania zero-downtime dla aplikacji webowych.",
+     "seo_title": "Usługi hostingu Linux i wdrożeń",
+     "image_alt": "Usługi hostingu Linux i wdrożeń"
+    }
+   }
+  }
+ ]
 }

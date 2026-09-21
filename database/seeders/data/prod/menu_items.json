@@ -1,232 +1,130 @@
 {
-    "table": "menu_items",
-    "identity": [
-        "slug"
-    ],
-    "translatable": [
-        "name"
-    ],
-    "rows": [
-        {
-            "id": 8,
-            "menu_id": 2,
-            "slug": "opening-the-space-of-high-technologies",
-            "href": "opening-the-space-of-high-technologies",
-            "i18n": {
-                "en": {
-                    "name": "Opening the Space of High Technologies"
-                },
-                "uk": {
-                    "name": "Відкриття простору високих технологій"
-                },
-                "pl": {
-                    "name": "Otwarcie przestrzeni wysokich technologii"
-                }
-            }
-        },
-        {
-            "id": 9,
-            "menu_id": 2,
-            "slug": "top-notch-analytics-and-consulting-on-web-development-technologies",
-            "href": "top-notch-analytics-and-consulting-on-web-development-technologies",
-            "i18n": {
-                "en": {
-                    "name": "Top-Notch Analytics and Consulting on Web Development Technologies"
-                },
-                "uk": {
-                    "name": "Першокласна аналітика та консалтинг з технологій веброзробки"
-                },
-                "pl": {
-                    "name": "Najwyższej klasy analityka i konsulting w zakresie technologii webowych"
-                }
-            }
-        },
-        {
-            "id": 10,
-            "menu_id": 2,
-            "slug": "template-implementation",
-            "href": "template-implementation",
-            "i18n": {
-                "en": {
-                    "name": "Template implementation"
-                },
-                "uk": {
-                    "name": "Впровадження шаблонів"
-                },
-                "pl": {
-                    "name": "Wdrażanie szablonów"
-                }
-            }
-        },
-        {
-            "id": 11,
-            "menu_id": 2,
-            "slug": "legacy-code-refactoring",
-            "href": "legacy-code-refactoring",
-            "i18n": {
-                "en": {
-                    "name": "Legacy code refactoring"
-                },
-                "uk": {
-                    "name": "Рефакторинг застарілого коду"
-                },
-                "pl": {
-                    "name": "Refaktoryzacja kodu legacy"
-                }
-            }
-        },
-        {
-            "id": 12,
-            "menu_id": 2,
-            "slug": "crm-and-cms-systems",
-            "href": "crm-and-cms-systems",
-            "i18n": {
-                "en": {
-                    "name": "CRM and CMS Systems"
-                },
-                "uk": {
-                    "name": "Системи CRM та CMS"
-                },
-                "pl": {
-                    "name": "Systemy CRM i CMS"
-                }
-            }
-        },
-        {
-            "id": 13,
-            "menu_id": 2,
-            "slug": "web-applications",
-            "href": "web-applications",
-            "i18n": {
-                "en": {
-                    "name": "Web Applications"
-                },
-                "uk": {
-                    "name": "Вебзастосунки"
-                },
-                "pl": {
-                    "name": "Aplikacje internetowe"
-                }
-            }
-        },
-        {
-            "id": 14,
-            "menu_id": 4,
-            "slug": "meet-digispace-the-company-which-opens-a-new-era-in-the-web-development-industry",
-            "href": "meet-digispace-the-company-which-opens-a-new-era-in-the-web-development-industry",
-            "i18n": {
-                "en": {
-                    "name": "Some Facts About DigiSpace"
-                },
-                "uk": {
-                    "name": "Кілька фактів про DigiSpace"
-                },
-                "pl": {
-                    "name": "Kilka faktów o DigiSpace"
-                }
-            }
-        },
-        {
-            "id": 15,
-            "menu_id": 2,
-            "slug": "qa-testing",
-            "href": "qa-testing",
-            "i18n": {
-                "en": {
-                    "name": "QA & Testing"
-                },
-                "uk": {
-                    "name": "QA та тестування"
-                },
-                "pl": {
-                    "name": "QA i testowanie"
-                }
-            }
-        },
-        {
-            "id": 16,
-            "menu_id": 2,
-            "slug": "responsive-web-apps",
-            "href": "responsive-web-apps",
-            "i18n": {
-                "en": {
-                    "name": "Responsive Web Apps"
-                },
-                "uk": {
-                    "name": "Адаптивні вебзастосунки"
-                },
-                "pl": {
-                    "name": "Responsywne aplikacje internetowe"
-                }
-            }
-        },
-        {
-            "id": 17,
-            "menu_id": 3,
-            "slug": "opening-incredible-opportunities-php-is-our-1-choice-for-website-development",
-            "href": "opening-incredible-opportunities-php-is-our-1-choice-for-website-development",
-            "i18n": {
-                "en": {
-                    "name": "Opening Incredible Opportunities: PHP Is Our #1 Choice for Website Development"
-                },
-                "uk": {
-                    "name": "Відкриваємо неймовірні можливості: PHP — наш вибір №1 для розробки вебсайтів"
-                },
-                "pl": {
-                    "name": "Otwieramy niesamowite możliwości: PHP to nasz wybór nr 1 w tworzeniu stron internetowych"
-                }
-            }
-        },
-        {
-            "id": 18,
-            "menu_id": 3,
-            "slug": "mysql-website-development-the-technology-which-became-legendary",
-            "href": "mysql-website-development-the-technology-which-became-legendary",
-            "i18n": {
-                "en": {
-                    "name": "MySQL Website Development—the Technology Which Became Legendary"
-                },
-                "uk": {
-                    "name": "Розробка вебсайтів на MySQL — технологія, що стала легендарною"
-                },
-                "pl": {
-                    "name": "Tworzenie stron internetowych w MySQL — technologia, która stała się legendarna"
-                }
-            }
-        },
-        {
-            "id": 19,
-            "menu_id": 3,
-            "slug": "websites-and-apps-developed-using-javascript-frameworks",
-            "href": "websites-and-apps-developed-using-javascript-frameworks",
-            "i18n": {
-                "en": {
-                    "name": "Websites and Apps Developed Using JavaScript Frameworks"
-                },
-                "uk": {
-                    "name": "Вебсайти та застосунки, розроблені на фреймворках JavaScript"
-                },
-                "pl": {
-                    "name": "Strony internetowe i aplikacje tworzone z użyciem frameworków JavaScript"
-                }
-            }
-        },
-        {
-            "id": 20,
-            "menu_id": 3,
-            "slug": "host-your-website-on-ubuntu-servers-with-digispace",
-            "href": "host-your-website-on-ubuntu-servers-with-digispace",
-            "i18n": {
-                "en": {
-                    "name": "Host Your Website on Ubuntu Servers with DigiSpace!"
-                },
-                "uk": {
-                    "name": "Розмістіть свій вебсайт на серверах Ubuntu з DigiSpace!"
-                },
-                "pl": {
-                    "name": "Hostuj swoją stronę internetową na serwerach Ubuntu z DigiSpace!"
-                }
-            }
-        }
-    ]
+ "table": "menu_items",
+ "identity": [
+  "slug"
+ ],
+ "translatable": [
+  "name"
+ ],
+ "rows": [
+  {
+   "id": 8,
+   "menu_id": 2,
+   "slug": "opening-the-space-of-high-technologies",
+   "href": "opening-the-space-of-high-technologies",
+   "i18n": {
+    "en": {
+     "name": "Opening the Space of High Technologies"
+    },
+    "uk": {
+     "name": "Відкриття простору високих технологій"
+    },
+    "pl": {
+     "name": "Otwarcie przestrzeni wysokich technologii"
+    }
+   }
+  },
+  {
+   "id": 9,
+   "menu_id": 2,
+   "slug": "top-notch-analytics-and-consulting-on-web-development-technologies",
+   "href": "top-notch-analytics-and-consulting-on-web-development-technologies",
+   "i18n": {
+    "en": {
+     "name": "Top-Notch Analytics and Consulting on Web Development Technologies"
+    },
+    "uk": {
+     "name": "Першокласна аналітика та консалтинг з технологій веброзробки"
+    },
+    "pl": {
+     "name": "Najwyższej klasy analityka i konsulting w zakresie technologii webowych"
+    }
+   }
+  },
+  {
+   "id": 10,
+   "menu_id": 2,
+   "slug": "template-implementation",
+   "href": "template-implementation",
+   "i18n": {
+    "en": {
+     "name": "Template implementation"
+    },
+    "uk": {
+     "name": "Впровадження шаблонів"
+    },
+    "pl": {
+     "name": "Wdrażanie szablonów"
+    }
+   }
+  },
+  {
+   "id": 13,
+   "menu_id": 2,
+   "slug": "web-applications",
+   "href": "web-applications",
+   "i18n": {
+    "en": {
+     "name": "Web Applications"
+    },
+    "uk": {
+     "name": "Вебзастосунки"
+    },
+    "pl": {
+     "name": "Aplikacje internetowe"
+    }
+   }
+  },
+  {
+   "id": 14,
+   "menu_id": 4,
+   "slug": "meet-digispace-the-company-which-opens-a-new-era-in-the-web-development-industry",
+   "href": "meet-digispace-the-company-which-opens-a-new-era-in-the-web-development-industry",
+   "i18n": {
+    "en": {
+     "name": "Some Facts About DigiSpace"
+    },
+    "uk": {
+     "name": "Кілька фактів про DigiSpace"
+    },
+    "pl": {
+     "name": "Kilka faktów o DigiSpace"
+    }
+   }
+  },
+  {
+   "id": 15,
+   "menu_id": 2,
+   "slug": "qa-testing",
+   "href": "qa-testing",
+   "i18n": {
+    "en": {
+     "name": "QA & Testing"
+    },
+    "uk": {
+     "name": "QA та тестування"
+    },
+    "pl": {
+     "name": "QA i testowanie"
+    }
+   }
+  },
+  {
+   "id": 18,
+   "menu_id": 3,
+   "slug": "mysql-website-development-the-technology-which-became-legendary",
+   "href": "mysql-website-development-the-technology-which-became-legendary",
+   "i18n": {
+    "en": {
+     "name": "MySQL Website Development—the Technology Which Became Legendary"
+    },
+    "uk": {
+     "name": "Розробка вебсайтів на MySQL — технологія, що стала легендарною"
+    },
+    "pl": {
+     "name": "Tworzenie stron internetowych w MySQL — technologia, która stała się legendarna"
+    }
+   }
+  }
+ ]
 }

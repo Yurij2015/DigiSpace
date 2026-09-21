@@ -83,6 +83,7 @@ class PublicSeoTest extends TestCase
         $category = ServiceCategory::create(['name' => 'Web', 'seo_title' => self::CATEGORY_SEO, 'seo_description' => self::CATEGORY_DESCRIPTION]);
         Service::create([
             'title' => 'Development', 'slug' => 'development', 'service_category_id' => $category->id,
+            'status' => 'active',
             'seo_title' => 'Service SEO', 'seo_description' => 'Service description', 'image' => 'development.jpg',
             'translations' => [$locale => ['seo_title' => $title, 'seo_description' => $description]],
         ]);
@@ -104,7 +105,7 @@ class PublicSeoTest extends TestCase
     {
         $this->seedPublicSite();
         $category = ServiceCategory::create(['name' => 'Web', 'seo_title' => self::CATEGORY_SEO, 'seo_description' => self::CATEGORY_DESCRIPTION]);
-        Service::create(['title' => 'Development', 'slug' => 'development', 'service_category_id' => $category->id]);
+        Service::create(['title' => 'Development', 'slug' => 'development', 'status' => 'active', 'service_category_id' => $category->id]);
 
         $response = $this->get('/en/service-category/web/development');
 

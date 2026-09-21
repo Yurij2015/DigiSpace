@@ -33,7 +33,7 @@ class HeaderSearchTest extends TestCase
     public function test_service_search_lists_matching_categorised_services(): void
     {
         $category = ServiceCategory::create(['name' => 'Web', 'slug' => 'web']);
-        Service::create(['title' => 'Laravel development', 'slug' => 'laravel-development', 'service_category_id' => $category->id, 'description' => 'Backend']);
+        Service::create(['title' => 'Laravel development', 'slug' => 'laravel-development', 'status' => 'active', 'service_category_id' => $category->id, 'description' => 'Backend']);
         Service::create(['title' => 'Orphaned laravel service', 'slug' => 'orphan', 'service_category_id' => null, 'description' => 'no category']);
 
         $this->get('/uk/service-search?search=laravel')

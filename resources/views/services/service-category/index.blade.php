@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', __('site.services_title'))
+@section('title', __('site.page_title', ['name' => $serviceCategory->seo_title ?: $serviceCategory->name]))
 @section('content')
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">

@@ -90,7 +90,9 @@ class ServiceCategory extends Model implements HasTranslatableColumns
         parent::boot();
 
         static::updating(static function ($serviceCategory) {
-            $serviceCategory->slug = Str::slug($serviceCategory->name);
+            if (blank($serviceCategory->slug)) {
+                $serviceCategory->slug = Str::slug((string) $serviceCategory->name);
+            }
         });
 
         static::creating(static function ($serviceCategory) {
