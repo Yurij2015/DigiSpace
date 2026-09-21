@@ -1,164 +1,164 @@
 {
-  "table": "footer_useful_links",
-  "identity": [
-    "name"
-  ],
-  "translatable": [
-    "name"
-  ],
-  "rows": [
-    {
-      "id": 1,
-      "url": "/",
-      "status": 1,
-      "position": 1,
-      "i18n": {
-        "en": {
-          "name": "Laravel"
+    "table": "footer_useful_links",
+    "identity": [
+        "name"
+    ],
+    "translatable": [
+        "name"
+    ],
+    "rows": [
+        {
+            "id": 1,
+            "url": "about",
+            "status": 1,
+            "position": 1,
+            "i18n": {
+                "en": {
+                    "name": "About"
+                },
+                "uk": {
+                    "name": "Про нас"
+                },
+                "pl": {
+                    "name": "O nas"
+                }
+            }
         },
-        "uk": {
-          "name": "Laravel"
+        {
+            "id": 2,
+            "url": "services",
+            "status": 1,
+            "position": 1,
+            "i18n": {
+                "en": {
+                    "name": "Services"
+                },
+                "uk": {
+                    "name": "Послуги"
+                },
+                "pl": {
+                    "name": "Usługi"
+                }
+            }
         },
-        "pl": {
-          "name": "Laravel"
+        {
+            "id": 3,
+            "url": "pricing",
+            "status": 1,
+            "position": 1,
+            "i18n": {
+                "en": {
+                    "name": "Pricing"
+                },
+                "uk": {
+                    "name": "Ціни"
+                },
+                "pl": {
+                    "name": "Cennik"
+                }
+            }
+        },
+        {
+            "id": 4,
+            "url": "blog",
+            "status": 1,
+            "position": 1,
+            "i18n": {
+                "en": {
+                    "name": "Blog"
+                },
+                "uk": {
+                    "name": "Блог"
+                },
+                "pl": {
+                    "name": "Blog"
+                }
+            }
+        },
+        {
+            "id": 5,
+            "url": "contact-us",
+            "status": 1,
+            "position": 1,
+            "i18n": {
+                "en": {
+                    "name": "Contact us"
+                },
+                "uk": {
+                    "name": "Зв'язатися з нами"
+                },
+                "pl": {
+                    "name": "Kontakt"
+                }
+            }
+        },
+        {
+            "id": 6,
+            "url": "pages/faq",
+            "status": 1,
+            "position": 2,
+            "i18n": {
+                "en": {
+                    "name": "FAQ"
+                },
+                "uk": {
+                    "name": "FAQ"
+                },
+                "pl": {
+                    "name": "FAQ"
+                }
+            }
+        },
+        {
+            "id": 7,
+            "url": "pages/support",
+            "status": 1,
+            "position": 2,
+            "i18n": {
+                "en": {
+                    "name": "Support"
+                },
+                "uk": {
+                    "name": "Підтримка"
+                },
+                "pl": {
+                    "name": "Wsparcie"
+                }
+            }
+        },
+        {
+            "id": 8,
+            "url": "pages/privacy-policy",
+            "status": 1,
+            "position": 2,
+            "i18n": {
+                "en": {
+                    "name": "Privacy Policy"
+                },
+                "uk": {
+                    "name": "Політика конфіденційності"
+                },
+                "pl": {
+                    "name": "Polityka prywatności"
+                }
+            }
+        },
+        {
+            "id": 9,
+            "url": "https://www.freepik.com/",
+            "status": 1,
+            "position": 2,
+            "i18n": {
+                "en": {
+                    "name": "Freepik"
+                },
+                "uk": {
+                    "name": "Freepik"
+                },
+                "pl": {
+                    "name": "Freepik"
+                }
+            }
         }
-      }
-    },
-    {
-      "id": 2,
-      "url": "/",
-      "status": 1,
-      "position": 1,
-      "i18n": {
-        "en": {
-          "name": "Symfony"
-        },
-        "uk": {
-          "name": "Symfony"
-        },
-        "pl": {
-          "name": "Symfony"
-        }
-      }
-    },
-    {
-      "id": 3,
-      "url": "/",
-      "status": 1,
-      "position": 1,
-      "i18n": {
-        "en": {
-          "name": "Vue 3"
-        },
-        "uk": {
-          "name": "Vue 3"
-        },
-        "pl": {
-          "name": "Vue 3"
-        }
-      }
-    },
-    {
-      "id": 4,
-      "url": "/",
-      "status": 1,
-      "position": 1,
-      "i18n": {
-        "en": {
-          "name": "VueNotus"
-        },
-        "uk": {
-          "name": "VueNotus"
-        },
-        "pl": {
-          "name": "VueNotus"
-        }
-      }
-    },
-    {
-      "id": 5,
-      "url": "/",
-      "status": 1,
-      "position": 1,
-      "i18n": {
-        "en": {
-          "name": "LteAdmin"
-        },
-        "uk": {
-          "name": "LteAdmin"
-        },
-        "pl": {
-          "name": "LteAdmin"
-        }
-      }
-    },
-    {
-      "id": 6,
-      "url": "/",
-      "status": 1,
-      "position": 2,
-      "i18n": {
-        "en": {
-          "name": "Tutorials"
-        },
-        "uk": {
-          "name": "Навчальні матеріали"
-        },
-        "pl": {
-          "name": "Poradniki"
-        }
-      }
-    },
-    {
-      "id": 7,
-      "url": "/",
-      "status": 1,
-      "position": 2,
-      "i18n": {
-        "en": {
-          "name": "Support"
-        },
-        "uk": {
-          "name": "Підтримка"
-        },
-        "pl": {
-          "name": "Wsparcie"
-        }
-      }
-    },
-    {
-      "id": 8,
-      "url": "/",
-      "status": 1,
-      "position": 2,
-      "i18n": {
-        "en": {
-          "name": "Contact Us"
-        },
-        "uk": {
-          "name": "Зв'язатися з нами"
-        },
-        "pl": {
-          "name": "Kontakt"
-        }
-      }
-    },
-    {
-      "id": 9,
-      "url": "/",
-      "status": 1,
-      "position": 2,
-      "i18n": {
-        "en": {
-          "name": "Blog"
-        },
-        "uk": {
-          "name": "Блог"
-        },
-        "pl": {
-          "name": "Blog"
-        }
-      }
-    }
-  ]
+    ]
 }

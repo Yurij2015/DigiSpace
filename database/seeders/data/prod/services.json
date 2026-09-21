@@ -1,757 +1,757 @@
 {
-  "table": "services",
-  "identity": [
-    "slug"
-  ],
-  "translatable": [
-    "title",
-    "details",
-    "description",
-    "seo_keywords",
-    "seo_description",
-    "seo_title",
-    "image_alt"
-  ],
-  "rows": [
-    {
-      "id": 1,
-      "price": 44,
-      "service_category_id": null,
-      "image": "no_image.png",
-      "slug": "ready-made-modern-design",
-      "status": "active",
-      "i18n": {
-        "en": {
-          "title": "Ready-made modern design",
-          "details": "Ready-made modern design (template/auto-generated)",
-          "description": "<p>Ready-made modern design (template/auto-generated)</p>",
-          "seo_keywords": null,
-          "seo_description": "Ready-made modern design (template/auto-generated)",
-          "seo_title": null,
-          "image_alt": null
+    "table": "services",
+    "identity": [
+        "slug"
+    ],
+    "translatable": [
+        "title",
+        "details",
+        "description",
+        "seo_keywords",
+        "seo_description",
+        "seo_title",
+        "image_alt"
+    ],
+    "rows": [
+        {
+            "id": 1,
+            "price": 44,
+            "service_category_id": null,
+            "image": "no_image.png",
+            "slug": "ready-made-modern-design",
+            "status": "active",
+            "i18n": {
+                "en": {
+                    "title": "Ready-made modern design",
+                    "details": "Ready-made modern design",
+                    "description": "<p>Ready-made modern design</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Ready-made modern design (template/auto-generated)",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Готовий сучасний дизайн",
+                    "details": "Готовий сучасний дизайн",
+                    "description": "<p>Готовий сучасний дизайн</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Готовий сучасний дизайн (шаблонний/автоматично згенерований)",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Gotowy nowoczesny design",
+                    "details": "Gotowy nowoczesny design",
+                    "description": "<p>Gotowy nowoczesny design</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Gotowy nowoczesny design (szablonowy/generowany automatycznie)",
+                    "seo_title": null,
+                    "image_alt": null
+                }
+            }
         },
-        "uk": {
-          "title": "Готовий сучасний дизайн",
-          "details": "Готовий сучасний дизайн (шаблонний/автоматично згенерований)",
-          "description": "<p>Готовий сучасний дизайн (шаблонний/автоматично згенерований)</p>",
-          "seo_keywords": null,
-          "seo_description": "Готовий сучасний дизайн (шаблонний/автоматично згенерований)",
-          "seo_title": null,
-          "image_alt": null
+        {
+            "id": 2,
+            "price": 44,
+            "service_category_id": null,
+            "image": "no_image.png",
+            "slug": "setup-of-core-pages",
+            "status": "active",
+            "i18n": {
+                "en": {
+                    "title": "Setup of core pages",
+                    "details": "Setup of core pages (Home, About, Contact, Services",
+                    "description": "<p>Setup of core pages (Home, About, Contact, Services</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Setup of core pages (Home, About, Contact, Services",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Налаштування основних сторінок",
+                    "details": "Налаштування основних сторінок (Головна, Про нас, Контакти, Послуги",
+                    "description": "<p>Налаштування основних сторінок (Головна, Про нас, Контакти, Послуги</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Налаштування основних сторінок (Головна, Про нас, Контакти, Послуги",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Konfiguracja podstawowych stron",
+                    "details": "Konfiguracja podstawowych stron (Strona główna, O nas, Kontakt, Usługi",
+                    "description": "<p>Konfiguracja podstawowych stron (Strona główna, O nas, Kontakt, Usługi</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Konfiguracja podstawowych stron (Strona główna, O nas, Kontakt, Usługi",
+                    "seo_title": null,
+                    "image_alt": null
+                }
+            }
         },
-        "pl": {
-          "title": "Gotowy nowoczesny design",
-          "details": "Gotowy nowoczesny design (szablonowy/generowany automatycznie)",
-          "description": "<p>Gotowy nowoczesny design (szablonowy/generowany automatycznie)</p>",
-          "seo_keywords": null,
-          "seo_description": "Gotowy nowoczesny design (szablonowy/generowany automatycznie)",
-          "seo_title": null,
-          "image_alt": null
+        {
+            "id": 3,
+            "price": 44,
+            "service_category_id": null,
+            "image": "no_image.png",
+            "slug": "backend-setup-secure-hosting-configuration",
+            "status": "active",
+            "i18n": {
+                "en": {
+                    "title": "Backend setup & secure hosting configuration",
+                    "details": "Backend setup & secure hosting configuration",
+                    "description": null,
+                    "seo_keywords": null,
+                    "seo_description": "Backend setup & secure hosting configuration",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Налаштування бекенду та безпечна конфігурація хостингу",
+                    "details": "Налаштування бекенду та безпечна конфігурація хостингу",
+                    "description": null,
+                    "seo_keywords": null,
+                    "seo_description": "Налаштування бекенду та безпечна конфігурація хостингу",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Konfiguracja backendu i bezpiecznego hostingu",
+                    "details": "Konfiguracja backendu i bezpiecznego hostingu",
+                    "description": null,
+                    "seo_keywords": null,
+                    "seo_description": "Konfiguracja backendu i bezpiecznego hostingu",
+                    "seo_title": null,
+                    "image_alt": null
+                }
+            }
+        },
+        {
+            "id": 4,
+            "price": 44,
+            "service_category_id": null,
+            "image": "no_image.png",
+            "slug": "basic-seo-analytics-integration",
+            "status": "active",
+            "i18n": {
+                "en": {
+                    "title": "Basic SEO & analytics integration",
+                    "details": "Basic SEO & analytics integration",
+                    "description": "<p>Basic SEO &amp; analytics integration</p>",
+                    "seo_keywords": null,
+                    "seo_description": null,
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Базове SEO та інтеграція аналітики",
+                    "details": "Базове SEO та інтеграція аналітики",
+                    "description": "<p>Базове SEO та інтеграція аналітики</p>",
+                    "seo_keywords": null,
+                    "seo_description": null,
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Podstawowe SEO i integracja analityki",
+                    "details": "Podstawowe SEO i integracja analityki",
+                    "description": "<p>Podstawowe SEO i integracja analityki</p>",
+                    "seo_keywords": null,
+                    "seo_description": null,
+                    "seo_title": null,
+                    "image_alt": null
+                }
+            }
+        },
+        {
+            "id": 5,
+            "price": 444,
+            "service_category_id": null,
+            "image": "no_image.png",
+            "slug": "extended-structure-tailored-to-your-business",
+            "status": "active",
+            "i18n": {
+                "en": {
+                    "title": "Extended structure tailored to your business",
+                    "details": "Extended structure tailored to your business",
+                    "description": "<p>Extended structure tailored to your business</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Extended structure tailored to your business",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Розширена структура, адаптована до вашого бізнесу",
+                    "details": "Розширена структура, адаптована до вашого бізнесу",
+                    "description": "<p>Розширена структура, адаптована до вашого бізнесу</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Розширена структура, адаптована до вашого бізнесу",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Rozszerzona struktura dopasowana do Twojego biznesu",
+                    "details": "Rozszerzona struktura dopasowana do Twojego biznesu",
+                    "description": "<p>Rozszerzona struktura dopasowana do Twojego biznesu</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Rozszerzona struktura dopasowana do Twojego biznesu",
+                    "seo_title": null,
+                    "image_alt": null
+                }
+            }
+        },
+        {
+            "id": 6,
+            "price": 555,
+            "service_category_id": null,
+            "image": "no_image.png",
+            "slug": "custom-design-from-professional-templates",
+            "status": "active",
+            "i18n": {
+                "en": {
+                    "title": "Custom design from professional templates",
+                    "details": "Custom design from professional templates",
+                    "description": "<p>Custom design from professional templates</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Custom design from professional templates",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Індивідуальний дизайн на основі професійних шаблонів",
+                    "details": "Індивідуальний дизайн на основі професійних шаблонів",
+                    "description": "<p>Індивідуальний дизайн на основі професійних шаблонів</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Індивідуальний дизайн на основі професійних шаблонів",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Indywidualny design na bazie profesjonalnych szablonów",
+                    "details": "Indywidualny design na bazie profesjonalnych szablonów",
+                    "description": "<p>Indywidualny design na bazie profesjonalnych szablonów</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Indywidualny design na bazie profesjonalnych szablonów",
+                    "seo_title": null,
+                    "image_alt": null
+                }
+            }
+        },
+        {
+            "id": 7,
+            "price": 555,
+            "service_category_id": null,
+            "image": "no_image.png",
+            "slug": "backend-configuration-for-advanced-features",
+            "status": "active",
+            "i18n": {
+                "en": {
+                    "title": "Backend configuration for advanced features",
+                    "details": "Backend configuration for advanced features",
+                    "description": "<p>Backend configuration for advanced features</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Backend configuration for advanced features",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Конфігурація бекенду для розширених функцій",
+                    "details": "Конфігурація бекенду для розширених функцій",
+                    "description": "<p>Конфігурація бекенду для розширених функцій</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Конфігурація бекенду для розширених функцій",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Konfiguracja backendu pod zaawansowane funkcje",
+                    "details": "Konfiguracja backendu pod zaawansowane funkcje",
+                    "description": "<p>Konfiguracja backendu pod zaawansowane funkcje</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Konfiguracja backendu pod zaawansowane funkcje",
+                    "seo_title": null,
+                    "image_alt": null
+                }
+            }
+        },
+        {
+            "id": 8,
+            "price": 4444,
+            "service_category_id": null,
+            "image": "no_image.png",
+            "slug": "performance-optimization-seo-enhancements",
+            "status": "active",
+            "i18n": {
+                "en": {
+                    "title": "Performance optimization & SEO enhancements",
+                    "details": "Performance optimization & SEO enhancements",
+                    "description": "<p>Performance optimization &amp; SEO enhancements</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Performance optimization & SEO enhancements",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Оптимізація продуктивності та покращення SEO",
+                    "details": "Оптимізація продуктивності та покращення SEO",
+                    "description": "<p>Оптимізація продуктивності та покращення SEO</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Оптимізація продуктивності та покращення SEO",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Optymalizacja wydajności i ulepszenia SEO",
+                    "details": "Optymalizacja wydajności i ulepszenia SEO",
+                    "description": "<p>Optymalizacja wydajności i ulepszenia SEO</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Optymalizacja wydajności i ulepszenia SEO",
+                    "seo_title": null,
+                    "image_alt": null
+                }
+            }
+        },
+        {
+            "id": 9,
+            "price": 433,
+            "service_category_id": 1,
+            "image": "service_asdfasdf_1717271107.jpg",
+            "slug": "system-architecture-workflow-planning",
+            "status": "inactive",
+            "i18n": {
+                "en": {
+                    "title": "System architecture & workflow planning",
+                    "details": "System architecture & workflow planning",
+                    "description": "<p>System architecture &amp; workflow planning</p>",
+                    "seo_keywords": "dfdfd",
+                    "seo_description": "System architecture & workflow planning",
+                    "seo_title": "System architecture & workflow planning",
+                    "image_alt": "dfdd"
+                },
+                "uk": {
+                    "title": "Архітектура системи та планування робочих процесів",
+                    "details": "Архітектура системи та планування робочих процесів",
+                    "description": "<p>Архітектура системи та планування робочих процесів</p>",
+                    "seo_keywords": "dfdfd",
+                    "seo_description": "Архітектура системи та планування робочих процесів",
+                    "seo_title": "Архітектура системи та планування робочих процесів",
+                    "image_alt": "dfdd"
+                },
+                "pl": {
+                    "title": "Architektura systemu i planowanie przepływów pracy",
+                    "details": "Architektura systemu i planowanie przepływów pracy",
+                    "description": "<p>Architektura systemu i planowanie przepływów pracy</p>",
+                    "seo_keywords": "dfdfd",
+                    "seo_description": "Architektura systemu i planowanie przepływów pracy",
+                    "seo_title": "Architektura systemu i planowanie przepływów pracy",
+                    "image_alt": "dfdd"
+                }
+            }
+        },
+        {
+            "id": 10,
+            "price": 3333,
+            "service_category_id": null,
+            "image": "no_image.png",
+            "slug": "functional-admin-panel-with-pre-built-ui",
+            "status": "inactive",
+            "i18n": {
+                "en": {
+                    "title": "Functional admin panel with pre-built UI",
+                    "details": "Functional admin panel with pre-built UI",
+                    "description": "<p>Functional admin panel with pre-built UI</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Functional admin panel with pre-built UI",
+                    "seo_title": "Functional admin panel with pre-built UI",
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Функціональна адмін-панель із готовим UI",
+                    "details": "Функціональна адмін-панель із готовим UI",
+                    "description": "<p>Функціональна адмін-панель із готовим UI</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Функціональна адмін-панель із готовим UI",
+                    "seo_title": "Функціональна адмін-панель із готовим UI",
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Funkcjonalny panel administracyjny z gotowym UI",
+                    "details": "Funkcjonalny panel administracyjny z gotowym UI",
+                    "description": "<p>Funkcjonalny panel administracyjny z gotowym UI</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Funkcjonalny panel administracyjny z gotowym UI",
+                    "seo_title": "Funkcjonalny panel administracyjny z gotowym UI",
+                    "image_alt": null
+                }
+            }
+        },
+        {
+            "id": 11,
+            "price": 444,
+            "service_category_id": null,
+            "image": "no_image.png",
+            "slug": "custom-backend-logic-advanced-integrations",
+            "status": "inactive",
+            "i18n": {
+                "en": {
+                    "title": "Custom backend logic & advanced integrations",
+                    "details": "Custom backend logic & advanced integrations",
+                    "description": "<p>Custom backend logic &amp; advanced integrations</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Custom backend logic & advanced integrations",
+                    "seo_title": "Custom backend logic & advanced integrations",
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Індивідуальна логіка бекенду та розширені інтеграції",
+                    "details": "Індивідуальна логіка бекенду та розширені інтеграції",
+                    "description": "<p>Індивідуальна логіка бекенду та розширені інтеграції</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Індивідуальна логіка бекенду та розширені інтеграції",
+                    "seo_title": "Індивідуальна логіка бекенду та розширені інтеграції",
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Niestandardowa logika backendu i zaawansowane integracje",
+                    "details": "Niestandardowa logika backendu i zaawansowane integracje",
+                    "description": "<p>Niestandardowa logika backendu i zaawansowane integracje</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Niestandardowa logika backendu i zaawansowane integracje",
+                    "seo_title": "Niestandardowa logika backendu i zaawansowane integracje",
+                    "image_alt": null
+                }
+            }
+        },
+        {
+            "id": 12,
+            "price": 44,
+            "service_category_id": null,
+            "image": "no_image.png",
+            "slug": "api-connections-stripe-revolut-crm-erp",
+            "status": "inactive",
+            "i18n": {
+                "en": {
+                    "title": "API connections (Stripe, Revolut, CRM, ERP)",
+                    "details": "API connections (Stripe, Revolut, CRM, ERP)",
+                    "description": "<p>API connections (Stripe, Revolut, CRM, ERP)</p>",
+                    "seo_keywords": "API connections (Stripe, Revolut, CRM, ERP)",
+                    "seo_description": "API connections (Stripe, Revolut, CRM, ERP)",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Підключення API (Stripe, Revolut, CRM, ERP)",
+                    "details": "Підключення API (Stripe, Revolut, CRM, ERP)",
+                    "description": "<p>Підключення API (Stripe, Revolut, CRM, ERP)</p>",
+                    "seo_keywords": "Підключення API (Stripe, Revolut, CRM, ERP)",
+                    "seo_description": "Підключення API (Stripe, Revolut, CRM, ERP)",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Integracje API (Stripe, Revolut, CRM, ERP)",
+                    "details": "Integracje API (Stripe, Revolut, CRM, ERP)",
+                    "description": "<p>Integracje API (Stripe, Revolut, CRM, ERP)</p>",
+                    "seo_keywords": "Integracje API (Stripe, Revolut, CRM, ERP)",
+                    "seo_description": "Integracje API (Stripe, Revolut, CRM, ERP)",
+                    "seo_title": null,
+                    "image_alt": null
+                }
+            }
+        },
+        {
+            "id": 13,
+            "price": 444,
+            "service_category_id": null,
+            "image": "no_image.png",
+            "slug": "regular-updates-security-patches",
+            "status": "inactive",
+            "i18n": {
+                "en": {
+                    "title": "Regular updates & security patches",
+                    "details": "Regular updates & security patches",
+                    "description": "<p>Regular updates &amp; security patches</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Regular updates & security patches",
+                    "seo_title": "Regular updates & security patches",
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Регулярні оновлення та патчі безпеки",
+                    "details": "Регулярні оновлення та патчі безпеки",
+                    "description": "<p>Регулярні оновлення та патчі безпеки</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Регулярні оновлення та патчі безпеки",
+                    "seo_title": "Регулярні оновлення та патчі безпеки",
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Regularne aktualizacje i poprawki bezpieczeństwa",
+                    "details": "Regularne aktualizacje i poprawki bezpieczeństwa",
+                    "description": "<p>Regularne aktualizacje i poprawki bezpieczeństwa</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Regularne aktualizacje i poprawki bezpieczeństwa",
+                    "seo_title": "Regularne aktualizacje i poprawki bezpieczeństwa",
+                    "image_alt": null
+                }
+            }
+        },
+        {
+            "id": 14,
+            "price": 55,
+            "service_category_id": null,
+            "image": null,
+            "slug": "continuous-performance-monitoring",
+            "status": "active",
+            "i18n": {
+                "en": {
+                    "title": "Continuous performance monitoring",
+                    "details": "Continuous performance monitoring",
+                    "description": "<p>Continuous performance monitoring</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Continuous performance monitoring",
+                    "seo_title": "Continuous performance monitoring",
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Постійний моніторинг продуктивності",
+                    "details": "Постійний моніторинг продуктивності",
+                    "description": "<p>Постійний моніторинг продуктивності</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Постійний моніторинг продуктивності",
+                    "seo_title": "Постійний моніторинг продуктивності",
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Ciągły monitoring wydajności",
+                    "details": "Ciągły monitoring wydajności",
+                    "description": "<p>Ciągły monitoring wydajności</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Ciągły monitoring wydajności",
+                    "seo_title": "Ciągły monitoring wydajności",
+                    "image_alt": null
+                }
+            }
+        },
+        {
+            "id": 15,
+            "price": 44,
+            "service_category_id": null,
+            "image": null,
+            "slug": "bug-fixing-troubleshooting",
+            "status": "active",
+            "i18n": {
+                "en": {
+                    "title": "Bug fixing & troubleshooting",
+                    "details": "Bug fixing & troubleshooting",
+                    "description": "<p>Bug fixing &amp; troubleshooting</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Bug fixing & troubleshooting",
+                    "seo_title": "Bug fixing & troubleshooting",
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Виправлення помилок та усунення несправностей",
+                    "details": "Виправлення помилок та усунення несправностей",
+                    "description": "<p>Виправлення помилок та усунення несправностей</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Виправлення помилок та усунення несправностей",
+                    "seo_title": "Виправлення помилок та усунення несправностей",
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Naprawa błędów i rozwiązywanie problemów",
+                    "details": "Naprawa błędów i rozwiązywanie problemów",
+                    "description": "<p>Naprawa błędów i rozwiązywanie problemów</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Naprawa błędów i rozwiązywanie problemów",
+                    "seo_title": "Naprawa błędów i rozwiązywanie problemów",
+                    "image_alt": null
+                }
+            }
+        },
+        {
+            "id": 16,
+            "price": 55,
+            "service_category_id": null,
+            "image": null,
+            "slug": "priority-backend-server-support",
+            "status": "active",
+            "i18n": {
+                "en": {
+                    "title": "Priority backend & server support",
+                    "details": "Priority backend & server support",
+                    "description": "<p>Priority backend &amp; server support</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Priority backend & server support",
+                    "seo_title": "Priority backend & server support",
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Пріоритетна підтримка бекенду та сервера",
+                    "details": "Пріоритетна підтримка бекенду та сервера",
+                    "description": "<p>Пріоритетна підтримка бекенду та сервера</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Пріоритетна підтримка бекенду та сервера",
+                    "seo_title": "Пріоритетна підтримка бекенду та сервера",
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Priorytetowe wsparcie backendu i serwera",
+                    "details": "Priorytetowe wsparcie backendu i serwera",
+                    "description": "<p>Priorytetowe wsparcie backendu i serwera</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Priorytetowe wsparcie backendu i serwera",
+                    "seo_title": "Priorytetowe wsparcie backendu i serwera",
+                    "image_alt": null
+                }
+            }
+        },
+        {
+            "id": 17,
+            "price": 66,
+            "service_category_id": null,
+            "image": null,
+            "slug": "ai-powered-chatbots-via-api",
+            "status": "active",
+            "i18n": {
+                "en": {
+                    "title": "AI-powered chatbots via API",
+                    "details": "AI-powered chatbots via API",
+                    "description": "<p>AI-powered chatbots via API</p>",
+                    "seo_keywords": null,
+                    "seo_description": "AI-powered chatbots via API",
+                    "seo_title": "AI-powered chatbots via API",
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Чат-боти на основі ШІ через API",
+                    "details": "Чат-боти на основі ШІ через API",
+                    "description": "<p>Чат-боти на основі ШІ через API</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Чат-боти на основі ШІ через API",
+                    "seo_title": "Чат-боти на основі ШІ через API",
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Chatboty oparte na AI przez API",
+                    "details": "Chatboty oparte na AI przez API",
+                    "description": "<p>Chatboty oparte na AI przez API</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Chatboty oparte na AI przez API",
+                    "seo_title": "Chatboty oparte na AI przez API",
+                    "image_alt": null
+                }
+            }
+        },
+        {
+            "id": 18,
+            "price": 77,
+            "service_category_id": null,
+            "image": null,
+            "slug": "api-integrations-with-third-party-services",
+            "status": "active",
+            "i18n": {
+                "en": {
+                    "title": "API integrations with third-party services",
+                    "details": "API integrations with third-party services",
+                    "description": "<p>API integrations with third-party services</p>",
+                    "seo_keywords": null,
+                    "seo_description": "API integrations with third-party services",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Інтеграції API зі сторонніми сервісами",
+                    "details": "Інтеграції API зі сторонніми сервісами",
+                    "description": "<p>Інтеграції API зі сторонніми сервісами</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Інтеграції API зі сторонніми сервісами",
+                    "seo_title": null,
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Integracje API z usługami zewnętrznymi",
+                    "details": "Integracje API z usługami zewnętrznymi",
+                    "description": "<p>Integracje API z usługami zewnętrznymi</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Integracje API z usługami zewnętrznymi",
+                    "seo_title": null,
+                    "image_alt": null
+                }
+            }
+        },
+        {
+            "id": 19,
+            "price": 55,
+            "service_category_id": null,
+            "image": null,
+            "slug": "crm-erp-connectivity-synchronization",
+            "status": "active",
+            "i18n": {
+                "en": {
+                    "title": "CRM / ERP connectivity & synchronization",
+                    "details": "CRM / ERP connectivity & synchronization",
+                    "description": "<p>CRM / ERP connectivity &amp; synchronization</p>",
+                    "seo_keywords": null,
+                    "seo_description": "CRM / ERP connectivity & synchronization",
+                    "seo_title": "CRM / ERP connectivity & synchronization",
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Підключення та синхронізація CRM / ERP",
+                    "details": "Підключення та синхронізація CRM / ERP",
+                    "description": "<p>Підключення та синхронізація CRM / ERP</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Підключення та синхронізація CRM / ERP",
+                    "seo_title": "Підключення та синхронізація CRM / ERP",
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Łączność i synchronizacja CRM / ERP",
+                    "details": "Łączność i synchronizacja CRM / ERP",
+                    "description": "<p>Łączność i synchronizacja CRM / ERP</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Łączność i synchronizacja CRM / ERP",
+                    "seo_title": "Łączność i synchronizacja CRM / ERP",
+                    "image_alt": null
+                }
+            }
+        },
+        {
+            "id": 20,
+            "price": 55,
+            "service_category_id": null,
+            "image": null,
+            "slug": "smart-aiapi-integrations-for-business",
+            "status": "active",
+            "i18n": {
+                "en": {
+                    "title": "Smart AI/API integrations for business",
+                    "details": "Smart AI/API integrations for business",
+                    "description": "<p>Smart AI/API integrations for business</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Smart AI/API integrations for business",
+                    "seo_title": "Smart AI/API integrations for business",
+                    "image_alt": null
+                },
+                "uk": {
+                    "title": "Розумні інтеграції ШІ/API для бізнесу",
+                    "details": "Розумні інтеграції ШІ/API для бізнесу",
+                    "description": "<p>Розумні інтеграції ШІ/API для бізнесу</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Розумні інтеграції ШІ/API для бізнесу",
+                    "seo_title": "Розумні інтеграції ШІ/API для бізнесу",
+                    "image_alt": null
+                },
+                "pl": {
+                    "title": "Inteligentne integracje AI/API dla biznesu",
+                    "details": "Inteligentne integracje AI/API dla biznesu",
+                    "description": "<p>Inteligentne integracje AI/API dla biznesu</p>",
+                    "seo_keywords": null,
+                    "seo_description": "Inteligentne integracje AI/API dla biznesu",
+                    "seo_title": "Inteligentne integracje AI/API dla biznesu",
+                    "image_alt": null
+                }
+            }
         }
-      }
-    },
-    {
-      "id": 2,
-      "price": 44,
-      "service_category_id": null,
-      "image": "no_image.png",
-      "slug": "setup-of-core-pages",
-      "status": "active",
-      "i18n": {
-        "en": {
-          "title": "Setup of core pages",
-          "details": "Setup of core pages (Home, About, Contact, Services",
-          "description": "<p>Setup of core pages (Home, About, Contact, Services</p>",
-          "seo_keywords": null,
-          "seo_description": "Setup of core pages (Home, About, Contact, Services",
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Налаштування основних сторінок",
-          "details": "Налаштування основних сторінок (Головна, Про нас, Контакти, Послуги",
-          "description": "<p>Налаштування основних сторінок (Головна, Про нас, Контакти, Послуги</p>",
-          "seo_keywords": null,
-          "seo_description": "Налаштування основних сторінок (Головна, Про нас, Контакти, Послуги",
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Konfiguracja podstawowych stron",
-          "details": "Konfiguracja podstawowych stron (Strona główna, O nas, Kontakt, Usługi",
-          "description": "<p>Konfiguracja podstawowych stron (Strona główna, O nas, Kontakt, Usługi</p>",
-          "seo_keywords": null,
-          "seo_description": "Konfiguracja podstawowych stron (Strona główna, O nas, Kontakt, Usługi",
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 3,
-      "price": 44,
-      "service_category_id": null,
-      "image": "no_image.png",
-      "slug": "backend-setup-secure-hosting-configuration",
-      "status": "active",
-      "i18n": {
-        "en": {
-          "title": "Backend setup & secure hosting configuration",
-          "details": "Backend setup & secure hosting configuration",
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": "Backend setup & secure hosting configuration",
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Налаштування бекенду та безпечна конфігурація хостингу",
-          "details": "Налаштування бекенду та безпечна конфігурація хостингу",
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": "Налаштування бекенду та безпечна конфігурація хостингу",
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Konfiguracja backendu i bezpiecznego hostingu",
-          "details": "Konfiguracja backendu i bezpiecznego hostingu",
-          "description": null,
-          "seo_keywords": null,
-          "seo_description": "Konfiguracja backendu i bezpiecznego hostingu",
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 4,
-      "price": 44,
-      "service_category_id": null,
-      "image": "no_image.png",
-      "slug": "basic-seo-analytics-integration",
-      "status": "active",
-      "i18n": {
-        "en": {
-          "title": "Basic SEO & analytics integration",
-          "details": "Basic SEO & analytics integration",
-          "description": "<p>Basic SEO &amp; analytics integration</p>",
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Базове SEO та інтеграція аналітики",
-          "details": "Базове SEO та інтеграція аналітики",
-          "description": "<p>Базове SEO та інтеграція аналітики</p>",
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Podstawowe SEO i integracja analityki",
-          "details": "Podstawowe SEO i integracja analityki",
-          "description": "<p>Podstawowe SEO i integracja analityki</p>",
-          "seo_keywords": null,
-          "seo_description": null,
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 5,
-      "price": 444,
-      "service_category_id": null,
-      "image": "no_image.png",
-      "slug": "extended-structure-tailored-to-your-business",
-      "status": "active",
-      "i18n": {
-        "en": {
-          "title": "Extended structure tailored to your business",
-          "details": "Extended structure tailored to your business",
-          "description": "<p>Extended structure tailored to your business</p>",
-          "seo_keywords": null,
-          "seo_description": "Extended structure tailored to your business",
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Розширена структура, адаптована до вашого бізнесу",
-          "details": "Розширена структура, адаптована до вашого бізнесу",
-          "description": "<p>Розширена структура, адаптована до вашого бізнесу</p>",
-          "seo_keywords": null,
-          "seo_description": "Розширена структура, адаптована до вашого бізнесу",
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Rozszerzona struktura dopasowana do Twojego biznesu",
-          "details": "Rozszerzona struktura dopasowana do Twojego biznesu",
-          "description": "<p>Rozszerzona struktura dopasowana do Twojego biznesu</p>",
-          "seo_keywords": null,
-          "seo_description": "Rozszerzona struktura dopasowana do Twojego biznesu",
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 6,
-      "price": 555,
-      "service_category_id": null,
-      "image": "no_image.png",
-      "slug": "custom-design-from-professional-templates",
-      "status": "active",
-      "i18n": {
-        "en": {
-          "title": "Custom design from professional templates",
-          "details": "Custom design from professional templates",
-          "description": "<p>Custom design from professional templates</p>",
-          "seo_keywords": null,
-          "seo_description": "Custom design from professional templates",
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Індивідуальний дизайн на основі професійних шаблонів",
-          "details": "Індивідуальний дизайн на основі професійних шаблонів",
-          "description": "<p>Індивідуальний дизайн на основі професійних шаблонів</p>",
-          "seo_keywords": null,
-          "seo_description": "Індивідуальний дизайн на основі професійних шаблонів",
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Indywidualny design na bazie profesjonalnych szablonów",
-          "details": "Indywidualny design na bazie profesjonalnych szablonów",
-          "description": "<p>Indywidualny design na bazie profesjonalnych szablonów</p>",
-          "seo_keywords": null,
-          "seo_description": "Indywidualny design na bazie profesjonalnych szablonów",
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 7,
-      "price": 555,
-      "service_category_id": null,
-      "image": "no_image.png",
-      "slug": "backend-configuration-for-advanced-features",
-      "status": "active",
-      "i18n": {
-        "en": {
-          "title": "Backend configuration for advanced features",
-          "details": "Backend configuration for advanced features",
-          "description": "<p>Backend configuration for advanced features</p>",
-          "seo_keywords": null,
-          "seo_description": "Backend configuration for advanced features",
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Конфігурація бекенду для розширених функцій",
-          "details": "Конфігурація бекенду для розширених функцій",
-          "description": "<p>Конфігурація бекенду для розширених функцій</p>",
-          "seo_keywords": null,
-          "seo_description": "Конфігурація бекенду для розширених функцій",
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Konfiguracja backendu pod zaawansowane funkcje",
-          "details": "Konfiguracja backendu pod zaawansowane funkcje",
-          "description": "<p>Konfiguracja backendu pod zaawansowane funkcje</p>",
-          "seo_keywords": null,
-          "seo_description": "Konfiguracja backendu pod zaawansowane funkcje",
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 8,
-      "price": 4444,
-      "service_category_id": null,
-      "image": "no_image.png",
-      "slug": "performance-optimization-seo-enhancements",
-      "status": "active",
-      "i18n": {
-        "en": {
-          "title": "Performance optimization & SEO enhancements",
-          "details": "Performance optimization & SEO enhancements",
-          "description": "<p>Performance optimization &amp; SEO enhancements</p>",
-          "seo_keywords": null,
-          "seo_description": "Performance optimization & SEO enhancements",
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Оптимізація продуктивності та покращення SEO",
-          "details": "Оптимізація продуктивності та покращення SEO",
-          "description": "<p>Оптимізація продуктивності та покращення SEO</p>",
-          "seo_keywords": null,
-          "seo_description": "Оптимізація продуктивності та покращення SEO",
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Optymalizacja wydajności i ulepszenia SEO",
-          "details": "Optymalizacja wydajności i ulepszenia SEO",
-          "description": "<p>Optymalizacja wydajności i ulepszenia SEO</p>",
-          "seo_keywords": null,
-          "seo_description": "Optymalizacja wydajności i ulepszenia SEO",
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 9,
-      "price": 433,
-      "service_category_id": 1,
-      "image": "service_asdfasdf_1717271107.jpg",
-      "slug": "system-architecture-workflow-planning",
-      "status": "inactive",
-      "i18n": {
-        "en": {
-          "title": "System architecture & workflow planning",
-          "details": "System architecture & workflow planning",
-          "description": "<p>System architecture &amp; workflow planning</p>",
-          "seo_keywords": "dfdfd",
-          "seo_description": "System architecture & workflow planning",
-          "seo_title": "System architecture & workflow planning",
-          "image_alt": "dfdd"
-        },
-        "uk": {
-          "title": "Архітектура системи та планування робочих процесів",
-          "details": "Архітектура системи та планування робочих процесів",
-          "description": "<p>Архітектура системи та планування робочих процесів</p>",
-          "seo_keywords": "dfdfd",
-          "seo_description": "Архітектура системи та планування робочих процесів",
-          "seo_title": "Архітектура системи та планування робочих процесів",
-          "image_alt": "dfdd"
-        },
-        "pl": {
-          "title": "Architektura systemu i planowanie przepływów pracy",
-          "details": "Architektura systemu i planowanie przepływów pracy",
-          "description": "<p>Architektura systemu i planowanie przepływów pracy</p>",
-          "seo_keywords": "dfdfd",
-          "seo_description": "Architektura systemu i planowanie przepływów pracy",
-          "seo_title": "Architektura systemu i planowanie przepływów pracy",
-          "image_alt": "dfdd"
-        }
-      }
-    },
-    {
-      "id": 10,
-      "price": 3333,
-      "service_category_id": null,
-      "image": "no_image.png",
-      "slug": "functional-admin-panel-with-pre-built-ui",
-      "status": "inactive",
-      "i18n": {
-        "en": {
-          "title": "Functional admin panel with pre-built UI",
-          "details": "Functional admin panel with pre-built UI",
-          "description": "<p>Functional admin panel with pre-built UI</p>",
-          "seo_keywords": null,
-          "seo_description": "Functional admin panel with pre-built UI",
-          "seo_title": "Functional admin panel with pre-built UI",
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Функціональна адмін-панель із готовим UI",
-          "details": "Функціональна адмін-панель із готовим UI",
-          "description": "<p>Функціональна адмін-панель із готовим UI</p>",
-          "seo_keywords": null,
-          "seo_description": "Функціональна адмін-панель із готовим UI",
-          "seo_title": "Функціональна адмін-панель із готовим UI",
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Funkcjonalny panel administracyjny z gotowym UI",
-          "details": "Funkcjonalny panel administracyjny z gotowym UI",
-          "description": "<p>Funkcjonalny panel administracyjny z gotowym UI</p>",
-          "seo_keywords": null,
-          "seo_description": "Funkcjonalny panel administracyjny z gotowym UI",
-          "seo_title": "Funkcjonalny panel administracyjny z gotowym UI",
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 11,
-      "price": 444,
-      "service_category_id": null,
-      "image": "no_image.png",
-      "slug": "custom-backend-logic-advanced-integrations",
-      "status": "inactive",
-      "i18n": {
-        "en": {
-          "title": "Custom backend logic & advanced integrations",
-          "details": "Custom backend logic & advanced integrations",
-          "description": "<p>Custom backend logic &amp; advanced integrations</p>",
-          "seo_keywords": null,
-          "seo_description": "Custom backend logic & advanced integrations",
-          "seo_title": "Custom backend logic & advanced integrations",
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Індивідуальна логіка бекенду та розширені інтеграції",
-          "details": "Індивідуальна логіка бекенду та розширені інтеграції",
-          "description": "<p>Індивідуальна логіка бекенду та розширені інтеграції</p>",
-          "seo_keywords": null,
-          "seo_description": "Індивідуальна логіка бекенду та розширені інтеграції",
-          "seo_title": "Індивідуальна логіка бекенду та розширені інтеграції",
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Niestandardowa logika backendu i zaawansowane integracje",
-          "details": "Niestandardowa logika backendu i zaawansowane integracje",
-          "description": "<p>Niestandardowa logika backendu i zaawansowane integracje</p>",
-          "seo_keywords": null,
-          "seo_description": "Niestandardowa logika backendu i zaawansowane integracje",
-          "seo_title": "Niestandardowa logika backendu i zaawansowane integracje",
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 12,
-      "price": 44,
-      "service_category_id": null,
-      "image": "no_image.png",
-      "slug": "api-connections-stripe-revolut-crm-erp",
-      "status": "inactive",
-      "i18n": {
-        "en": {
-          "title": "API connections (Stripe, Revolut, CRM, ERP)",
-          "details": "API connections (Stripe, Revolut, CRM, ERP)",
-          "description": "<p>API connections (Stripe, Revolut, CRM, ERP)</p>",
-          "seo_keywords": "API connections (Stripe, Revolut, CRM, ERP)",
-          "seo_description": "API connections (Stripe, Revolut, CRM, ERP)",
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Підключення API (Stripe, Revolut, CRM, ERP)",
-          "details": "Підключення API (Stripe, Revolut, CRM, ERP)",
-          "description": "<p>Підключення API (Stripe, Revolut, CRM, ERP)</p>",
-          "seo_keywords": "Підключення API (Stripe, Revolut, CRM, ERP)",
-          "seo_description": "Підключення API (Stripe, Revolut, CRM, ERP)",
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Integracje API (Stripe, Revolut, CRM, ERP)",
-          "details": "Integracje API (Stripe, Revolut, CRM, ERP)",
-          "description": "<p>Integracje API (Stripe, Revolut, CRM, ERP)</p>",
-          "seo_keywords": "Integracje API (Stripe, Revolut, CRM, ERP)",
-          "seo_description": "Integracje API (Stripe, Revolut, CRM, ERP)",
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 13,
-      "price": 444,
-      "service_category_id": null,
-      "image": "no_image.png",
-      "slug": "regular-updates-security-patches",
-      "status": "inactive",
-      "i18n": {
-        "en": {
-          "title": "Regular updates & security patches",
-          "details": "Regular updates & security patches",
-          "description": "<p>Regular updates &amp; security patches</p>",
-          "seo_keywords": null,
-          "seo_description": "Regular updates & security patches",
-          "seo_title": "Regular updates & security patches",
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Регулярні оновлення та патчі безпеки",
-          "details": "Регулярні оновлення та патчі безпеки",
-          "description": "<p>Регулярні оновлення та патчі безпеки</p>",
-          "seo_keywords": null,
-          "seo_description": "Регулярні оновлення та патчі безпеки",
-          "seo_title": "Регулярні оновлення та патчі безпеки",
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Regularne aktualizacje i poprawki bezpieczeństwa",
-          "details": "Regularne aktualizacje i poprawki bezpieczeństwa",
-          "description": "<p>Regularne aktualizacje i poprawki bezpieczeństwa</p>",
-          "seo_keywords": null,
-          "seo_description": "Regularne aktualizacje i poprawki bezpieczeństwa",
-          "seo_title": "Regularne aktualizacje i poprawki bezpieczeństwa",
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 14,
-      "price": 55,
-      "service_category_id": null,
-      "image": null,
-      "slug": "continuous-performance-monitoring",
-      "status": "active",
-      "i18n": {
-        "en": {
-          "title": "Continuous performance monitoring",
-          "details": "Continuous performance monitoring",
-          "description": "<p>Continuous performance monitoring</p>",
-          "seo_keywords": null,
-          "seo_description": "Continuous performance monitoring",
-          "seo_title": "Continuous performance monitoring",
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Постійний моніторинг продуктивності",
-          "details": "Постійний моніторинг продуктивності",
-          "description": "<p>Постійний моніторинг продуктивності</p>",
-          "seo_keywords": null,
-          "seo_description": "Постійний моніторинг продуктивності",
-          "seo_title": "Постійний моніторинг продуктивності",
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Ciągły monitoring wydajności",
-          "details": "Ciągły monitoring wydajności",
-          "description": "<p>Ciągły monitoring wydajności</p>",
-          "seo_keywords": null,
-          "seo_description": "Ciągły monitoring wydajności",
-          "seo_title": "Ciągły monitoring wydajności",
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 15,
-      "price": 44,
-      "service_category_id": null,
-      "image": null,
-      "slug": "bug-fixing-troubleshooting",
-      "status": "active",
-      "i18n": {
-        "en": {
-          "title": "Bug fixing & troubleshooting",
-          "details": "Bug fixing & troubleshooting",
-          "description": "<p>Bug fixing &amp; troubleshooting</p>",
-          "seo_keywords": null,
-          "seo_description": "Bug fixing & troubleshooting",
-          "seo_title": "Bug fixing & troubleshooting",
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Виправлення помилок та усунення несправностей",
-          "details": "Виправлення помилок та усунення несправностей",
-          "description": "<p>Виправлення помилок та усунення несправностей</p>",
-          "seo_keywords": null,
-          "seo_description": "Виправлення помилок та усунення несправностей",
-          "seo_title": "Виправлення помилок та усунення несправностей",
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Naprawa błędów i rozwiązywanie problemów",
-          "details": "Naprawa błędów i rozwiązywanie problemów",
-          "description": "<p>Naprawa błędów i rozwiązywanie problemów</p>",
-          "seo_keywords": null,
-          "seo_description": "Naprawa błędów i rozwiązywanie problemów",
-          "seo_title": "Naprawa błędów i rozwiązywanie problemów",
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 16,
-      "price": 55,
-      "service_category_id": null,
-      "image": null,
-      "slug": "priority-backend-server-support",
-      "status": "active",
-      "i18n": {
-        "en": {
-          "title": "Priority backend & server support",
-          "details": "Priority backend & server support",
-          "description": "<p>Priority backend &amp; server support</p>",
-          "seo_keywords": null,
-          "seo_description": "Priority backend & server support",
-          "seo_title": "Priority backend & server support",
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Пріоритетна підтримка бекенду та сервера",
-          "details": "Пріоритетна підтримка бекенду та сервера",
-          "description": "<p>Пріоритетна підтримка бекенду та сервера</p>",
-          "seo_keywords": null,
-          "seo_description": "Пріоритетна підтримка бекенду та сервера",
-          "seo_title": "Пріоритетна підтримка бекенду та сервера",
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Priorytetowe wsparcie backendu i serwera",
-          "details": "Priorytetowe wsparcie backendu i serwera",
-          "description": "<p>Priorytetowe wsparcie backendu i serwera</p>",
-          "seo_keywords": null,
-          "seo_description": "Priorytetowe wsparcie backendu i serwera",
-          "seo_title": "Priorytetowe wsparcie backendu i serwera",
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 17,
-      "price": 66,
-      "service_category_id": null,
-      "image": null,
-      "slug": "ai-powered-chatbots-via-api",
-      "status": "active",
-      "i18n": {
-        "en": {
-          "title": "AI-powered chatbots via API",
-          "details": "AI-powered chatbots via API",
-          "description": "<p>AI-powered chatbots via API</p>",
-          "seo_keywords": null,
-          "seo_description": "AI-powered chatbots via API",
-          "seo_title": "AI-powered chatbots via API",
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Чат-боти на основі ШІ через API",
-          "details": "Чат-боти на основі ШІ через API",
-          "description": "<p>Чат-боти на основі ШІ через API</p>",
-          "seo_keywords": null,
-          "seo_description": "Чат-боти на основі ШІ через API",
-          "seo_title": "Чат-боти на основі ШІ через API",
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Chatboty oparte na AI przez API",
-          "details": "Chatboty oparte na AI przez API",
-          "description": "<p>Chatboty oparte na AI przez API</p>",
-          "seo_keywords": null,
-          "seo_description": "Chatboty oparte na AI przez API",
-          "seo_title": "Chatboty oparte na AI przez API",
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 18,
-      "price": 77,
-      "service_category_id": null,
-      "image": null,
-      "slug": "api-integrations-with-third-party-services",
-      "status": "active",
-      "i18n": {
-        "en": {
-          "title": "API integrations with third-party services",
-          "details": "API integrations with third-party services",
-          "description": "<p>API integrations with third-party services</p>",
-          "seo_keywords": null,
-          "seo_description": "API integrations with third-party services",
-          "seo_title": null,
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Інтеграції API зі сторонніми сервісами",
-          "details": "Інтеграції API зі сторонніми сервісами",
-          "description": "<p>Інтеграції API зі сторонніми сервісами</p>",
-          "seo_keywords": null,
-          "seo_description": "Інтеграції API зі сторонніми сервісами",
-          "seo_title": null,
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Integracje API z usługami zewnętrznymi",
-          "details": "Integracje API z usługami zewnętrznymi",
-          "description": "<p>Integracje API z usługami zewnętrznymi</p>",
-          "seo_keywords": null,
-          "seo_description": "Integracje API z usługami zewnętrznymi",
-          "seo_title": null,
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 19,
-      "price": 55,
-      "service_category_id": null,
-      "image": null,
-      "slug": "crm-erp-connectivity-synchronization",
-      "status": "active",
-      "i18n": {
-        "en": {
-          "title": "CRM / ERP connectivity & synchronization",
-          "details": "CRM / ERP connectivity & synchronization",
-          "description": "<p>CRM / ERP connectivity &amp; synchronization</p>",
-          "seo_keywords": null,
-          "seo_description": "CRM / ERP connectivity & synchronization",
-          "seo_title": "CRM / ERP connectivity & synchronization",
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Підключення та синхронізація CRM / ERP",
-          "details": "Підключення та синхронізація CRM / ERP",
-          "description": "<p>Підключення та синхронізація CRM / ERP</p>",
-          "seo_keywords": null,
-          "seo_description": "Підключення та синхронізація CRM / ERP",
-          "seo_title": "Підключення та синхронізація CRM / ERP",
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Łączność i synchronizacja CRM / ERP",
-          "details": "Łączność i synchronizacja CRM / ERP",
-          "description": "<p>Łączność i synchronizacja CRM / ERP</p>",
-          "seo_keywords": null,
-          "seo_description": "Łączność i synchronizacja CRM / ERP",
-          "seo_title": "Łączność i synchronizacja CRM / ERP",
-          "image_alt": null
-        }
-      }
-    },
-    {
-      "id": 20,
-      "price": 55,
-      "service_category_id": null,
-      "image": null,
-      "slug": "smart-aiapi-integrations-for-business",
-      "status": "active",
-      "i18n": {
-        "en": {
-          "title": "Smart AI/API integrations for business",
-          "details": "Smart AI/API integrations for business",
-          "description": "<p>Smart AI/API integrations for business</p>",
-          "seo_keywords": null,
-          "seo_description": "Smart AI/API integrations for business",
-          "seo_title": "Smart AI/API integrations for business",
-          "image_alt": null
-        },
-        "uk": {
-          "title": "Розумні інтеграції ШІ/API для бізнесу",
-          "details": "Розумні інтеграції ШІ/API для бізнесу",
-          "description": "<p>Розумні інтеграції ШІ/API для бізнесу</p>",
-          "seo_keywords": null,
-          "seo_description": "Розумні інтеграції ШІ/API для бізнесу",
-          "seo_title": "Розумні інтеграції ШІ/API для бізнесу",
-          "image_alt": null
-        },
-        "pl": {
-          "title": "Inteligentne integracje AI/API dla biznesu",
-          "details": "Inteligentne integracje AI/API dla biznesu",
-          "description": "<p>Inteligentne integracje AI/API dla biznesu</p>",
-          "seo_keywords": null,
-          "seo_description": "Inteligentne integracje AI/API dla biznesu",
-          "seo_title": "Inteligentne integracje AI/API dla biznesu",
-          "image_alt": null
-        }
-      }
-    }
-  ]
+    ]
 }
