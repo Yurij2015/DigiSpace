@@ -23,7 +23,7 @@ class LocalizedChromeTest extends TestCase
         $this->get('/uk/about')
             ->assertOk()
             ->assertSee('<title>DigiSpace | Про нас</title>', false)
-            ->assertSee('<h2 class="breadcrumbs-custom__title">Про нас</h2>', false)
+            ->assertSee('<h1 class="breadcrumbs-custom__title">Про нас</h1>', false)
             ->assertSee('>Головна</a>', false)
             ->assertDontSee('>Home<', false);
     }

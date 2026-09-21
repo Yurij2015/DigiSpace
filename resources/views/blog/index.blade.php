@@ -15,7 +15,7 @@
         <div class="breadcrumbs-custom__aside bg-image context-dark"
              style="background-image: url({{ asset('images/bg-blog-post.jpg')}});">
             <div class="container">
-                <h2 class="breadcrumbs-custom__title">{{ __('site.blog') }}</h2>
+                <h1 class="breadcrumbs-custom__title">{{ __('site.blog') }}</h1>
             </div>
         </div>
         <div class="breadcrumbs-custom__main bg-gray-light">

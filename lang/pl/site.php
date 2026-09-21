@@ -8,6 +8,7 @@ return [
     'prices_title' => 'DigiSpace | Cennik',
     'contact_title' => 'DigiSpace | Kontakt',
     'meta_description' => 'DigiSpace: tworzenie stron, automatyzacja i doradztwo technologiczne.',
+    'meta_description_blog' => 'Artykuły o tworzeniu stron internetowych, PHP, Laravel, Vue.js i doradztwie technologicznym od zespołu DigiSpace.',
     'about' => 'O nas',
     'services' => 'Usługi',
     'pricing' => 'Cennik',

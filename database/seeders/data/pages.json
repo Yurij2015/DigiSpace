@@ -1,160 +1,160 @@
 {
-  "table": "pages",
-  "identity": [
-    "slug"
-  ],
-  "translatable": [
-    "name",
-    "content",
-    "meta",
-    "description",
-    "keywords"
-  ],
-  "rows": [
-    {
-      "id": 1,
-      "page_category_id": null,
-      "slug": "about",
-      "menu_item_id": null,
-      "i18n": {
-        "en": {
-          "name": null,
-          "content": null,
-          "meta": null,
-          "description": null,
-          "keywords": null
-        },
-        "uk": {
-          "name": null,
-          "content": null,
-          "meta": null,
-          "description": null,
-          "keywords": null
-        },
-        "pl": {
-          "name": null,
-          "content": null,
-          "meta": null,
-          "description": null,
-          "keywords": null
-        }
-      }
+ "table": "pages",
+ "identity": [
+  "slug"
+ ],
+ "translatable": [
+  "name",
+  "content",
+  "meta",
+  "description",
+  "keywords"
+ ],
+ "rows": [
+  {
+   "id": 1,
+   "page_category_id": null,
+   "slug": "about",
+   "menu_item_id": null,
+   "i18n": {
+    "en": {
+     "name": null,
+     "content": null,
+     "meta": null,
+     "description": "Meet DigiSpace — a web development team building custom PHP, Laravel and Vue.js applications, CRM/CMS systems and integrations since 2020.",
+     "keywords": null
     },
-    {
-      "id": 2,
-      "page_category_id": null,
-      "slug": "services",
-      "menu_item_id": null,
-      "i18n": {
-        "en": {
-          "name": null,
-          "content": null,
-          "meta": null,
-          "description": null,
-          "keywords": null
-        },
-        "uk": {
-          "name": null,
-          "content": null,
-          "meta": null,
-          "description": null,
-          "keywords": null
-        },
-        "pl": {
-          "name": null,
-          "content": null,
-          "meta": null,
-          "description": null,
-          "keywords": null
-        }
-      }
+    "uk": {
+     "name": null,
+     "content": null,
+     "meta": null,
+     "description": "Команда DigiSpace — веброзробка на PHP, Laravel і Vue.js: кастомні застосунки, CRM/CMS-системи та інтеграції з 2020 року.",
+     "keywords": null
     },
-    {
-      "id": 3,
-      "page_category_id": null,
-      "slug": "pricing",
-      "menu_item_id": null,
-      "i18n": {
-        "en": {
-          "name": "Our prices",
-          "content": null,
-          "meta": null,
-          "description": "Prices of our services",
-          "keywords": null
-        },
-        "uk": {
-          "name": "Наші ціни",
-          "content": null,
-          "meta": null,
-          "description": "Ціни на наші послуги",
-          "keywords": null
-        },
-        "pl": {
-          "name": "Nasze ceny",
-          "content": null,
-          "meta": null,
-          "description": "Ceny naszych usług",
-          "keywords": null
-        }
-      }
-    },
-    {
-      "id": 4,
-      "page_category_id": null,
-      "slug": "promos",
-      "menu_item_id": null,
-      "i18n": {
-        "en": {
-          "name": "Promos",
-          "content": null,
-          "meta": null,
-          "description": "Promos of our company",
-          "keywords": null
-        },
-        "uk": {
-          "name": "Акції",
-          "content": null,
-          "meta": null,
-          "description": "Акції нашої компанії",
-          "keywords": null
-        },
-        "pl": {
-          "name": "Promocje",
-          "content": null,
-          "meta": null,
-          "description": "Promocje naszej firmy",
-          "keywords": null
-        }
-      }
-    },
-    {
-      "id": 5,
-      "page_category_id": null,
-      "slug": "contact-us",
-      "menu_item_id": null,
-      "i18n": {
-        "en": {
-          "name": "Contact Us",
-          "content": null,
-          "meta": null,
-          "description": "Contact Us",
-          "keywords": null
-        },
-        "uk": {
-          "name": "Зв'язатися з нами",
-          "content": null,
-          "meta": null,
-          "description": "Зв'язатися з нами",
-          "keywords": null
-        },
-        "pl": {
-          "name": "Kontakt",
-          "content": null,
-          "meta": null,
-          "description": "Kontakt",
-          "keywords": null
-        }
-      }
+    "pl": {
+     "name": null,
+     "content": null,
+     "meta": null,
+     "description": "Poznaj DigiSpace — zespół web developmentu tworzący aplikacje PHP, Laravel i Vue.js, systemy CRM/CMS oraz integracje od 2020 roku.",
+     "keywords": null
     }
-  ]
+   }
+  },
+  {
+   "id": 2,
+   "page_category_id": null,
+   "slug": "services",
+   "menu_item_id": null,
+   "i18n": {
+    "en": {
+     "name": null,
+     "content": null,
+     "meta": null,
+     "description": "Custom web development services: PHP, Laravel, Symfony, Go and Vue.js applications, e-commerce, CMS, API integrations and ongoing support.",
+     "keywords": null
+    },
+    "uk": {
+     "name": null,
+     "content": null,
+     "meta": null,
+     "description": "Послуги веброзробки: застосунки на PHP, Laravel, Symfony, Go і Vue.js, e-commerce, CMS, API-інтеграції та підтримка.",
+     "keywords": null
+    },
+    "pl": {
+     "name": null,
+     "content": null,
+     "meta": null,
+     "description": "Usługi web developmentu: aplikacje PHP, Laravel, Symfony, Go i Vue.js, e-commerce, CMS, integracje API oraz wsparcie.",
+     "keywords": null
+    }
+   }
+  },
+  {
+   "id": 3,
+   "page_category_id": null,
+   "slug": "pricing",
+   "menu_item_id": null,
+   "i18n": {
+    "en": {
+     "name": "Our prices",
+     "content": null,
+     "meta": null,
+     "description": "Transparent pricing for web development: landing pages, business applications, e-commerce and support plans from DigiSpace.",
+     "keywords": null
+    },
+    "uk": {
+     "name": "Наші ціни",
+     "content": null,
+     "meta": null,
+     "description": "Прозорі ціни на веброзробку: лендінги, бізнес-застосунки, e-commerce та плани підтримки від DigiSpace.",
+     "keywords": null
+    },
+    "pl": {
+     "name": "Nasze ceny",
+     "content": null,
+     "meta": null,
+     "description": "Przejrzysty cennik web developmentu: landing page, aplikacje biznesowe, e-commerce i plany wsparcia od DigiSpace.",
+     "keywords": null
+    }
+   }
+  },
+  {
+   "id": 4,
+   "page_category_id": null,
+   "slug": "promos",
+   "menu_item_id": null,
+   "i18n": {
+    "en": {
+     "name": "Promos",
+     "content": null,
+     "meta": null,
+     "description": "Promos of our company",
+     "keywords": null
+    },
+    "uk": {
+     "name": "Акції",
+     "content": null,
+     "meta": null,
+     "description": "Акції нашої компанії",
+     "keywords": null
+    },
+    "pl": {
+     "name": "Promocje",
+     "content": null,
+     "meta": null,
+     "description": "Promocje naszej firmy",
+     "keywords": null
+    }
+   }
+  },
+  {
+   "id": 5,
+   "page_category_id": null,
+   "slug": "contact-us",
+   "menu_item_id": null,
+   "i18n": {
+    "en": {
+     "name": "Contact Us",
+     "content": null,
+     "meta": null,
+     "description": "Get in touch with DigiSpace — tell us about your project and we will respond within 1-2 business days.",
+     "keywords": null
+    },
+    "uk": {
+     "name": "Зв'язатися з нами",
+     "content": null,
+     "meta": null,
+     "description": "Звʼяжіться з DigiSpace — розкажіть про свій проєкт, і ми відповімо протягом 1–2 робочих днів.",
+     "keywords": null
+    },
+    "pl": {
+     "name": "Kontakt",
+     "content": null,
+     "meta": null,
+     "description": "Skontaktuj się z DigiSpace — opowiedz o swoim projekcie, a odpowiemy w ciągu 1–2 dni roboczych.",
+     "keywords": null
+    }
+   }
+  }
+ ]
 }

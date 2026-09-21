@@ -6,7 +6,7 @@
         <div class="breadcrumbs-custom__aside bg-image context-dark"
              style="background-image: url({{ asset("images/services-page-title-bg.jpg") }});">
             <div class="container">
-                <h2 class="breadcrumbs-custom__title">{{ $service->title }}</h2>
+                <h1 class="breadcrumbs-custom__title">{{ $service->title }}</h1>
             </div>
         </div>
         <div class="breadcrumbs-custom__main bg-gray-light">
