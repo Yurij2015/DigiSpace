@@ -48,10 +48,10 @@
     <div class="blog-layout__aside-item blog-layout__aside-item_bordered">
         <p class="custom-heading-line heading-8">{{ __('site.archive') }}</p>
         <!-- Select 2-->
-        <select class="form-input select" data-placeholder="All" data-minimum-results-for-search="Infinity"
+        <select class="form-input select" data-placeholder="{{ __('site.all') }}" data-minimum-results-for-search="Infinity"
                 data-constraints="{!! '@' !!}Required"
-                onchange="this.value !== 'All' ? window.location.assign('/{{ app()->getLocale() }}/blog-archive/'+this.value) : window.location.assign('{{ route('blog', ['locale' => app()->getLocale()]) }}')">
-            <option {{ !$sideBarData['archive'] ? 'selected' : '' }}>All</option>
+                onchange="this.value !== '' ? window.location.assign('/{{ app()->getLocale() }}/blog-archive/'+this.value) : window.location.assign('{{ route('blog', ['locale' => app()->getLocale()]) }}')">
+            <option value="" {{ !$sideBarData['archive'] ? 'selected' : '' }}>{{ __('site.all') }}</option>
             @foreach($sideBarData['archive'] as $archiveItem)
                 <option
                     {{ url()->current() === route('blog-archive', $archiveItem->year .'-'. $archiveItem->month) ? 'selected' : '' }}

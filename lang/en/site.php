@@ -84,6 +84,8 @@ return [
     'latest_posts' => 'Latest Posts',
     'service_categories' => 'Service Categories',
     'view_details' => 'View Details',
+    'get_details' => 'Get Details',
+    'all' => 'All',
     'all_categories' => 'All categories',
     'title' => 'Title',
     'price' => 'Price',

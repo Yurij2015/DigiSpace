@@ -1,116 +1,122 @@
 {
-  "table": "menus",
-  "identity": [
-    "id"
-  ],
-  "translatable": [
-    "title"
-  ],
-  "rows": [
-    {
-      "id": 1,
-      "name": "main",
-      "level": 1,
-      "position": null,
-      "description": null,
-      "location": "header",
-      "slug": "main",
-      "href": "main",
-      "i18n": {
-        "en": {
-          "title": "main menu"
+    "table": "menus",
+    "identity": [
+        "id"
+    ],
+    "translatable": [
+        "title"
+    ],
+    "rows": [
+        {
+            "id": 1,
+            "name": "main",
+            "level": 1,
+            "position": null,
+            "description": null,
+            "location": "header",
+            "slug": "main",
+            "href": "main",
+            "i18n": {
+                "en": {
+                    "title": "main menu"
+                },
+                "uk": {
+                    "title": "головне меню"
+                },
+                "pl": {
+                    "title": "menu główne"
+                }
+            }
         },
-        "uk": {
-          "title": "головне меню"
+        {
+            "id": 2,
+            "name": "page menu first",
+            "level": 2,
+            "position": 1,
+            "description": "first submenu in pages main menu",
+            "location": "pages_submenus",
+            "slug": "submenu-first",
+            "href": "submenu-first",
+            "i18n": {
+                "en": {
+                    "title": "Submenu 1"
+                },
+                "uk": {
+                    "title": "Підменю 1",
+                    "name": "Послуги DigiSpace"
+                },
+                "pl": {
+                    "title": "Podmenu 1",
+                    "name": "Usługi DigiSpace"
+                }
+            }
         },
-        "pl": {
-          "title": "menu główne"
+        {
+            "id": 3,
+            "name": "page menu second",
+            "level": 2,
+            "position": 2,
+            "description": "second submenu in pages main menu",
+            "location": "pages_submenus",
+            "slug": "submenu-second",
+            "href": "submenu-second",
+            "i18n": {
+                "en": {
+                    "title": "Submenu 2"
+                },
+                "uk": {
+                    "title": "Підменю 2",
+                    "name": "Технології DigiSpace"
+                },
+                "pl": {
+                    "title": "Podmenu 2",
+                    "name": "Technologie DigiSpace"
+                }
+            }
+        },
+        {
+            "id": 4,
+            "name": "page menu third",
+            "level": 2,
+            "position": 3,
+            "description": "third submenu in pages main menu",
+            "location": "pages_submenus",
+            "slug": "submenu-third",
+            "href": "submenu-third",
+            "i18n": {
+                "en": {
+                    "title": "Submenu 3"
+                },
+                "uk": {
+                    "title": "Підменю 3",
+                    "name": "Інфо DigiSpace"
+                },
+                "pl": {
+                    "title": "Podmenu 3",
+                    "name": "Informacje DigiSpace"
+                }
+            }
+        },
+        {
+            "id": 5,
+            "name": "footer submenu",
+            "level": 3,
+            "position": 4,
+            "description": "submenu in footer",
+            "location": "footer",
+            "slug": "footer-submenu",
+            "href": "footer-submenu",
+            "i18n": {
+                "en": {
+                    "title": "Footer submenu"
+                },
+                "uk": {
+                    "title": "Підменю футера"
+                },
+                "pl": {
+                    "title": "Podmenu stopki"
+                }
+            }
         }
-      }
-    },
-    {
-      "id": 2,
-      "name": "page menu first",
-      "level": 2,
-      "position": 1,
-      "description": "first submenu in pages main menu",
-      "location": "pages_submenus",
-      "slug": "submenu-first",
-      "href": "submenu-first",
-      "i18n": {
-        "en": {
-          "title": "Submenu 1"
-        },
-        "uk": {
-          "title": "Підменю 1"
-        },
-        "pl": {
-          "title": "Podmenu 1"
-        }
-      }
-    },
-    {
-      "id": 3,
-      "name": "page menu second",
-      "level": 2,
-      "position": 2,
-      "description": "second submenu in pages main menu",
-      "location": "pages_submenus",
-      "slug": "submenu-second",
-      "href": "submenu-second",
-      "i18n": {
-        "en": {
-          "title": "Submenu 2"
-        },
-        "uk": {
-          "title": "Підменю 2"
-        },
-        "pl": {
-          "title": "Podmenu 2"
-        }
-      }
-    },
-    {
-      "id": 4,
-      "name": "page menu third",
-      "level": 2,
-      "position": 3,
-      "description": "third submenu in pages main menu",
-      "location": "pages_submenus",
-      "slug": "submenu-third",
-      "href": "submenu-third",
-      "i18n": {
-        "en": {
-          "title": "Submenu 3"
-        },
-        "uk": {
-          "title": "Підменю 3"
-        },
-        "pl": {
-          "title": "Podmenu 3"
-        }
-      }
-    },
-    {
-      "id": 5,
-      "name": "footer submenu",
-      "level": 3,
-      "position": 4,
-      "description": "submenu in footer",
-      "location": "footer",
-      "slug": "footer-submenu",
-      "href": "footer-submenu",
-      "i18n": {
-        "en": {
-          "title": "Footer submenu"
-        },
-        "uk": {
-          "title": "Підменю футера"
-        },
-        "pl": {
-          "title": "Podmenu stopki"
-        }
-      }
-    }
-  ]
+    ]
 }

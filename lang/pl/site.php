@@ -84,6 +84,8 @@ return [
     'latest_posts' => 'Najnowsze wpisy',
     'service_categories' => 'Kategorie usług',
     'view_details' => 'Szczegóły',
+    'get_details' => 'Uzyskaj szczegóły',
+    'all' => 'Wszystkie',
     'all_categories' => 'Wszystkie kategorie',
     'title' => 'Tytuł',
     'price' => 'Cena',
