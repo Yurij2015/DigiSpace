@@ -58,7 +58,7 @@ class StructureTranslationsSeederTest extends TestCase
         $seeder = $this->runSeeder();
 
         self::assertSame(15, $seeder->summary['widget_categories']['updated']);
-        self::assertSame(52, $seeder->summary['widgets']['updated']);
+        self::assertSame(33, $seeder->summary['widgets']['updated']);
         self::assertSame($this->prodRowCount('widgets'), $seeder->summary['widgets']['unmatched']);
         self::assertEquals($before, DB::table('widgets')->orderBy('id')->get(['id', 'title', 'subtitle', 'content'])->toArray(), 'base columns changed');
 

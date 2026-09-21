@@ -397,57 +397,6 @@
                     "name": "Przydatny link 9"
                 }
             }
-        },
-        {
-            "id": 24,
-            "menu_id": 4,
-            "slug": "faq",
-            "href": "pages/faq",
-            "i18n": {
-                "en": {
-                    "name": "FAQ"
-                },
-                "uk": {
-                    "name": "FAQ"
-                },
-                "pl": {
-                    "name": "FAQ"
-                }
-            }
-        },
-        {
-            "id": 25,
-            "menu_id": 4,
-            "slug": "support",
-            "href": "pages/support",
-            "i18n": {
-                "en": {
-                    "name": "Support"
-                },
-                "uk": {
-                    "name": "Підтримка"
-                },
-                "pl": {
-                    "name": "Wsparcie"
-                }
-            }
-        },
-        {
-            "id": 26,
-            "menu_id": 4,
-            "slug": "privacy-policy",
-            "href": "pages/privacy-policy",
-            "i18n": {
-                "en": {
-                    "name": "Privacy Policy"
-                },
-                "uk": {
-                    "name": "Політика конфіденційності"
-                },
-                "pl": {
-                    "name": "Polityka prywatności"
-                }
-            }
         }
     ]
 }
