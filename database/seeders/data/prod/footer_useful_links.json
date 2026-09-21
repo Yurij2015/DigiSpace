@@ -94,7 +94,7 @@
         },
         {
             "id": 6,
-            "url": "pages/faq",
+            "url": "faq",
             "status": 1,
             "position": 2,
             "i18n": {
@@ -111,7 +111,7 @@
         },
         {
             "id": 7,
-            "url": "pages/support",
+            "url": "support",
             "status": 1,
             "position": 2,
             "i18n": {
@@ -128,7 +128,7 @@
         },
         {
             "id": 8,
-            "url": "pages/privacy-policy",
+            "url": "privacy-policy",
             "status": 1,
             "position": 2,
             "i18n": {

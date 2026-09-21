@@ -15,6 +15,10 @@ class PromoController extends Controller
 
     public function index(): Application|Factory|View
     {
+        if (! config('settings.is_promo_tab_active')) {
+            abort(404);
+        }
+
         $promosCategory = $this->getPromosPageWidgetsCategory(self::PROMOS);
         $promosWidgets = $this->getPromosPageWidgets(self::PROMOS);
         $page = Page::where('slug', '=', 'promos')->first();

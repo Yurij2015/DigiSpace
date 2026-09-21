@@ -8,6 +8,7 @@ return [
     'prices_title' => 'DigiSpace | Prices',
     'contact_title' => 'DigiSpace | Contact Us',
     'meta_description' => 'DigiSpace web development, automation and technology consulting services.',
+    'meta_description_blog' => 'Articles on web development, PHP, Laravel, Vue.js and technology consulting from the DigiSpace team.',
     'about' => 'About',
     'services' => 'Services',
     'pricing' => 'Pricing',

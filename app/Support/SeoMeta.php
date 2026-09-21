@@ -38,8 +38,13 @@ final class SeoMeta
     public static function resolve(array $view, ?string $route, string $fallbackTitle): array
     {
         $post = $route === 'blog.post' && ($view['post'] ?? null) instanceof Post ? $view['post'] : null;
-        $page = in_array($route, ['pages.page', 'privacy-policy', 'faq', 'support'], true)
-            && ($view['page'] ?? null) instanceof Page ? $view['page'] : null;
+        $pageRoutes = ['pages.page', 'privacy-policy', 'faq', 'support', 'about', 'services', 'pricing', 'contact-us'];
+        $page = null;
+        if (in_array($route, $pageRoutes, true)) {
+            $page = ($view['page'] ?? null) instanceof Page
+                ? $view['page']
+                : Page::where('slug', $route)->first();
+        }
         $service = $route === 'category-service' && ($view['service'] ?? null) instanceof Service ? $view['service'] : null;
         $category = in_array($route, ['category-service', 'category-services'], true)
             && ($view['serviceCategory'] ?? null) instanceof ServiceCategory ? $view['serviceCategory'] : null;
@@ -50,7 +55,10 @@ final class SeoMeta
             $service !== null => $service->seo_description,
             $category !== null => $category->seo_description,
             default => null,
-        } ?: __('site.meta_description');
+        } ?: match ($route) {
+            'blog', 'blog-category', 'blog-archive', 'blog-search' => __('site.meta_description_blog'),
+            default => __('site.meta_description'),
+        };
 
         $title = match (true) {
             $post !== null => $post->name,

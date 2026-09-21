@@ -121,7 +121,9 @@ class Page extends Model implements HasTranslatableColumns
         parent::boot();
 
         static::updating(static function ($page) {
-            $page->slug = Str::slug((string) ($page->getAttributes()['name'] ?? $page->getRawOriginal('name')));
+            if (blank($page->slug)) {
+                $page->slug = Str::slug((string) ($page->getAttributes()['name'] ?? $page->getRawOriginal('name')));
+            }
         });
 
         static::creating(static function ($page) {

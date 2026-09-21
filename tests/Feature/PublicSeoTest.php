@@ -50,7 +50,7 @@ class PublicSeoTest extends TestCase
         $this->assertSame(self::BLOG_TITLE, $this->meta($document, 'twitter:title'));
         $this->assertSame('website', $this->meta($document, 'og:type'));
         $this->assertSame(asset('images/bg-3-1920x480.jpg'), $this->meta($document, 'og:image'));
-        $this->assertSame(__('site.meta_description'), $this->meta($document, 'og:description'));
+        $this->assertSame(__('site.meta_description_blog'), $this->meta($document, 'og:description'));
         $this->assertSame(self::BLOG_TITLE, $this->schemaNode($document, 'WebPage')['name']);
         $this->assertSame('', $this->meta($document, 'keywords'));
     }

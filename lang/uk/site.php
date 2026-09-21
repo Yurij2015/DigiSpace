@@ -8,6 +8,7 @@ return [
     'prices_title' => 'DigiSpace | Ціни',
     'contact_title' => 'DigiSpace | Зв’язатися з нами',
     'meta_description' => 'Веброзробка, автоматизація та технологічний консалтинг DigiSpace.',
+    'meta_description_blog' => 'Статті про веброзробку, PHP, Laravel, Vue.js та технологічний консалтинг від команди DigiSpace.',
     'about' => 'Про нас',
     'services' => 'Послуги',
     'pricing' => 'Ціни',
