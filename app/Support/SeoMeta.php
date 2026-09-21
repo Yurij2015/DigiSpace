@@ -57,10 +57,19 @@ final class SeoMeta
         $blogArchive = $route === 'blog-archive' && filled($view['archive'] ?? null)
             ? (string) $view['archive']
             : null;
+        $pageDescription = $page?->description;
+        if ($page !== null && Str::length(trim((string) $pageDescription)) < 40) {
+            $pageDescription = match ($route) {
+                'faq' => __('site.meta_description_faq'),
+                'support' => __('site.meta_description_support'),
+                'privacy-policy' => __('site.meta_description_privacy'),
+                default => $pageDescription,
+            };
+        }
 
         $description = match (true) {
             $post !== null => $post->description,
-            $page !== null => $page->description,
+            $page !== null => $pageDescription,
             $service !== null => $service->seo_description,
             $category !== null => $category->seo_description,
             $blogCategory !== null => $blogCategory->description ?: __('site.meta_description_blog_category', ['category' => $blogCategory->name]),

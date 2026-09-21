@@ -217,6 +217,25 @@ class PublicSeoTest extends TestCase
         $this->assertSame('noindex', $this->meta($this->document($response->getContent()), 'robots'));
     }
 
+    #[TestWith(['en', 'faq', 'meta_description_faq'])]
+    #[TestWith(['uk', 'support', 'meta_description_support'])]
+    #[TestWith(['pl', 'privacy-policy', 'meta_description_privacy'])]
+    public function test_short_static_page_descriptions_use_localized_seo_fallback(
+        string $locale,
+        string $slug,
+        string $translationKey,
+    ): void {
+        $this->seedPublicSite();
+
+        $response = $this->get("/$locale/$slug");
+
+        $response->assertOk();
+        $this->assertSame(
+            __("site.$translationKey"),
+            $this->meta($this->document($response->getContent()), 'description'),
+        );
+    }
+
     private function createPost(): Post
     {
         $author = User::factory()->create();
