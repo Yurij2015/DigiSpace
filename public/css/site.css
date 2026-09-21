@@ -80,7 +80,9 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
 }
 
 /* Service pages: code samples and process diagrams inside article body */
-.post-single pre.code-block {
+/* Bare <pre> inside service articles: the rich editor strips the class on save */
+.post-single pre.code-block,
+.service-article__body pre {
   background: #1e2430;
   color: #d7dce6;
   padding: 18px 20px;
@@ -91,7 +93,8 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
   text-align: left;
   margin: 18px 0 26px;
 }
-.post-single pre.code-block code {
+.post-single pre.code-block code,
+.service-article__body pre code {
   color: inherit;
   font-family: SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
   white-space: pre;
@@ -110,7 +113,9 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
   white-space: pre;
   margin: 18px 0 26px;
 }
-.post-single .code-caption {
+/* Caption after a code block: .code-caption class or the paragraph right after pre */
+.post-single .code-caption,
+.service-article__body pre + p {
   font-size: 13px;
   color: #6a7386;
   margin: -16px 0 26px;

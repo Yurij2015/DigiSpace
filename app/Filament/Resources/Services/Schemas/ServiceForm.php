@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Services\Schemas;
 
+use App\Filament\Support\ContentEditor;
 use App\Filament\Support\ContentImage;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -22,7 +23,7 @@ class ServiceForm
                             TextInput::make('title')->required()->maxLength(255),
                             TextInput::make('details')->maxLength(255),
                             TextInput::make('image_alt')->maxLength(255),
-                            Textarea::make('description')->columnSpanFull(),
+                            ContentEditor::make('description', 'services/content'),
                             Textarea::make('seo_description')->columnSpanFull(),
                             TextInput::make('seo_title')->maxLength(255),
                             TextInput::make('seo_keywords')->maxLength(255),
@@ -31,7 +32,7 @@ class ServiceForm
                             TextInput::make('translations.uk.title')->label('Назва')->maxLength(255),
                             TextInput::make('translations.uk.details')->label('Деталі')->maxLength(255),
                             TextInput::make('translations.uk.image_alt')->label('Alt текст')->maxLength(255),
-                            Textarea::make('translations.uk.description')->label('Опис')->columnSpanFull(),
+                            ContentEditor::make('translations.uk.description', 'services/content')->label('Опис'),
                             Textarea::make('translations.uk.seo_description')->label('SEO опис')->columnSpanFull(),
                             TextInput::make('translations.uk.seo_title')->label('SEO заголовок')->maxLength(255),
                             TextInput::make('translations.uk.seo_keywords')->label('SEO ключові слова')->maxLength(255),
@@ -40,7 +41,7 @@ class ServiceForm
                             TextInput::make('translations.pl.title')->label('Tytuł')->maxLength(255),
                             TextInput::make('translations.pl.details')->label('Szczegóły')->maxLength(255),
                             TextInput::make('translations.pl.image_alt')->label('Tekst alt')->maxLength(255),
-                            Textarea::make('translations.pl.description')->label('Opis')->columnSpanFull(),
+                            ContentEditor::make('translations.pl.description', 'services/content')->label('Opis'),
                             Textarea::make('translations.pl.seo_description')->label('Opis SEO')->columnSpanFull(),
                             TextInput::make('translations.pl.seo_title')->label('Tytuł SEO')->maxLength(255),
                             TextInput::make('translations.pl.seo_keywords')->label('Słowa kluczowe SEO')->maxLength(255),

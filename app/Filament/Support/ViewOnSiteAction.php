@@ -4,6 +4,7 @@ namespace App\Filament\Support;
 
 use App\Models\Page;
 use App\Models\Post;
+use App\Models\Service;
 use Filament\Actions\Action;
 use Filament\Support\Icons\Heroicon;
 use Illuminate\Database\Eloquent\Model;
@@ -35,6 +36,9 @@ class ViewOnSiteAction
             $record instanceof Page => $record->menuItem?->slug
                 ? route('pages.page', ['locale' => $locale, 'slug' => $record->menuItem->slug])
                 : null,
+            $record instanceof Service => $record->status === 'active' && $record->serviceCategory?->slug
+                ? route('category-service', ['locale' => $locale, 'serviceCategory' => $record->serviceCategory->slug, 'service' => $record->getRawOriginal('slug')])
+                : null,
             default => null,
         };
     }
@@ -44,6 +48,7 @@ class ViewOnSiteAction
         return match (true) {
             $record instanceof Post => 'Only published posts are visible on the site.',
             $record instanceof Page => 'Link the page to a menu item to give it a public URL.',
+            $record instanceof Service => 'Only active services assigned to a category are visible on the site.',
             default => 'No public URL.',
         };
     }
