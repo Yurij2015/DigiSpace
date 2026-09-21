@@ -63,7 +63,8 @@
     </div>
     @if($banner)
         <div class="blog-layout__aside-item">
-            <a class="link-banner" href="{{ $banner->url }}">
+            <a class="link-banner"
+               href="{{ str_starts_with($banner->url, '/') ? '/'.app()->getLocale().$banner->url : $banner->url }}">
                 <img src="{{ $banner->img_path }}" alt="{{ $banner->alt }}" width="305" height="302"/>
             </a>
         </div>
