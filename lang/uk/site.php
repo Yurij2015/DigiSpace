@@ -84,6 +84,8 @@ return [
     'latest_posts' => 'Останні пости',
     'service_categories' => 'Категорії послуг',
     'view_details' => 'Детальніше',
+    'get_details' => 'Дізнатися деталі',
+    'all' => 'Усі',
     'all_categories' => 'Усі категорії',
     'title' => 'Назва',
     'price' => 'Ціна',

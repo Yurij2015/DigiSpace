@@ -675,7 +675,7 @@
                     "content": "8"
                 },
                 "uk": {
-                    "title": "Встановлених застосунків",
+                    "title": "Років на ринку",
                     "subtitle": "1.",
                     "content": "8"
                 },
@@ -701,7 +701,7 @@
                     "content": "27"
                 },
                 "uk": {
-                    "title": "Здобутих нагород",
+                    "title": "Технологій",
                     "subtitle": null,
                     "content": "27"
                 },
@@ -727,7 +727,7 @@
                     "content": "45"
                 },
                 "uk": {
-                    "title": "Співробітників",
+                    "title": "Проєктів",
                     "subtitle": null,
                     "content": "45"
                 },
@@ -753,7 +753,7 @@
                     "content": "99"
                 },
                 "uk": {
-                    "title": "Задоволених клієнтів",
+                    "title": "Рядків коду",
                     "subtitle": null,
                     "content": "99"
                 },
@@ -884,12 +884,12 @@
                 },
                 "uk": {
                     "title": "Про нас",
-                    "subtitle": "Наша компанія розробляє якісне та надійне програмне забезпечення для корпоративних потреб із 2008 року.",
+                    "subtitle": "Наша компанія розробляє якісне та надійне програмне забезпечення для корпоративних потреб із 2020 року.",
                     "content": "Про нас"
                 },
                 "pl": {
                     "title": "O nas",
-                    "subtitle": "Nasza firma tworzy wysokiej jakości, niezawodne oprogramowanie dla firm od 2008 roku.",
+                    "subtitle": "Nasza firma tworzy wysokiej jakości, niezawodne oprogramowanie dla firm od 2020 roku.",
                     "content": "O nas"
                 }
             }

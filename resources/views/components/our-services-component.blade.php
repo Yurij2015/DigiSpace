@@ -8,9 +8,7 @@
                 <h4 class="box-chloe__title text-21">{{ __('site.service_template_title') }}</h4>
                 <p>{{ __('site.service_template_text') }}</p>
                 <a class="button button-sm button-default button-ujarak"
-                   href="{{ route('pages.page', 'template-implementation') }}">
-                    View Details
-                </a>
+                   href="{{ route('pages.page', 'template-implementation') }}">{{ __('site.view_details') }}</a>
             </div>
         </article>
     </div>
@@ -34,9 +32,7 @@
                 <h4 class="box-chloe__title">{{ __('site.service_cms_title') }}</h4>
                 <p>{{ __('site.service_cms_text') }}</p>
                 <a class="button button-sm button-default button-ujarak"
-                   href="{{ route('pages.page', 'crm-and-cms-systems') }}">
-                    View Details
-                </a>
+                   href="{{ route('pages.page', 'crm-and-cms-systems') }}">{{ __('site.view_details') }}</a>
             </div>
         </article>
     </div>

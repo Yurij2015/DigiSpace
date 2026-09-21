@@ -13,7 +13,7 @@
                 <div class="pricing-table__item-control">
                     <div class="button-wrap">
                         <a class="button btn-primary-outline button-ujarak" href="{{ route('contact-us') }}">
-                            Get Details
+                            {{ __('site.get_details') }}
                         </a>
                     </div>
                 </div>
