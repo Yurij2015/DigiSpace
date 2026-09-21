@@ -46,12 +46,22 @@ class PublicSeoTest extends TestCase
 
         $response->assertOk();
         $document = $this->document($response->getContent());
-        $this->assertSame(self::BLOG_TITLE, $this->meta($document, 'og:title'));
-        $this->assertSame(self::BLOG_TITLE, $this->meta($document, 'twitter:title'));
+        $expectedTitle = match (true) {
+            str_contains($path, 'blog-category') => 'DigiSpace | News articles',
+            str_contains($path, 'blog-archive') => 'DigiSpace | Blog archive 2026-9',
+            default => self::BLOG_TITLE,
+        };
+        $expectedDescription = match (true) {
+            str_contains($path, 'blog-category') => 'News',
+            str_contains($path, 'blog-archive') => __('site.meta_description_blog_archive', ['date' => '2026-9']),
+            default => __('site.meta_description_blog'),
+        };
+        $this->assertSame($expectedTitle, $this->meta($document, 'og:title'));
+        $this->assertSame($expectedTitle, $this->meta($document, 'twitter:title'));
         $this->assertSame('website', $this->meta($document, 'og:type'));
         $this->assertSame(asset('images/bg-3-1920x480.jpg'), $this->meta($document, 'og:image'));
-        $this->assertSame(__('site.meta_description_blog'), $this->meta($document, 'og:description'));
-        $this->assertSame(self::BLOG_TITLE, $this->schemaNode($document, 'WebPage')['name']);
+        $this->assertSame($expectedDescription, $this->meta($document, 'og:description'));
+        $this->assertSame($expectedTitle, $this->schemaNode($document, 'WebPage')['name']);
         $this->assertSame('', $this->meta($document, 'keywords'));
     }
 

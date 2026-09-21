@@ -16,7 +16,7 @@ class PageController extends Controller
      *
      * @var array<string, array{string, string}>
      */
-    private const REDIRECTED_PAGES = [
+    public const REDIRECTED_PAGES = [
         'responsive-web-apps' => ['frontend-development', 'responsive-web-apps'],
         'legacy-code-refactoring' => ['support-and-devops', 'legacy-code-refactoring'],
         'crm-and-cms-systems' => ['ecommerce-and-cms', 'custom-crm-cms'],

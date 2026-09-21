@@ -2,6 +2,7 @@
 
 namespace App\Support;
 
+use App\Models\Category;
 use App\Models\HeaderNavBarContent;
 use App\Models\Page;
 use App\Models\Post;
@@ -21,6 +22,8 @@ final class SeoMeta
      *     page?: ?Page,
      *     service?: ?Service,
      *     serviceCategory?: ?ServiceCategory,
+     *     category?: ?Category,
+     *     archive?: ?string,
      *     pageImage?: ?string,
      *     headerNavBarContent?: ?HeaderNavBarContent,
      * }  $view
@@ -48,12 +51,20 @@ final class SeoMeta
         $service = $route === 'category-service' && ($view['service'] ?? null) instanceof Service ? $view['service'] : null;
         $category = in_array($route, ['category-service', 'category-services'], true)
             && ($view['serviceCategory'] ?? null) instanceof ServiceCategory ? $view['serviceCategory'] : null;
+        $blogCategory = $route === 'blog-category' && ($view['category'] ?? null) instanceof Category
+            ? $view['category']
+            : null;
+        $blogArchive = $route === 'blog-archive' && filled($view['archive'] ?? null)
+            ? (string) $view['archive']
+            : null;
 
         $description = match (true) {
             $post !== null => $post->description,
             $page !== null => $page->description,
             $service !== null => $service->seo_description,
             $category !== null => $category->seo_description,
+            $blogCategory !== null => $blogCategory->description ?: __('site.meta_description_blog_category', ['category' => $blogCategory->name]),
+            $blogArchive !== null => __('site.meta_description_blog_archive', ['date' => $blogArchive]),
             default => null,
         } ?: match ($route) {
             'blog', 'blog-category', 'blog-archive', 'blog-search' => __('site.meta_description_blog'),
@@ -65,6 +76,8 @@ final class SeoMeta
             $page !== null => $page->name,
             $service !== null => $service->seo_title ?: $service->title,
             $category !== null => $category->seo_title ?: $category->name,
+            $blogCategory !== null => __('site.blog_category_title', ['category' => $blogCategory->name]),
+            $blogArchive !== null => __('site.blog_archive_title', ['date' => $blogArchive]),
             default => null,
         } ?: $fallbackTitle;
 

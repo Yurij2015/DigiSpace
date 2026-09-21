@@ -1,5 +1,7 @@
 @extends('layouts.main')
-@section('title', __('site.blog_title'))
+@section('title', isset($category)
+    ? __('site.blog_category_title', ['category' => $category->name])
+    : (isset($archive) ? __('site.blog_archive_title', ['date' => $archive]) : __('site.blog_title')))
 
 @php
     $p = (int) request('page', 1);
@@ -15,7 +17,7 @@
         <div class="breadcrumbs-custom__aside bg-image context-dark"
              style="background-image: url({{ asset('images/bg-blog-post.jpg')}});">
             <div class="container">
-                <h1 class="breadcrumbs-custom__title">{{ __('site.blog') }}</h1>
+                <h1 class="breadcrumbs-custom__title">{{ isset($category) ? $category->name : (isset($archive) ? $archive : __('site.blog')) }}</h1>
             </div>
         </div>
         <div class="breadcrumbs-custom__main bg-gray-light">
