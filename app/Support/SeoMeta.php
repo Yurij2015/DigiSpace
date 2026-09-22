@@ -143,6 +143,6 @@ final class SeoMeta
             $page !== null => $pageImageUrl,
             $service !== null => asset($service->image),
             default => null,
-        } ?: asset('images/bg-3-1920x480.jpg');
+        } ?: asset('images/og-default.png');
     }
 }
