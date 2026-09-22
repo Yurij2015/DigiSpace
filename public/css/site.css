@@ -90,9 +90,13 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
   line-height: 1.65;
   color: #3d4655;
 }
-.service-article__body h2 {
+.service-article__body h3 {
   margin-top: 38px;
   margin-bottom: 16px;
+  font-size: 24px;
+  line-height: 1.35;
+  letter-spacing: 0;
+  font-weight: 600;
   color: #202838;
 }
 .service-article__body ul {
@@ -122,7 +126,10 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
 }
 @media (max-width: 767px) {
   .service-article__body > p:first-child { font-size: 17px; }
-  .service-article__body h2 { margin-top: 30px; }
+  .service-article__body h3 {
+    margin-top: 30px;
+    font-size: 21px;
+  }
   .service-diagram { margin-right: -8px; margin-left: -8px; padding: 10px; }
 }
 /* Bare <pre> inside service articles: the rich editor strips the class on save */

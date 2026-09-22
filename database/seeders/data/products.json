@@ -1,98 +1,182 @@
 {
-  "table": "products",
-  "identity": [
-    "title"
-  ],
-  "translatable": [
-    "title",
-    "details",
-    "product_name",
-    "description"
-  ],
-  "rows": [
-    {
-      "id": 1,
-      "product_code": null,
-      "position": null,
-      "is_prefered": 0,
-      "is_active": 1,
-      "price_value": 999.99,
-      "i18n": {
-        "en": {
-          "title": "Landing page",
-          "details": "starting at",
-          "product_name": null,
-          "description": null
+    "table": "products",
+    "identity": [
+        "title"
+    ],
+    "translatable": [
+        "title",
+        "details",
+        "product_name",
+        "description"
+    ],
+    "rows": [
+        {
+            "id": 1,
+            "product_code": "starter-website",
+            "position": 1,
+            "is_prefered": 0,
+            "is_active": 1,
+            "price_value": 1200,
+            "i18n": {
+                "en": {
+                    "title": "Starter Website",
+                    "details": "starting at",
+                    "product_name": "Starter Website",
+                    "description": "A professional site on a ready design — live in days, not months."
+                },
+                "uk": {
+                    "title": "Стартовий вебсайт",
+                    "details": "від",
+                    "product_name": "Стартовий вебсайт",
+                    "description": "Професійний сайт на готовому дизайні — запуск за дні, не місяці."
+                },
+                "pl": {
+                    "title": "Podstawowa strona internetowa",
+                    "details": "od",
+                    "product_name": "Podstawowa strona internetowa",
+                    "description": "Profesjonalna strona na gotowym projekcie — start w dni, nie miesiące."
+                }
+            }
         },
-        "uk": {
-          "title": "Лендінг",
-          "details": "від",
-          "product_name": null,
-          "description": null
+        {
+            "id": 2,
+            "product_code": "bussiness_website",
+            "position": 3,
+            "is_prefered": 0,
+            "is_active": 1,
+            "price_value": 2500,
+            "i18n": {
+                "en": {
+                    "title": "Business Website",
+                    "details": "starting at",
+                    "product_name": "Business Website",
+                    "description": "Custom design and a deeper page structure for a business that has outgrown templates."
+                },
+                "uk": {
+                    "title": "Бізнес-сайт",
+                    "details": "від",
+                    "product_name": "Бізнес-сайт",
+                    "description": "Індивідуальний дизайн і глибша структура сторінок для бізнесу, який виріс із шаблонів."
+                },
+                "pl": {
+                    "title": "Strona biznesowa",
+                    "details": "od",
+                    "product_name": "Strona biznesowa",
+                    "description": "Indywidualny projekt i głębsza struktura stron dla firmy, która wyrosła z szablonów."
+                }
+            }
         },
-        "pl": {
-          "title": "Strona docelowa (landing page)",
-          "details": "od",
-          "product_name": null,
-          "description": null
+        {
+            "id": 3,
+            "product_code": "saas_custom",
+            "position": 2,
+            "is_prefered": 1,
+            "is_active": 1,
+            "price_value": 4000,
+            "i18n": {
+                "en": {
+                    "title": "SaaS / Custom Platform",
+                    "details": "starting at",
+                    "product_name": "SaaS / Custom Platform",
+                    "description": "Architecture, admin panel and integrations engineered for a product that has to scale."
+                },
+                "uk": {
+                    "title": "SaaS / Платформа на замовлення",
+                    "details": "від",
+                    "product_name": "SaaS / Платформа на замовлення",
+                    "description": "Архітектура, адмін-панель та інтеграції, спроєктовані для продукту, який має масштабуватись."
+                },
+                "pl": {
+                    "title": "SaaS / Platforma niestandardowa",
+                    "details": "od",
+                    "product_name": "SaaS / Platforma niestandardowa",
+                    "description": "Architektura, panel administracyjny i integracje zaprojektowane dla produktu, który ma się skalować."
+                }
+            }
+        },
+        {
+            "id": 4,
+            "product_code": "support_maintenance",
+            "position": 4,
+            "is_prefered": 0,
+            "is_active": 1,
+            "price_value": 300,
+            "i18n": {
+                "en": {
+                    "title": "Support & Maintenance",
+                    "details": "starting at",
+                    "product_name": "Support & Maintenance",
+                    "description": "A fixed monthly plan: updates, monitoring and fixes — no in-house admin needed."
+                },
+                "uk": {
+                    "title": "Підтримка та обслуговування",
+                    "details": "від",
+                    "product_name": "Підтримка та обслуговування",
+                    "description": "Фіксований місячний план: оновлення, моніторинг і виправлення — без адміністратора в штаті."
+                },
+                "pl": {
+                    "title": "Wsparcie i utrzymanie",
+                    "details": "od",
+                    "product_name": "Wsparcie i utrzymanie",
+                    "description": "Stały plan miesięczny: aktualizacje, monitoring i poprawki — bez administratora w zespole."
+                }
+            }
+        },
+        {
+            "id": 5,
+            "product_code": "hosting_deployment",
+            "position": 5,
+            "is_prefered": 0,
+            "is_active": 0,
+            "price_value": 55,
+            "i18n": {
+                "en": {
+                    "title": "Hosting & Deployment (Coming soon)",
+                    "details": "starting at",
+                    "product_name": "Hosting & Deployment (Coming soon)",
+                    "description": "Hosting & Deployment (Coming soon)"
+                },
+                "uk": {
+                    "title": "Хостинг і розгортання (незабаром)",
+                    "details": "від",
+                    "product_name": "Хостинг і розгортання (незабаром)",
+                    "description": "Хостинг і розгортання (незабаром)"
+                },
+                "pl": {
+                    "title": "Hosting i wdrożenie (wkrótce)",
+                    "details": "od",
+                    "product_name": "Hosting i wdrożenie (wkrótce)",
+                    "description": "Hosting i wdrożenie (wkrótce)"
+                }
+            }
+        },
+        {
+            "id": 6,
+            "product_code": "ai_automation",
+            "position": 6,
+            "is_prefered": 0,
+            "is_active": 1,
+            "price_value": 1200,
+            "i18n": {
+                "en": {
+                    "title": "AI & API Integrations",
+                    "details": "starting at",
+                    "product_name": "AI & API Integrations",
+                    "description": "Connect payments, CRM and AI tools so data flows between systems without manual work."
+                },
+                "uk": {
+                    "title": "Інтеграції AI та API",
+                    "details": "від",
+                    "product_name": "Інтеграції AI та API",
+                    "description": "Підключаємо платежі, CRM та AI-інструменти — дані рухаються між системами без ручної роботи."
+                },
+                "pl": {
+                    "title": "Integracje AI i API",
+                    "details": "od",
+                    "product_name": "Integracje AI i API",
+                    "description": "Podłączamy płatności, CRM i narzędzia AI — dane przepływają między systemami bez ręcznej pracy."
+                }
+            }
         }
-      }
-    },
-    {
-      "id": 2,
-      "product_code": null,
-      "position": null,
-      "is_prefered": 0,
-      "is_active": 1,
-      "price_value": 1499.99,
-      "i18n": {
-        "en": {
-          "title": "Website with CMS",
-          "details": "starting at",
-          "product_name": null,
-          "description": null
-        },
-        "uk": {
-          "title": "Сайт із CMS",
-          "details": "від",
-          "product_name": null,
-          "description": null
-        },
-        "pl": {
-          "title": "Strona z CMS",
-          "details": "od",
-          "product_name": null,
-          "description": null
-        }
-      }
-    },
-    {
-      "id": 3,
-      "product_code": null,
-      "position": null,
-      "is_prefered": 0,
-      "is_active": 1,
-      "price_value": 1999.99,
-      "i18n": {
-        "en": {
-          "title": "Custom development",
-          "details": "starting at",
-          "product_name": null,
-          "description": null
-        },
-        "uk": {
-          "title": "Індивідуальна розробка",
-          "details": "від",
-          "product_name": null,
-          "description": null
-        },
-        "pl": {
-          "title": "Rozwiązania na zamówienie",
-          "details": "od",
-          "product_name": null,
-          "description": null
-        }
-      }
-    }
-  ]
+    ]
 }

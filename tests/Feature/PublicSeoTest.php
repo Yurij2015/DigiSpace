@@ -112,6 +112,42 @@ class PublicSeoTest extends TestCase
         $this->assertSame($description, $this->schemaNode($document, 'Service')['description']);
     }
 
+    public function test_service_article_renders_a_prominent_accessible_hero_and_structured_body(): void
+    {
+        $this->seedPublicSite();
+        $category = ServiceCategory::create([
+            'name' => 'Web',
+            'seo_title' => self::CATEGORY_SEO,
+            'seo_description' => self::CATEGORY_DESCRIPTION,
+        ]);
+        Service::create([
+            'title' => 'Development',
+            'slug' => 'development',
+            'status' => 'active',
+            'service_category_id' => $category->id,
+            'seo_title' => 'Development SEO',
+            'seo_description' => 'A practical service description',
+            'image' => 'development.jpg',
+            'image_alt' => 'Development architecture illustration',
+            'description' => '<p>Lead</p><h2>How it works</h2><p><img src="/uploads/services/flow.svg" alt="Flow diagram" /></p>',
+        ]);
+
+        $response = $this->get('/en/service-category/web/development');
+
+        $response->assertOk();
+        $document = $this->document($response->getContent());
+        $hero = $document->query('//img[contains(@class, "post-classic__image")]');
+        $body = $document->query('//div[contains(@class, "service-article__body")]');
+
+        $this->assertCount(1, $hero);
+        $this->assertSame('Development architecture illustration', $hero->item(0)->attributes->getNamedItem('alt')->nodeValue);
+        $this->assertSame('eager', $hero->item(0)->attributes->getNamedItem('loading')->nodeValue);
+        $this->assertSame('high', $hero->item(0)->attributes->getNamedItem('fetchpriority')->nodeValue);
+        $this->assertCount(1, $body);
+        $this->assertSame(1, $body->item(0)->getElementsByTagName('h2')->length);
+        $this->assertSame(1, $document->query('//figure[contains(@class, "service-diagram")]')->length);
+    }
+
     private function title(DOMXPath $document): string
     {
         return trim((string) $document->evaluate('string(//title)'));

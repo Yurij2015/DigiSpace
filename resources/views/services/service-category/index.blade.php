@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @section('title', __('site.page_title', ['name' => $serviceCategory->seo_title ?: $serviceCategory->name]))
 @section('content')
+    @php($serviceAssetVersion = '20260922-2')
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">
         <div class="breadcrumbs-custom__aside bg-image context-dark"
@@ -40,9 +41,9 @@
                             </ul>
                             <div class="post-classic__media">
                                 <a href="{{ route('category-service', [$serviceCategory->slug, $item->slug]) }}">
-                                    <img class="post-classic__image" src="{{ asset($item->image) }}"
+                                    <img class="post-classic__image" src="{{ asset($item->image) }}?v={{ $serviceAssetVersion }}"
                                          alt="{{ $item->image_alt ?: $item->title }}" width="715"
-                                         height="417"/>
+                                         loading="lazy" decoding="async"/>
                                 </a>
                             </div>
                             <p>{{ $item->seo_description }}</p>
