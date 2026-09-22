@@ -15,11 +15,11 @@ class ContentEditor
     public const MAX_IMAGE_KB = 2048;
 
     /** @var list<string> */
-    public const IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+    public const array IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
 
     /** @var list<list<string>> */
-    public const TOOLBAR = [
-        ['h2', 'h3', 'h4'],
+    public const array TOOLBAR = [
+        ['h2', 'h3', 'h4', 'lead'],
         ['bold', 'italic', 'underline', 'strike'],
         ['bulletList', 'orderedList', 'blockquote', 'codeBlock'],
         ['link', 'attachFiles', 'table', 'horizontalRule'],

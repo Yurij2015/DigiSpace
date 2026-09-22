@@ -49,7 +49,7 @@ class ContentEditorTest extends TestCase
                 self::assertSame($directory, $editor->getFileAttachmentsDirectory(), "$pageClass $path directory");
                 self::assertSame('public', $editor->getFileAttachmentsVisibility(), "$pageClass $path visibility");
                 self::assertSame(ContentEditor::MAX_IMAGE_KB, $editor->getFileAttachmentsMaxSize(), "$pageClass $path max size");
-                foreach (['h2', 'h3', 'bulletList', 'link', 'attachFiles', 'table', 'alignCenter', 'horizontalRule', 'undo'] as $tool) {
+                foreach (['h2', 'h3', 'lead', 'bulletList', 'link', 'attachFiles', 'table', 'alignCenter', 'horizontalRule', 'undo'] as $tool) {
                     self::assertTrue($editor->hasToolbarButton($tool), "$pageClass $path lacks $tool");
                 }
             }
