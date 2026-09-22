@@ -75,9 +75,9 @@
                         </div>
                         <h4 class="post-single__title">{{ $post->name }}</h4>
                         <img src="{{ asset($post->img_path) }}" alt="{{ $post->name }}" width="715" height="417"/>
-                        <article class="quote-classic quote-classic_secondary">
-                            <p>{!! $post->content !!}</p>
-                        </article>
+                        <div class="service-article__body post-article__body">
+                            {!! $post->content !!}
+                        </div>
 
                         <div class="post-single__footer">
                             <div class="post-single__footer-inner">

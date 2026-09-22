@@ -61,7 +61,7 @@ class Service extends Model implements HasTranslatableColumns
      *
      * @var list<string>
      */
-    public const TRANSLATABLE = ['title', 'details', 'description', 'seo_keywords', 'seo_description', 'seo_title', 'image_alt'];
+    public const TRANSLATABLE = ['title', 'details', 'timeline', 'description', 'seo_keywords', 'seo_description', 'seo_title', 'image_alt'];
 
     public static function translatableColumns(): array
     {
@@ -69,7 +69,7 @@ class Service extends Model implements HasTranslatableColumns
     }
 
     protected $fillable = [
-        'title', 'details', 'price', 'service_category_id', 'seo_keywords', 'seo_description', 'seo_title', 'image_alt', 'description', 'slug', 'image', 'status', 'translations',
+        'title', 'details', 'timeline', 'price', 'service_category_id', 'seo_keywords', 'seo_description', 'seo_title', 'image_alt', 'description', 'slug', 'image', 'status', 'translations',
     ];
 
     protected function casts(): array
@@ -85,6 +85,11 @@ class Service extends Model implements HasTranslatableColumns
     protected function details(): Attribute
     {
         return $this->localizedAttribute('details');
+    }
+
+    protected function timeline(): Attribute
+    {
+        return $this->localizedAttribute('timeline');
     }
 
     protected function description(): Attribute

@@ -22,6 +22,7 @@ class ServiceForm
                         Tab::make('English')->schema([
                             TextInput::make('title')->required()->maxLength(255),
                             TextInput::make('details')->maxLength(255),
+                            TextInput::make('timeline')->maxLength(255)->helperText('Shown in the price matrix, e.g. "2–4 weeks"'),
                             TextInput::make('image_alt')->maxLength(255),
                             ContentEditor::make('description', 'services/content'),
                             Textarea::make('seo_description')->columnSpanFull(),
@@ -31,6 +32,7 @@ class ServiceForm
                         Tab::make('Українська')->schema([
                             TextInput::make('translations.uk.title')->label('Назва')->maxLength(255),
                             TextInput::make('translations.uk.details')->label('Деталі')->maxLength(255),
+                            TextInput::make('translations.uk.timeline')->label('Термін')->maxLength(255),
                             TextInput::make('translations.uk.image_alt')->label('Alt текст')->maxLength(255),
                             ContentEditor::make('translations.uk.description', 'services/content')->label('Опис'),
                             Textarea::make('translations.uk.seo_description')->label('SEO опис')->columnSpanFull(),
@@ -40,6 +42,7 @@ class ServiceForm
                         Tab::make('Polski')->schema([
                             TextInput::make('translations.pl.title')->label('Tytuł')->maxLength(255),
                             TextInput::make('translations.pl.details')->label('Szczegóły')->maxLength(255),
+                            TextInput::make('translations.pl.timeline')->label('Termin')->maxLength(255),
                             TextInput::make('translations.pl.image_alt')->label('Tekst alt')->maxLength(255),
                             ContentEditor::make('translations.pl.description', 'services/content')->label('Opis'),
                             Textarea::make('translations.pl.seo_description')->label('Opis SEO')->columnSpanFull(),

@@ -26,4 +26,12 @@
             <x-price-of-services :$products></x-price-of-services>
         </div>
     </section>
+    <!-- Service price matrix-->
+    <section class="section section-md text-center">
+        <div class="container">
+            <h2>{{ __('site.price_matrix_title') }}</h2>
+            <h5>{{ __('site.price_matrix_note') }}</h5>
+            <x-price-matrix></x-price-matrix>
+        </div>
+    </section>
 @endsection
