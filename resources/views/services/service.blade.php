@@ -50,10 +50,16 @@
                             <div class="post-classic__media">
                                 <img class="post-classic__image" src="{{ asset($service->image) }}?v={{ $serviceAssetVersion }}"
                                      alt="{{ $service->image_alt ?: $service->title }}" width="715"
+                                     sizes="(max-width: 767px) calc(100vw - 32px), 715px"
                                      loading="eager" fetchpriority="high" decoding="async"/>
                             </div>
                             <div class="service-article__body">
                                 {!! preg_replace('/<p>(\s*<img[^>]+src=["\']\/uploads\/services\/[^>]+\/?>(?:\s*)<\/p>)/i', '<figure class="service-diagram">$1</figure>', $serviceDescription) !!}
+                            </div>
+                            <div class="service-article__cta">
+                                <a class="button button-primary button-ujarak" href="{{ route('contact-us') }}">
+                                    {{ __('site.contact_us') }}
+                                </a>
                             </div>
                         </article>
                 </div>

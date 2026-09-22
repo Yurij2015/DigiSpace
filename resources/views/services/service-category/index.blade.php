@@ -30,9 +30,9 @@
                     @foreach($services as $item)
                         <!-- Post Classic-->
                         <article class="post-single">
-                            <h4 class="post-single__title">
+                            <h2 class="post-single__title service-category__title">
                                 <a href="{{ route('category-service', [$serviceCategory->slug, $item->slug]) }}">{{ $item->title }}</a>
-                            </h4>
+                            </h2>
                             <ul class="post-classic__meta">
                                 <li>
                                     <span class="icon mdi mdi-format-list-bulleted"></span>
@@ -43,6 +43,7 @@
                                 <a href="{{ route('category-service', [$serviceCategory->slug, $item->slug]) }}">
                                     <img class="post-classic__image" src="{{ asset($item->image) }}?v={{ $serviceAssetVersion }}"
                                          alt="{{ $item->image_alt ?: $item->title }}" width="715"
+                                         sizes="(max-width: 767px) calc(100vw - 32px), 715px"
                                          loading="lazy" decoding="async"/>
                                 </a>
                             </div>
@@ -53,6 +54,11 @@
                     @endforeach
                     <div class="pagination">
                         {!! $services->links() !!}
+                    </div>
+                    <div class="service-article__cta">
+                        <a class="button button-primary button-ujarak" href="{{ route('contact-us') }}">
+                            {{ __('site.contact_us') }}
+                        </a>
                     </div>
                 </div>
                 <x-service-aside :$serviceCategories></x-service-aside>
