@@ -37,6 +37,9 @@ Zoho CRM leads, Google reCAPTCHA, MinIO/S3 uploads, Sentry, TinyMCE, Facebook Pi
 ### [Analysis and known gaps](./project-analysis.md)
 Source-verified findings, fresh-install limitations, access-control behavior and validation scope.
 
+### [Content authoring prompts](./content-authoring-prompts.md)
+Reusable prompts and evidence rules for service descriptions, deep technical articles and their visual assets.
+
 ### [OpenSpec: localization and Filament](../openspec/changes/2026-09-localization-filament/README.md)
 Reviewable proposal, architecture decisions, behavior specs and implementation gates for the new public locales and the parallel Filament panel.
 
