@@ -19,10 +19,14 @@ class ContentEditor
 
     /** @var list<list<string>> */
     public const array TOOLBAR = [
-        ['h2', 'h3', 'h4', 'lead'],
-        ['bold', 'italic', 'underline', 'strike'],
-        ['bulletList', 'orderedList', 'blockquote', 'codeBlock'],
-        ['link', 'attachFiles', 'table', 'horizontalRule'],
+        ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'paragraph', 'lead'],
+        ['bold', 'italic', 'underline', 'strike', 'subscript', 'superscript'],
+        ['textColor', 'highlight', 'small', 'code', 'clearFormatting'],
+        ['bulletList', 'orderedList', 'blockquote', 'codeBlock', 'details'],
+        ['link', 'attachFiles', 'horizontalRule', 'table', 'grid', 'customBlocks', 'mergeTags'],
+        ['tableAddColumnBefore', 'tableAddColumnAfter', 'tableDeleteColumn', 'tableAddRowBefore', 'tableAddRowAfter', 'tableDeleteRow'],
+        ['tableMergeCells', 'tableSplitCell', 'tableToggleHeaderRow', 'tableToggleHeaderCell', 'tableDelete'],
+        ['gridDelete'],
         ['alignStart', 'alignCenter', 'alignEnd', 'alignJustify'],
         ['undo', 'redo'],
     ];
