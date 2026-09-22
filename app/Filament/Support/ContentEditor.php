@@ -15,14 +15,18 @@ class ContentEditor
     public const MAX_IMAGE_KB = 2048;
 
     /** @var list<string> */
-    public const IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+    public const array IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
 
     /** @var list<list<string>> */
-    public const TOOLBAR = [
-        ['h2', 'h3', 'h4'],
-        ['bold', 'italic', 'underline', 'strike'],
-        ['bulletList', 'orderedList', 'blockquote', 'codeBlock'],
-        ['link', 'attachFiles', 'table', 'horizontalRule'],
+    public const array TOOLBAR = [
+        ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'paragraph', 'lead'],
+        ['bold', 'italic', 'underline', 'strike', 'subscript', 'superscript'],
+        ['textColor', 'highlight', 'small', 'code', 'clearFormatting'],
+        ['bulletList', 'orderedList', 'blockquote', 'codeBlock', 'details'],
+        ['link', 'attachFiles', 'horizontalRule', 'table', 'grid', 'customBlocks', 'mergeTags'],
+        ['tableAddColumnBefore', 'tableAddColumnAfter', 'tableDeleteColumn', 'tableAddRowBefore', 'tableAddRowAfter', 'tableDeleteRow'],
+        ['tableMergeCells', 'tableSplitCell', 'tableToggleHeaderRow', 'tableToggleHeaderCell', 'tableDelete'],
+        ['gridDelete'],
         ['alignStart', 'alignCenter', 'alignEnd', 'alignJustify'],
         ['undo', 'redo'],
     ];

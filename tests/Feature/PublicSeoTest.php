@@ -129,7 +129,7 @@ class PublicSeoTest extends TestCase
             'seo_description' => 'A practical service description',
             'image' => 'development.jpg',
             'image_alt' => 'Development architecture illustration',
-            'description' => '<p>Lead</p><p class="service-business-value"><strong>Business value:</strong> Faster delivery.</p><h3>How it works</h3><p><img src="/uploads/services/flow.svg" alt="Flow diagram" /></p>',
+            'description' => '<p>Lead</p><div class="lead"><p><strong>Business value:</strong> Faster delivery.</p></div><h3>How it works</h3><p><img src="/uploads/services/flow.svg" alt="Flow diagram" /></p>',
         ]);
 
         $response = $this->get('/en/service-category/web/development');
@@ -144,7 +144,7 @@ class PublicSeoTest extends TestCase
         $this->assertSame('eager', $hero->item(0)->attributes->getNamedItem('loading')->nodeValue);
         $this->assertSame('high', $hero->item(0)->attributes->getNamedItem('fetchpriority')->nodeValue);
         $this->assertCount(1, $body);
-        $this->assertSame(1, $document->query('//p[contains(@class, "service-business-value")]')->length);
+        $this->assertSame(1, $document->query('//div[contains(concat(" ", normalize-space(@class), " "), " lead ")]')->length);
         $this->assertSame(1, $body->item(0)->getElementsByTagName('h3')->length);
         $this->assertSame(1, $document->query('//figure[contains(@class, "service-diagram")]')->length);
     }

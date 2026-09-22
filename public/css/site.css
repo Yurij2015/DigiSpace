@@ -90,7 +90,7 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
   line-height: 1.65;
   color: #3d4655;
 }
-.service-business-value {
+.service-article__body > .lead {
   margin: 24px 0 32px;
   padding: 18px 22px;
   border-left: 4px solid #19b9d0;
@@ -99,7 +99,8 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
   font-size: 17px;
   line-height: 1.6;
 }
-.service-business-value strong { color: #0f4cbd; }
+.service-article__body > .lead p { margin: 0; }
+.service-article__body > .lead strong { color: #0f4cbd; }
 .service-article__body h3 {
   margin-top: 38px;
   margin-bottom: 16px;
