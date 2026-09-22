@@ -90,6 +90,16 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
   line-height: 1.65;
   color: #3d4655;
 }
+.service-business-value {
+  margin: 24px 0 32px;
+  padding: 18px 22px;
+  border-left: 4px solid #19b9d0;
+  background: #f3f9fd;
+  color: #26364d;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.service-business-value strong { color: #0f4cbd; }
 .service-article__body h3 {
   margin-top: 38px;
   margin-bottom: 16px;
@@ -120,9 +130,19 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
   height: auto;
   margin: 0 auto;
 }
+.service-article__cta {
+  margin-top: 34px;
+  text-align: center;
+}
 .post-classic__image {
   height: auto;
   aspect-ratio: auto;
+}
+.service-category__title {
+  margin-bottom: 14px;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: 0;
 }
 @media (max-width: 767px) {
   .service-article__body > p:first-child { font-size: 17px; }
@@ -131,6 +151,7 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
     font-size: 21px;
   }
   .service-diagram { margin-right: -8px; margin-left: -8px; padding: 10px; }
+  .service-category__title { font-size: 22px; }
 }
 /* Bare <pre> inside service articles: the rich editor strips the class on save */
 .post-single pre.code-block,
