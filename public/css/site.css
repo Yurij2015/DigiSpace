@@ -134,6 +134,24 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
   margin-top: 34px;
   text-align: center;
 }
+.service-related {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #e1e7ef;
+  text-align: left;
+}
+.service-related h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+.service-related ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 .post-classic__image {
   height: auto;
   aspect-ratio: auto;

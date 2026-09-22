@@ -3,6 +3,10 @@
 @section('content')
     @php
         $serviceAssetVersion = '20260922-2';
+        $serviceImageWebp = preg_replace('/\.(jpe?g|png)$/i', '.webp', ltrim($service->image, '/'));
+        $relatedServices = $serviceCategory->service
+            ->where('id', '!=', $service->id)
+            ->take(3);
         $serviceDescription = preg_replace(
             '/(src=["\']\/uploads\/services\/[^"\']+)(["\'])/i',
             '$1?v='.$serviceAssetVersion.'$2',
@@ -48,10 +52,13 @@
                             </ul>
                             <p>{{ $service->seo_description }}</p>
                             <div class="post-classic__media">
-                                <img class="post-classic__image" src="{{ asset($service->image) }}?v={{ $serviceAssetVersion }}"
-                                     alt="{{ $service->image_alt ?: $service->title }}" width="715"
-                                     sizes="(max-width: 767px) calc(100vw - 32px), 715px"
-                                     loading="eager" fetchpriority="high" decoding="async"/>
+                                <picture>
+                                    <source srcset="{{ asset($serviceImageWebp) }}?v={{ $serviceAssetVersion }}" type="image/webp">
+                                    <img class="post-classic__image" src="{{ asset($service->image) }}?v={{ $serviceAssetVersion }}"
+                                         alt="{{ $service->image_alt ?: $service->title }}" width="715"
+                                         sizes="(max-width: 767px) calc(100vw - 32px), 715px"
+                                         loading="eager" fetchpriority="high" decoding="async"/>
+                                </picture>
                             </div>
                             <div class="service-article__body">
                                 {!! preg_replace('/<p>(\s*<img[^>]+src=["\']\/uploads\/services\/[^>]+\/?>(?:\s*)<\/p>)/i', '<figure class="service-diagram">$1</figure>', $serviceDescription) !!}
@@ -61,6 +68,20 @@
                                     {{ __('site.contact_us') }}
                                 </a>
                             </div>
+                            @if($relatedServices->isNotEmpty())
+                                <nav class="service-related" aria-labelledby="service-related-title">
+                                    <h3 id="service-related-title">{{ __('site.related_services') }}</h3>
+                                    <ul>
+                                        @foreach($relatedServices as $relatedService)
+                                            <li>
+                                                <a href="{{ route('category-service', [$serviceCategory->slug, $relatedService->slug]) }}">
+                                                    {{ $relatedService->title }}
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </nav>
+                            @endif
                         </article>
                 </div>
                 <x-service-aside :$serviceCategories></x-service-aside>

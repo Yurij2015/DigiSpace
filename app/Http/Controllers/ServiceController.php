@@ -42,7 +42,9 @@ class ServiceController extends Controller
 
     public function categoryServices(Request $request): Application|Factory|View
     {
-        $serviceCategory = ServiceCategory::where('slug', (string) $request->route('serviceCategory'))->firstOrFail();
+        $serviceCategory = ServiceCategory::with('service')
+            ->where('slug', (string) $request->route('serviceCategory'))
+            ->firstOrFail();
         $serviceCategories = ServiceCategory::with('service')->get();
         $services = Service::with('serviceCategory')
             ->where('status', 'active')
@@ -58,7 +60,9 @@ class ServiceController extends Controller
 
     public function serviceShow(Request $request): Application|Factory|View
     {
-        $serviceCategory = ServiceCategory::where('slug', (string) $request->route('serviceCategory'))->firstOrFail();
+        $serviceCategory = ServiceCategory::with('service')
+            ->where('slug', (string) $request->route('serviceCategory'))
+            ->firstOrFail();
         $service = Service::where('slug', (string) $request->route('service'))
             ->where('service_category_id', $serviceCategory->id)
             ->where('status', 'active')

@@ -239,6 +239,22 @@ class PublicSeoTest extends TestCase
         $this->assertSame('noindex', $this->meta($this->document($response->getContent()), 'robots'));
     }
 
+    public function test_faq_page_publishes_schema_from_its_editable_content(): void
+    {
+        $this->seedPublicSite();
+        Page::where('slug', 'faq')->update([
+            'content' => '<h5>What is a service?</h5><p>A structured answer.</p><h5>How do we start?</h5><p>Send us a brief.</p>',
+        ]);
+
+        $response = $this->get('/uk/faq');
+
+        $response->assertOk();
+        $faq = $this->schemaNode($this->document($response->getContent()), 'FAQPage');
+        $this->assertCount(2, $faq['mainEntity']);
+        $this->assertSame('What is a service?', $faq['mainEntity'][0]['name']);
+        $this->assertSame('A structured answer.', $faq['mainEntity'][0]['acceptedAnswer']['text']);
+    }
+
     public function test_ordinary_pages_remain_indexable(): void
     {
         $this->seedPublicSite();
