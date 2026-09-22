@@ -13,7 +13,7 @@
         {
             "id": 1,
             "product_code": "starter-website",
-            "position": 2,
+            "position": 1,
             "is_prefered": 0,
             "is_active": 1,
             "price_value": 1200,
@@ -41,7 +41,7 @@
         {
             "id": 2,
             "product_code": "bussiness_website",
-            "position": 4,
+            "position": 3,
             "is_prefered": 0,
             "is_active": 1,
             "price_value": 2500,
@@ -69,7 +69,7 @@
         {
             "id": 3,
             "product_code": "saas_custom",
-            "position": 5,
+            "position": 2,
             "is_prefered": 1,
             "is_active": 1,
             "price_value": 4000,
@@ -97,7 +97,7 @@
         {
             "id": 4,
             "product_code": "support_maintenance",
-            "position": 1,
+            "position": 4,
             "is_prefered": 0,
             "is_active": 1,
             "price_value": 300,
@@ -125,7 +125,7 @@
         {
             "id": 5,
             "product_code": "hosting_deployment",
-            "position": 6,
+            "position": 5,
             "is_prefered": 0,
             "is_active": 0,
             "price_value": 55,
@@ -153,7 +153,7 @@
         {
             "id": 6,
             "product_code": "ai_automation",
-            "position": 3,
+            "position": 6,
             "is_prefered": 0,
             "is_active": 1,
             "price_value": 1200,

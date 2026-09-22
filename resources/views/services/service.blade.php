@@ -1,6 +1,14 @@
 @extends('layouts.main')
 @section('title', __('site.page_title', ['name' => $service->seo_title ?: $service->title]))
 @section('content')
+    @php
+        $serviceAssetVersion = '20260922-2';
+        $serviceDescription = preg_replace(
+            '/(src=["\']\/uploads\/services\/[^"\']+)(["\'])/i',
+            '$1?v='.$serviceAssetVersion.'$2',
+            $service->description,
+        );
+    @endphp
     <!-- Breadcrumbs-->
     <section class="breadcrumbs-custom">
         <div class="breadcrumbs-custom__aside bg-image context-dark"
@@ -40,12 +48,12 @@
                             </ul>
                             <p>{{ $service->seo_description }}</p>
                             <div class="post-classic__media">
-                                <img class="post-classic__image" src="{{ asset($service->image) }}"
+                                <img class="post-classic__image" src="{{ asset($service->image) }}?v={{ $serviceAssetVersion }}"
                                      alt="{{ $service->image_alt ?: $service->title }}" width="715"
                                      loading="eager" fetchpriority="high" decoding="async"/>
                             </div>
                             <div class="service-article__body">
-                                {!! preg_replace('/<p>(\s*<img[^>]+src=["\']\/uploads\/services\/[^>]+\/?>(?:\s*)<\/p>)/i', '<figure class="service-diagram">$1</figure>', $service->description) !!}
+                                {!! preg_replace('/<p>(\s*<img[^>]+src=["\']\/uploads\/services\/[^>]+\/?>(?:\s*)<\/p>)/i', '<figure class="service-diagram">$1</figure>', $serviceDescription) !!}
                             </div>
                         </article>
                 </div>
