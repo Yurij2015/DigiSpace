@@ -98,6 +98,7 @@ final class SchemaMarkup
             $route === 'blog.post' && ($context['post'] ?? null) instanceof Post => self::blogPosting($context),
             $route === 'category-service' && ($context['service'] ?? null) instanceof Service => self::service($context),
             $route === 'category-services' && ($context['serviceCategory'] ?? null) instanceof ServiceCategory => self::collectionPage($context),
+            $route === 'faq' && ($context['page'] ?? null) instanceof Page => self::faqPage($context) ?? self::webPage($context),
             default => self::webPage($context),
         };
     }
@@ -167,6 +168,55 @@ final class SchemaMarkup
             'inLanguage' => $context['locale'],
             'isPartOf' => ['@id' => self::webSiteId()],
         ], static fn ($value) => $value !== null);
+    }
+
+    /**
+     * @param  array<string, mixed>  $context
+     * @return array<string, mixed>|null
+     */
+    private static function faqPage(array $context): ?array
+    {
+        /** @var Page $page */
+        $page = $context['page'];
+        $pairs = [];
+
+        preg_match_all(
+            '/<h[1-6][^>]*>(.*?)<\/h[1-6]>\s*<p[^>]*>(.*?)<\/p>/is',
+            (string) $page->content,
+            $matches,
+            PREG_SET_ORDER,
+        );
+
+        foreach ($matches as $match) {
+            $question = trim(html_entity_decode(strip_tags($match[1]), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+            $answer = trim(html_entity_decode(strip_tags($match[2]), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+
+            if ($question === '' || $answer === '') {
+                continue;
+            }
+
+            $pairs[] = [
+                '@type' => 'Question',
+                'name' => $question,
+                'acceptedAnswer' => [
+                    '@type' => 'Answer',
+                    'text' => $answer,
+                ],
+            ];
+        }
+
+        if ($pairs === []) {
+            return null;
+        }
+
+        return [
+            '@type' => 'FAQPage',
+            '@id' => $context['url'].'#faq',
+            'url' => $context['url'],
+            'name' => $page->name ?: $context['title'],
+            'inLanguage' => $context['locale'],
+            'mainEntity' => $pairs,
+        ];
     }
 
     /**
