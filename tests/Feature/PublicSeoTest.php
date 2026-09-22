@@ -59,7 +59,7 @@ class PublicSeoTest extends TestCase
         $this->assertSame($expectedTitle, $this->meta($document, 'og:title'));
         $this->assertSame($expectedTitle, $this->meta($document, 'twitter:title'));
         $this->assertSame('website', $this->meta($document, 'og:type'));
-        $this->assertSame(asset('images/bg-3-1920x480.jpg'), $this->meta($document, 'og:image'));
+        $this->assertSame(asset('images/og-default.png'), $this->meta($document, 'og:image'));
         $this->assertSame($expectedDescription, $this->meta($document, 'og:description'));
         $this->assertSame($expectedTitle, $this->schemaNode($document, 'WebPage')['name']);
         $this->assertSame('', $this->meta($document, 'keywords'));
@@ -191,7 +191,7 @@ class PublicSeoTest extends TestCase
     #[TestWith(['uploads/widgets/photo.jpg', self::WIDGET_IMAGE_URL])]
     #[TestWith(['https://cdn.example.com/photo.jpg', 'https://cdn.example.com/photo.jpg'])]
     #[TestWith(['//cdn.example.com/photo.jpg', 'http://cdn.example.com/photo.jpg'])]
-    #[TestWith([null, 'http://localhost:8100/images/bg-3-1920x480.jpg'])]
+    #[TestWith([null, 'http://localhost:8100/images/og-default.png'])]
     public function test_cms_social_images_are_absolute(?string $image, string $expected): void
     {
         $this->seedPublicSite();
