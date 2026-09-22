@@ -1,217 +1,246 @@
 {
-    "table": "posts",
-    "identity": [
-        "slug"
-    ],
-    "translatable": [
-        "name",
-        "content",
-        "description",
-        "keywords"
-    ],
-    "rows": [
-        {
-            "id": 1,
-            "category_id": 1,
-            "slug": "post-1",
-            "status": "published",
-            "img_path": "img_path",
-            "user_id": 1,
-            "menu_item_id": null,
-            "i18n": {
-                "en": {
-                    "name": "Post 1",
-                    "content": "Post 1",
-                    "description": null,
-                    "keywords": null
-                },
-                "uk": {
-                    "name": "Пост 1",
-                    "content": "Пост 1",
-                    "description": null,
-                    "keywords": null
-                },
-                "pl": {
-                    "name": "Wpis 1",
-                    "content": "Wpis 1",
-                    "description": null,
-                    "keywords": null
-                }
-            }
+  "table": "posts",
+  "identity": [
+    "slug"
+  ],
+  "translatable": [
+    "name",
+    "content",
+    "description",
+    "keywords"
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "category_id": 1,
+      "slug": "post-1",
+      "status": "published",
+      "img_path": "img_path",
+      "user_id": 1,
+      "menu_item_id": null,
+      "i18n": {
+        "en": {
+          "name": "Post 1",
+          "content": "Post 1",
+          "description": null,
+          "keywords": null
         },
-        {
-            "id": 2,
-            "category_id": 1,
-            "slug": "post-2",
-            "status": "published",
-            "img_path": "img_path",
-            "user_id": 1,
-            "menu_item_id": null,
-            "i18n": {
-                "en": {
-                    "name": "Post 2",
-                    "content": "Content 2",
-                    "description": null,
-                    "keywords": null
-                },
-                "uk": {
-                    "name": "Пост 2",
-                    "content": "Вміст 2",
-                    "description": null,
-                    "keywords": null
-                },
-                "pl": {
-                    "name": "Wpis 2",
-                    "content": "Treść 2",
-                    "description": null,
-                    "keywords": null
-                }
-            }
+        "uk": {
+          "name": "Пост 1",
+          "content": "Пост 1",
+          "description": null,
+          "keywords": null
         },
-        {
-            "id": 3,
-            "category_id": 1,
-            "slug": "post-3",
-            "status": "published",
-            "img_path": "img_path",
-            "user_id": 1,
-            "menu_item_id": null,
-            "i18n": {
-                "en": {
-                    "name": "Post 3",
-                    "content": "Content 3",
-                    "description": null,
-                    "keywords": null
-                },
-                "uk": {
-                    "name": "Пост 3",
-                    "content": "Вміст 3",
-                    "description": null,
-                    "keywords": null
-                },
-                "pl": {
-                    "name": "Wpis 3",
-                    "content": "Treść 3",
-                    "description": null,
-                    "keywords": null
-                }
-            }
-        },
-        {
-            "id": 4,
-            "category_id": 1,
-            "slug": "post-4",
-            "status": "published",
-            "img_path": "img_path",
-            "user_id": 1,
-            "menu_item_id": null,
-            "i18n": {
-                "en": {
-                    "name": "Post 4",
-                    "content": "Content 4",
-                    "description": null,
-                    "keywords": null
-                },
-                "uk": {
-                    "name": "Пост 4",
-                    "content": "Вміст 4",
-                    "description": null,
-                    "keywords": null
-                },
-                "pl": {
-                    "name": "Wpis 4",
-                    "content": "Treść 4",
-                    "description": null,
-                    "keywords": null
-                }
-            }
-        },
-        {
-            "id": 5,
-            "category_id": 1,
-            "slug": "post-5",
-            "status": "published",
-            "img_path": "img_path",
-            "user_id": 1,
-            "menu_item_id": null,
-            "i18n": {
-                "en": {
-                    "name": "Post 5",
-                    "content": "Content 5",
-                    "description": null,
-                    "keywords": null
-                },
-                "uk": {
-                    "name": "Пост 5",
-                    "content": "Вміст 5",
-                    "description": null,
-                    "keywords": null
-                },
-                "pl": {
-                    "name": "Wpis 5",
-                    "content": "Treść 5",
-                    "description": null,
-                    "keywords": null
-                }
-            }
-        },
-        {
-            "id": 6,
-            "category_id": 1,
-            "slug": "post-6",
-            "status": "published",
-            "img_path": "img_path",
-            "user_id": 1,
-            "menu_item_id": null,
-            "i18n": {
-                "en": {
-                    "name": "Post 6",
-                    "content": "Content 6",
-                    "description": null,
-                    "keywords": null
-                },
-                "uk": {
-                    "name": "Пост 6",
-                    "content": "Вміст 6",
-                    "description": null,
-                    "keywords": null
-                },
-                "pl": {
-                    "name": "Wpis 6",
-                    "content": "Treść 6",
-                    "description": null,
-                    "keywords": null
-                }
-            }
-        },
-        {
-            "id": 7,
-            "category_id": 1,
-            "slug": "post-7",
-            "status": "published",
-            "img_path": "img_path",
-            "user_id": 1,
-            "menu_item_id": null,
-            "i18n": {
-                "en": {
-                    "name": "Post 7",
-                    "content": "Content 7",
-                    "description": null,
-                    "keywords": null
-                },
-                "uk": {
-                    "name": "Пост 7",
-                    "content": "Вміст 7",
-                    "description": null,
-                    "keywords": null
-                },
-                "pl": {
-                    "name": "Wpis 7",
-                    "content": "Treść 7",
-                    "description": null,
-                    "keywords": null
-                }
-            }
+        "pl": {
+          "name": "Wpis 1",
+          "content": "Wpis 1",
+          "description": null,
+          "keywords": null
         }
-    ]
+      }
+    },
+    {
+      "id": 2,
+      "category_id": 1,
+      "slug": "post-2",
+      "status": "published",
+      "img_path": "img_path",
+      "user_id": 1,
+      "menu_item_id": null,
+      "i18n": {
+        "en": {
+          "name": "Post 2",
+          "content": "Content 2",
+          "description": null,
+          "keywords": null
+        },
+        "uk": {
+          "name": "Пост 2",
+          "content": "Вміст 2",
+          "description": null,
+          "keywords": null
+        },
+        "pl": {
+          "name": "Wpis 2",
+          "content": "Treść 2",
+          "description": null,
+          "keywords": null
+        }
+      }
+    },
+    {
+      "id": 3,
+      "category_id": 1,
+      "slug": "post-3",
+      "status": "published",
+      "img_path": "img_path",
+      "user_id": 1,
+      "menu_item_id": null,
+      "i18n": {
+        "en": {
+          "name": "Post 3",
+          "content": "Content 3",
+          "description": null,
+          "keywords": null
+        },
+        "uk": {
+          "name": "Пост 3",
+          "content": "Вміст 3",
+          "description": null,
+          "keywords": null
+        },
+        "pl": {
+          "name": "Wpis 3",
+          "content": "Treść 3",
+          "description": null,
+          "keywords": null
+        }
+      }
+    },
+    {
+      "id": 4,
+      "category_id": 1,
+      "slug": "post-4",
+      "status": "published",
+      "img_path": "img_path",
+      "user_id": 1,
+      "menu_item_id": null,
+      "i18n": {
+        "en": {
+          "name": "Post 4",
+          "content": "Content 4",
+          "description": null,
+          "keywords": null
+        },
+        "uk": {
+          "name": "Пост 4",
+          "content": "Вміст 4",
+          "description": null,
+          "keywords": null
+        },
+        "pl": {
+          "name": "Wpis 4",
+          "content": "Treść 4",
+          "description": null,
+          "keywords": null
+        }
+      }
+    },
+    {
+      "id": 5,
+      "category_id": 1,
+      "slug": "post-5",
+      "status": "published",
+      "img_path": "img_path",
+      "user_id": 1,
+      "menu_item_id": null,
+      "i18n": {
+        "en": {
+          "name": "Post 5",
+          "content": "Content 5",
+          "description": null,
+          "keywords": null
+        },
+        "uk": {
+          "name": "Пост 5",
+          "content": "Вміст 5",
+          "description": null,
+          "keywords": null
+        },
+        "pl": {
+          "name": "Wpis 5",
+          "content": "Treść 5",
+          "description": null,
+          "keywords": null
+        }
+      }
+    },
+    {
+      "id": 6,
+      "category_id": 1,
+      "slug": "post-6",
+      "status": "published",
+      "img_path": "img_path",
+      "user_id": 1,
+      "menu_item_id": null,
+      "i18n": {
+        "en": {
+          "name": "Post 6",
+          "content": "Content 6",
+          "description": null,
+          "keywords": null
+        },
+        "uk": {
+          "name": "Пост 6",
+          "content": "Вміст 6",
+          "description": null,
+          "keywords": null
+        },
+        "pl": {
+          "name": "Wpis 6",
+          "content": "Treść 6",
+          "description": null,
+          "keywords": null
+        }
+      }
+    },
+    {
+      "id": 7,
+      "category_id": 1,
+      "slug": "post-7",
+      "status": "published",
+      "img_path": "img_path",
+      "user_id": 1,
+      "menu_item_id": null,
+      "i18n": {
+        "en": {
+          "name": "Post 7",
+          "content": "Content 7",
+          "description": null,
+          "keywords": null
+        },
+        "uk": {
+          "name": "Пост 7",
+          "content": "Вміст 7",
+          "description": null,
+          "keywords": null
+        },
+        "pl": {
+          "name": "Wpis 7",
+          "content": "Treść 7",
+          "description": null,
+          "keywords": null
+        }
+      }
+    },
+    {
+      "id": 8,
+      "category_id": 2,
+      "slug": "laravel-multi-tenant-saas-architecture",
+      "status": "published",
+      "img_path": "uploads/articles/vetspace-multitenant-hero.svg",
+      "user_id": 1,
+      "menu_item_id": null,
+      "i18n": {
+        "en": {
+          "name": "Laravel Multi-Tenant SaaS Architecture: Domain-Based Tenancy and PostgreSQL Isolation",
+          "content": "<p>Multi-tenancy is easy to describe and difficult to keep safe. One application serves several organisations, each organisation expects its own users and data, and the platform owner still needs a central place for billing, support and administration. A domain lookup is only the first step. The real work is keeping tenant context correct across HTTP requests, authentication, queues, events and background services.</p>\n<div class=\"lead\"><p><strong>The business value is controlled growth:</strong> one product can serve many clinics while their operational data stays separated, onboarding follows a repeatable path, and the team can change the platform without creating a different codebase for every customer.</p></div>\n<h3>Start with the boundary, not the table column</h3>\n<p>VetSpace is a veterinary practice platform with a central owner portal and a tenant-specific clinic application. A clinic receives its own domain, staff work inside that clinic context, and pet owners use a shared central surface. That is a different problem from adding <code>tenant_id</code> to a few tables. The application has to decide which context a request belongs to before it reads the data behind that request.</p>\n<p>The project uses Laravel 13, PostgreSQL and <code>stancl/tenancy</code>. Tenant domains are represented by a dedicated <code>Domain</code> model, while <code>Tenant</code> uses the package's database and domain concerns. The tenant model can therefore carry both the business identity and the connection details needed to initialise the correct context.</p>\n<h3>One application, two API contexts</h3>\n<p>VetSpace keeps central and tenant routes in the same Laravel application, but they do different jobs. The central API owns accounts, pets, orders, the clinic catalogue and subscription information. Tenant routes handle branches, services, doctors, rooms, appointments, visits and clinic reviews.</p>\n<p>This separation is visible in the route files rather than hidden in a large controller. Tenant routes are loaded by <code>TenancyServiceProvider</code>, and <code>tenant_api.php</code> applies domain initialisation before the request reaches a tenant controller. The result is a straightforward rule: a central endpoint reads central data; a clinic endpoint runs inside the clinic's database context.</p>\n<figure class=\"service-diagram\"><img src=\"/uploads/articles/vetspace-multitenant-architecture.svg\" alt=\"VetSpace multi-tenant architecture: central API and tenant API resolved by domain\" loading=\"lazy\" /></figure>\n<h3>Choosing isolation per plan</h3>\n<p>The platform does not treat every tenant as identical. The architecture supports a PostgreSQL schema or database for a tenant, with the plan deciding which level of isolation is appropriate. A shared database with separate schemas keeps smaller tenants operationally manageable. A dedicated database gives an enterprise tenant a stronger boundary and a simpler answer to questions about backup, restore and data residency.</p>\n<p>This choice has a cost. More isolation means more connection management, migrations and operational work. Less isolation reduces that overhead but makes application-level scoping and restore procedures more important. The useful decision is the one that matches the product's support, compliance and recovery requirements; “database per tenant” is not automatically the right answer for every customer.</p>\n<h3>Compare the isolation options before choosing one</h3>\n<p>Common Laravel designs fall into three groups: shared tables with a tenant key, separate PostgreSQL schemas, and separate databases. Shared tables are simple to operate but every query boundary must be correct. Schemas add a database-enforced namespace while keeping one PostgreSQL installation. Separate databases improve isolation and tenant-specific recovery, but they increase connection, migration and monitoring work. The official Stancl tenancy documentation treats domain identification and database management as separate concerns for exactly this reason.</p>\n<p>In VetSpace, the plan-aware choice is part of the product model. It lets the platform avoid paying enterprise isolation costs for every small clinic while keeping a stronger option available when the business case requires it. That is a product decision expressed through infrastructure, not a package default.</p>\n<h3>Middleware order is part of the security model</h3>\n<p>In a tenant API, authentication cannot be treated as an unrelated first step. The tenant has to be identified before the application knows which database should resolve a tenant-bound user or token. The project makes that dependency explicit by putting <code>InitializeTenancyByDomain</code> into the middleware priority from <code>TenancyServiceProvider</code>.</p>\n<pre class=\"code-block\"><code>protected function makeTenancyMiddlewareHighestPriority(): void\n{\n    $tenancyMiddleware = [\n        Middleware\\PreventAccessFromCentralDomains::class,\n        Middleware\\InitializeTenancyByDomain::class,\n        Middleware\\InitializeTenancyBySubdomain::class,\n    ];\n\n    foreach (array_reverse($tenancyMiddleware) as $middleware) {\n        $this-&gt;app[Kernel::class]\n            -&gt;prependToMiddlewarePriority($middleware);\n    }\n}</code></pre>\n<p>The route declaration explains why this matters: even if <code>auth:sanctum</code> appears before the tenancy middleware in the array, Laravel's priority list makes domain initialisation run first. This is the kind of detail that deserves a test and a comment because a future developer can otherwise “simplify” the route and change the data boundary by accident.</p>\n<h3>Provisioning a tenant is a lifecycle, not an insert</h3>\n<p>Creating a tenant starts a pipeline. The project creates the database, runs tenant migrations, seeds the tenant data, creates the main branch and replicates the owner. Deleting a tenant runs the corresponding database cleanup. Keeping these steps together makes onboarding repeatable and gives the platform one place to reason about partial failure.</p>\n<pre class=\"code-block\"><code>JobPipeline::make([\n    Jobs\\CreateDatabase::class,\n    Jobs\\MigrateDatabase::class,\n    Jobs\\SeedDatabase::class,\n    CreateMainBranch::class,\n    ReplicateOwnerToTenant::class,\n])-&gt;send(fn (Events\\TenantCreated $event) =&gt; $event-&gt;tenant)\n  -&gt;shouldBeQueued(false);</code></pre>\n<p>The pipeline is deliberately synchronous at this boundary. Tenant creation should not report success while the clinic is still missing its tables or its first branch. Other work can be queued after the tenant is in a valid state.</p>\n<h3>Queued work must carry tenant context</h3>\n<p>Background jobs are where multi-tenancy becomes operationally real. <code>RunAiAnalysis</code> stores the tenant ID and analysis ID, looks up the tenant in the central context, initialises tenancy, performs the analysis, and ends the tenant context in a <code>finally</code> block. That last step matters when a long-running worker processes more than one tenant during its lifetime.</p>\n<pre class=\"code-block\"><code>try {\n    tenancy()-&gt;initialize($tenant);\n    $analysis = AiAnalysis::find($this-&gt;analysisId);\n    $service-&gt;analyze($analysis);\n} finally {\n    if (tenancy()-&gt;initialized) {\n        tenancy()-&gt;end();\n    }\n}</code></pre>\n<p>The same principle appears in jobs that replicate users, create a clinic's main branch and synchronise VetCard data. A queue payload that contains only a record ID is not enough when that ID is meaningful only inside one tenant database.</p>\n<h3>Central records still need a second boundary</h3>\n<p>Not every record belongs exclusively to one clinic. Owners and pets live in a central space and can be linked to several clinics through pivot tables. VetSpace uses a <code>ScopesToClinic</code> trait to constrain those reads and writes to the authenticated user's clinic IDs, optionally including a branch. This protects against an insecure direct object reference even when the model itself is central.</p>\n<p>That distinction is easy to miss: tenant database isolation protects tenant-local tables, while relationship scoping protects shared records. Both boundaries are required for a platform where an owner can visit more than one clinic.</p>\n<h3>What this architecture buys the business</h3>\n<p>The benefit is not the number of Laravel packages in <code>composer.json</code>. It is the ability to add a clinic without copying the application, to give different plans an appropriate isolation level, and to keep central billing and tenant operations connected without mixing their data. It also makes the operational risks visible: tenant migrations, queue context, domain routing, backup strategy and cross-clinic access all become explicit design work.</p>\n<h3>Where this approach is too expensive</h3>\n<p>A small internal tool with one organisation does not need domain-based tenancy, tenant database managers and a provisioning pipeline. A simple membership product may be better served by one database with carefully enforced row scoping. Multi-tenancy earns its complexity when several organisations share a product and the cost of data leakage, duplicated deployments or manual onboarding is higher than the infrastructure overhead.</p>\n<p>When the boundary is real, design it early. Share the domains, data-isolation requirement and expected onboarding flow, and we can map the smallest architecture that keeps those boundaries dependable.</p>",
+          "description": "A practical look at VetSpace multi-tenancy: domain routing, PostgreSQL isolation, Sanctum ordering, tenant provisioning and queued jobs.",
+          "keywords": "Laravel multi tenancy, Laravel SaaS architecture, PostgreSQL tenant isolation, domain based tenancy, VetSpace"
+        },
+        "uk": {
+          "name": "Laravel Multi-Tenant SaaS Architecture: Domain-Based Tenancy and PostgreSQL Isolation",
+          "content": "<p>Multi-tenancy is easy to describe and difficult to keep safe. One application serves several organisations, each organisation expects its own users and data, and the platform owner still needs a central place for billing, support and administration. A domain lookup is only the first step. The real work is keeping tenant context correct across HTTP requests, authentication, queues, events and background services.</p>\n<div class=\"lead\"><p><strong>The business value is controlled growth:</strong> one product can serve many clinics while their operational data stays separated, onboarding follows a repeatable path, and the team can change the platform without creating a different codebase for every customer.</p></div>\n<h3>Start with the boundary, not the table column</h3>\n<p>VetSpace is a veterinary practice platform with a central owner portal and a tenant-specific clinic application. A clinic receives its own domain, staff work inside that clinic context, and pet owners use a shared central surface. That is a different problem from adding <code>tenant_id</code> to a few tables. The application has to decide which context a request belongs to before it reads the data behind that request.</p>\n<p>The project uses Laravel 13, PostgreSQL and <code>stancl/tenancy</code>. Tenant domains are represented by a dedicated <code>Domain</code> model, while <code>Tenant</code> uses the package's database and domain concerns. The tenant model can therefore carry both the business identity and the connection details needed to initialise the correct context.</p>\n<h3>One application, two API contexts</h3>\n<p>VetSpace keeps central and tenant routes in the same Laravel application, but they do different jobs. The central API owns accounts, pets, orders, the clinic catalogue and subscription information. Tenant routes handle branches, services, doctors, rooms, appointments, visits and clinic reviews.</p>\n<p>This separation is visible in the route files rather than hidden in a large controller. Tenant routes are loaded by <code>TenancyServiceProvider</code>, and <code>tenant_api.php</code> applies domain initialisation before the request reaches a tenant controller. The result is a straightforward rule: a central endpoint reads central data; a clinic endpoint runs inside the clinic's database context.</p>\n<figure class=\"service-diagram\"><img src=\"/uploads/articles/vetspace-multitenant-architecture.svg\" alt=\"VetSpace multi-tenant architecture: central API and tenant API resolved by domain\" loading=\"lazy\" /></figure>\n<h3>Choosing isolation per plan</h3>\n<p>The platform does not treat every tenant as identical. The architecture supports a PostgreSQL schema or database for a tenant, with the plan deciding which level of isolation is appropriate. A shared database with separate schemas keeps smaller tenants operationally manageable. A dedicated database gives an enterprise tenant a stronger boundary and a simpler answer to questions about backup, restore and data residency.</p>\n<p>This choice has a cost. More isolation means more connection management, migrations and operational work. Less isolation reduces that overhead but makes application-level scoping and restore procedures more important. The useful decision is the one that matches the product's support, compliance and recovery requirements; “database per tenant” is not automatically the right answer for every customer.</p>\n<h3>Compare the isolation options before choosing one</h3>\n<p>Common Laravel designs fall into three groups: shared tables with a tenant key, separate PostgreSQL schemas, and separate databases. Shared tables are simple to operate but every query boundary must be correct. Schemas add a database-enforced namespace while keeping one PostgreSQL installation. Separate databases improve isolation and tenant-specific recovery, but they increase connection, migration and monitoring work. The official Stancl tenancy documentation treats domain identification and database management as separate concerns for exactly this reason.</p>\n<p>In VetSpace, the plan-aware choice is part of the product model. It lets the platform avoid paying enterprise isolation costs for every small clinic while keeping a stronger option available when the business case requires it. That is a product decision expressed through infrastructure, not a package default.</p>\n<h3>Middleware order is part of the security model</h3>\n<p>In a tenant API, authentication cannot be treated as an unrelated first step. The tenant has to be identified before the application knows which database should resolve a tenant-bound user or token. The project makes that dependency explicit by putting <code>InitializeTenancyByDomain</code> into the middleware priority from <code>TenancyServiceProvider</code>.</p>\n<pre class=\"code-block\"><code>protected function makeTenancyMiddlewareHighestPriority(): void\n{\n    $tenancyMiddleware = [\n        Middleware\\PreventAccessFromCentralDomains::class,\n        Middleware\\InitializeTenancyByDomain::class,\n        Middleware\\InitializeTenancyBySubdomain::class,\n    ];\n\n    foreach (array_reverse($tenancyMiddleware) as $middleware) {\n        $this-&gt;app[Kernel::class]\n            -&gt;prependToMiddlewarePriority($middleware);\n    }\n}</code></pre>\n<p>The route declaration explains why this matters: even if <code>auth:sanctum</code> appears before the tenancy middleware in the array, Laravel's priority list makes domain initialisation run first. This is the kind of detail that deserves a test and a comment because a future developer can otherwise “simplify” the route and change the data boundary by accident.</p>\n<h3>Provisioning a tenant is a lifecycle, not an insert</h3>\n<p>Creating a tenant starts a pipeline. The project creates the database, runs tenant migrations, seeds the tenant data, creates the main branch and replicates the owner. Deleting a tenant runs the corresponding database cleanup. Keeping these steps together makes onboarding repeatable and gives the platform one place to reason about partial failure.</p>\n<pre class=\"code-block\"><code>JobPipeline::make([\n    Jobs\\CreateDatabase::class,\n    Jobs\\MigrateDatabase::class,\n    Jobs\\SeedDatabase::class,\n    CreateMainBranch::class,\n    ReplicateOwnerToTenant::class,\n])-&gt;send(fn (Events\\TenantCreated $event) =&gt; $event-&gt;tenant)\n  -&gt;shouldBeQueued(false);</code></pre>\n<p>The pipeline is deliberately synchronous at this boundary. Tenant creation should not report success while the clinic is still missing its tables or its first branch. Other work can be queued after the tenant is in a valid state.</p>\n<h3>Queued work must carry tenant context</h3>\n<p>Background jobs are where multi-tenancy becomes operationally real. <code>RunAiAnalysis</code> stores the tenant ID and analysis ID, looks up the tenant in the central context, initialises tenancy, performs the analysis, and ends the tenant context in a <code>finally</code> block. That last step matters when a long-running worker processes more than one tenant during its lifetime.</p>\n<pre class=\"code-block\"><code>try {\n    tenancy()-&gt;initialize($tenant);\n    $analysis = AiAnalysis::find($this-&gt;analysisId);\n    $service-&gt;analyze($analysis);\n} finally {\n    if (tenancy()-&gt;initialized) {\n        tenancy()-&gt;end();\n    }\n}</code></pre>\n<p>The same principle appears in jobs that replicate users, create a clinic's main branch and synchronise VetCard data. A queue payload that contains only a record ID is not enough when that ID is meaningful only inside one tenant database.</p>\n<h3>Central records still need a second boundary</h3>\n<p>Not every record belongs exclusively to one clinic. Owners and pets live in a central space and can be linked to several clinics through pivot tables. VetSpace uses a <code>ScopesToClinic</code> trait to constrain those reads and writes to the authenticated user's clinic IDs, optionally including a branch. This protects against an insecure direct object reference even when the model itself is central.</p>\n<p>That distinction is easy to miss: tenant database isolation protects tenant-local tables, while relationship scoping protects shared records. Both boundaries are required for a platform where an owner can visit more than one clinic.</p>\n<h3>What this architecture buys the business</h3>\n<p>The benefit is not the number of Laravel packages in <code>composer.json</code>. It is the ability to add a clinic without copying the application, to give different plans an appropriate isolation level, and to keep central billing and tenant operations connected without mixing their data. It also makes the operational risks visible: tenant migrations, queue context, domain routing, backup strategy and cross-clinic access all become explicit design work.</p>\n<h3>Where this approach is too expensive</h3>\n<p>A small internal tool with one organisation does not need domain-based tenancy, tenant database managers and a provisioning pipeline. A simple membership product may be better served by one database with carefully enforced row scoping. Multi-tenancy earns its complexity when several organisations share a product and the cost of data leakage, duplicated deployments or manual onboarding is higher than the infrastructure overhead.</p>\n<p>When the boundary is real, design it early. Share the domains, data-isolation requirement and expected onboarding flow, and we can map the smallest architecture that keeps those boundaries dependable.</p>",
+          "description": "A practical look at VetSpace multi-tenancy: domain routing, PostgreSQL isolation, Sanctum ordering, tenant provisioning and queued jobs.",
+          "keywords": "Laravel multi tenancy, Laravel SaaS architecture, PostgreSQL tenant isolation, domain based tenancy, VetSpace"
+        },
+        "pl": {
+          "name": "Laravel Multi-Tenant SaaS Architecture: Domain-Based Tenancy and PostgreSQL Isolation",
+          "content": "<p>Multi-tenancy is easy to describe and difficult to keep safe. One application serves several organisations, each organisation expects its own users and data, and the platform owner still needs a central place for billing, support and administration. A domain lookup is only the first step. The real work is keeping tenant context correct across HTTP requests, authentication, queues, events and background services.</p>\n<div class=\"lead\"><p><strong>The business value is controlled growth:</strong> one product can serve many clinics while their operational data stays separated, onboarding follows a repeatable path, and the team can change the platform without creating a different codebase for every customer.</p></div>\n<h3>Start with the boundary, not the table column</h3>\n<p>VetSpace is a veterinary practice platform with a central owner portal and a tenant-specific clinic application. A clinic receives its own domain, staff work inside that clinic context, and pet owners use a shared central surface. That is a different problem from adding <code>tenant_id</code> to a few tables. The application has to decide which context a request belongs to before it reads the data behind that request.</p>\n<p>The project uses Laravel 13, PostgreSQL and <code>stancl/tenancy</code>. Tenant domains are represented by a dedicated <code>Domain</code> model, while <code>Tenant</code> uses the package's database and domain concerns. The tenant model can therefore carry both the business identity and the connection details needed to initialise the correct context.</p>\n<h3>One application, two API contexts</h3>\n<p>VetSpace keeps central and tenant routes in the same Laravel application, but they do different jobs. The central API owns accounts, pets, orders, the clinic catalogue and subscription information. Tenant routes handle branches, services, doctors, rooms, appointments, visits and clinic reviews.</p>\n<p>This separation is visible in the route files rather than hidden in a large controller. Tenant routes are loaded by <code>TenancyServiceProvider</code>, and <code>tenant_api.php</code> applies domain initialisation before the request reaches a tenant controller. The result is a straightforward rule: a central endpoint reads central data; a clinic endpoint runs inside the clinic's database context.</p>\n<figure class=\"service-diagram\"><img src=\"/uploads/articles/vetspace-multitenant-architecture.svg\" alt=\"VetSpace multi-tenant architecture: central API and tenant API resolved by domain\" loading=\"lazy\" /></figure>\n<h3>Choosing isolation per plan</h3>\n<p>The platform does not treat every tenant as identical. The architecture supports a PostgreSQL schema or database for a tenant, with the plan deciding which level of isolation is appropriate. A shared database with separate schemas keeps smaller tenants operationally manageable. A dedicated database gives an enterprise tenant a stronger boundary and a simpler answer to questions about backup, restore and data residency.</p>\n<p>This choice has a cost. More isolation means more connection management, migrations and operational work. Less isolation reduces that overhead but makes application-level scoping and restore procedures more important. The useful decision is the one that matches the product's support, compliance and recovery requirements; “database per tenant” is not automatically the right answer for every customer.</p>\n<h3>Compare the isolation options before choosing one</h3>\n<p>Common Laravel designs fall into three groups: shared tables with a tenant key, separate PostgreSQL schemas, and separate databases. Shared tables are simple to operate but every query boundary must be correct. Schemas add a database-enforced namespace while keeping one PostgreSQL installation. Separate databases improve isolation and tenant-specific recovery, but they increase connection, migration and monitoring work. The official Stancl tenancy documentation treats domain identification and database management as separate concerns for exactly this reason.</p>\n<p>In VetSpace, the plan-aware choice is part of the product model. It lets the platform avoid paying enterprise isolation costs for every small clinic while keeping a stronger option available when the business case requires it. That is a product decision expressed through infrastructure, not a package default.</p>\n<h3>Middleware order is part of the security model</h3>\n<p>In a tenant API, authentication cannot be treated as an unrelated first step. The tenant has to be identified before the application knows which database should resolve a tenant-bound user or token. The project makes that dependency explicit by putting <code>InitializeTenancyByDomain</code> into the middleware priority from <code>TenancyServiceProvider</code>.</p>\n<pre class=\"code-block\"><code>protected function makeTenancyMiddlewareHighestPriority(): void\n{\n    $tenancyMiddleware = [\n        Middleware\\PreventAccessFromCentralDomains::class,\n        Middleware\\InitializeTenancyByDomain::class,\n        Middleware\\InitializeTenancyBySubdomain::class,\n    ];\n\n    foreach (array_reverse($tenancyMiddleware) as $middleware) {\n        $this-&gt;app[Kernel::class]\n            -&gt;prependToMiddlewarePriority($middleware);\n    }\n}</code></pre>\n<p>The route declaration explains why this matters: even if <code>auth:sanctum</code> appears before the tenancy middleware in the array, Laravel's priority list makes domain initialisation run first. This is the kind of detail that deserves a test and a comment because a future developer can otherwise “simplify” the route and change the data boundary by accident.</p>\n<h3>Provisioning a tenant is a lifecycle, not an insert</h3>\n<p>Creating a tenant starts a pipeline. The project creates the database, runs tenant migrations, seeds the tenant data, creates the main branch and replicates the owner. Deleting a tenant runs the corresponding database cleanup. Keeping these steps together makes onboarding repeatable and gives the platform one place to reason about partial failure.</p>\n<pre class=\"code-block\"><code>JobPipeline::make([\n    Jobs\\CreateDatabase::class,\n    Jobs\\MigrateDatabase::class,\n    Jobs\\SeedDatabase::class,\n    CreateMainBranch::class,\n    ReplicateOwnerToTenant::class,\n])-&gt;send(fn (Events\\TenantCreated $event) =&gt; $event-&gt;tenant)\n  -&gt;shouldBeQueued(false);</code></pre>\n<p>The pipeline is deliberately synchronous at this boundary. Tenant creation should not report success while the clinic is still missing its tables or its first branch. Other work can be queued after the tenant is in a valid state.</p>\n<h3>Queued work must carry tenant context</h3>\n<p>Background jobs are where multi-tenancy becomes operationally real. <code>RunAiAnalysis</code> stores the tenant ID and analysis ID, looks up the tenant in the central context, initialises tenancy, performs the analysis, and ends the tenant context in a <code>finally</code> block. That last step matters when a long-running worker processes more than one tenant during its lifetime.</p>\n<pre class=\"code-block\"><code>try {\n    tenancy()-&gt;initialize($tenant);\n    $analysis = AiAnalysis::find($this-&gt;analysisId);\n    $service-&gt;analyze($analysis);\n} finally {\n    if (tenancy()-&gt;initialized) {\n        tenancy()-&gt;end();\n    }\n}</code></pre>\n<p>The same principle appears in jobs that replicate users, create a clinic's main branch and synchronise VetCard data. A queue payload that contains only a record ID is not enough when that ID is meaningful only inside one tenant database.</p>\n<h3>Central records still need a second boundary</h3>\n<p>Not every record belongs exclusively to one clinic. Owners and pets live in a central space and can be linked to several clinics through pivot tables. VetSpace uses a <code>ScopesToClinic</code> trait to constrain those reads and writes to the authenticated user's clinic IDs, optionally including a branch. This protects against an insecure direct object reference even when the model itself is central.</p>\n<p>That distinction is easy to miss: tenant database isolation protects tenant-local tables, while relationship scoping protects shared records. Both boundaries are required for a platform where an owner can visit more than one clinic.</p>\n<h3>What this architecture buys the business</h3>\n<p>The benefit is not the number of Laravel packages in <code>composer.json</code>. It is the ability to add a clinic without copying the application, to give different plans an appropriate isolation level, and to keep central billing and tenant operations connected without mixing their data. It also makes the operational risks visible: tenant migrations, queue context, domain routing, backup strategy and cross-clinic access all become explicit design work.</p>\n<h3>Where this approach is too expensive</h3>\n<p>A small internal tool with one organisation does not need domain-based tenancy, tenant database managers and a provisioning pipeline. A simple membership product may be better served by one database with carefully enforced row scoping. Multi-tenancy earns its complexity when several organisations share a product and the cost of data leakage, duplicated deployments or manual onboarding is higher than the infrastructure overhead.</p>\n<p>When the boundary is real, design it early. Share the domains, data-isolation requirement and expected onboarding flow, and we can map the smallest architecture that keeps those boundaries dependable.</p>",
+          "description": "A practical look at VetSpace multi-tenancy: domain routing, PostgreSQL isolation, Sanctum ordering, tenant provisioning and queued jobs.",
+          "keywords": "Laravel multi tenancy, Laravel SaaS architecture, PostgreSQL tenant isolation, domain based tenancy, VetSpace"
+        }
+      }
+    }
+  ]
 }

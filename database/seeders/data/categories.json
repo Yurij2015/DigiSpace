@@ -26,6 +26,25 @@
           "description": "Kategoria 1"
         }
       }
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "slug": "engineering-notes",
+      "i18n": {
+        "en": {
+          "name": "Engineering Notes",
+          "description": "Engineering Notes"
+        },
+        "uk": {
+          "name": "Engineering Notes",
+          "description": "Engineering Notes"
+        },
+        "pl": {
+          "name": "Engineering Notes",
+          "description": "Engineering Notes"
+        }
+      }
     }
   ]
 }
