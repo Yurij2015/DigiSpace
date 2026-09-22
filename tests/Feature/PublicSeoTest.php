@@ -255,6 +255,41 @@ class PublicSeoTest extends TestCase
         $this->assertSame('A structured answer.', $faq['mainEntity'][0]['acceptedAnswer']['text']);
     }
 
+    public function test_pricing_page_renders_the_service_price_matrix(): void
+    {
+        $this->seedPublicSite();
+        Page::create(['slug' => 'pricing', 'name' => 'Pricing', 'description' => 'Our prices']);
+        $category = ServiceCategory::create(['name' => 'Backend']);
+        Service::create([
+            'title' => 'Laravel development',
+            'slug' => 'laravel',
+            'status' => 'active',
+            'service_category_id' => $category->id,
+            'price' => 1500,
+            'details' => 'Custom apps on Laravel',
+            'timeline' => '4–8 weeks',
+        ]);
+        Service::create([
+            'title' => 'Unpriced service',
+            'slug' => 'unpriced',
+            'status' => 'active',
+            'service_category_id' => $category->id,
+        ]);
+
+        $response = $this->get('/en/pricing');
+
+        $response->assertOk();
+        $document = $this->document($response->getContent());
+        $rows = $document->query('//a[contains(concat(" ", normalize-space(@class), " "), " price-matrix__row ")]');
+
+        $this->assertSame(1, $rows->length);
+        $this->assertStringContainsString('/en/service-category/backend/laravel', (string) $rows->item(0)->attributes->getNamedItem('href')->nodeValue);
+        $this->assertSame('Custom apps on Laravel', trim((string) $document->evaluate('string(.//span[contains(@class, "price-matrix__details")])', $rows->item(0))));
+        $this->assertSame('4–8 weeks', trim((string) $document->evaluate('string(.//span[contains(@class, "price-matrix__timeline")])', $rows->item(0))));
+        $price = preg_replace('/\s+/', ' ', trim((string) $document->evaluate('string(.//span[contains(@class, "price-matrix__price")])', $rows->item(0))));
+        $this->assertSame(__('site.price_from').' $1,500', $price);
+    }
+
     public function test_ordinary_pages_remain_indexable(): void
     {
         $this->seedPublicSite();
