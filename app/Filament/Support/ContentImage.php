@@ -23,8 +23,14 @@ class ContentImage
                 $component->state(filled($raw) ? [(string) str()->uuid() => $raw] : []);
             })
             ->getUploadedFileUsing(function (string $file) use ($disk, $url): array {
+                $fileUrl = $url && ! str_starts_with($file, 'http://')
+                    && ! str_starts_with($file, 'https://')
+                    && ! str_starts_with($file, '/')
+                    ? asset($file)
+                    : $file;
+
                 return ['name' => basename($file), 'size' => 0, 'type' => null,
-                    'url' => $url ? $file : Storage::disk($disk)->url($file)];
+                    'url' => $url ? $fileUrl : Storage::disk($disk)->url($file)];
             })
             ->saveUploadedFileUsing(function (TemporaryUploadedFile $file) use ($disk, $directory, $url): string {
                 $path = $file->storeAs($directory, str()->uuid().'.'.$file->guessExtension(), $disk);

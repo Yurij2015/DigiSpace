@@ -104,7 +104,11 @@ class Post extends Model implements HasTranslatableColumns
     protected function imgPath(): Attribute
     {
         return Attribute::make(
-            get: static fn ($value) => $value,
+            get: static fn ($value) => $value && ! str_starts_with($value, 'http://')
+                && ! str_starts_with($value, 'https://')
+                && ! str_starts_with($value, '/')
+                ? asset($value)
+                : $value,
         );
     }
 
