@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 
 const BANNER = 'consent-banner';
 const PANEL = 'consent-categories';
@@ -7,18 +7,18 @@ const SETTINGS_LINK = 'cookie-settings';
 
 const ANALYTICS_TRACKERS = ['googletagmanager', 'a.plerdy.com', 'clarity.ms/tag'];
 
-async function consentCookie(page) {
+async function consentCookie(page: Page) {
     const cookies = await page.context().cookies();
     return cookies.find((cookie: { name: string; }) => cookie.name === 'digi_consent') ?? null;
 }
 
 // All three analytics listeners are asserted together: the bug this guards against started one of
 // them and silently skipped the rest.
-async function expectAnalyticsTrackers(page, loaded: boolean) {
+async function expectAnalyticsTrackers(page: Page, loaded: boolean) {
     for (const src of ANALYTICS_TRACKERS) {
         if (loaded) {
             await page.waitForFunction(
-                (needle: any) => !!document.querySelector(`script[src*="${needle}"]`),
+                (needle: string) => !!document.querySelector(`script[src*="${needle}"]`),
                 src,
             );
         } else {
