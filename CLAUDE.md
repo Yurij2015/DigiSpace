@@ -18,6 +18,16 @@ vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit
 vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit --filter=AuthenticationTest
 vendor/bin/sail exec -T digi-space-app vendor/bin/phpunit tests/Feature/Auth/AuthenticationTest.php
 
+# Browser (e2e) tests — Playwright, hits the local app on http://localhost:8100
+# (run from the host so --ui/--headed/codegen can open real windows; inside Sail they
+#  also work headless — baseURL switches to http://digi-space-app automatically)
+npm run test:e2e            # headless run of all specs in e2e/
+npm run test:e2e:headed     # visible browser window
+npm run test:e2e:debug      # step-through inspector (PWDEBUG)
+npm run test:e2e:ui         # interactive UI mode — best for manual QA
+npm run test:e2e:report     # open the HTML report of the last run
+npm run test:e2e:codegen    # record a new spec by clicking through the site
+
 # Static analysis (Larastan level 5, app/ only) and code style
 vendor/bin/phpstan analyse
 vendor/bin/pint --dirty

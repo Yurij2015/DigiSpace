@@ -1,4 +1,8 @@
-;window.NREUM||(NREUM={});NREUM.init={distributed_tracing:{enabled:true},privacy:{cookies_enabled:true},ajax:{deny_list:["bam.eu01.nr-data.net"]}};
+/* cookies_enabled:false keeps the browser agent from writing its session cookie. Nothing is
+   stored on the device, so the agent stays outside the cookie banner and error/performance
+   data keeps arriving for every visitor. The trade-off is no session stitching: page views
+   by the same visitor are no longer linked into one session. */
+;window.NREUM||(NREUM={});NREUM.init={distributed_tracing:{enabled:true},privacy:{cookies_enabled:false},ajax:{deny_list:["bam.eu01.nr-data.net"]}};
 
 ;NREUM.loader_config={accountID:"3946944",trustKey:"3946944",agentID:"538475567",licenseKey:"NRJS-26995cb680e01431d2b",applicationID:"538475567"};
 ;NREUM.info={beacon:"bam.eu01.nr-data.net",errorBeacon:"bam.eu01.nr-data.net",licenseKey:"NRJS-26995cb680e01431d2b",applicationID:"538475567",sa:1};
