@@ -53,6 +53,7 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
 .quote-creative__clamp.is-clamped {
   display: -webkit-box;
   -webkit-line-clamp: 6;
+  line-clamp: 6;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -334,3 +335,230 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
   .price-matrix__info { flex-basis: 100%; }
   .price-matrix__arrow { display: none; }
 }
+
+/* Cookie consent banner: fixed bottom card shown by public/js/consent.js until a decision exists.
+   Uses the theme's own .button classes and square dialog corners (.snackbars/.custom-modal precedent). */
+.site-cookie-consent {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1100;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100vw;
+  padding: 16px;
+  /* keep clear of the iOS home indicator / dynamic bottom bar and stay usable in landscape */
+  padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  max-height: 100vh;
+  max-height: 100dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.site-cookie-consent[hidden] { display: none; }
+.site-cookie-consent__box {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 0 0 auto;
+  padding: 22px 26px;
+  background: #ffffff;
+  border: 1px solid #eaeced;
+  box-shadow: 0 8px 32px rgba(51, 51, 51, .18);
+  animation: site-cookie-consent-in .3s ease-out;
+}
+@keyframes site-cookie-consent-in {
+  from { transform: translateY(16px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-cookie-consent__box { animation: none; }
+}
+.site-cookie-consent.is-hiding .site-cookie-consent__box {
+  animation: none;
+  transition: transform .2s ease-in, opacity .2s ease-in;
+  transform: translateY(16px);
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-cookie-consent.is-hiding .site-cookie-consent__box { transition: none; }
+}
+.site-cookie-consent__title {
+  margin: 0 34px 8px 0;
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #151515;
+}
+.site-cookie-consent__text {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5c5c5c;
+}
+.site-cookie-consent__text a { color: #00a9ff; }
+.site-cookie-consent__dismiss {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #9b9b9b;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.site-cookie-consent__dismiss:hover { color: #151515; }
+.site-cookie-consent__categories {
+  margin: 4px 0 18px;
+  border-top: 1px solid #eaeced;
+  text-align: left;
+}
+.site-cookie-consent__categories[hidden] { display: none; }
+.site-cookie-consent__category { padding: 12px 0; }
+.site-cookie-consent__category + .site-cookie-consent__category {
+  border-top: 1px solid #eaeced;
+}
+.site-cookie-consent__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0;
+  cursor: pointer;
+}
+.site-cookie-consent__name {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: #151515;
+}
+.site-cookie-consent__hint {
+  display: block;
+  margin-top: 3px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #5c5c5c;
+}
+.site-cookie-consent__switch {
+  -webkit-appearance: none;
+  appearance: none;
+  /* The theme's checkbox plugin appends a .checkbox-custom-dummy sibling, so the label holds three
+     flex items and space-between no longer pins the switch to the right edge - auto margin does,
+     whatever the plugin adds. */
+  margin-left: auto;
+  flex: 0 0 auto;
+  position: relative;
+  width: 44px;
+  height: 24px;
+  margin: 0;
+  border: 0;
+  border-radius: 3px;
+  background: #d8dbe2;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.site-cookie-consent__label .checkbox-custom-dummy { display: none; }
+.site-cookie-consent__switch::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(21, 21, 21, .3);
+  transition: left .2s ease;
+}
+.site-cookie-consent__switch:checked {
+  background: linear-gradient(to right, #00aafc 0%, #00caad 100%);
+}
+.site-cookie-consent__switch:checked::after { left: 23px; }
+.site-cookie-consent__switch:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+}
+.site-cookie-consent__switch:focus-visible {
+  outline: 2px solid #00a9ff;
+  outline-offset: 2px;
+}
+.site-cookie-consent .button {
+  margin-top: 0;
+}
+.site-cookie-consent__actions,
+.site-cookie-consent__panel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 10px;
+}
+.site-cookie-consent__actions .button { flex: 1 1 0; padding-right: 12px; padding-left: 12px; }
+.site-cookie-consent__actions .site-cookie-consent__link { flex: 1 1 100%; }
+.site-cookie-consent__panel-actions { margin-top: 16px; }
+.site-cookie-consent__panel-actions .button { flex: 1 1 100%; }
+.site-cookie-consent__panel-actions .site-cookie-consent__link { flex: 1 1 auto; }
+.site-cookie-consent__actions[hidden] { display: none; }
+.site-cookie-consent__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 11px 8px;
+  border: 0;
+  background: none;
+  color: #5c5c5c;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.site-cookie-consent__link:hover { color: #151515; }
+.site-cookie-consent .button:focus-visible,
+.site-cookie-consent__link:focus-visible,
+.site-cookie-consent__dismiss:focus-visible,
+.site-cookie-consent__text a:focus-visible {
+  outline: 2px solid #00a9ff;
+  outline-offset: 2px;
+}
+.site-cookie-consent__status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 575px) {
+  .site-cookie-consent__box { max-width: none; padding: 18px; }
+}
+
+/* Footer "Cookie settings" control: looks like the sibling text links */
+.site-cookie-consent__open {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.site-cookie-consent__open:hover { color: #00a9ff; }
+/* granted → brand teal (gradient end); partial → bootstrap warning amber; denied → theme form-validation red */
+.site-cookie-consent__open--granted { color: #00caad; }
+.site-cookie-consent__open--partial { color: #f0ad4e; }
+.site-cookie-consent__open--denied { color: #e06363; }

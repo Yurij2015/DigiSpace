@@ -11,6 +11,10 @@
 /vendor
 .env
 .env.backup
+.phpunit.cache/
+/test-results/
+/playwright-report/
+/playwright/.cache/
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
