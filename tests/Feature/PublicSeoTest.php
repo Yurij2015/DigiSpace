@@ -13,6 +13,7 @@ use App\Models\Widget;
 use DOMDocument;
 use DOMXPath;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Storage;
 use PHPUnit\Framework\Attributes\TestWith;
 use Tests\Feature\Concerns\SeedsPublicSite;
 use Tests\TestCase;
@@ -26,8 +27,6 @@ class PublicSeoTest extends TestCase
     private const CATEGORY_DESCRIPTION = 'Category description';
 
     private const CATEGORY_SEO = 'Category SEO';
-
-    private const WIDGET_IMAGE_URL = 'http://localhost:8100/uploads/widgets/photo.jpg';
 
     private const PAGE_NAME = 'CMS page';
 
@@ -77,7 +76,7 @@ class PublicSeoTest extends TestCase
         $document = $this->document($response->getContent());
         $this->assertSame($post->name, $this->meta($document, 'og:title'));
         $this->assertSame('article', $this->meta($document, 'og:type'));
-        $this->assertSame(asset('uploads/article.jpg'), $this->meta($document, 'og:image'));
+        $this->assertSame(Storage::disk('s3')->url('posts/article.jpg'), $this->meta($document, 'og:image'));
         $article = $this->schemaNode($document, 'BlogPosting');
         $this->assertSame($post->name, $article['headline']);
         $this->assertSame('uk', $article['inLanguage']);
@@ -94,7 +93,7 @@ class PublicSeoTest extends TestCase
         Service::create([
             'title' => 'Development', 'slug' => 'development', 'service_category_id' => $category->id,
             'status' => 'active',
-            'seo_title' => 'Service SEO', 'seo_description' => 'Service description', 'image' => 'development.jpg',
+            'seo_title' => 'Service SEO', 'seo_description' => 'Service description', 'image' => 'services/development.jpg',
             'translations' => [$locale => ['seo_title' => $title, 'seo_description' => $description]],
         ]);
 
@@ -107,7 +106,7 @@ class PublicSeoTest extends TestCase
         $this->assertSame(__('site.page_title', ['name' => $title]), $this->title($document));
         $this->assertSame($description, $this->meta($document, 'description'));
         $this->assertSame($description, $this->meta($document, 'twitter:description'));
-        $this->assertSame(asset('uploads/development.jpg'), $this->meta($document, 'og:image'));
+        $this->assertSame(Storage::disk('s3')->url('services/development.jpg'), $this->meta($document, 'og:image'));
         $this->assertSame('website', $this->meta($document, 'og:type'));
         $this->assertSame($description, $this->schemaNode($document, 'Service')['description']);
     }
@@ -127,9 +126,9 @@ class PublicSeoTest extends TestCase
             'service_category_id' => $category->id,
             'seo_title' => 'Development SEO',
             'seo_description' => 'A practical service description',
-            'image' => 'development.jpg',
+            'image' => 'services/development.jpg',
             'image_alt' => 'Development architecture illustration',
-            'description' => '<p>Lead</p><div class="lead"><p><strong>Business value:</strong> Faster delivery.</p></div><h3>How it works</h3><p><img src="/uploads/services/flow.svg" alt="Flow diagram" /></p>',
+            'description' => '<p>Lead</p><div class="lead"><p><strong>Business value:</strong> Faster delivery.</p></div><h3>How it works</h3><p><img src="'.Storage::disk('s3')->url('services/flow.svg').'" alt="Flow diagram" /></p>',
         ]);
 
         $response = $this->get('/en/service-category/web/development');
@@ -166,7 +165,7 @@ class PublicSeoTest extends TestCase
         $document = $this->document($response->getContent());
         $this->assertSame('Development', $this->meta($document, 'og:title'));
         $this->assertSame(__('site.meta_description'), $this->meta($document, 'og:description'));
-        $this->assertSame(asset('uploads/no_image.png'), $this->meta($document, 'og:image'));
+        $this->assertSame(Storage::disk('s3')->url('services/no_image.png'), $this->meta($document, 'og:image'));
     }
 
     #[TestWith([self::CATEGORY_SEO, self::CATEGORY_SEO])]
@@ -186,14 +185,16 @@ class PublicSeoTest extends TestCase
         $this->assertSame($expectedTitle, $this->schemaNode($document, 'CollectionPage')['name']);
     }
 
-    #[TestWith(['photo.jpg', self::WIDGET_IMAGE_URL])]
-    #[TestWith(['/uploads/widgets/photo.jpg', self::WIDGET_IMAGE_URL])]
-    #[TestWith(['uploads/widgets/photo.jpg', self::WIDGET_IMAGE_URL])]
-    #[TestWith(['https://cdn.example.com/photo.jpg', 'https://cdn.example.com/photo.jpg'])]
-    #[TestWith(['//cdn.example.com/photo.jpg', 'http://cdn.example.com/photo.jpg'])]
-    #[TestWith([null, 'http://localhost:8100/images/og-default.png'])]
-    public function test_cms_social_images_are_absolute(?string $image, string $expected): void
+    #[TestWith(['widgets/photo.jpg'])]
+    #[TestWith(['https://cdn.example.com/photo.jpg'])]
+    #[TestWith([null])]
+    public function test_cms_social_images_are_absolute(?string $image): void
     {
+        $expected = match (true) {
+            $image === null => asset('images/og-default.png'),
+            str_starts_with($image, 'https://') => $image,
+            default => Storage::disk('s3')->url($image),
+        };
         $this->seedPublicSite();
         $item = MenuItem::create(['name' => 'CMS', 'slug' => 'cms']);
         Page::create(['name' => self::PAGE_NAME, 'description' => 'CMS description', 'content' => '<p>Page</p>', 'menu_item_id' => $item->id]);
@@ -338,7 +339,7 @@ class PublicSeoTest extends TestCase
         return Post::create([
             'name' => 'Article', 'slug' => 'article', 'description' => 'Article description', 'content' => '<p>Article</p>',
             'status' => 'published', 'category_id' => $category->id, 'user_id' => $author->id,
-            'img_path' => '/uploads/article.jpg', 'created_at' => '2026-09-01 12:00:00',
+            'img_path' => 'posts/article.jpg', 'created_at' => '2026-09-01 12:00:00',
         ]);
     }
 
