@@ -40,10 +40,11 @@ class BlogPostBannerController extends Controller
             'post_id' => 'int',
             'alt' => 'string',
             'url' => 'string',
-            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         ])->validate();
 
-        $fileName = time().'.'.$request->file->extension();
+        $extension = $request->file->guessExtension() ?: $request->file->extension() ?: 'jpg';
+        $fileName = time().'_'.\Str::random(10).'.'.$extension;
         $request->file->move(public_path('banners'), $fileName);
 
         BlogPostBanner::create([
@@ -71,11 +72,12 @@ class BlogPostBannerController extends Controller
         Validator::make($request->all(), [
             'alt' => 'string',
             'url' => 'string',
-            'file' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'file' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         ])->validate();
 
         if ($request->file) {
-            $fileName = time().'.'.$request->file->extension();
+            $extension = $request->file->guessExtension() ?: $request->file->extension() ?: 'jpg';
+            $fileName = time().'_'.\Str::random(10).'.'.$extension;
             $request->file->move(public_path('banners'), $fileName);
 
             $banner->update([
@@ -109,10 +111,11 @@ class BlogPostBannerController extends Controller
 
         Validator::make($request->all(), [
             'blog_page_type' => 'string',
-            'file' => 'required',
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         ])->validate();
 
-        $fileName = time().'.'.$request->file->extension();
+        $extension = $request->file->guessExtension() ?: $request->file->extension() ?: 'jpg';
+        $fileName = time().'_'.\Str::random(10).'.'.$extension;
         $request->file->move(public_path('banners'), $fileName);
 
         BlogPostBanner::create([

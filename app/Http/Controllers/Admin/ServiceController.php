@@ -91,7 +91,8 @@ class ServiceController extends Controller
 
     private function uploadImage($request, $service): string
     {
-        $fileName = "service_$service->slug".'_'.time().'.'.$request->file->extension();
+        $extension = $request->file->guessExtension() ?: $request->file->extension() ?: 'jpg';
+        $fileName = "service_$service->slug".'_'.time().'.'.$extension;
         $request->file->move(public_path('uploads'), $fileName);
 
         return $fileName;
