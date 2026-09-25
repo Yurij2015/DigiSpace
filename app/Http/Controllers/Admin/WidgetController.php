@@ -50,7 +50,7 @@ class WidgetController extends Controller
             'icon' => 'max:255',
             'content' => 'required|string',
             'widget_category_id' => 'int',
-            'file' => '',
+            'file' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         ])->validate();
 
         $newWidget = Widget::create([
@@ -101,7 +101,7 @@ class WidgetController extends Controller
             'icon' => 'max:255',
             'content' => 'required|string',
             'widget_category_id' => 'int',
-            'file' => '',
+            'file' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         ]);
 
         $page = request()->query('page');

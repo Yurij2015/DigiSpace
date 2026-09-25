@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * @property int $id
@@ -125,7 +126,14 @@ class Service extends Model implements HasTranslatableColumns
     protected function image(): Attribute
     {
         return Attribute::make(
-            get: static fn ($value) => $value ? '/uploads/'.$value : '/uploads/no_image.png'
+            get: static fn ($value) => match (true) {
+                ! $value => '/uploads/no_image.png',
+                str_starts_with($value, 'http://'),
+                str_starts_with($value, 'https://'),
+                str_starts_with($value, '/') => $value,
+                str_starts_with($value, 'services/') => Storage::disk('s3')->url($value),
+                default => '/uploads/'.$value,
+            }
         );
     }
 

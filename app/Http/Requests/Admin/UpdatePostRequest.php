@@ -28,7 +28,7 @@ class UpdatePostRequest extends FormRequest
             'status' => 'in:draft,published,archived',
             'description' => 'string',
             'category_id' => 'int',
-            'file' => '',
+            'file' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         ];
     }
 }

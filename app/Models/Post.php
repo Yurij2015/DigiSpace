@@ -110,7 +110,8 @@ class Post extends Model implements HasTranslatableColumns
                 str_starts_with($value, 'http://'),
                 str_starts_with($value, 'https://'),
                 str_starts_with($value, '/') => $value,
-                str_starts_with($value, 'posts/') => Storage::disk('s3')->url($value),
+                str_starts_with($value, 'posts/'),
+                str_starts_with($value, 'articles/') => Storage::disk('s3')->url($value),
                 default => asset($value),
             },
         );

@@ -7,6 +7,7 @@ use App\Models\BlogPostBanner;
 use App\Models\Post;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -40,17 +41,18 @@ class BlogPostBannerController extends Controller
             'post_id' => 'int',
             'alt' => 'string',
             'url' => 'string',
-            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         ])->validate();
 
-        $fileName = time().'.'.$request->file->extension();
-        $request->file->move(public_path('banners'), $fileName);
+        $extension = $request->file->guessExtension() ?: $request->file->extension() ?: 'jpg';
+        $fileName = time().'_'.\Str::random(10).'.'.$extension;
+        Storage::disk('s3')->put('banners/'.$fileName, file_get_contents($request->file));
 
         BlogPostBanner::create([
             'post_id' => $post->id,
             'alt' => $request->alt,
             'url' => $request->url,
-            'img_path' => '/banners/'.$fileName,
+            'img_path' => 'banners/'.$fileName,
         ]);
 
         return redirect(route('admin.posts-banners'))->with('message', 'Banner Added Successfully');
@@ -71,17 +73,18 @@ class BlogPostBannerController extends Controller
         Validator::make($request->all(), [
             'alt' => 'string',
             'url' => 'string',
-            'file' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'file' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         ])->validate();
 
         if ($request->file) {
-            $fileName = time().'.'.$request->file->extension();
-            $request->file->move(public_path('banners'), $fileName);
+            $extension = $request->file->guessExtension() ?: $request->file->extension() ?: 'jpg';
+            $fileName = time().'_'.\Str::random(10).'.'.$extension;
+            Storage::disk('s3')->put('banners/'.$fileName, file_get_contents($request->file));
 
             $banner->update([
                 'alt' => $request->alt,
                 'url' => $request->url,
-                'img_path' => '/banners/'.$fileName,
+                'img_path' => 'banners/'.$fileName,
             ]);
         }
 
@@ -109,15 +112,16 @@ class BlogPostBannerController extends Controller
 
         Validator::make($request->all(), [
             'blog_page_type' => 'string',
-            'file' => 'required',
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         ])->validate();
 
-        $fileName = time().'.'.$request->file->extension();
-        $request->file->move(public_path('banners'), $fileName);
+        $extension = $request->file->guessExtension() ?: $request->file->extension() ?: 'jpg';
+        $fileName = time().'_'.\Str::random(10).'.'.$extension;
+        Storage::disk('s3')->put('banners/'.$fileName, file_get_contents($request->file));
 
         BlogPostBanner::create([
             'blog_page_type' => $request->blog_page_type,
-            'img_path' => '/banners/'.$fileName,
+            'img_path' => 'banners/'.$fileName,
         ]);
 
         return redirect(route('admin.posts-banners'))->with('message', 'Banner Added Successfully');

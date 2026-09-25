@@ -7,8 +7,9 @@
         $relatedServices = $serviceCategory->service
             ->where('id', '!=', $service->id)
             ->take(3);
+        $serviceMediaBase = preg_quote(rtrim((string) config('filesystems.disks.s3.url', ''), '/'), '/');
         $serviceDescription = preg_replace(
-            '/(src=["\']\/uploads\/services\/[^"\']+)(["\'])/i',
+            '/(src=["\'](?:\/uploads\/|'.$serviceMediaBase.'\/)services\/[^"\']+)(["\'])/i',
             '$1?v='.$serviceAssetVersion.'$2',
             $service->description,
         );
@@ -61,7 +62,7 @@
                                 </picture>
                             </div>
                             <div class="service-article__body">
-                                {!! preg_replace('/<p>(\s*<img[^>]+src=["\']\/uploads\/services\/[^>]+\/?>(?:\s*)<\/p>)/i', '<figure class="service-diagram">$1</figure>', $serviceDescription) !!}
+                                {!! preg_replace('/<p>(\s*<img[^>]+src=["\'](?:\/uploads\/|'.$serviceMediaBase.'\/)services\/[^>]+\/?>(?:\s*)<\/p>)/i', '<figure class="service-diagram">$1</figure>', $serviceDescription) !!}
                             </div>
                             <div class="service-article__cta">
                                 <a class="button button-primary button-ujarak" href="{{ route('contact-us') }}">
