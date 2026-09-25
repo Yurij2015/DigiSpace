@@ -193,7 +193,7 @@ class PublicSeoTest extends TestCase
         $expected = match (true) {
             $image === null => asset('images/og-default.png'),
             str_starts_with($image, 'https://') => $image,
-            default => Storage::disk('s3')->url($image),
+            default => asset(Storage::disk('s3')->url($image)),
         };
         $this->seedPublicSite();
         $item = MenuItem::create(['name' => 'CMS', 'slug' => 'cms']);
