@@ -62,7 +62,7 @@ class WidgetController extends Controller
         ]);
 
         if ($request->file) {
-            $fileName = $this->storeWidgetImageOnMinio($request, $newWidget);
+            $fileName = $this->storeWidgetImage($request, $newWidget);
         } else {
             $fileName = null;
         }
@@ -107,7 +107,7 @@ class WidgetController extends Controller
         $page = request()->query('page');
 
         if ($request->file) {
-            $fileName = $this->storeWidgetImageOnMinio($request, $widget);
+            $fileName = $this->storeWidgetImage($request, $widget);
 
             $widget->widget_image = $fileName;
         }
@@ -127,9 +127,9 @@ class WidgetController extends Controller
         return redirect(route('admin.widgets'));
     }
 
-    private function storeWidgetImageOnMinio(Request $request, Widget $widget): string
+    private function storeWidgetImage(Request $request, Widget $widget): ?string
     {
-        $fileName = null;
+        $filePath = null;
 
         if ($request->hasFile('file')) {
             $image = $request->file('file');
@@ -137,9 +137,8 @@ class WidgetController extends Controller
             $filePath = 'widgets/'.$widget->id.'/'.$imageName;
 
             Storage::disk('s3')->put($filePath, file_get_contents($image));
-            $fileName = Storage::disk('s3')->url($filePath);
         }
 
-        return $fileName;
+        return $filePath;
     }
 }

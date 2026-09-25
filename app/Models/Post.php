@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * @property int $id
@@ -104,11 +105,14 @@ class Post extends Model implements HasTranslatableColumns
     protected function imgPath(): Attribute
     {
         return Attribute::make(
-            get: static fn ($value) => $value && ! str_starts_with($value, 'http://')
-                && ! str_starts_with($value, 'https://')
-                && ! str_starts_with($value, '/')
-                ? asset($value)
-                : $value,
+            get: static fn ($value) => match (true) {
+                ! $value,
+                str_starts_with($value, 'http://'),
+                str_starts_with($value, 'https://'),
+                str_starts_with($value, '/') => $value,
+                str_starts_with($value, 'posts/') => Storage::disk('s3')->url($value),
+                default => asset($value),
+            },
         );
     }
 

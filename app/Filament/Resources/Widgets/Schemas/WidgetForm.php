@@ -21,7 +21,7 @@ class WidgetForm
                     ->relationship('widgetCategory', 'name')
                     ->required(),
                 TextInput::make('icon'),
-                ContentImage::make('widget_image', 's3', 'widgets', true),
+                ContentImage::make('widget_image', 's3', 'widgets'),
                 Textarea::make('content')
                     ->required()
                     ->columnSpanFull(),

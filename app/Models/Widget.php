@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 /**
@@ -81,7 +82,11 @@ class Widget extends Model implements HasTranslatableColumns
     protected function widgetImage(): Attribute
     {
         return Attribute::make(
-            get: static fn ($value) => $value ?: url('uploads/widgets/no_image.png'),
+            get: static fn ($value) => match (true) {
+                ! $value => url('uploads/widgets/no_image.png'),
+                str_starts_with($value, 'widgets/') => Storage::disk('s3')->url($value),
+                default => $value,
+            },
         );
     }
 
