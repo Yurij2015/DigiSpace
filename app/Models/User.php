@@ -87,7 +87,7 @@ class User extends Authenticatable implements FilamentUser
         'email_verified_at' => 'datetime',
     ];
 
-    public function canAccessPanel(Panel $panel): bool
+    public function isAdmin(): bool
     {
         if (app()->environment('local')) {
             return true;
@@ -98,6 +98,11 @@ class User extends Authenticatable implements FilamentUser
             config('filament.admin_emails', []),
             true,
         );
+    }
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return $this->isAdmin();
     }
 
     public function categories(): HasMany

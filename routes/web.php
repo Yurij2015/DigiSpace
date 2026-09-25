@@ -82,157 +82,154 @@ Route::prefix('{locale?}')
         Route::post('subscriber-save', [SubscriberController::class, 'save'])->name('subscriber-save');
     });
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth']);
-Route::controller(CategoryController::class)->middleware('auth')->group(function () {
-    Route::get('categories', 'categories')->name('categories.index');
-    Route::get('categories/{category}', 'categoryShow')->name('categories.show');
+Route::middleware(['auth', 'admin'])->group(function (): void {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware('verified');
+    Route::get('/admin/profile', [ProfileController::class, 'index'])->name('admin.profile')->middleware('verified');
+
+    Route::controller(CategoryController::class)->group(function (): void {
+        Route::get('categories', 'categories')->name('categories.index');
+        Route::get('categories/{category}', 'categoryShow')->name('categories.show');
+        Route::post('admin/category-store', 'categoryStore')->name('admin.category-store');
+        Route::delete('admin/category-destroy/{category}', 'categoryDestroy')->name('admin.category-destroy');
+        Route::put('admin/category-update/{category}', 'categoryUpdate')->name('admin.category-update');
+        Route::get('/admin/categories/', 'categories')->name('admin.categories');
+        Route::get('admin/category-show/{category}', 'categoryShow')->name('admin.category-show');
+    });
+
+    Route::resource('posts', PublicPostController::class)->only(['index', 'show']);
+
+    Route::controller(PostController::class)->group(function (): void {
+        Route::get('admin/post-form', 'postForm')->name('admin.post-form');
+        Route::post('admin/post-store', 'postSave')->name('admin.post-store');
+        Route::delete('admin/post-destroy/{post}', 'postDestroy')->name('admin.post-destroy');
+        Route::put('admin/post-update/{post}', 'postUpdate')->name('admin.post-update');
+        Route::get('admin/post-update-form/{post}', 'postUpdateForm')->name('admin.post-update-form');
+        Route::get('/admin/posts/', 'posts')->name('admin.posts');
+    });
+
+    Route::controller(WidgetController::class)->group(function (): void {
+        Route::get('/admin/widgets/', 'index')->name('admin.widgets');
+        Route::get('admin/widget-update-form/{widget}', 'widgetUpdateForm')->name('admin.widget-update-form');
+        Route::get('admin/widget-form', 'widgetForm')->name('admin.widget-form');
+        Route::post('admin/widget-save', 'widgetSave')->name('admin.widget-save');
+        Route::put('admin/widget-update/{widget}', 'widgetUpdate')->name('admin.widget-update');
+        Route::delete('admin/widget-destroy/{widget}', 'widgetDestroy')->name('admin.widget-destroy');
+    });
+
+    Route::controller(WidgetIconController::class)->group(function (): void {
+        Route::get('admin/widget-icons/{widget}', 'widgetIcons')->name('admin.widget-icons');
+        Route::get('admin/widget-icon-update-form/{widgetIcon}', 'widgetIconUpdateForm')
+            ->name('admin.widget-icon-update-form');
+        Route::put('admin/widget-icon-update/{widgetIcon}', 'widgetIconUpdate')->name('admin.widget-icon-update');
+    });
+
+    Route::controller(DefaultPagesController::class)->group(function (): void {
+        Route::get('/admin/dafault-pages', 'index')->name('admin.dafault-pages');
+        Route::get('/admin/default-pages/{page}', 'show')->name('admin.default-pages.page');
+    });
+
+    Route::controller(PagesController::class)->group(function (): void {
+        Route::get('/admin/pages', 'index')->name('admin.pages');
+        Route::get('admin/page-form', 'pageForm')->name('admin.page-form');
+        Route::post('admin/page-create', 'pageCreate')->name('admin.page-create');
+        Route::get('admin/page-update-form/{page}', 'pageUpdateForm')->name('admin.page-update-form');
+        Route::put('admin/page-update/{page}', 'pageUpdate')->name('admin.page-update');
+    });
+
+    Route::controller(AdminServiceController::class)->group(function (): void {
+        Route::get('/admin/services', 'index')->name('admin.services');
+        Route::get('admin/service-form', 'serviceForm')->name('admin.service-form');
+        Route::post('admin/service-store', 'serviceSave')->name('admin.service-store');
+        Route::get('/admin/services/{service}', 'show')->name('admin.service-show');
+        Route::get('admin/service-update-form/{service}', 'serviceUpdateForm')->name('admin.service-update-form');
+        Route::put('admin/service-update/{service}', 'update')->name('admin.service-update');
+        Route::delete('admin/service-destroy/{service}', 'destroy')->name('admin.service-destroy');
+    });
+
+    Route::controller(AdminServiceCategoryController::class)->group(function (): void {
+        Route::get('/admin/service-categories', 'index')->name('admin.service-categories');
+        Route::post('/admin/service-categories', 'store')->name('admin.service-category-save');
+        Route::put('/admin/service-category-update/{serviceCategory}', 'update')->name('admin.service-category-update');
+    });
+
+    Route::controller(AdminProductController::class)->group(function (): void {
+        Route::get('/admin/products', 'index')->name('admin.products');
+        Route::get('admin/product-form', 'productForm')->name('admin.product-form');
+        Route::post('admin/product-store', 'productSave')->name('admin.product-store');
+        Route::get('admin/product-update-form/{product}', 'productUpdateForm')->name('admin.product-update-form');
+        Route::get('/admin/products/{product}', 'show')->name('admin.product-show');
+        Route::put('admin/product-update/{product}', 'update')->name('admin.product-update');
+        Route::delete('admin/product-destroy/{product}', 'destroy')->name('admin.product-destroy');
+        Route::get('/admin/product-services-style/{product}', 'productServicesStyle')->name('admin.product-services-style');
+        Route::put('/admin/product-services-style/{product}', 'saveProductServiceStyle')->name('admin.save-product-services-style');
+    });
+
+    Route::controller(FooterUsefulLinkController::class)->group(function (): void {
+        Route::get('/admin/useful-link-list/', 'index')->name('admin.useful-link-list');
+        Route::post('admin/useful-link-store', 'linkStore')->name('admin.useful-link-store');
+        Route::put('admin/useful-link-update/{usefulLink}', 'linkUpdate')->name('admin.useful-link-update');
+    });
+
+    Route::controller(HeaderNavBarContentController::class)->group(function (): void {
+        Route::get('/admin/top-bar-settings/', 'index')->name('admin.top-bar-settings');
+        Route::put('admin/top-bar-settings-update/{headerNavBarContent}', 'update')->name('admin.top-bar-settings-update');
+    });
+
+    Route::controller(FooterBottomBarContentController::class)->group(function (): void {
+        Route::get('/admin/bottom-bar-settings/', 'index')->name('admin.bottom-bar-settings');
+        Route::put('admin/bottom-bar-settings-update/{bottomBarContent}', 'update')
+            ->name('admin.bottom-bar-settings-update');
+    });
+
+    Route::controller(HeaderTopMenuController::class)->group(function (): void {
+        Route::get('/admin/top-menu/', 'index')->name('admin.top-menu');
+        Route::get('/admin/top-menu-edit-form/{menuItem}', 'editForm')->name('admin.top-menu-edit-form');
+        Route::put('admin/top-menu-update/{menu}', 'update')->name('admin.top-menu-update');
+        Route::get('/admin/top-sub-menu-edit-form/{subMenuItem}', 'subMenuEditForm')->name('admin.top-sub-menu-edit-form');
+        Route::put('admin/top-sub-menu-update/{subMenu}', 'subMenuUpdate')->name('admin.top-sub-menu-update');
+    });
+
+    Route::controller(BlogPostBannerController::class)->group(function (): void {
+        Route::get('admin/posts-banners', 'index')->name('admin.posts-banners');
+        Route::get('admin/post-banner-add', 'postBannerAdd')->name('admin.post-banner-add');
+        Route::get('admin/post-banner-form/{post}', 'postBannerForm')->name('admin.post-banner-form');
+        Route::post('admin/post-banner-save/{post}', 'postBannerSave')->name('admin.post-banner-save');
+        Route::get('admin/banner-update-form/{banner}', 'bannerUpdateForm')->name('admin.banner-update-form');
+        Route::put('admin/banner-update/{banner}', 'bannerUpdate')->name('admin.banner-update');
+        Route::get('admin/blog-banner-form', 'blogBannerForm')->name('admin.blog-banner-form');
+        Route::post('admin/blog-banner-save', 'blogBannerSave')->name('admin.blog-banner-save');
+    });
+
+    Route::controller(EducationController::class)->group(function (): void {
+        Route::get('portfolio/education', 'index')->name('portfolio.education');
+        Route::get('portfolio/education-item-create', 'create')->name('portfolio.education-item-create');
+        Route::post('portfolio/education-item-store', 'store')->name('portfolio.education-item-store');
+        Route::get('portfolio/edu-item-edit/{eduItem}', 'edit')->name('portfolio.edu-item-edit');
+        Route::put('portfolio/edu-item-update/{eduItem}', 'update')->name('portfolio.edu-item-update');
+    });
+
+    Route::controller(SkillsController::class)->group(function (): void {
+        Route::get('portfolio/skills', 'index')->name('portfolio.skills');
+        Route::get('portfolio/add-skill-type', 'addSkillType')->name('portfolio.add-skill-type');
+        Route::get('portfolio/add-skill-subcategory', 'addSkillSubcategory')->name('portfolio.add-skill-subcategory');
+        Route::get('portfolio/add-skill', 'addSkill')->name('portfolio.add-skill');
+        Route::get('portfolio/add-skill-locale', 'addSkillLocale')->name('portfolio.add-skill-locale');
+        Route::post('portfolio/skill-type-store', 'skillTypeStore')->name('portfolio.skill-type-store');
+        Route::post('portfolio/skill-locale-store', 'skillLocaleStore')->name('portfolio.skill-locale-store');
+        Route::post('portfolio/skill-subcategory-store', 'skillSubcategoryStore')
+            ->name('portfolio.skill-subcategory-store');
+        Route::post('portfolio/skill-store', 'skillStore')->name('portfolio.skill-store');
+    });
+
+    Route::controller(SectionController::class)->group(function (): void {
+        Route::get('portfolio/sections', 'index')->name('portfolio.sections');
+        Route::post('portfolio/section-store', 'store')->name('portfolio.section-store');
+        Route::post('portfolio/subcategory-store', 'subcategoryStore')->name('portfolio.subcategory-store');
+        Route::post('portfolio/place-store', 'placeStore')->name('portfolio.place-store');
+        Route::post('portfolio/section-item-store', 'sectionItemStore')->name('portfolio.section-item-store');
+    });
 });
-
-Route::resource('posts', PublicPostController::class)->only(['index', 'show'])->middleware('auth');
-
-Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware(['auth', 'verified']);
-
-Route::controller(CategoryController::class)->middleware('auth')->group(function () {
-    Route::post('admin/category-store', 'categoryStore')->name('admin.category-store');
-    Route::delete('admin/category-destroy/{category}', 'categoryDestroy')->name('admin.category-destroy');
-    Route::put('admin/category-update/{category}', 'categoryUpdate')->name('admin.category-update');
-    Route::get('/admin/categories/', 'categories')->name('admin.categories');
-    Route::get('admin/category-show/{category}', 'categoryShow')->name('admin.category-show');
-});
-
-Route::controller(PostController::class)->middleware('auth')->group(function () {
-    Route::get('admin/post-form', 'postForm')->name('admin.post-form');
-    Route::post('admin/post-store', 'postSave')->name('admin.post-store');
-    Route::delete('admin/post-destroy/{post}', 'postDestroy')->name('admin.post-destroy');
-    Route::put('admin/post-update/{post}', 'postUpdate')->name('admin.post-update');
-    Route::get('admin/post-update-form/{post}', 'postUpdateForm')->name('admin.post-update-form');
-    Route::get('/admin/posts/', 'posts')->name('admin.posts');
-});
-
-Route::controller(WidgetController::class)->middleware('auth')->group(function () {
-    Route::get('/admin/widgets/', 'index')->name('admin.widgets');
-    Route::get('admin/widget-update-form/{widget}', 'widgetUpdateForm')->name('admin.widget-update-form');
-    Route::get('admin/widget-form', 'widgetForm')->name('admin.widget-form');
-    Route::post('admin/widget-save', 'widgetSave')->name('admin.widget-save');
-    Route::put('admin/widget-update/{widget}', 'widgetUpdate')->name('admin.widget-update');
-    Route::delete('admin/widget-destroy/{widget}', 'widgetDestroy')->name('admin.widget-destroy');
-});
-
-Route::controller(WidgetIconController::class)->middleware('auth')->group(function () {
-    Route::get('admin/widget-icons/{widget}', 'widgetIcons')->name('admin.widget-icons');
-    Route::get('admin/widget-icon-update-form/{widgetIcon}', 'widgetIconUpdateForm')
-        ->name('admin.widget-icon-update-form');
-    Route::put('admin/widget-icon-update/{widgetIcon}', 'widgetIconUpdate')->name('admin.widget-icon-update');
-});
-
-Route::controller(DefaultPagesController::class)->middleware('auth')->group(function () {
-    Route::get('/admin/dafault-pages', 'index')->name('admin.dafault-pages');
-    Route::get('/admin/default-pages/{page}', 'show')->name('admin.default-pages.page');
-});
-
-Route::controller(PagesController::class)->middleware('auth')->group(function () {
-    Route::get('/admin/pages', 'index')->name('admin.pages');
-    Route::get('admin/page-form', 'pageForm')->name('admin.page-form');
-    Route::post('admin/page-create', 'pageCreate')->name('admin.page-create');
-    Route::get('admin/page-update-form/{page}', 'pageUpdateForm')->name('admin.page-update-form');
-    Route::put('admin/page-update/{page}', 'pageUpdate')->name('admin.page-update');
-});
-
-Route::controller(AdminServiceController::class)->middleware('auth')->group(function () {
-    Route::get('/admin/services', 'index')->name('admin.services');
-    Route::get('admin/service-form', 'serviceForm')->name('admin.service-form');
-    Route::post('admin/service-store', 'serviceSave')->name('admin.service-store');
-    Route::get('/admin/services/{service}', 'show')->name('admin.service-show');
-    Route::get('admin/service-update-form/{service}', 'serviceUpdateForm')->name('admin.service-update-form');
-    Route::put('admin/service-update/{service}', 'update')->name('admin.service-update');
-    Route::delete('admin/service-destroy/{service}', 'destroy')->name('admin.service-destroy');
-});
-
-Route::controller(AdminServiceCategoryController::class)->middleware('auth')->group(function () {
-    Route::get('/admin/service-categories', 'index')->name('admin.service-categories');
-    Route::post('/admin/service-categories', 'store')->name('admin.service-category-save');
-    Route::put('/admin/service-category-update/{serviceCategory}', 'update')->name('admin.service-category-update');
-});
-
-Route::controller(AdminProductController::class)->middleware('auth')->group(function () {
-    Route::get('/admin/products', 'index')->name('admin.products');
-    Route::get('admin/product-form', 'productForm')->name('admin.product-form');
-    Route::post('admin/product-store', 'productSave')->name('admin.product-store');
-    Route::get('admin/product-update-form/{product}', 'productUpdateForm')->name('admin.product-update-form');
-    Route::get('/admin/products/{product}', 'show')->name('admin.product-show');
-    Route::put('admin/product-update/{product}', 'update')->name('admin.product-update');
-    Route::delete('admin/product-destroy/{product}', 'destroy')->name('admin.product-destroy');
-    Route::get('/admin/product-services-style/{product}', 'productServicesStyle')->name('admin.product-services-style');
-    Route::put('/admin/product-services-style/{product}', 'saveProductServiceStyle')->name('admin.save-product-services-style');
-});
-
-Route::controller(FooterUsefulLinkController::class)->middleware('auth')->group(function () {
-    Route::get('/admin/useful-link-list/', 'index')->name('admin.useful-link-list');
-    Route::post('admin/useful-link-store', 'linkStore')->name('admin.useful-link-store');
-    Route::put('admin/useful-link-update/{usefulLink}', 'linkUpdate')->name('admin.useful-link-update');
-});
-
-Route::controller(HeaderNavBarContentController::class)->middleware('auth')->group(function () {
-    Route::get('/admin/top-bar-settings/', 'index')->name('admin.top-bar-settings');
-    Route::put('admin/top-bar-settings-update/{headerNavBarContent}', 'update')->name('admin.top-bar-settings-update');
-});
-
-Route::controller(FooterBottomBarContentController::class)->middleware('auth')->group(function () {
-    Route::get('/admin/bottom-bar-settings/', 'index')->name('admin.bottom-bar-settings');
-    Route::put('admin/bottom-bar-settings-update/{bottomBarContent}', 'update')
-        ->name('admin.bottom-bar-settings-update');
-});
-
-Route::controller(HeaderTopMenuController::class)->middleware('auth')->group(function () {
-    Route::get('/admin/top-menu/', 'index')->name('admin.top-menu');
-    Route::get('/admin/top-menu-edit-form/{menuItem}', 'editForm')->name('admin.top-menu-edit-form');
-    Route::put('admin/top-menu-update/{menu}', 'update')->name('admin.top-menu-update');
-    Route::get('/admin/top-sub-menu-edit-form/{subMenuItem}', 'subMenuEditForm')->name('admin.top-sub-menu-edit-form');
-    Route::put('admin/top-sub-menu-update/{subMenu}', 'subMenuUpdate')->name('admin.top-sub-menu-update');
-});
-
-Route::controller(BlogPostBannerController::class)->middleware('auth')->group(function () {
-    Route::get('admin/posts-banners', 'index')->name('admin.posts-banners');
-    Route::get('admin/post-banner-add', 'postBannerAdd')->name('admin.post-banner-add');
-    Route::get('admin/post-banner-form/{post}', 'postBannerForm')->name('admin.post-banner-form');
-    Route::post('admin/post-banner-save/{post}', 'postBannerSave')->name('admin.post-banner-save');
-    Route::get('admin/banner-update-form/{banner}', 'bannerUpdateForm')->name('admin.banner-update-form');
-    Route::put('admin/banner-update/{banner}', 'bannerUpdate')->name('admin.banner-update');
-    Route::get('admin/blog-banner-form', 'blogBannerForm')->name('admin.blog-banner-form');
-    Route::post('admin/blog-banner-save', 'blogBannerSave')->name('admin.blog-banner-save');
-});
-
-Route::controller(EducationController::class)->middleware('auth')->group(function () {
-    Route::get('portfolio/education', 'index')->name('portfolio.education');
-    Route::get('portfolio/education-item-create', 'create')->name('portfolio.education-item-create');
-    Route::post('portfolio/education-item-store', 'store')->name('portfolio.education-item-store');
-    Route::get('portfolio/edu-item-edit/{eduItem}', 'edit')->name('portfolio.edu-item-edit');
-    Route::put('portfolio/edu-item-update/{eduItem}', 'update')->name('portfolio.edu-item-update');
-});
-
-Route::controller(SkillsController::class)->middleware('auth')->group(function () {
-    Route::get('portfolio/skills', 'index')->name('portfolio.skills');
-    Route::get('portfolio/add-skill-type', 'addSkillType')->name('portfolio.add-skill-type');
-    Route::get('portfolio/add-skill-subcategory', 'addSkillSubcategory')->name('portfolio.add-skill-subcategory');
-    Route::get('portfolio/add-skill', 'addSkill')->name('portfolio.add-skill');
-    Route::get('portfolio/add-skill-locale', 'addSkillLocale')->name('portfolio.add-skill-locale');
-    Route::post('portfolio/skill-type-store', 'skillTypeStore')->name('portfolio.skill-type-store');
-    Route::post('portfolio/skill-locale-store', 'skillLocaleStore')->name('portfolio.skill-locale-store');
-    Route::post('portfolio/skill-subcategory-store', 'skillSubcategoryStore')
-        ->name('portfolio.skill-subcategory-store');
-    Route::post('portfolio/skill-store', 'skillStore')->name('portfolio.skill-store');
-});
-
-Route::controller(SectionController::class)->middleware('auth')->group(function () {
-    Route::get('portfolio/sections', 'index')->name('portfolio.sections');
-    Route::post('portfolio/section-store', 'store')->name('portfolio.section-store');
-    Route::post('portfolio/subcategory-store', 'subcategoryStore')->name('portfolio.subcategory-store');
-    Route::post('portfolio/place-store', 'placeStore')->name('portfolio.place-store');
-    Route::post('portfolio/section-item-store', 'sectionItemStore')->name('portfolio.section-item-store');
-});
-
-Route::get('/admin/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])
-    ->name('admin.profile');
 
 Route::prefix('{locale?}')
     ->whereIn('locale', config('locales.supported'))

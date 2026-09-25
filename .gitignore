@@ -34,8 +34,9 @@ yarn-error.log
 _ide_helper.php
 _ide_helper_models.php
 
-# Local editorial roadmap; keep planning notes out of commits.
+# Local notes; keep them out of commits.
 /docs/content-roadmap.local.md
+/docs/fail2ban.local.md
 
 /deployment-config.json
 /deployment-config-with-prod.json
