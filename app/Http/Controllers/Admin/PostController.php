@@ -73,9 +73,7 @@ class PostController extends Controller
         $validated = $request->validated();
 
         if ($request->file) {
-            $fileName = $this->storeImageOnMinio($request);
-
-            $post->img_path = $fileName;
+            $post->img_path = $this->storeImage($request);
         }
 
         $post->slug = \Str::slug($request->name);
@@ -95,10 +93,10 @@ class PostController extends Controller
             'content' => 'required|string',
             'description' => 'string',
             'category_id' => 'int',
-            'file' => 'required',
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         ])->validate();
 
-        $fileName = $this->storeImageOnMinio($request);
+        $fileName = $this->storeImage($request);
 
         Post::create([
             'name' => $request->name,
@@ -127,20 +125,20 @@ class PostController extends Controller
         return redirect(route('admin.posts'));
     }
 
-    private function storeImageOnMinio(Request $request): string
+    private function storeImage(Request $request): ?string
     {
-        $fileName = null;
+        $filePath = null;
         $user = auth()->user();
 
         if ($request->hasFile('file')) {
             $image = $request->file('file');
-            $imageName = $image->getClientOriginalName();
-            $filePath = rtrim('posts/'.$user->id, '/').'/'.ltrim($imageName, '/');
+            $extension = $image->guessExtension() ?: $image->extension() ?: 'jpg';
+            $imageName = time().'_'.\Str::random(10).'.'.$extension;
+            $filePath = 'posts/'.$user->id.'/'.$imageName;
             Storage::disk('s3')->put($filePath, file_get_contents($image));
-            $fileName = Storage::disk('s3')->url($filePath);
             //            $user->save();
         }
 
-        return $fileName;
+        return $filePath;
     }
 }

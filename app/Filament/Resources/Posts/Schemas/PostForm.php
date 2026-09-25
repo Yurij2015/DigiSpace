@@ -67,7 +67,7 @@ class PostForm
                             ->options(['draft' => 'Draft', 'published' => 'Published', 'archived' => 'Archived'])
                             ->default('draft')
                             ->required(),
-                        ContentImage::make('img_path', 's3', 'posts', true)
+                        ContentImage::make('img_path', 's3', 'posts')
                             ->label('Cover image')
                             ->columnSpanFull(),
                     ])

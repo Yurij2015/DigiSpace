@@ -20,6 +20,7 @@ class LegacyAdminLocaleTest extends TestCase
     public function test_legacy_post_form_receives_base_language_values(): void
     {
         $user = User::factory()->create(['email_verified_at' => now()]);
+        config()->set('filament.admin_emails', array_merge(config('filament.admin_emails', []), [$user->email]));
         $category = Category::create(['name' => 'News', 'slug' => 'news', 'description' => 'News', 'user_id' => $user->id]);
         $post = Post::create([
             'name' => 'English title', 'slug' => 'english-title', 'content' => '<p>English</p>', 'description' => 'd',
