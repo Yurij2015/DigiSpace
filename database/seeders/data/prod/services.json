@@ -313,7 +313,7 @@
             "id": 9,
             "price": 433,
             "service_category_id": 1,
-            "image": "service_asdfasdf_1717271107.jpg",
+            "image": "services/service_asdfasdf_1717271107.jpg",
             "slug": "system-architecture-workflow-planning",
             "status": "inactive",
             "i18n": {

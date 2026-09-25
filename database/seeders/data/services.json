@@ -268,7 +268,7 @@
         },
         {
             "id": 9,
-            "image": "service_asdfasdf_1717271107.jpg",
+            "image": "services/service_asdfasdf_1717271107.jpg",
             "price": null,
             "service_category_id": null,
             "slug": "system-architecture-workflow-planning",
@@ -678,7 +678,7 @@
         },
         {
             "id": 21,
-            "image": "1753723705.jpg",
+            "image": "services/1753723705.jpg",
             "price": 2000,
             "service_category_id": 1,
             "slug": "laravel-development",
@@ -718,7 +718,7 @@
         },
         {
             "id": 22,
-            "image": "1710095217.jpg",
+            "image": "services/1710095217.jpg",
             "price": 2200,
             "service_category_id": 1,
             "slug": "symfony-development",
@@ -758,7 +758,7 @@
         },
         {
             "id": 23,
-            "image": "1685400803.jpg",
+            "image": "services/1685400803.jpg",
             "price": 1500,
             "service_category_id": 1,
             "slug": "php-development",
@@ -798,7 +798,7 @@
         },
         {
             "id": 24,
-            "image": "1685401626.jpg",
+            "image": "services/1685401626.jpg",
             "price": 3000,
             "service_category_id": 1,
             "slug": "golang-development",
@@ -838,7 +838,7 @@
         },
         {
             "id": 25,
-            "image": "1687124726.jpg",
+            "image": "services/1687124726.jpg",
             "price": 1800,
             "service_category_id": 2,
             "slug": "vue-js-nuxt-development",
@@ -878,7 +878,7 @@
         },
         {
             "id": 26,
-            "image": "1685401435.png",
+            "image": "services/1685401435.png",
             "price": 1200,
             "service_category_id": 2,
             "slug": "responsive-web-apps",
@@ -918,7 +918,7 @@
         },
         {
             "id": 27,
-            "image": "1685395904.png",
+            "image": "services/1685395904.png",
             "price": 1000,
             "service_category_id": 3,
             "slug": "wordpress-development",
@@ -958,7 +958,7 @@
         },
         {
             "id": 28,
-            "image": "1687820770.jpg",
+            "image": "services/1687820770.jpg",
             "price": 5000,
             "service_category_id": 3,
             "slug": "custom-crm-cms",
@@ -998,7 +998,7 @@
         },
         {
             "id": 29,
-            "image": "1687906564.jpg",
+            "image": "services/1687906564.jpg",
             "price": 3500,
             "service_category_id": 3,
             "slug": "ecommerce-development",
@@ -1038,7 +1038,7 @@
         },
         {
             "id": 30,
-            "image": "1685401742.jpg",
+            "image": "services/1685401742.jpg",
             "price": 1500,
             "service_category_id": 4,
             "slug": "ai-powered-integrations",
@@ -1078,7 +1078,7 @@
         },
         {
             "id": 31,
-            "image": "1685401583.jpg",
+            "image": "services/1685401583.jpg",
             "price": 1000,
             "service_category_id": 4,
             "slug": "api-integrations",
@@ -1118,7 +1118,7 @@
         },
         {
             "id": 32,
-            "image": "1685401781.jpg",
+            "image": "services/1685401781.jpg",
             "price": 400,
             "service_category_id": 5,
             "slug": "website-maintenance",
@@ -1156,7 +1156,7 @@
         },
         {
             "id": 33,
-            "image": "1685401526.jpg",
+            "image": "services/1685401526.jpg",
             "price": 2000,
             "service_category_id": 5,
             "slug": "legacy-code-refactoring",
@@ -1196,7 +1196,7 @@
         },
         {
             "id": 34,
-            "image": "1687125226.jpg",
+            "image": "services/1687125226.jpg",
             "price": 500,
             "service_category_id": 5,
             "slug": "linux-hosting-deployment",

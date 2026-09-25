@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * @property int $id
@@ -38,6 +40,20 @@ class BlogPostBanner extends Model
     protected $fillable = [
         'img_path', 'blog_page_type', 'post_id', 'alt', 'url',
     ];
+
+    /**
+     * Get the img_path correct path.
+     */
+    protected function imgPath(): Attribute
+    {
+        return Attribute::make(
+            get: static fn ($value) => match (true) {
+                ! $value => $value,
+                str_starts_with($value, 'banners/') => Storage::disk('s3')->url($value),
+                default => $value,
+            },
+        );
+    }
 
     public function post(): BelongsTo
     {

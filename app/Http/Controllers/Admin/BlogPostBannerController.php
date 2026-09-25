@@ -7,6 +7,7 @@ use App\Models\BlogPostBanner;
 use App\Models\Post;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -45,13 +46,13 @@ class BlogPostBannerController extends Controller
 
         $extension = $request->file->guessExtension() ?: $request->file->extension() ?: 'jpg';
         $fileName = time().'_'.\Str::random(10).'.'.$extension;
-        $request->file->move(public_path('banners'), $fileName);
+        Storage::disk('s3')->put('banners/'.$fileName, file_get_contents($request->file));
 
         BlogPostBanner::create([
             'post_id' => $post->id,
             'alt' => $request->alt,
             'url' => $request->url,
-            'img_path' => '/banners/'.$fileName,
+            'img_path' => 'banners/'.$fileName,
         ]);
 
         return redirect(route('admin.posts-banners'))->with('message', 'Banner Added Successfully');
@@ -78,12 +79,12 @@ class BlogPostBannerController extends Controller
         if ($request->file) {
             $extension = $request->file->guessExtension() ?: $request->file->extension() ?: 'jpg';
             $fileName = time().'_'.\Str::random(10).'.'.$extension;
-            $request->file->move(public_path('banners'), $fileName);
+            Storage::disk('s3')->put('banners/'.$fileName, file_get_contents($request->file));
 
             $banner->update([
                 'alt' => $request->alt,
                 'url' => $request->url,
-                'img_path' => '/banners/'.$fileName,
+                'img_path' => 'banners/'.$fileName,
             ]);
         }
 
@@ -116,11 +117,11 @@ class BlogPostBannerController extends Controller
 
         $extension = $request->file->guessExtension() ?: $request->file->extension() ?: 'jpg';
         $fileName = time().'_'.\Str::random(10).'.'.$extension;
-        $request->file->move(public_path('banners'), $fileName);
+        Storage::disk('s3')->put('banners/'.$fileName, file_get_contents($request->file));
 
         BlogPostBanner::create([
             'blog_page_type' => $request->blog_page_type,
-            'img_path' => '/banners/'.$fileName,
+            'img_path' => 'banners/'.$fileName,
         ]);
 
         return redirect(route('admin.posts-banners'))->with('message', 'Banner Added Successfully');

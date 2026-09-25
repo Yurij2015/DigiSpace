@@ -65,7 +65,7 @@ class ServiceForm
                     ])
                     ->default('inactive')
                     ->required(),
-                ContentImage::make('image', 'service_images'),
+                ContentImage::make('image', 's3', 'services'),
                 TextInput::make('slug')->disabled()->dehydrated(false),
             ]);
     }

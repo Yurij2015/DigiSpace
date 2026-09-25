@@ -13,7 +13,7 @@ class BlogPostBannerForm
     {
         return $schema
             ->components([
-                ContentImage::make('img_path', 'banner_images', '', true)
+                ContentImage::make('img_path', 's3', 'banners')
                     ->required(),
                 TextInput::make('alt'),
                 TextInput::make('url')

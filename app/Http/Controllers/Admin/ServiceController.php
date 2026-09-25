@@ -7,6 +7,7 @@ use App\Http\Requests\ServiceSaveRequest;
 use App\Models\Service;
 use App\Models\ServiceCategory;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Inertia\Response;
 use Str;
@@ -70,7 +71,7 @@ class ServiceController extends Controller
         $data['slug'] = $service->slug;
 
         if ($service->image && ! $saveRequest->file) {
-            $data['image'] = str_replace('/uploads/', '', $service->image);
+            $data['image'] = $service->getRawOriginal('image');
         }
 
         if ($saveRequest->file) {
@@ -93,8 +94,9 @@ class ServiceController extends Controller
     {
         $extension = $request->file->guessExtension() ?: $request->file->extension() ?: 'jpg';
         $fileName = "service_$service->slug".'_'.time().'.'.$extension;
-        $request->file->move(public_path('uploads'), $fileName);
+        $filePath = 'services/'.$fileName;
+        Storage::disk('s3')->put($filePath, file_get_contents($request->file));
 
-        return $fileName;
+        return $filePath;
     }
 }
