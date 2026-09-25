@@ -6,7 +6,6 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import {createApp, h} from 'vue';
 import {createInertiaApp} from '@inertiajs/vue3';
-import {InertiaProgress} from '@inertiajs/progress';
 import {resolvePageComponent} from 'laravel-vite-plugin/inertia-helpers';
 import {ZiggyVue} from '../../vendor/tightenco/ziggy/dist/index.esm.js';
 
@@ -21,6 +20,7 @@ createInertiaApp({
             .use(ZiggyVue, Ziggy)
             .mount(el);
     },
+    progress: {
+        color: '#4B5563',
+    },
 });
-
-InertiaProgress.init({color: '#4B5563'});
