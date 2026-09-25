@@ -279,27 +279,27 @@
                     "details": "System architecture & workflow planning",
                     "timeline": null,
                     "description": "<p>System architecture &amp; workflow planning</p>",
-                    "seo_keywords": "dfdfd",
+                    "seo_keywords": "system architecture, workflow planning, software architecture design, business process mapping",
                     "seo_description": "System architecture & workflow planning",
                     "seo_title": "System architecture & workflow planning",
-                    "image_alt": "dfdd"
+                    "image_alt": "System architecture and workflow planning diagram"
                 },
                 "uk": {
                     "title": "Архітектура системи та планування робочих процесів",
                     "details": "Архітектура системи та планування робочих процесів",
-                    "image_alt": "dfdd",
+                    "image_alt": "Діаграма архітектури системи та робочих процесів",
                     "seo_title": "Архітектура системи та планування робочих процесів",
                     "description": "<p>Архітектура системи та планування робочих процесів</p>",
-                    "seo_keywords": "dfdfd",
+                    "seo_keywords": "архітектура системи, планування робочих процесів, проєктування архітектури ПЗ, бізнес-процеси",
                     "seo_description": "Архітектура системи та планування робочих процесів"
                 },
                 "pl": {
                     "title": "Architektura systemu i planowanie przepływów pracy",
                     "details": "Architektura systemu i planowanie przepływów pracy",
-                    "image_alt": "dfdd",
+                    "image_alt": "Diagram architektury systemu i przepływów pracy",
                     "seo_title": "Architektura systemu i planowanie przepływów pracy",
                     "description": "<p>Architektura systemu i planowanie przepływów pracy</p>",
-                    "seo_keywords": "dfdfd",
+                    "seo_keywords": "architektura systemu, planowanie przepływów pracy, projektowanie architektury oprogramowania",
                     "seo_description": "Architektura systemu i planowanie przepływów pracy"
                 }
             }
