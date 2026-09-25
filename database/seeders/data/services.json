@@ -268,7 +268,7 @@
         },
         {
             "id": 9,
-            "image": "services/service_asdfasdf_1717271107.jpg",
+            "image": null,
             "price": null,
             "service_category_id": null,
             "slug": "system-architecture-workflow-planning",
