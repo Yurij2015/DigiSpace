@@ -127,12 +127,10 @@ class Service extends Model implements HasTranslatableColumns
     {
         return Attribute::make(
             get: static fn ($value) => match (true) {
-                ! $value => '/uploads/no_image.png',
+                ! $value => Storage::disk('s3')->url('services/no_image.png'),
                 str_starts_with($value, 'http://'),
-                str_starts_with($value, 'https://'),
-                str_starts_with($value, '/') => $value,
-                str_starts_with($value, 'services/') => Storage::disk('s3')->url($value),
-                default => '/uploads/'.$value,
+                str_starts_with($value, 'https://') => $value,
+                default => Storage::disk('s3')->url($value),
             }
         );
     }

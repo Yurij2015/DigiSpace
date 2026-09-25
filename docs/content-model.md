@@ -32,8 +32,8 @@ contact_forms, subscribers                                             ← inbou
 
 ### Widgets
 
-`widgets`: `title`, `subtitle`, `content` (HTML from TinyMCE), `widget_image` (full URL on MinIO or fallback), `icon`, `css_class`, `anchor`, `element_id`, `widget_category_id`.
-`Widget::widgetImage` accessor returns `url('uploads/widgets/no_image.png')` when empty. `widget_icons` hold Font Awesome classes/URLs for list-type widgets.
+`widgets`: `title`, `subtitle`, `content` (HTML from TinyMCE), `widget_image` (s3 object key), `icon`, `css_class`, `anchor`, `element_id`, `widget_category_id`.
+`Widget::widgetImage` accessor resolves the key via `Storage::disk('s3')->url()` and returns the `widgets/no_image.png` object URL when empty. `widget_icons` hold Font Awesome classes/URLs for list-type widgets.
 
 ### Pages
 
@@ -88,17 +88,16 @@ Rules:
 
 ## Image fallbacks
 
-The service helpers replace only exact legacy URLs ending in `/uploads` or `/uploads/widgets` with `no_image.png`; they are not general null normalization. `Widget::widgetImage()` supplies `url("uploads/widgets/no_image.png")` for an empty value, while `Post::imgPath()` returns the stored value unchanged. Inspect both the accessor and the consuming template before changing fallback behavior.
+Image columns hold s3 object keys, and accessors resolve them via `Storage::disk('s3')->url()` — the public base comes from `AWS_URL` (R2 public URL or a future custom domain). Empty `widgets.widget_image` falls back to `widgets/no_image.png`, empty `services.image` to `services/no_image.png`; `Post::imgPath()` returns the stored value unchanged. Inspect both the accessor and the consuming template before changing fallback behavior.
 
 ## Where uploads end up
 
 | Entity | Storage | Stored value |
 |---|---|---|
-| `widgets.widget_image`, `posts.img_path` | MinIO/S3 disk `s3` (`widgets/{id}/…`, posts folder) | absolute URL |
-| `services.image` | `public/uploads/` | file name (accessor prefixes `/uploads/`) |
-| `blog_post_banners.*` | `public/banners/` | file name |
+| `widgets.widget_image`, `posts.img_path`, `services.image`, `blog_post_banners.img_path` | s3 disk (`widgets/…`, `posts/…`, `services/…`, `banners/…`, `articles/…`) | object key |
+| Rich-text attachments (`posts.content`, `pages.content`, `services.description`) | s3 disk (`posts/content`, `pages/content`, `services/content`) | absolute URL embedded in HTML |
 
-`public/uploads`, `public/images`, `public/banners` are preserved by the deploy workflow; MinIO is external.
+`public/images` (theme assets) is preserved by the deploy workflow; `public/uploads`/`public/banners` are legacy — the app no longer reads them.
 
 ## Admin entry points
 

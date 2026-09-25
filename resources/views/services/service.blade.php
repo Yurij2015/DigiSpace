@@ -9,7 +9,7 @@
             ->take(3);
         $serviceMediaBase = preg_quote(rtrim((string) config('filesystems.disks.s3.url', ''), '/'), '/');
         $serviceDescription = preg_replace(
-            '/(src=["\'](?:\/uploads\/|'.$serviceMediaBase.'\/)services\/[^"\']+)(["\'])/i',
+            '/(src=["\']'.$serviceMediaBase.'\/services\/[^"\']+)(["\'])/i',
             '$1?v='.$serviceAssetVersion.'$2',
             $service->description,
         );
@@ -54,15 +54,15 @@
                             <p>{{ $service->seo_description }}</p>
                             <div class="post-classic__media">
                                 <picture>
-                                    <source srcset="{{ asset($serviceImageWebp) }}?v={{ $serviceAssetVersion }}" type="image/webp">
-                                    <img class="post-classic__image" src="{{ asset($service->image) }}?v={{ $serviceAssetVersion }}"
+                                    <source srcset="{{ $serviceImageWebp }}?v={{ $serviceAssetVersion }}" type="image/webp">
+                                    <img class="post-classic__image" src="{{ $service->image }}?v={{ $serviceAssetVersion }}"
                                          alt="{{ $service->image_alt ?: $service->title }}" width="715"
                                          sizes="(max-width: 767px) calc(100vw - 32px), 715px"
                                          loading="eager" fetchpriority="high" decoding="async"/>
                                 </picture>
                             </div>
                             <div class="service-article__body">
-                                {!! preg_replace('/<p>(\s*<img[^>]+src=["\'](?:\/uploads\/|'.$serviceMediaBase.'\/)services\/[^>]+\/?>(?:\s*)<\/p>)/i', '<figure class="service-diagram">$1</figure>', $serviceDescription) !!}
+                                {!! preg_replace('/<p>(\s*<img[^>]+src=["\']'.$serviceMediaBase.'\/services\/[^>]+\/?>(?:\s*)<\/p>)/i', '<figure class="service-diagram">$1</figure>', $serviceDescription) !!}
                             </div>
                             <div class="service-article__cta">
                                 <a class="button button-primary button-ujarak" href="{{ route('contact-us') }}">

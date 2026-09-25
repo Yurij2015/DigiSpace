@@ -43,7 +43,7 @@
                                 <a href="{{ route('category-service', [$serviceCategory->slug, $item->slug]) }}">
                                     <picture>
                                         <source srcset="{{ asset(preg_replace('/\.(jpe?g|png)$/i', '.webp', ltrim($item->image, '/'))) }}?v={{ $serviceAssetVersion }}" type="image/webp">
-                                        <img class="post-classic__image" src="{{ asset($item->image) }}?v={{ $serviceAssetVersion }}"
+                                        <img class="post-classic__image" src="{{ $item->image }}?v={{ $serviceAssetVersion }}"
                                              alt="{{ $item->image_alt ?: $item->title }}" width="715"
                                              sizes="(max-width: 767px) calc(100vw - 32px), 715px"
                                              loading="lazy" decoding="async"/>

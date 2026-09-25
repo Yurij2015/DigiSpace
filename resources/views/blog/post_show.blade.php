@@ -74,7 +74,7 @@
                             </time>
                         </div>
                         <h4 class="post-single__title">{{ $post->name }}</h4>
-                        <img src="{{ asset($post->img_path) }}" alt="{{ $post->name }}" width="715" height="417"/>
+                        <img src="{{ $post->img_path }}" alt="{{ $post->name }}" width="715" height="417"/>
                         <div class="service-article__body post-article__body">
                             {!! $post->content !!}
                         </div>
@@ -110,7 +110,7 @@
                                         <a class="post-minimal__media"
                                            href="{{ route('blog.post', $recentPost->slug) }}">
                                             <img class="post-minimal__image"
-                                                 src="{{ asset($recentPost->img_path) }}" alt="{{ $recentPost->name }}"
+                                                 src="{{ $recentPost->img_path }}" alt="{{ $recentPost->name }}"
                                                  width="368" height="293"/>
                                         </a>
                                         <h4 class="post-minimal__title">

@@ -40,7 +40,7 @@
                             </ul>
                             <div class="post-classic__media">
                                 <a href="{{ route('category-service', [$item->serviceCategory->slug, $item->slug]) }}">
-                                    <img class="post-classic__image" src="{{ asset($item->image) }}"
+                                    <img class="post-classic__image" src="{{ $item->image }}"
                                          alt="{{ $item->image_alt ?: $item->title }}" width="715"
                                          height="417"/>
                                 </a>

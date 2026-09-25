@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\UpdatePostRequest;
 use App\Models\Category;
 use App\Models\Post;
-use App\Services\PostService;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -20,10 +19,9 @@ class PostController extends Controller
     /**
      * Get and change array with posts
      */
-    final public function posts(PostService $postService): Response
+    final public function posts(): Response
     {
         $posts = Post::with('category:id,name')->latest()->get();
-        $postService->changeImgPathIfNullInPosts($posts);
 
         return Inertia::render('Admin/Posts/Index', [
             'posts' => $posts,
@@ -44,10 +42,9 @@ class PostController extends Controller
     /**
      * Send post and categories to view, render post edit view.
      */
-    final public function postUpdateForm($post, PostService $postService): Response
+    final public function postUpdateForm($post): Response
     {
         $post = Post::where('id', $post)->first();
-        $postService->changeImgPathIfNull($post);
         $statuses = [
             'draft' => 'Draft',
             'published' => 'Published',

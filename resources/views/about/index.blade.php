@@ -66,7 +66,7 @@
                             <!-- Card Creative-->
                             <article class="card-creative">
                                 <div class="card-creative__inner">
-                                    <figure class="card-creative__media"><img src="{{ asset($widget->widget_image) }}"
+                                    <figure class="card-creative__media"><img src="{{ $widget->widget_image }}"
                                                                               alt="{{ $widget->title }}" width="230" height="211"/>
                                     </figure>
                                     <p class="card-creative__title">{{ $widget->title }}</p>

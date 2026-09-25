@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Post;
-use App\Services\PostService;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -36,10 +35,9 @@ class CategoryController extends Controller
         return redirect(route('admin.categories'));
     }
 
-    final public function categoryShow(Category $category, PostService $postService): Response
+    final public function categoryShow(Category $category): Response
     {
         $posts = Post::all()->where('category_id', $category->id);
-        $postService->changeImgPathIfNullInPosts($posts);
 
         return Inertia::render('Admin/Categories/CategoryView', [
             'category' => $category,

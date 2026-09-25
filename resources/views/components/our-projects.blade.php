@@ -11,7 +11,7 @@
                 <article class="quote-creative">
                     <div class="quote-creative__header">
                         <div class="quote-creative__media"><img
-                                src="{{ asset($widget->widget_image) }}"
+                                src="{{ $widget->widget_image }}"
                                 alt="{{ $widget->title }}"
                                 width="112" height="99"/>
                         </div>

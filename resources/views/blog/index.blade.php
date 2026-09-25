@@ -75,7 +75,7 @@
                             </ul>
                             <div class="post-classic__media">
                                 <a class="post-classic__figure" href="{{ route('blog.post', $post->slug) }}">
-                                    <img class="post-classic__image" src="{{ asset($post->img_path) }}"
+                                    <img class="post-classic__image" src="{{ $post->img_path }}"
                                          alt="{{ $post->name }}" width="715"
                                          height="417"/>
                                 </a>

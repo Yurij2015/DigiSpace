@@ -83,9 +83,10 @@ class Widget extends Model implements HasTranslatableColumns
     {
         return Attribute::make(
             get: static fn ($value) => match (true) {
-                ! $value => url('uploads/widgets/no_image.png'),
-                str_starts_with($value, 'widgets/') => Storage::disk('s3')->url($value),
-                default => $value,
+                ! $value => Storage::disk('s3')->url('widgets/no_image.png'),
+                str_starts_with($value, 'http://'),
+                str_starts_with($value, 'https://') => $value,
+                default => Storage::disk('s3')->url($value),
             },
         );
     }
