@@ -39,15 +39,13 @@
             "href": "submenu-first",
             "i18n": {
                 "en": {
-                    "title": "Submenu 1"
+                    "title": "Solutions & Development"
                 },
                 "uk": {
-                    "title": "Підменю 1",
-                    "name": "Послуги DigiSpace"
+                    "title": "Рішення та розробка"
                 },
                 "pl": {
-                    "title": "Podmenu 1",
-                    "name": "Usługi DigiSpace"
+                    "title": "Rozwiązania i rozwój"
                 }
             }
         },
@@ -62,15 +60,13 @@
             "href": "submenu-second",
             "i18n": {
                 "en": {
-                    "title": "Submenu 2"
+                    "title": "Technology Stack"
                 },
                 "uk": {
-                    "title": "Підменю 2",
-                    "name": "Технології DigiSpace"
+                    "title": "Технологічний стек"
                 },
                 "pl": {
-                    "title": "Podmenu 2",
-                    "name": "Technologie DigiSpace"
+                    "title": "Stos technologiczny"
                 }
             }
         },
@@ -85,15 +81,13 @@
             "href": "submenu-third",
             "i18n": {
                 "en": {
-                    "title": "Submenu 3"
+                    "title": "About Company"
                 },
                 "uk": {
-                    "title": "Підменю 3",
-                    "name": "Інфо DigiSpace"
+                    "title": "Про компанію"
                 },
                 "pl": {
-                    "title": "Podmenu 3",
-                    "name": "Informacje DigiSpace"
+                    "title": "O firmie"
                 }
             }
         },

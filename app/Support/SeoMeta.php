@@ -130,18 +130,15 @@ final class SeoMeta
         $pageImageUrl = null;
         if ($page !== null && filled($pageImage)) {
             $pageImage = (string) $pageImage;
-            $pageImageUrl = match (true) {
-                Str::startsWith($pageImage, ['http://', 'https://']) => $pageImage,
-                Str::startsWith($pageImage, '//') => request()->getScheme().':'.$pageImage,
-                Str::startsWith($pageImage, ['/', 'uploads/']) => asset($pageImage),
-                default => asset('uploads/widgets/'.$pageImage),
-            };
+            $pageImageUrl = Str::startsWith($pageImage, ['http://', 'https://'])
+                ? $pageImage
+                : asset($pageImage);
         }
 
         return match (true) {
-            $post !== null => $post->img_path ? asset($post->img_path) : null,
+            $post !== null => $post->img_path ?: null,
             $page !== null => $pageImageUrl,
-            $service !== null => asset($service->image),
+            $service !== null => $service->image,
             default => null,
         } ?: asset('images/og-default.png');
     }

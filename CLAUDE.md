@@ -76,8 +76,8 @@ The public site combines static templates with database-backed content; read [`d
 
 ### Public site conventions
 
-- Controllers are thin, delegate to `app/Services/*` (`ServicesService`, `AboutService`, `PostService`, `WidgetService`, `PagesService`, `DefaultPageService`) and `app/Repositories/BlogRepository`.
-- `PostService` / `WidgetService::changeImgPathIfNull()` only replace legacy placeholder URLs. Widget accessors supply a fallback for empty values; post accessors do not. See `docs/content-model.md` before changing image normalization.
+- Controllers are thin, delegate to `app/Services/*` (`ServicesService`, `AboutService`, `PagesService`, `DefaultPageService`) and `app/Repositories/BlogRepository`.
+- Image columns store **s3 object keys** (`posts/…`, `widgets/…`, `services/…`, `banners/…`, `articles/…`); model accessors resolve them via `Storage::disk('s3')->url()` (public base = `AWS_URL`, currently the R2 `pub-*.r2.dev` host). Empty widget/service images fall back to `widgets/no_image.png` / `services/no_image.png` on the same disk. See `docs/content-model.md` before changing image normalization.
 - SEO/OG tags are in `resources/views/layouts/main.blade.php` and depend on `$post`, `$page` + `$pageImage`, `$serviceCategory` being passed with those exact names.
 - `Service` uses `slug` as route key (`getRouteKeyName`), `Post` and `Category` have a `slug` column too; blog URLs are `/blog/{postSlug}`, `/blog-category/{categorySlug}`, `/blog-archive/{yearMonth}`.
 - `config('settings.is_promo_tab_active')` (`IS_PROMO_TAB_ACTIVE`) toggles the Promos tab.
@@ -92,15 +92,20 @@ The public site combines static templates with database-backed content; read [`d
 - TinyMCE needs `api_key_tinymce` prop passed from the controller (`config('app.tiny_mce_api_key')`).
 - Registration routes are commented out in `routes/auth.php` — admins are created by `UserSeeder`/manually. Login is `/login`, `/admin` and `/admin/profile` declare `verified`, but `User` does not implement `MustVerifyEmail`; verification is not currently enforced by that middleware.
 
-### File uploads — two different targets
+### File uploads — everything goes to S3 (Cloudflare R2)
 
-| What | Where it goes | How |
+All user-editable images are stored on the `s3` disk (R2 bucket `MINIO_BUCKET`, S3 endpoint `MINIO_ENDPOINT`, public base `AWS_URL`). The DB holds **object keys**, never full URLs; accessors resolve URLs at render time, so changing the public host only requires updating `AWS_URL`.
+
+| What | Key prefix | Written by |
 |---|---|---|
-| Widget images, post images | **S3/MinIO** (`Storage::disk('s3')`, bucket `MINIO_BUCKET`, endpoint `MINIO_ENDPOINT`), full URL stored in DB | `WidgetController::storeWidgetImageOnMinio`, `PostController` |
-| Service images | `public/uploads/` (filename in DB, `Service::image` accessor prefixes `/uploads/`) | `$request->file->move(public_path('uploads'))` |
-| Blog banners | `public/banners/` | `BlogPostBannerController` |
+| Post images | `posts/{user_id}/` | `PostController::storeImage`, Filament `ContentImage` |
+| Article/social images | `articles/` | manual upload, `PostForm` image field |
+| Widget images | `widgets/` | `WidgetController::storeWidgetImage`, Filament `ContentImage` |
+| Service images | `services/` | `ServiceController::uploadImage`, Filament `ContentImage` |
+| Blog banners | `banners/` | `BlogPostBannerController`, Filament `ContentImage` |
+| Rich-text attachments | `posts/content`, `pages/content`, `services/content` | `ContentEditor` (s3, public) |
 
-`public/uploads` and `public/images` are git-ignored; `public/banners` is not explicitly ignored. All three are **copied across deployments by the GitHub workflow** (backed up before release, restored after). Anything else written into `public/` at runtime is lost on the next deploy.
+`public/uploads` is git-ignored; `public/images` (theme assets) is tracked. The deploy workflow still copies `images`/`uploads`/`banners` between releases, but runtime code no longer reads `public/uploads` or `public/banners` — all content images resolve through the `s3` disk.
 
 ### Integrations (all configured in `config/services.php` / `.env`)
 

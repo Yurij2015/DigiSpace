@@ -4,7 +4,7 @@
         <div class="post-small__aside">
             <a class="post-small__media" href="{{ route('blog.post', $item->slug) }}">
                 <img class="post-small__image"
-                     src="{{ asset($item->img_path) }}"
+                     src="{{ $item->img_path }}"
                      alt="{{ $item->name }}" width="80" height="68"/>
             </a>
         </div>

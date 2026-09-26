@@ -76,11 +76,18 @@ Route::prefix('{locale?}')
 
         Route::controller(ContactController::class)->group(function () {
             Route::get('contact-us', 'index')->name('contact-us');
-            Route::post('contact-us', 'save')->name('contact.save');
+            Route::post('contact-us', 'save')
+                ->name('contact.save')
+                ->middleware('throttle:10,1');
         });
 
-        Route::post('subscriber-save', [SubscriberController::class, 'save'])->name('subscriber-save');
+        Route::post('subscriber-save', [SubscriberController::class, 'save'])
+            ->name('subscriber-save')
+            ->middleware('throttle:10,1');
     });
+
+Route::post('subscriber-save', [SubscriberController::class, 'save'])
+    ->middleware('throttle:10,1');
 
 Route::middleware(['auth', 'admin'])->group(function (): void {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

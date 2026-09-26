@@ -48,9 +48,10 @@ class BlogPostBanner extends Model
     {
         return Attribute::make(
             get: static fn ($value) => match (true) {
-                ! $value => $value,
-                str_starts_with($value, 'banners/') => Storage::disk('s3')->url($value),
-                default => $value,
+                ! $value,
+                str_starts_with($value, 'http://'),
+                str_starts_with($value, 'https://') => $value,
+                default => Storage::disk('s3')->url($value),
             },
         );
     }

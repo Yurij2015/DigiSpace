@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Widget;
 use App\Models\WidgetCategory;
-use App\Services\WidgetService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -15,13 +14,12 @@ use Inertia\Response;
 
 class WidgetController extends Controller
 {
-    final public function index(WidgetService $widgetService): Response
+    final public function index(): Response
     {
         $widgets = Widget::with('widgetCategory:id,title')
             ->with('widgetIcon')
             ->latest('id')
             ->paginate(config('constants.WIDGET_PER_PAGE'));
-        $widgetService->changeImgPathIfNullInWidgets($widgets);
 
         return Inertia::render('Admin/Widgets/Index', [
             'widgets' => $widgets,
@@ -76,10 +74,9 @@ class WidgetController extends Controller
     /**
      * Send widget and widtetCategories to view, render widget update view.
      */
-    final public function widgetUpdateForm($widget, WidgetService $widgetService): Response
+    final public function widgetUpdateForm($widget): Response
     {
         $widget = Widget::where('id', $widget)->first();
-        $widgetService->changeImgPathIfNull($widget);
         $currentPage = request()->query('page');
 
         return Inertia::render('Admin/Widgets/Update', [

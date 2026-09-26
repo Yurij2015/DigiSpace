@@ -11,84 +11,6 @@
     ],
     "rows": [
         {
-            "id": 23,
-            "widget_category_id": 8,
-            "icon": "",
-            "widget_image": "widgets/23/1754101252.jpg",
-            "css_class": null,
-            "anchor": null,
-            "element_id": null,
-            "i18n": {
-                "en": {
-                    "title": "Sofia Mokra",
-                    "subtitle": "Project Manager, QA Lead",
-                    "content": "<p class=\"MsoNormal\"><span lang=\"EN-US\" style=\"font-size: 14.0pt; line-height: 107%; font-family: 'Times New Roman',serif; mso-ansi-language: EN-US;\">Project Manager, QA Lead</span></p>"
-                },
-                "uk": {
-                    "title": "Софія Мокра",
-                    "subtitle": "Проєктна менеджерка, керівниця QA",
-                    "content": "<p class=\"MsoNormal\"><span lang=\"EN-US\" style=\"font-size: 14.0pt; line-height: 107%; font-family: 'Times New Roman',serif; mso-ansi-language: EN-US;\">Проєктна менеджерка, керівниця QA</span></p>"
-                },
-                "pl": {
-                    "title": "Sofia Mokra",
-                    "subtitle": "Kierowniczka projektów, liderka QA",
-                    "content": "<p class=\"MsoNormal\"><span lang=\"EN-US\" style=\"font-size: 14.0pt; line-height: 107%; font-family: 'Times New Roman',serif; mso-ansi-language: EN-US;\">Kierowniczka projektów, liderka QA</span></p>"
-                }
-            }
-        },
-        {
-            "id": 24,
-            "widget_category_id": 8,
-            "icon": "",
-            "widget_image": "widgets/24/1754101229.jpg",
-            "css_class": null,
-            "anchor": null,
-            "element_id": null,
-            "i18n": {
-                "en": {
-                    "title": "Yurii Mokryi",
-                    "subtitle": "CEO, FullStack PHP Developer",
-                    "content": "<p>CEO, FullStack PHP Developer</p>"
-                },
-                "uk": {
-                    "title": "Юрій Мокрий",
-                    "subtitle": "CEO, FullStack PHP-розробник",
-                    "content": "<p>CEO, FullStack PHP-розробник</p>"
-                },
-                "pl": {
-                    "title": "Yurii Mokryi",
-                    "subtitle": "CEO, programista FullStack PHP",
-                    "content": "<p>CEO, programista FullStack PHP</p>"
-                }
-            }
-        },
-        {
-            "id": 25,
-            "widget_category_id": 8,
-            "icon": "",
-            "widget_image": "widgets/25/1754101198.jpg",
-            "css_class": null,
-            "anchor": null,
-            "element_id": null,
-            "i18n": {
-                "en": {
-                    "title": "Anna Goncharova",
-                    "subtitle": "QA, Project Manager",
-                    "content": "<p>QA, Project Manager</p>"
-                },
-                "uk": {
-                    "title": "Анна Гончарова",
-                    "subtitle": "QA, проєктна менеджерка",
-                    "content": "<p>QA, проєктна менеджерка</p>"
-                },
-                "pl": {
-                    "title": "Anna Goncharova",
-                    "subtitle": "QA, kierowniczka projektów",
-                    "content": "<p>QA, kierowniczka projektów</p>"
-                }
-            }
-        },
-        {
             "id": 37,
             "widget_category_id": 12,
             "icon": "linearicons-cog",
@@ -178,17 +100,17 @@
                 "en": {
                     "title": "Support",
                     "subtitle": "Support",
-                    "content": "<p>We work closely with our clients to understand their goals and provide frequent status updates to ensure that progress is in line with their needs.</p>"
+                    "content": "<p>We provide comprehensive technical support, system monitoring, and ongoing maintenance to guarantee the stable and secure operation of your digital solutions.</p>"
                 },
                 "uk": {
                     "title": "Підтримка",
                     "subtitle": "Підтримка",
-                    "content": "<p>Ми тісно співпрацюємо з нашими клієнтами, щоб зрозуміти їхні цілі, і регулярно повідомляємо про статус робіт, щоб прогрес відповідав їхнім потребам.</p>"
+                    "content": "<p>Ми забезпечуємо технічний супровід, моніторинг систем та регулярні оновлення, гарантуючи безперебійну й безпечну роботу ваших цифрових рішень.</p>"
                 },
                 "pl": {
                     "title": "Wsparcie",
                     "subtitle": "Wsparcie",
-                    "content": "<p>Ściśle współpracujemy z naszymi klientami, aby zrozumieć ich cele, i regularnie informujemy ich o postępach, aby upewnić się, że realizacja odpowiada ich potrzebom.</p>"
+                    "content": "<p>Zapewniamy wsparcie techniczne, bieżący monitoring systemów oraz regularne aktualizacje, gwarantując niezawodne i bezpieczne działanie rozwiązań cyfrowych.</p>"
                 }
             }
         },
@@ -282,17 +204,17 @@
                 "en": {
                     "title": "CMS Website (WordPress)",
                     "subtitle": "CMS Website",
-                    "content": "{\"discount\":\"-30\", \"currency\":\"$\", \"price_value\":\"629\", \"price_aside\":\"99\",  \"period\":\"\", \"price_old\":\"Old Price $900\"}"
+                    "content": "{\"discount\":\"-30%\", \"currency\":\"$\", \"price_value\":\"629\", \"price_aside\":\"99\",  \"period\":\"\", \"price_old\":\"Old Price $900\"}"
                 },
                 "uk": {
                     "title": "Сайт на CMS (WordPress)",
                     "subtitle": "Сайт на CMS",
-                    "content": "{\"discount\":\"-30\", \"currency\":\"$\", \"price_value\":\"629\", \"price_aside\":\"99\",  \"period\":\"\", \"price_old\":\"Стара ціна $900\"}"
+                    "content": "{\"discount\":\"-30%\", \"currency\":\"$\", \"price_value\":\"629\", \"price_aside\":\"99\",  \"period\":\"\", \"price_old\":\"Стара ціна $900\"}"
                 },
                 "pl": {
                     "title": "Strona CMS (WordPress)",
                     "subtitle": "Strona CMS",
-                    "content": "{\"discount\":\"-30\", \"currency\":\"$\", \"price_value\":\"629\", \"price_aside\":\"99\",  \"period\":\"\", \"price_old\":\"Stara cena $900\"}"
+                    "content": "{\"discount\":\"-30%\", \"currency\":\"$\", \"price_value\":\"629\", \"price_aside\":\"99\",  \"period\":\"\", \"price_old\":\"Stara cena $900\"}"
                 }
             }
         },
