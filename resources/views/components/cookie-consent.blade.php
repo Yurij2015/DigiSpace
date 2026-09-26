@@ -8,6 +8,9 @@
     <div class="site-cookie-consent__box">
         <button type="button" class="site-cookie-consent__dismiss" data-consent-dismiss
                 data-testid="consent-dismiss"
+                {{-- Same wording as the aria-label, so a pointer user gets the hint a screen
+                     reader already had: this closes without recording a choice. --}}
+                title="{{ __('site.cookie_consent_dismiss') }}"
                 aria-label="{{ __('site.cookie_consent_dismiss') }}">&times;</button>
         <h2 class="site-cookie-consent__title" id="site-cookie-consent__title">{{ __('site.cookie_consent_title') }}</h2>
         <p class="site-cookie-consent__text">

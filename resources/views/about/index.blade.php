@@ -55,43 +55,7 @@
             </div>
         </div>
     </section>
-    <!-- Team-->
-    @if(false)
-        <section class="section section-lg bg-gray-light text-center">
-            <div class="container">
-                <h2> {{ $teamInfoCategoryTitle }}</h2>
-                <div class="row row-50">
-                    @foreach( $teamInfo['widgets'] as $widget )
-                        <div class="col-md-6 col-lg-4">
-                            <!-- Card Creative-->
-                            <article class="card-creative">
-                                <div class="card-creative__inner">
-                                    <figure class="card-creative__media"><img src="{{ $widget->widget_image }}"
-                                                                              alt="{{ $widget->title }}" width="230" height="211"/>
-                                    </figure>
-                                    <p class="card-creative__title">{{ $widget->title }}</p>
-                                    <p class="card-creative__subtitle">{{ $widget->subtitle }}</p>
-                                    <div class="card-creative__divider"></div>
-                                    <div class="card-creative__aside">
-                                        <ul class="list-inline list-inline-md">
-                                            @foreach($widget->widgetIcon as $icon)
-                                                @if($icon->url)
-                                                    <li>
-                                                        <x-social-link :href="$icon->url" :icon="$icon->icon_class"
-                                                                       class="icon icon-xs icon-darker icon-style-brand"/>
-                                                    </li>
-                                                @endif
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-    @endif
+
     <!-- Facts-->
     <section class="section parallax-container bg-gray-darker"
              data-parallax-img="{{ asset($someFactsAboutCategory->image) }}">

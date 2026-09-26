@@ -70,7 +70,6 @@ The category/menu constants are expected primary keys; column and pagination con
 | `CHOOSE_US_WIDGET_CATEGORY` | 12 | Why Choose Us | `ChooseUsComponent`, home + services |
 | `ANSWERS_QUESTIONS_WIDGET_CATEGORY` | 13 | Frequently Asked Questions | services/FAQ |
 | `AboutController::GENERAL_INFO_WIDGET_CATEGORY` | 7 | About \| General Info | about page |
-| `AboutController::TEAM_INFO` | 8 | About \| Team | about page |
 | `AboutController::SOME_FACTS_ABOUT` | 9 | Some Facts About Us | `SomeFactsAboutUsMain` component |
 | `PromoController::PROMOS` | 14 | Promos | `/promos` (flag hides navigation only; route remains public) |
 | `ContactController::GET_IN_TOUCH` | 15 | Get in Touch | contact page |
