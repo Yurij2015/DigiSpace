@@ -84,7 +84,6 @@ class SaasLandingLocalizationTest extends TestCase
 
     public function test_saas_landing_page_renders_successfully_for_all_supported_locales(): void
     {
-        $this->withoutVite();
         $locales = config('locales.supported');
 
         foreach ($locales as $locale) {
@@ -174,8 +173,6 @@ class SaasLandingLocalizationTest extends TestCase
 
     public function test_landing_has_theme_toggle_and_recaptcha_but_no_ungated_tracking(): void
     {
-        $this->withoutVite();
-
         $html = $this->get(self::LANDING)->assertOk()->getContent();
 
         $this->assertStringContainsString('data-theme-toggle', $html);
