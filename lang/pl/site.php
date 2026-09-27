@@ -111,6 +111,7 @@ return [
     'cookie_consent_save' => 'Zapisz wybór',
     'cookie_consent_dismiss' => 'Zamknij bez wyboru',
     'cookie_consent_saved' => 'Twoje ustawienia cookie zostały zapisane.',
+    'too_many_requests' => 'Zbyt wiele prób. Odczekaj :seconds sekund i spróbuj ponownie — Twoja wiadomość została zachowana.',
     'cookie_category_necessary' => 'Niezbędne',
     'cookie_category_necessary_hint' => 'Wymagane do działania strony: sesja, bezpieczeństwo, język. Zawsze włączone.',
     'cookie_category_analytics' => 'Analityka',

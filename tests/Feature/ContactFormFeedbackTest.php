@@ -36,6 +36,44 @@ class ContactFormFeedbackTest extends TestCase
         Http::fake(['www.google.com/recaptcha/*' => Http::response(['success' => true])]);
     }
 
+    public function test_phone_field_offers_a_self_hosted_country_selector(): void
+    {
+        $html = $this->get(self::UK_CONTACT)->assertOk()->getContent();
+
+        // The enhancement is opt-in per field, so losing the flag would go unnoticed otherwise.
+        $this->assertStringContainsString('data-intl-phone', $html);
+        // The locale pre-selects a likely dial code; every country stays selectable.
+        $this->assertStringContainsString('data-intl-country="ua"', $html);
+        // Vendored under public/, so the form pulls neither the library nor libphonenumber from a
+        // third-party CDN - the same reasoning as the rest of the site's assets.
+        $this->assertStringContainsString('vendor/intl-tel-input/js/intlTelInput.min.js', $html);
+        $this->assertStringContainsString('vendor/intl-tel-input/css/intlTelInput.min.css', $html);
+        $this->assertStringContainsString('vendor/intl-tel-input/js/utils.js', $html);
+        $this->assertStringContainsString('js/contact-phone.js', $html);
+    }
+
+    public function test_phone_field_is_labelled_above_and_reports_errors_without_a_second_label(): void
+    {
+        // Clean render: the label sits outside the input, because the country selector occupies
+        // the start of the field where the theme would otherwise place it.
+        $clean = $this->get(self::EN_CONTACT)->assertOk()->getContent();
+        $this->assertMatchesRegularExpression('/<label class="form-label-outside"[^>]*for="contact-phone"/', $clean);
+
+        // Rejected render: the message must appear, and as a span - a second <label for> would
+        // merge into the input's accessible name alongside the one above it.
+        $rejected = $this->followingRedirects()
+            ->from(self::EN_CONTACT)
+            ->post(self::EN_CONTACT, ['phone' => 'not-a-number'] + self::VALID)
+            ->assertOk()
+            ->getContent();
+
+        $this->assertStringContainsString('id="contact-phone-error"', $rejected);
+        $this->assertStringContainsString('aria-describedby="contact-phone-error"', $rejected);
+        $this->assertStringNotContainsString('<label class="form-label label-error" for="contact-phone">', $rejected);
+        // The label above the field survives the error state, so the input is still named.
+        $this->assertMatchesRegularExpression('/<label class="form-label-outside"[^>]*for="contact-phone"/', $rejected);
+    }
+
     public function test_invalid_email_keeps_the_other_values_and_shows_only_the_email_error(): void
     {
         $this->from(self::EN_CONTACT)

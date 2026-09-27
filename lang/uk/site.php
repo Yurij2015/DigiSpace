@@ -111,6 +111,7 @@ return [
     'cookie_consent_save' => 'Зберегти вибір',
     'cookie_consent_dismiss' => 'Закрити без вибору',
     'cookie_consent_saved' => 'Ваші налаштування cookie збережено.',
+    'too_many_requests' => 'Забагато спроб. Зачекайте :seconds секунд і спробуйте ще раз — ваше повідомлення збережено.',
     'cookie_category_necessary' => 'Необхідні',
     'cookie_category_necessary_hint' => 'Потрібні для роботи сайту: сесія, безпека, мова. Завжди увімкнені.',
     'cookie_category_analytics' => 'Аналітика',

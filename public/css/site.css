@@ -562,3 +562,68 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
 .site-cookie-consent__open--granted { color: #00caad; }
 .site-cookie-consent__open--partial { color: #f0ad4e; }
 .site-cookie-consent__open--denied { color: #e06363; }
+
+/* Rate-limit notice on the contact form: mirrors .contact-success-sent, in the theme's
+   form-validation red rather than the brand gradient, and wraps because the message is a sentence. */
+.contact-form-throttle {
+  margin: 0;
+  padding: 10px 14px;
+  background: #e06363;
+  color: #fff;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: .1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Contact form phone field with the intl-tel-input country selector. The theme's floating label is
+   absolutely positioned over the input, which now begins after the country button, so the label is
+   shifted by the offset the library itself applied (set as a custom property in contact-phone.js). */
+.contact-form-input--intl {
+  /* The country dropdown is absolutely positioned at z-index 2, and .form-wrap around it is
+     position:relative with z-index:auto, so it creates no stacking context and the dropdown
+     competes directly with the other fields' .form-label (z-index 9) - which won, leaving the
+     textarea and e-mail labels showing through the open list. Raising the wrapper above 9 puts
+     the whole field, dropdown included, in front of its siblings. */
+  z-index: 10;
+}
+/* Only the error text is rendered inside this input now - the field's own label sits above it -
+   and it still has to start clear of the country button. */
+.contact-form-input--intl .form-label {
+  padding-left: var(--contact-intl-label-offset, 71px);
+}
+.contact-form-input--intl .iti {
+  width: 100%;
+}
+/* The flag and dial code are an adornment, not something the visitor types into. A hairline rule
+   marks where the fixed prefix ends and the editable number begins - without it "+380" reads as
+   part of the value.
+
+   iti keeps a fixed ~3px between the country button and the input text and re-derives the input's
+   padding from the button width, so widening the button cannot open that gap. The rule is
+   therefore drawn inside the button, inset from its trailing edge, and the dial code is padded to
+   match - that is what puts comparable space on both sides of it. */
+/* Whitespace is the separation between the fixed prefix and the number the visitor types - no
+   rule needed, and it is what design-system guidance recommends for an input adornment. iti keeps
+   a fixed ~3px of its own after the country button, so this padding is what makes the gap read. */
+.contact-form-input--intl .iti__selected-dial-code {
+  padding-right: 14px;
+}
+
+/* Set by contact-phone.js only once the country selector is running: the flag and dial code make
+   the label redundant, but it stays in the DOM so the input keeps its accessible name. */
+.form-label-outside--hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}

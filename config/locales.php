@@ -18,6 +18,14 @@ return [
         'uk' => 'UA',
         'pl' => 'PL',
     ],
+    // Country pre-selected in the contact form's phone field, per locale (intl-tel-input ISO-3166).
+    // A locale is not a country, so this is a best guess for the visitor's most likely dial code,
+    // never a restriction: every country stays selectable in the dropdown.
+    'phone_country' => [
+        'en' => 'gb',
+        'uk' => 'ua',
+        'pl' => 'pl',
+    ],
     'route_names' => [
         'home.index', 'about', 'services', 'pricing', 'promos', 'blog',
         'blog-category', 'blog-archive', 'blog-search', 'contact-us',
