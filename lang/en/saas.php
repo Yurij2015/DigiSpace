@@ -376,6 +376,7 @@ return [
     ],
 
     'footer' => [
+        'privacy_policy' => 'Privacy policy',
         'tagline' => 'SaaS and web development',
         'all_rights_reserved' => 'All rights reserved',
         'location' => 'Poznań, Wielkopolska, Poland.',

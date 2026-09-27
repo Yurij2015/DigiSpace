@@ -376,6 +376,7 @@ return [
     ],
 
     'footer' => [
+        'privacy_policy' => 'Polityka prywatności',
         'tagline' => 'Tworzenie SaaS i aplikacji webowych',
         'all_rights_reserved' => 'Wszelkie prawa zastrzeżone',
         'location' => 'Poznań, Wielkopolska, Polska.',

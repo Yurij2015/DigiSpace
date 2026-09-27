@@ -94,6 +94,9 @@ class SaasLandingLocalizationTest extends TestCase
 
             $html = $response->getContent();
 
+            // A missing translation renders its raw key.
+            $this->assertDoesNotMatchRegularExpression('/>\s*(saas|site)\.[a-z_.]+\s*</', $html);
+
             // Isolated layout: the legacy theme stylesheet must not leak in.
             $this->assertStringNotContainsString('css/site.css', $html);
 

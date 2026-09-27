@@ -179,7 +179,7 @@
             <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
                 <p>&copy; {{ date('Y') }} DigiSpace. {{ __('saas.footer.all_rights_reserved') }}. {{ __('saas.footer.location') }}</p>
                 <div class="flex items-center gap-4">
-                    <a href="{{ route('privacy-policy', ['locale' => app()->getLocale()]) }}" class="hover:underline">{{ __('site.privacy_policy') }}</a>
+                    <a href="{{ route('privacy-policy', ['locale' => app()->getLocale()]) }}" class="hover:underline">{{ __('saas.footer.privacy_policy') }}</a>
                     <a href="{{ route('home.index', ['locale' => app()->getLocale()]) }}" class="hover:underline">{{ __('site.home') }}</a>
                 </div>
             </div>
