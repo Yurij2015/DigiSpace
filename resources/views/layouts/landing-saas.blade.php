@@ -94,7 +94,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
             {{-- Brand Logo --}}
             <a href="{{ route('home.index', ['locale' => app()->getLocale()]) }}" class="flex items-center gap-2 group focus:outline-none">
-                <img src="{{ asset('favicons/digispace-d.svg') }}" alt="" width="40" height="40" class="size-9 sm:size-10 shrink-0 transition-transform group-hover:scale-105">
+                <img src="{{ asset('favicons/digispace-d.svg') }}?v={{ filemtime(public_path('favicons/digispace-d.svg')) }}" alt="" width="40" height="40" class="size-9 sm:size-10 shrink-0 transition-transform group-hover:scale-105">
                 <div class="flex flex-col">
                     <span class="font-bold text-slate-950 dark:text-white text-base sm:text-lg leading-tight tracking-tight">DigiSpace</span>
                     <span class="hidden sm:block whitespace-nowrap text-[10px] font-semibold tracking-widest uppercase text-slate-400">{{ __('saas.nav.location') }}</span>
