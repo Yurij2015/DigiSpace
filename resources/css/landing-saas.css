@@ -1,0 +1,17 @@
+/* Isolated from the admin Tailwind config: scan only the landing templates. */
+@import "tailwindcss" source(none);
+@source "../views/development";
+@source "../views/layouts/landing-saas.blade.php";
+
+/* Class-based dark mode: <html class="dark"> is set by the inline script in the layout
+   from the visitor's saved choice, falling back to the OS preference. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Native controls (select popups, scrollbars) follow the chosen theme, not only the OS one. */
+:root {
+    color-scheme: light;
+}
+
+:root.dark {
+    color-scheme: dark;
+}

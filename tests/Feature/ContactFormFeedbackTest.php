@@ -142,7 +142,7 @@ class ContactFormFeedbackTest extends TestCase
             ->assertSessionHasNoErrors()
             ->assertSessionHas('success', 'Ми отримали ваше повідомлення. Дякуємо, що написали нам!');
 
-        $this->assertDatabaseHas('contact_forms', ['email' => 'yurii@example.com', 'name' => 'Yurii Mokryi']);
+        $this->assertDatabaseHas('contact_forms', ['email' => 'yurii@example.com', 'name' => 'Yurii Mokryi', 'source' => 'contact-us']);
 
         $this->get(self::UK_CONTACT)
             ->assertOk()

@@ -23,6 +23,7 @@ use App\Http\Controllers\Admin\WidgetController;
 use App\Http\Controllers\Admin\WidgetIconController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Development\SaasController;
 use App\Http\Controllers\FooterPagesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LegacyUrlRedirectController;
@@ -84,6 +85,21 @@ Route::prefix('{locale?}')
         Route::post('subscriber-save', [SubscriberController::class, 'save'])
             ->name('subscriber-save')
             ->middleware('throttle:subscribe');
+    });
+
+/*
+|--------------------------------------------------------------------------
+| Dedicated Development Services & Landing Pages
+|--------------------------------------------------------------------------
+*/
+Route::prefix('{locale?}/development')
+    ->whereIn('locale', config('locales.supported'))
+    ->name('development.')
+    ->group(function (): void {
+        Route::get('saas', [SaasController::class, 'show'])->name('saas');
+        Route::post('saas-inquiry', [SaasController::class, 'inquiry'])
+            ->name('saas.inquiry')
+            ->middleware('throttle:contact-form');
     });
 
 Route::middleware(['auth', 'admin'])->group(function (): void {
