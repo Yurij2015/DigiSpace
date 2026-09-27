@@ -41,6 +41,10 @@ final class SeoMeta
      */
     public static function resolve(array $view, ?string $route, string $fallbackTitle): array
     {
+        // The layout passes yieldContent('title'), which Blade has already escaped for an inline
+        // @section('title', …); decode it once so the {{ }} output does not escape it twice.
+        $fallbackTitle = html_entity_decode($fallbackTitle, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+
         $post = $route === 'blog.post' && ($view['post'] ?? null) instanceof Post ? $view['post'] : null;
         $pageRoutes = ['pages.page', 'privacy-policy', 'faq', 'support', 'about', 'services', 'pricing', 'contact-us'];
         $page = null;

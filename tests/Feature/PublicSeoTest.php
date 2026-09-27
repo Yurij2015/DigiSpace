@@ -148,6 +148,45 @@ class PublicSeoTest extends TestCase
         $this->assertSame(1, $document->query('//figure[contains(@class, "service-diagram")]')->length);
     }
 
+    public function test_service_title_with_markup_characters_is_escaped_once(): void
+    {
+        $this->seedPublicSite();
+        $category = ServiceCategory::create(['name' => 'Web']);
+        Service::create([
+            'title' => "Custom CRM & CMS Developer's Kit",
+            'slug' => 'crm',
+            'status' => 'active',
+            'service_category_id' => $category->id,
+        ]);
+
+        $response = $this->get('/en/service-category/web/crm');
+
+        $response->assertOk();
+        $response->assertSee('<title>DigiSpace | Custom CRM &amp; CMS Developer&#039;s Kit</title>', false);
+    }
+
+    public function test_service_images_render_a_single_source_without_a_webp_variant(): void
+    {
+        $this->seedPublicSite();
+        $category = ServiceCategory::create(['name' => 'Web']);
+        Service::create(['title' => 'Development', 'slug' => 'development', 'status' => 'active', 'service_category_id' => $category->id]);
+
+        foreach (['/en/service-category/web/development', '/en/service-category/web'] as $path) {
+            $response = $this->get($path);
+
+            $response->assertOk();
+            $document = $this->document($response->getContent());
+            $hero = $document->query('//img[contains(@class, "post-classic__image")]');
+            $this->assertCount(1, $hero, $path);
+            $this->assertStringStartsWith(
+                Storage::disk('s3')->url('services/no_image.png'),
+                $hero->item(0)->attributes->getNamedItem('src')->nodeValue,
+                $path,
+            );
+            $this->assertSame(0, $document->query('//source[@type="image/webp"]')->length, $path);
+        }
+    }
+
     private function title(DOMXPath $document): string
     {
         return trim((string) $document->evaluate('string(//title)'));

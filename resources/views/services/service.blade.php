@@ -3,7 +3,6 @@
 @section('content')
     @php
         $serviceAssetVersion = '20260922-2';
-        $serviceImageWebp = preg_replace('/\.(jpe?g|png)$/i', '.webp', ltrim($service->image, '/'));
         $relatedServices = $serviceCategory->service
             ->where('id', '!=', $service->id)
             ->take(3);
@@ -53,13 +52,9 @@
                             </ul>
                             <p>{{ $service->seo_description }}</p>
                             <div class="post-classic__media">
-                                <picture>
-                                    <source srcset="{{ $serviceImageWebp }}?v={{ $serviceAssetVersion }}" type="image/webp">
-                                    <img class="post-classic__image" src="{{ $service->image }}?v={{ $serviceAssetVersion }}"
-                                         alt="{{ $service->image_alt ?: $service->title }}" width="715"
-                                         sizes="(max-width: 767px) calc(100vw - 32px), 715px"
-                                         loading="eager" fetchpriority="high" decoding="async"/>
-                                </picture>
+                                <img class="post-classic__image" src="{{ $service->image }}?v={{ $serviceAssetVersion }}"
+                                     alt="{{ $service->image_alt ?: $service->title }}" width="715"
+                                     loading="eager" fetchpriority="high" decoding="async"/>
                             </div>
                             <div class="service-article__body">
                                 {!! preg_replace('/<p>(\s*<img[^>]+src=["\']'.$serviceMediaBase.'\/services\/[^>]+\/?>(?:\s*)<\/p>)/i', '<figure class="service-diagram">$1</figure>', $serviceDescription) !!}
