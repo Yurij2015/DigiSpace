@@ -94,7 +94,19 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
             {{-- Brand Logo --}}
             <a href="{{ route('home.index', ['locale' => app()->getLocale()]) }}" class="flex items-center gap-2 group focus:outline-none">
-                <img src="{{ asset('images/favicon.ico') }}" alt="" width="40" height="40" class="size-9 sm:size-10 shrink-0 transition-transform group-hover:scale-105">
+                {{-- DigiSpace "D" mark: vector redraw of images/favicon.ico --}}
+                <svg class="size-9 sm:size-10 shrink-0 transition-transform group-hover:scale-105" viewBox="0 0 48 48" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="digispace-d" x1="2" y1="0" x2="42" y2="0" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#00aafb"/>
+                            <stop offset="1" stop-color="#00caad"/>
+                        </linearGradient>
+                    </defs>
+                    <g fill="url(#digispace-d)" fill-rule="evenodd">
+                        <rect x="4.5" y="0" width="7" height="7"/>
+                        <path d="M11.5 7.5H29C33 7.5 36.5 10 38.5 14L45.5 27.5 36 42.5C34 46 31.5 48 28 48H0.5V18.5H26L32.5 27.5 26.5 36.5H11.5Z"/>
+                    </g>
+                </svg>
                 <div class="flex flex-col">
                     <span class="font-bold text-slate-950 dark:text-white text-base sm:text-lg leading-tight tracking-tight">DigiSpace</span>
                     <span class="hidden sm:block whitespace-nowrap text-[10px] font-semibold tracking-widest uppercase text-slate-400">{{ __('saas.nav.location') }}</span>
