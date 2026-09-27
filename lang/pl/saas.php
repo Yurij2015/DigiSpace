@@ -44,7 +44,7 @@ return [
         'view_live' => 'Otwórz produkt',
         'projects' => [
             'digipulse' => [
-                'badge' => 'Monitoring dostępności',
+                'badge' => 'Własny produkt SaaS',
                 'name' => 'DigiPulse',
                 'tagline' => 'Monitoring dostępności stron z powiadomieniami o incydentach',
                 'desc' => 'Laravel Octane i Filament odpowiadają za harmonogram, Redis przekazuje sprawdzenia do workerów w Go, a powiadomienia trafiają na Telegram i e-mail. Jest też serwer MCP, dzięki któremu asystenci AI mogą odczytywać dane z monitoringu.',
@@ -55,7 +55,7 @@ return [
                 'badge' => 'Platforma B2B multi-tenant',
                 'name' => 'VetSpace & VetCard',
                 'tagline' => 'Platforma dla klinik weterynaryjnych i właścicieli zwierząt',
-                'desc' => 'Każda klinika ma odizolowane dane, własną subdomenę lub domenę, rezerwacje online, panel dla personelu i subskrypcję Stripe (Laravel Cashier). Frontend w Nuxt renderuje strony po stronie serwera, dzięki czemu strony klinik szybko się ładują i dobrze indeksują w wyszukiwarkach.',
+                'desc' => 'Każda klinika ma odizolowane dane, własną subdomenę lub domenę, rezerwacje online, panel dla personelu i subskrypcję Stripe (Laravel Cashier). Frontend w Nuxt korzysta z renderowania po stronie serwera (SSR), dzięki czemu serwisy klinik szybko się ładują i są dobrze indeksowane przez wyszukiwarki.',
                 'stack' => ['Laravel API', 'Nuxt SSR', 'Multi-tenancy', 'Stripe Cashier', 'Tailwind CSS', 'PostgreSQL'],
                 'live_url' => 'https://vetspace.pro',
                 'mock' => [
@@ -95,7 +95,7 @@ return [
             ],
             'workers' => [
                 'title' => 'Zadania w tle',
-                'desc' => 'Wolne operacje (PDF, e-maile, pobieranie danych, zapytania do AI) działają w kolejkach, więc interfejs nie zwalnia. Workery w Go tam, gdzie przepustowość naprawdę ma znaczenie.',
+                'desc' => 'Czasochłonne operacje (PDF, e-maile, pobieranie danych, zapytania do AI) działają w kolejkach, więc interfejs nie zwalnia. Workery w Go tam, gdzie przepustowość naprawdę ma znaczenie.',
                 'tag' => 'Wydajność',
             ],
             'admin' => [
@@ -129,7 +129,7 @@ return [
             'testing' => [
                 'badge' => 'Testy',
                 'title' => 'Testy automatyczne',
-                'desc' => 'Testy jednostkowe sprawdzają logikę biznesową i rozliczenia, a testy Playwright przechodzą rejestrację, onboarding i płatność tak, jak zrobiłby to użytkownik. Uruchamiają się przy każdym pushu, więc regresje wychodzą przed wydaniem.',
+                'desc' => 'Testy jednostkowe sprawdzają logikę biznesową i rozliczenia, a testy Playwright przechodzą rejestrację, onboarding i płatność tak, jak zrobiłby to użytkownik. Uruchamiają się przy każdym pushu, więc regresje są wykrywane przed wydaniem.',
             ],
             'ownership' => [
                 'badge' => 'Własność',
@@ -208,7 +208,7 @@ return [
                 'number' => '02',
                 'name' => 'Główne funkcje i płatności',
                 'duration' => 'Tygodnie 3–4',
-                'desc' => 'To, co Twój produkt robi najważniejszego, oraz subskrypcje.',
+                'desc' => 'Najważniejsza funkcja Twojego produktu oraz subskrypcje.',
                 'deliverables' => [
                     'Główna logika produktu',
                     'Stripe Checkout i portal klienta (plany i subskrypcje)',
@@ -273,7 +273,7 @@ return [
                 'price' => 'od 9 500 PLN',
                 'price_sub' => '≈ $2 400 · miesięcznie',
                 'timeline' => 'Miesięcznie',
-                'desc' => 'Dla działającego SaaS, który potrzebuje wsparcia technicznego na poziomie senior: nowe funkcje, refaktoryzacja, integracje AI, skalowanie.',
+                'desc' => 'Dla działającego produktu SaaS, który potrzebuje wsparcia technicznego na poziomie senior: nowe funkcje, refaktoryzacja, integracje AI, skalowanie.',
                 'features' => [
                     'Przegląd architektury, zapytań SQL i bezpieczeństwa',
                     'Złożone zadania backendowe (AI, RAG, workery w Go)',
@@ -329,7 +329,7 @@ return [
             ],
             'q6' => [
                 'q' => 'Jak wyglądają płatności?',
-                'a' => 'Płatność jest podzielona na sprinty, zwykle 25% na początku każdego dwutygodniowego sprintu, albo przez escrow. Płacisz za rezultaty, które już sprawdziłeś na serwerze testowym.',
+                'a' => 'Płatność jest podzielona na sprinty: zwykle 25% na początku każdego dwutygodniowego sprintu; możliwy jest też escrow. Rezultat każdego sprintu widzisz na serwerze testowym, zanim zapłacisz za kolejny.',
             ],
             'q7' => [
                 'q' => 'Czy pracujecie z firmami z Poznania i Wielkopolski?',

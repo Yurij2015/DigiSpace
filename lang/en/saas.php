@@ -44,7 +44,7 @@ return [
         'view_live' => 'Open the product',
         'projects' => [
             'digipulse' => [
-                'badge' => 'Uptime monitoring',
+                'badge' => 'Our own SaaS product',
                 'name' => 'DigiPulse',
                 'tagline' => 'Website uptime monitoring with incident alerts',
                 'desc' => 'Laravel Octane and Filament handle scheduling, Redis passes checks to workers written in Go, and alerts go out through Telegram and email. It also has an MCP server, so AI assistants can read monitoring data.',
@@ -55,7 +55,7 @@ return [
                 'badge' => 'Multi-tenant B2B platform',
                 'name' => 'VetSpace & VetCard',
                 'tagline' => 'Platform for veterinary clinics and pet owners',
-                'desc' => 'Every clinic has its own isolated data, its own subdomain or domain, online booking, a staff area and a Stripe subscription (Laravel Cashier). The Nuxt frontend renders pages on the server, which helps clinic pages load fast and get indexed by search engines.',
+                'desc' => 'Every clinic has its own isolated data, its own subdomain or domain, online booking, a staff area and a Stripe subscription (Laravel Cashier). The Nuxt frontend renders pages on the server, so clinic pages load fast and are easy for search engines to index.',
                 'stack' => ['Laravel API', 'Nuxt SSR', 'Multi-tenancy', 'Stripe Cashier', 'Tailwind CSS', 'PostgreSQL'],
                 'live_url' => 'https://vetspace.pro',
                 'mock' => [
@@ -329,7 +329,7 @@ return [
             ],
             'q6' => [
                 'q' => 'How does payment work?',
-                'a' => 'Payment is split by sprint, usually 25% at the start of each two-week sprint, or through escrow. You pay for results you have already checked on the test server.',
+                'a' => 'Payment is split by sprint: usually 25% at the start of each two-week sprint; escrow is also possible. You see the result of each sprint on the test server before paying for the next one.',
             ],
             'q7' => [
                 'q' => 'Do you work with companies in Poznań and Wielkopolska?',
