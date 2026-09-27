@@ -111,6 +111,7 @@ return [
     'cookie_consent_save' => 'Save selection',
     'cookie_consent_dismiss' => 'Close without choosing',
     'cookie_consent_saved' => 'Your cookie preferences have been saved.',
+    'too_many_requests' => 'Too many attempts. Please wait :seconds seconds and try again — your message has been kept.',
     'cookie_category_necessary' => 'Necessary',
     'cookie_category_necessary_hint' => 'Required for the site to work: session, security, language. Always on.',
     'cookie_category_analytics' => 'Analytics',
