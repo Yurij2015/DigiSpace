@@ -43,6 +43,7 @@ class ContactController extends Controller
     {
         $validated = $request->validated();
         $validated['name'] = $validated['first_name'].' '.$validated['last_name'];
+        $validated['source'] = ContactForm::SOURCE_CONTACT_PAGE;
 
         ContactForm::create($validated);
 

@@ -13,6 +13,7 @@ use Illuminate\Support\Carbon;
  * @property string|null $phone
  * @property string|null $message
  * @property string|null $email
+ * @property string|null $source
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  *
@@ -31,5 +32,11 @@ use Illuminate\Support\Carbon;
  */
 class ContactForm extends Model
 {
-    protected $fillable = ['first_name', 'last_name', 'name', 'email', 'phone', 'message'];
+    /** Lead submitted through the main contact page (/contact-us). */
+    public const SOURCE_CONTACT_PAGE = 'contact-us';
+
+    /** Lead submitted through the SaaS development landing (/development/saas). */
+    public const SOURCE_SAAS_LANDING = 'development-saas';
+
+    protected $fillable = ['first_name', 'last_name', 'name', 'email', 'phone', 'message', 'source'];
 }
