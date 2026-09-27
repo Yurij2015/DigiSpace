@@ -27,8 +27,8 @@
     <link rel="alternate" hreflang="x-default" href="{{ route('development.saas', ['locale' => config('locales.default')], true) }}">
 
     {{-- Favicons --}}
-    <link rel="alternate icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
-    <link rel="icon" href="{{ asset('favicons/site.svg') }}" type="image/svg+xml">
+    <link rel="alternate icon" href="{{ asset('favicons/digispace-d.ico') }}?v={{ filemtime(public_path('favicons/digispace-d.ico')) }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('favicons/digispace-d.svg') }}?v={{ filemtime(public_path('favicons/digispace-d.svg')) }}" type="image/svg+xml">
 
     {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
