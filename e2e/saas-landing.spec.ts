@@ -69,11 +69,8 @@ for (const phone of PHONES) {
             expect(bannerBox.height, 'cookie bar height').toBeLessThanOrEqual(phone.height * 0.3);
             expect(ctaBox.y + ctaBox.height, 'hero CTA bottom must be above the cookie bar').toBeLessThanOrEqual(bannerBox.y);
 
-            // On regular-height phones the secondary action (Telegram) is visible too.
-            if (phone.height >= 780) {
-                const telegramBox = (await page.getByTestId('hero-telegram').boundingBox())!;
-                expect(telegramBox.y + telegramBox.height).toBeLessThanOrEqual(bannerBox.y);
-            }
+            // Both landings keep one primary hero action; Telegram remains in the contact section.
+            await expect(page.getByTestId('hero-telegram')).toHaveCount(0);
 
             // Accept and reject stay equally easy: same row, same size.
             const accept = (await page.getByTestId('consent-accept').boundingBox())!;

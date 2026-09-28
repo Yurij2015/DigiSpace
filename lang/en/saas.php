@@ -3,7 +3,7 @@
 return [
     'seo' => [
         'title' => 'SaaS MVP Development in Poznań | DigiSpace',
-        'description' => 'SaaS MVP development in 6–8 weeks: multi-tenancy, Stripe subscriptions, background queues and AI integrations. DigiSpace works with clients in Poznań, across Poland and the EU.',
+        'description' => 'SaaS MVP development to test your idea and launch your product. From $4,800 net, typically 6–8 weeks. Working with clients across Poland and the EU.',
     ],
 
     'nav' => [
@@ -18,27 +18,27 @@ return [
 
     'hero' => [
         'badge' => 'SaaS development · Poznań',
-        'title' => 'Your SaaS MVP, from idea to launch in 6–8 weeks',
-        'subtitle' => 'We design and build SaaS products on a solid base: separate data for each client company, Stripe subscriptions, background jobs and AI features where they make sense. You talk directly to the developer who writes the code.',
-        'subtitle_short' => 'SaaS products on a solid base: separate data for each client, Stripe subscriptions, background jobs and AI. You talk directly to the developer.',
-        'cta_primary' => 'Get a scope and timeline estimate',
+        'title' => 'Your SaaS MVP, from idea to launch',
+        'subtitle' => 'We build the first version of your SaaS so you can test your idea with real users. Together, we define the features, agree on a budget and timeline, and get your product ready to launch.',
+        'subtitle_short' => 'We build your SaaS MVP so you can test your idea with real users. We agree on features, budget and timeline before development starts.',
+        'cta_primary' => 'Get a cost and timeline estimate',
         'status' => 'Taking on new projects',
         'metric_labels' => [
             'price' => 'Budget',
             'timeline' => 'Timeline',
-            'ownership' => 'Ownership',
+            'ownership' => 'Transparency',
         ],
         'metrics' => [
             'price' => 'MVP from $4,800 net',
-            'timeline' => '6–8 weeks to launch',
-            'ownership' => 'Code and servers are yours',
+            'timeline' => 'Typically 6–8 weeks',
+            'ownership' => 'You see progress at every stage',
         ],
     ],
 
     'proofs' => [
         'badge' => 'Our projects',
         'title' => 'Products we built and run ourselves',
-        'subtitle' => 'Each of these systems runs in production. Browse the screenshots or open the product itself.',
+        'subtitle' => 'Explore our products, see what they do and learn which technologies we use.',
         'view_live' => 'Open the product',
         'gallery_hint' => 'Screenshots from the running products',
         'gallery_open' => 'Open screenshot',
@@ -51,8 +51,8 @@ return [
                 'badge' => 'Our own SaaS product',
                 'name' => 'DigiPulse',
                 'screens' => [
-                    ['file' => 'digipulse-dashboard', 'caption' => 'Dashboard: status, check types, SSL, ping and 30-day uptime of every monitored site (site names blurred)'],
-                    ['file' => 'digipulse-history', 'caption' => 'Site history: weekly response time, P95 latency, Apdex score and incidents'],
+                    ['file' => 'digipulse-dashboard', 'caption' => 'Website overview: availability, response times and SSL certificates (site names blurred)'],
+                    ['file' => 'digipulse-history', 'caption' => 'Site history: response times and incidents over the past week'],
                 ],
                 'tagline' => 'Website uptime monitoring with incident alerts',
                 'stack' => ['Laravel Octane', 'Go', 'Redis', 'Filament', 'PostgreSQL', 'MCP'],
@@ -62,23 +62,23 @@ return [
                 'badge' => 'Multi-tenant B2B platform',
                 'name' => 'VetSpace & VetCard',
                 'screens' => [
-                    ['file' => 'vetspace-clinic-month', 'caption' => 'Clinic workspace: month view with the number of appointments per doctor for every day (demo data)'],
-                    ['file' => 'vetspace-clinic-calendar', 'caption' => 'Clinic workspace: appointment calendar with branch and doctor filters (demo data)'],
+                    ['file' => 'vetspace-clinic-month', 'caption' => 'Monthly calendar: daily appointment counts for each doctor (demo data)'],
+                    ['file' => 'vetspace-clinic-calendar', 'caption' => 'Appointment calendar: filters by branch and doctor (demo data)'],
                     ['file' => 'vetspace-admin-plans', 'caption' => 'Filament admin panel: subscription plans synced with Stripe'],
-                    ['file' => 'vetspace-swagger-appointments', 'caption' => 'REST API documented with OpenAPI (Swagger): appointment endpoints of the core API'],
+                    ['file' => 'vetspace-swagger-appointments', 'caption' => 'API documentation: requests for managing appointments'],
                 ],
                 'tagline' => 'Platform for veterinary clinics and pet owners',
                 'stack' => ['Laravel API', 'Nuxt SSR', 'Multi-tenancy', 'Stripe Cashier', 'Tailwind CSS', 'PostgreSQL'],
                 'live_url' => 'https://vetspace.pro',
             ],
             'netpostpanel' => [
-                'badge' => 'AI & RAG platform',
+                'badge' => 'AI for content creation',
                 'name' => 'NetPostPanel',
                 'screens' => [
-                    ['file' => 'netpostpanel-workbench', 'caption' => 'Workbench: content type, prompt and source research in a single flow'],
-                    ['file' => 'netpostpanel-autopilot', 'caption' => 'Auto Pilot: daily scheduled generation from custom topics and sources'],
+                    ['file' => 'netpostpanel-workbench', 'caption' => 'Workspace: content type, AI instructions and source research'],
+                    ['file' => 'netpostpanel-autopilot', 'caption' => 'Scheduled draft generation from selected topics and sources'],
                 ],
-                'tagline' => 'Content preparation with AI: source research, drafts, semantic search',
+                'tagline' => 'AI-assisted source research and drafts for articles and social posts',
                 'stack' => ['Laravel', 'RAG', 'Qdrant', 'Langfuse', 'Horizon', 'LLM API'],
                 'live_url' => 'https://github.com/Yurij2015/net-post-panel-overview',
                 // Not a public product: link the descriptive repository, as the portfolio does.
@@ -88,26 +88,26 @@ return [
     ],
 
     'engine' => [
-        'title' => 'Building blocks of a typical SaaS MVP',
-        'subtitle' => 'Which of these your product needs is agreed at the start. We don’t build what you won’t use.',
+        'title' => 'What we can build into your SaaS',
+        'subtitle' => 'At the start, we decide what the first version needs and what can be added later.',
         'pillars' => [
             'multitenancy' => [
-                'title' => 'Multi-tenancy',
+                'title' => 'Data isolation between companies',
             ],
             'billing' => [
                 'title' => 'Stripe subscriptions',
             ],
             'workers' => [
-                'title' => 'Background jobs',
+                'title' => 'Background job processing',
             ],
             'admin' => [
                 'title' => 'Admin panel (Filament)',
             ],
             'ai' => [
-                'title' => 'AI features and RAG',
+                'title' => 'AI features and search across your data',
             ],
             'devops' => [
-                'title' => 'Docker and deployment',
+                'title' => 'Docker deployment',
             ],
         ],
     ],
@@ -115,54 +115,54 @@ return [
     'guarantees' => [
         'badge' => 'How we work',
         'title' => 'What you can count on',
-        'subtitle' => 'Four rules we follow on every project, and the launch plan.',
+        'subtitle' => 'Access to work in progress, feature testing and direct communication.',
         'items' => [
             'staging' => [
-                'badge' => 'First week',
-                'title' => 'A test server from the first week',
-                'desc' => 'During the first week you get a password-protected test server. Every change that passes the automated tests is deployed there automatically (GitHub Actions), so you see the product itself rather than status reports.',
+                'badge' => 'Product preview',
+                'title' => 'Try your product before launch',
+                'desc' => 'We provide access to a test environment during development. Try completed features and let us know what needs further work.',
             ],
             'testing' => [
                 'badge' => 'Tests',
                 'title' => 'Automated tests',
-                'desc' => 'Unit tests cover business logic and billing; Playwright tests go through sign-up, onboarding and payment the way a user would. They run on every push, so regressions get caught before release.',
+                'desc' => 'Automated tests check business logic and key user actions such as sign-up, sign-in and payment. They help catch errors before updates are released.',
             ],
             'ownership' => [
-                'badge' => 'Ownership',
-                'title' => 'Code and infrastructure belong to you',
-                'desc' => 'Commits go to your private GitHub or GitLab repository from day one, and the application runs on your cloud account. No proprietary licences.',
+                'badge' => 'Collaboration',
+                'title' => 'Access to code during development',
+                'desc' => 'We work in your GitHub repository or give you access to ours during development. We agree on the setup at the start.',
             ],
             'direct' => [
                 'badge' => 'Direct contact',
                 'title' => 'You talk to the developer',
-                'desc' => 'No project managers in between: you discuss tasks directly with the senior full-stack developer who writes the code.',
+                'desc' => 'You discuss requirements and technical decisions directly with the developer building your product.',
             ],
         ],
     ],
 
     'process' => [
         'title' => 'Four stages to launch',
-        'subtitle' => 'Each stage takes up to two weeks and ends with a demo on the test server. With a smaller scope the stages are shorter, and launch can happen in 6 weeks.',
+        'subtitle' => 'Below is an example eight-week plan. The duration of each stage depends on the agreed scope.',
         'sprints' => [
             's1' => [
-                'name' => 'Architecture and foundation',
+                'name' => 'Architecture and database',
                 'duration' => 'Weeks 1–2',
-                'desc' => 'An architecture with room for the product to grow.',
+                'desc' => 'We design the application structure and database.',
             ],
             's2' => [
                 'name' => 'Core features and payments',
                 'duration' => 'Weeks 3–4',
-                'desc' => 'The main thing your product does, plus subscriptions.',
+                'desc' => 'We build the core features and integrate payments where needed.',
             ],
             's3' => [
                 'name' => 'User area and admin panel',
                 'duration' => 'Weeks 5–6',
-                'desc' => 'What your customers and your team will work in.',
+                'desc' => 'We build the user dashboard and tools for managing the product.',
             ],
             's4' => [
                 'name' => 'Testing and launch',
                 'duration' => 'Weeks 7–8',
-                'desc' => 'End-to-end tests, security checks and production release.',
+                'desc' => 'We check the product and its security, then deploy it to the agreed hosting environment.',
             ],
         ],
     ],
@@ -170,44 +170,44 @@ return [
     'pricing' => [
         'net_label' => 'net',
         'vat_note' => 'All prices are net. As a Polish VAT payer, we add VAT under Polish law (23% for clients in Poland).',
-        'comparison_note' => 'An agency with a team and a project manager suits large projects. For an MVP, one senior developer is usually enough — which is why the budget is lower.',
+        'comparison_note' => 'Agencies with large teams and project managers suit enterprise projects. For an MVP, working directly with a senior developer keeps the budget focused on code, not overhead.',
         'badge' => 'Pricing',
         'title' => 'Two ways to work together',
-        'subtitle' => 'A fixed scope and price to launch an MVP, or a monthly arrangement for a product that is already live.',
+        'subtitle' => 'Build the first version for an agreed price, or get monthly support and development for an existing product.',
         'plans' => [
             'mvp' => [
                 'name' => 'SaaS MVP',
                 'badge' => 'For a new product',
                 'price' => 'from $4,800',
                 'price_sub' => '≈ 19,000 PLN · fixed scope',
-                'timeline' => '6–8 weeks',
-                'desc' => 'For founders who want to launch, test demand and get their first paying customers.',
+                'timeline' => 'Typically 6–8 weeks',
+                'desc' => 'For launching a first version and testing demand. We agree on the features and final price before work begins.',
                 'features' => [
-                    'Database design and data separation between companies',
-                    'Stripe subscriptions: checkout, customer portal, invoices',
+                    'Database design and data access controls',
+                    'Stripe subscriptions and payment integration',
                     'User dashboard and Filament admin panel',
-                    'Test server from the first week',
-                    'Unit and Playwright tests',
-                    'Docker deployment to your cloud account',
-                    'Full handover of code and documentation',
-                    '2 weeks of post-launch bug fixes included',
+                    'Access to a test environment during development',
+                    'Automated tests for core features and user actions',
+                    'Deployment to the agreed hosting environment',
+                    'Access to code and project documentation',
+                    'Bug fixes for 2 weeks after launch',
                 ],
                 'cta' => 'Discuss an MVP',
             ],
             'retainer' => [
-                'name' => 'Senior support',
+                'name' => 'SaaS support and development',
                 'badge' => 'For a live product',
                 'price' => 'from $2,400',
                 'price_sub' => '≈ 9,500 PLN · per month',
                 'timeline' => 'Monthly',
-                'desc' => 'For a live SaaS that needs senior technical help: new features, refactoring, AI integrations, scaling.',
+                'desc' => 'For a product already in use: new features, integrations, bug fixes and performance improvements.',
                 'features' => [
-                    'Architecture, SQL and security review',
-                    'Complex backend work (AI, RAG, Go workers)',
-                    'Load testing and preparation for growth',
-                    'Code review and CI/CD improvements',
+                    'Review of architecture, database queries and security',
+                    'Backend development and integrations',
+                    'Testing under load',
+                    'Code review and automated testing and deployment',
                     'Direct Telegram channel',
-                    'A reserved number of hours per week',
+                    'An agreed number of development hours each week',
                 ],
                 'cta' => 'Discuss a retainer',
             ],
@@ -234,12 +234,12 @@ return [
         'badge' => 'Who you will work with',
         'name' => 'Yurii Mokryi',
         'role' => 'Founder of DigiSpace · Senior full-stack developer',
-        'bio' => 'I design and build web products end to end: from the database and payments to deployment and support. My own SaaS products run in production, so I know the work doesn’t end at launch.',
+        'bio' => 'I’m Yurii, the founder of DigiSpace. I design and build web products, from databases and payments to launch and support. I also build and develop my own products: DigiPulse, VetSpace and NetPostPanel.',
         'more_links' => 'Videos and blog',
         'facts' => [
             '8+ years of commercial development',
             'Laravel, Symfony, Filament, Vue/Nuxt, Go',
-            'Own SaaS in production: DigiPulse, VetSpace, NetPostPanel',
+            'My own products: DigiPulse, VetSpace, NetPostPanel',
             'Based in Stęszew near Poznań, Poland',
         ],
         'links' => [
@@ -258,28 +258,28 @@ return [
         'subtitle' => 'Timelines, payments, hosting and working together.',
         'items' => [
             'q1' => [
-                'q' => 'Why 6–8 weeks?',
-                'a' => 'The first version covers the 3–5 features that solve your users’ main problem and that they will pay for. Sign-in, multi-tenancy and Stripe billing are built from ready, tested modules rather than from scratch. The typical plan is four two-week stages; with a smaller scope the stages are shorter and launch can happen in 6 weeks. If the scope is larger, we say so at the estimate stage.',
+                'q' => 'What determines the development timeline?',
+                'a' => 'The timeline depends on feature complexity, integrations and how clearly the requirements are defined. For the first version, we select the features needed to test the product idea. A typical timeline is 6–8 weeks; we agree on the schedule after discussing the scope.',
             ],
             'q2' => [
-                'q' => 'Who owns the code?',
-                'a' => 'You do. All work is committed to your private GitHub or GitLab repository from the first day. Code, accounts and access stay with you.',
+                'q' => 'How do you manage access to the code?',
+                'a' => 'We work in your GitHub repository or give you access to ours during development. We agree on code handover and hosting for the finished product before work begins.',
             ],
             'q3' => [
                 'q' => 'Where will the application run, and how much does hosting cost?',
-                'a' => 'In Docker on your own cloud account (Hetzner, AWS or DigitalOcean). For an MVP, a VPS for about $15–35 a month is usually enough; we will size it for your expected load.',
+                'a' => 'We provide a test environment during development. Hosting for the finished product and payment arrangements are agreed separately. Costs depend on the expected load and the services needed.',
             ],
             'q4' => [
                 'q' => 'What do you need from me to start?',
-                'a' => 'A short description: what problem the product solves, for whom, and how it will make money. Fill in the form on this page or message us on Telegram; then, on a short call online or at a meeting in Poznań, we agree on the MVP scope and put together a technical brief.',
+                'a' => 'A short description of the problem your product solves, who it is for and how you plan to make money from it. Fill in the form or message us on Telegram. In our first conversation, we discuss the idea, clarify requirements and agree on the next steps.',
             ],
             'q6' => [
                 'q' => 'How does payment work?',
-                'a' => 'Payment is split across the four stages: 25% at the start of each; escrow is also possible. You see the result of each stage on the test server before paying for the next one.',
+                'a' => 'Payment is split into four instalments of 25%, due at the start of each stage. Before paying for the next stage, you review the previous stage’s results in the test environment. Payment through an escrow service is also possible.',
             ],
             'q7' => [
                 'q' => 'Do you work with companies in Poznań and the surrounding area?',
-                'a' => 'Yes. We are in Stęszew, just outside Poznań, so with clients from Poznań and Poznań County — Luboń, Komorniki, Dopiewo, Mosina, Puszczykowo, Swarzędz, Suchy Las, Tarnowo Podgórne — we can meet in person: at your office or in Poznań, for example for the kick-off or before the launch. Clients from the rest of Poland and abroad work with us remotely, with the same process.',
+                'a' => 'Yes. We are based in Stęszew near Poznań. We can arrange in-person meetings with clients in Poznań and the surrounding area. We work remotely with clients in other cities and countries.',
             ],
         ],
     ],
@@ -287,7 +287,7 @@ return [
     'contact' => [
         'badge' => 'Get in touch',
         'title' => 'Tell us about your product',
-        'subtitle' => 'Fill in the short form or message us on Telegram, and we will reply with a scope and timeline estimate.',
+        'subtitle' => 'Describe your idea or what you need help with. We will clarify the requirements and prepare an initial cost and timeline estimate.',
         'telegram_cta' => 'Message on Telegram',
         'telegram_hint' => 'We usually reply the same day',
         'email_cta' => 'Send an email',
@@ -306,7 +306,7 @@ return [
             'budget' => 'Budget',
             'budget_options' => [
                 'sprint' => '$4,800 – $8,500 (MVP)',
-                'custom' => '$8,500+ (complex project, AI)',
+                'custom' => '$8,500+ (larger scope)',
                 'retainer' => 'Monthly arrangement',
             ],
             'description' => 'Short product description',
@@ -319,13 +319,13 @@ return [
                 'max' => '“:attribute” is too long (up to :max characters).',
                 'invalid' => 'Please choose a value from the list for “:attribute”.',
             ],
-            'recaptcha_failed' => 'We could not confirm the form was sent by a person. Please try again or message us on Telegram.',
+            'recaptcha_failed' => 'The reCAPTCHA check failed. Please try again or message us on Telegram.',
             'recaptcha_notice' => 'This form is protected by Google reCAPTCHA:',
             'recaptcha_privacy' => 'Privacy Policy',
             'recaptcha_terms' => 'Terms of Service',
             'privacy_notice' => 'The data controller is Yurii Mokryi JDG (DigiSpace). We use the data from this form only to reply to your inquiry.',
             'success_title' => 'Thank you!',
-            'success_message' => 'We have received your message and will reply within one business day with questions or a first estimate.',
+            'success_message' => 'We have received your message. Within one business day, we will send follow-up questions or an initial estimate.',
         ],
     ],
 

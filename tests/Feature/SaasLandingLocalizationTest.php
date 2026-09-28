@@ -272,19 +272,22 @@ class SaasLandingLocalizationTest extends TestCase
         $this->assertLessThan(strpos($html, 'id="pricing"'), strpos($html, 'id="founder"'));
     }
 
-    public function test_form_is_the_primary_action_with_telegram_next_to_it(): void
+    public function test_form_is_the_primary_action(): void
     {
         $html = $this->get(self::LANDING)->assertOk()->getContent();
 
-        // Hero: the form CTA comes first, Telegram right after it.
+        // Hero: one single primary CTA leading to the form; no competing secondary CTA.
         $mainStart = strpos($html, '<main');
         $hero = substr($html, $mainStart, strpos($html, 'id="proofs"') - $mainStart);
-        $this->assertLessThan(strpos($hero, 'https://t.me/'), strpos($hero, 'href="#contact"'));
+        $this->assertStringContainsString('data-testid="hero-cta"', $hero);
+        $this->assertStringNotContainsString('data-testid="hero-telegram"', $hero);
+
         // Contact section: the form comes first, the Telegram/e-mail alternatives below it.
         $contact = substr($html, strpos($html, 'id="contact"'));
         $this->assertLessThan(strpos($contact, 'https://t.me/'), strpos($contact, '<form'));
-        // Mobile sticky bar offers both.
-        $this->assertMatchesRegularExpression('/data-sticky-cta[\s\S]*?href="#contact"[\s\S]*?href="https:\/\/t\.me\//', $html);
+
+        // Mobile sticky bar: single focused CTA to the form.
+        $this->assertMatchesRegularExpression('/data-sticky-cta[\s\S]*?href="#contact"/', $html);
     }
 
     public function test_every_project_gallery_shot_has_a_caption_and_both_image_sizes(): void
