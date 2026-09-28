@@ -21,8 +21,8 @@ return [
     'hero' => [
         'badge' => 'Systemy dla firm · Poznań',
         'title' => 'System szyty na miarę Twojej firmy',
-        'subtitle' => 'Rezerwacje online, panel klienta, CRM albo system wewnętrzny zamiast arkuszy i ręcznej pracy. Pierwsza wersja zwykle powstaje w 6–8 tygodni, a rozmawiasz bezpośrednio z programistą, który ją tworzy. Termin zależy od uzgodnionego zakresu prac.',
-        'subtitle_short' => 'Rezerwacje online, panel klienta, CRM albo system wewnętrzny zamiast arkuszy i ręcznej pracy. Pierwsza wersja zwykle w 6–8 tygodni. Termin zależy od uzgodnionego zakresu prac.',
+        'subtitle' => 'Rezerwacje online, panel klienta, CRM albo system wewnętrzny zamiast arkuszy i powtarzalnej pracy. Automatyzujemy procesy i wdrażamy pierwszą wersję dopasowaną do Twojej firmy.',
+        'subtitle_short' => 'Rezerwacje online, panel klienta lub CRM zamiast arkuszy i ręcznej pracy. Wdrażamy system dopasowany do Twojej firmy.',
         'cta_primary' => 'Poznaj koszt i termin realizacji',
         'status' => 'Przyjmujemy nowe projekty',
         'metric_labels' => [

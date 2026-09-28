@@ -19,7 +19,7 @@ return [
     'hero' => [
         'badge' => 'Tworzenie SaaS · Poznań',
         'title' => 'SaaS MVP od pomysłu do uruchomienia',
-        'subtitle' => 'Tworzymy pierwszą wersję Twojego SaaS, aby umożliwić Ci sprawdzenie pomysłu z prawdziwymi użytkownikami. Wspólnie wybieramy funkcje, ustalamy budżet i termin oraz przygotowujemy produkt do uruchomienia.',
+        'subtitle' => 'Tworzymy pierwszą wersję Twojego SaaS, aby przetestować pomysł z prawdziwymi użytkownikami. Wspólnie wybieramy funkcje, ustalamy budżet i termin oraz przygotowujemy produkt do uruchomienia.',
         'subtitle_short' => 'Tworzymy pierwszą wersję SaaS, z którą sprawdzisz swój pomysł z prawdziwymi użytkownikami. Funkcje, budżet i termin ustalamy przed rozpoczęciem prac.',
         'cta_primary' => 'Poznaj koszt i termin realizacji',
         'status' => 'Przyjmujemy nowe projekty',
@@ -63,7 +63,7 @@ return [
                 'name' => 'VetSpace & VetCard',
                 'screens' => [
                     ['file' => 'vetspace-clinic-month', 'caption' => 'Kalendarz miesięczny: liczba wizyt każdego lekarza w poszczególnych dniach (dane demonstracyjne)'],
-                    ['file' => 'vetspace-clinic-calendar', 'caption' => 'Panel kliniki: kalendarz wizyt z filtrami oddziałów i lekarzy (dane demonstracyjne)'],
+                    ['file' => 'vetspace-clinic-calendar', 'caption' => 'Kalendarz wizyt: filtry według oddziałów i lekarzy (dane demonstracyjne)'],
                     ['file' => 'vetspace-admin-plans', 'caption' => 'Panel administracyjny w Filament: plany subskrypcji zsynchronizowane ze Stripe'],
                     ['file' => 'vetspace-swagger-appointments', 'caption' => 'Dokumentacja API: żądania do obsługi wizyt'],
                 ],
@@ -170,7 +170,7 @@ return [
     'pricing' => [
         'net_label' => 'netto',
         'vat_note' => 'Wszystkie ceny są cenami netto. Jako czynny podatnik VAT doliczamy VAT zgodnie z polskimi przepisami (23% dla klientów w Polsce).',
-        'comparison_note' => '',
+        'comparison_note' => 'Software house z rozbudowanym zespołem sprawdza się przy dużych projektach. Przy MVP pracujesz bezpośrednio z doświadczonym programistą — bez narzutu agencyjnego.',
         'badge' => 'Cennik',
         'title' => 'Dwie formy współpracy',
         'subtitle' => 'Pierwsza wersja produktu za uzgodnioną cenę albo miesięczne wsparcie i rozwój działającego produktu.',

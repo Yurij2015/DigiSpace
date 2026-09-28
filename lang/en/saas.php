@@ -63,7 +63,7 @@ return [
                 'name' => 'VetSpace & VetCard',
                 'screens' => [
                     ['file' => 'vetspace-clinic-month', 'caption' => 'Monthly calendar: daily appointment counts for each doctor (demo data)'],
-                    ['file' => 'vetspace-clinic-calendar', 'caption' => 'Clinic workspace: appointment calendar with branch and doctor filters (demo data)'],
+                    ['file' => 'vetspace-clinic-calendar', 'caption' => 'Appointment calendar: filters by branch and doctor (demo data)'],
                     ['file' => 'vetspace-admin-plans', 'caption' => 'Filament admin panel: subscription plans synced with Stripe'],
                     ['file' => 'vetspace-swagger-appointments', 'caption' => 'API documentation: requests for managing appointments'],
                 ],
@@ -170,7 +170,7 @@ return [
     'pricing' => [
         'net_label' => 'net',
         'vat_note' => 'All prices are net. As a Polish VAT payer, we add VAT under Polish law (23% for clients in Poland).',
-        'comparison_note' => '',
+        'comparison_note' => 'Agencies with large teams and project managers suit enterprise projects. For an MVP, working directly with a senior developer keeps the budget focused on code, not overhead.',
         'badge' => 'Pricing',
         'title' => 'Two ways to work together',
         'subtitle' => 'Build the first version for an agreed price, or get monthly support and development for an existing product.',

@@ -21,8 +21,8 @@ return [
     'hero' => [
         'badge' => 'Software for businesses · Poznań',
         'title' => 'Software built around your business',
-        'subtitle' => 'Online booking, a client portal, a CRM or an internal tool that replaces spreadsheets and manual work. We typically build the first version in 6–8 weeks, and you talk directly to the developer who builds it. The timeline depends on the agreed scope.',
-        'subtitle_short' => 'Online booking, a client portal, a CRM or an internal tool instead of spreadsheets and manual work. Typically 6–8 weeks for the first version. The timeline depends on the agreed scope.',
+        'subtitle' => 'Online booking, client portals, CRMs or internal tools to replace spreadsheets and manual work. We automate your processes and launch a first version tailored to your business.',
+        'subtitle_short' => 'Online booking, a client portal or CRM to replace spreadsheets and manual work. Built around your business.',
         'cta_primary' => 'Get a scope and timeline estimate',
         'status' => 'Taking on new projects',
         'metric_labels' => [
