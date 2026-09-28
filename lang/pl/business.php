@@ -5,7 +5,7 @@
 return [
     'seo' => [
         'title' => 'Systemy dla firm na zamówienie w Poznaniu | DigiSpace',
-        'description' => 'Rezerwacje online, CRM, panel klienta i systemy wewnętrzne dopasowane do tego, jak działa Twoja firma; pierwsza wersja w 6–8 tygodni. Stała cena, kod i dane należą do Ciebie. Współpracujemy z firmami z Poznania, całej Polski i UE.',
+        'description' => 'Rezerwacje online, CRM, panel klienta i systemy wewnętrzne dopasowane do tego, jak działa Twoja firma; pierwsza wersja zwykle w 6–8 tygodni. Uzgodniony zakres i stała cena. Współpracujemy z firmami z Poznania, całej Polski i UE.',
     ],
 
     'nav' => [
@@ -21,19 +21,19 @@ return [
     'hero' => [
         'badge' => 'Systemy dla firm · Poznań',
         'title' => 'System szyty na miarę Twojej firmy',
-        'subtitle' => 'Rezerwacje online, panel klienta, CRM albo system wewnętrzny zamiast arkuszy i ręcznej pracy. Pierwsza wersja działa po 6–8 tygodniach, a rozmawiasz bezpośrednio z programistą, który ją tworzy.',
-        'subtitle_short' => 'Rezerwacje online, panel klienta, CRM albo system wewnętrzny zamiast arkuszy i ręcznej pracy. Pierwsza wersja w 6–8 tygodni.',
-        'cta_primary' => 'Otrzymaj wycenę zakresu i terminu',
+        'subtitle' => 'Rezerwacje online, panel klienta, CRM albo system wewnętrzny zamiast arkuszy i ręcznej pracy. Pierwsza wersja zwykle powstaje w 6–8 tygodni, a rozmawiasz bezpośrednio z programistą, który ją tworzy. Termin zależy od uzgodnionego zakresu prac.',
+        'subtitle_short' => 'Rezerwacje online, panel klienta, CRM albo system wewnętrzny zamiast arkuszy i ręcznej pracy. Pierwsza wersja zwykle w 6–8 tygodni. Termin zależy od uzgodnionego zakresu prac.',
+        'cta_primary' => 'Poznaj koszt i termin realizacji',
         'status' => 'Przyjmujemy nowe projekty',
         'metric_labels' => [
             'price' => 'Budżet',
             'timeline' => 'Termin',
-            'ownership' => 'Własność',
+            'ownership' => 'Przejrzystość',
         ],
         'metrics' => [
             'price' => 'Od 19 000 PLN netto',
-            'timeline' => 'Pierwsza wersja w 6–8 tygodni',
-            'ownership' => 'System należy do Ciebie',
+            'timeline' => 'Zwykle 6–8 tygodni',
+            'ownership' => 'Widzisz postępy na każdym etapie',
         ],
     ],
 
@@ -130,9 +130,9 @@ return [
                 'desc' => 'Automatyczne testy przechodzą kluczowe scenariusze — rezerwację, rejestrację, płatność — tak jak zrobiliby to Twoi klienci, zanim aktualizacja trafi do użytku.',
             ],
             'ownership' => [
-                'badge' => 'Własność',
-                'title' => 'System należy do Ciebie',
-                'desc' => 'Kod, dane i konta serwerowe są Twoje od pierwszego dnia. Bez opłat licencyjnych i bez uzależnienia od nas.',
+                'badge' => 'Współpraca',
+                'title' => 'Dostęp do kodu w trakcie prac',
+                'desc' => 'Pracujemy w Twoim repozytorium GitHub albo udostępniamy nasze na czas prac. Sposób współpracy ustalamy na początku projektu.',
             ],
             'direct' => [
                 'badge' => 'Bezpośrednio',
@@ -164,7 +164,7 @@ return [
             's4' => [
                 'name' => 'Testy i uruchomienie',
                 'duration' => 'Tygodnie 7–8',
-                'desc' => 'Końcowe testy, przegląd bezpieczeństwa i uruchomienie na Twoim serwerze.',
+                'desc' => 'Końcowe testy, przegląd bezpieczeństwa i wdrożenie na uzgodnionym hostingu.',
             ],
         ],
     ],
@@ -182,7 +182,7 @@ return [
                 'badge' => 'Dla nowego systemu',
                 'price' => 'od 19 000 PLN',
                 'price_sub' => '≈ $4 800 · stały zakres',
-                'timeline' => '6–8 tygodni',
+                'timeline' => 'Zwykle 6–8 tygodni',
                 'desc' => 'Dla firm, które chcą mieć własne rezerwacje online, panel klienta, CRM lub system wewnętrzny zamiast arkuszy i zewnętrznych platform.',
                 'features' => [
                     'Analiza Twojego procesu i jasny zakres prac',
@@ -190,8 +190,8 @@ return [
                     'Panel administracyjny dla Twojego zespołu',
                     'Zamknięta wersja testowa od pierwszego tygodnia',
                     'Automatyczne testy kluczowych scenariuszy',
-                    'Uruchomienie na serwerze zarejestrowanym na Ciebie',
-                    'Pełne przekazanie kodu i instrukcji',
+                    'Wdrożenie na uzgodnionym hostingu',
+                    'Dostęp do kodu i dokumentacja projektu',
                     '2 tygodnie poprawek po uruchomieniu',
                 ],
                 'cta' => 'Porozmawiajmy o systemie',
@@ -257,19 +257,19 @@ return [
     'faq' => [
         'badge' => 'FAQ',
         'title' => 'Częste pytania',
-        'subtitle' => 'Terminy, koszty, własność i forma współpracy.',
+        'subtitle' => 'Terminy, koszty, hosting i forma współpracy.',
         'items' => [
             'q1' => [
                 'q' => 'Ile to trwa?',
                 'a' => 'Pierwsza wersja obejmuje 3–5 funkcji najważniejszych dla Twojej firmy. Typowy plan to cztery dwutygodniowe etapy; przy mniejszym zakresie start jest możliwy po 6 tygodniach. Jeśli potrzeba więcej, powiemy o tym już na etapie wyceny i wspólnie zaplanujemy kolejne kroki.',
             ],
             'q2' => [
-                'q' => 'Do kogo należy system?',
-                'a' => 'Do Ciebie: kod, dane i konta serwerowe. Jeśli kiedyś zechcesz pracować z innym programistą, wszystko można przekazać.',
+                'q' => 'Jak wygląda dostęp do kodu?',
+                'a' => 'Pracujemy w Twoim repozytorium GitHub albo udostępniamy nasze na czas prac. Warunki przekazania kodu i hosting gotowego produktu ustalamy przed rozpoczęciem projektu.',
             ],
             'q3' => [
                 'q' => 'Ile kosztuje utrzymanie systemu?',
-                'a' => 'System działa na serwerze zarejestrowanym na Ciebie (Hetzner, AWS lub DigitalOcean). Dla większości małych i średnich firm to około 60–140 PLN miesięcznie. Bez opłat licencyjnych i bez prowizji od Twoich klientów.',
+                'a' => 'Na czas prac udostępniamy środowisko testowe. Hosting gotowego produktu i sposób jego opłacania ustalamy osobno. Koszt zależy od obciążenia i potrzebnych usług.',
             ],
             'q4' => [
                 'q' => 'Czego potrzebujecie ode mnie na start?',
@@ -289,7 +289,7 @@ return [
     'contact' => [
         'badge' => 'Kontakt',
         'title' => 'Opowiedz nam o swojej firmie',
-        'subtitle' => 'Wypełnij krótki formularz albo napisz na Telegramie — odpowiemy z wyceną zakresu i terminu.',
+        'subtitle' => 'Wypełnij krótki formularz albo napisz na Telegramie — omówimy zakres prac, koszt i termin realizacji.',
         'telegram_cta' => 'Napisz na Telegramie',
         'telegram_hint' => 'Zwykle odpowiadamy tego samego dnia',
         'email_cta' => 'Napisz e-mail',

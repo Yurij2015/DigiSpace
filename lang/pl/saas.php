@@ -3,7 +3,7 @@
 return [
     'seo' => [
         'title' => 'Tworzenie SaaS MVP w Poznaniu | DigiSpace',
-        'description' => 'Tworzenie SaaS MVP w 6–8 tygodni: multi-tenancy, subskrypcje Stripe, kolejki zadań w tle i integracje AI. DigiSpace współpracuje z klientami z Poznania, całej Polski i UE.',
+        'description' => 'Tworzymy SaaS MVP, aby pomóc Ci sprawdzić pomysł i uruchomić produkt. Od 19 000 PLN netto, zwykle 6–8 tygodni. Współpracujemy z klientami z Polski i UE.',
     ],
 
     'nav' => [
@@ -18,27 +18,27 @@ return [
 
     'hero' => [
         'badge' => 'Tworzenie SaaS · Poznań',
-        'title' => 'SaaS MVP od pomysłu do startu w 6–8 tygodni',
-        'subtitle' => 'Projektujemy i tworzymy produkty SaaS na solidnych podstawach: osobne dane dla każdej firmy-klienta, subskrypcje Stripe, zadania w tle i funkcje AI tam, gdzie mają sens. Rozmawiasz bezpośrednio z programistą, który pisze kod.',
-        'subtitle_short' => 'Produkty SaaS na solidnych podstawach: osobne dane dla każdego klienta, subskrypcje Stripe, zadania w tle i AI. Rozmawiasz bezpośrednio z programistą.',
-        'cta_primary' => 'Otrzymaj wycenę zakresu i terminu',
+        'title' => 'SaaS MVP od pomysłu do uruchomienia',
+        'subtitle' => 'Tworzymy pierwszą wersję Twojego SaaS, aby umożliwić Ci sprawdzenie pomysłu z prawdziwymi użytkownikami. Wspólnie wybieramy funkcje, ustalamy budżet i termin oraz przygotowujemy produkt do uruchomienia.',
+        'subtitle_short' => 'Tworzymy pierwszą wersję SaaS, z którą sprawdzisz swój pomysł z prawdziwymi użytkownikami. Funkcje, budżet i termin ustalamy przed rozpoczęciem prac.',
+        'cta_primary' => 'Poznaj koszt i termin realizacji',
         'status' => 'Przyjmujemy nowe projekty',
         'metric_labels' => [
             'price' => 'Budżet',
             'timeline' => 'Termin',
-            'ownership' => 'Własność',
+            'ownership' => 'Przejrzystość',
         ],
         'metrics' => [
             'price' => 'MVP od 19 000 PLN netto',
-            'timeline' => '6–8 tygodni do startu',
-            'ownership' => 'Kod i serwery należą do Ciebie',
+            'timeline' => 'Zwykle 6–8 tygodni',
+            'ownership' => 'Widzisz postępy na każdym etapie',
         ],
     ],
 
     'proofs' => [
         'badge' => 'Nasze projekty',
         'title' => 'Produkty, które sami stworzyliśmy i utrzymujemy',
-        'subtitle' => 'Każdy z tych systemów działa produkcyjnie. Zobacz zrzuty ekranu albo otwórz sam produkt.',
+        'subtitle' => 'Zobacz nasze produkty, ich funkcje i technologie, z których korzystamy.',
         'view_live' => 'Otwórz produkt',
         'gallery_hint' => 'Zrzuty ekranu z działających produktów',
         'gallery_open' => 'Otwórz zrzut ekranu',
@@ -51,8 +51,8 @@ return [
                 'badge' => 'Własny produkt SaaS',
                 'name' => 'DigiPulse',
                 'screens' => [
-                    ['file' => 'digipulse-dashboard', 'caption' => 'Dashboard: status, typy sprawdzeń, SSL, ping i uptime z 30 dni dla każdej strony (nazwy stron rozmyte)'],
-                    ['file' => 'digipulse-history', 'caption' => 'Historia strony: czas odpowiedzi z tygodnia, P95, Apdex i incydenty'],
+                    ['file' => 'digipulse-dashboard', 'caption' => 'Przegląd stron: dostępność, czas odpowiedzi i certyfikaty SSL (nazwy stron rozmyte)'],
+                    ['file' => 'digipulse-history', 'caption' => 'Historia strony: czas odpowiedzi i incydenty z ostatniego tygodnia'],
                 ],
                 'tagline' => 'Monitoring dostępności stron z powiadomieniami o incydentach',
                 'stack' => ['Laravel Octane', 'Go', 'Redis', 'Filament', 'PostgreSQL', 'MCP'],
@@ -62,23 +62,23 @@ return [
                 'badge' => 'Platforma B2B multi-tenant',
                 'name' => 'VetSpace & VetCard',
                 'screens' => [
-                    ['file' => 'vetspace-clinic-month', 'caption' => 'Panel kliniki: widok miesiąca z liczbą wizyt każdego lekarza na każdy dzień (dane demonstracyjne)'],
+                    ['file' => 'vetspace-clinic-month', 'caption' => 'Kalendarz miesięczny: liczba wizyt każdego lekarza w poszczególnych dniach (dane demonstracyjne)'],
                     ['file' => 'vetspace-clinic-calendar', 'caption' => 'Panel kliniki: kalendarz wizyt z filtrami oddziałów i lekarzy (dane demonstracyjne)'],
                     ['file' => 'vetspace-admin-plans', 'caption' => 'Panel administracyjny w Filament: plany subskrypcji zsynchronizowane ze Stripe'],
-                    ['file' => 'vetspace-swagger-appointments', 'caption' => 'REST API z dokumentacją OpenAPI (Swagger): endpointy wizyt'],
+                    ['file' => 'vetspace-swagger-appointments', 'caption' => 'Dokumentacja API: żądania do obsługi wizyt'],
                 ],
                 'tagline' => 'Platforma dla klinik weterynaryjnych i właścicieli zwierząt',
                 'stack' => ['Laravel API', 'Nuxt SSR', 'Multi-tenancy', 'Stripe Cashier', 'Tailwind CSS', 'PostgreSQL'],
                 'live_url' => 'https://vetspace.pro',
             ],
             'netpostpanel' => [
-                'badge' => 'Platforma AI i RAG',
+                'badge' => 'AI do tworzenia treści',
                 'name' => 'NetPostPanel',
                 'screens' => [
-                    ['file' => 'netpostpanel-workbench', 'caption' => 'Workbench: typ treści, prompt i research źródeł w jednym procesie'],
-                    ['file' => 'netpostpanel-autopilot', 'caption' => 'Auto Pilot: codzienne generowanie według harmonogramu z własnych tematów i źródeł'],
+                    ['file' => 'netpostpanel-workbench', 'caption' => 'Przestrzeń robocza: rodzaj treści, instrukcje dla AI i wyszukiwanie źródeł'],
+                    ['file' => 'netpostpanel-autopilot', 'caption' => 'Przygotowywanie szkiców według harmonogramu na podstawie wybranych tematów i źródeł'],
                 ],
-                'tagline' => 'Przygotowanie treści z AI: research źródeł, szkice, wyszukiwanie semantyczne',
+                'tagline' => 'Wyszukiwanie źródeł i przygotowywanie szkiców artykułów oraz postów z pomocą AI',
                 'stack' => ['Laravel', 'RAG', 'Qdrant', 'Langfuse', 'Horizon', 'LLM API'],
                 'live_url' => 'https://github.com/Yurij2015/net-post-panel-overview',
                 // Not a public product: link the descriptive repository, as the portfolio does.
@@ -88,26 +88,26 @@ return [
     ],
 
     'engine' => [
-        'title' => 'Elementy typowego SaaS MVP',
-        'subtitle' => 'Które z nich są potrzebne Twojemu produktowi, ustalamy na starcie. Nie budujemy tego, z czego nie skorzystasz.',
+        'title' => 'Co możemy zbudować w Twoim SaaS',
+        'subtitle' => 'Na początku ustalamy, co jest potrzebne w pierwszej wersji, a co można dodać później.',
         'pillars' => [
             'multitenancy' => [
-                'title' => 'Multi-tenancy',
+                'title' => 'Izolacja danych firm',
             ],
             'billing' => [
                 'title' => 'Subskrypcje Stripe',
             ],
             'workers' => [
-                'title' => 'Zadania w tle',
+                'title' => 'Przetwarzanie zadań w tle',
             ],
             'admin' => [
                 'title' => 'Panel administracyjny (Filament)',
             ],
             'ai' => [
-                'title' => 'Funkcje AI i RAG',
+                'title' => 'Funkcje AI i wyszukiwanie w Twoich danych',
             ],
             'devops' => [
-                'title' => 'Docker i wdrożenie',
+                'title' => 'Wdrożenie w Dockerze',
             ],
         ],
     ],
@@ -115,54 +115,54 @@ return [
     'guarantees' => [
         'badge' => 'Jak pracujemy',
         'title' => 'Na co możesz liczyć',
-        'subtitle' => 'Cztery zasady, których trzymamy się w każdym projekcie, i plan startu.',
+        'subtitle' => 'Dostęp do efektów pracy, testowanie funkcji i bezpośredni kontakt.',
         'items' => [
             'staging' => [
-                'badge' => 'Pierwszy tydzień',
-                'title' => 'Serwer testowy od pierwszego tygodnia',
-                'desc' => 'W pierwszym tygodniu dostajesz serwer testowy chroniony hasłem. Każda zmiana, która przejdzie testy automatyczne, trafia tam automatycznie (GitHub Actions), więc widzisz sam produkt, a nie raporty o statusie.',
+                'badge' => 'Wersja testowa',
+                'title' => 'Sprawdzaj produkt przed uruchomieniem',
+                'desc' => 'Na czas prac udostępniamy środowisko testowe. Sprawdzaj gotowe funkcje i zgłaszaj, co wymaga dopracowania.',
             ],
             'testing' => [
                 'badge' => 'Testy',
                 'title' => 'Testy automatyczne',
-                'desc' => 'Testy jednostkowe sprawdzają logikę biznesową i rozliczenia, a testy Playwright przechodzą rejestrację, onboarding i płatność tak, jak zrobiłby to użytkownik. Uruchamiają się przy każdym pushu, więc regresje są wykrywane przed wydaniem.',
+                'desc' => 'Testy automatyczne sprawdzają logikę biznesową i kluczowe działania użytkownika: rejestrację, logowanie i płatność. Pomagają wykrywać błędy przed udostępnieniem aktualizacji.',
             ],
             'ownership' => [
-                'badge' => 'Własność',
-                'title' => 'Kod i infrastruktura należą do Ciebie',
-                'desc' => 'Od pierwszego dnia commity trafiają do Twojego prywatnego repozytorium na GitHub lub GitLab, a aplikacja działa na Twoim koncie w chmurze. Bez zamkniętych licencji.',
+                'badge' => 'Współpraca',
+                'title' => 'Dostęp do kodu w trakcie prac',
+                'desc' => 'Pracujemy w Twoim repozytorium GitHub albo udostępniamy nasze na czas prac. Sposób współpracy ustalamy na początku projektu.',
             ],
             'direct' => [
                 'badge' => 'Bezpośrednio',
                 'title' => 'Rozmawiasz z programistą',
-                'desc' => 'Bez project managerów pośrodku: zadania omawiasz bezpośrednio z senior full-stack developerem, który pisze kod.',
+                'desc' => 'Wymagania i rozwiązania techniczne omawiasz bezpośrednio z programistą, który tworzy Twój produkt.',
             ],
         ],
     ],
 
     'process' => [
         'title' => 'Cztery etapy do startu',
-        'subtitle' => 'Etap trwa do dwóch tygodni i kończy się prezentacją na serwerze testowym. Przy mniejszym zakresie etapy są krótsze, a start jest możliwy po 6 tygodniach.',
+        'subtitle' => 'Poniżej przedstawiamy przykładowy plan na osiem tygodni. Czas poszczególnych etapów zależy od uzgodnionego zakresu prac.',
         'sprints' => [
             's1' => [
-                'name' => 'Architektura i fundamenty',
+                'name' => 'Architektura i baza danych',
                 'duration' => 'Tygodnie 1–2',
-                'desc' => 'Architektura z zapasem na rozwój produktu.',
+                'desc' => 'Projektujemy strukturę aplikacji i bazę danych.',
             ],
             's2' => [
                 'name' => 'Główne funkcje i płatności',
                 'duration' => 'Tygodnie 3–4',
-                'desc' => 'Najważniejsza funkcja Twojego produktu oraz subskrypcje.',
+                'desc' => 'Tworzymy główne funkcje i integrujemy płatności, jeśli są potrzebne.',
             ],
             's3' => [
                 'name' => 'Panel użytkownika i panel administracyjny',
                 'duration' => 'Tygodnie 5–6',
-                'desc' => 'Miejsce pracy Twoich klientów i Twojego zespołu.',
+                'desc' => 'Tworzymy panel użytkownika i narzędzia do zarządzania produktem.',
             ],
             's4' => [
                 'name' => 'Testy i uruchomienie',
                 'duration' => 'Tygodnie 7–8',
-                'desc' => 'Testy end-to-end, przegląd bezpieczeństwa i wdrożenie produkcyjne.',
+                'desc' => 'Sprawdzamy działanie produktu i bezpieczeństwo, a następnie wdrażamy go na uzgodnionym hostingu.',
             ],
         ],
     ],
@@ -170,44 +170,44 @@ return [
     'pricing' => [
         'net_label' => 'netto',
         'vat_note' => 'Wszystkie ceny są cenami netto. Jako czynny podatnik VAT doliczamy VAT zgodnie z polskimi przepisami (23% dla klientów w Polsce).',
-        'comparison_note' => 'Software house z zespołem i project managerem sprawdza się przy dużych projektach. Przy MVP zwykle wystarczy jeden senior developer — dlatego budżet jest niższy.',
+        'comparison_note' => '',
         'badge' => 'Cennik',
         'title' => 'Dwie formy współpracy',
-        'subtitle' => 'Stały zakres i cena, żeby uruchomić MVP, albo współpraca miesięczna przy produkcie, który już działa.',
+        'subtitle' => 'Pierwsza wersja produktu za uzgodnioną cenę albo miesięczne wsparcie i rozwój działającego produktu.',
         'plans' => [
             'mvp' => [
                 'name' => 'SaaS MVP',
                 'badge' => 'Dla nowego produktu',
                 'price' => 'od 19 000 PLN',
                 'price_sub' => '≈ $4 800 · stały zakres',
-                'timeline' => '6–8 tygodni',
-                'desc' => 'Dla założycieli, którzy chcą wystartować, sprawdzić popyt i pozyskać pierwszych płacących klientów.',
+                'timeline' => 'Zwykle 6–8 tygodni',
+                'desc' => 'Dla osób, które chcą uruchomić pierwszą wersję i sprawdzić popyt. Listę funkcji i ostateczną cenę ustalamy przed rozpoczęciem prac.',
                 'features' => [
-                    'Projekt bazy danych i podział danych między firmami',
-                    'Subskrypcje Stripe: płatność, portal klienta, faktury',
+                    'Projekt bazy danych i kontrola dostępu do danych',
+                    'Integracja subskrypcji i płatności Stripe',
                     'Panel użytkownika i panel administracyjny w Filament',
-                    'Serwer testowy od pierwszego tygodnia',
-                    'Testy jednostkowe i Playwright',
-                    'Wdrożenie w Dockerze na Twoim koncie w chmurze',
-                    'Pełne przekazanie kodu i dokumentacji',
-                    '2 tygodnie poprawek błędów po uruchomieniu',
+                    'Dostęp do środowiska testowego w trakcie prac',
+                    'Automatyczne testy głównych funkcji i działań użytkownika',
+                    'Wdrożenie na uzgodnionym hostingu',
+                    'Dostęp do kodu i dokumentacja projektu',
+                    'Poprawki błędów przez 2 tygodnie po uruchomieniu',
                 ],
                 'cta' => 'Porozmawiajmy o MVP',
             ],
             'retainer' => [
-                'name' => 'Wsparcie senior',
+                'name' => 'Wsparcie i rozwój SaaS',
                 'badge' => 'Dla działającego produktu',
                 'price' => 'od 9 500 PLN',
                 'price_sub' => '≈ $2 400 · miesięcznie',
                 'timeline' => 'Miesięcznie',
-                'desc' => 'Dla działającego produktu SaaS, który potrzebuje wsparcia technicznego na poziomie senior: nowe funkcje, refaktoryzacja, integracje AI, skalowanie.',
+                'desc' => 'Dla produktu, z którego korzystają już użytkownicy: nowe funkcje, integracje, poprawki błędów i zwiększanie wydajności.',
                 'features' => [
-                    'Przegląd architektury, zapytań SQL i bezpieczeństwa',
-                    'Złożone zadania backendowe (AI, RAG, workery w Go)',
-                    'Testy obciążeniowe i przygotowanie do wzrostu',
-                    'Code review i usprawnienia CI/CD',
+                    'Przegląd architektury, zapytań do bazy danych i bezpieczeństwa',
+                    'Rozwój backendu i integracje',
+                    'Testy pod obciążeniem',
+                    'Przegląd kodu oraz automatyzacja testów i wdrożeń',
                     'Bezpośredni kanał na Telegramie',
-                    'Zarezerwowana liczba godzin tygodniowo',
+                    'Uzgodniona liczba godzin pracy tygodniowo',
                 ],
                 'cta' => 'Porozmawiajmy o współpracy',
             ],
@@ -234,12 +234,12 @@ return [
         'badge' => 'Z kim będziesz pracować',
         'name' => 'Yurii Mokryi',
         'role' => 'Założyciel DigiSpace · Senior full-stack developer',
-        'bio' => 'Projektuję i tworzę produkty webowe od początku do końca: od bazy danych i płatności po wdrożenie i utrzymanie. Moje własne produkty SaaS działają produkcyjnie, więc wiem, że praca nie kończy się na uruchomieniu.',
+        'bio' => 'Jestem Yurii, założyciel DigiSpace. Projektuję i tworzę aplikacje webowe: od baz danych i płatności po uruchomienie i wsparcie. Tworzę i rozwijam też własne produkty: DigiPulse, VetSpace i NetPostPanel.',
         'more_links' => 'Wideo i blog',
         'facts' => [
             'Ponad 8 lat doświadczenia komercyjnego',
             'Laravel, Symfony, Filament, Vue/Nuxt, Go',
-            'Własne produkty SaaS działające produkcyjnie: DigiPulse, VetSpace, NetPostPanel',
+            'Własne produkty: DigiPulse, VetSpace, NetPostPanel',
             'Stęszew pod Poznaniem, Polska',
         ],
         'links' => [
@@ -258,28 +258,28 @@ return [
         'subtitle' => 'Terminy, płatności, hosting i forma współpracy.',
         'items' => [
             'q1' => [
-                'q' => 'Dlaczego 6–8 tygodni?',
-                'a' => 'Pierwsza wersja obejmuje 3–5 funkcji, które rozwiązują główny problem Twoich użytkowników i za które są gotowi zapłacić. Logowanie, multi-tenancy i rozliczenia Stripe budujemy z gotowych, sprawdzonych modułów, a nie od zera. Typowy plan to cztery dwutygodniowe etapy; przy mniejszym zakresie etapy są krótsze, a start jest możliwy po 6 tygodniach. Jeśli zakres jest większy, powiemy o tym już na etapie wyceny.',
+                'q' => 'Od czego zależy czas realizacji?',
+                'a' => 'Od złożoności funkcji, integracji i tego, jak dokładnie określone są wymagania. Do pierwszej wersji wybieramy funkcje potrzebne do sprawdzenia pomysłu. Orientacyjny czas to 6–8 tygodni; harmonogram ustalamy po omówieniu zakresu prac.',
             ],
             'q2' => [
-                'q' => 'Do kogo należy kod?',
-                'a' => 'Do Ciebie. Cała praca od pierwszego dnia trafia do Twojego prywatnego repozytorium na GitHub lub GitLab. Kod, konta i dostępy zostają u Ciebie.',
+                'q' => 'Jak wygląda dostęp do kodu?',
+                'a' => 'Pracujemy w Twoim repozytorium GitHub albo udostępniamy nasze na czas prac. Warunki przekazania kodu i hosting gotowego produktu ustalamy przed rozpoczęciem projektu.',
             ],
             'q3' => [
                 'q' => 'Gdzie będzie działać aplikacja i ile kosztuje hosting?',
-                'a' => 'W Dockerze na Twoim własnym koncie w chmurze (Hetzner, AWS lub DigitalOcean). Na MVP zwykle wystarcza VPS za około 60–140 PLN miesięcznie; konfigurację dobierzemy do spodziewanego obciążenia.',
+                'a' => 'Na czas prac udostępniamy środowisko testowe. Hosting gotowego produktu i sposób jego opłacania ustalamy osobno. Koszt zależy od obciążenia i potrzebnych usług.',
             ],
             'q4' => [
                 'q' => 'Czego potrzebujecie ode mnie na start?',
-                'a' => 'Krótkiego opisu: jaki problem rozwiązuje produkt, dla kogo jest i jak będzie zarabiać. Wypełnij formularz na tej stronie albo napisz na Telegramie, a potem na krótkiej rozmowie online lub na spotkaniu w Poznaniu ustalamy zakres MVP i przygotowujemy specyfikację techniczną.',
+                'a' => 'Krótkiego opisu problemu, który rozwiązuje produkt, jego odbiorców i planowanego sposobu zarabiania. Wypełnij formularz albo napisz na Telegramie. Podczas pierwszej rozmowy omówimy pomysł, doprecyzujemy wymagania i ustalimy kolejne kroki.',
             ],
             'q6' => [
                 'q' => 'Jak wyglądają płatności?',
-                'a' => 'Płatność jest podzielona na cztery etapy: 25% na początku każdego; możliwy jest też escrow. Rezultat każdego etapu widzisz na serwerze testowym, zanim zapłacisz za kolejny.',
+                'a' => 'Płatność dzielimy na cztery części po 25%, płatne na początku każdego etapu. Przed opłaceniem kolejnego sprawdzasz wyniki poprzedniego w środowisku testowym. Możliwa jest też płatność przez serwis escrow.',
             ],
             'q7' => [
                 'q' => 'Czy pracujecie z firmami z Poznania i okolic?',
-                'a' => 'Tak. Jesteśmy w Stęszewie pod Poznaniem, więc z klientami z Poznania i powiatu poznańskiego — Lubonia, Komornik, Dopiewa, Mosiny, Puszczykowa, Swarzędza, Suchego Lasu, Tarnowa Podgórnego — możemy spotkać się osobiście: u Ciebie w firmie albo w Poznaniu, na przykład na starcie projektu lub przed uruchomieniem. Z klientami z innych regionów Polski i z zagranicy pracujemy zdalnie, według tego samego procesu.',
+                'a' => 'Tak. Działamy ze Stęszewa pod Poznaniem. Z klientami z Poznania i okolic możemy umówić się na spotkanie osobiste. Z klientami z innych miast i krajów pracujemy zdalnie.',
             ],
         ],
     ],
@@ -287,7 +287,7 @@ return [
     'contact' => [
         'badge' => 'Kontakt',
         'title' => 'Opowiedz nam o swoim produkcie',
-        'subtitle' => 'Wypełnij krótki formularz albo napisz na Telegramie — odpowiemy z wyceną zakresu i terminu.',
+        'subtitle' => 'Opisz pomysł lub zadanie. Doprecyzujemy wymagania i przygotujemy wstępną wycenę oraz termin realizacji.',
         'telegram_cta' => 'Napisz na Telegramie',
         'telegram_hint' => 'Zwykle odpowiadamy tego samego dnia',
         'email_cta' => 'Napisz e-mail',
@@ -306,7 +306,7 @@ return [
             'budget' => 'Budżet',
             'budget_options' => [
                 'sprint' => '19 000 – 34 000 PLN (MVP)',
-                'custom' => '34 000+ PLN (złożony projekt, AI)',
+                'custom' => '34 000+ PLN (większy zakres prac)',
                 'retainer' => 'Współpraca miesięczna',
             ],
             'description' => 'Krótki opis produktu',
@@ -319,13 +319,13 @@ return [
                 'max' => 'Pole „:attribute” jest za długie (maks. :max znaków).',
                 'invalid' => 'Wybierz wartość z listy w polu „:attribute”.',
             ],
-            'recaptcha_failed' => 'Nie udało się potwierdzić, że formularz wysłała osoba. Spróbuj ponownie albo napisz do nas na Telegramie.',
+            'recaptcha_failed' => 'Weryfikacja reCAPTCHA nie powiodła się. Spróbuj ponownie albo napisz do nas na Telegramie.',
             'recaptcha_notice' => 'Formularz jest chroniony przez Google reCAPTCHA:',
             'recaptcha_privacy' => 'Polityka prywatności',
             'recaptcha_terms' => 'Warunki korzystania',
             'privacy_notice' => 'Administratorem danych jest Yurii Mokryi JDG (DigiSpace). Dane z formularza wykorzystujemy wyłącznie do odpowiedzi na Twoje zapytanie.',
             'success_title' => 'Dziękujemy!',
-            'success_message' => 'Otrzymaliśmy Twoją wiadomość i w ciągu jednego dnia roboczego odpowiemy z pytaniami albo wstępną wyceną.',
+            'success_message' => 'Otrzymaliśmy Twoją wiadomość. W ciągu jednego dnia roboczego prześlemy dodatkowe pytania lub wstępną wycenę.',
         ],
     ],
 

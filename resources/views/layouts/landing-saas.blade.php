@@ -100,7 +100,7 @@
     <script type="application/ld+json">@json($structuredData)</script>
     @stack('head')
 </head>
-<body class="bg-slate-50/70 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased font-sans selection:bg-indigo-600 selection:text-white flex flex-col min-h-screen">
+<body data-landing="{{ $copy }}" class="bg-slate-50/70 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased font-sans selection:bg-indigo-600 selection:text-white flex flex-col min-h-screen">
 
     {{-- Skip link: first stop for keyboard users, visible only while focused --}}
     <a href="#main" data-testid="skip-link"
@@ -156,7 +156,7 @@
 
                 {{-- Primary action: the form, like every other main CTA on the page --}}
                 <a href="#contact" data-testid="header-cta"
-                   class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-slate-950 dark:bg-white dark:text-slate-950 hover:bg-indigo-600 dark:hover:bg-indigo-500 dark:hover:text-white transition-colors shadow-xs">
+                   class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white bg-indigo-600 border-indigo-300 border dark:bg-white dark:text-slate-950 dark:border-transparent dark:hover:bg-indigo-500 dark:hover:text-white transition-colors shadow-xs">
                     <span>{{ __($copy.'.nav.cta') }}</span>
                     <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -212,18 +212,13 @@
          so the way to it stays one tap away. Shown after the hero, hidden near the form/footer. --}}
     <div data-sticky-cta aria-hidden="true"
          class="sm:hidden fixed inset-x-0 bottom-0 z-40 p-3 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-t border-slate-200/80 dark:border-slate-800 translate-y-full transition-transform duration-300">
-        <div class="flex gap-2">
+        <div class="flex">
         <a href="#contact" tabindex="-1"
-           class="flex-1 flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold text-white bg-slate-950 dark:bg-white dark:text-slate-950 shadow-sm">
+           class="flex-1 flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-base font-semibold text-white bg-indigo-600 border-indigo-300 border dark:bg-white dark:text-slate-950 dark:border-transparent shadow-sm">
             <span>{{ __($copy.'.nav.cta') }}</span>
             <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
             </svg>
-        </a>
-        <a href="https://t.me/YuriiMokryi" target="_blank" rel="noopener noreferrer" tabindex="-1"
-           aria-label="{{ __($copy.'.contact.telegram_cta') }}" title="{{ __($copy.'.contact.telegram_cta') }}"
-           class="shrink-0 size-[3.25rem] flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm">
-            <svg class="size-6 text-sky-500 dark:text-sky-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
         </a>
         </div>
     </div>

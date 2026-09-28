@@ -39,6 +39,9 @@
 
 @theme {
     --font-sans: "Landing Sans", ui-sans-serif, system-ui, sans-serif;
+    /* Quietly tighter corners for controls and large cards; pills remain fully rounded. */
+    --radius-xl: 0.625rem;
+    --radius-3xl: 1.25rem;
 }
 
 /* Cookie consent banner (public/css/cookie-consent.css) relies on the legacy theme's .button
@@ -58,7 +61,7 @@ footer .site-cookie-consent__open {
     min-height: 44px; /* comfortable touch target */
     padding: 10px 16px;
     border: 1px solid transparent;
-    border-radius: 12px;
+    border-radius: 10px;
     font-size: 14px;
     font-weight: 600;
     line-height: 1.25;
@@ -75,37 +78,152 @@ footer .site-cookie-consent__open {
 }
 
 .site-cookie-consent .button-primary {
-    background: #020617;
-    color: #fff;
+    background: var(--color-indigo-200);
+    border-color: var(--color-indigo-300);
+    color: var(--color-indigo-800);
 }
 
 .site-cookie-consent .button-primary:hover {
-    background: #4f46e5;
+    background: var(--color-indigo-300);
 }
 
 .site-cookie-consent .btn-primary-outline {
-    border-color: #cbd5e1;
-    background: #fff;
-    color: #0f172a;
+    border-color: var(--color-slate-300);
+    background: var(--color-white);
+    color: var(--color-slate-900);
 }
 
 .site-cookie-consent .btn-primary-outline:hover {
-    border-color: #94a3b8;
+    border-color: var(--color-slate-400);
+}
+
+/* Keep the consent surface inside the same restrained system as the landing. */
+.site-cookie-consent .site-cookie-consent__box {
+    border-radius: 16px;
+    background: var(--color-white);
+    border-color: var(--color-slate-200);
+    box-shadow: 0 12px 36px rgb(13 23 29 / 12%);
 }
 
 /* Native controls (select popups, scrollbars) follow the chosen theme, not only the OS one. */
 :root {
     color-scheme: light;
+    /* Light theme: cool paper, clean surfaces, ink text and a restrained cyan-teal accent. */
+    --color-slate-50: #f7f9fa;
+    --color-slate-100: #eef2f3;
+    --color-slate-200: #dfe6e8;
+    --color-slate-300: #c7d1d4;
+    --color-slate-400: #8c9aa0;
+    --color-slate-500: #65747a;
+    --color-slate-600: #4c5b61;
+    --color-slate-700: #37454a;
+    --color-slate-800: #25343a;
+    --color-slate-900: #17252b;
+    --color-slate-950: #0d171c;
+    --color-indigo-50: #eaf7f8;
+    --color-indigo-100: #d5eff1;
+    --color-indigo-200: #b4e1e4;
+    --color-indigo-300: #7bc9cf;
+    --color-indigo-400: #38aeb9;
+    --color-indigo-500: #168d99;
+    --color-indigo-600: #087781;
+    --color-indigo-700: #075f68;
+    --color-indigo-800: #064951;
 }
 
 :root.dark {
     color-scheme: dark;
+    /* Dark theme: deep blue-green surfaces with brighter accent/text values for contrast. */
+    --color-slate-50: #edf4f4;
+    --color-slate-100: #e5eeee;
+    --color-slate-200: #cbd9da;
+    --color-slate-300: #aabbbd;
+    --color-slate-400: #879a9d;
+    --color-slate-500: #667a7d;
+    --color-slate-600: #4b6063;
+    --color-slate-700: #30464a;
+    --color-slate-800: #1b2d31;
+    --color-slate-900: #112126;
+    --color-slate-950: #091519;
+    --color-indigo-50: #10282c;
+    --color-indigo-100: #15353a;
+    --color-indigo-200: #1f5057;
+    --color-indigo-300: #65c6ce;
+    --color-indigo-400: #7bd7dd;
+    --color-indigo-500: #087680;
+    --color-indigo-600: #0a6b74;
+    --color-indigo-700: #9ce3e4;
+    --color-indigo-800: #b5eeee;
+}
+
+:root.dark .site-cookie-consent .site-cookie-consent__box {
+    background: var(--color-slate-900);
+    border-color: var(--color-slate-700);
+    box-shadow: 0 16px 44px rgb(0 0 0 / 40%);
+}
+
+:root.dark .site-cookie-consent__title,
+:root.dark .site-cookie-consent__name {
+    color: var(--color-slate-100);
+}
+
+:root.dark .site-cookie-consent__text,
+:root.dark .site-cookie-consent__hint,
+:root.dark .site-cookie-consent__link {
+    color: var(--color-slate-300);
+}
+
+:root.dark .site-cookie-consent__text a {
+    color: var(--color-indigo-300);
+}
+
+:root.dark .site-cookie-consent__dismiss {
+    color: var(--color-slate-400);
+}
+
+:root.dark .site-cookie-consent__dismiss:hover,
+:root.dark .site-cookie-consent__link:hover {
+    color: var(--color-slate-100);
+}
+
+:root.dark .site-cookie-consent__categories,
+:root.dark .site-cookie-consent__category + .site-cookie-consent__category {
+    border-color: var(--color-slate-700);
+}
+
+:root.dark .site-cookie-consent__switch {
+    background: var(--color-slate-700);
+}
+
+:root.dark .site-cookie-consent .button-primary {
+    background: var(--color-slate-50);
+    border-color: transparent;
+    color: var(--color-slate-950);
+}
+
+:root.dark .site-cookie-consent .button-primary:hover {
+    background: var(--color-indigo-500);
+    color: #fff;
+}
+
+:root.dark .site-cookie-consent .btn-primary-outline {
+    border-color: var(--color-slate-600);
+    background: var(--color-slate-800);
+    color: var(--color-slate-100);
+}
+
+:root.dark .site-cookie-consent .btn-primary-outline:hover {
+    border-color: var(--color-slate-400);
 }
 
 /* Keyboard focus is always visible; :where() keeps specificity at zero so utilities can still refine it. */
 :where(a, button, summary, [tabindex]):focus-visible {
-    outline: 2px solid #6366f1;
+    outline: 2px solid var(--color-indigo-600);
     outline-offset: 2px;
+}
+
+:root.dark :where(a, button, summary, [tabindex]):focus-visible {
+    outline-color: var(--color-indigo-300);
 }
 
 /* Visitors who asked the OS for less motion get no smooth scrolling, transitions or animations. */

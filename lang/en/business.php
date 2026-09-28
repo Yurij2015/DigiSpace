@@ -5,7 +5,7 @@
 return [
     'seo' => [
         'title' => 'Custom Software for Businesses in Poznań | DigiSpace',
-        'description' => 'Online booking, CRM, client portals and internal systems built around how your business works, first version in 6–8 weeks. Fixed price; the code and data are yours. We work with businesses in Poznań, across Poland and the EU.',
+        'description' => 'Online booking, CRM, client portals and internal systems built around how your business works, typically 6–8 weeks for the first version. Agreed scope and a fixed price. We work with businesses in Poznań, across Poland and the EU.',
     ],
 
     'nav' => [
@@ -21,19 +21,19 @@ return [
     'hero' => [
         'badge' => 'Software for businesses · Poznań',
         'title' => 'Software built around your business',
-        'subtitle' => 'Online booking, a client portal, a CRM or an internal tool that replaces spreadsheets and manual work. The first version runs in 6–8 weeks, and you talk directly to the developer who builds it.',
-        'subtitle_short' => 'Online booking, a client portal, a CRM or an internal tool instead of spreadsheets and manual work. First version in 6–8 weeks.',
+        'subtitle' => 'Online booking, a client portal, a CRM or an internal tool that replaces spreadsheets and manual work. We typically build the first version in 6–8 weeks, and you talk directly to the developer who builds it. The timeline depends on the agreed scope.',
+        'subtitle_short' => 'Online booking, a client portal, a CRM or an internal tool instead of spreadsheets and manual work. Typically 6–8 weeks for the first version. The timeline depends on the agreed scope.',
         'cta_primary' => 'Get a scope and timeline estimate',
         'status' => 'Taking on new projects',
         'metric_labels' => [
             'price' => 'Budget',
             'timeline' => 'Timeline',
-            'ownership' => 'Ownership',
+            'ownership' => 'Transparency',
         ],
         'metrics' => [
             'price' => 'From $4,800 net',
-            'timeline' => 'First version in 6–8 weeks',
-            'ownership' => 'The system is yours',
+            'timeline' => 'Typically 6–8 weeks',
+            'ownership' => 'You see progress at every stage',
         ],
     ],
 
@@ -130,9 +130,9 @@ return [
                 'desc' => 'Automated checks go through the key scenarios — booking, sign-up, payment — the way your clients would, before each update goes live.',
             ],
             'ownership' => [
-                'badge' => 'Ownership',
-                'title' => 'The system belongs to you',
-                'desc' => 'The source code, the data and the server accounts are yours from day one. No licence fees, and you are not tied to us.',
+                'badge' => 'Collaboration',
+                'title' => 'Access to code during development',
+                'desc' => 'We work in your GitHub repository or give you access to ours during development. We agree on the setup at the start.',
             ],
             'direct' => [
                 'badge' => 'Direct contact',
@@ -164,7 +164,7 @@ return [
             's4' => [
                 'name' => 'Testing and launch',
                 'duration' => 'Weeks 7–8',
-                'desc' => 'Final checks, a security review and go-live on your server.',
+                'desc' => 'Final checks, a security review and deployment to the agreed hosting environment.',
             ],
         ],
     ],
@@ -182,7 +182,7 @@ return [
                 'badge' => 'For a new system',
                 'price' => 'from $4,800',
                 'price_sub' => '≈ 19,000 PLN · fixed scope',
-                'timeline' => '6–8 weeks',
+                'timeline' => 'Typically 6–8 weeks',
                 'desc' => 'For businesses that want their own booking, client portal, CRM or internal tool instead of spreadsheets and third-party platforms.',
                 'features' => [
                     'Analysis of your process and a clear scope',
@@ -190,8 +190,8 @@ return [
                     'Admin panel for your team',
                     'Private test version from the first week',
                     'Automated checks of the key scenarios',
-                    'Launch on a server in your name',
-                    'Full handover of the code and instructions',
+                    'Deployment to the agreed hosting environment',
+                    'Access to code and project documentation',
                     '2 weeks of post-launch fixes included',
                 ],
                 'cta' => 'Discuss your system',
@@ -257,19 +257,19 @@ return [
     'faq' => [
         'badge' => 'FAQ',
         'title' => 'Common questions',
-        'subtitle' => 'Timelines, costs, ownership and working together.',
+        'subtitle' => 'Timelines, costs, hosting and working together.',
         'items' => [
             'q1' => [
                 'q' => 'How long does it take?',
                 'a' => 'The first version includes the 3–5 features that matter most to your business. The typical plan is four two-week stages; with a smaller scope launch can happen in 6 weeks. If more is needed, we say so at the estimate stage and plan the next steps together.',
             ],
             'q2' => [
-                'q' => 'Who owns the system?',
-                'a' => 'You do: the source code, the data and the server accounts. If you ever want to work with another developer, everything can be handed over.',
+                'q' => 'How do you manage access to the code?',
+                'a' => 'We work in your GitHub repository or give you access to ours during development. We agree on code handover and hosting for the finished product before work begins.',
             ],
             'q3' => [
                 'q' => 'How much does it cost to keep it running?',
-                'a' => 'The system runs on a server in your name (Hetzner, AWS or DigitalOcean). For most small and medium businesses that is about $15–35 a month. There are no licence fees and no commission on your clients.',
+                'a' => 'We provide a test environment during development. Hosting for the finished product and payment arrangements are agreed separately. Costs depend on the expected load and the services needed.',
             ],
             'q4' => [
                 'q' => 'What do you need from me to start?',
