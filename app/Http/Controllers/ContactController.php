@@ -47,7 +47,11 @@ class ContactController extends Controller
 
         ContactForm::create($validated);
 
-        $zohoLeads->sendLead($validated);
+        try {
+            $zohoLeads->sendLead($validated);
+        } catch (\Throwable $exception) {
+            report($exception);
+        }
 
         return back()->with('success', __('site.contact_success'));
     }
