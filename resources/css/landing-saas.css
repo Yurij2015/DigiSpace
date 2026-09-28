@@ -7,6 +7,92 @@
    from the visitor's saved choice, falling back to the OS preference. */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Self-hosted fonts (no request to Google, so no visitor IP leaves the site without consent).
+   Plus Jakarta Sans has no basic Cyrillic, so Ukrainian glyphs come from Manrope, a close
+   geometric match; unicode-range makes the browser fetch only the files a page actually needs. */
+@font-face {
+    font-family: "Landing Sans";
+    src: url("../fonts/landing-saas/plus-jakarta-sans-latin.woff2") format("woff2");
+    font-weight: 300 800;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: "Landing Sans";
+    src: url("../fonts/landing-saas/plus-jakarta-sans-latin-ext.woff2") format("woff2");
+    font-weight: 300 800;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: "Landing Sans";
+    src: url("../fonts/landing-saas/manrope-cyrillic.woff2") format("woff2");
+    font-weight: 300 800;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@theme {
+    --font-sans: "Landing Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Cookie consent banner (public/css/cookie-consent.css) relies on the legacy theme's .button
+   classes and Lato, which this page does not load: give its buttons the landing look instead. */
+/* Selectors are one class more specific than cookie-consent.css, which loads after this bundle. */
+.site-cookie-consent,
+.site-cookie-consent .button,
+.site-cookie-consent .site-cookie-consent__link,
+footer .site-cookie-consent__open {
+    font-family: inherit;
+}
+
+.site-cookie-consent .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px; /* comfortable touch target */
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.25;
+    cursor: pointer;
+    transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+}
+
+@media (max-width: 575px) {
+    /* Keeps "Zaakceptuj wszystkie" and similar labels on one line on 360–375px phones. */
+    .site-cookie-consent .button {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+.site-cookie-consent .button-primary {
+    background: #020617;
+    color: #fff;
+}
+
+.site-cookie-consent .button-primary:hover {
+    background: #4f46e5;
+}
+
+.site-cookie-consent .btn-primary-outline {
+    border-color: #cbd5e1;
+    background: #fff;
+    color: #0f172a;
+}
+
+.site-cookie-consent .btn-primary-outline:hover {
+    border-color: #94a3b8;
+}
+
 /* Native controls (select popups, scrollbars) follow the chosen theme, not only the OS one. */
 :root {
     color-scheme: light;
@@ -14,4 +100,31 @@
 
 :root.dark {
     color-scheme: dark;
+}
+
+/* Keyboard focus is always visible; :where() keeps specificity at zero so utilities can still refine it. */
+:where(a, button, summary, [tabindex]):focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+}
+
+/* Visitors who asked the OS for less motion get no smooth scrolling, transitions or animations. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* reCAPTCHA v3 badge: hidden because the form shows the required reCAPTCHA notice with
+   links to Google's Privacy Policy and Terms (allowed by Google's reCAPTCHA FAQ). */
+.grecaptcha-badge {
+    visibility: hidden;
 }

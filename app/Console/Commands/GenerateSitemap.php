@@ -22,7 +22,7 @@ class GenerateSitemap extends Command
 
     private const STATIC_ROUTES = [
         'home.index', 'about', 'services', 'pricing', 'blog',
-        'contact-us', 'privacy-policy', 'faq', 'support', 'development.saas',
+        'contact-us', 'privacy-policy', 'faq', 'support', 'development.saas', 'development.business',
     ];
 
     public function handle(BlogRepository $blogRepository): int

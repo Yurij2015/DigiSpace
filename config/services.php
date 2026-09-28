@@ -61,4 +61,14 @@ return [
         'site_key' => env('RECAPTCHA_SITE_KEY'),
         'secret_key' => env('RECAPTCHA_SECRET_KEY'),
     ],
+
+    /*
+     * reCAPTCHA v3 (score-based, no checkbox) used by the SaaS landing inquiry form.
+     * It needs its own key pair: v2 checkbox keys do not work with v3.
+     */
+    'recaptcha_v3' => [
+        'site_key' => env('RECAPTCHA_V3_SITE_KEY'),
+        'secret_key' => env('RECAPTCHA_V3_SECRET_KEY'),
+        'min_score' => (float) env('RECAPTCHA_V3_MIN_SCORE', 0.5),
+    ],
 ];

@@ -173,6 +173,54 @@ test('withdrawing analytics drops the trackers that cannot stop in place', async
     await expect(page.getByTestId(SETTINGS_LINK)).toHaveClass(/site-cookie-consent__open--partial/);
 });
 
+// The banner is shared by the main site and the landings. With the preferences panel open, resizing
+// the window across the 575px breakpoint (card ↔ full-width bar) and down to a short landscape screen
+// must keep it inside the viewport, without horizontal scroll, and with "Save" reachable.
+for (const path of ['/en/', '/pl/development/business']) {
+    test(`open preferences survive window resizing on ${path}`, async ({ page }) => {
+        await page.setViewportSize({ width: 1440, height: 900 });
+        await page.goto(path);
+        await page.addStyleTag({ content: '.phpdebugbar, [class*="phpdebugbar"] { display: none !important; }' });
+        await page.getByTestId('consent-customize').click();
+        await expect(page.getByTestId(PANEL)).toBeVisible();
+
+        const sizes = [
+            { width: 1440, height: 900 },
+            { width: 576, height: 800 },
+            { width: 575, height: 800 },
+            { width: 400, height: 700 },
+            { width: 320, height: 568 },
+            { width: 900, height: 400 },
+            { width: 1280, height: 720 },
+        ];
+        for (const size of sizes) {
+            await page.setViewportSize(size);
+            const state = await page.getByTestId(BANNER).evaluate((banner) => {
+                const rect = banner.getBoundingClientRect();
+                const save = banner.querySelector('[data-testid="consent-save"]') as HTMLElement;
+                const scrollTop = banner.scrollTop;
+                banner.scrollTop = banner.scrollHeight;
+                const saveRect = save.getBoundingClientRect();
+                banner.scrollTop = scrollTop;
+                return {
+                    top: rect.top,
+                    bottom: rect.bottom,
+                    pageOverflowX: document.documentElement.scrollWidth - window.innerWidth,
+                    bannerOverflowX: banner.scrollWidth - banner.clientWidth,
+                    saveReachable: saveRect.top >= 0 && saveRect.bottom <= window.innerHeight,
+                };
+            });
+            const label = `${size.width}×${size.height}`;
+            await expect(page.getByTestId(PANEL), label).toBeVisible();
+            expect(state.top, `${label}: banner starts above the viewport`).toBeGreaterThanOrEqual(0);
+            expect(state.bottom, `${label}: banner ends below the viewport`).toBeLessThanOrEqual(size.height + 1);
+            expect(state.pageOverflowX, `${label}: page scrolls sideways`).toBeLessThanOrEqual(0);
+            expect(state.bannerOverflowX, `${label}: banner scrolls sideways`).toBeLessThanOrEqual(0);
+            expect(state.saveReachable, `${label}: "Save" cannot be reached`).toBe(true);
+        }
+    });
+}
+
 test('new relic runs for everyone and writes no first-party cookie', async ({ page }) => {
     await page.goto('/en/');
     await page.getByTestId('consent-reject').click();
