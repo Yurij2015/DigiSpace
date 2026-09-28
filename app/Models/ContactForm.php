@@ -38,5 +38,8 @@ class ContactForm extends Model
     /** Lead submitted through the SaaS development landing (/development/saas). */
     public const SOURCE_SAAS_LANDING = 'development-saas';
 
+    /** Lead submitted through the business software landing (/development/business). */
+    public const SOURCE_BUSINESS_LANDING = 'development-business';
+
     protected $fillable = ['first_name', 'last_name', 'name', 'email', 'phone', 'message', 'source'];
 }

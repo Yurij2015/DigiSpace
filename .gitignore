@@ -43,3 +43,4 @@ _ide_helper_models.php
 
 # macOS
 .DS_Store
+/storage/zohoStore.txt

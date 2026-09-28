@@ -3,115 +3,111 @@
 return [
     'seo' => [
         'title' => 'SaaS MVP Development in Poznań | DigiSpace',
-        'description' => 'SaaS MVP development in 6–8 weeks: multi-tenancy, Stripe subscriptions, background queues and AI integrations. DigiSpace works from Poznań with clients in Wielkopolska, across Poland and the EU.',
+        'description' => 'SaaS MVP development in 6–8 weeks: multi-tenancy, Stripe subscriptions, background queues and AI integrations. DigiSpace works with clients in Poznań, across Poland and the EU.',
     ],
 
     'nav' => [
         'proofs' => 'Projects',
-        'engine' => 'What’s included',
         'guarantees' => 'How we work',
-        'process' => 'Plan',
         'pricing' => 'Pricing',
         'faq' => 'FAQ',
-        'cta' => 'Discuss a project',
-        'location' => 'Poznań · Wielkopolska',
+        'cta' => 'Get an estimate',
+        'skip' => 'Skip to content',
         'theme_toggle' => 'Switch light / dark theme',
     ],
 
     'hero' => [
         'badge' => 'SaaS development · Poznań',
         'title' => 'Your SaaS MVP, from idea to launch in 6–8 weeks',
-        'subtitle' => 'We design and build SaaS products on a solid base: separate data for each client company, Stripe subscriptions, background jobs and AI features where they make sense. The code is written by the developer you talk to, with no middlemen in between. We are based in Poznań and work with clients in Wielkopolska, across Poland and remotely.',
+        'subtitle' => 'We design and build SaaS products on a solid base: separate data for each client company, Stripe subscriptions, background jobs and AI features where they make sense. You talk directly to the developer who writes the code.',
+        'subtitle_short' => 'SaaS products on a solid base: separate data for each client, Stripe subscriptions, background jobs and AI. You talk directly to the developer.',
         'cta_primary' => 'Get a scope and timeline estimate',
-        'cta_secondary' => 'See our projects',
         'status' => 'Taking on new projects',
         'metric_labels' => [
+            'price' => 'Budget',
             'timeline' => 'Timeline',
             'ownership' => 'Ownership',
-            'staging' => 'Progress',
         ],
         'metrics' => [
+            'price' => 'MVP from $4,800 net',
             'timeline' => '6–8 weeks to launch',
             'ownership' => 'Code and servers are yours',
-            'staging' => 'Test server in the first week',
         ],
     ],
 
     'proofs' => [
         'badge' => 'Our projects',
         'title' => 'Products we built and run ourselves',
-        'subtitle' => 'Each of these systems is live. Open them and see how they work.',
+        'subtitle' => 'Each of these systems runs in production. Browse the screenshots or open the product itself.',
         'view_live' => 'Open the product',
+        'gallery_hint' => 'Screenshots from the running products',
+        'gallery_open' => 'Open screenshot',
+        'gallery_close' => 'Close',
+        'gallery_prev' => 'Previous screenshot',
+        'gallery_next' => 'Next screenshot',
+        'gallery_count' => 'Screenshots: :count',
         'projects' => [
             'digipulse' => [
                 'badge' => 'Our own SaaS product',
                 'name' => 'DigiPulse',
+                'screens' => [
+                    ['file' => 'digipulse-dashboard', 'caption' => 'Dashboard: status, check types, SSL, ping and 30-day uptime of every monitored site (site names blurred)'],
+                    ['file' => 'digipulse-history', 'caption' => 'Site history: weekly response time, P95 latency, Apdex score and incidents'],
+                ],
                 'tagline' => 'Website uptime monitoring with incident alerts',
-                'desc' => 'Laravel Octane and Filament handle scheduling, Redis passes checks to workers written in Go, and alerts go out through Telegram and email. It also has an MCP server, so AI assistants can read monitoring data.',
                 'stack' => ['Laravel Octane', 'Go', 'Redis', 'Filament', 'PostgreSQL', 'MCP'],
                 'live_url' => 'https://digipulse.cloud',
             ],
             'vetspace' => [
                 'badge' => 'Multi-tenant B2B platform',
                 'name' => 'VetSpace & VetCard',
+                'screens' => [
+                    ['file' => 'vetspace-clinic-month', 'caption' => 'Clinic workspace: month view with the number of appointments per doctor for every day (demo data)'],
+                    ['file' => 'vetspace-clinic-calendar', 'caption' => 'Clinic workspace: appointment calendar with branch and doctor filters (demo data)'],
+                    ['file' => 'vetspace-admin-plans', 'caption' => 'Filament admin panel: subscription plans synced with Stripe'],
+                    ['file' => 'vetspace-swagger-appointments', 'caption' => 'REST API documented with OpenAPI (Swagger): appointment endpoints of the core API'],
+                ],
                 'tagline' => 'Platform for veterinary clinics and pet owners',
-                'desc' => 'Every clinic has its own isolated data, its own subdomain or domain, online booking, a staff area and a Stripe subscription (Laravel Cashier). The Nuxt frontend renders pages on the server, so clinic pages load fast and are easy for search engines to index.',
                 'stack' => ['Laravel API', 'Nuxt SSR', 'Multi-tenancy', 'Stripe Cashier', 'Tailwind CSS', 'PostgreSQL'],
                 'live_url' => 'https://vetspace.pro',
-                'mock' => [
-                    'caption' => 'Clinic workspace',
-                    'points' => [
-                        'Clinic data is isolated from other clinics',
-                        'Own subdomain or custom domain',
-                        'Subscription billed through Stripe',
-                    ],
-                ],
             ],
             'netpostpanel' => [
                 'badge' => 'AI & RAG platform',
                 'name' => 'NetPostPanel',
+                'screens' => [
+                    ['file' => 'netpostpanel-workbench', 'caption' => 'Workbench: content type, prompt and source research in a single flow'],
+                    ['file' => 'netpostpanel-autopilot', 'caption' => 'Auto Pilot: daily scheduled generation from custom topics and sources'],
+                ],
                 'tagline' => 'Content preparation with AI: source research, drafts, semantic search',
-                'desc' => 'A RAG pipeline: source research, web scraping, LLM-assisted drafting and vector embeddings. Qdrant handles semantic search, Langfuse tracks LLM cost and latency, and Laravel Horizon runs the queues, including scheduled automatic runs.',
                 'stack' => ['Laravel', 'RAG', 'Qdrant', 'Langfuse', 'Horizon', 'LLM API'],
-                'live_url' => 'https://net-post-panel.digispace.pro',
+                'live_url' => 'https://github.com/Yurij2015/net-post-panel-overview',
+                // Not a public product: link the descriptive repository, as the portfolio does.
+                'link_label' => 'Read the overview on GitHub',
             ],
         ],
     ],
 
     'engine' => [
-        'badge' => 'What’s included',
         'title' => 'Building blocks of a typical SaaS MVP',
         'subtitle' => 'Which of these your product needs is agreed at the start. We don’t build what you won’t use.',
         'pillars' => [
             'multitenancy' => [
                 'title' => 'Multi-tenancy',
-                'desc' => 'Each client company sees only its own data: a separate database or a shared one scoped by tenant. Custom domains and branding when needed.',
-                'tag' => 'Data isolation',
             ],
             'billing' => [
                 'title' => 'Stripe subscriptions',
-                'desc' => 'Stripe Checkout, a customer portal for cards and plans, webhook handling, monthly and annual plans, invoices.',
-                'tag' => 'Payments',
             ],
             'workers' => [
                 'title' => 'Background jobs',
-                'desc' => 'Slow work (PDFs, emails, scraping, AI requests) runs in queues so the interface stays responsive. Go workers are used where throughput actually matters.',
-                'tag' => 'Performance',
             ],
             'admin' => [
                 'title' => 'Admin panel (Filament)',
-                'desc' => 'Manage users, companies and subscriptions, sign in as a user to reproduce issues, activity log and basic revenue figures.',
-                'tag' => 'Operations',
             ],
             'ai' => [
                 'title' => 'AI features and RAG',
-                'desc' => 'Semantic search over your documents (Qdrant), assistants that answer from your own data with sources, and structuring of user input with LLMs.',
-                'tag' => 'AI',
             ],
             'devops' => [
                 'title' => 'Docker and deployment',
-                'desc' => 'Docker Compose, CI/CD on GitHub Actions and deployment to your own Hetzner, AWS or DigitalOcean account. No dependency on us for hosting.',
-                'tag' => 'Infrastructure',
             ],
         ],
     ],
@@ -119,12 +115,12 @@ return [
     'guarantees' => [
         'badge' => 'How we work',
         'title' => 'What you can count on',
-        'subtitle' => 'Four rules we follow on every project.',
+        'subtitle' => 'Four rules we follow on every project, and the launch plan.',
         'items' => [
             'staging' => [
                 'badge' => 'First week',
                 'title' => 'A test server from the first week',
-                'desc' => 'During the first week you get a password-protected test server. It updates as work progresses, so you see the product itself rather than status reports.',
+                'desc' => 'During the first week you get a password-protected test server. Every change that passes the automated tests is deployed there automatically (GitHub Actions), so you see the product itself rather than status reports.',
             ],
             'testing' => [
                 'badge' => 'Tests',
@@ -139,114 +135,45 @@ return [
             'direct' => [
                 'badge' => 'Direct contact',
                 'title' => 'You talk to the developer',
-                'desc' => 'No project managers in between: you discuss tasks directly with the senior full-stack developer who writes the code (8+ years of commercial experience).',
-            ],
-        ],
-    ],
-
-    'comparison' => [
-        'badge' => 'Comparison',
-        'title' => 'How this differs from a typical agency',
-        'subtitle' => 'Agencies suit large teams and long projects. For an MVP, a smaller format is often enough.',
-        'headers' => [
-            'feature' => 'Aspect',
-            'software_house' => 'Typical agency',
-            'digispace' => 'DigiSpace',
-        ],
-        'rows' => [
-            'team' => [
-                'label' => 'Who writes the code',
-                'agency' => 'A team; you communicate through a project manager',
-                'us' => 'One senior developer you talk to directly',
-            ],
-            'timeline' => [
-                'label' => 'Time to MVP',
-                'agency' => 'Often 3–6 months',
-                'us' => '6–8 weeks for an agreed scope',
-            ],
-            'cost' => [
-                'label' => 'MVP budget',
-                'agency' => 'Often $15,000+',
-                'us' => 'From $4,800 for a fixed scope',
-            ],
-            'staging' => [
-                'label' => 'First working version',
-                'agency' => 'Often after the design phase',
-                'us' => 'On a test server in the first week',
-            ],
-            'testing' => [
-                'label' => 'Testing',
-                'agency' => 'Depends on the team and budget',
-                'us' => 'Unit and Playwright tests are part of the scope',
-            ],
-            'ownership' => [
-                'label' => 'Code and servers',
-                'agency' => 'Depends on the contract',
-                'us' => 'Your repository and your cloud account from day one',
+                'desc' => 'No project managers in between: you discuss tasks directly with the senior full-stack developer who writes the code.',
             ],
         ],
     ],
 
     'process' => [
-        'badge' => 'Plan',
-        'title' => 'Four two-week sprints to launch',
-        'subtitle' => 'Each sprint has a concrete result and ends with a demo on the test server.',
+        'title' => 'Four stages to launch',
+        'subtitle' => 'Each stage takes up to two weeks and ends with a demo on the test server. With a smaller scope the stages are shorter, and launch can happen in 6 weeks.',
         'sprints' => [
             's1' => [
-                'number' => '01',
                 'name' => 'Architecture and foundation',
                 'duration' => 'Weeks 1–2',
-                'desc' => 'A base that won’t need rewriting once the product grows.',
-                'deliverables' => [
-                    'Database design (PostgreSQL or MySQL)',
-                    'Sign-in, roles and data separation between companies',
-                    'Test server with automatic deployment (CI/CD)',
-                    'Basic interface layout and UI components',
-                ],
+                'desc' => 'An architecture with room for the product to grow.',
             ],
             's2' => [
-                'number' => '02',
                 'name' => 'Core features and payments',
                 'duration' => 'Weeks 3–4',
                 'desc' => 'The main thing your product does, plus subscriptions.',
-                'deliverables' => [
-                    'Core product logic',
-                    'Stripe Checkout and customer portal (plans and subscriptions)',
-                    'Stripe webhook handling (renewals, cancellations, invoices)',
-                    'Queues for background jobs',
-                ],
             ],
             's3' => [
-                'number' => '03',
                 'name' => 'User area and admin panel',
                 'duration' => 'Weeks 5–6',
                 'desc' => 'What your customers and your team will work in.',
-                'deliverables' => [
-                    'Responsive user dashboard (Tailwind CSS, Vue or Blade)',
-                    'Filament admin panel for companies and subscriptions',
-                    'AI features or third-party API integrations, if in scope',
-                    'Email templates and notifications',
-                ],
             ],
             's4' => [
-                'number' => '04',
                 'name' => 'Testing and launch',
                 'duration' => 'Weeks 7–8',
                 'desc' => 'End-to-end tests, security checks and production release.',
-                'deliverables' => [
-                    'Playwright tests for sign-up, onboarding and payment',
-                    'Query optimisation, caching and a security review',
-                    'Deployment to your cloud (Hetzner, AWS or DigitalOcean)',
-                    'Documentation, repository handover and an admin panel walkthrough',
-                ],
             ],
         ],
     ],
 
     'pricing' => [
+        'net_label' => 'net',
+        'vat_note' => 'All prices are net. As a Polish VAT payer, we add VAT under Polish law (23% for clients in Poland).',
+        'comparison_note' => 'An agency with a team and a project manager suits large projects. For an MVP, one senior developer is usually enough — which is why the budget is lower.',
         'badge' => 'Pricing',
         'title' => 'Two ways to work together',
-        'subtitle' => 'A fixed-scope sprint to launch an MVP, or a monthly arrangement for a product that is already live.',
+        'subtitle' => 'A fixed scope and price to launch an MVP, or a monthly arrangement for a product that is already live.',
         'plans' => [
             'mvp' => [
                 'name' => 'SaaS MVP',
@@ -268,7 +195,7 @@ return [
                 'cta' => 'Discuss an MVP',
             ],
             'retainer' => [
-                'name' => 'Fractional CTO',
+                'name' => 'Senior support',
                 'badge' => 'For a live product',
                 'price' => 'from $2,400',
                 'price_sub' => '≈ 9,500 PLN · per month',
@@ -293,12 +220,35 @@ return [
             'upwork' => [
                 'quote' => 'He was able to design the database, set up the code architecture, and plan for future releases. He works independently, reviews and debugs code, and consistently suggests improvements while spotting logical flaws in the system. … He has always been available to support the project when needed, never makes excuses, and communicates clearly.',
                 'source' => 'Client review on Upwork',
+                'url' => 'https://www.upwork.com/freelancers/mokryiyurii',
             ],
             'linkedin' => [
                 'quote' => 'Yurii is a responsible specialist who can work autonomously on a wide range of tasks. He has solid expertise in PHP (Symfony, Laravel) and JavaScript frameworks (Vue.js, Angular) — able to independently investigate complex issues, identify root causes, and implement effective solutions.',
                 'source' => 'Recommendation on LinkedIn',
                 'url' => 'https://linkedin.com/in/yurii-mokryi',
             ],
+        ],
+    ],
+
+    'founder' => [
+        'badge' => 'Who you will work with',
+        'name' => 'Yurii Mokryi',
+        'role' => 'Founder of DigiSpace · Senior full-stack developer',
+        'bio' => 'I design and build web products end to end: from the database and payments to deployment and support. My own SaaS products run in production, so I know the work doesn’t end at launch.',
+        'more_links' => 'Videos and blog',
+        'facts' => [
+            '8+ years of commercial development',
+            'Laravel, Symfony, Filament, Vue/Nuxt, Go',
+            'Own SaaS in production: DigiPulse, VetSpace, NetPostPanel',
+            'Based in Stęszew near Poznań, Poland',
+        ],
+        'links' => [
+            'linkedin' => 'https://linkedin.com/in/yurii-mokryi',
+            'github' => 'https://github.com/Yurij2015',
+            'upwork' => 'https://www.upwork.com/freelancers/mokryiyurii',
+            'youtube' => 'https://www.youtube.com/@YuriiMokryi',
+            'tiktok' => 'https://www.tiktok.com/@yriimokryi',
+            'instagram' => 'https://www.instagram.com/yurii_mokryi',
         ],
     ],
 
@@ -309,7 +259,7 @@ return [
         'items' => [
             'q1' => [
                 'q' => 'Why 6–8 weeks?',
-                'a' => 'The first version covers the 3–5 features that solve your users’ main problem and that they will pay for. Sign-in, multi-tenancy and Stripe billing are built from ready, tested modules rather than from scratch. If the scope is larger, we say so at the estimate stage.',
+                'a' => 'The first version covers the 3–5 features that solve your users’ main problem and that they will pay for. Sign-in, multi-tenancy and Stripe billing are built from ready, tested modules rather than from scratch. The typical plan is four two-week stages; with a smaller scope the stages are shorter and launch can happen in 6 weeks. If the scope is larger, we say so at the estimate stage.',
             ],
             'q2' => [
                 'q' => 'Who owns the code?',
@@ -321,19 +271,15 @@ return [
             ],
             'q4' => [
                 'q' => 'What do you need from me to start?',
-                'a' => 'A short description: what problem the product solves, for whom, and how it will make money. On a 30-minute call we agree on the MVP scope and put together a technical brief.',
-            ],
-            'q5' => [
-                'q' => 'How do you reduce the risk of production bugs?',
-                'a' => 'Unit tests cover business logic and billing, and Playwright tests go through sign-up, onboarding and Stripe payment before every release. That does not rule out bugs, but it catches regressions before users do.',
+                'a' => 'A short description: what problem the product solves, for whom, and how it will make money. Fill in the form on this page or message us on Telegram; then, on a short call online or at a meeting in Poznań, we agree on the MVP scope and put together a technical brief.',
             ],
             'q6' => [
                 'q' => 'How does payment work?',
-                'a' => 'Payment is split by sprint: usually 25% at the start of each two-week sprint; escrow is also possible. You see the result of each sprint on the test server before paying for the next one.',
+                'a' => 'Payment is split across the four stages: 25% at the start of each; escrow is also possible. You see the result of each stage on the test server before paying for the next one.',
             ],
             'q7' => [
-                'q' => 'Do you work with companies in Poznań and Wielkopolska?',
-                'a' => 'Yes. We are based in Poznań, so for clients from Poznań and the surrounding area we can meet in person, for example for the kick-off or the launch. Clients from the rest of Poland and abroad work with us remotely, with the same process.',
+                'q' => 'Do you work with companies in Poznań and the surrounding area?',
+                'a' => 'Yes. We are in Stęszew, just outside Poznań, so with clients from Poznań and Poznań County — Luboń, Komorniki, Dopiewo, Mosina, Puszczykowo, Swarzędz, Suchy Las, Tarnowo Podgórne — we can meet in person: at your office or in Poznań, for example for the kick-off or before the launch. Clients from the rest of Poland and abroad work with us remotely, with the same process.',
             ],
         ],
     ],
@@ -341,12 +287,11 @@ return [
     'contact' => [
         'badge' => 'Get in touch',
         'title' => 'Tell us about your product',
-        'subtitle' => 'Message us on Telegram, or fill in the short form and we will reply with a scope and timeline estimate.',
+        'subtitle' => 'Fill in the short form or message us on Telegram, and we will reply with a scope and timeline estimate.',
         'telegram_cta' => 'Message on Telegram',
         'telegram_hint' => 'We usually reply the same day',
         'email_cta' => 'Send an email',
         'form' => [
-            'title' => 'Scope and timeline estimate',
             'project_name' => 'Your name or company',
             'project_name_placeholder' => 'Alex / Startup Inc.',
             'contact' => 'Telegram or email',
@@ -366,19 +311,29 @@ return [
             ],
             'description' => 'Short product description',
             'description_placeholder' => 'What will the product do, and who is it for?',
-            'submit' => 'Send',
-            'submitting' => 'Sending…',
+            'submit' => 'Get an estimate',
+            'response_time' => 'We reply within one business day.',
             'errors_title' => 'Please check the form:',
-            'recaptcha_required' => 'Please confirm that you are not a robot.',
+            'validation' => [
+                'required' => 'Please fill in “:attribute”.',
+                'max' => '“:attribute” is too long (up to :max characters).',
+                'invalid' => 'Please choose a value from the list for “:attribute”.',
+            ],
+            'recaptcha_failed' => 'We could not confirm the form was sent by a person. Please try again or message us on Telegram.',
+            'recaptcha_notice' => 'This form is protected by Google reCAPTCHA:',
+            'recaptcha_privacy' => 'Privacy Policy',
+            'recaptcha_terms' => 'Terms of Service',
+            'privacy_notice' => 'The data controller is Yurii Mokryi JDG (DigiSpace). We use the data from this form only to reply to your inquiry.',
             'success_title' => 'Thank you!',
             'success_message' => 'We have received your message and will reply within one business day with questions or a first estimate.',
         ],
     ],
 
     'footer' => [
+        'legal' => 'Yurii Mokryi JDG · NIP 7773404080 · REGON 524949632',
         'privacy_policy' => 'Privacy policy',
         'tagline' => 'SaaS and web development',
         'all_rights_reserved' => 'All rights reserved',
-        'location' => 'Poznań, Wielkopolska, Poland.',
+        'location' => 'Stęszew near Poznań, Wielkopolska, Poland.',
     ],
 ];

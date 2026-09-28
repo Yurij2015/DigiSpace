@@ -27,6 +27,7 @@
         "barryvdh/laravel-ide-helper": "^3.6",
         "brianium/paratest": "^7.1",
         "fakerphp/faker": "^1.9.1",
+        "laravel-lang/common": "^6.8",
         "laravel/boost": "^2.8",
         "laravel/breeze": "^2.0",
         "laravel/pint": "^1.0",

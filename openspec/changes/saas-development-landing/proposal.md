@@ -10,7 +10,7 @@ DigiSpace is launching advertising and outreach campaigns for SaaS MVP developme
 - Present live proof of work using in-house production systems only:
   - **DigiPulse (`digipulse.cloud`)**: uptime monitoring SaaS (Laravel Octane, Go workers, Redis, MCP server).
   - **VetSpace & VetCard (`vetspace.pro`)**: multi-tenant clinic platform (Nuxt SSR, Stripe subscriptions, custom subdomains).
-  - **NetPostPanel (`net-post-panel.digispace.pro`)**: AI content platform (RAG pipeline, Qdrant, Langfuse, Horizon queues).
+  - **NetPostPanel** (not public; linked to its descriptive repository `github.com/Yurij2015/net-post-panel-overview`): AI content platform (RAG pipeline, Qdrant, Langfuse, Horizon queues).
   - Two compact client quotes: excerpts from an Upwork client review and a LinkedIn recommendation, taken verbatim from the source (omissions marked with “…”, uk/pl marked as translations).
 - Describe the 6 building blocks of a typical SaaS MVP (multi-tenancy, Stripe subscriptions, background jobs, Filament admin, AI/RAG, Docker deployment).
 - Describe the 4-sprint launch plan (architecture, core features & payments, user area & admin, testing & launch).
