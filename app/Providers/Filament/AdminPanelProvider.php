@@ -44,6 +44,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigationGroups([
                 PanelNavigationGroup::Content->make(),
+                PanelNavigationGroup::Leads->make(),
                 PanelNavigationGroup::Settings->make(),
                 PanelNavigationGroup::Portfolio->make(),
             ])

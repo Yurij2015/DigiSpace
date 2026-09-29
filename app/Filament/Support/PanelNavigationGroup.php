@@ -5,12 +5,13 @@ namespace App\Filament\Support;
 use Filament\Navigation\NavigationGroup;
 
 /**
- * The three sidebar groups of the control panel. Resources return ->label() from
+ * The four sidebar groups of the control panel. Resources return ->label() from
  * getNavigationGroup(); the panel registers ->make() so labels match in every UI language.
  */
 enum PanelNavigationGroup: string
 {
     case Content = 'content';
+    case Leads = 'leads';
     case Settings = 'settings';
     case Portfolio = 'portfolio';
 
