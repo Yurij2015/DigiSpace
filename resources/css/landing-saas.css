@@ -41,6 +41,7 @@
     --font-sans: "Landing Sans", ui-sans-serif, system-ui, sans-serif;
     /* Quietly tighter corners for controls and large cards; pills remain fully rounded. */
     --radius-xl: 0.625rem;
+    --radius-2xl: 0.75rem;
     --radius-3xl: 1.25rem;
 }
 
@@ -182,7 +183,8 @@ footer .site-cookie-consent__open {
 }
 
 :root.dark .site-cookie-consent__dismiss:hover,
-:root.dark .site-cookie-consent__link:hover {
+:root.dark .site-cookie-consent__link:hover,
+:root.dark .site-cookie-consent__inline-customize:hover {
     color: var(--color-slate-100);
 }
 
@@ -245,4 +247,20 @@ footer .site-cookie-consent__open {
    links to Google's Privacy Policy and Terms (allowed by Google's reCAPTCHA FAQ). */
 .grecaptcha-badge {
     visibility: hidden;
+}
+
+/* Form selects: native arrow replaced by a chevron in the landing's slate tones */
+@layer components {
+    .landing-select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+        background-position: right 1rem center;
+        background-repeat: no-repeat;
+        background-size: 1.25rem 1.25rem;
+        cursor: pointer;
+    }
+
+    :root.dark .landing-select {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    }
 }

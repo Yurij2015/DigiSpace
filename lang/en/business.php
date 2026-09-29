@@ -20,7 +20,7 @@ return [
 
     'hero' => [
         'badge' => 'Software for businesses · Poznań',
-        'title' => 'Software built around your business',
+        'title' => 'Custom software built around your business',
         'subtitle' => 'Online booking, client portals, CRMs or internal tools to replace spreadsheets and manual work. We automate your processes and launch a first version tailored to your business.',
         'subtitle_short' => 'Online booking, a client portal or CRM to replace spreadsheets and manual work. Built around your business.',
         'cta_primary' => 'Get a scope and timeline estimate',
@@ -73,17 +73,11 @@ return [
                 'stack' => ['Online booking', 'Calendar and CRM', 'Clinic page'],
                 'live_url' => 'https://vetspace.pro',
             ],
+            // Not a public product: one line under the showcase cards, linking the descriptive repository.
             'netpostpanel' => [
-                'badge' => 'AI assistant',
                 'name' => 'NetPostPanel',
-                'screens' => [
-                    ['file' => 'netpostpanel-workbench', 'caption' => 'Workspace: choose the type of text, the brief and the sources in one place'],
-                    ['file' => 'netpostpanel-autopilot', 'caption' => 'Autopilot: new drafts every day on schedule, from your own topics and sources'],
-                ],
-                'tagline' => 'Prepares articles and posts from reliable sources',
-                'stack' => ['AI on your own data', 'Source research', 'Scheduled runs'],
+                'mention' => 'We also built :name, an AI assistant that prepares articles and posts from reliable sources: AI that works on your own data (RAG). The AI tools on this site run on it.',
                 'live_url' => 'https://github.com/Yurij2015/net-post-panel-overview',
-                // Not a public product: link the descriptive repository, as the portfolio does.
                 'link_label' => 'Read the overview on GitHub',
             ],
         ],
@@ -117,7 +111,7 @@ return [
     'guarantees' => [
         'badge' => 'How we work',
         'title' => 'What you can count on',
-        'subtitle' => 'Four rules we follow on every project, and the launch plan.',
+        'subtitle' => 'Four rules we follow on every project.',
         'items' => [
             'staging' => [
                 'badge' => 'First week',
@@ -174,7 +168,7 @@ return [
         'vat_note' => 'All prices are net. As a Polish VAT payer, we add VAT under Polish law (23% for clients in Poland).',
         'comparison_note' => 'A software house with a team and a project manager suits large projects. For most business systems one senior developer is enough — which is why the budget is lower.',
         'badge' => 'Pricing',
-        'title' => 'Two ways to work together',
+        'title' => 'Pricing: two ways to work together',
         'subtitle' => 'A fixed scope and price for the first version of your system, or monthly support for a system that is already running.',
         'plans' => [
             'mvp' => [
@@ -236,7 +230,7 @@ return [
         'badge' => 'Who you will work with',
         'name' => 'Yurii Mokryi',
         'role' => 'Founder of DigiSpace · Systems Architect',
-        'bio' => "Where a full dev team was once required, today precise planning, powerful models, and AI agents are enough. Thousands of man-hours turn into hundreds.\n\nI rely on established processes for software design, development, and rapid deployment so you get a reliable system in 6–8 weeks and can move straight to automating your business and acquiring customers.\n\nModern deployment standards, automated testing, and isolated reliable servers ensure stable operation on their own. Combined with AI, they significantly improve the efficiency and speed of launching your systems.",
+        'bio' => "Building a product used to take a full dev team. Today, precise planning, strong AI models and agents take over much of that work: thousands of man-hours turn into hundreds.\n\nI work with proven processes for design, development and fast deployment. You get a reliable system in 6–8 weeks and can move straight to automating your business and winning customers.",
         'more_links' => 'Videos and blog',
         'facts' => [
             '8+ years of commercial development',
@@ -256,7 +250,7 @@ return [
 
     'faq' => [
         'badge' => 'FAQ',
-        'title' => 'Common questions',
+        'title' => 'Common questions about custom software',
         'subtitle' => 'Timelines, costs, hosting and working together.',
         'items' => [
             'q1' => [
@@ -277,7 +271,7 @@ return [
             ],
             'q5' => [
                 'q' => 'How do you ensure the stable operation of the system?',
-                'a' => 'The system is built on modern isolated servers with multi-tier automated checks. All updates are thoroughly tested before release, ensuring your CRM or booking system runs stably without unexpected issues.',
+                'a' => 'The system runs on modern isolated servers with several layers of automated checks. Every update is tested before release, so issues are caught before your clients see them.',
             ],
             'q6' => [
                 'q' => 'How does payment work?',
@@ -326,10 +320,10 @@ return [
                 'invalid' => 'Please choose a value from the list for “:attribute”.',
             ],
             'recaptcha_failed' => 'We could not confirm the form was sent by a person. Please try again or message us on Telegram.',
-            'recaptcha_notice' => 'This form is protected by Google reCAPTCHA:',
-            'recaptcha_privacy' => 'Privacy Policy',
+            'recaptcha_notice' => 'Protected by reCAPTCHA:',
+            'recaptcha_privacy' => 'Google Privacy Policy',
             'recaptcha_terms' => 'Terms of Service',
-            'privacy_notice' => 'The data controller is Yurii Mokryi JDG (DigiSpace). We use the data from this form only to reply to your inquiry.',
+            'privacy_notice' => 'The data controller is Yurii Mokryi JDG. We use the data from this form only to reply to your inquiry.',
             'success_title' => 'Thank you!',
             'success_message' => 'We have received your message and will reply within one business day with questions or a first estimate.',
         ],

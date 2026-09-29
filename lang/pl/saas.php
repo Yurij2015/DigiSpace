@@ -18,7 +18,7 @@ return [
 
     'hero' => [
         'badge' => 'Tworzenie SaaS · Poznań',
-        'title' => 'SaaS MVP od pomysłu do uruchomienia',
+        'title' => 'Tworzenie SaaS MVP: od pomysłu do uruchomienia',
         'subtitle' => 'Tworzymy pierwszą wersję Twojego SaaS, aby przetestować pomysł z prawdziwymi użytkownikami. Wspólnie wybieramy funkcje, ustalamy budżet i termin oraz przygotowujemy produkt do uruchomienia.',
         'subtitle_short' => 'Tworzymy pierwszą wersję SaaS, z którą sprawdzisz swój pomysł z prawdziwymi użytkownikami. Funkcje, budżet i termin ustalamy przed rozpoczęciem prac.',
         'cta_primary' => 'Poznaj koszt i termin realizacji',
@@ -71,17 +71,11 @@ return [
                 'stack' => ['Laravel API', 'Nuxt SSR', 'Multi-tenancy', 'Stripe Cashier', 'Tailwind CSS', 'PostgreSQL'],
                 'live_url' => 'https://vetspace.pro',
             ],
+            // Not a public product: one line under the showcase cards, linking the descriptive repository.
             'netpostpanel' => [
-                'badge' => 'AI do tworzenia treści',
                 'name' => 'NetPostPanel',
-                'screens' => [
-                    ['file' => 'netpostpanel-workbench', 'caption' => 'Przestrzeń robocza: rodzaj treści, instrukcje dla AI i wyszukiwanie źródeł'],
-                    ['file' => 'netpostpanel-autopilot', 'caption' => 'Przygotowywanie szkiców według harmonogramu na podstawie wybranych tematów i źródeł'],
-                ],
-                'tagline' => 'Wyszukiwanie źródeł i przygotowywanie szkiców artykułów oraz postów z pomocą AI',
-                'stack' => ['Laravel', 'RAG', 'Qdrant', 'Langfuse', 'Horizon', 'LLM API'],
+                'mention' => 'Stworzyliśmy też :name — wewnętrzne narzędzie do wyszukiwania źródeł i przygotowywania szkiców z AI: RAG na własnych źródłach z Qdrant i Langfuse. Na nim działa generowanie i tłumaczenie treści z AI na tej stronie.',
                 'live_url' => 'https://github.com/Yurij2015/net-post-panel-overview',
-                // Not a public product: link the descriptive repository, as the portfolio does.
                 'link_label' => 'Opis projektu na GitHubie',
             ],
         ],
@@ -172,7 +166,7 @@ return [
         'vat_note' => 'Wszystkie ceny są cenami netto. Jako czynny podatnik VAT doliczamy VAT zgodnie z polskimi przepisami (23% dla klientów w Polsce).',
         'comparison_note' => 'Software house z rozbudowanym zespołem sprawdza się przy dużych projektach. Przy MVP pracujesz bezpośrednio z doświadczonym programistą — bez narzutu agencyjnego.',
         'badge' => 'Cennik',
-        'title' => 'Dwie formy współpracy',
+        'title' => 'Cennik: dwie formy współpracy',
         'subtitle' => 'Pierwsza wersja produktu za uzgodnioną cenę albo miesięczne wsparcie i rozwój działającego produktu.',
         'plans' => [
             'mvp' => [
@@ -234,7 +228,7 @@ return [
         'badge' => 'Z kim będziesz pracować',
         'name' => 'Yurii Mokryi',
         'role' => 'Założyciel DigiSpace · Solutions Architect & Lead Engineer',
-        'bio' => "Tam, gdzie kiedyś potrzebny był cały zespół programistów, dziś wystarczy precyzyjne planowanie, zaawansowane modele i agenci AI. Tysiące roboczogodzin zamieniają się w setki.\n\nWykorzystuję dopracowane procesy projektowania, tworzenia i szybkiego wdrażania kodu, abyś otrzymał działający system w 6–8 tygodni i mógł od razu przejść do weryfikacji rynku, promocji oraz pierwszych klientów.\n\nNowoczesne podejścia do wdrażania (zautomatyzowane pipeline’y CI/CD), infrastruktura jako kod (IaC) oraz systemy wirtualizacji (Proxmox, Docker) same w sobie zapewniają wysoką niezawodność. W połączeniu z AI znacząco zwiększa to efektywność pracy nad projektem.",
+        'bio' => "Kiedyś do stworzenia produktu potrzebny był cały zespół programistów. Dziś precyzyjne planowanie, zaawansowane modele i agenci AI przejmują dużą część tej pracy: tysiące roboczogodzin zamieniają się w setki.\n\nPracuję według sprawdzonych procesów projektowania, tworzenia i szybkiego wdrażania. Otrzymujesz działający produkt w 6–8 tygodni i od razu przechodzisz do weryfikacji rynku, promocji i pierwszych klientów.",
         'more_links' => 'Wideo i blog',
         'facts' => [
             'Ponad 8 lat doświadczenia komercyjnego',
@@ -254,7 +248,7 @@ return [
 
     'faq' => [
         'badge' => 'FAQ',
-        'title' => 'Częste pytania',
+        'title' => 'Częste pytania o tworzenie SaaS MVP',
         'subtitle' => 'Terminy, płatności, hosting i forma współpracy.',
         'items' => [
             'q1' => [
@@ -275,7 +269,7 @@ return [
             ],
             'q5' => [
                 'q' => 'Jak zorganizowana jest infrastruktura i niezawodność kodu?',
-                'a' => 'Nowoczesne podejścia do wdrażania (zautomatyzowane pipeline’y), infrastruktura jako kod oraz systemy wirtualizacji (Proxmox, Docker) same w sobie zapewniają wysoką niezawodność. Każda zmiana przechodzi testy automatyczne przed wdrożeniem, a w połączeniu z AI znacząco zwiększa to efektywność i tempo prac nad projektem.',
+                'a' => 'Każda zmiana przed wdrożeniem przechodzi testy automatyczne w pipeline CI/CD, a Ty najpierw widzisz ją w środowisku testowym. Infrastruktura jest opisana jako kod i działa w kontenerach Docker na serwerach wirtualnych (Proxmox), więc środowiska są identyczne i łatwe do odtworzenia. AI przyspiesza pracę, a testy i pipeline odpowiadają za niezawodność.',
             ],
             'q6' => [
                 'q' => 'Jak wyglądają płatności?',
@@ -324,10 +318,10 @@ return [
                 'invalid' => 'Wybierz wartość z listy w polu „:attribute”.',
             ],
             'recaptcha_failed' => 'Weryfikacja reCAPTCHA nie powiodła się. Spróbuj ponownie albo napisz do nas na Telegramie.',
-            'recaptcha_notice' => 'Formularz jest chroniony przez Google reCAPTCHA:',
-            'recaptcha_privacy' => 'Polityka prywatności',
+            'recaptcha_notice' => 'Formularz chroni reCAPTCHA:',
+            'recaptcha_privacy' => 'Polityka prywatności Google',
             'recaptcha_terms' => 'Warunki korzystania',
-            'privacy_notice' => 'Administratorem danych jest Yurii Mokryi JDG (DigiSpace). Dane z formularza wykorzystujemy wyłącznie do odpowiedzi na Twoje zapytanie.',
+            'privacy_notice' => 'Administratorem danych jest Yurii Mokryi JDG. Dane z formularza wykorzystujemy wyłącznie do odpowiedzi na Twoje zapytanie.',
             'success_title' => 'Dziękujemy!',
             'success_message' => 'Otrzymaliśmy Twoją wiadomość. W ciągu jednego dnia roboczego prześlemy dodatkowe pytania lub wstępną wycenę.',
         ],

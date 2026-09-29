@@ -20,7 +20,7 @@ return [
 
     'hero' => [
         'badge' => 'Systemy dla firm · Poznań',
-        'title' => 'System szyty na miarę Twojej firmy',
+        'title' => 'System na zamówienie, szyty na miarę Twojej firmy',
         'subtitle' => 'Rezerwacje online, panel klienta, CRM albo system wewnętrzny zamiast arkuszy i powtarzalnej pracy. Automatyzujemy procesy i wdrażamy pierwszą wersję dopasowaną do Twojej firmy.',
         'subtitle_short' => 'Rezerwacje online, panel klienta lub CRM zamiast arkuszy i ręcznej pracy. Wdrażamy system dopasowany do Twojej firmy.',
         'cta_primary' => 'Poznaj koszt i termin realizacji',
@@ -73,17 +73,11 @@ return [
                 'stack' => ['Rezerwacje online', 'Kalendarz i CRM', 'Strona kliniki'],
                 'live_url' => 'https://vetspace.pro',
             ],
+            // Not a public product: one line under the showcase cards, linking the descriptive repository.
             'netpostpanel' => [
-                'badge' => 'Asystent AI',
                 'name' => 'NetPostPanel',
-                'screens' => [
-                    ['file' => 'netpostpanel-workbench', 'caption' => 'Przestrzeń robocza: rodzaj tekstu, zadanie i źródła w jednym miejscu'],
-                    ['file' => 'netpostpanel-autopilot', 'caption' => 'Autopilot: nowe szkice codziennie według harmonogramu, z Twoich tematów i źródeł'],
-                ],
-                'tagline' => 'Przygotowuje artykuły i posty na podstawie sprawdzonych źródeł',
-                'stack' => ['AI na Twoich danych', 'Wyszukiwanie źródeł', 'Uruchamianie według harmonogramu'],
+                'mention' => 'Stworzyliśmy też :name — asystenta AI, który przygotowuje artykuły i posty z wiarygodnych źródeł: AI pracujące na Twoich własnych danych (RAG). Na nim działają narzędzia AI tej strony.',
                 'live_url' => 'https://github.com/Yurij2015/net-post-panel-overview',
-                // Not a public product: link the descriptive repository, as the portfolio does.
                 'link_label' => 'Opis projektu na GitHubie',
             ],
         ],
@@ -117,7 +111,7 @@ return [
     'guarantees' => [
         'badge' => 'Jak pracujemy',
         'title' => 'Na co możesz liczyć',
-        'subtitle' => 'Cztery zasady, których trzymamy się w każdym projekcie, i plan startu.',
+        'subtitle' => 'Cztery zasady, których trzymamy się w każdym projekcie.',
         'items' => [
             'staging' => [
                 'badge' => 'Pierwszy tydzień',
@@ -174,7 +168,7 @@ return [
         'vat_note' => 'Wszystkie ceny są cenami netto. Jako czynny podatnik VAT doliczamy VAT zgodnie z polskimi przepisami (23% dla klientów w Polsce).',
         'comparison_note' => 'Software house z zespołem i project managerem sprawdza się przy dużych projektach. Przy większości systemów dla firm wystarczy jeden senior developer — dlatego budżet jest niższy.',
         'badge' => 'Cennik',
-        'title' => 'Dwie formy współpracy',
+        'title' => 'Cennik: dwie formy współpracy',
         'subtitle' => 'Stały zakres i cena za pierwszą wersję systemu albo miesięczne wsparcie systemu, który już działa.',
         'plans' => [
             'mvp' => [
@@ -236,7 +230,7 @@ return [
         'badge' => 'Z kim będziesz pracować',
         'name' => 'Yurii Mokryi',
         'role' => 'Założyciel DigiSpace · Architekt systemów',
-        'bio' => "Tam, gdzie kiedyś potrzebny był cały zespół programistów, dziś wystarczy precyzyjne planowanie, zaawansowane modele i agenci AI. Tysiące roboczogodzin zamieniają się w setki.\n\nWykorzystuję dopracowane procesy projektowania, tworzenia i szybkiego wdrażania kodu, abyś otrzymał działający system w 6–8 tygodni i mógł od razu przejść do automatyzacji procesów oraz pozyskiwania klientów.\n\nWspółczesne standardy wdrażania, testy automatyczne oraz bezpieczne, odizolowane serwery same w sobie zapewniają stabilną pracę. W połączeniu z AI pozwala to tworzyć i rozwijać Twoje systemy znacznie szybciej i efektywniej.",
+        'bio' => "Kiedyś do stworzenia produktu potrzebny był cały zespół programistów. Dziś precyzyjne planowanie, zaawansowane modele i agenci AI przejmują dużą część tej pracy: tysiące roboczogodzin zamieniają się w setki.\n\nPracuję według sprawdzonych procesów projektowania, tworzenia i szybkiego wdrażania. Otrzymujesz działający system w 6–8 tygodni i od razu przechodzisz do automatyzacji procesów i pozyskiwania klientów.",
         'more_links' => 'Wideo i blog',
         'facts' => [
             'Ponad 8 lat doświadczenia komercyjnego',
@@ -256,7 +250,7 @@ return [
 
     'faq' => [
         'badge' => 'FAQ',
-        'title' => 'Częste pytania',
+        'title' => 'Częste pytania o system na zamówienie',
         'subtitle' => 'Terminy, koszty, hosting i forma współpracy.',
         'items' => [
             'q1' => [
@@ -277,7 +271,7 @@ return [
             ],
             'q5' => [
                 'q' => 'Jak zapewniacie stabilną pracę systemu?',
-                'a' => 'System opiera się na nowoczesnych, odizolowanych serwerach z wielopoziomową automatyczną weryfikacją. Wszelkie aktualizacje są testowane przed uruchomieniem, dzięki czemu Twój CRM lub system rezerwacji działa stabilnie i bez niespodziewanych przerw.',
+                'a' => 'System działa na nowoczesnych, odizolowanych serwerach z wielopoziomową automatyczną weryfikacją. Każda aktualizacja jest testowana przed wdrożeniem, więc błędy wychodzą na jaw, zanim zobaczą je Twoi klienci.',
             ],
             'q6' => [
                 'q' => 'Jak wyglądają płatności?',
@@ -326,10 +320,10 @@ return [
                 'invalid' => 'Wybierz wartość z listy w polu „:attribute”.',
             ],
             'recaptcha_failed' => 'Nie udało się potwierdzić, że formularz wysłała osoba. Spróbuj ponownie albo napisz do nas na Telegramie.',
-            'recaptcha_notice' => 'Formularz jest chroniony przez Google reCAPTCHA:',
-            'recaptcha_privacy' => 'Polityka prywatności',
+            'recaptcha_notice' => 'Formularz chroni reCAPTCHA:',
+            'recaptcha_privacy' => 'Polityka prywatności Google',
             'recaptcha_terms' => 'Warunki korzystania',
-            'privacy_notice' => 'Administratorem danych jest Yurii Mokryi JDG (DigiSpace). Dane z formularza wykorzystujemy wyłącznie do odpowiedzi na Twoje zapytanie.',
+            'privacy_notice' => 'Administratorem danych jest Yurii Mokryi JDG. Dane z formularza wykorzystujemy wyłącznie do odpowiedzi na Twoje zapytanie.',
             'success_title' => 'Dziękujemy!',
             'success_message' => 'Otrzymaliśmy Twoją wiadomość i w ciągu jednego dnia roboczego odpowiemy z pytaniami albo wstępną wyceną.',
         ],
