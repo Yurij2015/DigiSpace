@@ -217,7 +217,7 @@ return [
     ],
 
     'social_proof' => [
-        'badge' => 'Opinie klientów',
+        'badge' => 'Opinie i rekomendacje',
         'items' => [
             'upwork' => [
                 'quote' => 'Zaprojektował bazę danych, przygotował architekturę kodu i zaplanował kolejne wydania. Pracuje samodzielnie, przegląda i debuguje kod, regularnie proponuje usprawnienia i wyłapuje błędy logiczne w systemie. … Zawsze był dostępny, gdy projekt potrzebował wsparcia, nie szuka wymówek i jasno się komunikuje.',
@@ -235,8 +235,8 @@ return [
     'founder' => [
         'badge' => 'Z kim będziesz pracować',
         'name' => 'Yurii Mokryi',
-        'role' => 'Założyciel DigiSpace · Senior developer',
-        'bio' => 'Tworzę systemy webowe dla firm od początku do końca: od zrozumienia procesu po uruchomienie i utrzymanie. Moje własne produkty działają codziennie, więc wiem, że system musi działać także długo po starcie.',
+        'role' => 'Założyciel DigiSpace · Architekt systemów',
+        'bio' => "Tam, gdzie kiedyś potrzebny był cały zespół programistów, dziś wystarczy precyzyjne planowanie, zaawansowane modele i agenci AI. Tysiące roboczogodzin zamieniają się w setki.\n\nWykorzystuję dopracowane procesy projektowania, tworzenia i szybkiego wdrażania kodu, abyś otrzymał działający system w 6–8 tygodni i mógł od razu przejść do automatyzacji procesów oraz pozyskiwania klientów.\n\nWspółczesne standardy wdrażania, testy automatyczne oraz bezpieczne, odizolowane serwery same w sobie zapewniają stabilną pracę. W połączeniu z AI pozwala to tworzyć i rozwijać Twoje systemy znacznie szybciej i efektywniej.",
         'more_links' => 'Wideo i blog',
         'facts' => [
             'Ponad 8 lat doświadczenia komercyjnego',
@@ -274,6 +274,10 @@ return [
             'q4' => [
                 'q' => 'Czego potrzebujecie ode mnie na start?',
                 'a' => 'Krótkiego opisu tego, co chcesz usprawnić: jaki proces, kto z niego korzysta i co dziś zabiera za dużo czasu. Wypełnij formularz na tej stronie albo napisz na Telegramie, a potem na krótkiej rozmowie online lub na spotkaniu w Poznaniu ustalamy zakres.',
+            ],
+            'q5' => [
+                'q' => 'Jak zapewniacie stabilną pracę systemu?',
+                'a' => 'System opiera się na nowoczesnych, odizolowanych serwerach z wielopoziomową automatyczną weryfikacją. Wszelkie aktualizacje są testowane przed uruchomieniem, dzięki czemu Twój CRM lub system rezerwacji działa stabilnie i bez niespodziewanych przerw.',
             ],
             'q6' => [
                 'q' => 'Jak wyglądają płatności?',

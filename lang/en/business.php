@@ -217,7 +217,7 @@ return [
     ],
 
     'social_proof' => [
-        'badge' => 'Client feedback',
+        'badge' => 'Reviews & recommendations',
         'items' => [
             'upwork' => [
                 'quote' => 'He was able to design the database, set up the code architecture, and plan for future releases. He works independently, reviews and debugs code, and consistently suggests improvements while spotting logical flaws in the system. … He has always been available to support the project when needed, never makes excuses, and communicates clearly.',
@@ -235,8 +235,8 @@ return [
     'founder' => [
         'badge' => 'Who you will work with',
         'name' => 'Yurii Mokryi',
-        'role' => 'Founder of DigiSpace · Senior developer',
-        'bio' => 'I build web systems for businesses end to end: from understanding the process to launch and support. My own products run every day, so I know a system has to keep working long after launch.',
+        'role' => 'Founder of DigiSpace · Systems Architect',
+        'bio' => "Where a full dev team was once required, today precise planning, powerful models, and AI agents are enough. Thousands of man-hours turn into hundreds.\n\nI rely on established processes for software design, development, and rapid deployment so you get a reliable system in 6–8 weeks and can move straight to automating your business and acquiring customers.\n\nModern deployment standards, automated testing, and isolated reliable servers ensure stable operation on their own. Combined with AI, they significantly improve the efficiency and speed of launching your systems.",
         'more_links' => 'Videos and blog',
         'facts' => [
             '8+ years of commercial development',
@@ -274,6 +274,10 @@ return [
             'q4' => [
                 'q' => 'What do you need from me to start?',
                 'a' => 'A short description of what you want to improve: which process, who uses it and what takes too much time today. Fill in the form on this page or message us on Telegram; then, on a short call online or at a meeting in Poznań, we agree on the scope.',
+            ],
+            'q5' => [
+                'q' => 'How do you ensure the stable operation of the system?',
+                'a' => 'The system is built on modern isolated servers with multi-tier automated checks. All updates are thoroughly tested before release, ensuring your CRM or booking system runs stably without unexpected issues.',
             ],
             'q6' => [
                 'q' => 'How does payment work?',

@@ -88,9 +88,9 @@
         </div>
         <div class="col-12">
             <p class="recaptcha-notice">
-                This site is protected by reCAPTCHA and the Google
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and
-                <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a> apply.
+                {{ __('site.recaptcha_notice') }}
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">{{ __('site.recaptcha_privacy') }}</a> &amp;
+                <a href="https://policies.google.com/terms" target="_blank" rel="noopener">{{ __('site.recaptcha_terms') }}</a>
             </p>
         </div>
         <div class="col-12 send-message-button">

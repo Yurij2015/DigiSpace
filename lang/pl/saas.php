@@ -215,7 +215,7 @@ return [
     ],
 
     'social_proof' => [
-        'badge' => 'Opinie klientów',
+        'badge' => 'Opinie i rekomendacje',
         'items' => [
             'upwork' => [
                 'quote' => 'Zaprojektował bazę danych, przygotował architekturę kodu i zaplanował kolejne wydania. Pracuje samodzielnie, przegląda i debuguje kod, regularnie proponuje usprawnienia i wyłapuje błędy logiczne w systemie. … Zawsze był dostępny, gdy projekt potrzebował wsparcia, nie szuka wymówek i jasno się komunikuje.',
@@ -233,8 +233,8 @@ return [
     'founder' => [
         'badge' => 'Z kim będziesz pracować',
         'name' => 'Yurii Mokryi',
-        'role' => 'Założyciel DigiSpace · Senior full-stack developer',
-        'bio' => 'Jestem Yurii, założyciel DigiSpace. Projektuję i tworzę aplikacje webowe: od baz danych i płatności po uruchomienie i wsparcie. Tworzę i rozwijam też własne produkty: DigiPulse, VetSpace i NetPostPanel.',
+        'role' => 'Założyciel DigiSpace · Solutions Architect & Lead Engineer',
+        'bio' => "Tam, gdzie kiedyś potrzebny był cały zespół programistów, dziś wystarczy precyzyjne planowanie, zaawansowane modele i agenci AI. Tysiące roboczogodzin zamieniają się w setki.\n\nWykorzystuję dopracowane procesy projektowania, tworzenia i szybkiego wdrażania kodu, abyś otrzymał działający system w 6–8 tygodni i mógł od razu przejść do weryfikacji rynku, promocji oraz pierwszych klientów.\n\nNowoczesne podejścia do wdrażania (zautomatyzowane pipeline’y CI/CD), infrastruktura jako kod (IaC) oraz systemy wirtualizacji (Proxmox, Docker) same w sobie zapewniają wysoką niezawodność. W połączeniu z AI znacząco zwiększa to efektywność pracy nad projektem.",
         'more_links' => 'Wideo i blog',
         'facts' => [
             'Ponad 8 lat doświadczenia komercyjnego',
@@ -272,6 +272,10 @@ return [
             'q4' => [
                 'q' => 'Czego potrzebujecie ode mnie na start?',
                 'a' => 'Krótkiego opisu problemu, który rozwiązuje produkt, jego odbiorców i planowanego sposobu zarabiania. Wypełnij formularz albo napisz na Telegramie. Podczas pierwszej rozmowy omówimy pomysł, doprecyzujemy wymagania i ustalimy kolejne kroki.',
+            ],
+            'q5' => [
+                'q' => 'Jak zorganizowana jest infrastruktura i niezawodność kodu?',
+                'a' => 'Nowoczesne podejścia do wdrażania (zautomatyzowane pipeline’y), infrastruktura jako kod oraz systemy wirtualizacji (Proxmox, Docker) same w sobie zapewniają wysoką niezawodność. Każda zmiana przechodzi testy automatyczne przed wdrożeniem, a w połączeniu z AI znacząco zwiększa to efektywność i tempo prac nad projektem.',
             ],
             'q6' => [
                 'q' => 'Jak wyglądają płatności?',

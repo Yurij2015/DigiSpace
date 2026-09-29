@@ -215,7 +215,7 @@ return [
     ],
 
     'social_proof' => [
-        'badge' => 'Client feedback',
+        'badge' => 'Reviews & recommendations',
         'items' => [
             'upwork' => [
                 'quote' => 'He was able to design the database, set up the code architecture, and plan for future releases. He works independently, reviews and debugs code, and consistently suggests improvements while spotting logical flaws in the system. … He has always been available to support the project when needed, never makes excuses, and communicates clearly.',
@@ -233,8 +233,8 @@ return [
     'founder' => [
         'badge' => 'Who you will work with',
         'name' => 'Yurii Mokryi',
-        'role' => 'Founder of DigiSpace · Senior full-stack developer',
-        'bio' => 'I’m Yurii, the founder of DigiSpace. I design and build web products, from databases and payments to launch and support. I also build and develop my own products: DigiPulse, VetSpace and NetPostPanel.',
+        'role' => 'Founder of DigiSpace · Solutions Architect & Lead Engineer',
+        'bio' => "Where a full dev team was once required, today precise planning, powerful models, and AI agents are enough. Thousands of man-hours turn into hundreds.\n\nI rely on established processes for software design, development, and rapid deployment so you get a reliable product in 6–8 weeks and can move straight to marketing, user acquisition, and your first paying customers.\n\nModern deployment approaches (automated CI/CD pipelines), infrastructure as code (IaC), and virtualization systems (Proxmox, Docker) ensure high reliability even without AI. Combined with AI, they significantly boost project speed and efficiency.",
         'more_links' => 'Videos and blog',
         'facts' => [
             '8+ years of commercial development',
@@ -272,6 +272,10 @@ return [
             'q4' => [
                 'q' => 'What do you need from me to start?',
                 'a' => 'A short description of the problem your product solves, who it is for and how you plan to make money from it. Fill in the form or message us on Telegram. In our first conversation, we discuss the idea, clarify requirements and agree on the next steps.',
+            ],
+            'q5' => [
+                'q' => 'How are infrastructure and code reliability organized?',
+                'a' => 'Modern deployment approaches (automated pipelines), infrastructure as code, and virtualization systems (Proxmox, Docker) ensure high reliability on their own. Every change runs automated tests before release, and combined with AI, this significantly boosts development speed and efficiency.',
             ],
             'q6' => [
                 'q' => 'How does payment work?',

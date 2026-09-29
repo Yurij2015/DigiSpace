@@ -74,24 +74,40 @@
                 border-radius: 12px;
             }
 
+            body[data-landing] #contact select {
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+                background-position: right 1rem center;
+                background-repeat: no-repeat;
+                background-size: 1.25rem 1.25rem;
+                padding-right: 2.75rem;
+                cursor: pointer;
+            }
+
+            html.dark body[data-landing] #contact select {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            }
+
             body[data-landing] #founder > div > div:first-child {
-                border-color: transparent;
+                border: 0;
+                border-radius: 0;
                 background: transparent;
                 padding: 0;
+                box-shadow: none;
             }
 
             body[data-landing] #reviews figure {
                 border: 0;
+                border-top: 1px solid var(--color-slate-200);
                 border-radius: 0;
                 background: transparent;
                 padding: 1.25rem 0;
+                box-shadow: none;
             }
 
-            body[data-landing] #reviews figure + figure {
-                border-top: 1px solid var(--color-slate-200);
-            }
-
-            html.dark body[data-landing] #reviews figure + figure {
+            html.dark body[data-landing] #reviews figure {
                 border-color: var(--color-slate-800);
             }
 
@@ -140,16 +156,27 @@
             }
 
             body[data-landing] #hero-metrics > div > div:first-child {
-                width: 1.5rem;
-                height: 1.5rem;
+                width: 1.75rem;
+                height: 1.75rem;
                 border: 0;
                 border-radius: 0;
                 background: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             body[data-landing] #hero-metrics > div > div:first-child svg {
-                width: 1.25rem;
-                height: 1.25rem;
+                width: 1.75rem;
+                height: 1.75rem;
+                color: var(--color-slate-400);
+                opacity: 0.75;
+                stroke-width: 1.5;
+            }
+
+            html.dark body[data-landing] #hero-metrics > div > div:first-child svg {
+                color: var(--color-slate-500);
+                opacity: 0.85;
             }
 
             body[data-landing] #guarantees > div > div:nth-child(2) > div {
@@ -181,25 +208,6 @@
 
             html.dark body[data-landing] section > div > div:first-child > span {
                 color: var(--color-indigo-400);
-            }
-
-            body[data-landing] #contact [data-direct-contact] {
-                border: 0;
-                border-radius: 0;
-                background: transparent;
-                padding: 1.25rem 0;
-            }
-
-            body[data-landing] #contact [data-direct-contact] > div > div:first-child {
-                width: 1.25rem;
-                height: 1.25rem;
-                border-radius: 0;
-                background: transparent;
-            }
-
-            body[data-landing] #contact [data-direct-contact] > div > div:first-child svg {
-                width: 1.25rem;
-                height: 1.25rem;
             }
 
         </style>
@@ -364,18 +372,22 @@
      3. WHO IS BEHIND IT: FOUNDER + CLIENT FEEDBACK
      ========================================================================= --}}
 <section id="founder" class="py-16 sm:py-24 bg-slate-50/70 border-t border-slate-200/80 dark:bg-slate-950 dark:border-slate-800">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 flex flex-col sm:flex-row gap-6 sm:gap-8 items-center sm:items-start">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
+        <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 flex flex-col sm:flex-row gap-6 sm:gap-8 items-center sm:items-start shadow-sm">
             <img src="{{ asset('landing/yurii-mokryi.jpg') }}?v={{ filemtime(public_path('landing/yurii-mokryi.jpg')) }}"
                  alt="{{ __($copy.'.founder.name') }}" width="112" height="112" loading="lazy" decoding="async"
                  class="size-24 sm:size-28 shrink-0 rounded-full object-cover ring-4 ring-slate-50 dark:ring-slate-800 shadow-sm">
-            <div class="space-y-4 text-center sm:text-left">
+            <div class="space-y-4 text-center sm:text-left flex-1">
                 <div>
                     <span class="text-xs font-bold tracking-wider uppercase text-slate-500 dark:text-slate-400">{{ __($copy.'.founder.badge') }}</span>
                     <h2 class="mt-1 text-2xl font-extrabold text-slate-950 dark:text-white">{{ __($copy.'.founder.name') }}</h2>
                     <p class="text-sm font-medium text-slate-600 dark:text-slate-400">{{ __($copy.'.founder.role') }}</p>
                 </div>
-                <p class="text-sm sm:text-base leading-relaxed text-slate-700 dark:text-slate-300">{{ __($copy.'.founder.bio') }}</p>
+                <div class="space-y-3 text-sm sm:text-base leading-relaxed text-slate-700 dark:text-slate-300">
+                    @foreach(explode("\n\n", __($copy.'.founder.bio')) as $paragraph)
+                        <p>{{ $paragraph }}</p>
+                    @endforeach
+                </div>
                 <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700 dark:text-slate-300 text-left">
                     @foreach(__($copy.'.founder.facts') as $fact)
                         <li class="flex items-start gap-2">
@@ -386,9 +398,9 @@
                         </li>
                     @endforeach
                 </ul>
-                {{-- Professional profiles lead; media links share the row with a quieter treatment. --}}
-                <div class="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1 pt-1">
-                    <div class="flex flex-wrap items-center justify-center sm:justify-start gap-x-2 gap-y-1 text-sm">
+                {{-- Professional profiles and media links --}}
+                <div class="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1.5 pt-1 text-sm">
+                    <div class="flex flex-wrap items-center justify-center sm:justify-start gap-x-2 gap-y-1">
                         @foreach(['linkedin' => 'LinkedIn', 'github' => 'GitHub', 'upwork' => 'Upwork'] as $key => $label)
                             @if(! $loop->first)
                                 <span data-profile-separator class="text-slate-300 dark:text-slate-700" aria-hidden="true">·</span>
@@ -399,7 +411,7 @@
                             </a>
                         @endforeach
                     </div>
-                    <span data-social-divider class="hidden sm:inline text-slate-300 dark:text-slate-700" aria-hidden="true">│</span>
+                    <span data-social-divider class="hidden sm:inline text-slate-300 dark:text-slate-700" aria-hidden="true">·</span>
                     <div data-media-links class="flex flex-wrap items-center justify-center sm:justify-start gap-x-1.5 text-xs text-slate-500 dark:text-slate-500">
                         @foreach(['youtube' => 'YouTube', 'tiktok' => 'TikTok', 'instagram' => 'Instagram'] as $key => $label)
                             <a href="{{ __($copy.'.founder.links.' . $key) }}" target="_blank" rel="noopener noreferrer"
@@ -410,14 +422,14 @@
             </div>
         </div>
 
-        <div id="reviews">
-            <h3 class="mb-4 text-center text-xs font-bold tracking-wider uppercase text-slate-500 dark:text-slate-400">
+        <div id="reviews" class="mt-12 sm:mt-16">
+            <h3 class="mb-6 text-center text-xs font-bold tracking-wider uppercase text-slate-500 dark:text-slate-400">
                 {{ __($copy.'.social_proof.badge') }}
             </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 @foreach(__($copy.'.social_proof.items') as $review)
-                    <figure class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between gap-4">
-                        <blockquote class="text-sm sm:text-base leading-relaxed text-slate-700 dark:text-slate-300">
+                    <figure class="pt-5 border-t border-slate-200 dark:border-slate-800 flex flex-col justify-between gap-3">
+                        <blockquote class="text-xs sm:text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                             &ldquo;{{ $review['quote'] }}&rdquo;
                         </blockquote>
                         <figcaption class="text-xs font-semibold text-slate-500 dark:text-slate-400">
@@ -516,7 +528,7 @@
 {{-- =========================================================================
      5. PRICING & ENGAGEMENT MODELS
      ========================================================================= --}}
-<section id="pricing" class="py-20 sm:py-32 bg-white border-t border-slate-200/80 dark:bg-slate-900 dark:border-slate-800">
+<section id="pricing" class="py-20 sm:py-32 bg-slate-50/70 border-t border-slate-200/80 dark:bg-slate-950 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Section Header --}}
         <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
@@ -654,7 +666,7 @@
 {{-- =========================================================================
      6. FREQUENTLY ASKED QUESTIONS (ACCORDION)
      ========================================================================= --}}
-<section id="faq" class="py-20 sm:py-32 bg-slate-50/70 border-t border-slate-200/80 dark:bg-slate-950 dark:border-slate-800">
+<section id="faq" class="py-20 sm:py-32 bg-white border-t border-slate-200/80 dark:bg-slate-900 dark:border-slate-800">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Section Header --}}
         <div class="text-center mb-16 sm:mb-20">
@@ -696,7 +708,7 @@
 {{-- =========================================================================
      7. PROJECT QUALIFICATION & INQUIRY FORM
      ========================================================================= --}}
-<section id="contact" class="py-20 sm:py-32 bg-white border-t border-slate-200/80 dark:bg-slate-900 dark:border-slate-800">
+<section id="contact" class="py-20 sm:py-32 bg-slate-50/70 border-t border-slate-200/80 dark:bg-slate-950 dark:border-slate-800">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Section Header --}}
         <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
@@ -712,7 +724,7 @@
         </div>
 
         {{-- Form Container --}}
-        <div class="bg-slate-50/70 rounded-2xl border border-slate-200/80 p-8 sm:p-12 shadow-xs dark:bg-slate-950 dark:border-slate-800">
+        <div class="bg-white rounded-2xl border border-slate-200/80 p-8 sm:p-12 shadow-xs dark:bg-slate-900 dark:border-slate-800">
             @if(session('saas_success'))
                 <div class="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900 mb-8 space-y-2 dark:bg-emerald-500/10 dark:border-emerald-500/25 dark:text-emerald-300">
                     <div class="flex items-center gap-2 font-bold text-base text-emerald-950 dark:text-emerald-300">
@@ -833,45 +845,45 @@
             </form>
         </div>
         {{-- Direct Action Bar: Telegram & Email --}}
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-0 mt-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-0 gap-x-8 mt-8">
             <a href="https://t.me/YuriiMokryi" target="_blank" rel="noopener noreferrer"
-               data-direct-contact class="px-1 py-4 border-t border-slate-200 hover:border-indigo-300 dark:border-slate-800 transition-all flex items-center justify-between group">
-                <div class="flex items-center gap-3.5">
-                    <div class="size-5 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0">
-                        <svg class="size-5" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
-                        </svg>
-                    </div>
+               data-direct-contact class="px-1 py-4 border-t border-slate-200/80 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-600 transition-all flex items-center justify-between group">
+                <div class="flex items-center gap-3">
+                    <svg class="size-5 text-indigo-600 dark:text-indigo-400 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                    </svg>
                     <div>
-                        <div class="font-extrabold text-slate-900 text-sm group-hover:text-indigo-600 transition-colors dark:text-slate-100 dark:group-hover:text-indigo-400">
+                        <div class="font-bold text-slate-900 text-sm group-hover:text-indigo-600 transition-colors dark:text-slate-100 dark:group-hover:text-indigo-400">
                             {{ __($copy.'.contact.telegram_cta') }}
                         </div>
-                        <div class="text-xs text-slate-500 dark:text-slate-400">
+                        <div class="text-xs text-slate-500 mt-0.5 dark:text-slate-400">
                             {{ __($copy.'.contact.telegram_hint') }}
                         </div>
                     </div>
                 </div>
-                <span class="text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all dark:group-hover:text-indigo-400">→</span>
+                <svg class="size-4 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all dark:group-hover:text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
             </a>
 
             <a href="mailto:admin@digispace.pro?subject={{ rawurlencode(__($copy.'.hero.badge')) }}"
-               data-direct-contact class="px-1 py-4 border-t border-slate-200 hover:border-indigo-300 dark:border-slate-800 transition-all flex items-center justify-between group">
-                <div class="flex items-center gap-3.5">
-                    <div class="size-5 text-slate-500 dark:text-slate-400 flex items-center justify-center shrink-0">
-                        <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
+               data-direct-contact class="px-1 py-4 border-t border-slate-200/80 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-600 transition-all flex items-center justify-between group">
+                <div class="flex items-center gap-3">
+                    <svg class="size-5 text-slate-500 dark:text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
                     <div>
-                        <div class="font-extrabold text-slate-900 text-sm group-hover:text-slate-950 transition-colors dark:text-slate-100 dark:group-hover:text-white">
+                        <div class="font-bold text-slate-900 text-sm group-hover:text-indigo-600 transition-colors dark:text-slate-100 dark:group-hover:text-indigo-400">
                             {{ __($copy.'.contact.email_cta') }}
                         </div>
-                        <div class="text-xs text-slate-500 font-mono dark:text-slate-400">
+                        <div class="text-xs text-slate-500 font-mono mt-0.5 dark:text-slate-400">
                             admin@digispace.pro
                         </div>
                     </div>
                 </div>
-                <span class="text-slate-400 group-hover:text-slate-950 group-hover:translate-x-1 transition-all dark:group-hover:text-white">→</span>
+                <svg class="size-4 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all dark:group-hover:text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
             </a>
         </div>
 
