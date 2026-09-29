@@ -53,9 +53,20 @@ class RouteServiceProvider extends ServiceProvider
         // away. They redirect back with the input intact and a localized message instead.
         RateLimiter::for('contact-form', static function (Request $request) {
             return self::perVisitor($request, 10)->response(
-                static fn (Request $request, array $headers) => back()
-                    ->withInput()
-                    ->withErrors(['throttle' => self::throttleMessage($headers)])
+                static function (Request $request, array $headers) {
+                    $message = self::throttleMessage($headers);
+
+                    // The contact form submits via fetch(): a redirect would be followed silently
+                    // and the visitor would see nothing, so throttling answers with JSON.
+                    if ($request->expectsJson()) {
+                        return response()->json([
+                            'message' => $message,
+                            'errors' => ['throttle' => [$message]],
+                        ], 429);
+                    }
+
+                    return back()->withInput()->withErrors(['throttle' => $message]);
+                }
             );
         });
 

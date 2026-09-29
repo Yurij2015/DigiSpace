@@ -12,10 +12,16 @@
                      reader already had: this closes without recording a choice. --}}
                 title="{{ __('site.cookie_consent_dismiss') }}"
                 aria-label="{{ __('site.cookie_consent_dismiss') }}">&times;</button>
-        <h2 class="site-cookie-consent__title" id="site-cookie-consent__title">{{ __('site.cookie_consent_title') }}</h2>
+        {{-- Not a heading: the banner must not add a section to the page outline; aria-labelledby still names the dialog --}}
+        <p class="site-cookie-consent__title" id="site-cookie-consent__title">{{ __('site.cookie_consent_title') }}</p>
         <p class="site-cookie-consent__text">
             {{ __('site.cookie_consent_text') }}
             <a href="{{ route('privacy-policy', ['locale' => app()->getLocale()]) }}">{{ __('site.cookie_consent_policy_link') }}</a>.
+            {{-- Phones only: "Customize" joins the text line instead of taking a row under the buttons,
+                 which keeps the first-visit bar low. Desktop keeps the button in the actions row. --}}
+            <button type="button" class="site-cookie-consent__inline-customize"
+                    data-consent-customize aria-expanded="false"
+                    aria-controls="site-cookie-consent__categories">{{ __('site.cookie_consent_customize') }}</button>
         </p>
         <div class="site-cookie-consent__categories" id="site-cookie-consent__categories"
              data-consent-categories data-testid="consent-categories" hidden>

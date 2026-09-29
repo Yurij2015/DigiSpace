@@ -27,12 +27,12 @@ class NavigationTest extends TestCase
         return $groups;
     }
 
-    public function test_sidebar_has_exactly_three_groups_in_order(): void
+    public function test_sidebar_has_exactly_four_groups_in_order(): void
     {
         $groups = $this->sidebar();
         $named = array_values(array_filter(array_keys($groups), fn ($label) => $label !== null && $label !== ''));
 
-        self::assertSame(['Content', 'Settings', 'Portfolio'], $named);
+        self::assertSame(['Content', 'Leads', 'Settings', 'Portfolio'], $named);
     }
 
     public function test_content_group_lists_posts_first(): void
@@ -44,9 +44,9 @@ class NavigationTest extends TestCase
         self::assertContains('Pages', $content);
     }
 
-    public function test_every_resource_belongs_to_one_of_the_three_groups(): void
+    public function test_every_resource_belongs_to_one_of_the_four_groups(): void
     {
-        $labels = [PanelNavigationGroup::Content->label(), PanelNavigationGroup::Settings->label(), PanelNavigationGroup::Portfolio->label()];
+        $labels = [PanelNavigationGroup::Content->label(), PanelNavigationGroup::Leads->label(), PanelNavigationGroup::Settings->label(), PanelNavigationGroup::Portfolio->label()];
         $this->actingAsFilamentAdmin();
 
         foreach (Filament::getResources() as $resource) {
@@ -54,7 +54,7 @@ class NavigationTest extends TestCase
         }
     }
 
-    public function test_settings_and_portfolio_start_collapsed(): void
+    public function test_non_content_groups_start_collapsed(): void
     {
         $this->actingAsFilamentAdmin();
 
@@ -62,7 +62,7 @@ class NavigationTest extends TestCase
             /** @var NavigationGroup $group */
             if ($group->getLabel() === 'Content') {
                 self::assertFalse($group->isCollapsed());
-            } elseif (in_array($group->getLabel(), ['Settings', 'Portfolio'], true)) {
+            } elseif (in_array($group->getLabel(), ['Leads', 'Settings', 'Portfolio'], true)) {
                 self::assertTrue($group->isCollapsed());
             }
         }

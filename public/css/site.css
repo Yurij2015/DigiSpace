@@ -336,6 +336,23 @@ button.rd-navbar-content__toggle { appearance: none; -webkit-appearance: none; b
   .price-matrix__arrow { display: none; }
 }
 
+/* The thank-you sentence is longer than the theme's fixed 40px one-line bar in every locale;
+   let it grow to a second line instead of overflowing. */
+.contact-success-sent {
+  display: block;
+  height: auto;
+  min-height: 40px;
+  padding: 10px 14px;
+  line-height: 1.5;
+}
+
+/* Author display rules beat the UA [hidden] style, so re-hide the AJAX status bars explicitly. */
+.contact-success-sent[hidden],
+.contact-form-throttle[hidden],
+.recaptchaStyle[hidden] {
+  display: none;
+}
+
 /* Rate-limit notice on the contact form: mirrors .contact-success-sent, in the theme's
    form-validation red rather than the brand gradient, and wraps because the message is a sentence. */
 .contact-form-throttle {

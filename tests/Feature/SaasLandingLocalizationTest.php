@@ -116,7 +116,8 @@ class SaasLandingLocalizationTest extends TestCase
             // Assert in-house proof of work projects are present
             $this->assertStringContainsString('DigiPulse', $html);
             $this->assertStringContainsString('VetSpace', $html);
-            $this->assertStringContainsString('NetPostPanel', $html);
+            // NetPostPanel is mentioned in one line under the cards, linking its overview.
+            $this->assertStringContainsString('>NetPostPanel</a>', $html);
 
             // Assert key section anchors exist
             $this->assertStringContainsString('id="proofs"', $html);
@@ -294,13 +295,13 @@ class SaasLandingLocalizationTest extends TestCase
     {
         $html = $this->get(self::LANDING)->assertOk()->getContent();
 
-        // One cover per project; the lightbox pages through the rest from data-gallery-items.
-        $this->assertSame(3, preg_match_all('/data-gallery-items=/', $html));
+        // One cover per showcase project (NetPostPanel is a one-line mention); the lightbox pages through the rest.
+        $this->assertSame(2, preg_match_all('/data-gallery-items=/', $html));
         $this->assertStringContainsString('data-gallery-dialog', $html);
         $this->assertStringContainsString('data-gallery-step', $html);
 
         foreach (['en', 'uk', 'pl'] as $locale) {
-            foreach (['digipulse', 'vetspace', 'netpostpanel'] as $project) {
+            foreach (['digipulse', 'vetspace'] as $project) {
                 $shots = __("saas.proofs.projects.$project.screens", [], $locale);
                 $this->assertNotEmpty($shots, "$locale/$project has no screenshots");
 
@@ -328,7 +329,8 @@ class SaasLandingLocalizationTest extends TestCase
         $sorted = $order;
         sort($sorted);
         $this->assertSame($sorted, $order);
-        $this->assertSame(7, substr_count($html, '<section'));
+        // Reviews, the plan and the building blocks are separate sections only for spacing, not extra content.
+        $this->assertSame(10, substr_count($html, '<section'));
 
         // The agency comparison is one line under the prices, not a separate table.
         $this->assertStringNotContainsString('<table', $html);
@@ -361,7 +363,7 @@ class SaasLandingLocalizationTest extends TestCase
         $this->assertSame(2, substr_count($html, __('saas.pricing.net_label', [], 'en').'</span>'));
 
         // Cards use a zoomed cover of their first shot.
-        foreach (['digipulse', 'vetspace', 'netpostpanel'] as $project) {
+        foreach (['digipulse', 'vetspace'] as $project) {
             $first = __("saas.proofs.projects.$project.screens", [], 'en')[0]['file'];
             $this->assertFileExists(public_path("landing/screens/$first-cover.webp"));
             $this->assertStringContainsString("landing/screens/$first-cover.webp", $html);
@@ -373,7 +375,7 @@ class SaasLandingLocalizationTest extends TestCase
         $html = $this->get(self::LANDING)->assertOk()->getContent();
         $darkShots = 0;
 
-        foreach (['digipulse', 'vetspace', 'netpostpanel'] as $project) {
+        foreach (['digipulse', 'vetspace'] as $project) {
             $shots = __("saas.proofs.projects.$project.screens", [], 'en');
             foreach ($shots as $index => $shot) {
                 if (! file_exists(public_path("landing/screens/{$shot['file']}-dark.webp"))) {

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth scroll-pt-20 sm:scroll-pt-24">
+{{-- An opaque root background: otherwise the translucent body colour spreads to the canvas and the blurred
+     layers (hero glow, header) repaint in tiles, leaving faint horizontal bands --}}
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth scroll-pt-20 sm:scroll-pt-24 bg-white dark:bg-slate-950">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -156,7 +158,7 @@
 
                 {{-- Primary action: the form, like every other main CTA on the page --}}
                 <a href="#contact" data-testid="header-cta"
-                   class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white bg-indigo-600 border-indigo-300 border dark:bg-white dark:text-slate-950 dark:border-transparent dark:hover:bg-indigo-500 dark:hover:text-white transition-colors shadow-xs">
+                   class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-semibold text-white bg-indigo-600 border border-transparent shadow-xs transition-colors duration-160 ease-out hover:bg-indigo-700 dark:hover:bg-indigo-500">
                     <span>{{ __($copy.'.nav.cta') }}</span>
                     <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -214,7 +216,7 @@
          class="sm:hidden fixed inset-x-0 bottom-0 z-40 p-3 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-t border-slate-200/80 dark:border-slate-800 translate-y-full transition-transform duration-300">
         <div class="flex">
         <a href="#contact" tabindex="-1"
-           class="flex-1 flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-base font-semibold text-white bg-indigo-600 border-indigo-300 border dark:bg-white dark:text-slate-950 dark:border-transparent shadow-sm">
+           class="flex-1 flex items-center justify-center gap-2 px-6 py-3.5 rounded-md text-base font-semibold text-white bg-indigo-600 border border-transparent shadow-sm transition-colors duration-160 ease-out hover:bg-indigo-700 dark:hover:bg-indigo-500">
             <span>{{ __($copy.'.nav.cta') }}</span>
             <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>

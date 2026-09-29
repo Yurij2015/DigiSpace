@@ -18,7 +18,7 @@ return [
 
     'hero' => [
         'badge' => 'SaaS development · Poznań',
-        'title' => 'Your SaaS MVP, from idea to launch',
+        'title' => 'SaaS MVP development, from idea to launch',
         'subtitle' => 'We build the first version of your SaaS so you can test your idea with real users. Together, we define the features, agree on a budget and timeline, and get your product ready to launch.',
         'subtitle_short' => 'We build your SaaS MVP so you can test your idea with real users. We agree on features, budget and timeline before development starts.',
         'cta_primary' => 'Get a cost and timeline estimate',
@@ -71,17 +71,11 @@ return [
                 'stack' => ['Laravel API', 'Nuxt SSR', 'Multi-tenancy', 'Stripe Cashier', 'Tailwind CSS', 'PostgreSQL'],
                 'live_url' => 'https://vetspace.pro',
             ],
+            // Not a public product: one line under the showcase cards, linking the descriptive repository.
             'netpostpanel' => [
-                'badge' => 'AI for content creation',
                 'name' => 'NetPostPanel',
-                'screens' => [
-                    ['file' => 'netpostpanel-workbench', 'caption' => 'Workspace: content type, AI instructions and source research'],
-                    ['file' => 'netpostpanel-autopilot', 'caption' => 'Scheduled draft generation from selected topics and sources'],
-                ],
-                'tagline' => 'AI-assisted source research and drafts for articles and social posts',
-                'stack' => ['Laravel', 'RAG', 'Qdrant', 'Langfuse', 'Horizon', 'LLM API'],
+                'mention' => 'We also built :name, an internal tool for AI-assisted source research and drafting: RAG over our own sources with Qdrant and Langfuse. The AI generation and translation on this site run on it.',
                 'live_url' => 'https://github.com/Yurij2015/net-post-panel-overview',
-                // Not a public product: link the descriptive repository, as the portfolio does.
                 'link_label' => 'Read the overview on GitHub',
             ],
         ],
@@ -172,7 +166,7 @@ return [
         'vat_note' => 'All prices are net. As a Polish VAT payer, we add VAT under Polish law (23% for clients in Poland).',
         'comparison_note' => 'Agencies with large teams and project managers suit enterprise projects. For an MVP, working directly with a senior developer keeps the budget focused on code, not overhead.',
         'badge' => 'Pricing',
-        'title' => 'Two ways to work together',
+        'title' => 'Pricing: two ways to work together',
         'subtitle' => 'Build the first version for an agreed price, or get monthly support and development for an existing product.',
         'plans' => [
             'mvp' => [
@@ -215,7 +209,7 @@ return [
     ],
 
     'social_proof' => [
-        'badge' => 'Client feedback',
+        'badge' => 'Reviews & recommendations',
         'items' => [
             'upwork' => [
                 'quote' => 'He was able to design the database, set up the code architecture, and plan for future releases. He works independently, reviews and debugs code, and consistently suggests improvements while spotting logical flaws in the system. … He has always been available to support the project when needed, never makes excuses, and communicates clearly.',
@@ -233,8 +227,8 @@ return [
     'founder' => [
         'badge' => 'Who you will work with',
         'name' => 'Yurii Mokryi',
-        'role' => 'Founder of DigiSpace · Senior full-stack developer',
-        'bio' => 'I’m Yurii, the founder of DigiSpace. I design and build web products, from databases and payments to launch and support. I also build and develop my own products: DigiPulse, VetSpace and NetPostPanel.',
+        'role' => 'Founder of DigiSpace · Solutions Architect & Lead Engineer',
+        'bio' => "Building a product used to take a full dev team. Today, precise planning, strong AI models and agents take over much of that work: thousands of man-hours turn into hundreds.\n\nI work with proven processes for design, development and fast deployment. You get a reliable product in 6–8 weeks and can move straight to marketing, user acquisition and your first paying customers.",
         'more_links' => 'Videos and blog',
         'facts' => [
             '8+ years of commercial development',
@@ -254,7 +248,7 @@ return [
 
     'faq' => [
         'badge' => 'FAQ',
-        'title' => 'Common questions',
+        'title' => 'Common questions about SaaS MVP development',
         'subtitle' => 'Timelines, payments, hosting and working together.',
         'items' => [
             'q1' => [
@@ -272,6 +266,10 @@ return [
             'q4' => [
                 'q' => 'What do you need from me to start?',
                 'a' => 'A short description of the problem your product solves, who it is for and how you plan to make money from it. Fill in the form or message us on Telegram. In our first conversation, we discuss the idea, clarify requirements and agree on the next steps.',
+            ],
+            'q5' => [
+                'q' => 'How are infrastructure and code reliability organized?',
+                'a' => 'Every change goes through automated tests in a CI/CD pipeline before release, and you see it in the test environment first. The infrastructure is described as code and runs in Docker containers on virtual servers (Proxmox), so environments are identical and easy to rebuild. AI speeds up the work; the tests and the pipeline keep it reliable.',
             ],
             'q6' => [
                 'q' => 'How does payment work?',
@@ -320,10 +318,10 @@ return [
                 'invalid' => 'Please choose a value from the list for “:attribute”.',
             ],
             'recaptcha_failed' => 'The reCAPTCHA check failed. Please try again or message us on Telegram.',
-            'recaptcha_notice' => 'This form is protected by Google reCAPTCHA:',
-            'recaptcha_privacy' => 'Privacy Policy',
+            'recaptcha_notice' => 'Protected by reCAPTCHA:',
+            'recaptcha_privacy' => 'Google Privacy Policy',
             'recaptcha_terms' => 'Terms of Service',
-            'privacy_notice' => 'The data controller is Yurii Mokryi JDG (DigiSpace). We use the data from this form only to reply to your inquiry.',
+            'privacy_notice' => 'The data controller is Yurii Mokryi JDG. We use the data from this form only to reply to your inquiry.',
             'success_title' => 'Thank you!',
             'success_message' => 'We have received your message. Within one business day, we will send follow-up questions or an initial estimate.',
         ],

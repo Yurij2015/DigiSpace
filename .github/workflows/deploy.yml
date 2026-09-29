@@ -242,6 +242,7 @@ jobs:
           ZOHO_CLIENT_ID: ${{ vars.ZOHO_CLIENT_ID }}
           ZOHO_CLIENT_SECRET: ${{ secrets.ZOHO_CLIENT_SECRET }}
           ZOHO_GRANT_TOKEN: ${{ secrets.ZOHO_GRANT_TOKEN }}
+          ZOHO_REFRESH_TOKEN: ${{ secrets.ZOHO_REFRESH_TOKEN }}
           TINY_MCE_API_KEY: ${{ secrets.TINY_MCE_API_KEY }}
           SENTRY_LARAVEL_DSN: ${{ secrets.SENTRY_LARAVEL_DSN }}
           SENTRY_TRACES_SAMPLE_RATE: ${{ vars.SENTRY_TRACES_SAMPLE_RATE }}

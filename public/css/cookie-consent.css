@@ -190,9 +190,23 @@
   cursor: pointer;
 }
 .site-cookie-consent__link:hover { color: #151515; }
+/* Inline "Customize" in the text: shown only on phones (see the max-width: 575px block) */
+.site-cookie-consent__inline-customize {
+  display: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.site-cookie-consent__inline-customize:hover { color: #151515; }
 .site-cookie-consent .button:focus-visible,
 .site-cookie-consent__link:focus-visible,
 .site-cookie-consent__dismiss:focus-visible,
+.site-cookie-consent__inline-customize:focus-visible,
 .site-cookie-consent__text a:focus-visible {
   outline: 2px solid #00a9ff;
   outline-offset: 2px;
@@ -232,7 +246,9 @@
   .site-cookie-consent__text { margin: 0 36px 10px 0; font-size: 13px; line-height: 1.5; }
   .site-cookie-consent__dismiss { top: 0; right: 0; }
   .site-cookie-consent__actions { gap: 8px; }
-  .site-cookie-consent__actions .site-cookie-consent__link { min-height: 36px; padding-top: 2px; padding-bottom: 2px; }
+  .site-cookie-consent__actions .site-cookie-consent__link { display: none; }
+  .site-cookie-consent__inline-customize { display: inline; }
+  .site-cookie-consent__inline-customize[aria-expanded="true"] { display: none; }
 }
 
 /* Footer "Cookie settings" control: looks like the sibling text links */

@@ -1,21 +1,19 @@
 <h3 class="text-center">{{ __('site.contact_form') }}</h3>
-<form method="post" action="{{ route('contact.save') }}">
+<form method="post" action="{{ route('contact.save') }}" data-contact-form
+      data-error-generic="{{ __('site.contact_error') }}"
+      data-recaptcha-sitekey="{{ config('services.recaptcha_v3.site_key') }}"
+      data-recaptcha-action="{{ \App\Http\Requests\ContactFormSaveRequest::RECAPTCHA_ACTION }}">
+    <input type="hidden" name="g-recaptcha-response" data-recaptcha-token>
     @csrf
     <div class="row align-items-md-end row-30">
-        @if(Session::has('success'))
-            <div class="col-12">
-                <output class="contact-success-sent">
-                    {{ Session::get('success') }}
-                </output>
-            </div>
-        @endif
-        {{-- Rate limit: the submission was refused before the controller, but the fields above are
-             repopulated from old input, so the visitor only has to wait, not retype. --}}
-        @error('throttle')
-            <div class="col-12">
-                <p class="contact-form-throttle" role="alert">{{ $message }}</p>
-            </div>
-        @enderror
+        <div class="col-12">
+            {{-- Both bars are always in the DOM: JS toggles them on AJAX submit, and the
+                 server-rendered content keeps the no-JS submit working. --}}
+            <output class="contact-success-sent" data-contact-success
+                    @if(!Session::has('success')) hidden @endif>{{ Session::get('success') }}</output>
+            <p class="contact-form-throttle" data-contact-error role="alert"
+               @if(!$errors->has('throttle')) hidden @endif>{{ $errors->first('throttle') }}</p>
+        </div>
         @php
             $contactFields = [
                 // The phone field takes the full width because the country selector claims ~90px of
@@ -84,16 +82,16 @@
                 @enderror
             </div>
         </div>
-        @error('g-recaptcha-response')
-            <div class="col-12">
-                <span class="m-0 recaptchaStyle" role="alert">{{ $message }}</span>
-            </div>
-        @enderror
         <div class="col-12">
-            <div class="g-recaptcha"
-                 data-size="normal"
-                 data-sitekey="{{ config('services.recaptcha.site_key') }}"
-            ></div>
+            <span class="m-0 recaptchaStyle" data-captcha-error role="alert"
+                  @if(!$errors->has('g-recaptcha-response')) hidden @endif>{{ $errors->first('g-recaptcha-response') }}</span>
+        </div>
+        <div class="col-12">
+            <p class="recaptcha-notice">
+                {{ __('site.recaptcha_notice') }}
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">{{ __('site.recaptcha_privacy') }}</a> &amp;
+                <a href="https://policies.google.com/terms" target="_blank" rel="noopener">{{ __('site.recaptcha_terms') }}</a>
+            </p>
         </div>
         <div class="col-12 send-message-button">
             <button class="button button-block button-primary button-ujarak" type="submit">{{ __('site.send_message') }}</button>
@@ -107,6 +105,13 @@
             color: red;
             font-size: 14px;
         }
+
+        .recaptcha-notice {
+            margin: 0;
+            color: #9b9b9b;
+            font-size: 12px;
+            line-height: 1.5;
+        }
     </style>
 @endpush
 
@@ -114,4 +119,5 @@
     <link rel="stylesheet" href="{{ asset('vendor/intl-tel-input/css/intlTelInput.min.css') }}">
     <script defer src="{{ asset('vendor/intl-tel-input/js/intlTelInput.min.js') }}"></script>
     <script defer src="{{ asset('js/contact-phone.js') }}"></script>
+    <script defer src="{{ asset('js/contact-form.js') }}"></script>
 @endpush
