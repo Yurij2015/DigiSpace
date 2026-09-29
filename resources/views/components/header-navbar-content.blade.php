@@ -19,7 +19,7 @@
                 <dl class="list-terms-inline">
                     <dt>{{ $headerNavBarContent->second_col_name }}</dt>
                     <dd>
-                        <a href="{{ $headerNavBarContent->second_col_href }}">
+                        <a href="{{ Route::has($headerNavBarContent->second_col_href) ? route($headerNavBarContent->second_col_href) : $headerNavBarContent->second_col_href }}">
                             {{ $headerNavBarContent->second_col_href_content }}
                         </a>
                     </dd>
