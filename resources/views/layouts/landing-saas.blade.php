@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth scroll-pt-20 sm:scroll-pt-24">
+{{-- An opaque root background: otherwise the translucent body colour spreads to the canvas and the blurred
+     layers (hero glow, header) repaint in tiles, leaving faint horizontal bands --}}
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth scroll-pt-20 sm:scroll-pt-24 bg-white dark:bg-slate-950">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

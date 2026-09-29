@@ -64,6 +64,51 @@
             </a>
         </div>
 
+        {{-- Product showcase: real screens of our own products, so the first screen shows a result, not only a
+             promise. The main shot is VetSpace, the second one (DigiPulse) overlaps it from sm up; phones get one. --}}
+        @php
+            $showcaseShot = function (string $project, string $file) use ($copy): array {
+                $caption = collect(__("{$copy}.proofs.projects.$project.screens"))->firstWhere('file', $file)['caption'] ?? '';
+
+                return [
+                    'host' => parse_url(__("{$copy}.proofs.projects.$project.live_url"), PHP_URL_HOST),
+                    'caption' => $caption,
+                    'light' => ['full' => asset("landing/screens/$file.webp"), 'small' => asset("landing/screens/$file-800.webp")],
+                    'dark' => ['full' => asset("landing/screens/$file-dark.webp"), 'small' => asset("landing/screens/$file-dark-800.webp")],
+                ];
+            };
+            $showcase = [
+                'main' => $showcaseShot('vetspace', 'vetspace-clinic-calendar'),
+                'side' => $showcaseShot('digipulse', 'digipulse-dashboard'),
+            ];
+        @endphp
+        <div data-hero-showcase class="relative mt-12 sm:mt-16 max-w-5xl mx-auto sm:pb-[14%] text-left">
+            @foreach($showcase as $slot => $shot)
+                <figure class="{{ $slot === 'main'
+                        ? 'relative sm:w-[80%]'
+                        : 'hidden sm:block absolute right-0 bottom-0 w-[46%]' }} overflow-hidden rounded-xl bg-white shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/10 dark:bg-slate-900 dark:shadow-black/50 dark:ring-white/10">
+                    {{-- Browser chrome with the product's real address --}}
+                    <div class="flex items-center gap-3 px-3 py-2 border-b border-slate-200/80 bg-slate-50 dark:border-slate-800 dark:bg-slate-900" aria-hidden="true">
+                        <span class="flex gap-1.5">
+                            <span class="size-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                            <span class="size-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                            <span class="size-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                        </span>
+                        <span class="flex-1 truncate text-center text-[11px] font-medium text-slate-400 dark:text-slate-500">{{ $shot['host'] }}</span>
+                        <span class="w-[42px]"></span>
+                    </div>
+                    @foreach(['light' => 'block dark:hidden', 'dark' => 'hidden dark:block'] as $theme => $visibility)
+                        <img src="{{ $shot[$theme]['small'] }}"
+                             srcset="{{ $shot[$theme]['small'] }} 800w, {{ $shot[$theme]['full'] }} 1600w"
+                             sizes="{{ $slot === 'main' ? '(min-width: 1024px) 820px, (min-width: 640px) 80vw, 100vw' : '(min-width: 1024px) 470px, 46vw' }}"
+                             alt="{{ $shot['caption'] }}" width="1600" height="1000" decoding="async"
+                             @if($slot === 'side') loading="lazy" @endif
+                             class="{{ $visibility }} w-full h-auto">
+                    @endforeach
+                </figure>
+            @endforeach
+        </div>
+
         {{-- Trust bar: price anchor first, since budget is the first question of this audience --}}
         @php
             $heroMetrics = [
@@ -97,9 +142,9 @@
 @php
     $projects = ['digipulse', 'vetspace'];
 @endphp
-<section id="proofs" class="py-20 sm:py-28">
+<section id="proofs" class="py-14 sm:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
             <span class="inline-block text-xs font-bold tracking-wider uppercase text-indigo-600 mb-4 dark:text-indigo-400">
                 {{ __($copy.'.proofs.badge') }}
             </span>
@@ -111,9 +156,10 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto">
+        {{-- Phones swipe through the cards sideways (the next one peeks in); from md they sit side by side --}}
+        <div class="flex md:grid overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4 md:mx-auto md:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid-cols-2 gap-4 md:gap-8 lg:gap-10 max-w-5xl">
             @foreach($projects as $key)
-                <article class="flex flex-col rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-50/50 hover:border-slate-300 transition-colors dark:border-slate-800 dark:bg-slate-950/40 dark:hover:border-slate-700">
+                <article class="w-[85%] shrink-0 snap-center md:w-auto flex flex-col rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-50/50 hover:border-slate-300 transition-colors dark:border-slate-800 dark:bg-slate-950/40 dark:hover:border-slate-700">
                     @include('development.partials.project-gallery', ['project' => $key])
                     <div class="flex flex-col flex-1 gap-3 p-6">
                         <span class="text-xs font-semibold tracking-wide uppercase text-slate-500 dark:text-slate-400">
@@ -167,7 +213,7 @@
 {{-- =========================================================================
      3. WHO IS BEHIND IT: THE FOUNDER
      ========================================================================= --}}
-<section id="founder" class="py-20 sm:py-28">
+<section id="founder" class="py-14 sm:py-28">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Same header as every other section (eyebrow, large heading, subtitle), led by the photo --}}
         <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
@@ -233,15 +279,17 @@
 {{-- =========================================================================
      4. CLIENT FEEDBACK
      ========================================================================= --}}
-<section id="reviews" class="pb-20 sm:pb-28">
+<section id="reviews" class="pb-14 sm:pb-28">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="mb-10 sm:mb-14 text-center text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight text-balance dark:text-white">
+        <h2 class="mb-8 sm:mb-14 text-center text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight text-balance dark:text-white">
             {{ __($copy.'.social_proof.badge') }}
         </h2>
-        {{-- The one place with soft cards: quotes read as testimonials, not as more body text --}}
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        {{-- Testimonial panels that start with a clear top edge and fade out downwards: the tint and the
+             outline both dissolve, so the quotes stand apart without closed boxes --}}
+        <div class="flex md:grid overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4 md:mx-auto md:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid-cols-2 gap-4 md:gap-8">
             @foreach(__($copy.'.social_proof.items') as $review)
-                <figure class="flex flex-col gap-5 p-7 sm:p-8 rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70 dark:bg-slate-900 dark:ring-slate-800">
+                <figure class="w-[85%] shrink-0 snap-center md:w-auto relative flex flex-col gap-5 px-6 pt-7 pb-10 sm:px-8 sm:pt-8 sm:pb-12 rounded-t-2xl bg-linear-to-b from-indigo-50 via-indigo-50/40 to-transparent dark:from-indigo-500/10 dark:via-indigo-500/5">
+                    <span class="pointer-events-none absolute inset-0 rounded-t-2xl border border-b-0 border-indigo-200 [mask-image:linear-gradient(to_bottom,black,transparent_85%)] dark:border-indigo-500/30" aria-hidden="true"></span>
                     <svg class="size-7 text-indigo-600/70 dark:text-indigo-400/70" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.5 6C6.46 6 4 8.46 4 11.5V18h6v-6H7c0-1.66 1.34-3 3-3V6h-.5zm9 0C15.46 6 13 8.46 13 11.5V18h6v-6h-3c0-1.66 1.34-3 3-3V6h-.5z"/></svg>
                     <blockquote class="flex-1 text-xs sm:text-sm leading-relaxed text-slate-700 dark:text-slate-300">
                         {{ $review['quote'] }}
@@ -263,9 +311,9 @@
 {{-- =========================================================================
      5. HOW WE WORK: FOUR PROMISES
      ========================================================================= --}}
-<section id="guarantees" class="py-20 sm:py-28">
+<section id="guarantees" class="py-14 sm:py-28">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
             <span class="inline-block text-xs font-bold tracking-wider uppercase text-indigo-600 mb-4 dark:text-indigo-400">
                 {{ __($copy.'.guarantees.badge') }}
             </span>
@@ -286,7 +334,7 @@
                 'direct' => 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
             ];
         @endphp
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-9 md:gap-y-12">
             @foreach($promiseIcons as $key => $icon)
                 <div class="flex items-start gap-5">
                     {{-- From sm the icon gets its own column; on phones it sits beside the label to keep the text full-width --}}
@@ -315,14 +363,14 @@
 {{-- =========================================================================
      6. THE EIGHT-WEEK PLAN
      ========================================================================= --}}
-<section id="process" class="py-20 sm:py-28">
+<section id="process" class="py-14 sm:py-28">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight text-balance dark:text-white">{{ __($copy.'.process.title') }}</h2>
             <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400">{{ __($copy.'.process.subtitle') }}</p>
         </div>
         {{-- A timeline in two rows of two: vertical on phones, a line over each stage from md --}}
-        <ol class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 max-w-md mx-auto md:max-w-4xl">
+        <ol class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-9 md:gap-y-12 max-w-md mx-auto md:max-w-4xl">
             @foreach(__($copy.'.process.sprints') as $sprint)
                 <li class="relative pl-7 border-l-2 border-indigo-200 md:pl-0 md:pt-7 md:border-l-0 md:border-t-2 dark:border-indigo-500/30">
                     <span class="absolute -left-[7px] top-0 size-3 rounded-full bg-indigo-600 md:left-0 md:-top-[7px] dark:bg-indigo-400" aria-hidden="true"></span>
@@ -339,7 +387,7 @@
 {{-- =========================================================================
      7. BUILDING BLOCKS, PICKED PER PRODUCT
      ========================================================================= --}}
-<section id="engine" class="pb-20 sm:pb-28">
+<section id="engine" class="pb-14 sm:pb-28">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight text-balance dark:text-white">{{ __($copy.'.engine.title') }}</h2>
         <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400">{{ __($copy.'.engine.subtitle') }}</p>
@@ -366,10 +414,10 @@
 {{-- =========================================================================
      8. PRICING & ENGAGEMENT MODELS
      ========================================================================= --}}
-<section id="pricing" class="py-20 sm:py-28">
+<section id="pricing" class="py-14 sm:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Section Header --}}
-        <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-20">
             <span class="inline-block text-xs font-bold tracking-wider uppercase text-indigo-600 mb-4 dark:text-indigo-400">
                 {{ __($copy.'.pricing.badge') }}
             </span>
@@ -385,7 +433,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-[repeat(5,auto)] gap-10 max-w-5xl mx-auto">
 
             {{-- Plan 1: SaaS MVP, fixed scope (featured) --}}
-            <div class="p-8 sm:p-10 rounded-2xl bg-indigo-50/60 text-slate-900 border border-indigo-200 shadow-md flex flex-col gap-6 lg:grid lg:grid-rows-subgrid lg:row-span-5 relative overflow-hidden dark:bg-slate-950 dark:text-white dark:border-indigo-500 dark:shadow-xl">
+            <div class="p-6 sm:p-10 rounded-2xl bg-indigo-50/60 text-slate-900 border border-indigo-200 shadow-md flex flex-col gap-5 sm:gap-6 lg:grid lg:grid-rows-subgrid lg:row-span-5 relative overflow-hidden dark:bg-slate-950 dark:text-white dark:border-indigo-500 dark:shadow-xl">
                     <div class="flex items-center justify-between">
                         <span class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-indigo-600 text-white">
                             {{ __($copy.'.pricing.plans.mvp.badge') }}
@@ -415,7 +463,7 @@
                     </div>
 
                     {{-- Features List --}}
-                    <div class="space-y-4 pt-2">
+                    <div class="space-y-3 sm:space-y-4 pt-2">
                         @foreach(__($copy.'.pricing.plans.mvp.features') as $feature)
                             <div class="flex items-start gap-3 text-sm sm:text-base text-slate-700 dark:text-slate-200">
                                 <svg class="size-4 text-emerald-600 shrink-0 mt-0.5 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -437,7 +485,7 @@
             </div>
 
             {{-- Plan 2: monthly senior support for a live product --}}
-            <div class="p-8 sm:p-10 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col gap-6 lg:grid lg:grid-rows-subgrid lg:row-span-5 hover:border-slate-300 transition-all dark:bg-slate-900 dark:border-slate-800 dark:hover:border-slate-700">
+            <div class="p-6 sm:p-10 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col gap-5 sm:gap-6 lg:grid lg:grid-rows-subgrid lg:row-span-5 hover:border-slate-300 transition-all dark:bg-slate-900 dark:border-slate-800 dark:hover:border-slate-700">
                     <div class="flex items-center justify-between">
                         <span class="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
                             {{ __($copy.'.pricing.plans.retainer.badge') }}
@@ -467,7 +515,7 @@
                     </div>
 
                     {{-- Features List --}}
-                    <div class="space-y-4 pt-2">
+                    <div class="space-y-3 sm:space-y-4 pt-2">
                         @foreach(__($copy.'.pricing.plans.retainer.features') as $feature)
                             <div class="flex items-start gap-3 text-sm sm:text-base text-slate-700 dark:text-slate-300">
                                 <svg class="size-4 text-indigo-600 shrink-0 mt-0.5 dark:text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -505,10 +553,10 @@
 {{-- =========================================================================
      9. FREQUENTLY ASKED QUESTIONS (ACCORDION)
      ========================================================================= --}}
-<section id="faq" class="py-20 sm:py-28">
+<section id="faq" class="py-14 sm:py-28">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Section Header --}}
-        <div class="text-center mb-16 sm:mb-20">
+        <div class="text-center mb-10 sm:mb-20">
             <span class="inline-block text-xs font-bold tracking-wider uppercase text-indigo-600 mb-4 dark:text-indigo-400">
                 {{ __($copy.'.faq.badge') }}
             </span>
@@ -547,10 +595,10 @@
 {{-- =========================================================================
      10. PROJECT QUALIFICATION & INQUIRY FORM
      ========================================================================= --}}
-<section id="contact" class="py-20 sm:py-28">
+<section id="contact" class="py-14 sm:py-28">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Section Header --}}
-        <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-20">
             <span class="inline-block text-xs font-bold tracking-wider uppercase text-indigo-600 mb-4 dark:text-indigo-400">
                 {{ __($copy.'.contact.badge') }}
             </span>
@@ -563,7 +611,7 @@
         </div>
 
         {{-- Form Container --}}
-        <div class="bg-white rounded-2xl border border-slate-200/80 p-8 sm:p-12 shadow-xs dark:bg-slate-900 dark:border-slate-800">
+        <div class="bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-12 shadow-xs dark:bg-slate-900 dark:border-slate-800">
             @if(session('saas_success'))
                 <div class="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900 mb-8 space-y-2 dark:bg-emerald-500/10 dark:border-emerald-500/25 dark:text-emerald-300">
                     <div class="flex items-center gap-2 font-bold text-base text-emerald-950 dark:text-emerald-300">
