@@ -55,8 +55,9 @@ class CookieConsentTest extends TestCase
         $this->assertStringContainsString("DigiConsent.on('marketing'", $html);
         // Google Consent Mode defaults to denied ahead of any tag injection.
         $this->assertMatchesRegularExpression('/gtag\(.consent., .default.,\s*\{[^}]*analytics_storage.: .denied./s', $html);
-        // reCAPTCHA is needed by the contact/subscribe forms and stays unconditional.
-        $this->assertStringContainsString('https://www.google.com/recaptcha/api.js', $html);
+        // reCAPTCHA v3 is lazy-loaded by contact-form.js only on the contact page; other pages
+        // must not ship the Google script eagerly.
+        $this->assertStringNotContainsString('https://www.google.com/recaptcha/api.js', $html);
     }
 
     public function test_tracker_snippets_are_guarded_and_never_emit_a_broken_pixel_init(): void

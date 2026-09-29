@@ -18,6 +18,8 @@ class ContactFormFeedbackTest extends TestCase
 
     private const UK_CONTACT = '/uk/contact-us';
 
+    private float $recaptchaScore = 0.9;
+
     private const VALID = [
         'first_name' => 'Yurii',
         'last_name' => 'Mokryi',
@@ -33,7 +35,11 @@ class ContactFormFeedbackTest extends TestCase
 
         $this->seedPublicSite();
 
-        Http::fake(['www.google.com/recaptcha/*' => Http::response(['success' => true])]);
+        Http::fake(['www.google.com/recaptcha/*' => fn () => Http::response([
+            'success' => true,
+            'action' => 'contact_us',
+            'score' => $this->recaptchaScore,
+        ])]);
     }
 
     public function test_phone_field_offers_a_self_hosted_country_selector(): void
@@ -148,5 +154,79 @@ class ContactFormFeedbackTest extends TestCase
             ->assertOk()
             ->assertSee('Ми отримали ваше повідомлення')
             ->assertDontSee('value="Yurii"', false);
+    }
+
+    public function test_the_form_uses_invisible_recaptcha_v3_without_a_checkbox_widget(): void
+    {
+        $html = $this->get(self::EN_CONTACT)->assertOk()->getContent();
+
+        // v3 mints a token into a hidden field; the v2 checkbox widget and its eager api.js are gone.
+        $this->assertStringContainsString('data-recaptcha-token', $html);
+        $this->assertStringContainsString('data-recaptcha-sitekey', $html);
+        $this->assertStringContainsString('js/contact-form.js', $html);
+        $this->assertStringNotContainsString('class="g-recaptcha"', $html);
+    }
+
+    public function test_ajax_submission_returns_json_instead_of_a_redirect(): void
+    {
+        $this->mock(ZohoLeadService::class, function (MockInterface $mock) {
+            $mock->shouldReceive('sendLead')->once();
+        });
+
+        $this->postJson(self::EN_CONTACT, self::VALID)
+            ->assertOk()
+            ->assertJson(['message' => 'We have received your message and would like to thank you for writing to us!']);
+
+        $this->assertDatabaseHas('contact_forms', ['email' => 'yurii@example.com', 'source' => 'contact-us']);
+    }
+
+    public function test_ajax_validation_failure_returns_422_with_field_errors(): void
+    {
+        $this->postJson(self::EN_CONTACT, ['email' => 'not-an-email'] + self::VALID)
+            ->assertStatus(422)
+            ->assertJsonValidationErrors(['email'])
+            ->assertJsonMissingValidationErrors(['first_name', 'phone', 'message']);
+    }
+
+    public function test_a_low_recaptcha_v3_score_rejects_the_submission(): void
+    {
+        $this->recaptchaScore = 0.1;
+
+        $this->postJson(self::EN_CONTACT, self::VALID)
+            ->assertStatus(422)
+            ->assertJsonValidationErrors(['g-recaptcha-response']);
+
+        $this->assertDatabaseMissing('contact_forms', ['email' => 'yurii@example.com']);
+    }
+
+    public function test_ajax_throttling_answers_429_json_instead_of_a_redirect(): void
+    {
+        $this->mock(ZohoLeadService::class, fn (MockInterface $mock) => $mock->shouldReceive('sendLead'));
+
+        for ($i = 0; $i < 10; $i++) {
+            $this->postJson(self::EN_CONTACT, self::VALID)->assertOk();
+        }
+
+        $this->postJson(self::EN_CONTACT, self::VALID)
+            ->assertStatus(429)
+            ->assertJsonStructure(['message', 'errors' => ['throttle']]);
+    }
+
+    public function test_array_inputs_are_rejected_without_causing_server_errors(): void
+    {
+        $this->postJson(self::EN_CONTACT, ['first_name' => ['evil' => 'array']] + self::VALID)
+            ->assertStatus(422)
+            ->assertJsonValidationErrors(['first_name']);
+    }
+
+    public function test_overly_long_fields_are_rejected(): void
+    {
+        $this->postJson(self::EN_CONTACT, ['first_name' => str_repeat('a', 101)] + self::VALID)
+            ->assertStatus(422)
+            ->assertJsonValidationErrors(['first_name']);
+
+        $this->postJson(self::EN_CONTACT, ['message' => str_repeat('a', 5001)] + self::VALID)
+            ->assertStatus(422)
+            ->assertJsonValidationErrors(['message']);
     }
 }

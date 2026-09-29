@@ -66,10 +66,53 @@
     // submit also means a server-side validation failure repopulates a number iti can parse back.
     if (input.form) {
         input.form.addEventListener('submit', function () {
-            var full = iti.getNumber();
+            var full = bestNumber();
             if (full) {
                 input.value = full;
             }
         });
+    }
+
+    // The preselected flag is only a guess (en → gb), and visitors regularly type their national
+    // number without touching it: "+44" + a Ukrainian mobile is then invalid for no real reason.
+    // When the selected country does not yield a valid number, try the dropdown's likely countries
+    // in order before falling back to the selected-country guess and letting the server judge.
+    function bestNumber() {
+        if (isValid()) {
+            return iti.getNumber();
+        }
+
+        var original = ((iti.getSelectedCountry && iti.getSelectedCountry()) || {}).iso2;
+        try {
+            var candidates = ['ua', 'pl', 'gb', 'us'];
+            for (var i = 0; i < candidates.length; i++) {
+                if (candidates[i] === original) {
+                    continue;
+                }
+                iti.setSelectedCountry(candidates[i]);
+                if (isValid()) {
+                    return iti.getNumber();
+                }
+            }
+        } finally {
+            if (original) {
+                iti.setSelectedCountry(original);
+            }
+        }
+        return iti.getNumber();
+    }
+
+    function isValid() {
+        try {
+            // Precise validation checks real number ranges, not just the shape: the loose check
+            // accepts "+44 660994550", which the server's libphonenumber then rejects anyway.
+            if (typeof iti.isValidNumberPrecise === 'function') {
+                return !! iti.isValidNumberPrecise();
+            }
+            return !! iti.isValidNumber();
+        } catch (e) {
+            // libphonenumber utils may not have loaded yet - only full validation is affected.
+            return false;
+        }
     }
 })();

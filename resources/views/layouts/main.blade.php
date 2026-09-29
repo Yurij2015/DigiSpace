@@ -79,7 +79,8 @@
 </head>
 <body>
 @include('partials.tracking.google-analytics')
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{{-- reCAPTCHA v3 is loaded lazily by public/js/contact-form.js only on the contact page:
+     the script tag costs ~300ms and sets Google cookies, so it is not shipped site-wide. --}}
 <!-- Page Loader-->
 <div id="page-loader">
     <div class="page-loader-body">

@@ -6,12 +6,13 @@ use App\Http\Requests\ContactFormSaveRequest;
 use App\Models\ContactForm;
 use App\Models\Page;
 use App\Services\ZohoLeadService;
-use com\zoho\crm\api\exception\SDKException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
+use Throwable;
 
 class ContactController extends Controller
 {
@@ -36,10 +37,7 @@ class ContactController extends Controller
         ])->where('slug', '=', self::PAGE)->first();
     }
 
-    /**
-     * @throws SDKException
-     */
-    public function save(ContactFormSaveRequest $request, ZohoLeadService $zohoLeads): RedirectResponse
+    public function save(ContactFormSaveRequest $request, ZohoLeadService $zohoLeads): RedirectResponse|JsonResponse
     {
         $validated = $request->validated();
         $validated['name'] = $validated['first_name'].' '.$validated['last_name'];
@@ -49,8 +47,12 @@ class ContactController extends Controller
 
         try {
             $zohoLeads->sendLead($validated);
-        } catch (\Throwable $exception) {
+        } catch (Throwable $exception) {
             report($exception);
+        }
+
+        if ($request->expectsJson()) {
+            return response()->json(['message' => __('site.contact_success')]);
         }
 
         return back()->with('success', __('site.contact_success'));

@@ -47,6 +47,8 @@ return [
     'email' => 'E-mail',
     'send_message' => 'Wyślij wiadomość',
     'contact_success' => 'Otrzymaliśmy Twoją wiadomość. Dziękujemy, że do nas napisałeś!',
+    'contact_error' => 'Nie udało się wysłać wiadomości. Spróbuj ponownie albo napisz do nas bezpośrednio.',
+    'recaptcha_failed' => 'Weryfikacja reCAPTCHA nie powiodła się. Spróbuj ponownie.',
     'subscribe' => 'Subskrybuj',
     'subscribe_success' => 'Subskrypcja zakończona pomyślnie!',
     'social_link' => 'Sieć społecznościowa',

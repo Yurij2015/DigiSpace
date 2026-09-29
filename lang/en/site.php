@@ -47,6 +47,8 @@ return [
     'email' => 'E-mail',
     'send_message' => 'Send Message',
     'contact_success' => 'We have received your message and would like to thank you for writing to us!',
+    'contact_error' => 'The message could not be sent. Please try again or write to us directly.',
+    'recaptcha_failed' => 'The reCAPTCHA check failed. Please try again.',
     'subscribe' => 'Subscribe',
     'subscribe_success' => 'You are successfully subscribed!',
     'social_link' => 'Social network',

@@ -16,7 +16,7 @@ use Illuminate\Translation\PotentiallyTranslatedString;
  */
 readonly class RecaptchaV3Rule implements ValidationRule
 {
-    public function __construct(private string $action) {}
+    public function __construct(private string $action, private string $messageKey = 'saas.contact.form.recaptcha_failed') {}
 
     /**
      * Run the validation rule.
@@ -26,7 +26,7 @@ readonly class RecaptchaV3Rule implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if (! is_string($value) || $value === '') {
-            $fail(__('saas.contact.form.recaptcha_failed'));
+            $fail(__($this->messageKey));
 
             return;
         }
@@ -39,7 +39,7 @@ readonly class RecaptchaV3Rule implements ValidationRule
             ])->json();
         } catch (ConnectionException $exception) {
             Log::warning('reCAPTCHA v3 verification request failed', ['error' => $exception->getMessage()]);
-            $fail(__('saas.contact.form.recaptcha_failed'));
+            $fail(__($this->messageKey));
 
             return;
         }
@@ -54,7 +54,7 @@ readonly class RecaptchaV3Rule implements ValidationRule
                 'score' => $result['score'] ?? null,
                 'error-codes' => $result['error-codes'] ?? [],
             ]);
-            $fail(__('saas.contact.form.recaptcha_failed'));
+            $fail(__($this->messageKey));
         }
     }
 }
