@@ -188,7 +188,7 @@
                     <a href="https://t.me/YuriiMokryi" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Telegram</a>
                     <a href="https://github.com/Yurij2015" target="_blank" rel="noopener noreferrer" class="hover:text-slate-950 dark:hover:text-white transition-colors">GitHub</a>
                     <a href="https://linkedin.com/in/yurii-mokryi" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">LinkedIn</a>
-                    <a href="mailto:admin@digispace.pro" class="hover:text-slate-950 dark:hover:text-white transition-colors">admin@digispace.pro</a>
+                    <a href="{{ route('contact-us') }}" class="hover:text-slate-950 dark:hover:text-white transition-colors">admin@digispace.pro</a>
                 </div>
             </div>
 

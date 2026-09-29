@@ -55,8 +55,8 @@
                                     <dt>{{ $content->emails->name }}</dt>
                                     <dd>
                                         <ul class="list-comma">
-                                            <li><a href="mailto:#">{{ $content->emails->value->first }}</a></li>
-                                            <li><a href="mailto:#">{{ $content->emails->value->second }}</a></li>
+                                            <li>{{ $content->emails->value->first }}</li>
+                                            <li>{{ $content->emails->value->second }}</li>
                                         </ul>
                                     </dd>
                                 </dl>

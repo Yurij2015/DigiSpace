@@ -748,7 +748,7 @@
                 </svg>
             </a>
 
-            <a href="mailto:admin@digispace.pro?subject={{ rawurlencode(__($copy.'.hero.badge')) }}"
+            <a href="{{ route('contact-us') }}"
                data-direct-contact class="px-1 py-4 border-t border-slate-200/80 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-600 transition-all flex items-center justify-between group">
                 <div class="flex items-center gap-3">
                     <svg class="size-5 text-slate-500 dark:text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
