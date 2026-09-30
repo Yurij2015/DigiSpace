@@ -18,6 +18,7 @@ use com\zoho\crm\api\record\GetRecordsParam;
 use com\zoho\crm\api\record\Leads;
 use com\zoho\crm\api\record\Record;
 use com\zoho\crm\api\record\RecordOperations;
+use com\zoho\crm\api\record\ResponseWrapper;
 use com\zoho\crm\api\record\SuccessResponse;
 use com\zoho\crm\api\util\Choice;
 use Illuminate\Support\Facades\Log;
@@ -121,9 +122,8 @@ class ZohoLeadService
     {
         if ($response instanceof SuccessResponse) {
             Log::info('Lead added to Zoho CRM, Lead data', $leadData);
-            $message = $response->getMessage();
             Log::info('Lead added to Zoho CRM', [
-                'Message' => $message instanceof Choice ? $message->getValue() : $message,
+                'Message' => $this->messageText($response->getMessage()),
             ]);
         }
 
@@ -135,19 +135,23 @@ class ZohoLeadService
     private function logApiException(APIException $exception, string $prefix, array $leadData): void
     {
         Log::error($prefix.'Failed to add lead to Zoho CRM, Lead data', $leadData);
-        $message = $exception->getMessage();
         Log::error($prefix.'Failed to add lead to Zoho CRM', [
             'Status' => $exception->getStatus()->getValue(),
             'Code' => $exception->getCode()->getValue(),
             'Details' => $exception->getDetails(),
-            'Message' => $message instanceof Choice ? $message->getValue() : $message,
+            'Message' => $this->messageText($exception->getMessage()),
         ]);
     }
 
     /**
+     * Zoho answers 204 No Content (no response object) when the Leads module is empty.
+     *
+     * @return array<int, Record>
+     *
      * @throws SDKException
+     * @throws \RuntimeException when Zoho returns an API error
      */
-    public function getLeadsData()
+    public function getLeadsData(): array
     {
         self::zohoInitializer();
 
@@ -159,7 +163,28 @@ class ZohoLeadService
         $paramInstance->add(GetRecordsParam::fields(), $fieldNames);
 
         $response = $leads->getRecords($paramInstance);
+        $handler = $response->getObject();
 
-        return $response->getObject()->getData();
+        if ($handler instanceof ResponseWrapper) {
+            return $handler->getData();
+        }
+
+        if ($handler instanceof APIException) {
+            throw new \RuntimeException(sprintf(
+                '%s: %s',
+                $handler->getCode()->getValue(),
+                $this->messageText($handler->getMessage()),
+            ));
+        }
+
+        return [];
+    }
+
+    /**
+     * The SDK types messages as strings but returns Choice objects at runtime.
+     */
+    private function messageText(mixed $message): mixed
+    {
+        return $message instanceof Choice ? $message->getValue() : $message;
     }
 }
