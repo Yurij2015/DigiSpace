@@ -30,9 +30,10 @@ class GenerateSitemapTest extends TestCase
         config(['locales.default' => $defaultLocale]);
         $author = User::factory()->create();
         $category = Category::create(['name' => 'News', 'slug' => 'news', 'description' => 'News', 'user_id' => $author->id]);
+        $this->freezeTime();
         Post::create([
             'name' => 'Published', 'slug' => 'published', 'content' => '<p>Post</p>', 'status' => 'published',
-            'category_id' => $category->id, 'user_id' => $author->id, 'created_at' => '2026-09-01 12:00:00',
+            'category_id' => $category->id, 'user_id' => $author->id,
         ]);
         Post::create([
             'name' => 'Draft', 'slug' => 'draft', 'content' => '<p>Draft</p>', 'status' => 'draft',
@@ -63,7 +64,7 @@ class GenerateSitemapTest extends TestCase
         $xpath->registerNamespace('x', 'http://www.w3.org/1999/xhtml'); // NOSONAR: same
         $paths = [
             '', '/about', '/services', '/pricing', '/promos', '/blog', '/contact-us', '/privacy-policy', '/faq', '/support', '/development/saas', '/development/business',
-            '/pages/cms', '/blog/published', '/blog-category/news', '/blog-archive/2026-9', '/service-category/web', '/service-category/web/active',
+            '/pages/cms', '/blog/published', '/blog-category/news', '/blog-archive/'.now()->year.'-'.now()->month, '/service-category/web', '/service-category/web/active',
         ];
         $this->assertCount(count($paths) * 3, $xpath->query('/s:urlset/s:url'));
 
