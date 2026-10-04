@@ -173,7 +173,7 @@ return [
                 'name' => 'SaaS MVP',
                 'badge' => 'For a new product',
                 'price' => 'from $4,800',
-                'price_sub' => '≈ 19,000 PLN · fixed scope',
+                'price_sub' => 'Fixed scope',
                 'timeline' => 'Typically 6–8 weeks',
                 'desc' => 'For launching a first version and testing demand. We agree on the features and final price before work begins.',
                 'features' => [
@@ -192,7 +192,7 @@ return [
                 'name' => 'SaaS support and development',
                 'badge' => 'For a live product',
                 'price' => 'from $2,400',
-                'price_sub' => '≈ 9,500 PLN · per month',
+                'price_sub' => 'Per month',
                 'timeline' => 'Monthly',
                 'desc' => 'For a product already in use: new features, integrations, bug fixes and performance improvements.',
                 'features' => [

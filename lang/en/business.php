@@ -175,7 +175,7 @@ return [
                 'name' => 'New system',
                 'badge' => 'For a new system',
                 'price' => 'from $4,800',
-                'price_sub' => '≈ 19,000 PLN · fixed scope',
+                'price_sub' => 'Fixed scope',
                 'timeline' => 'Typically 6–8 weeks',
                 'desc' => 'For businesses that want their own booking, client portal, CRM or internal tool instead of spreadsheets and third-party platforms.',
                 'features' => [
@@ -194,7 +194,7 @@ return [
                 'name' => 'Ongoing support',
                 'badge' => 'For a running system',
                 'price' => 'from $2,400',
-                'price_sub' => '≈ 9,500 PLN · per month',
+                'price_sub' => 'Per month',
                 'timeline' => 'Monthly',
                 'desc' => 'For a system already in use that needs new features, improvements, integrations or reliable maintenance.',
                 'features' => [
