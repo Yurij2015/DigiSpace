@@ -64,50 +64,87 @@
             </a>
         </div>
 
-        {{-- Product showcase: real screens of our own products, so the first screen shows a result, not only a
-             promise. The main shot is VetSpace, the second one (DigiPulse) overlaps it from sm up; phones get one. --}}
         @php
             $showcaseShot = function (string $project, string $file) use ($copy): array {
-                $caption = collect(__("{$copy}.proofs.projects.$project.screens"))->firstWhere('file', $file)['caption'] ?? '';
+                $caption = collect(__("{$copy}.proofs.projects.$project.screens"))->firstWhere('file', $file)['caption'];
+                $darkExists = file_exists(public_path("landing/screens/$file-dark.webp"))
+                    && file_exists(public_path("landing/screens/$file-dark-800.webp"));
 
                 return [
                     'host' => parse_url(__("{$copy}.proofs.projects.$project.live_url"), PHP_URL_HOST),
+                    'project' => __("{$copy}.proofs.projects.$project.name"),
                     'caption' => $caption,
                     'light' => ['full' => asset("landing/screens/$file.webp"), 'small' => asset("landing/screens/$file-800.webp")],
-                    'dark' => ['full' => asset("landing/screens/$file-dark.webp"), 'small' => asset("landing/screens/$file-dark-800.webp")],
+                    'dark' => $darkExists ? ['full' => asset("landing/screens/$file-dark.webp"), 'small' => asset("landing/screens/$file-dark-800.webp")] : null,
                 ];
             };
-            $showcase = [
-                'main' => $showcaseShot('vetspace', 'vetspace-clinic-calendar'),
-                'side' => $showcaseShot('digipulse', 'digipulse-dashboard'),
+            $screensByLanding = [
+                'saas' => [['vetspace', 'vetspace-clinic-month'], ['digipulse', 'digipulse-dashboard']],
+                'business' => [['vetspace', 'vetspace-clinic-calendar'], ['vetspace', 'vetspace-admin-plans']],
+                'laravel' => [['vetspace', 'vetspace-admin-plans'], ['digipulse', 'digipulse-dashboard']],
+                'api-integrations' => [['vetspace', 'vetspace-swagger-appointments'], ['vetspace', 'vetspace-admin-plans']],
+                'php-support' => [['digipulse', 'digipulse-history'], ['digipulse', 'digipulse-dashboard']],
             ];
         @endphp
-        <div data-hero-showcase class="relative mt-12 sm:mt-16 max-w-5xl mx-auto sm:pb-[14%] text-left">
-            @foreach($showcase as $slot => $shot)
-                <figure class="{{ $slot === 'main'
-                        ? 'relative sm:w-[80%]'
-                        : 'hidden sm:block absolute right-0 bottom-0 w-[46%]' }} overflow-hidden rounded-xl bg-white shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/10 dark:bg-slate-900 dark:shadow-black/50 dark:ring-white/10">
-                    {{-- Browser chrome with the product's real address --}}
-                    <div class="flex items-center gap-3 px-3 py-2 border-b border-slate-200/80 bg-slate-50 dark:border-slate-800 dark:bg-slate-900" aria-hidden="true">
-                        <span class="flex gap-1.5">
-                            <span class="size-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
-                            <span class="size-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
-                            <span class="size-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
-                        </span>
-                        <span class="flex-1 truncate text-center text-[11px] font-medium text-slate-400 dark:text-slate-500">{{ $shot['host'] }}</span>
-                        <span class="w-[42px]"></span>
-                    </div>
-                    @foreach(['light' => 'block dark:hidden', 'dark' => 'hidden dark:block'] as $theme => $visibility)
-                        <img src="{{ $shot[$theme]['small'] }}"
-                             srcset="{{ $shot[$theme]['small'] }} 800w, {{ $shot[$theme]['full'] }} 1600w"
-                             sizes="{{ $slot === 'main' ? '(min-width: 1024px) 820px, (min-width: 640px) 80vw, 100vw' : '(min-width: 1024px) 470px, 46vw' }}"
+        @if(isset($screensByLanding[$copy]))
+            <div data-hero-showcase class="relative mt-12 sm:mt-16 max-w-5xl mx-auto sm:pb-[16%] text-left">
+                @foreach($screensByLanding[$copy] as [$project, $file])
+                    @php
+                        $shot = $showcaseShot($project, $file);
+                        $isMain = $loop->first;
+                    @endphp
+                    <figure data-hero-shot="{{ $isMain ? 'main' : 'side' }}" class="{{ $isMain
+                            ? 'relative sm:w-[80%]'
+                            : 'hidden sm:block absolute right-0 bottom-0 w-[46%]' }} overflow-hidden rounded-xl bg-white shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/10 dark:bg-slate-900 dark:shadow-black/50 dark:ring-white/10">
+                        <div class="flex items-center gap-3 px-3 py-2 border-b border-slate-200/80 bg-slate-50 dark:border-slate-800 dark:bg-slate-900" aria-hidden="true">
+                            <span class="flex gap-1.5">
+                                <span class="size-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                                <span class="size-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                                <span class="size-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                            </span>
+                            <span class="flex-1 truncate text-center text-[11px] font-medium text-slate-400 dark:text-slate-500">{{ $shot['host'] }}</span>
+                            <span class="w-[42px]"></span>
+                        </div>
+                        <img src="{{ $shot['light']['small'] }}"
+                             srcset="{{ $shot['light']['small'] }} 800w, {{ $shot['light']['full'] }} 1600w"
+                             sizes="{{ $isMain ? '(min-width: 1024px) 820px, (min-width: 640px) 80vw, 100vw' : '(min-width: 1024px) 470px, 46vw' }}"
                              alt="{{ $shot['caption'] }}" width="1600" height="1000" decoding="async"
-                             @if($slot === 'side') loading="lazy" @endif
-                             class="{{ $visibility }} w-full h-auto">
-                    @endforeach
-                </figure>
-            @endforeach
-        </div>
+                             @if(! $isMain) loading="lazy" @endif
+                             class="w-full h-auto {{ $shot['dark'] ? 'dark:hidden' : '' }}">
+                        @if($shot['dark'])
+                            <img src="{{ $shot['dark']['small'] }}"
+                                 srcset="{{ $shot['dark']['small'] }} 800w, {{ $shot['dark']['full'] }} 1600w"
+                                 sizes="{{ $isMain ? '(min-width: 1024px) 820px, (min-width: 640px) 80vw, 100vw' : '(min-width: 1024px) 470px, 46vw' }}"
+                                 alt="{{ $shot['caption'] }}" width="1600" height="1000" decoding="async"
+                                 @if(! $isMain) loading="lazy" @endif
+                                 class="hidden dark:block w-full h-auto">
+                        @endif
+                        <figcaption class="border-t border-slate-200/80 px-4 py-3 text-xs leading-relaxed text-slate-600 dark:border-slate-800 dark:text-slate-400">
+                            <span class="font-bold text-slate-900 dark:text-slate-100">{{ $shot['project'] }}</span>
+                            <span aria-hidden="true"> · </span>{{ $shot['caption'] }}
+                        </figcaption>
+                    </figure>
+                @endforeach
+            </div>
+        @else
+            <div data-hero-showcase data-hero-illustration="{{ $copy }}" class="mt-12 sm:mt-16 max-w-4xl mx-auto text-left">
+                <div class="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-slate-900/10 dark:border-slate-800 dark:bg-slate-900 dark:shadow-black/30">
+                    <div class="border-b border-slate-200/80 bg-slate-50 px-6 py-5 dark:border-slate-800 dark:bg-slate-950/60 sm:px-8">
+                        <p class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">{{ __("development.showcase.$copy.eyebrow") }}</p>
+                        <h2 class="mt-2 text-xl font-bold text-slate-950 dark:text-white sm:text-2xl">{{ __("development.showcase.$copy.title") }}</h2>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{{ __("development.showcase.$copy.description") }}</p>
+                    </div>
+                    <div class="grid gap-3 p-6 sm:grid-cols-2 sm:p-8">
+                        @foreach(__("development.showcase.$copy.items") as $item)
+                            <div class="flex items-start gap-4 rounded-xl border border-slate-200/80 bg-slate-50/70 p-4 dark:border-slate-800 dark:bg-slate-950/40">
+                                <span class="flex size-8 shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">{{ str_pad((string) $loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+                                <span class="pt-1 text-sm font-semibold leading-relaxed text-slate-700 dark:text-slate-200">{{ $item }}</span>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        @endif
 
         {{-- Trust bar: price anchor first, since budget is the first question of this audience --}}
         @php
@@ -154,6 +191,9 @@
             <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400">
                 {{ __($copy.'.proofs.subtitle') }}
             </p>
+            @if($copy === 'symfony')
+                <p class="mt-4 text-sm font-medium text-slate-600 dark:text-slate-300">{{ __('development.showcase.symfony.projects_note') }}</p>
+            @endif
         </div>
 
         {{-- Phones swipe through the cards sideways (the next one peeks in); from md they sit side by side --}}
@@ -861,9 +901,18 @@
                 // (and losing this one-time "thank you" page) when the visitor revokes consent.
             });
             DigiConsent.on('marketing', function () {
-                if (leadSent.marketing || typeof window.fbq !== 'function') return;
+                if (leadSent.marketing) return;
                 leadSent.marketing = true;
-                fbq('track', 'Lead', { content_name: @json($leadSource) });
+                if (typeof window.fbq === 'function') {
+                    fbq('track', 'Lead', { content_name: @json($leadSource) });
+                }
+                @if(config('services.google_ads.conversion_id') && config('services.google_ads.lead_label'))
+                if (typeof window.gtag === 'function') {
+                    gtag('event', 'conversion', {
+                        send_to: @json(config('services.google_ads.conversion_id').'/'.config('services.google_ads.lead_label'))
+                    });
+                }
+                @endif
             }, function () {
                 // See above: nothing to undo, and no reload wanted.
             });

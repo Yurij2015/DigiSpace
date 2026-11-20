@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Http\Controllers\Development\LandingController;
 use App\Rules\RecaptchaV3Rule;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
@@ -55,7 +56,13 @@ class SaasInquirySaveRequest extends FormRequest
      */
     private function copy(): string
     {
-        return $this->routeIs('development.business.*') ? 'business' : 'saas';
+        foreach (LandingController::LANDINGS as $copy => $config) {
+            if ($this->routeIs($config['route'].'.*')) {
+                return $copy;
+            }
+        }
+
+        return 'saas';
     }
 
     /**

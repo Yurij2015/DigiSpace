@@ -71,4 +71,9 @@ return [
         'secret_key' => env('RECAPTCHA_V3_SECRET_KEY'),
         'min_score' => (float) env('RECAPTCHA_V3_MIN_SCORE', 0.5),
     ],
+
+    'google_ads' => [
+        'conversion_id' => env('GOOGLE_ADS_CONVERSION_ID', 'AW-984397391'),
+        'lead_label' => env('GOOGLE_ADS_LEAD_LABEL', 'nMACCJGcvOIbEM_sstUD'),
+    ],
 ];

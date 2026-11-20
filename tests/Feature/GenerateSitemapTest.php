@@ -63,7 +63,9 @@ class GenerateSitemapTest extends TestCase
         $xpath->registerNamespace('s', 'http://www.sitemaps.org/schemas/sitemap/0.9'); // NOSONAR: XML namespace URIs are identifiers, not fetched URLs
         $xpath->registerNamespace('x', 'http://www.w3.org/1999/xhtml'); // NOSONAR: same
         $paths = [
-            '', '/about', '/services', '/pricing', '/promos', '/blog', '/contact-us', '/privacy-policy', '/faq', '/support', '/development/saas', '/development/business',
+            '', '/about', '/services', '/pricing', '/promos', '/blog', '/contact-us', '/privacy-policy', '/faq', '/support',
+            '/development', '/development/saas', '/development/business', '/development/laravel', '/development/symfony',
+            '/development/api-integrations', '/development/php-support', '/development/php-audit',
             '/pages/cms', '/blog/published', '/blog-category/news', '/blog-archive/'.now()->year.'-'.now()->month, '/service-category/web', '/service-category/web/active',
         ];
         $this->assertCount(count($paths) * 3, $xpath->query('/s:urlset/s:url'));
