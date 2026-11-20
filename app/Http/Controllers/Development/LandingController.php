@@ -19,7 +19,7 @@ class LandingController extends Controller
     /**
      * @var array<string, array{route: string, source: string, lead_label: string}>
      */
-    private const LANDINGS = [
+    public const LANDINGS = [
         'saas' => [
             'route' => 'development.saas',
             'source' => ContactForm::SOURCE_SAAS_LANDING,
@@ -30,7 +30,42 @@ class LandingController extends Controller
             'source' => ContactForm::SOURCE_BUSINESS_LANDING,
             'lead_label' => '(Business Inquiry)',
         ],
+        'laravel' => [
+            'route' => 'development.laravel',
+            'source' => ContactForm::SOURCE_LARAVEL_LANDING,
+            'lead_label' => '(Laravel Inquiry)',
+        ],
+        'symfony' => [
+            'route' => 'development.symfony',
+            'source' => ContactForm::SOURCE_SYMFONY_LANDING,
+            'lead_label' => '(Symfony Inquiry)',
+        ],
+        'api-integrations' => [
+            'route' => 'development.api-integrations',
+            'source' => ContactForm::SOURCE_API_INTEGRATIONS_LANDING,
+            'lead_label' => '(API Integrations Inquiry)',
+        ],
+        'php-support' => [
+            'route' => 'development.php-support',
+            'source' => ContactForm::SOURCE_PHP_SUPPORT_LANDING,
+            'lead_label' => '(PHP Support Inquiry)',
+        ],
+        'php-audit' => [
+            'route' => 'development.php-audit',
+            'source' => ContactForm::SOURCE_PHP_AUDIT_LANDING,
+            'lead_label' => '(PHP Audit Inquiry)',
+        ],
     ];
+
+    /**
+     * Display the directory of development landing pages.
+     */
+    public function index(): View
+    {
+        return view('development.index', [
+            'landings' => array_keys(self::LANDINGS),
+        ]);
+    }
 
     /**
      * Display the SaaS MVP development landing page.
@@ -48,6 +83,31 @@ class LandingController extends Controller
         return $this->render('business');
     }
 
+    public function laravel(): View
+    {
+        return $this->render('laravel');
+    }
+
+    public function symfony(): View
+    {
+        return $this->render('symfony');
+    }
+
+    public function apiIntegrations(): View
+    {
+        return $this->render('api-integrations');
+    }
+
+    public function phpSupport(): View
+    {
+        return $this->render('php-support');
+    }
+
+    public function phpAudit(): View
+    {
+        return $this->render('php-audit');
+    }
+
     /**
      * Store an inquiry from the SaaS landing and push it to Zoho CRM as a lead.
      */
@@ -62,6 +122,31 @@ class LandingController extends Controller
     public function businessInquiry(SaasInquirySaveRequest $request, ZohoLeadService $zohoLeads): RedirectResponse
     {
         return $this->storeInquiry('business', $request, $zohoLeads);
+    }
+
+    public function laravelInquiry(SaasInquirySaveRequest $request, ZohoLeadService $zohoLeads): RedirectResponse
+    {
+        return $this->storeInquiry('laravel', $request, $zohoLeads);
+    }
+
+    public function symfonyInquiry(SaasInquirySaveRequest $request, ZohoLeadService $zohoLeads): RedirectResponse
+    {
+        return $this->storeInquiry('symfony', $request, $zohoLeads);
+    }
+
+    public function apiIntegrationsInquiry(SaasInquirySaveRequest $request, ZohoLeadService $zohoLeads): RedirectResponse
+    {
+        return $this->storeInquiry('api-integrations', $request, $zohoLeads);
+    }
+
+    public function phpSupportInquiry(SaasInquirySaveRequest $request, ZohoLeadService $zohoLeads): RedirectResponse
+    {
+        return $this->storeInquiry('php-support', $request, $zohoLeads);
+    }
+
+    public function phpAuditInquiry(SaasInquirySaveRequest $request, ZohoLeadService $zohoLeads): RedirectResponse
+    {
+        return $this->storeInquiry('php-audit', $request, $zohoLeads);
     }
 
     private function render(string $copy): View

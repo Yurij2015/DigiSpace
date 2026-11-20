@@ -61,6 +61,7 @@
     {{-- Cookie consent (shared with the main site): banner styles, Consent Mode defaults, consent.js --}}
     <link rel="stylesheet" href="{{ asset('css/cookie-consent.css') }}?v={{ filemtime(public_path('css/cookie-consent.css')) }}">
     @include('partials.tracking.consent-mode')
+    @include('partials.tracking.google-ads')
     @include('partials.tracking.meta-pixel')
 
     {{-- JSON-LD Structured Data --}}

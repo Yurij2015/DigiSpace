@@ -96,6 +96,7 @@ Route::prefix('{locale?}/development')
     ->whereIn('locale', config('locales.supported'))
     ->name('development.')
     ->group(function (): void {
+        Route::get('/', [LandingController::class, 'index'])->name('index');
         Route::get('saas', [LandingController::class, 'show'])->name('saas');
         Route::post('saas-inquiry', [LandingController::class, 'inquiry'])
             ->name('saas.inquiry')
@@ -103,6 +104,26 @@ Route::prefix('{locale?}/development')
         Route::get('business', [LandingController::class, 'business'])->name('business');
         Route::post('business-inquiry', [LandingController::class, 'businessInquiry'])
             ->name('business.inquiry')
+            ->middleware('throttle:contact-form');
+        Route::get('laravel', [LandingController::class, 'laravel'])->name('laravel');
+        Route::post('laravel-inquiry', [LandingController::class, 'laravelInquiry'])
+            ->name('laravel.inquiry')
+            ->middleware('throttle:contact-form');
+        Route::get('symfony', [LandingController::class, 'symfony'])->name('symfony');
+        Route::post('symfony-inquiry', [LandingController::class, 'symfonyInquiry'])
+            ->name('symfony.inquiry')
+            ->middleware('throttle:contact-form');
+        Route::get('api-integrations', [LandingController::class, 'apiIntegrations'])->name('api-integrations');
+        Route::post('api-integrations-inquiry', [LandingController::class, 'apiIntegrationsInquiry'])
+            ->name('api-integrations.inquiry')
+            ->middleware('throttle:contact-form');
+        Route::get('php-support', [LandingController::class, 'phpSupport'])->name('php-support');
+        Route::post('php-support-inquiry', [LandingController::class, 'phpSupportInquiry'])
+            ->name('php-support.inquiry')
+            ->middleware('throttle:contact-form');
+        Route::get('php-audit', [LandingController::class, 'phpAudit'])->name('php-audit');
+        Route::post('php-audit-inquiry', [LandingController::class, 'phpAuditInquiry'])
+            ->name('php-audit.inquiry')
             ->middleware('throttle:contact-form');
     });
 

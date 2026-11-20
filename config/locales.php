@@ -32,6 +32,9 @@ return [
         'contact.save', 'subscriber-save', 'pages.page', 'blog.post', 'error-404',
         'category-services', 'category-service', 'service-search',
         'privacy-policy', 'faq', 'support',
-        'development.saas', 'development.business',
+        'development.index',
+        'development.saas', 'development.business', 'development.laravel',
+        'development.symfony', 'development.api-integrations',
+        'development.php-support', 'development.php-audit',
     ],
 ];
